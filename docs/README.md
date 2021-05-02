@@ -6,3 +6,5 @@ This directory will contain related documents, such as:
 - Guide on how to install various IDE / software,        
 - List of required topics,        
 - "How to contribute" / "How to become a UCA"
+
+These documents will be available as web pages at [csci-1301.github.io](https://csci-1301.github.io)
