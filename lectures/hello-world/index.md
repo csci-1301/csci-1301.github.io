@@ -1,5 +1,5 @@
 ---
-Should we include front-matter?
+question: Should we include front-matter?
 ---
 
 # Hello World
@@ -21,7 +21,7 @@ Next try to include code/sample.cs in this document after compiling with pandoc
 
 ### Inline Code block
 
-<!-- should code _ever_ be inlined? -->
+<!-- should code _ever_ be inlined? A: if it is an example of error -->
 
 ```csharp
 using System;
