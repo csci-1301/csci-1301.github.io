@@ -1,0 +1,38 @@
+name: build
+
+#  specify when this workflow should run
+on:
+  # on every push to main branch
+  push:
+    branches: [ main ]
+  # on every PR
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    # setup pandoc in the env
+    - uses: docker://pandoc/core:2.9
+      # with:
+      #   args: "--help"    
+      
+      # we can appended additional flags to pandoc command
+      # see more examples: https://github.com/pandoc/pandoc-action-example 
+    
+    # run build within the configured env
+    # here we run the build command specified in the makefile
+    - name: build package
+      run: |
+        make build  
+
+    # Deploy build artifacts to pages, though this should only be on 
+    # pushes to main, not on PRs. Option A) try making this conditional
+    # Option B) create two separate workflows
+    # https://github.com/marketplace/actions/deploy-to-github-pages
+    # - name: Deploy 🚀
+    #   uses: JamesIves/github-pages-deploy-action@4.1.2
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: build # The folder the action should deploy.

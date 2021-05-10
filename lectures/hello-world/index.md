@@ -1,6 +1,8 @@
 ---
-question: Should we include front-matter?
+title: Hello World
 ---
+
+<!-- figure out what all needs to go in the front-matter -->
 
 # Hello World
 
