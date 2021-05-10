@@ -1,3 +1,3 @@
 # Student Learning Outcomes
 
-Student Learning Outcomes and the like
+Discuss student learning outcomes and the like
