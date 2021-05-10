@@ -47,7 +47,7 @@ _The IDE used can be [MonoDevelop](https://www.monodevelop.com/) or [Visual Stud
 
 ## The Structure of a Program
 
-### First Program -  Hellow World
+### First Program -  Hello World
 
 _The students should understand all the components of a simple "Hello World" program:_
 
