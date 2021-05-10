@@ -1,3 +1,3 @@
 # Contributing Guidelines
 
-(TODO)
+See: [docs/contributing](..docs/contributing.md)
