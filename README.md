@@ -7,4 +7,4 @@
 - `code` - code snippets
 - `labs` - lab exercises
 - `lectures` - lecture notes
-
+- `problems` - practice problems
