@@ -4,12 +4,12 @@ dist: bionic
 cache:
   directories:
     - /usr/share/texlive
+    - /usr/bin/pandoc
   
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y pandoc
-  - sudo apt-get install -y texlive-full 
-  - which pandoc
+  - sudo apt-get install -y texlive-full
 
 script:
   - make all
