@@ -16,7 +16,7 @@ WEBPATH = templates/web/
 
 # TODO: figure out what filters we need here
 # TODO: figure out how to concat .md files, can always script it
-PANDOCOPTIONS:= lectures/hello-world/index.md --toc 
+PANDOCOPTIONS:= lectures/hello_world/index.md --toc 
 
 # TODO: what options should go here
 # TODO: how to do image paths and css paths correctly? they are not included in output dir
