@@ -14,17 +14,11 @@ Setting up things. This is a sample document.
 
 Included code block
 
-<!-- ```csharp
+```csharp
 !include code/sample.cs
-``` -->
+```
 
 ## My Second Subtitle
-
-| No. | Title |
-| --- | --- | 
-| 1. | This is a table |
-| 2. | Another table row |
-| 3. | More rows |
 
 
 ### Inline Code block
@@ -41,7 +35,7 @@ class Program {
 
 ## Image
 
-<!-- ![sample image](image.jpg) -->
+
  
 ## Label test
 
