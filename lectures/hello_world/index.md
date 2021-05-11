@@ -42,6 +42,6 @@ class Program {
 
 ## Link test
 
-[Relative Link: Go Home](index.html)
+[Relative Link within same document](#my-first-subtitle)
 
 [Absolute Link](https://augusta.edu)
