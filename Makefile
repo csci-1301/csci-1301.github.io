@@ -1,28 +1,64 @@
 help:
 	@echo "build - build a package"
 	@echo "clean - remove generated build artifacts"
+	@echo "labs - package labs files"
 
 # ===============================
-# VARIABLES
+# Options
 # ===============================
 
 # directory where to output build artifacts
 # if you change this value also change .travis.yml
 BUILD_DIR = build
 
+# Path to HTML templates for use with pandoc
+WEBPATH = templates/web/
+
+# TODO: figure out what filters we need here
+# TODO: figure out how to concat .md files, can always script it
+PANDOCOPTIONS:= lectures/hello-world/index.md --toc 
+
+# TODO: what options should go here
+# TODO: how to do image paths and css paths correctly? they are not included in output dir
+PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html 
+
+# pandoc configuration options for building pdf
+PANDOCPDF:= $(PANDOCOPTIONS) --pdf-engine=xelatex --pdf-engine-opt=-shell-escape -V links-as-notes --default-image-extension=pdf
+# if you change this value also change .travis.yml
+PDF_FILENAME:= CS1301
+
+# pandoc configuration options for building odt
+PANDOCODT:= $(PANDOCOPTIONS) --default-image-extension=svg 
+# if you change this value also change .travis.yml
+ODT_FILENAME:= CS1301
+
 # ===============================
-# COMMANDS
+# Rules
 # ===============================
 
-build:
-	@echo "starting build..."
-	# ensure build putput directory exists 
-	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
-	# run build steps (just testing so far)
-	pandoc lectures/hello-world/index.md -f markdown -t html -s -o $(BUILD_DIR)/index.html
+build: pre-build build-html build-pdf build-odt
 
 clean:
 	@echo "cleaning build artifacts..."
 	rm -fr $(BUILD_DIR)
+
+labs:
+	@echo "packaging labs..."
+	# TODO: can script this also. 
+	# take every dir under labs and put in a zip file
+
+pre-build:
+	@echo "starting build..."
+	# ensure build putput directory exists 
+	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
+
+build-html:
+	pandoc $(PANDOCHTML) -o $(BUILD_DIR)/index.html
+
+build-pdf:
+	pandoc $(PANDOCPDF) -o $(BUILD_DIR)/$(PDF_FILENAME).pdf
+	
+build-odt:
+	pandoc $(PANDOCODT) -o $(BUILD_DIR)/$(ODT_FILENAME).odt
 
 all: build

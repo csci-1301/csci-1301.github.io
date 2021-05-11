@@ -12,15 +12,11 @@ deploy:
     local_dir: build   
     on:
       branch: main
-
-  # make a release on github
-  # TODO: edit the file list to specify what should be released
-  #
-  # - provider: releases
-  #   skip_cleanup: true
-  #   api_key: $github_token
-  #   file:
-  #     - path/to/file  
-  #     - second/path/to/file
-  #   on:
-  #     tags: true  
+  - provider: releases
+    skip_cleanup: true
+    api_key: $github_token
+    file:
+      - build/CS1301.pdf
+      - build/CS1301.odt
+    on:
+      tags: true  
