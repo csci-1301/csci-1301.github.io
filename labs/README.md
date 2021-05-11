@@ -4,4 +4,4 @@
 
 | Lab title | Prerequisites | Related Lectures |  Description |
 | :--- | :--- | :--- | :--- |
-| `hello-world` | None |  Hello World | Compile and run hello world program |
+| `hello_world` | None |  Hello World | Compile and run hello world program |

@@ -4,4 +4,4 @@
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| Hello World | None | `hello-world` | Explains the components of a simple "Hello World" program |
+| Hello World | None | `hello_world` | Explains the components of a simple "Hello World" program |

@@ -39,3 +39,6 @@ class Program {
 <!-- retry once you figure out how to include this -->
 <!-- ![sample image](../../img/image.jpg) -->
  
+## Label test
+
+:lock: always use strong passwords and enable 2FA
