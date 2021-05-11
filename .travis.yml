@@ -6,8 +6,9 @@ before_install:
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
-  - python3 -m pip install Pygments
-  - python3 -m pip install pandoc-include
+  - sudo python3 get-pip.py
+  - python3 -m pip3 install Pygments
+  - python3 -m pip3 install pandoc-include
 
 script:
   - make all
