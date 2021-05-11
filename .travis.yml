@@ -4,7 +4,7 @@ before_install:
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
-  - pip3 install Pygments
+  - pip install Pygments
 
 script:
   - make all
