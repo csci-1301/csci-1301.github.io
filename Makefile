@@ -11,15 +11,13 @@ help:
 # if you change this value also change .travis.yml
 BUILD_DIR = build
 
-# Path to HTML templates for use with pandoc
-WEBPATH = templates/web/
-
 # TODO: figure out what filters we need here
 # TODO: figure out how to concat .md files, can always script it
-PANDOCOPTIONS:= lectures/hello_world/index.md --toc 
+PANDOCOPTIONS:= lectures/hello_world/index.md --toc --highlight=pygments
 
-# TODO: what options should go here
-# TODO: how to do image paths and css paths correctly? they are not included in output dir
+# Path to HTML templates to use with pandoc
+WEBPATH = templates/web/
+# TODO: how to do image paths correctly? they are not included in output dir
 PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html  --self-contained
 
 # pandoc configuration options for building pdf
