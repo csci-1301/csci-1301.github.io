@@ -14,8 +14,9 @@ Setting up things. This is a sample document.
 
 Included code block
 
+```csharp
 !include ./code/sample.cs
-
+```
 
 ## My Second Subtitle
 
