@@ -7,6 +7,7 @@ help:
 # ===============================
 
 # directory where to output build artifacts
+# if you change this value also change .travis.yml
 BUILD_DIR = build
 
 # ===============================
