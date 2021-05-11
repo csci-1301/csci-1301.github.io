@@ -51,7 +51,7 @@ labs:
 
 pre-build:
 	@echo "starting build..."
-	# ensure build putput directory exists 
+	# ensure build output directory exists 
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
 
 build-html:
