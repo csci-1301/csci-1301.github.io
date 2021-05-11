@@ -44,8 +44,7 @@ clean:
 
 labs:
 	@echo "packaging labs..."
-	# TODO: can script this also. 
-	# take every dir under labs and put in a zip file
+	# TODO: write a script to zip lab files
 
 pre-build:
 	@echo "starting build..."

@@ -35,7 +35,7 @@ class Program {
 
 ## Image
 
-
+!["my first image"](./img/image.jpg)
  
 ## Label test
 
