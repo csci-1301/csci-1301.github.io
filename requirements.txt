@@ -1,2 +1,0 @@
-Pygments
-# pandoc-include==0.8.7

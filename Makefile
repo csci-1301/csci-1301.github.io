@@ -10,8 +10,10 @@ help:
 # directory where to output build artifacts
 # if you change this value also change .travis.yml
 BUILD_DIR = build
-
+# The input to convert with pandoc
 INPUT_FILE = lectures/hello_world/index.md
+# if you change this value also change .travis.yml and any references to it
+OUT_FILENAME = $(BUILD_DIR)/book
 
 # Pandoc options for all output formats
 PANDOCOPTIONS:= --toc --section-divs
@@ -26,13 +28,9 @@ PANDOCHTML:= $(PANDOCOPTIONS) --self-contained --css=$(WEBPATH)style.css -A $(WE
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
 # also this is a thing: may need another apt-get pandoc: unrecognized option `--pdf-engine=xelatex'
 PANDOCPDF:= $(PANDOCOPTIONS) -V links-as-notes --default-image-extension=pdf
-# if you change this value also change .travis.yml
-PDF_FILENAME:= CS1301
 
 # pandoc options for building odt
 PANDOCODT:= $(PANDOCOPTIONS) --default-image-extension=svg 
-# if you change this value also change .travis.yml
-ODT_FILENAME:= CS1301
 
 # ===============================
 # Rules
@@ -54,12 +52,12 @@ pre-build:
 
 build-html:
 	pandoc docs/index.md --self-contained --css=$(WEBPATH)style.css -o $(BUILD_DIR)/index.html
-	pandoc $(INPUT_FILE) $(PANDOCHTML) -o $(BUILD_DIR)/lecturenotes.html
+	pandoc $(INPUT_FILE) $(PANDOCHTML) -o $(OUT_FILENAME).html
 
 build-pdf:
-	pandoc $(INPUT_FILE) $(PANDOCPDF) -o $(BUILD_DIR)/$(PDF_FILENAME).pdf
+	pandoc $(INPUT_FILE) $(PANDOCPDF) -o $(OUT_FILENAME).pdf
 	
 build-odt:
-	pandoc $(INPUT_FILE) $(PANDOCODT) -o $(BUILD_DIR)/$(ODT_FILENAME).odt
+	pandoc $(INPUT_FILE) $(PANDOCODT) -o $(OUT_FILENAME).odt
 
 all: build
