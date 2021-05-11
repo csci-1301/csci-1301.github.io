@@ -9,9 +9,8 @@ before_install:
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
-  - pip install Pygments
-  - pip install -U panflute
-  - pip install pandoc-include
+  - python -m pip install --upgrade pip
+  - pip install -r requirements.txt
 
 script:
   - make all
