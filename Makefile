@@ -23,3 +23,5 @@ build:
 clean:
 	@echo "cleaning build artifacts..."
 	rm -fr $(BUILD_DIR)
+
+all: build
