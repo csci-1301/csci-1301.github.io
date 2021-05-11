@@ -14,9 +14,9 @@ jobs:
     - uses: docker://pandoc/core:2.9
       with:
         args: >- 
+          README.md
           --standalone
           --output=build/test.html
-          lectures/hello-world/index.md
       
       # we can appended additional flags to pandoc command
       # see more examples: https://github.com/pandoc/pandoc-action-example 
