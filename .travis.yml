@@ -1,11 +1,16 @@
+language: bash
+
 dist: bionic
+
+python:
+  - "3.7"
 
 before_install: 
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
-  - pip install Pygments
-  - pip install pandoc-include
+  - pip3 install Pygments
+  - pip3 install pandoc-include
 
 script:
   - make all
