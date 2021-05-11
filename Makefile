@@ -13,7 +13,7 @@ BUILD_DIR = build
 
 # TODO: figure out what filters we need here
 # TODO: figure out how to concat .md files, can always script it
-PANDOCOPTIONS:= lectures/hello_world/index.md --toc --highlight=pygments
+PANDOCOPTIONS:= lectures/hello_world/index.md --toc
 
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/

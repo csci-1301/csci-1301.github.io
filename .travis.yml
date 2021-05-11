@@ -1,8 +1,10 @@
-  before_install: 
+dist: bionic
+
+before_install: 
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
-  - sudo apt-get install -y python3-pygments
+  - sudo apt-get install -y python-pygments
 
 script:
   - make all
