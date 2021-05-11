@@ -12,20 +12,15 @@ jobs:
     steps:
     # setup pandoc in the env
     - uses: docker://pandoc/core:2.9
-      # with:
-      #   args: "--help"    
+      with:
+        args: >- 
+          --standalone
+          --output=build/test.html
+          lectures/hello-world/index.md
       
       # we can appended additional flags to pandoc command
       # see more examples: https://github.com/pandoc/pandoc-action-example 
-
-    # checkout main
-    - uses: actions/checkout@main
-      with:
-        fetch-depth: 1  
-
-    # run something within the configured env 
-    - name: build
-      run: make build  
+      # apparently makefile runs in different context; see if this works
 
     # Deploy build artifacts or docs to pages
     # https://github.com/marketplace/actions/deploy-to-github-pages
