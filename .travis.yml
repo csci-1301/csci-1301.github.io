@@ -5,6 +5,8 @@ before_install:
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
   - pip install Pygments
+  - sudo apt-get install -y cabal-install
+  - cabal install pandoc-include-code
 
 script:
   - make all
