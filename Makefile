@@ -24,7 +24,8 @@ PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html
 
 # pandoc configuration options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
-PANDOCPDF:= $(PANDOCOPTIONS) --pdf-engine=xelatex -V links-as-notes --default-image-extension=pdf
+# also this is a thing: may need another apt-get pandoc: unrecognized option `--pdf-engine=xelatex'
+PANDOCPDF:= $(PANDOCOPTIONS) -V links-as-notes --default-image-extension=pdf
 # if you change this value also change .travis.yml
 PDF_FILENAME:= CS1301
 
