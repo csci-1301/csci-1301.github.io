@@ -12,13 +12,12 @@ help:
 BUILD_DIR = build
 
 # TODO: add filters
-PANDOCOPTIONS:= lectures/hello_world/index.md --toc
-# --filter pandoc-include <-- error w/ incompatible api version, excl for now
+PANDOCOPTIONS:= lectures/hello_world/index.md --toc --section-divs --extract-media $(BUILD_DIR)
+# --filter pandoc-include  # inject inline code blocks
 
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
-# TODO: how to do image paths correctly? they are not included in output dir
-PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html  --self-contained
+PANDOCHTML:= $(PANDOCOPTIONS) --include-in-header=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
 
 # pandoc configuration options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
