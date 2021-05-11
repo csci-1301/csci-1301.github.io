@@ -1,5 +1,4 @@
 ---
-id: lectures/hello_world  # we need some identifier system to refer to this resource
 title: Hello World
 related_labs:             # can we add custom properties here, probably?
 - labs/hello_world
@@ -13,14 +12,18 @@ Setting up things. This is a sample document.
 
 ## My First Subtitle!
 
-TODO: try to include code/sample.cs in this document and highlight it
+Included code block
+
+!include ../code/sample.cs
 
 
 ## My Second Subtitle
 
-| # | Title |
+| No. | Title |
 | --- | --- | 
 | 1. | This is a table |
+| 2. | Another table row |
+| 3. | More rows |
 
 
 ### Inline Code block
@@ -37,8 +40,6 @@ class Program {
 
 ## Image
 
-<!-- the build fails on this broken image which is probably ideal actually -->
-<!-- retry once you figure out how to include this -->
 <!-- ![sample image](image.jpg) -->
  
 ## Label test
