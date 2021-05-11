@@ -20,8 +20,8 @@ jobs:
 
     # checkout main
     - uses: actions/checkout@main
-          with:
-            fetch-depth: 1  
+      with:
+        fetch-depth: 1  
 
     # run something within the configured env 
     - name: build
