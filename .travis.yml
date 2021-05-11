@@ -1,8 +1,17 @@
+dist: bionic  # specify build env, ubuntu 18.04 (Bionic Beaver)
+
+cache:
+  # TODO: try to cache the apt-get stuff, esp. texlive
+  # challenge is caching these arbitrary dirs
+  # https://stackoverflow.com/q/47603077/4054683
+  # https://docs.travis-ci.com/user/caching#arbitrary-directories
+  directories:
+    - 
+  
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y pandoc
-  - sudo apt-get install -y texlive-full
-  - sudo apt-get install -y texlive-xetex
+  - sudo apt-get install -y texlive-full 
 
 script:
   - make all
