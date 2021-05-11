@@ -14,10 +14,10 @@ jobs:
     - uses: docker://pandoc/core:2.9
       with:
         args: >- 
-          README.md
+          lectures/hello-world/index.md
           --standalone
           --output=build/test.html
-          
+
       # we can appended additional flags to pandoc command
       # see more examples: https://github.com/pandoc/pandoc-action-example 
       # apparently makefile runs in different context; see if this works
