@@ -12,12 +12,13 @@ help:
 BUILD_DIR = build
 
 # TODO: add filters
-PANDOCOPTIONS:= lectures/hello_world/index.md --toc --section-divs --extract-media $(BUILD_DIR)
+PANDOCOPTIONS:= lectures/hello_world/index.md --toc --section-divs
 # --filter pandoc-include  # inject inline code blocks
 
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
-PANDOCHTML:= $(PANDOCOPTIONS) --include-in-header=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
+# HTML build options
+PANDOCHTML:= $(PANDOCOPTIONS) --self-contained --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
 
 # pandoc configuration options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
@@ -47,7 +48,6 @@ labs:
 
 pre-build:
 	@echo "starting build..."
-	# ensure build output directory exists 
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
 
 build-html:
