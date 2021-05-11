@@ -6,7 +6,8 @@
 
 ### Organization of resources
 
-- `code` - code snippets
+- `code` - code examples
+- `docs` - additional helpful documents
 - `labs` - lab exercises
 - `lectures` - lecture notes
 - `problems` - practice problems
