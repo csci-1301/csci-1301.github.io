@@ -1,3 +1,2 @@
 Pygments
 # pandoc-include==0.8.7
-# panflute==2.0.5

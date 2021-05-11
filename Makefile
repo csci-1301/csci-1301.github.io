@@ -11,23 +11,25 @@ help:
 # if you change this value also change .travis.yml
 BUILD_DIR = build
 
-# TODO: add filters
-PANDOCOPTIONS:= lectures/hello_world/index.md --toc --section-divs
+INPUT_FILE = lectures/hello_world/index.md
+
+# Pandoc options for all output formats
+PANDOCOPTIONS:= --toc --section-divs
 # --filter pandoc-include  # inject inline code blocks
 
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
 # HTML build options
-PANDOCHTML:= $(PANDOCOPTIONS) --self-contained --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
+PANDOCHTML:= $(PANDOCOPTIONS) --self-contained  --resource-path=.:build --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
 
-# pandoc configuration options for building pdf
+# pandoc options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
 # also this is a thing: may need another apt-get pandoc: unrecognized option `--pdf-engine=xelatex'
 PANDOCPDF:= $(PANDOCOPTIONS) -V links-as-notes --default-image-extension=pdf
 # if you change this value also change .travis.yml
 PDF_FILENAME:= CS1301
 
-# pandoc configuration options for building odt
+# pandoc options for building odt
 PANDOCODT:= $(PANDOCOPTIONS) --default-image-extension=svg 
 # if you change this value also change .travis.yml
 ODT_FILENAME:= CS1301
@@ -51,12 +53,13 @@ pre-build:
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
 
 build-html:
-	pandoc $(PANDOCHTML) -o $(BUILD_DIR)/index.html
+	pandoc docs/index.md $(PANDOCHTML) -o $(BUILD_DIR)/index.html
+	pandoc $(INPUT_FILE) $(PANDOCHTML) -o $(BUILD_DIR)/lecturenotes.html
 
 build-pdf:
-	pandoc $(PANDOCPDF) -o $(BUILD_DIR)/$(PDF_FILENAME).pdf
+	pandoc $(INPUT_FILE) $(PANDOCPDF) -o $(BUILD_DIR)/$(PDF_FILENAME).pdf
 	
 build-odt:
-	pandoc $(PANDOCODT) -o $(BUILD_DIR)/$(ODT_FILENAME).odt
+	pandoc $(INPUT_FILE) $(PANDOCODT) -o $(BUILD_DIR)/$(ODT_FILENAME).odt
 
 all: build

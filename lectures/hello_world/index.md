@@ -1,11 +1,10 @@
 ---
 title: Hello World
-related_labs:             # can we add custom properties here, probably?
+related_labs:         
 - labs/hello_world
 prereq:
 - None
 ---
-
 
 Setting up things. This is a sample document.
 
@@ -40,3 +39,9 @@ class Program {
 ## Label test
 
 :lock: always use strong passwords and enable 2FA
+
+## Link test
+
+[Relative Link: Go Home](index.html)
+
+[Absolute Link](https://augusta.edu)
