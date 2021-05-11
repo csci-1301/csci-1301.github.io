@@ -7,6 +7,8 @@ cache:
     - /usr/bin/pandoc
   
 before_install:
+  - chmod 755 /usr/share/texlive
+  - chmod 755 /usr/bin/pandoc
   - sudo apt-get update -qq
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive-full
