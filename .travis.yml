@@ -1,17 +1,7 @@
-# means always run builds on Ubuntu Bionic 18.04
-dist: bionic  
-
-cache:
-  directories:
-    - /usr/share/texlive
-    - /usr/bin/pandoc
-  
-before_install:
-  - chmod 755 /usr/share/texlive
-  - chmod 755 /usr/bin/pandoc
-  - sudo apt-get update -qq
+  before_install:
+  # - sudo apt-get update -qq maybe not necessary?
   - sudo apt-get install -y pandoc
-  - sudo apt-get install -y texlive-full
+  - sudo apt-get install -y texlive
 
 script:
   - make all
