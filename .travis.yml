@@ -1,5 +1,4 @@
-  before_install:
-  # - sudo apt-get update -qq maybe not necessary?
+  before_install: 
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
 
