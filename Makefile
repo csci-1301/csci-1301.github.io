@@ -1,6 +1,6 @@
 help:
 	@echo "build - build a package"
-	@echo "clean - remove gnerated build artifacts"
+	@echo "clean - remove generated build artifacts"
 
 # ===============================
 # VARIABLES
