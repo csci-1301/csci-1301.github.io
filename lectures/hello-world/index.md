@@ -35,5 +35,7 @@ class Program {
 
 ## Image
 
-![sample image](../../img/image.jpg)
+<!-- the build fails on this broken image which is probably ideal actually -->
+<!-- retry once you figure out how to include this -->
+<!-- ![sample image](../../img/image.jpg) -->
  
