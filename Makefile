@@ -19,7 +19,7 @@ build:
 	# ensure build putput directory exists 
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR) 	
 	# run build steps (just testing so far)
-	pandoc lectures/hello-world/index.md -f markdown -t html -s -o $(BUILD_DIR)/test.html
+	pandoc lectures/hello-world/index.md -f markdown -t html -s -o $(BUILD_DIR)/index.html
 
 clean:
 	@echo "cleaning build artifacts..."
