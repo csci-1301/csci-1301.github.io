@@ -20,7 +20,7 @@ PANDOCOPTIONS:= lectures/hello_world/index.md --toc
 
 # TODO: what options should go here
 # TODO: how to do image paths and css paths correctly? they are not included in output dir
-PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html 
+PANDOCHTML:= $(PANDOCOPTIONS) --css=$(WEBPATH)style.css -B $(WEBPATH)header.html -A $(WEBPATH)footer.html  --self-contained
 
 # pandoc configuration options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
