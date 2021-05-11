@@ -1,4 +1,4 @@
-dist: "bionic"
+dist: "focal"
 
 language: python
 
@@ -6,7 +6,7 @@ python:
   - "3.7"
 
 before_install: 
-  - sudo apt-get install -y pandoc=2.13
+  - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y lmodern
   - python -m pip install --upgrade pip
