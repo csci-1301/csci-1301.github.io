@@ -21,7 +21,7 @@ PANDOC_OPTIONS:= --toc --section-divs
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
 # HTML build options
-PANDOC_HTML:= $(PANDOC_OPTIONS) --resource-path=.:img:$(WEBPATH) --self-contained --css=style.css -A footer.html -B header.html
+PANDOC_HTML:= $(PANDOC_OPTIONS) --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -B $(WEBPATH)header.html
 
 # pandoc options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
