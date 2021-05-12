@@ -19,6 +19,7 @@ OUT_FILENAME = $(BUILD_DIR)/book
 # where to find the following
 DOCS_DIR = docs
 LECTURES_DIR = lectures
+LABS_DIR = labs
 PAGES = pages
 
 # PANDOC SETTINGS
@@ -55,7 +56,7 @@ build: pre-build build-html build-pdf build-odt extras
 .PHONY: clean
 clean:
 	@echo "cleaning build artifacts..."
-	rm -fr $(BUILD_DIR)
+	rm -rf $(BUILD_DIR)
 
 pre-build:
 	@echo "starting build..."
@@ -72,6 +73,6 @@ build-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
 extras:
-	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(PAGES) $(PAGES_HEADER)
+	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(PAGES) $(PAGES_HEADER) $(LABS_DIR)
 
 all: build
