@@ -2,11 +2,13 @@
 title: Index Page
 ---
 
-## Textbook?
+### Textbook
 
- - [HTML](lecturenotes.html)
- - [PDF](CS1301.pdf) 
- - [ODT](CS1301.odt)
+[HTML](book.html) [PDF](book.pdf) [ODT](book.odt)
+
+### Labs
+
+-
 
 ## Other Documents
 

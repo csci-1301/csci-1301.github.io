@@ -11,12 +11,12 @@ help:
 # if you change this value also change .travis.yml
 BUILD_DIR = build
 # The input to convert with pandoc
-INPUT_FILE = lectures/hello_world/index.md
+INPUT_FILE = lectures/*/index.md
 # if you change this value also change .travis.yml and any references to it
 OUT_FILENAME = $(BUILD_DIR)/book
 
 # Pandoc options for all output formats
-PANDOCOPTIONS:= --toc --section-divs
+PANDOCOPTIONS:= $(INPUT_FILE) --toc --section-divs
 # --filter pandoc-include  # inject inline code blocks
 
 # Path to HTML templates to use with pandoc
@@ -52,12 +52,15 @@ pre-build:
 
 build-html:
 	pandoc docs/index.md --self-contained --css=$(WEBPATH)style.css -o $(BUILD_DIR)/index.html
-	pandoc $(INPUT_FILE) $(PANDOCHTML) -o $(OUT_FILENAME).html
+	pandoc $(PANDOCHTML) -o $(OUT_FILENAME).html
 
 build-pdf:
-	pandoc $(INPUT_FILE) $(PANDOCPDF) -o $(OUT_FILENAME).pdf
+	pandoc $(PANDOCPDF) -o $(OUT_FILENAME).pdf
 	
 build-odt:
-	pandoc $(INPUT_FILE) $(PANDOCODT) -o $(OUT_FILENAME).odt
+	pandoc $(PANDOCODT) -o $(OUT_FILENAME).odt
 
 all: build
+
+
+
