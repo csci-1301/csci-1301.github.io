@@ -1,3 +1,3 @@
 # Templates
 
-This directory contains templating and style files.
+This directory contains meta data, templating and style files.
