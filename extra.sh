@@ -24,7 +24,7 @@ do
 done
 
 # build a paged version book and its toc
-temp_toc_file="___toc.md"
+temp_toc_file="toc.md"
 echo "" > $temp_toc_file
 files=($(find ${LECTURES_DIR} -type f -name 'index.md'))
 test -d $1/$PAGES || mkdir $1/$PAGES 
@@ -34,12 +34,12 @@ do
   title=$(head -n 1 $item)
   title=`echo ${title//"#"}`
   html_path=$PAGES/$filename.html
-  pandoc $item -o $1/$html_path $2 -B $PAGES_HEADER -A $PAGES_HEADER --metadata title="$title";
+  pandoc $item -o $1/$html_path $2 -B $PAGES_HEADER -A $PAGES_HEADER --metadata-file=$3;
   md_link="## [${title}](/$html_path)"
   echo "$md_link" >> $temp_toc_file
 done
 
-pandoc $temp_toc_file -f markdown -o $1/$PAGES/index.html ${2/"--toc"/""} --shift-heading-level-by=1 --metadata-file=$3
+pandoc $temp_toc_file -f markdown -o $1/$PAGES/index.html ${2/"--toc"/""} --metadata-file=$3
 rm -rf $temp_toc_file
 
 # TODO: write a script to zip lab files
