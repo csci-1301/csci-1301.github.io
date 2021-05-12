@@ -6,34 +6,44 @@ help:
 # Options
 # ===============================
 
+# ALL PATH RELATED SETTINGS
 # directory where to output build artifacts
 # if you change this value also change .travis.yml
 BUILD_DIR = build
-METADATA_FILE = meta.md
 # The input match pattern for which files to include in "the book"
 BOOK_FILES =  lectures/*/index.md
-# if you change this value also change all references to it
+# File where to get book metadata 
+METADATA_FILE = templates/meta.md
+# if you change this value also change all references to it!
 OUT_FILENAME = $(BUILD_DIR)/book
+# where to find the following
+DOCS_DIR = docs
+LECTURES_DIR = lectures
+PAGES = pages
 
-# Pandoc options for all output formats
-# --filter pandoc-include  # inject inline code blocks
+# PANDOC SETTINGS
+# Options for all output formats
 PANDOC_OPTIONS:= --toc --section-divs 
-
+# --filter pandoc-include  # inject inline code blocks, not workin rn
+#
+# HTML build options
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
+# generate index page for the website from this file
 WEB_INDEX = index.md
-# HTML build options
 # flags to apply to every HTML page
 PANDOC_HTML_ALL = --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -f markdown+emoji
 # additional options for "non-index" pages
 PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL)  -B $(WEBPATH)header.html
-
-# pandoc options for building pdf
+# header template for pages
+PAGES_HEADER=$(WEBPATH)header_book.html
+#
+# PDF build options
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
 # also this is a thing: may need another apt-get pandoc: unrecognized option `--pdf-engine=xelatex'
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf
-
-# pandoc options for building odt
+#
+# ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
 
 # ===============================
@@ -62,6 +72,6 @@ build-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
 extras:
-	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE)
+	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(PAGES) $(PAGES_HEADER)
 
 all: build

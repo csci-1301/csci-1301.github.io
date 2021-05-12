@@ -25,3 +25,6 @@ Available formats:
 - [Installing Software](/software_install) - guide on how to install various IDE / software
 - [Contributing Guidelines](/contributing) - contributing to this resource
 - [List of Topics](/topics_list) - list of required topics
+
+
+[Source code](https://github.com/csci-1301/csci-1301.github.io)
