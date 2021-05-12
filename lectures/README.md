@@ -1,6 +1,13 @@
 # Lecture Notes
 
-This directory contains all lecture notes.
+This directory contains all lecture notes. CSCI 1301 Book is generated from the contents of this directory.
+
+Some notes:
+
+- When creating a new lecture, let's call it `lecture xyz`:
+    1. first create a directory called `lecture_xyz` (follow the existing pattern)
+    2. under that directory, create an `index.md` and write notes there
+    
 
 <!-- In this index of lectures, add a short description what that lecture contains so it is not necessary to look inside the directory to understand its content -->
 

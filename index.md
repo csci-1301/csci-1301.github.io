@@ -8,11 +8,15 @@ based on what is defined in the makefile, just be aware of that while editing --
 
 ### Textbook
 
-[HTML](/book.html) [PDF](/book.pdf) [ODT](/book.odt)
+Available formats:
+
+ - [HTML](/book.html)
+ - [PDF](/book.pdf) 
+ - [ODT](/book.odt) 
 
 ### Labs
 
--
+- Soon
 
 ## Other Documents
 

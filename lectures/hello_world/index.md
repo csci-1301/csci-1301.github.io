@@ -2,7 +2,6 @@
 
 Setting up things. This is a sample document.
 
-
 ## My First Subtitle!
 
 Included code block

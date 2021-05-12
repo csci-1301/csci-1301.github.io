@@ -9,19 +9,24 @@ help:
 # directory where to output build artifacts
 # if you change this value also change .travis.yml
 BUILD_DIR = build
+METADATA_FILE = meta.md
 # The input match pattern for which files to include in "the book"
-BOOK_FILES = lectures/meta.md lectures/*/index.md
+BOOK_FILES =  lectures/*/index.md
 # if you change this value also change all references to it
 OUT_FILENAME = $(BUILD_DIR)/book
 
 # Pandoc options for all output formats
-PANDOC_OPTIONS:= --toc --section-divs
 # --filter pandoc-include  # inject inline code blocks
+PANDOC_OPTIONS:= --toc --section-divs 
 
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
+WEB_INDEX = index.md
 # HTML build options
-PANDOC_HTML:= $(PANDOC_OPTIONS) --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -B $(WEBPATH)header.html
+# flags to apply to every HTML page
+PANDOC_HTML_ALL = --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -f markdown+emoji
+# additional options for "non-index" pages
+PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL)  -B $(WEBPATH)header.html
 
 # pandoc options for building pdf
 # apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
@@ -42,21 +47,21 @@ clean:
 	@echo "cleaning build artifacts..."
 	rm -fr $(BUILD_DIR)
 
-extras:
-	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML)"
-
 pre-build:
 	@echo "starting build..."
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR)
 
 build-html:
-	pandoc index.md --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -o $(BUILD_DIR)/index.html	
-	pandoc $(BOOK_FILES) $(PANDOC_HTML) -o $(OUT_FILENAME).html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html	
+	pandoc $(BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(OUT_FILENAME).html --metadata-file=$(METADATA_FILE) --shift-heading-level-by=1
 
 build-pdf:
-	pandoc $(BOOK_FILES) $(PANDOC_PDF) -o $(OUT_FILENAME).pdf
+	pandoc $(BOOK_FILES) $(PANDOC_PDF) -o $(OUT_FILENAME).pdf --metadata-file=$(METADATA_FILE)
 	
 build-odt:
-	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt
+	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
+
+extras:
+	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE)
 
 all: build

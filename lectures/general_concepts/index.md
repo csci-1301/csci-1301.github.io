@@ -1,7 +1,5 @@
 # General Concepts
 
-## General Concepts
-
 - Programming languages types and paradigms
     - Machine language instructions
     - Assembly instructions
