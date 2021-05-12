@@ -11,7 +11,7 @@ help:
 # if you change this value also change .travis.yml
 BUILD_DIR = build
 # The input match pattern for which files to include in "the book"
-BOOK_FILES =  lectures/*/index.md
+BOOK_FILES =  lectures/*/readme.md
 # File where to get book metadata 
 METADATA_FILE = templates/meta.md
 # if you change this value also change all references to it!
@@ -32,7 +32,7 @@ WEBPATH = templates/web/
 # generate index page for the website from this file
 WEB_INDEX = index.md
 # flags to apply to every HTML page
-PANDOC_HTML_ALL = --self-contained --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -f markdown+emoji
+PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -f markdown+emoji
 # additional options for "non-index" pages
 PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL)  -B $(WEBPATH)header.html
 # header template for pages
@@ -72,6 +72,6 @@ build-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
 extras:
-	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(PAGES) $(PAGES_HEADER) $(LABS_DIR)
+	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(LABS_DIR) $(PAGES) $(PAGES_HEADER) 
 
 all: build

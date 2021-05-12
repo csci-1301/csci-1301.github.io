@@ -12,8 +12,29 @@ Included code block
 
 ## My Second Subtitle
 
+| # | Header |
+| --- | :--- |
+| 1 | Table row 1 |
+| 2 | Table row 2 |
+| 3 | Table row 3 |
+
+
+### Block quote examples
+
+
+Short
+
+> If you automate a mess, you get an automated mess.
+
+Longer
+
+> Programming without an overall architecture or design in mind is like exploring a cave with only a flashlight: You don’t know where you’ve been, you don’t know where you’re going, and you don’t know quite where you are.
+
 
 ### Inline Code block
+
+
+Some inline `int x` expressions `x = 0;`.
 
 ```csharp
 using System;
