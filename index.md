@@ -1,10 +1,14 @@
 ---
-title: Index Page
+title: Index
 ---
+
+<!--
+basic index page for pages website, this page makes some assumptions about paths
+based on what is defined in the makefile, just be aware of that while editing -->
 
 ### Textbook
 
-[HTML](book.html) [PDF](book.pdf) [ODT](book.odt)
+[HTML](/book.html) [PDF](/book.pdf) [ODT](/book.odt)
 
 ### Labs
 
@@ -16,4 +20,4 @@ title: Index Page
 - [Choosing Your Major](/choosing_major) - guide on how to pick your major       
 - [Installing Software](/software_install) - guide on how to install various IDE / software
 - [Contributing Guidelines](/contributing) - contributing to this resource
-- [List of Topics](/list) - list of required topics
+- [List of Topics](/topics_list) - list of required topics

@@ -1,4 +1,6 @@
-# Contributing Guidelines
+---
+title: Contributing Guidelines
+---
 
 TODO: 
 

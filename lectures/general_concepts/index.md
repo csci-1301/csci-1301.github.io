@@ -1,10 +1,4 @@
----
-title: General Concepts
-related_labs:         
-- labs/hello_world
-prereq:
-- None
----
+# General Concepts
 
 ## General Concepts
 

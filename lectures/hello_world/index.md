@@ -1,10 +1,4 @@
----
-title: Hello World
-related_labs:         
-- labs/hello_world
-prereq:
-- None
----
+# Hello World
 
 Setting up things. This is a sample document.
 
@@ -45,3 +39,5 @@ class Program {
 [Relative Link within same document](#my-first-subtitle)
 
 [Absolute Link](https://augusta.edu)
+
+[Cross lecture link](#general-concepts)

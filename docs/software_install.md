@@ -1,4 +1,6 @@
-# Installing Software
+---
+title: Installing Software
+---
 
 <!-- these are copy pasted from initial matrix, edward's lab 1 -->
 
@@ -47,7 +49,7 @@ There are plenty of ways this can go wrong: make sure you have read and followed
 #. Select "Download software". 
 #. Look for Visual Studio. The path is Education → Software → Visual Studio Enterprise 2019. You can search "Services" for the "Education" group and then click "Software" if the education group is not immediately displayed. It should look like the following:
 
-    ![](img/dl_VS.jpg){ width=80% }
+    <!-- ![](./img/dl_VS.jpg){ width=80% } -->
     
     Normally, the following direct link should get you to the right page: <https://portal.azure.com/?Microsoft_Azure_Education_correlationId=8ee63052-dc32-46f7-a109-e26793622dbf#>. Type "Education" in the search bar to get started on the path to the program to download.
 
@@ -56,7 +58,7 @@ There are plenty of ways this can go wrong: make sure you have read and followed
     If possible, check the box next to "Workload" → "Windows" → ".NET-Desktop Development", or to "Workload" → "Other Toolsets" → ".NET Core cross-platform development":
 
 
-    ![](img/install_option.jpeg){ width=80% }
+    <!-- ![](img/install_option.jpeg){ width=80% } -->
 
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".

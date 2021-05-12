@@ -6,5 +6,5 @@ This directory contains all lecture notes.
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| General Concepts | None | `hello_world` | Basic concepts about computers and programming |
-| Hello World | None | `hello_world` | Explains the components of a simple "Hello World" program |
+| [General Concepts](/lectures/general_concepts) | None | [`hello_world`](/labs/hello-world) | Basic concepts about computers and programming |
+| [Hello World](/lectures/hello_world) | None | [`hello_world`](/labs/hello-world) | Explains the components of a simple "Hello World" program |

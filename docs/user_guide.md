@@ -1,4 +1,6 @@
-# User Guide
+---
+title: User Guide
+---
 
 This guide explains how resources in this repository are organized and how they are maintained.
 

@@ -1,4 +1,6 @@
-# List of Topics
+---
+title: List of Topics
+---
 
 <!-- remainder is directly from initial-matrix/list.md -->
 

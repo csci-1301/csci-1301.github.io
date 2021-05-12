@@ -9,8 +9,7 @@ before_install:
   - sudo apt-get install -y pandoc
   - sudo apt-get install -y texlive
   - sudo apt-get install -y texlive-latex-extra
-  - sudo apt-get install -y lmodern
-  # - python -m pip install --upgrade pip
+  - sudo apt-get install -y lmodern 
   - pip install Pygments
   # - pip install pandoc-include
 
