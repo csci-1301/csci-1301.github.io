@@ -69,7 +69,7 @@ Each resource should, at minimum, list its prerequisites and security-related la
 Use of emoji shortcodes to label course resources
 
 | Description | Shortcode | Icon |
---- | --- | ---
+| :--- | --- | --- |
 | Security related aspects will be labelled as "security" | `:lock:` | :lock: |
 | Optional parts will be labelled as "optional" | `:question:` | ❓ |
 | Examples of common pitfalls | `:warning:` | ⚠️ |
@@ -78,7 +78,7 @@ Use of emoji shortcodes to label course resources
 
 1. Each resource will be labelled with prerequisites. 
 
-    This is a list of 0 or more values. For 0 we write `None`. These requirements are expressed in the associated index of lectures/labs/problems ([example](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+    This is a list of zero or more values. For zero prerequisites we write `None`. These requirements are expressed in the associated index of lectures/labs/problems ([example](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
 2. Lecture notes and slides will be labelled by related labs, and vice versa
 
@@ -111,7 +111,7 @@ what it will look like in advance or when making changes to the build system.
 
 **Install required dependencies**
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.travis.yml) which lists all required packages need to build the resource. The exact installation steps may vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.travis.yml) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -125,6 +125,6 @@ In general the following dependencies are needed:
 
 After installing all dependencies, from the repository root, run:
 
-```
+```bash
 make all
 ```

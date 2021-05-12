@@ -5,7 +5,7 @@
  :root{
    --color-text:#444;
    --color-link: #3D5AFE;
-   --color-link-visited: #3949AB;
+   --color-link-visited: #3D5AFE;
    --color-link-hover: #06e;
    --color-link-active: #faa700;
    --color-selected-text: #000;
@@ -14,7 +14,7 @@
    --color-quote: #666;
    --color-code: #000;
    --color-inline-code: #000;
-   --bg-code: transparent;
+   --bg-code: rgb(246, 248, 250);
    --bg-inline-code: rgba(27, 31, 35, 0.05);
    --bg-body: #fefefe;
    --bg-table-header: #eee;
@@ -40,7 +40,7 @@
     --color-code: #000;
     --color-inline-code: #F9A825;
     --bg-code: #eee;
-    --bg-inline-code: #263238;
+    --bg-inline-code: #263238CC;
     --bg-body: #232323;
     --bg-table-header: #51515c;
     --bg-selection: #FFEE58DD;
