@@ -18,8 +18,8 @@ View this resource on the web: **[Website](https://csci-1301.github.io)**
 | `lectures` | lecture notes |
 | `problems` | practice problems |
 
-`.github` and `templates` directories contain configuration files used for building this resources.
+Other directories are used for building and maintenance of this resources.
 
 ### Contributing to this resource
 
-See [contribution guidelines](/docs/contributing) and [user guide](/docs/user_guide) to get started.
+See [contribution guidelines](/docs/contributing.md) and [user guide](/docs/user_guide.md) to get started.
