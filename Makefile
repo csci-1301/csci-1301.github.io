@@ -24,8 +24,7 @@ PAGES = pages
 
 # PANDOC SETTINGS
 # Options for all output formats
-PANDOC_OPTIONS:= --toc --section-divs 
-# --filter pandoc-include  # inject inline code blocks, not workin rn
+PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include
 #
 # HTML build options
 # Path to HTML templates to use with pandoc

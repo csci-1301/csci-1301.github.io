@@ -12,7 +12,7 @@ before_install:
   - sudo apt-get install -y texlive-latex-extra
   - sudo apt-get install -y lmodern 
   - pip install Pygments
-  # - pip install pandoc-include
+  - pip install pandoc-include
 
 script:
   - make all
