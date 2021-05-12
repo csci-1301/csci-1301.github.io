@@ -34,17 +34,89 @@ Earlier versions of course material can be found under [releases](https://github
 
 <!-- add details about mirror websites, achives, galileo, etc. -->
 
-
 ## Editing Resources
 
-<!-- explain any existing contventions -->
+### Creating new lectures
+
+When creating a new lecture, let's call it `lecture xyz`:
+
+1. first create a directory called `lecture_xyz` under `lectures` directory
+
+    Following the existing pattern for naming convention which is lowercase and
+    separation by underscores.
+
+2. under that directory, create an `readme.md` (lowercase)
+
+    Here we use filename readme as it works nicely with Github. The build system
+    will look for files matching this pattern.
+
+Following these steps will automatically include the new lecture in the book. 
+
+Do not include meta section in individual sections because they will be concatenated. 
+
+### Creating new labs
+
+- [ ] TODO
+
+## Content Labelling
+
+Course resources are labelled with emoji shortcodes or text labels.
+
+Each resource should, at minimum, list its prerequisites and security-related label.
+
+### Labelling with shortcodes
+
+Use of emoji shortcodes to label course resources
+
+| Description | Shortcode | Icon |
+--- | --- | ---
+| Security related aspects will be labelled as "security" | `:lock:` | :lock: |
+| Optional parts will be labelled as "optional" | `:question:` | ❓ |
+| Examples of common pitfalls | `:warning:` | ⚠️ |
+
+### Labelling using text labels
+
+1. Each resource will be labelled with prerequisites. 
+
+    This is a list of 0 or more values. For 0 we write `None`. These requirements are expressed in the associated index of lectures/labs/problems, ([see example here](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+
+2. Lecture notes and slides will be labelled by related labs, and vice versa
+
+    These requirements are expressed in the associated index of lectures and labs, ([see example here](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
 
 ## Styling and Templating
 
+Templating files are under `templates` directory.
 
-## Content Labelling
+<!-- add more details... -->
 
+## Repository Maintenance
 
-## Maintenance
+This repository uses following tools and technologies
 
+- git - version control
+- Github - to make source code available on the web
+- markdown, LaTeX - for writing the resources
+- pandoc - for converting documents to various formats
+- make, bash - to specify how to build this resource
+- travis-ci - to automatically build the resource
+- github pages - to serve the accompanying website
+- additional packages for specific tasks: texlive, Pygments, pandoc filters, etc.
+
+### Building the resource locally
+
+It is generally not necessary to build this resource locally unless you want to see
+what it will look like in advance or when making changes to the build system.
+
+**Install required dependencies**
+
+- [ ] what needs to be installed
+
+**Running the build**
+
+From the repository root run:
+
+```
+make all
+```
