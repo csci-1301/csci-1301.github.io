@@ -2,7 +2,7 @@
 title: User Guide
 ---
 
-This guide explains how this repository is organized and howto maintain this resource.
+This guide explains how this repository is organized and how to maintain this resource.
 
 ## Resources Organization 
 
@@ -19,7 +19,7 @@ This repository is organized as follows
 | `problems` | practice problems |
 | `templates` | templates and meta data files used for building this resource |
 
-Additional configuration files are at the root of this resource.
+Additional configuration files are at the root of this repository.
 
 ### Locating course resources
 
@@ -31,6 +31,8 @@ all supported formats, links to labs, and all other available student resources.
 <!-- still working on this -- website will include all that stuff -->
 
 Earlier versions of course material can be found under [releases](https://github.com/csci-1301/csci-1301.github.io/releases).
+
+<!-- add details about mirror websites, achives, galileo, etc. -->
 
 
 ## Editing Resources

@@ -22,4 +22,4 @@ Other directories are used for building and maintenance of this resources.
 
 ### Contributing to this resource
 
-See [contribution guidelines](/docs/contributing.md) and [user guide](/docs/user_guide.md) to get started.
+See [contribution guidelines](https://csci-1301.github.io/contributing) and [user guide](https://csci-1301.github.io/user_guide) to get started.
