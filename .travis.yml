@@ -6,7 +6,8 @@ python:
   - "3.7"
 
 before_install: 
-  - sudo apt-get install -y pandoc
+  - wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb && sudo dpkg -i pandoc-2.13-1-amd64.deb
+  - pandoc --version
   - sudo apt-get install -y texlive
   - sudo apt-get install -y texlive-latex-extra
   - sudo apt-get install -y lmodern 
