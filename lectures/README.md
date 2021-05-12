@@ -17,5 +17,5 @@ meta section in individual sections because they will be concatenated. The overa
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| [General Concepts](/lectures/general_concepts) | None | [`hello_world`](/labs/hello-world) | Basic concepts about computers and programming |
-| [Hello World](/lectures/hello_world) | None | [`hello_world`](/labs/hello-world) | Explains the components of a simple "Hello World" program |
+| [General Concepts](/lectures/general_concepts) | None | [`hello_world`](/labs/hello_world) | Basic concepts about computers and programming |
+| [Hello World](/lectures/hello_world) | None | [`hello_world`](/labs/hello_world) | Explains the components of a simple "Hello World" program |

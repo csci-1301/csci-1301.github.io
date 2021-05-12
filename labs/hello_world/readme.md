@@ -33,9 +33,9 @@ keywords:
 #. Double click on the "Welcome.sln" file.
 #. If you are prompted with a screen like this one:
 
-    !["windows file picker asks how do you want to open this file?"](img/choice.jpg){ width=80% }
+!["windows file picker asks how do you want to open this file?"](./img/choice.jpg){ width=80% }
 
-    Pick "Visual Studio 2019" (and **not** Visual Studio Code or Blend for Visual Studio).
+Pick "Visual Studio 2019" (and **not** Visual Studio Code or Blend for Visual Studio).
 
 #. Visual Studio (VS) should start. You don't have to register to the "Visual Studio Team Services Organizations" (but you can, using your @augusta.edu account, if you want), discard the security warning if there is one.
 #. In the "Solution Explorer" to the right, expand all the items that can be expanded by clicking on the ▷ (right-triangle) symbol.
@@ -68,15 +68,15 @@ Now that you have practiced starting and using Visual Studio, there are a few ch
     Refer to [this page](https://msdn.microsoft.com/en-us/library/ms165339.aspx) for VS 2015, or [this page](https://docs.microsoft.com/en-us/visualstudio/ide/reference/how-to-manage-word-wrap-in-the-editor) for VS 2017 and 2019).
 The item to be clicked should look like this:
 
-    !["how to enable word wrap on Windows version of VS"](img/ww.jpg){ width=80% }
+!["how to enable word wrap on Windows version of VS"](./img/ww.jpg){ width=80% }
 
-    If you were successful, you should go from 
+If you were successful, you should go from 
 
-    !["VS editor before enabling word wrap"](img/before.jpg){ width=40% }
+!["VS editor before enabling word wrap"](./img/before.jpg){ width=40% }
 
-    to 
+to 
 
-    !["VS editor after enabling word wrap"](img/after.jpg){ width=40% }
+!["VS editor after enabling word wrap"](./img/after.jpg){ width=40% }
 
     See the difference?
     Once word-wrap is enabled, the horizontal scrolling will disappear, and every line that is too long is "wrapped"; this is indicated with the ![](img/sign.png) sign.
