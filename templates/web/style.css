@@ -4,8 +4,8 @@
 
  :root{
    --color-text:#444;
-   --color-link: #0645ad;
-   --color-link-visited: #0b0080;
+   --color-link: #3D5AFE;
+   --color-link-visited: #3949AB;
    --color-link-hover: #06e;
    --color-link-active: #faa700;
    --color-selected-text: #000;
@@ -36,7 +36,7 @@
     --color-selected-text: #333;
     --color-selected-link: #0645ad;
     --color-title: #fff;
-    --color-quote: #bbb;
+    --color-quote: #ddd;
     --color-code: #000;
     --color-inline-code: #F9A825;
     --bg-code: #eee;
@@ -49,7 +49,7 @@
     --border-table: #555;
     --border-hr-1: #aaa;
     --border-hr-2: #eee;
-    --border-quote: #EEE;
+    --border-quote: #999;
   }
 }
 
