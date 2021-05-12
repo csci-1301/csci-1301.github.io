@@ -13,7 +13,7 @@ Welcome to course resources website for CSCI 1301 at Augusta University.
 
 Available formats:
 
- - [HTML](/book.html)
+ - [HTML](/book)
  - [PDF](/book.pdf) 
  - [ODT](/book.odt) 
 

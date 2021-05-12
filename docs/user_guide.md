@@ -78,11 +78,11 @@ Use of emoji shortcodes to label course resources
 
 1. Each resource will be labelled with prerequisites. 
 
-    This is a list of 0 or more values. For 0 we write `None`. These requirements are expressed in the associated index of lectures/labs/problems, ([see example here](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+    This is a list of 0 or more values. For 0 we write `None`. These requirements are expressed in the associated index of lectures/labs/problems ([example](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
 2. Lecture notes and slides will be labelled by related labs, and vice versa
 
-    These requirements are expressed in the associated index of lectures and labs, ([see example here](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
+    These requirements are expressed in the associated index of lectures and labs ([example](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
 
 ## Styling and Templating
@@ -111,11 +111,19 @@ what it will look like in advance or when making changes to the build system.
 
 **Install required dependencies**
 
-- [ ] what needs to be installed
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.travis.yml) which lists all required packages need to build the resource. The exact installation steps may vary depending on your local operating system.
+
+In general the following dependencies are needed:
+
+- pandoc
+- LaTeX
+- make
+- python 3.+
+- pandoc filters: Pygments, include-code
 
 **Running the build**
 
-From the repository root run:
+After installing all dependencies, from the repository root, run:
 
 ```
 make all

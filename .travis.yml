@@ -5,7 +5,7 @@ language: python
 python:
   - "3.7"
 
-before_install: 
+install: 
   # get pandoc v2.13
   - wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb && sudo dpkg -i pandoc-2.13-1-amd64.deb
   # to generate pdfs with pandoc

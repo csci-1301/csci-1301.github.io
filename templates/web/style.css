@@ -31,7 +31,7 @@
     --color-text:#e4e4e4;
     --color-link: #03A9F4;
     --color-link-visited: #03A9F4;
-    --color-link-hover: #2979FF;
+    --color-link-hover: #FDD835;
     --color-link-active: #FBC02D;
     --color-selected-text: #333;
     --color-selected-link: #0645ad;
@@ -47,8 +47,8 @@
     --bg-ins: #ff9;
     --bg-mark: #ff0;
     --border-table: #555;
-    --border-hr-1: #aaa;
-    --border-hr-2: #eee;
+    --border-hr-1: #555;
+    --border-hr-2: #888;
     --border-quote: #999;
   }
 }
@@ -63,12 +63,27 @@
   body {
     color: var(--color-text);
     font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-    font-size: 12px;
+    font-size:  1em;
     line-height: 1.7;
     padding: 1em;
     margin: auto;
     max-width: 42em;
     background: var(--bg-body);
+  }
+
+  .page-header{
+    display: block;
+  }
+
+  .page-header .home {
+    font-size: 120%; 
+    display: inline-block;
+    /* adding height to make this touch target big enough */
+    line-height: 48px;
+  }
+
+  #title-block-header .title{
+    margin-top:0;
   }
 
   main{
@@ -80,6 +95,11 @@
     padding-top: .5rem;
     border-top: 1px solid var(--border-table);
   }
+
+  footer .links a:not(:last-child){
+    display: inline-block;
+    margin-right: 1em;
+  }
   
   a {
     color: var(--color-link);
@@ -90,7 +110,7 @@
     color: var(--color-link-visited);
   }
   
-  a:hover {
+  a:hover, a:focus {
     color: var(--color-link-hover);
   }
   
@@ -142,27 +162,27 @@
   }
   
   h1 {
-    font-size: 2.5em;
+    font-size: 1.85em;
   }
   
   h2 {
-    font-size: 2em;
+    font-size: 1.65em;
   }
   
   h3 {
-    font-size: 1.5em;
+    font-size: 1.45em;
   }
   
   h4 {
-    font-size: 1.2em;
+    font-size: 1.25em;
   }
   
   h5 {
-    font-size: 1em;
+    font-size: 1.1em;
   }
   
   h6 {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   
   blockquote {
@@ -187,7 +207,7 @@
     background: var(--bg-code);
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo, monospace, monospace;
     _font-family: 'courier new', monospace;
-    font-size: 0.95em;
+    font-size: 0.90em;
   }
 
   kbd, *:not(pre) > code{
@@ -198,7 +218,7 @@
     line-height: 1;
     margin-left: 3px;
     margin-right: 3px;
-    font-size: 85%;
+    font-size: 100%;
     border-radius: 6px;
   }
 
@@ -329,17 +349,36 @@
     font-size: 1.2em;
     text-align: center;
   }
-  
-  @media only screen and (min-width: 480px) {
-    body {
-      font-size: 14px;
+  @media(min-width:678px){
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    
+    h3 {
+      font-size: 1.5em;
+    }
+    
+    h4 {
+      font-size: 1.2em;
+    }
+    
+    h5 {
+      font-size: 1em;
+    }
+    
+    h6 {
+      font-size: 0.9em;
+    }
+    
+    #title-block-header .title{
+      margin-top: 2em;
     }
   }
-  @media only screen and (min-width: 768px) {
-    body {
-      font-size: 16px;
-    }
-  }
+
+
   @media print {
     * {
       background: transparent !important;
