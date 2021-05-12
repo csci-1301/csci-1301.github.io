@@ -16,15 +16,14 @@ BOOK_FILES =  lectures/*/readme.md
 METADATA_FILE = templates/meta.md
 # if you change this value also change all references to it!
 OUT_FILENAME = $(BUILD_DIR)/book
-# where to find the following
-DOCS_DIR = docs
+# where to find all of the following
 LECTURES_DIR = lectures
+DOCS_DIR = docs
 LABS_DIR = labs
-PAGES = pages
 
 # PANDOC SETTINGS
 # Options for all output formats
-PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include
+PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji
 #
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -32,16 +31,14 @@ WEBPATH = templates/web/
 # generate index page for the website from this file
 WEB_INDEX = index.md
 # flags to apply to every HTML page
-PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html -f markdown+emoji
+PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html
 # additional options for "non-index" pages
 PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL)  -B $(WEBPATH)header.html
 # header template for pages
 PAGES_HEADER=$(WEBPATH)header_book.html
 #
 # PDF build options
-# apparently this is a thing: unrecognized option `--pdf-engine-opt=-shell-escape'
-# also this is a thing: may need another apt-get pandoc: unrecognized option `--pdf-engine=xelatex'
-PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf
+PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
 #
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
@@ -49,8 +46,6 @@ PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg
 # ===============================
 # Rules
 # ===============================
-
-build: pre-build build-html build-pdf build-odt extras
 
 .PHONY: clean
 clean:
@@ -61,17 +56,28 @@ pre-build:
 	@echo "starting build..."
 	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR)
 
-build-html:
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html	
+book-html:
 	pandoc $(BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(OUT_FILENAME).html --metadata-file=$(METADATA_FILE)
 
-build-pdf:
+book-pdf:
 	pandoc $(BOOK_FILES) $(PANDOC_PDF) -o $(OUT_FILENAME).pdf --metadata-file=$(METADATA_FILE)
 	
-build-odt:
+book-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
+build-docs: 
+	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).html $(PANDOC_HTML_PAGES) ;)
+	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).pdf $(PANDOC_PDF) ;)
+	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
+
+build-web-index:
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html	
+
 extras:
-	./extra.sh $(BUILD_DIR) "$(PANDOC_HTML_PAGES)" $(METADATA_FILE) $(DOCS_DIR) $(LECTURES_DIR) $(LABS_DIR) $(PAGES) $(PAGES_HEADER) 
+	./extra.sh $(BUILD_DIR) $(LABS_DIR) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)"
+
+build-all-books: book-html book-pdf book-odt
+
+build: pre-build build-all-books build-web-index build-docs extras
 
 all: build
