@@ -29,8 +29,8 @@
  @media (prefers-color-scheme: dark) {
   :root {
     --color-text:#e4e4e4;
-    --color-link: #40C4FF;
-    --color-link-visited: #00C853;
+    --color-link: #03A9F4;
+    --color-link-visited: #80CBC4;
     --color-link-hover: #2979FF;
     --color-link-active: #FBC02D;
     --color-selected-text: #333;

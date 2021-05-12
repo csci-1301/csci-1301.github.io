@@ -6,13 +6,14 @@ This directory contains all lecture notes. CSCI 1301 Book is automatically gener
 
 When creating a new lecture, let's call it `lecture xyz`:
 
-1. first create a directory called `lecture_xyz` following the existing pattern
-2. under that directory, create an `readme.md` and write notes there
+1. first create a directory called `lecture_xyz` (follow the existing naming convention)
+2. under that directory, create file `readme.md`, then write notes there
 
 Following these steps will automatically include the new lecture in the book. 
 
 Do not include meta section in individual sections because they will be concatenated. The book [meta data file is here](/templates/meta.md).
 
+## Prerequisites and related labs
     
 <!-- Add descriptions of all lectures here -->
 

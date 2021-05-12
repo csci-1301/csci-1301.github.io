@@ -47,12 +47,11 @@ When creating a new lecture, let's call it `lecture xyz`:
 
 2. under that directory, create an `readme.md` (lowercase)
 
-    Here we use filename readme as it works nicely with Github. The build system
-    will look for files matching this pattern.
+    Here we use filename readme as it works nicely with Github. The build system will look for files matching this pattern. Pandoc appears to use a case-insensitive match pattern, at least currently, but to be safe use lowercase convention when naming this file to [match the expected pattern](https://github.com/csci-1301/csci-1301.github.io/blob/d0cca5dfab111ed9148256992b63fbed9c05b880/Makefile#L14).
 
 Following these steps will automatically include the new lecture in the book. 
 
-Do not include meta section in individual sections because they will be concatenated. 
+Do not include meta section in individual lecture files because these lectures will be concatenated by pandoc into single larger document. Any meta data in individual files would appear somewhere in the middle of the larger document, and as such will not be treated as front matter.
 
 ### Creating new labs
 
