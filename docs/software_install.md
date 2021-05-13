@@ -19,7 +19,7 @@ For the last part, make sure you've read Dr. Aubert's email "CSCI 1301 -- Second
 Don't hesitate to say, "hi" in the chat room!
 -->
 
-# Accessing And Using Visual Studio
+## Accessing And Using Visual Studio
 
 The software we will primarily be using this semester is called Visual Studio.
 This part will detail how to access it.

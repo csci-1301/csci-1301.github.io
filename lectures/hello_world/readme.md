@@ -6,7 +6,7 @@ Setting up things. This is a sample document.
 
 Included code block
 
-```csharp
+```
 !include code/sample.cs
 ```
 
@@ -36,7 +36,7 @@ Longer
 
 Some inline `int x` expressions `x = 0;`.
 
-```csharp
+```
 using System;
 
 class Program {

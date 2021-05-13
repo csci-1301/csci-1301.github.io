@@ -23,7 +23,8 @@ LABS_DIR = labs
 
 # PANDOC SETTINGS
 # Options for all output formats
-PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji
+PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji \
+	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp
 #
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -63,9 +64,13 @@ book-pdf:
 book-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
-build-docs: 
+build-docs-html:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).html $(PANDOC_HTML_PAGES) ;)
+
+build-docs-pdf:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).pdf $(PANDOC_PDF) ;)
+
+build-docs-odt:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
 
 build-web-index:
@@ -74,8 +79,16 @@ build-web-index:
 extras:
 	./extra.sh $(BUILD_DIR) $(LABS_DIR) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)"
 
-build-all-books: book-html book-pdf book-odt
+# when you want to test book build in isolation
+build-all-books: pre-build book-html book-pdf book-odt
 
-build: pre-build build-all-books build-web-index build-docs extras
+# when you want to test web in isolation
+web-only: pre-build book-html build-docs-html build-web-index
+
+# build docs directory in all different formats
+build-all-docs: build-docs-html build-docs-pdf build-docs-odt
+
+# default build to build everything and all formats
+build: build-all-books build-all-docs build-web-index extras
 
 all: build

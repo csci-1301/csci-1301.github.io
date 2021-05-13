@@ -1,6 +1,4 @@
-/*
- * Custom CSS for web pages generated with pandoc
- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
  :root{
    --color-text:#444;
@@ -62,7 +60,7 @@
   
   body {
     color: var(--color-text);
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-family: "Merriweather", Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
     font-size:  1em;
     line-height: 1.7;
     padding: 1em;
@@ -94,6 +92,7 @@
     margin-top: 3rem;
     padding-top: .5rem;
     border-top: 1px solid var(--border-table);
+    padding-bottom: 2rem;
   }
 
   footer .links a:not(:last-child){
@@ -351,10 +350,10 @@
   }
   @media(min-width:678px){
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
     }
     h2 {
-      font-size: 2em;
+      font-size: 1.75em;
     }
     
     h3 {
