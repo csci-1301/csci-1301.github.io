@@ -1,5 +1,7 @@
 help:
-	@echo "build - build everything"
+	@echo "all - build everything"
+	@echo "all-books - build books only (in all formats)"
+	@echo "web-only - to test web rendering only"
 	@echo "clean - remove generated build artifacts"
 
 # ===============================
@@ -79,16 +81,10 @@ build-web-index:
 extras:
 	./extra.sh $(BUILD_DIR) $(LABS_DIR) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)"
 
-# when you want to test book build in isolation
-build-all-books: pre-build book-html book-pdf book-odt
+all-books: pre-build book-html book-pdf book-odt
 
-# when you want to test web in isolation
-web-only: pre-build book-html build-docs-html build-web-index
+web-only: pre-build build-docs-html build-web-index book-html
 
-# build docs directory in all different formats
-build-all-docs: build-docs-html build-docs-pdf build-docs-odt
-
-# default build to build everything and all formats
-build: build-all-books build-all-docs build-web-index extras
+build: pre-build build-docs-html build-docs-pdf build-docs-odt build-web-index book-html book-pdf book-odt extras
 
 all: build

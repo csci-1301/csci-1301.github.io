@@ -6,19 +6,19 @@ python:
   - "3.7"
 
 install: 
-  # get pandoc v2.13
+  # pandoc v2.13
   - wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb && sudo dpkg -i pandoc-2.13-1-amd64.deb
-  # to generate pdfs with pandoc
+  # LaTeX
   - sudo apt-get install -y texlive
-  # to use XeLatex pandoc option
+  # needed to use XeLatex pandoc option
   - sudo apt-get install -y texlive-xetex
-  # resolves: LaTeX Error: `letltxmacro.sty' not found
+  # resolves LaTeX Error: `letltxmacro.sty' not found
   - sudo apt-get install -y texlive-latex-extra
   # resolves another LaTeX .sty error
   - sudo apt-get install -y lmodern 
-  # for code highlighting
+  # needed for code highlighting
   - pip install Pygments
-  # for including files within markdown
+  # needed for including other files within markdown
   - pip install pandoc-include
 
 script:
@@ -35,6 +35,8 @@ deploy:
     skip_cleanup: true
     api_key: $github_token
     file:
+      # list of files to include in release package
+      - build/book.html
       - build/book.pdf
       - build/book.odt
     on:

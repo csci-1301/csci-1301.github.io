@@ -18,7 +18,7 @@ This repository is organized as follows
 | `lectures` | lecture notes |
 | `problems` | practice problems |
 | `templates` | templates and meta data files used for building this resource |
-| `index.md` | resources website index page |
+| `index.md` | website index page |
 
 Additional configuration files are at the root of this repository.
 
