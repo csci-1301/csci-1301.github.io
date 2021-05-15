@@ -2,6 +2,10 @@
 
 This directory contains all lab exercises.
 
+## How to create new labs
+
+
+
 <!-- In this index of labs, add a short description of what each lab contains -->
 
 | Lab title | Prerequisites | Related Lectures |  Description |

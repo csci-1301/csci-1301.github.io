@@ -43,6 +43,7 @@ PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji 
 WEBPATH = templates/web/
 # generate index page for the website from this file
 WEB_INDEX = index.md
+404_PAGE = 404.md
 # flags to apply to every HTML page
 PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html
 # additional options for "non-index" pages
@@ -95,7 +96,8 @@ build-docs-odt:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
 
 build-web-index:
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html	
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html
+	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html
 
 extras:
 	./extra.sh $(BUILD_DIR) $(LABS_DIR) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)"

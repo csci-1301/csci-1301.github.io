@@ -145,7 +145,7 @@ choice of Python packages is preferable for pandoc filters, because they are usu
 
 Currently (May 2021) Github actions offers 2,000 free build minutes/month, which _should be_ sufficient for the needs of this project and hopefully remains free in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
 
-Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs. Generated build outputs can also be observed under [actions](https://github.com/csci-1301/csci-1301.github.io/actions).
+Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs.
 
 ## How to create releases
 
