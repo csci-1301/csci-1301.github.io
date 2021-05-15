@@ -1,6 +1,6 @@
 # Principles of Computer Programming I
 
-[![build](https://travis-ci.com/csci-1301/csci-1301.github.io.svg?branch=main)](https://travis-ci.com/github/csci-1301/csci-1301.github.io)
+[[![Build](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml/badge.svg)](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml)](https://github.com/csci-1301/csci-1301.github.io/actions)
 
 This is source code repository for CSCI 1301 course resources.
 
