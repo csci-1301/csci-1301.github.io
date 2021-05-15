@@ -22,6 +22,16 @@ OUT_FILENAME = $(BUILD_DIR)/book
 LECTURES_DIR = lectures
 DOCS_DIR = docs
 LABS_DIR = labs
+# Files
+DOC_FILES=$(DOCS_DIR)/*.md
+
+# PERFORMANCE
+MAKEFLAGS:= -j
+# Maximize parallel execution whenever possible
+
+# MAKEFILE OPTION
+.DEFAULT_GOAL:= all
+# By default, we construct all the files.
 
 # PANDOC SETTINGS
 # Options for all output formats
@@ -66,13 +76,22 @@ book-pdf:
 book-odt:
 	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
 
-build-docs-html:
-	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).html $(PANDOC_HTML_PAGES) ;)
+# Around 7 sec.
+# build-docs-html:
+# 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).html $(PANDOC_HTML_PAGES) ;)
+
+
+# Around 4 sec.
+.PHONY: build-docs-html $(DOC_FILES)
+build-docs-html: $(DOC_FILES)
+$(DOC_FILES):
+	pandoc $@ -o $(BUILD_DIR)/$(addsuffix .html,$(shell basename $@)) $(PANDOC_HTML_PAGES)
+
 
 build-docs-pdf:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).pdf $(PANDOC_PDF) ;)
 
-build-docs-odt:
+build-docs-odt: 
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
 
 build-web-index:
