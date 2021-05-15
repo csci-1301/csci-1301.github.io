@@ -1,0 +1,36 @@
+name: Pull request
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: cache
+      uses: actions/cache@v2 
+      with:
+        path: |
+          ~/.cache
+          pandoc-2.13-1-amd64.deb
+        key: ${{ runner.os }}-pip-
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9  
+    - name: Install dependencies
+      run: |
+        test -f pandoc-2.13-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb 
+        sudo dpkg -i pandoc-2.13-1-amd64.deb
+        sudo apt-get install -y texlive
+        sudo apt-get install -y texlive-xetex
+        sudo apt-get install -y texlive-latex-extra
+        sudo apt-get install -y lmodern 
+        pip install Pygments pandoc-include
+    - name: build
+      run: |
+        make all
