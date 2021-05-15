@@ -23,7 +23,7 @@ Available formats:
 
 ## Other Documents
 
-- [Student Learning Outcomes](/learning_outcomes) - expectecd student learning outcomes
+- [Student Learning Outcomes](/learning_outcomes) - expected student learning outcomes
 - [Choosing Your Major](/choosing_major) - guide on how to pick your major       
 - [Installing Software](/software_install) - guide on how to install various IDE / software
 - [Contributing Guidelines](/contributing) - contributing to this resource
