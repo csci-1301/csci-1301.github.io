@@ -100,7 +100,7 @@ This repository uses following tools and technologies
 - markdown, LaTeX - for writing the resources
 - pandoc - for converting documents to various formats
 - make, bash - to specify how to build this resource
-- travis-ci - to automatically build the resource
+- github actions - to automatically build the resource
 - github pages - to serve the accompanying website
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, etc.
 
@@ -111,7 +111,7 @@ what it will look like in advance or when making changes to the build system.
 
 **Install required dependencies**
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.travis.yml) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 

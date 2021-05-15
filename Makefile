@@ -10,7 +10,7 @@ help:
 
 # ALL PATH RELATED SETTINGS
 # directory where to output build artifacts
-# if you change this value also change .travis.yml
+# if you change this value also change build settings
 BUILD_DIR = build
 # The input match pattern for which files to include in "the book"
 BOOK_FILES =  lectures/*/readme.md
