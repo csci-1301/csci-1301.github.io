@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
 
  :root{
    --color-text:#444;
@@ -26,7 +26,7 @@
  }
  @media (prefers-color-scheme: dark) {
   :root {
-    --color-text:#e4e4e4;
+    --color-text:#e0e0e0;
     --color-link: #03A9F4;
     --color-link-visited: #03A9F4;
     --color-link-hover: #FDD835;
@@ -40,7 +40,7 @@
     --bg-code: #eee;
     --bg-inline-code: #263238CC;
     --bg-body: #232323;
-    --bg-table-header: #51515c;
+    --bg-table-header: #51515c99;
     --bg-selection: #FFEE58DD;
     --bg-ins: #ff9;
     --bg-mark: #ff0;
@@ -68,6 +68,10 @@
     max-width: 42em;
     background: var(--bg-body);
   }
+  pre, pre > code, samp,
+  kbd, *:not(pre) > code{
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo, monospace, monospace;
+  }
 
   .page-header{
     display: block;
@@ -76,7 +80,7 @@
   .page-header .home {
     font-size: 120%; 
     display: inline-block;
-    /* adding height to make this touch target big enough */
+    /* make this touch target big enough */
     line-height: 48px;
   }
 
@@ -86,6 +90,11 @@
 
   main{
     min-height: 75vh;
+  }
+
+  section.level1 {
+    border-top: 1px solid var(--border-table);
+    margin-top:3rem;
   }
 
   footer{
@@ -193,31 +202,35 @@
   
   hr {
     display: block;
-    height: 2px;
+    height: 1px;
     border: 0;
     border-top: 1px solid var(--border-hr-1);
     border-bottom: 1px solid var(--border-hr-2);
-    margin: 1em 0;
+    margin: 2rem 0;
     padding: 0;
   }
-  
+
+  hr + section > h2 {margin-top: 0;}
+
   pre, pre > code, samp {
     color: var(--color-code);
     background: var(--bg-code);
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo, monospace, monospace;
     _font-family: 'courier new', monospace;
     font-size: 0.90em;
   }
 
+  kbd, *:not(pre) > code, *:not(pre) > code span{
+    color: var(--color-inline-code)!important;
+    font-weight: normal!important;
+  }
+
   kbd, *:not(pre) > code{
     background: var(--bg-inline-code);
-    color: var(--color-inline-code);
     display: inline-block;
-    padding: .2em .4em;
-    line-height: 1;
+    padding: 0 .4em;
     margin-left: 3px;
     margin-right: 3px;
-    font-size: 100%;
+    font-size: .85em;
     border-radius: 6px;
   }
 
@@ -234,7 +247,8 @@
   }
   
   b, strong {
-    font-weight: bold;
+    font-weight: 900;
+    letter-spacing: .05em;
   }
   
   dfn {

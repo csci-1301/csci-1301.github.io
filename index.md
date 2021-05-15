@@ -28,5 +28,5 @@ Available formats:
 - [Installing Software](/software_install) - guide on how to install various IDE / software
 - [Contributing Guidelines](/contributing) - contributing to this resource
 - [List of Topics](/topics_list) - list of required topics
-
+- [User Guide](/user_guide) - details about this resource
 

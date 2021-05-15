@@ -2,12 +2,16 @@
 
 This directory contains all lecture notes. CSCI 1301 Book is automatically generated from the contents of this directory.
 
-**Instructions for creating new lectures**
+### Instructions for creating new lectures
 
 When creating a new lecture, let's call it `lecture xyz`:
 
-1. first create a directory called `lecture_xyz` (follow the existing naming convention)
-2. under that directory, create file `readme.md`, then write notes there
+1. Create a directory called `NNN_lecture_xyz` 
+
+    - follow the existing convention for numbering and case
+    - the numbers tell pandoc how to order book content. Use leading zero and increments of 10. Choose a number number based on where in the book the new lecture should appear.
+
+2. under that directory, create new file `readme.md`. Write lecture notes in this file using markdown.
 
 Following these steps will automatically include the new lecture in the book. 
 
