@@ -25,5 +25,5 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| [General Concepts](/lectures/general_concepts) | None | [`HelloWorld`](/labs/HelloWorld) | Basic concepts about computers and programming |
-| [Hello World](/lectures/hello_world) | None | [`HelloWorld`](/labs/HelloWorld) | Explains the components of a simple "Hello World" program |
+| [General Concepts](/lectures/010_general_concepts) | None | [`HelloWorld`](/labs/HelloWorld) | Basic concepts about computers and programming |
+| [First Program](/lectures/020_first_program) | None | [`HelloWorld`](/labs/HelloWorld) | Explains the components of a simple "Hello World" program |

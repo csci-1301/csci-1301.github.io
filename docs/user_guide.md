@@ -41,26 +41,42 @@ Ways to obtain **earlier** versions of this resource:
  
 # Editing Resources
 
-If you are new to this project and looking to contribute, first see [Contributing Guidelines](/contributing) to learn about the different ways to contribute and how to gain access.
+If you are new to this project, first see [Contributing Guidelines](/contributing) to learn about the different ways you can contribute and how to join contributing teams.
 
 ## Best practices for all forms of content
 
 - **Structure for accesibility**
-    - All resources are titled
-        - TODO: explain how
-    - All resources are [labelled](#content-labelling) when applicable
+    - All resources are titled TODO: explain how
+    - All resources are labelled when applicable
         - at minimum list prerequisites and security-related aspects
+        - see [Content Labelling](#content-labelling) for more details
 - **Images**
     - Images require a descriptive alt tag for accessibility
     - Store images in the repository in `img` directory because pandoc will look for images there 
     - When refering to images in markdown, use path from root even if the image may appear broken locally
+
+    **Syntax example.** The quoted text is the alt tag and in parentheses is path to file
+
+    ```
+    !["image of visual studio IDE"](./img/image.jpg)
+    ```
+
 - **Source code**
-    - source code programs belong in `code` directory 
+    - source code programs belong _primarily_ in `code` directory 
         - the code included in this directory should be a complete program
         - the program should compile and terminate
-        - we can automatically check these code snippets for syntactical correctness if these expectations are followed
-        - such program can be included in lecture notes of labs by using pandoc-include filter
-    - source code that is faulty, partial or does not terminate can be included in markdown as an inline code block
+        - source code that is faulty, partial or does not terminate can be included in markdown as inline code block
+        - we can automatically check these code snippets for syntactical correctness if these guidelines are followed
+ 
+    - code snippet can be included in markdown documents using pandoc-include filter:
+
+        <pre>
+        ```
+        !include code/sample.cs
+        ```</pre>
+
+    - code blocks are by default annotated as `csharp` unless stated otherwise
+    - syntax highlighting is applied automatically at build time
     - only include code in text form such that it can be copy-pasted for reuse
 
 ## Creating new lectures
