@@ -4,7 +4,7 @@ title: List of Labs
 
 [Download all labs](/labs.zip)
 
-<!-- the remainder of this document will be generated dynamically -->
+<!-- the remainder of this document will be generated dynamically. Do not edit below this line! -->
 
-| Title | Instructions | Program |
+| Lab title | Instructions | Program |
 | :-- | --- | --- |

@@ -1,13 +1,34 @@
 # Labs
 
-This directory contains all lab exercises.
+This directory contains all lab exercises. 
 
 ## How to create new labs
 
+1. Choose a short and unique name that describes the lab
+2. Create a directory matching that name (use PascalCase since this is C#)
+3. Under the lab directory create:
+    1. `readme.md` (case sensitive) - write lab instructions in this file. You should include meta fields, at minimum a title
 
+    ```
+    ---
+    title: Hello World
+    ---
 
-<!-- In this index of labs, add a short description of what each lab contains -->
+    (instructions here....)
+    ```
+
+    2. (optional) if you want to include starter code with the lab create a subdirectory called `src` and add all source code files under this directory. Only include program files (not solution or project). 
+
+If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
+
+1. readme will be converted to index (html, pdf, odt)
+2. contents of `src` will be converted to a standalone C# solution as a zip file. This solution will have the same name as the lab directory which is why directory names should use PascalCase.
+3. all matching the described format will be included in `labs.zip` which you can find on the website or under releases
+
+## Prerequisites and related lectures
+
+<!-- Add a short description of what each lab contains. Also list prerequisites and reference to related lecture notes. -->
 
 | Lab title | Prerequisites | Related Lectures |  Description |
 | :--- | :--- | :--- | :--- |
-| [Hello World](/labs/HelloWorld) | None | [General Concepts](/lectures/general_concepts), [Hello World](/lectures/hello_world) | Compile and run hello world program |
+| [HelloWorld](/labs/HelloWorld) | None | [General concepts](/lectures/010_general_concepts), [Hello World](/lectures/020_hello_world) | Compile and run hello world program |

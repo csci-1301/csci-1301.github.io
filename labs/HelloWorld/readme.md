@@ -1,7 +1,7 @@
 ---
 title: Hello World Lab
 author: Edward Tremel    # make this a variable/build locally with "own name everywhere"
-date: January 11, 2021   # populate this dynamically or remove, it is only accurate on that 1 day when it is, and never again
+# date: January 11, 2021   # populate this dynamically or remove, it is only accurate on that 1 day when it is, and never again
 lang: en
 fontsize: 10pt
 documentclass: scrartcl  # templating

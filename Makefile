@@ -16,7 +16,7 @@ BUILD_DIR = build
 # The input match pattern for which files to include in "the book"
 BOOK_FILES =  lectures/*/readme.md
 # File where to get book metadata 
-METADATA_FILE = templates/meta.md
+METADATA_FILE = templates/book_meta.md
 # if you change this value also change all references to it!
 OUT_FILENAME = $(BUILD_DIR)/book
 # where to find all of the following
@@ -102,7 +102,7 @@ build-web-index:
 	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html -A $(WEBPATH)footer.html
 
 build-labs:
-	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_ALL)" "$(PANDOC_PDF)" "$(PANDOC_ODT)" "$(PANDOC_HTML_PAGES)"
+	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)" "$(PANDOC_HTML_PAGES)"
 
 all-books: pre-build book-html book-pdf book-odt
 

@@ -15,9 +15,9 @@ When creating a new lecture, let's call it `lecture xyz`:
 
 Following these steps will automatically include the new lecture in the book. 
 
-Do not include meta section in individual sections because they will be concatenated. The book [meta data file is here](/templates/meta.md).
+Do not include meta section in individual lecture notes because they will be concatenated. The book [meta data file is here](/templates/book_meta.md).
 
-Enter a prerequisites and related labs for the lecture in the table below.
+Next create an entry for the new lecture in the table below. Label all prerequisites and related labs.
 
 ## Prerequisites and related labs
     
@@ -25,5 +25,5 @@ Enter a prerequisites and related labs for the lecture in the table below.
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| [General Concepts](/lectures/general_concepts) | None | [`hello_world`](/labs/hello_world) | Basic concepts about computers and programming |
-| [Hello World](/lectures/hello_world) | None | [`hello_world`](/labs/hello_world) | Explains the components of a simple "Hello World" program |
+| [General Concepts](/lectures/general_concepts) | None | [`HelloWorld`](/labs/HelloWorld) | Basic concepts about computers and programming |
+| [Hello World](/lectures/hello_world) | None | [`HelloWorld`](/labs/HelloWorld) | Explains the components of a simple "Hello World" program |

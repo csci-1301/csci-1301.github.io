@@ -39,7 +39,6 @@ Ways to obtain **earlier** versions of this resource:
 
 <!-- other places? -->
  
-
 # Editing Resources
 
 If you are new to this project and looking to contribute, first see [Contributing Guidelines](/contributing) to learn about the different ways to contribute and how to gain access.
@@ -82,7 +81,18 @@ Do not include meta section in individual lecture files because these lectures w
 
 ## Creating new labs
 
-- [ ] TODO
+1. Choose a short and unique name that describes the lab
+2. Create a directory matching that name (use PascalCase since this is C#)
+3. Under the lab directory create:
+
+    1. `readme.md` (case sensitive) - write lab instructions in this file. You should include meta fields, at minimum a title
+    2. (optional) if you want to include starter code with the lab create a subdirectory called `src` and add all source code files under this directory. Only include program files (not solution or project). 
+
+If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
+
+1. readme will be converted to index (html, pdf, odt)
+2. contents of `src` will be converted to a standalone C# solution as a zip file. This solution will have the same name as the lab directory which is why directory names should use PascalCase.
+3. all matching the described format will be included in `labs.zip` which you can find on the website or under releases
 
 # Content Labelling
 
