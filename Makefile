@@ -1,7 +1,8 @@
 help:
 	@echo "all - build everything"
 	@echo "all-books - build books only (in all formats)"
-	@echo "web-only - to test web rendering only"
+	@echo "labs-only - build labs only"
+	@echo "web-only - build html only, useful for testing web rendering"
 	@echo "clean - remove generated build artifacts"
 
 # ===============================
@@ -22,6 +23,7 @@ OUT_FILENAME = $(BUILD_DIR)/book
 LECTURES_DIR = lectures
 DOCS_DIR = docs
 LABS_DIR = labs
+LAB_TEMPLATES= templates/labs/
 # Files
 DOC_FILES=$(DOCS_DIR)/*.md
 
@@ -45,9 +47,9 @@ WEBPATH = templates/web/
 WEB_INDEX = index.md
 404_PAGE = 404.md
 # flags to apply to every HTML page
-PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css -A $(WEBPATH)footer.html
+PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css 
 # additional options for "non-index" pages
-PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL)  -B $(WEBPATH)header.html
+PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
 #
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
@@ -96,16 +98,18 @@ build-docs-odt:
 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
 
 build-web-index:
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html
-	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html -A $(WEBPATH)footer.html
+	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html -A $(WEBPATH)footer.html
 
-extras:
-	./extra.sh $(BUILD_DIR) $(LABS_DIR) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)"
+build-labs:
+	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_ALL)" "$(PANDOC_PDF)" "$(PANDOC_ODT)" "$(PANDOC_HTML_PAGES)"
 
 all-books: pre-build book-html book-pdf book-odt
 
 web-only: pre-build build-docs-html build-web-index book-html
 
-build: pre-build build-docs-html build-docs-pdf build-docs-odt build-web-index book-html book-pdf book-odt extras
+labs-only: pre-build build-labs
+
+build: pre-build build-docs-html build-docs-pdf build-docs-odt build-web-index book-html book-pdf book-odt build-labs
 
 all: build

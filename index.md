@@ -19,7 +19,7 @@ Available formats:
 
 ### Labs
 
-- Soon
+- [List of labs](/labs/) or [download all labs](/labs.zip)
 
 ## Other Documents
 

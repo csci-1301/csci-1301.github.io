@@ -2,7 +2,7 @@
 title: User Guide
 ---
 
-This guide explains how this resource and its source code is organized, how it is built and how to maintain this resource.
+This guide explains how this resource and its source code are organized, how it is built, and how to maintain this resource.
 
 # Resources Organization 
 
@@ -34,22 +34,22 @@ Ways to obtaining the **latest version** of this resource:
 
 Ways to obtain **earlier** versions of this resource:
 
-1. Earlier versions can be found under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
-2. Earlier versions will be archived on Galileo 
+1. Available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+2. TODO: periodically archived on Galileo 
 
 <!-- other places? -->
  
 
 # Editing Resources
 
-If you are new to this project and looking to contribute, first see [Contributing Guidelines](/contributing) to learn how to participate in the editing of this resources.
+If you are new to this project and looking to contribute, first see [Contributing Guidelines](/contributing) to learn about the different ways to contribute and how to gain access.
 
 ## Best practices for all forms of content
 
 - **Structure for accesibility**
-    - All content should be titled
+    - All resources are titled
         - TODO: explain how
-    - All content should be [labelled](#content-labelling)
+    - All resources are [labelled](#content-labelling) when applicable
         - at minimum list prerequisites and security-related aspects
 - **Images**
     - Images require a descriptive alt tag for accessibility
@@ -133,15 +133,13 @@ This repository uses following tools and technologies:
 
 ## How build outputs are generated
 
-The resource material is organized into specific directories (cf. [resource organization](#resources-organization)).
-These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
+The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
 
 ## Using Github actions with pandoc
 
 This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/csci-1301/csci-1301.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
 
-The build configuration uses texlive (over texlive-full) to keep the dependency installation time low. Similarly, the
-choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
+The build configuration uses texlive to keep the dependency installation time low. Similarly, the choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
 
 Currently (May 2021) Github actions offers 2,000 free build minutes/month, which _should be_ sufficient for the needs of this project and hopefully remains free in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
 
@@ -149,8 +147,7 @@ Following a successful build, the build script will automatically deploy the gen
 
 ## How to create releases
 
-Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action
-will build the resource and add the generated books as a pre-release under releases and tag them as "latest". If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
+Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action will build the resource and add the generated books as a pre-release under releases and tag them as "latest". If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
 
 Making a versioned release is done as follows:
 
@@ -192,5 +189,5 @@ make all
 To see a list of other alternative build options run
 
 ```
-make
+make help
 ```

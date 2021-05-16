@@ -4,7 +4,8 @@
  */
 
 using System;
-class Welcome
+
+class Program
 {
     static void Main()
     {
