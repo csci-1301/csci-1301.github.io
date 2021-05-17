@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Test your script with
+# https://www.shellcheck.net/
+
 # this is a build script to generate & zip labs
 # no idea how to do this in make so bash script it is...
 
@@ -34,7 +37,7 @@ INDEX=`cat ${TEMPLATES}labs.md`
 PLACEHOLDER="lab_name"
 
 # ensure output directory for labs exists
-test -d $OUT_DIR || mkdir $OUT_DIR
+mkdir -p $OUT_DIR
 
 # iterate all lab source directories
 for d in ${LABS_DIR}/*/ ; do

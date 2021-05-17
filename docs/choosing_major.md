@@ -8,8 +8,7 @@ title: Choosing Your Major
 Most universities offer both a Computer Science degree and an Information Technology degree, and some universities even offer a Management Information Systems degree.
 [Here at Augusta Unversity](https://www.augusta.edu/ccs/programs.php), we have all three options for you: [Computer Science](https://www.augusta.edu/ccs/bs-cs.php) (CS / CSCI), [Information Technology](https://www.augusta.edu/ccs/bs-it.php) (IT / AIST), and [Cybersecurity](https://www.augusta.edu/ccs/bs-it-cybersecurity.php) (CYBR), along with two unique diploma, [Cybersecurity Engineering](https://www.augusta.edu/ccs/bs-cybersecurity-engineering.php) and [Cyber Operations](https://www.augusta.edu/ccs/bs-cyber-ops.php).
 
-While all of these degrees are high-quality and should place students on a fast-track towards a successful career, students always ask the same
-question, "Which degree is best for me?"
+While all of these degrees are high-quality and should place students on a fast-track towards a successful career, students always ask the same question, "Which degree is best for me?"
 The answer to this question depends on the student, their career goals, and a variety of other factors.
 
 Students even ask more specific questions:
@@ -27,6 +26,8 @@ The following links detail these three degrees and explain the benefits of each:
 - [Difference Between a Computer Science & Information Technology Degree](http://online.king.edu/information-technology/difference-between-a-computer-science-information-technology-degree/)
 - [Computer Science vs Information Systems/Technology](https://www.geteducated.com/careers/521-computer-information-systems-vs-computer-science)
 - [Degrees that Pay You Back (from Wall Street Journal)](http://online.wsj.com/public/resources/documents/info-Degrees_that_Pay_you_Back-sort.html)
+
+Additionally, Augusta University has a ["Planning Your Academic Life"](https://www.augusta.edu/advising/planning.php) page that you may find useful.
 
 # Summary
 
