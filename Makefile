@@ -2,32 +2,70 @@ help:
 	@echo "all - build everything"
 	@echo "all-books - build books only (in all formats)"
 	@echo "labs-only - build labs only"
-	@echo "web-only - build html only, useful for testing web rendering"
+	@echo "web - build html only, useful for testing web rendering"
 	@echo "clean - remove generated build artifacts"
+
+# ===============================
+# Useful Makefile doc. 
+# ===============================
+# - https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html
+
 
 # ===============================
 # Options
 # ===============================
 
 # ALL PATH RELATED SETTINGS
-# directory where to output build artifacts
+
+# -------------------------------
+## Directories
+# -------------------------------
+# Directory where to output build artifacts
 # if you change this value also change build settings
-BUILD_DIR = build
+
+BUILD_DIR = build/
+LECTURES_DIR = lectures/
+DOCS_DIR = docs/
+LABS_DIR = labs/
+LAB_TEMPLATES= templates/labs/
+
+# -------------------------------
+## Files
+# -------------------------------
+
 # The input match pattern for which files to include in "the book"
-BOOK_FILES =  lectures/*/readme.md
+SOURCE_BOOK_FILES =  lectures/*/readme.md
 # File where to get book metadata 
 METADATA_FILE = templates/book_meta.md
 # if you change this value also change all references to it!
-OUT_FILENAME = $(BUILD_DIR)/book
+TARGET_BOOK_FILE = $(BUILD_DIR)book
 # where to find all of the following
-LECTURES_DIR = lectures
-DOCS_DIR = docs
-LABS_DIR = labs
-LAB_TEMPLATES= templates/labs/
-# Files
-DOC_FILES=$(DOCS_DIR)/*.md
 
-# PERFORMANCE
+### Files for documentation
+
+SOURCE_DOC_FILES := $(shell find $(DOCS_DIR) -name '*.md')
+# List all the .md files in DOCS_DIR
+# Courtesy of https://stackoverflow.com/a/3774731
+
+TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix .html, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+# 1. Look at the SOURCE_DOC_FILES, (e.g. "docs/about.md")
+# 2. Extract the name file using notdir (e.g. "about.md"),
+# 3. Extract the name of the file without the extension using basename (e.g. "about"),
+# 4. Add the suffix ".html" (e.g. "about.html"),
+# 5. Add the prefix "build" (e.g. "build/about.html").
+# This allows to automatically build the list of targets (the build/html files)
+# from the list of md files in docs.
+
+TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+# Similar to TARGET_DOC_FILES_HTML, but with pdf.
+
+TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+# Similar to TARGET_DOC_FILES_HTML, but with odt.
+
+# -------------------------------
+## Performance & Global Options
+# -------------------------------
+
 MAKEFLAGS:= -j
 # Maximize parallel execution whenever possible
 
@@ -35,11 +73,14 @@ MAKEFLAGS:= -j
 .DEFAULT_GOAL:= all
 # By default, we construct all the files.
 
-# PANDOC SETTINGS
+# -------------------------------
+# Pandoc Settings
+# -------------------------------
+
 # Options for all output formats
 PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp
-#
+
 # HTML build options
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
@@ -50,10 +91,10 @@ WEB_INDEX = index.md
 PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css 
 # additional options for "non-index" pages
 PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
-#
+
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
-#
+
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
 
@@ -61,55 +102,98 @@ PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg
 # Rules
 # ===============================
 
+# -------------------------------
+## Misc.
+# -------------------------------
+
 .PHONY: clean
 clean:
 	@echo "cleaning build artifacts..."
 	rm -rf $(BUILD_DIR)
 
-pre-build:
+$(BUILD_DIR): 
 	@echo "starting build..."
-	test -d $(BUILD_DIR) || mkdir $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR)
+# This rule is added as a dependencies to some of the other rules,
+# to ensure that the build directory has been created before creating files in it.
 
-book-html:
-	pandoc $(BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(OUT_FILENAME).html --metadata-file=$(METADATA_FILE)
+# -------------------------------
+## Book
+# -------------------------------
 
-book-pdf:
-	pandoc $(BOOK_FILES) $(PANDOC_PDF) -o $(OUT_FILENAME).pdf --metadata-file=$(METADATA_FILE)
+$(TARGET_BOOK_FILE).html: $(BUILD_DIR)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html --metadata-file=$(METADATA_FILE)
+
+$(TARGET_BOOK_FILE).pdf: $(BUILD_DIR)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf --metadata-file=$(METADATA_FILE)
 	
-book-odt:
-	pandoc $(BOOK_FILES) $(PANDOC_ODT) -o $(OUT_FILENAME).odt --metadata-file=$(METADATA_FILE)
+$(TARGET_BOOK_FILE).odt: $(BUILD_DIR)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt --metadata-file=$(METADATA_FILE)
 
-# Around 7 sec.
-# build-docs-html:
-# 	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).html $(PANDOC_HTML_PAGES) ;)
+# Whole book, in all formats.
+book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
 
+# -------------------------------
+## Documentation Files
+# -------------------------------
 
-# Around 4 sec.
-.PHONY: build-docs-html $(DOC_FILES)
-build-docs-html: $(DOC_FILES)
-$(DOC_FILES):
-	pandoc $@ -o $(BUILD_DIR)/$(addsuffix .html,$(shell basename $@)) $(PANDOC_HTML_PAGES)
+### Individual files
+# Can be used to compile doc files individually e.g.
+# make build/about.html
+#### Individual HTML files.
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md $(BUILD_DIR)
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@
 
+#### Individual PDF files
+$(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md $(BUILD_DIR)
+	pandoc $(PANDOC_PDF) $< -o $@
 
-build-docs-pdf:
-	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).pdf $(PANDOC_PDF) ;)
+#### Individual ODT files
+$(BUILD_DIR)%.odt: $(DOCS_DIR)%.md $(BUILD_DIR)
+	pandoc $(PANDOC_ODT) $< -o $@
 
-build-docs-odt: 
-	 $(foreach file, $(wildcard $(DOCS_DIR)/*), pandoc $(file) -o $(BUILD_DIR)/$(subst .md,,$(subst $(DOCS_DIR)/,,$(file))).odt $(PANDOC_ODT) ;)
+### Whole folders
+# Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
+#### HTML
+docs-html:$(SOURCE_DOC_FILES)
+	make $(TARGET_DOC_FILES_HTML)
+#### PDF
+docs-pdf:$(SOURCE_DOC_FILES)
+	make $(TARGET_DOC_FILES_PDF)
+#### ODT
+docs-odt:$(SOURCE_DOC_FILES)
+	make $(TARGET_DOC_FILES_ODT)
 
-build-web-index:
+### Whole doc, in all formats.
+docs: docs-html docs-pdf docs-odt
+
+# -------------------------------
+## Lab Files
+# -------------------------------
+
+web-index: 
 	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html -A $(WEBPATH)footer.html
 	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html -A $(WEBPATH)footer.html
 
-build-labs:
+# -------------------------------
+## Lab Files
+# -------------------------------
+
+labs: $(BUILD_DIR)
 	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)" "$(PANDOC_HTML_PAGES)"
 
-all-books: pre-build book-html book-pdf book-odt
+# -------------------------------
+## Other Useful Rules
+# -------------------------------
 
-web-only: pre-build build-docs-html build-web-index book-html
+web: docs-html web-index $(TARGET_BOOK_FILE).html
 
-labs-only: pre-build build-labs
-
-build: pre-build build-docs-html build-docs-pdf build-docs-odt build-web-index book-html book-pdf book-odt build-labs
+build: docs web-index book labs
 
 all: build
+
+# Useful to debug: call
+# Make test
+# to display the variable 
+# .PHONY: test
+# $(info $$TARGET_DOC_FILES_HTML is [${TARGET_DOC_FILES_HTML}])
