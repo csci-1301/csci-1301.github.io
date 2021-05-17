@@ -1,7 +1,7 @@
 help:
 	@echo "all - build everything"
-	@echo "all-books - build books only (in all formats)"
-	@echo "labs-only - build labs only"
+	@echo "book - build books only (in all formats)"
+	@echo "labs - build labs only"
 	@echo "web - build html only, useful for testing web rendering"
 	@echo "clean - remove generated build artifacts"
 
@@ -9,6 +9,7 @@ help:
 # Useful Makefile doc. 
 # ===============================
 # - https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html
+# - https://gist.github.com/rueycheng/42e355d1480fd7a33ee81c866c7fdf78
 
 
 # ===============================
@@ -79,7 +80,8 @@ MAKEFLAGS:= -j
 
 # Options for all output formats
 PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji \
-	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp
+	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
+	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')" 
 
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -142,7 +144,7 @@ book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
 # make build/about.html
 #### Individual HTML files.
 $(BUILD_DIR)%.html: $(DOCS_DIR)%.md $(BUILD_DIR)
-	pandoc $(PANDOC_HTML_PAGES) $< -o $@
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ 
 
 #### Individual PDF files
 $(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md $(BUILD_DIR)
