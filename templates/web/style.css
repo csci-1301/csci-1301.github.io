@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
-
  :root{
    --color-text:#444;
    --color-link: #3D5AFE;
@@ -60,7 +58,7 @@
   
   body {
     color: var(--color-text);
-    font-family: "Merriweather", Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
     font-size:  1em;
     line-height: 1.7;
     padding: 1em;

@@ -153,15 +153,15 @@ $(BUILD_DIR):
 # -------------------------------
 
 $(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book"
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the folder with the source code.
 
 $(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -M title="CSCI 1301 Book"
 	
 $(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -M title="CSCI 1301 Book"
 
 # Whole book, in all formats.
 book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
