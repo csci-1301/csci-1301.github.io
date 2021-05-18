@@ -30,6 +30,7 @@ LECTURES_DIR = lectures/
 DOCS_DIR = docs/
 LABS_DIR = labs/
 LAB_TEMPLATES= templates/labs/
+LABS_DIRS = $(LAB_DIR)*
 
 # -------------------------------
 ## Files
@@ -251,12 +252,11 @@ labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES)
 
 #### Index page for labs
 $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
-	(cat $(LAB_TEMPLATES)labs.md && echo '\n' && for dir in $(LABS_DIR)*/; do $(dir:$(LABS_DIR)/%=%)  echo  ' | <a href="'$${dir}'">'$${dir}'</a> | \n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES) -A $(LAB_TEMPLATES)feedback.html 
+	(cat $(LAB_TEMPLATES)labs.md && echo '\n' && for dir in $(LABS_DIRS); do  echo  ' | <a href="'$${dir}'">'$${dir}'</a> | \n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES) -A $(LAB_TEMPLATES)feedback.html 
 # I don't think we need odt / pdf for that page.
 	
 #### Whole labs instructions, in all formats.
 labs-instructions: labs-html labs-pdf labs-odt
-
 ### Source Code
 
 # labs-source-code: 
