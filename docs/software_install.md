@@ -42,7 +42,9 @@ To access one or the other, you will need either
 The third solution is a backup plan, as instead you will access a very minimal version of an IDE to test small snippets of code.
 You should not rely on it for the duration of this course.
 
+<!--
 _We recommend that you first try MonoDevelop_ as it is lighter, simpler, and enough for this course, but provides directions for both IDEs.
+-->
 
 ## Installing an Ide  On Your Own Computer
 
@@ -52,6 +54,14 @@ The instructions are detailed, but there are plenty of ways this can go wrong: m
 Once you've identified your issue, try again from scratch to see if you missed a point, and if you are still facing the same issue  and can describe it, feel free to look for set-up help on the internet, from your classmates, and from your instructors.
 
 ### Installing MonoDevelop On Your Own Computer
+
+Unfortunately, MonoDevelop offers pre-packaged release only for linux distributions
+
+- If you are using linux (e.g. Ubuntu, Debian, etc.), then please head out to [MonoDevelop's download page](https://www.monodevelop.com/download/#fndtn-download-lin).
+- If you are using MacOS, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#macos), but it is very likely that you will find them impossible to understand.
+- If you are using Windows, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#windows), but it is very likely that you will find them impossible to understand.
+
+If you are a MacOs or Windows user, you could use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution on top of your operating system, but it is simpler to pick Visual Studio instead.
 
 ### Installing Visual Studio On Your Own Computer
 
@@ -87,7 +97,6 @@ For the first option, download a version of Visual Studio at <https://visualstud
 For the second option, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
 This option works for Linux systems as well.
 
-
 #. You can use 
     #. "VMware Fusion 10.x Pro" (only for MacOS, available on [OnTheHub](https://e5.onthehub.com/WebStore/OfferingDetails.aspx?o=637dd37b-06b5-e711-80f7-000d3af41938&pmv=00000000-0000-0000-0000-000000000000&ws=2020165a-723a-de11-b696-0030485a8df0&vsro=8),
     #. [Virtual Box](https://www.virtualbox.org/) (for Linux and Mac),
@@ -105,13 +114,10 @@ Visual Studio should be pre-installed on every computer.
 _As a backup or only to test snippets of code_, you can compile C# code online.
 Multiple online platforms exist, such as:
 
-- <https://rextester.com/>
 - <https://www.tutorialspoint.com/compile_csharp_online.php>
 - <https://www.onlinegdb.com/online_csharp_compiler>
 - <https://www.jdoodle.com/compile-c-sharp-online/>
 - <https://dotnetfiddle.net/>
 
 Note that none of them are endorsed by the school and that they can pose security and privacy challenges: never enter any sensitive information and do not rely on them too heavily.
-However, they can be a good support if you'd like to test a short snippet of code but don't have access at the moment to a computer with Visual Studio installed.
-
-
+However, they can be a good support if you would like to test a short snippet of code but do not have access at the moment to a computer with MonoDevelop or Visual Studio installed.
