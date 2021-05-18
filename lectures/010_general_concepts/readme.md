@@ -99,6 +99,7 @@
         - Managed-language programs can be reused on a different platform without recompiling - intermediate language is not machine code and not CPU-specific
         - Still need to write an intermediate language intepreter for each platform (so it produces the right machine code), but in a non-managed language you must write a compiler for each platform
         - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
+    - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
 
 
 ## Software Concepts
