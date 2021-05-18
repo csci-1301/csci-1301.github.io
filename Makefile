@@ -248,6 +248,11 @@ labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES)
 ##### ODT
 labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES)
 	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
+
+#### Index page for labs
+$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
+	(cat $(LAB_TEMPLATES)labs.md && echo '\n' && for dir in $(LABS_DIR)*/; do echo  ' | <a href="'$($(subst $(LABS_DIR),/,$(dir)))'">'$${dir}'</a> | \n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES) -A $(LAB_TEMPLATES)feedback.html 
+# I don't think we need odt / pdf for that page.
 	
 #### Whole labs instructions, in all formats.
 labs-instructions: labs-html labs-pdf labs-odt
