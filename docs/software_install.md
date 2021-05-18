@@ -113,3 +113,5 @@ Multiple online platforms exist, such as:
 
 Note that none of them are endorsed by the school and that they can pose security and privacy challenges: never enter any sensitive information and do not rely on them too heavily.
 However, they can be a good support if you'd like to test a short snippet of code but don't have access at the moment to a computer with Visual Studio installed.
+
+

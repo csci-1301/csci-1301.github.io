@@ -67,6 +67,8 @@
     margin: auto;
     max-width: 42em;
     background: var(--bg-body);
+    text-align: justify;
+    text-justify: inter-word;
   }
   pre, pre > code, samp,
   kbd, *:not(pre) > code{
