@@ -156,6 +156,7 @@ This repository uses following tools and technologies:
 - github actions - to automatically build the resource
 - github pages - to serve the accompanying website
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, etc.
+- [Anchor.js](https://www.bryanbraun.com/anchorjs/) for automatic links.
 
 ## How build outputs are generated
 

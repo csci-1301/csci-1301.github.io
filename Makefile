@@ -119,10 +119,7 @@ WEB_INDEX = index.md
 PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css	
 
 # additional options for "non-index" pages
-PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html
-# Deprecated:
-# -A $(WEBPATH)footer.html
-# The footer is now built-in template.html
+PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
 
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
@@ -209,8 +206,8 @@ docs: docs-html docs-pdf docs-odt
 # -------------------------------
 
 web-index: 
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html
-	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html
+	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html
 
 # -------------------------------
 ## Lab Files

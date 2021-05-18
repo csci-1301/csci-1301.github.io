@@ -1,6 +1,5 @@
 ---
 title: About
-
 ---
 
 # Purpose
