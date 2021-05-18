@@ -34,13 +34,21 @@ We strive to prioritize open-source software when possible, and occasionaly cont
 
 ## Software
 
+This website uses different technologies.
+
 - The markdown source code is converted to `html`, `pdf`, and `odt` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 
+More details on the tools we use can be found in [our user guide](user_guide.md#repository-maintenance).
 
 ## Services
 
 - The source code and the website are graciously hosted by [github](https://github.com/).
 - [Travis](https://travis-ci.org/) compile and deploys our website.
+
+# Licence
+
+This work is under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+Please refer to [our licence file](https://github.com/csci-1301/csci-1301.github.io/blob/main/LICENSE.md) for the detail of this licence.
 

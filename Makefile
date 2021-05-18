@@ -10,6 +10,7 @@ help:
 # ===============================
 # - https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html
 # - https://gist.github.com/rueycheng/42e355d1480fd7a33ee81c866c7fdf78
+# - https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 
 
 # ===============================
@@ -35,7 +36,7 @@ LAB_TEMPLATES= templates/labs/
 # -------------------------------
 
 # The input match pattern for which files to include in "the book"
-SOURCE_BOOK_FILES =  lectures/*/readme.md
+SOURCE_BOOK_FILES =  $(LECTURES_DIR)*/readme.md
 # File where to get book metadata 
 METADATA_FILE = templates/book_meta.md
 # if you change this value also change all references to it!
@@ -63,6 +64,31 @@ TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $
 TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # Similar to TARGET_DOC_FILES_HTML, but with odt.
 
+### Files for labs
+
+#### Instructions
+# Beware, here, it is hard-coded that the lab file is called "readme.md"
+SOURCE_LAB_INSTRUCTION_FILES := $(shell find $(LABS_DIR)*/readme.md)
+
+TARGET_LAB_INSTRUCTION_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix index.html, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
+# 1. Look at the SOURCE_LAB_INSTRUCTION_FILES, (e.g. "labs/HelloWorld/readme.md")
+# 2. Extract the folder path using dir (e.g. "labs/HelloWorld/"),
+# 3. Append "index.html" to the end of it (e.g. "labs/HelloWorld/index.html"),
+# 4. Add the prefix "build" (e.g. "build/labs/HelloWorld/index.html").
+# This allows to automatically build the list of targets (the build/labs/*/index.html files)
+# from the list of md files in the sub-folders in labs/.
+
+TARGET_LAB_INSTRUCTION_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix index.pdf, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
+# Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with pdf.
+
+TARGET_LAB_INSTRUCTION_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix index.odt, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
+# Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with odt.
+
+#### Source Code
+SOURCE_LAB_CODE_FILES := $(shell find $(LABS_DIR)*/src/ -name '*.cs')
+# Find all the .cs files in the sub-folders "src/" in the sub-folders in "labs/"
+
+
 # -------------------------------
 ## Performance & Global Options
 # -------------------------------
@@ -79,10 +105,10 @@ MAKEFLAGS:= -j
 # -------------------------------
 
 # Options for all output formats
-PANDOC_OPTIONS:= --toc --section-divs --filter pandoc-include -f markdown+emoji \
+PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
-	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')" 
-
+	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')"
+	
 # HTML build options
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
@@ -90,9 +116,13 @@ WEBPATH = templates/web/
 WEB_INDEX = index.md
 404_PAGE = 404.md
 # flags to apply to every HTML page
-PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css 
+PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css	
+
 # additional options for "non-index" pages
-PANDOC_HTML_PAGES:= $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html
+PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html
+# Deprecated:
+# -A $(WEBPATH)footer.html
+# The footer is now built-in template.html
 
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
@@ -123,13 +153,15 @@ $(BUILD_DIR):
 ## Book
 # -------------------------------
 
-$(TARGET_BOOK_FILE).html: $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html --metadata-file=$(METADATA_FILE)
+$(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html --metadata-file=$(METADATA_FILE) -M source_name=lectures/ -M target_name=book
+# Those two last variables are custom ones for pandoc, used in the html template to add download links
+# to the pdf and odt versions, as well as a link to the folder with the source code.
 
-$(TARGET_BOOK_FILE).pdf: $(BUILD_DIR)
+$(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf --metadata-file=$(METADATA_FILE)
 	
-$(TARGET_BOOK_FILE).odt: $(BUILD_DIR)
+$(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt --metadata-file=$(METADATA_FILE)
 
 # Whole book, in all formats.
@@ -143,15 +175,18 @@ book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
 # Can be used to compile doc files individually e.g.
 # make build/about.html
 #### Individual HTML files.
-$(BUILD_DIR)%.html: $(DOCS_DIR)%.md $(BUILD_DIR)
-	pandoc $(PANDOC_HTML_PAGES) $< -o $@ 
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$<
+# Those two last variables are custom ones for pandoc, used in the html template to add download links
+# to the pdf and odt versions, as well as a link to the original md source code.
+# cf. https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html for an explanation of (@F).
 
 #### Individual PDF files
-$(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md $(BUILD_DIR)
+$(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_PDF) $< -o $@
 
 #### Individual ODT files
-$(BUILD_DIR)%.odt: $(DOCS_DIR)%.md $(BUILD_DIR)
+$(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_ODT) $< -o $@
 
 ### Whole folders
@@ -170,19 +205,68 @@ docs-odt:$(SOURCE_DOC_FILES)
 docs: docs-html docs-pdf docs-odt
 
 # -------------------------------
-## Lab Files
+## Web Files
 # -------------------------------
 
 web-index: 
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html -A $(WEBPATH)footer.html
-	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html -A $(WEBPATH)footer.html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/index.html
+	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)/404.html
 
 # -------------------------------
 ## Lab Files
 # -------------------------------
 
-labs: $(BUILD_DIR)
-	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "$(PANDOC_PDF)" "$(PANDOC_ODT)" "$(PANDOC_HTML_PAGES)"
+### Instructions
+#### Individual files
+# Can be used to compile lab files individually e.g.
+# make build/labs/HelloWorld/index.html
+# mkdir -p $(dir $@)
+# insures that the target directory exists.
+
+##### Individual HTML files.
+$(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md
+	mkdir -p $(dir $@)
+	pandoc $(PANDOC_HTML_PAGES) -A $(LAB_TEMPLATES)feedback.html $< -o $@ -M target_name=index
+# This last variable is a custom one, used in the template to add download links
+# to the pdf and odt versions.
+
+##### Individual PDF files.
+$(BUILD_DIR)$(LABS_DIR)%/index.pdf: $(LABS_DIR)%/readme.md
+	mkdir -p $(dir $@)
+	pandoc $(PANDOC_PDF) $< -o $@ 
+##### Individual ODT files.
+$(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
+	mkdir -p $(dir $@)
+	pandoc $(PANDOC_ODT) $< -o $@ 
+	
+#### Whole folders
+# Compile all the labs in a specific format, by calling the previous corresponding rule for each file.
+##### HTML
+labs-html:$(SOURCE_LAB_INSTRUCTION_FILES)
+	make $(TARGET_LAB_INSTRUCTION_FILES_HTML)
+##### PDF
+labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES)
+	make $(TARGET_LAB_INSTRUCTION_FILES_PDF)
+##### ODT
+labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES)
+	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
+	
+#### Whole labs instructions, in all formats.
+labs-instructions: labs-html labs-pdf labs-odt
+
+### Source Code
+
+# labs-source-code: 
+# <Todo!>
+# Previous version:
+#labs: $(BUILD_DIR)
+#	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "" "" "$(PANDOC_HTML_PAGES)"
+
+### Instructions and Source Code
+
+labs: labs-instructions # labs-source-code
+
+
 
 # -------------------------------
 ## Other Useful Rules
@@ -197,5 +281,7 @@ all: build
 # Useful to debug: call
 # Make test
 # to display the variable 
-# .PHONY: test
-# $(info $$TARGET_DOC_FILES_HTML is [${TARGET_DOC_FILES_HTML}])
+.PHONY: test
+# "Plug" below the variable you want to test, $(<here>)
+test = $(PANDOC_HTML_ALL)
+$(info $$test is [${test}])

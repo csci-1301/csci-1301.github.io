@@ -13,20 +13,20 @@ Welcome to course resources website for CSCI 1301 at Augusta University.
 
 Available formats:
 
- - [HTML](/book)
- - [PDF](/book.pdf) 
- - [ODT](/book.odt) 
+ - [HTML](book.html)
+ - [PDF](book.pdf) 
+ - [ODT](book.odt) 
 
 ### Labs
 
-- [List of labs](/labs/) or [download all labs](/labs.zip)
+- [List of labs](labs/) or [download all labs](labs.zip)
 
 ## Other Documents
 
-- [Student Learning Outcomes](/learning_outcomes) - expected student learning outcomes
-- [Choosing Your Major](/choosing_major) - guide on how to pick your major       
-- [Installing Software](/software_install) - guide on how to install various IDE / software
-- [Contributing Guidelines](/contributing) - contributing to this resource
-- [List of Topics](/topics_list) - list of required topics
-- [User Guide](/user_guide) - details about this resource
+- [Student Learning Outcomes](learning_outcomes.html) - expected student learning outcomes
+- [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
+- [Installing Software](software_install.html) - guide on how to install various IDE / software
+- [Contributing Guidelines](contributing.html) - contributing to this resource
+- [List of Topics](topics_list.html) - list of required topics
+- [User Guide](user_guide.html) - details about this resource
 

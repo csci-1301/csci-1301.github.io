@@ -59,6 +59,24 @@ $table-of-contents$
 $endif$
 $body$
 </main>
+
+<footer>
+    <div class="links">
+        <a href='/'>Home</a>
+        <a href='/book'>Book</a>
+        <a href='/labs'>Labs</a>
+        <a href="/about">About</a>
+        $if(target_name)$
+            Download in <a href="$target_name$.pdf">pdf</a>, in <a href="$target_name$.odt">odt</a>
+        $endif$
+        $if(source_name)$
+            <a href="https://github.com/csci-1301/csci-1301.github.io/tree/main/$source_name$">Source code</a>
+        $else$
+            <a href="https://github.com/csci-1301/csci-1301.github.io">Source Code</a>
+        $endif$       
+        </div> 
+</footer>
+
 $for(include-after)$
 $include-after$
 $endfor$
