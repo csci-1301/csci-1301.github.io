@@ -43,8 +43,7 @@ More details on the tools we use can be found in [our user guide](user_guide.md#
 
 ## Services
 
-- The source code and the website are graciously hosted by [github](https://github.com/).
-- [Travis](https://travis-ci.org/) compile and deploys our website.
+- The source code and the website are graciously hosted and built by [github](https://github.com/).
 
 # Licence
 
