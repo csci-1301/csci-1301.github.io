@@ -1,0 +1,46 @@
+% http://www.texample.net/tikz/examples/simple-flow-chart/
+\documentclass[border=10pt]{standalone}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+	\pagestyle{empty}
+	
+	
+	% Define block styles
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+	text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+	text width=5em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+	minimum height=2em]
+	
+	\begin{tikzpicture}[node distance = 2cm, auto]
+	\draw [fill=orange!15, draw=none] (2.8,1.2) rectangle node[left=80, above=75] {Programmer}  (-5, -5);
+	\draw [fill=purple!15, draw=none] (-5, -5) rectangle node[left=90, above=65] {\(\beta\)-tester}  (2.8, -10.5);
+	\draw [fill=brown!15, draw=none] (2.8, -10.5) rectangle node[left=100, above=30] {User}  (-5, -13.5);
+	
+	% Place nodes
+	\node [block] (init) {Write / Edit Code};
+	\node [decision, below of=init] (decide) {Does it compile?};
+	\node [block, left of=init, node distance=3cm] (debug) {Debug};
+	\node [block, below of=decide, node distance=3cm] (run) {Run};
+	\node [decision, below of=run] (work) {Does it "work"?};
+	\node [block, below of=work, node distance=3cm] (success) {Success!};
+
+	\path [line] (decide) -| node [near start] {no} (debug);
+	\path [line] (work) -| node [near start] {no} (debug);
+	\draw [->] (decide) --  node {yes}  (run);
+	\draw [->] (work) --  node {yes}  (success);
+	\draw [->] (init) -- (decide);
+	\draw [->] (debug) -- (init);
+	\draw [->] (run) -- (work);
+	
+	\path[->,every loop/.style={looseness=5}] (work)
+	edge  [in=30,out=-30,loop] node [right]{Test} (); 
+	\end{tikzpicture}
+	
+	
+\end{document}

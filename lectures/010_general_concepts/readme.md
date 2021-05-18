@@ -133,6 +133,9 @@
     - Debugging the program, if necessary
     - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
     - **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
+
+![](img/flowchart.svg)
+
 - Integrated Development Environment (IDE)
     - Combines a text editor, compiler, file browser, debugger, and other tools
     - Helps you organize a programming project
