@@ -37,8 +37,8 @@ LAB_TEMPLATES= templates/labs/
 
 # The input match pattern for which files to include in "the book"
 SOURCE_BOOK_FILES =  $(LECTURES_DIR)*/readme.md
-# File where to get book metadata 
-METADATA_FILE = templates/book_meta.md
+# File where to get the metadata 
+METADATA_FILE = templates/meta.yaml
 # if you change this value also change all references to it!
 TARGET_BOOK_FILE = $(BUILD_DIR)book
 # where to find all of the following
@@ -107,7 +107,8 @@ MAKEFLAGS:= -j
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
-	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')"
+	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')" \
+        --metadata-file=$(METADATA_FILE)
 	
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -151,15 +152,15 @@ $(BUILD_DIR):
 # -------------------------------
 
 $(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html --metadata-file=$(METADATA_FILE) -M source_name=lectures/ -M target_name=book
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -title="CSCI 1301 Book"
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the folder with the source code.
 
 $(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf --metadata-file=$(METADATA_FILE)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -title="CSCI 1301 Book"
 	
 $(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt --metadata-file=$(METADATA_FILE)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -title="CSCI 1301 Book"
 
 # Whole book, in all formats.
 book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt

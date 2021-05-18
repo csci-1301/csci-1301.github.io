@@ -1,25 +1,12 @@
 ---
 title: Hello World Lab
-author: Edward Tremel    # make this a variable/build locally with "own name everywhere"
-# date: January 11, 2021   # populate this dynamically or remove, it is only accurate on that 1 day when it is, and never again
-lang: en
-fontsize: 10pt
-documentclass: scrartcl  # templating
-numbersections: true     # templating
-links-as-notes: true     # templating
-papersize: letter        # templating
-geometry: margin=1in     # templating
-keywords:       
-- Computer Science
-- Problem solving methods
-- Syllabus
-- Augusta University
-- Bachelor of Science
-
-# we need to include here:
-# - related lectures/slides
-# - label prerequisites for this lab
 ---
+
+<!-- 
+We need to include here:
+ - related lectures/slides
+ - label prerequisites for this lab
+-->
 
 <!-- this is very Windows-y... can we do Your first program on Windows/mac/Linux or generify expressions such as "solution explorer" or make an OS-specific version of this lab? It should not generally be a problem with the later labs. -->
 
