@@ -156,15 +156,15 @@ $(BUILD_DIR):
 ## Book
 # -------------------------------
 
-$(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
+$(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book"
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the folder with the source code.
 
-$(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
+$(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -M title="CSCI 1301 Book"
 	
-$(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES)
+$(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -M title="CSCI 1301 Book"
 
 # Whole book, in all formats.
@@ -286,11 +286,17 @@ $(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$
 # becomes in this particular case
 # labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
 # which is indeed where the source code is located.
+# Can probably be improved using 
+# https://stackoverflow.com/a/67597710/2657549
 	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
 	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
 	echo $(lastword $(subst /, , $*)) # Name of the solution
 	echo $(lastword $(subst /, ,$(dir $<))) # Name of the project
 	echo $(lastword $(subst /, , $*)).csproj
+	# Creating the folder structure
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Release
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Debug
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/Properties
 	# Creating the .sln
 	(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(lastword $(subst /, , $*))", "$(lastword $(subst /, ,$(dir $<)))\$(lastword $(subst /, , $*)).csproj", "{595F9930-7C03-4428-90B8-81D385B7832C}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|Any CPU = Debug|Any CPU\n		Release|Any CPU = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|Any CPU.Build.0 = Debug|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|Any CPU.ActiveCfg = Release|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|Any CPU.Build.0 = Release|Any CPU\n	EndGlobalSection\nEndGlobal') > $(patsubst %/,%.sln,$(dir $<))
 	# This store a very minimal .sln file with the correct informations for our solution / project.
@@ -298,7 +304,12 @@ $(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$
 	# and printf is more resilient than echo.
 	
 	# Creating the .csproj
-	printf '<?xml version="1.0" encoding="utf-8"?>\n<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <PropertyGroup>\n	<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Release</Configuration>\n	<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">Any CPU</Platform>\n  <ProjectGuid>{C0A12F02-262E-4B8E-890F-15D7EBA0EA25}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <RootNamespace>Testproj</RootNamespace>\n    <AssemblyName>Test-proj</AssemblyName>\n    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|Any CPU'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>$$(SolutionDir)\\bin\\Release\\</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <PlatformTarget>Any CPU</PlatformTarget>\n  </PropertyGroup>\n    <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|Any CPU'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>$$(SolutionDir)\\bin\\Debug\\</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <PlatformTarget>Any CPU</PlatformTarget>\n  </PropertyGroup>\n<PropertyGroup Condition=" '\''$$(RunConfiguration)'\'' == '\''Default'\'' ">\n    <StartAction>Project</StartAction>\n    <ExternalConsole>true</ExternalConsole>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildBinPath)\Microsoft.CSharp.targets" />\n</Project>' > $(dir $<)$(lastword $(subst /, , $*)).csproj 
+	printf '<?xml version="1.0" encoding="utf-8"?>\n<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <PropertyGroup>\n    <Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n    <Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">x86</Platform>\n    <ProjectGuid>{19ABA117-ECF6-4AAA-BE7C-76EA41E27AC6}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <RootNamespace>$(lastword $(subst /, ,$(dir $<)))</RootNamespace>\n    <AssemblyName>$(lastword $(subst /, ,$(dir $<)))</AssemblyName>\n    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|x86'\'' ">\n    <DebugSymbols>true</DebugSymbols>\n    <DebugType>full</DebugType>\n    <Optimize>false</Optimize>\n    <OutputPath>bin\Debug</OutputPath>\n    <DefineConstants>DEBUG;</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <ExternalConsole>true</ExternalConsole>\n    <PlatformTarget>x86</PlatformTarget>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|x86'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>bin\Release</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <ExternalConsole>true</ExternalConsole>\n    <PlatformTarget>x86</PlatformTarget>\n  </PropertyGroup>\n  <ItemGroup>\n    <Reference Include="System" />\n  </ItemGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n    <Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildBinPath)\Microsoft.CSharp.targets" />\n</Project>' > $(dir $<)$(lastword $(subst /, , $*)).csproj 
+	
+	
+	printf 'using System.Reflection;\n[assembly: AssemblyTitle("$(lastword $(subst /, ,$(dir $<)))")]\n[assembly: AssemblyDescription("")]\n[assembly: AssemblyConfiguration("")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyProduct("")]\n[assembly: AssemblyCopyright("Creative Commons Attribution 4.0 International")]\n[assembly: AssemblyTrademark("")]\n[assembly: AssemblyCulture("")]\n[assembly: AssemblyVersion("2.0.0.0")]' > $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/Properties/AssemblyInfo.cs
+	
+	
 	# Similar as above, but with the .csproj file.
 	# Single quotes are escaped as '\''
 	# $ are escaped as $$
@@ -309,14 +320,13 @@ $(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$
 	# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
 	# per .cs file in the project. We can now only accomodate single-file projects.
 	
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Release
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Debug
+
 	# Finaly, we can zip the folder:
 	#zip -r --fifo $@ $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/
-	7z a $@ ./$(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/ -xr!.vs -xr!.directory
+	7z a $@ ./$(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/ -xr\!.vs -xr\!.directory
 	# We compress the folder containing the sln and the folder containing the csproj and the code
 	# But we excluse the .vs folder and .directory file
-
+	
 labs-source-code: $(SOURCE_LAB_CODE_FILES)
 	make $(LAB_ZIP)
 	
