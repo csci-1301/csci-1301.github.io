@@ -155,7 +155,7 @@ This repository uses following tools and technologies:
 - make, bash - for specifying how to build this resource
 - github actions - to automatically build the resource
 - github pages - to serve the accompanying website
-- additional packages for specific tasks: texlive, Pygments, pandoc filters, etc.
+- additional packages for specific tasks: texlive, Pygments, pandoc filters, [lua filter](https://github.com/jgm/pandoc/issues/2104), etc.
 - [Anchor.js](https://www.bryanbraun.com/anchorjs/) for automatic links.
 
 ## How build outputs are generated
@@ -215,6 +215,6 @@ make all
 
 To see a list of other alternative build options run
 
-```
+```bash
 make help
 ```
