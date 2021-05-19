@@ -31,50 +31,7 @@ DOCS_DIR = docs/
 LABS_DIR = labs/
 LAB_TEMPLATES= templates/labs/
 LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d))
-
-
-.SECONDEXPANSION:
-$(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
-# Here is how this works.
-# This rule is called by e.g.
-# make build/labs/HelloWorld/HelloWorld_Solution.zip
-# And, because of .SECONDEXPANSION
-# "%" in the target is evaluated first, 
-# and it becomes "HelloWorld/HelloWorld_Solution"
-# Then, the value in "%" is accessed thanks to $$* 
-# in the pre-requisite, and
-# (subst /, , $$*)
-# becomes "HelloWorld HelloWorld_Solution"
-# and then, taking the first part ("HelloWorld") or the 
-# second ("HelloWorld_Solution") allows to re-construct the 
-# correct path, as
-# $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
-# becomes in this particular case
-# labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
-# which is indeed where the source code is located.
-	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
-	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
-
-
-# $(LABS_DIR)$$(firstword $$(subst /, , %))/src/$$(lastword $$(subst /, , %))/*/Program.cs
-	
-# Rule to make individual zip archive,
-# e.g. 
-# make build/labs/HelloWorld/HelloWorld.zip
-#$(BUILD_DIR)$(LABS_DIR)%/: $(LABS_DIR)%/readme.m d$(LABS_DIR)%/src/*/*/Program.cs
-#	echo $@
-#	echo $<
-#
-#test:
-#	echo $(BUILD_DIR)$(LABS_DIR)%/
-
-# labs-source-code: 
-# <Todo!>
-# Previous version:
-#labs: $(BUILD_DIR)
-#	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "" "" "$(PANDOC_HTML_PAGES)"
-
-
+SOLUTIONS:=$(shell find $(LABS_DIR) -mindepth 3  -maxdepth 3 -type d -not -path "*/.vs*" )
 
 # -------------------------------
 ## Files
@@ -133,6 +90,9 @@ TARGET_LAB_INSTRUCTION_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix index.
 SOURCE_LAB_CODE_FILES := $(shell find $(LABS_DIR)*/src/ -name '*.cs')
 # Find all the .cs files in the sub-folders "src/" in the sub-folders in "labs/"
 
+TARGET_LAB_CODE_FILES := $(BUILD_DIR)$(LABS_DIR)
+LAB_ZIP:=$(BUILD_DIR)$(LABS_DIR)$(firstword $(subst /, , $(subst $(LABS_DIR), ,$(SOLUTIONS))))/$(lastword $(subst /, , $(SOLUTIONS))).zip
+# The zips containing the source code for each solution we need to build.
 
 # -------------------------------
 ## Performance & Global Options
@@ -306,7 +266,59 @@ labs-instructions: labs-html labs-pdf labs-odt
 
 ### Instructions and Source Code
 
-labs: labs-instructions # labs-source-code
+# Rule for individual source code for labs.
+.SECONDEXPANSION:
+$(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
+# Here is how this rule works.
+# This rule is called by e.g.
+# make build/labs/HelloWorld/HelloWorld_Solution.zip
+# And, because of .SECONDEXPANSION
+# "%" in the target (on the left of :) is evaluated first, 
+# and it becomes "HelloWorld/HelloWorld_Solution"
+# Then, the value in "%" is accessed thanks to $$* 
+# in the pre-requisite (on the right of :), and
+# (subst /, , $$*)
+# becomes "HelloWorld HelloWorld_Solution"
+# and then, taking the first part ("HelloWorld") or the 
+# second ("HelloWorld_Solution") allows to re-construct the 
+# correct path, as
+# $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
+# becomes in this particular case
+# labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
+# which is indeed where the source code is located.
+	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
+	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
+	echo $(lastword $(subst /, , $*)) # Name of the solution
+	echo $(lastword $(subst /, ,$(dir $<))) # Name of the project
+	echo $(lastword $(subst /, , $*)).csproj
+	# Creating the .sln
+	(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(lastword $(subst /, , $*))", "$(lastword $(subst /, ,$(dir $<)))\$(lastword $(subst /, , $*)).csproj", "{595F9930-7C03-4428-90B8-81D385B7832C}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|Any CPU = Debug|Any CPU\n		Release|Any CPU = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|Any CPU.Build.0 = Debug|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|Any CPU.ActiveCfg = Release|Any CPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|Any CPU.Build.0 = Release|Any CPU\n	EndGlobalSection\nEndGlobal') > $(patsubst %/,%.sln,$(dir $<))
+	# This store a very minimal .sln file with the correct informations for our solution / project.
+	# The new lines had to be escaped with \n,
+	# and printf is more resilient than echo.
+	
+	# Creating the .csproj
+	printf '<?xml version="1.0" encoding="utf-8"?>\n<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <PropertyGroup>\n	<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Release</Configuration>\n	<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">Any CPU</Platform>\n  <ProjectGuid>{C0A12F02-262E-4B8E-890F-15D7EBA0EA25}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <RootNamespace>Testproj</RootNamespace>\n    <AssemblyName>Test-proj</AssemblyName>\n    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|Any CPU'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>$$(SolutionDir)\\bin\\Release\\</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <PlatformTarget>Any CPU</PlatformTarget>\n  </PropertyGroup>\n    <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|Any CPU'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>$$(SolutionDir)\\bin\\Debug\\</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <PlatformTarget>Any CPU</PlatformTarget>\n  </PropertyGroup><PropertyGroup Condition=" '\''$$(RunConfiguration)'\'' == '\''Default'\'' ">\n    <StartAction>Project</StartAction>\n    <ExternalConsole>true</ExternalConsole>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildBinPath)\Microsoft.CSharp.targets" />\n</Project>' > $(dir $<)$(lastword $(subst /, , $*)).csproj 
+	# Similar as above, but with the .csproj file.
+	# Single quotes are escaped as '\''
+	# And $ are escaped as $$
+	# TODO
+	# There needs to be one
+	# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
+	# per .cs file in the project. We can now only accomodate single-file projects.
+	
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))$(lastword $(subst /, ,$(dir $<)))/bin/Release
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))$(lastword $(subst /, ,$(dir $<)))/bin/Debug
+	# Finaly, we can zip the folder:
+	#zip -r --fifo $@ $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/
+	7z a $@ ./$(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/ -xr!.vs -xr!.directory
+	# We compress the folder containing the sln and the folder containing the csproj and the code
+	# But we excluse the .vs folder and .directory file
+
+labs-source-code: $(SOURCE_LAB_CODE_FILES)
+	make $(LAB_ZIP)
+	
+labs: labs-instructions labs-source-code
 
 
 
@@ -325,5 +337,5 @@ all: build
 # to display the variable 
 .PHONY: test
 # "Plug" below the variable you want to test, $(<here>)
-test = $(LABS_DIRS)
+test = $(LAB_ZIP)
 $(info $$test is [${test}])
