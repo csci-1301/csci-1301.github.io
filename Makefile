@@ -30,7 +30,51 @@ LECTURES_DIR = lectures/
 DOCS_DIR = docs/
 LABS_DIR = labs/
 LAB_TEMPLATES= templates/labs/
-LABS_DIRS = $(LAB_DIR)*
+LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d))
+
+
+.SECONDEXPANSION:
+$(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
+# Here is how this works.
+# This rule is called by e.g.
+# make build/labs/HelloWorld/HelloWorld_Solution.zip
+# And, because of .SECONDEXPANSION
+# "%" in the target is evaluated first, 
+# and it becomes "HelloWorld/HelloWorld_Solution"
+# Then, the value in "%" is accessed thanks to $$* 
+# in the pre-requisite, and
+# (subst /, , $$*)
+# becomes "HelloWorld HelloWorld_Solution"
+# and then, taking the first part ("HelloWorld") or the 
+# second ("HelloWorld_Solution") allows to re-construct the 
+# correct path, as
+# $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
+# becomes in this particular case
+# labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
+# which is indeed where the source code is located.
+	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
+	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
+
+
+# $(LABS_DIR)$$(firstword $$(subst /, , %))/src/$$(lastword $$(subst /, , %))/*/Program.cs
+	
+# Rule to make individual zip archive,
+# e.g. 
+# make build/labs/HelloWorld/HelloWorld.zip
+#$(BUILD_DIR)$(LABS_DIR)%/: $(LABS_DIR)%/readme.m d$(LABS_DIR)%/src/*/*/Program.cs
+#	echo $@
+#	echo $<
+#
+#test:
+#	echo $(BUILD_DIR)$(LABS_DIR)%/
+
+# labs-source-code: 
+# <Todo!>
+# Previous version:
+#labs: $(BUILD_DIR)
+#	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "" "" "$(PANDOC_HTML_PAGES)"
+
+
 
 # -------------------------------
 ## Files
@@ -259,11 +303,6 @@ $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as d
 labs-instructions: labs-html labs-pdf labs-odt
 ### Source Code
 
-# labs-source-code: 
-# <Todo!>
-# Previous version:
-#labs: $(BUILD_DIR)
-#	./build-labs.sh $(BUILD_DIR) $(LABS_DIR) $(LAB_TEMPLATES) "$(PANDOC_HTML_PAGES)" "" "" "$(PANDOC_HTML_PAGES)"
 
 ### Instructions and Source Code
 
@@ -286,5 +325,5 @@ all: build
 # to display the variable 
 .PHONY: test
 # "Plug" below the variable you want to test, $(<here>)
-test = $(PANDOC_HTML_ALL)
+test = $(LABS_DIRS)
 $(info $$test is [${test}])
