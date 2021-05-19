@@ -229,7 +229,7 @@ web-index:
 ##### Individual HTML files.
 $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_HTML_PAGES) -A $(LAB_TEMPLATES)feedback.html $< -o $@ -M target_name=index
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index
 # This last variable is a custom one, used in the template to add download links
 # to the pdf and odt versions.
 
