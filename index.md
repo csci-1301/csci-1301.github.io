@@ -29,4 +29,5 @@ Available formats:
 - [Contributing Guidelines](contributing.html) - contributing to this resource
 - [List of Topics](topics_list.html) - list of required topics
 - [User Guide](user_guide.html) - details about this resource
+- [Survey and Statistical Analysis](survey.html) - a brief explanation of the purpose and benefits of surveying our students
 
