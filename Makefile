@@ -307,8 +307,8 @@ $(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$
 	# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
 	# per .cs file in the project. We can now only accomodate single-file projects.
 	
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))$(lastword $(subst /, ,$(dir $<)))/bin/Release
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))$(lastword $(subst /, ,$(dir $<)))/bin/Debug
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Release
+	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Debug
 	# Finaly, we can zip the folder:
 	#zip -r --fifo $@ $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/
 	7z a $@ ./$(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/ -xr!.vs -xr!.directory
