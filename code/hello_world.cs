@@ -3,8 +3,10 @@
  */
 using System;
 
-class Program {
-    static void Main() {
+class Program 
+{
+    static void Main() 
+    {
         Console.WriteLine("Hello, world!"); // I'm an in-line comment.
     }
 }
