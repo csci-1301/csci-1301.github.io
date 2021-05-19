@@ -42,6 +42,7 @@ Here's a simple "hello world" program in the C# language:
 ```
 
 Features of this program:
+
 - A multi-line comment: everything between the `/*` and `/*` is considered a *comment*, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.
 - A `using` statement: This imports code definitions from the System *namespace*, which is part of the .NET Framework (the standard library).
     - In C#, code is organized into **namespaces**, which group related classes together
