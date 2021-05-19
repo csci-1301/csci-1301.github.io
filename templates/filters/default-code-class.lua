@@ -1,3 +1,5 @@
+-- Courtesy of 
+-- https://github.com/jgm/pandoc/issues/2104
 local default_code_classes = {}
 
 function add_default_code_class(el)
