@@ -11,7 +11,7 @@ help:
 # - https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html
 # - https://gist.github.com/rueycheng/42e355d1480fd7a33ee81c866c7fdf78
 # - https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
-
+# - https://github.com/markpiffer/gmtt#call-wildcard-reclist-of-globs
 
 # ===============================
 # Options
@@ -286,8 +286,8 @@ $(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$
 # becomes in this particular case
 # labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
 # which is indeed where the source code is located.
-# Can probably be improved using 
-# https://stackoverflow.com/a/67597710/2657549
+# Can probably be improved using the two answers at
+# https://stackoverflow.com/q/67595735/2657549
 	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
 	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
 	echo $(lastword $(subst /, , $*)) # Name of the solution
