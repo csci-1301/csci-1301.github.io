@@ -16,7 +16,7 @@ We strive to provide to our students all the material they will need to succeed 
 On this website, you will find
 
 - ["The book"](https://csci-1301.github.io/book.html), which contains the lecture notes to cover one semester, and is available [in `pdf`](https://csci-1301.github.io/book.pdf) (for printing, typically) and [in `odt`](https://csci-1301.github.io/book.odt) (for editing, typically). Along with [the `html` version](https://csci-1301.github.io/book.html) (i.e., the website), this gives three convenient ways of accessing the content of this course.
-- Slides accompaining the lecture notes (in `pptx`).
+- Slides accompaining the lecture notes (in `pptx`). <!-- TODO: add (list of) slides to website -->
 - [The labs](https://csci-1301.github.io/labs/), which are tied to particular lectures, and contains hands-on practise exercise as well as instructions on how to use computers to complete this class.
 - Along with [other useful documents](https://csci-1301.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
 
@@ -43,12 +43,12 @@ Typically, the [Installing Software](software_install.html) page should probably
 Some of the resources on this website are still in the flux: the instructors are working hard to construct the material from scratch, and we are sorry if at times you feel that you are going through dry runs.
 On the flip side, remember that you did not have to buy a textbook, and that those resources will be taylored for your use and course of study here at Augusta University: among many other specificities, like using C#, we are making sure that security and other cyber-related issues are regularly discussed!
 
-Be remember, the internet is (also!) a wonderful place where many useful resources are shared.
+Be remember <!-- wording -->, the internet is (also!) a wonderful place where many useful resources are shared.
 For instance, [this guide on open source](https://opensource.guide/) is an excellent place to understand what open source is and why it matters.
 Our resources are supported by Affordable Learning Georgia, who strives to share good, accessible and free (as in "free coffee" _and_ as in "free speech") Open Educational Ressources (OER) to students in Georgia: [reading their "About"](https://www.affordablelearninggeorgia.org/about/about_us) page may help you understand the importance and benefits of developing resources here, for you!
 
 Question:
-~ What exactly is implied by "free as in "free coffee" _and_ as in "free speech""? Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means: is it like coffee (some people say "beer") or like speech? Are the ressources presented here free as in coffee, as in speech, or both?
+~ What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"? Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means: is it like coffee (some people say "beer") or like speech? Are the resources presented here free as in coffee, as in speech, or both?
 
 # How to Get Help
 
