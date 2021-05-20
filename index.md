@@ -1,5 +1,6 @@
 ---
 title: CSCI 1301 - Principles of Computer Programming I
+description: Course resources website for CSCI 1301 at Augusta University.
 ---
 
 <!--
