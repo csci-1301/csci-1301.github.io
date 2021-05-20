@@ -9,9 +9,10 @@ At the beginning of CSCI 1301 and CSCI 1302, students are asked to complete a sh
 
 This survey has 3 primary motivations:
 
-- This project is [supported](about.html#Supports) by [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/), and collected data will be added to its [Data Center](https://www.affordablelearninggeorgia.org/about/data).  ALG is very proud of this Data Center, and our survey should provide a helpful contribution to their statistics and analysis on student savings, retention, and perception of open educational resources.
+- This project is [supported](about.html#Supports) by [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) (ALG), and collected data will be added to its [Data Center](https://www.affordablelearninggeorgia.org/about/data).
+ALG is very proud of this Data Center, and our survey should provide a helpful contribution to their statistics and analysis on student savings, retention, and perception of open educational resources (oer).
 - To assess student understanding of programming concepts at the beginning of CSCI 1301 and CSCI 1302.  We generally expect students to have little-to-no programming knowledge before 1301, and familiarity with all topics at the start of 1302.  The results will assist the CSCI 1302 instructor in gauging average student ability, adapting course delivery if needed.
-- To develop an open line with our students, which we will strive to maintain.  This is a good opportunity for you to share your opinions with us!  Your feedback is important and will be encouraged throughout your coursework.
+- To develop an open line with our students, which we will strive to maintain.  This is a good opportunity for you to share your opinions with us!  [Your feedback is important](./labs/Introduction/#commenting-using-a-github-account-1) and will be encouraged throughout your coursework.
 
 # Outcomes
 
