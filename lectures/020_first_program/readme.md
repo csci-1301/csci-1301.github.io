@@ -35,7 +35,10 @@
 
 Here's a simple "hello world" program in the C# language:
 
-<!-- all code blocks need titles -->
+
+#### Hello World
+
+<!-- TODO: title this code block -->
 
 ```
 !include code/hello_world.cs

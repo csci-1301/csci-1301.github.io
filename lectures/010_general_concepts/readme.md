@@ -135,7 +135,12 @@
     - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
     - **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
 
-![](img/flowchart.svg)
+
+#### Programming workflow 
+
+<!-- TODO: title this figure -->
+
+!["Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs."](img/flowchart.svg)
 
 - Integrated Development Environment (IDE)
     - Combines a text editor, compiler, file browser, debugger, and other tools
