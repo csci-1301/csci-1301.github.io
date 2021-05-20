@@ -146,8 +146,15 @@ Use emoji shortcodes to label following course resources
 
 Templating files are under `templates` directory.
 
-Templates directory specifies layout files and stylesheets used in the website. These layouts are applied by pandoc when resources are built. Website CSS styles can also be found in this directory.
+Templates directory specifies layout files and stylesheets used in the website. These layouts are applied by pandoc when resources are built.
 
+For maintainability reasons it is preferable to apply templates during build time. This strategy makes it easy to edit templates later and apply those changes across all resources. Avoid applying templating to individual resource files whenever possible.
+
+Currently templates directory contains the following:
+
+- `templates/filters/default-code-class.lua` - this pandoc filter will annotate all code blocks by default, and such helps to apply the correct syntax highlighting to the generated documents
+- `templates/labs` - templates used for generating lab resources and associated pages
+- `templates/web` - templates for website and HTML format resources.
 
 # Repository Maintenance
 
@@ -157,11 +164,11 @@ This repository uses following tools and technologies:
 - Github - to make source code available on the web
 - markdown, LaTeX - for writing the resources
 - pandoc - for converting documents to various output formats
-- make, bash - for specifying how to build this resource
+- make - for specifying how to build this resource
 - github actions - to automatically build the resource
 - github pages - to serve the accompanying website
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, [lua filter](https://github.com/jgm/pandoc/issues/2104), etc.
-- [Anchor.js](https://www.bryanbraun.com/anchorjs/) for automatic links.
+- [Anchor.js](https://www.bryanbraun.com/anchorjs/) - for automatic links.
 
 ## How build outputs are generated
 
@@ -205,17 +212,17 @@ To find the current list of dependencies needed to build this resource, refer to
 In general the following dependencies are needed:
 
 - pandoc
-- LaTeX
+- texlive
 - make
 - python 3.+
-- packages and filters: Pygments, pandoc-include
+- packages and filters: Pygments, pandoc-include, texlive-xetex texlive-latex-extra, lmodern, librsvg2-bin
 
 ### Running the build
 
 After installing all dependencies, from the repository root, run:
 
 ```bash
-make all
+make
 ```
 
 To see a list of other alternative build options run
