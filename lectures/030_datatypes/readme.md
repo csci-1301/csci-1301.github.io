@@ -69,7 +69,7 @@ from list of topics, this should cover the following:
 
 Integers are "whole" numbers (ℤ = \{…, -1, 0, 1, 2, 3, …\}), floating point numbers are real numbers (ℝ), strings are "text messages", …
 
-Please refer to the ["Datatypes in C#" cheatsheet](https://csci-1301.github.io/datatypes_in_charp.html) for more information about datatypes.
+Please refer to the ["Datatypes in C#" cheatsheet](https://csci-1301.github.io/datatypes_in_csharp.html) for more information about datatypes.
 
 ## String and Int Variables
 
