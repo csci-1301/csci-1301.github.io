@@ -40,7 +40,7 @@ Question:
 
 #. Let's compile this program. Look for an option to `Build solution` and click on it. What happened?
 
-#. Let's run this program. Look for a menu option `Build > Start without Debugging` or `Run > Run Project` and click on it. What happened?
+#. Let's run this program. Look for a menu option `Debug > Start without Debugging` or `Run > Run Project` and click on it. What happened?
 
 #. You will **extensively** compile and run programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
 
