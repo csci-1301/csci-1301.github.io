@@ -1,4 +1,4 @@
-# Datatypes and Operators
+# Datatypes
 
 <!-- 
 

@@ -27,3 +27,5 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 | :--- | :--- | :--- | :--- |
 | [General Concepts](/lectures/010_general_concepts) | None | [`Introduction`](/labs/Introduction) | Basic concepts about computers and programming |
 | [First Program](/lectures/020_first_program) | None | [`HelloWorld`](/labs/HelloWorld) | Explains the components of a simple "Hello World" program |
+| [Datatypes](/lectures/030_datatypes) |  [First Program](/lectures/020_first_program) | TODO | Variable declaration and initialization and overview of data types |
+| [Operators](/lectures/040_operators) |  [Datatypes](/lectures/030_datatypes) | TODO | Operators and precedense rules |

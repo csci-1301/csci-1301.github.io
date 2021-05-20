@@ -14,5 +14,4 @@ from list of topics, this should cover the following:
 - Precedence and "validity" of some expressions (typically, `! 2 < 3` is not a valid expression) 
 - Combined assignment operators: `+=`, `*=`, `-=`, `/=`, `%=`
 
-
 -->
