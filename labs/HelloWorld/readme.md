@@ -128,7 +128,7 @@ In this exercise, you are asked to do the following:
 #. Make sure you understand the meaning of the error message.
 #. Undo your change by pressing 
 
-    - Windows, Linux: <kbd>Ctrl</kbd> + <kbd>z</kbd> <!-- TODO: is this accurate for linux? -->
+    - Windows, Linux: <kbd>Ctrl</kbd> + <kbd>z</kbd>
     - MacOS: <kbd>Cmd</kbd> + <kbd>z</kbd>
 
 #. Make sure you can build the solution without a new error message.
