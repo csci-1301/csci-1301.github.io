@@ -31,4 +31,5 @@ If you follow these instructions the lab will be automatically built into a dist
 
 | Lab title | Prerequisites | Related Lectures |  Description |
 | :--- | :--- | :--- | :--- |
-| [HelloWorld](/labs/HelloWorld) | None | [General concepts](/lectures/010_general_concepts), [Hello World](/lectures/020_hello_world) | Compile and run hello world program |
+| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, install IDE |
+| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program |
