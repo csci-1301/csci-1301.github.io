@@ -10,7 +10,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
 
 ## Opening Your First Program
 
-#. Download [HelloWorld.zip](https://github.com/csci-1301/csci-1301.github.io/blob/main/code/Welcome.zip?raw=true) and save it on your computer.
+#. Download [Welcome.zip](https://github.com/csci-1301/csci-1301.github.io/blob/main/code/Welcome.zip?raw=true) and save it on your computer.
 #. Unzip the program file^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unziped!] .
     
     - on Windows: right click and choose "Extract all"
