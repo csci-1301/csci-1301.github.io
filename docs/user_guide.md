@@ -19,25 +19,24 @@ This repository is organized as follows
 | `problems` | practice problems |
 | `templates` | templates and meta data files used for building this resource |
 | `index.md` | website index page |
+| `404.md` | website 404 page |
 
 Additional configuration files are at the root of the source code repository.
 
 ## Locating course resources
 
-<!-- Where to find the code for the lecture notes / labs / etc. -->
+How to obtain the latest version of this resource:
 
-Ways to obtaining the **latest version** of this resource:
+1. visit the [accompanying website](https://csci-1301.github.io/) - this website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources
+2. latest version is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
 
-1. visit the [accompanying website](https://csci-1301.github.io/) - this website includes the course textbook in all supported formats, links to labs, and all other available student resources
-2. TODO: AU mirror website/box/instructor website
-3. latest version is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+Copies of this resource will be made available through AU mirror website, box, and/or instructor's own website. Since manual effort is required to share the resources through these ways, these sources may be slightly behind latest version.
 
-Ways to obtain **earlier** versions of this resource:
+How to obtain much earlier versions of this resource:
 
-1. Available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
-2. TODO: periodically archived on Galileo 
+1. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+2. This resource will be periodically archived on Galileo 
 
-<!-- other places? -->
  
 # Editing Resources
 
@@ -50,6 +49,11 @@ If you are new to this project, first see [Contributing Guidelines](/contributin
     - All resources are labelled when applicable
         - at minimum list prerequisites and security-related aspects
         - see [Content Labelling](#content-labelling) for more details
+
+ - **Markdown**
+    - text documents are written in readme files using standard markdown syntax
+    - we will use a convention of always naming such files `readme.md` (lowercase)
+
 - **Images**
     - Images require a descriptive alt tag for accessibility
     - Store images in the repository in `img` directory because pandoc will look for images there 
@@ -58,7 +62,7 @@ If you are new to this project, first see [Contributing Guidelines](/contributin
     **Syntax example.** The quoted text is the alt tag and in parentheses is path to file
 
     ```
-    !["image of visual studio IDE"](./img/image.jpg)
+    !["image of visual studio IDE"](./img/vs_ide.jpg)
     ```
 
 - **Source code**
@@ -152,7 +156,7 @@ For maintainability reasons it is preferable to apply templates during build tim
 
 Currently templates directory contains the following:
 
-- `templates/filters/default-code-class.lua` - this pandoc filter will annotate all code blocks by default, and such helps to apply the correct syntax highlighting to the generated documents
+- `default-code-class.lua` - pandoc filter for annotating code blocks, configured to default to C\#, which then allows applying syntax highlighting to all code block.
 - `templates/labs` - templates used for generating lab resources and associated pages
 - `templates/web` - templates for website and HTML format resources.
 
