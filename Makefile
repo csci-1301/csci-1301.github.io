@@ -148,7 +148,7 @@ clean:
 
 $(BUILD_DIR): 
 	@echo "starting build..."
-	mkdir -p $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	cp img/favicon/* $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
@@ -247,13 +247,14 @@ $(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
 #### Whole folders
 # Compile all the labs in a specific format, by calling the previous corresponding rule for each file.
 ##### HTML
-labs-html:$(SOURCE_LAB_INSTRUCTION_FILES)
+labs-html:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)$(LABS_DIR)index.html $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_HTML)
+
 ##### PDF
-labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES)
+labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_PDF)
 ##### ODT
-labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES)
+labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
 
 #### Index page for labs
