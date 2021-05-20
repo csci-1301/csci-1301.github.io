@@ -149,8 +149,10 @@ clean:
 $(BUILD_DIR): 
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)
+	cp img/favicon/* $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
+# It also copy the favicon files to the right place.
 
 # -------------------------------
 ## Book
