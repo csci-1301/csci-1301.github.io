@@ -92,6 +92,9 @@ Unfortunately, MonoDevelop offers pre-packaged release only for linux distributi
 You can download Rider [from their website](https://www.jetbrains.com/rider/download/), for any operating system.
 Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
 
+Note that jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
+In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
+
 ### Installing Anything Anywhere
 
 If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution or a windows-image on top of your operating system.
