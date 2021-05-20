@@ -2,24 +2,31 @@
 title: Hello World Lab
 ---
 
+In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.
+It is customary to start the study of a programming language with an ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program, that simply display "Hello World". 
+Although such a program has no real interest nor purpose, it is used to make sure that your set-up is correctly configured, and to guide you gently in the discovery of programs and their language!
+
 # Your First Program
 
 ## Opening Your First Program
 
-#. Download HelloWorld.zip from the same place where you downloaded this instructions file and save it on your computer.
-#. Unzip the program file.
+#. Download [HelloWorld.zip](https://github.com/csci-1301/csci-1301.github.io/blob/main/code/Welcome.zip?raw=true) and save it on your computer.
+#. Unzip the program file^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unziped!] .
     
-    - on Windows, right click and choose "Extract all"
-    - on macOS: double-click the .zip file
+    - on Windows: right click and choose "Extract all"
+    - on macOS: double-click the `.zip` file
     - on Linux: [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.com/Unzip-Files-in-Linux)
 
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld.sln` file
-#. Clicking the `.sln` file should launch your default C\# IDE that you installed previously.
+#. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](software_install.html) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
 
+Question:
+~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://en.wikipedia.org/wiki/Domain_name), because we told you to do so, or for some other reasons?
+    
 Question:
 ~  How is an IDE different from other types of software? Identify 3 differences between an IDE and a web browser. Can you identify 3 similarities?
 
@@ -63,7 +70,7 @@ You can save your project:
 
 Having _two_ backups is generally recommended.
 
-If you chose the "virtual" option (i.e., using a server) and you are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/services/browse/official), etc.) on the lab computer: it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
+If you chose the "remote" option (i.e., using a server) and you are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/services/browse/official), etc.) on the lab computer: it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
 Make sure to always upload your files before logging out of the computer.
 
 ## Making Sure You Have the Right Files
@@ -88,15 +95,19 @@ Question:
 Once you are done, test that you performed the backup properly. 
 
 #. Re-download or transfer the files you just saved (the whole `HelloWorld` folder) on the computer 
-#. make sure you can still open the project in your IDE
+#. Make sure you can still open the project in your IDE
 #. Do you remember...
-    #. how to build the solution
-    #. start the program without debugging?
-    #. Use the shortcuts?
+    #. How to build the solution
+    #. How to start the program without debugging?
+    #. Some shortcuts?
 
-If not, go have another look back at the "Compiling and Executing Your First Program" section.
+If not, go have another look back at the ["Compiling and Executing Your First Program"](#compiling-and-executing-your-first-program) section.
 
-If your backup went wrong (you cannot open the project, it won't compile, …), try to understand what happened. Then, re-download the `HelloWorld.zip`, unzip it, and make sure you can build the solution and run the program.
+If your backup went wrong (you cannot open the project, it refuses to compile, …), try to understand what happened.
+Then, re-download the `HelloWorld.zip`, unzip it, and make sure you can build the solution and run the program.
+
+Action:
+~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning accros millions [of lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code): such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control), allowing them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.
 
 ## Orientation
 
@@ -104,16 +115,16 @@ If your backup went wrong (you cannot open the project, it won't compile, …), 
 
 IDEs have many features and require practice. Explore your IDE and try to complete the following tasks:
 
-#. If you currently have a solution open in the IDE, close that solution
-#. Use the IDE file menu to locate and re-open HelloWorld program
-#. Build the program
+#. If you currently have a solution open in the IDE, close that solution.
+#. Use the IDE file menu to locate and re-open HelloWorld program.
+#. Build the program.
 #. Try to find `Clean solution`. Cleaning is the action of removing all generated files.
-#. Close `Solution Explorer` or `Explorer` and make sure you can re-open it
+#. Close `Solution Explorer` or `Explorer` and make sure you can re-open it.
 #. Try to change the font size of your editor window.
 
 ## Breaking Your Program
 
-If you followed the instructions carefully, your were able to build the solution and start the program without debugging after each step. As you know, C\# has precise rules and not respecting them can prevent your solution from being built by the IDE.
+If you followed the instructions carefully, your were able to build the solution and start the program without debugging after each step. [As you know, C\# has precise rules](../../book.html#rules-of-c-syntax) and not respecting them can prevent your solution from being built by the IDE.
 
 In this exercise, you are asked to do the following:
 

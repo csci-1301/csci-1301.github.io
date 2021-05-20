@@ -110,6 +110,9 @@ If you are interested in joining these meetings, or you have any questions about
 
 It may seems silly, but asking a question "the right way" may not always be easy.
 #. Go over the instructions, [look in our resources](https://github.com/csci-1301/csci-1301.github.io/search?q=ask+a+question) for some meaningful keywords, and take the time to think.
-#. If you are still facing difficulties, be detailed and clear about what you think went wrong: if the question is related to computers, specify which operating system, what you have tried, the exact nature of the error message, etc. Screenshot are not always the right way to convey your question: try to be descriptive, and explain what you tried.
+#. If you are still facing difficulties, be detailed and clear about what you think went wrong: if the question is related to computers, specify which operating system, what you have tried, the exact nature of the error message, etc. Screenshot are not always the right way to convey your question: try to be descriptive, and explain what you tried. If you want to refer to a particular lab or lecture, look for the closest title, hover it, and you should see a "§" symbol appears: click on it, you can now [share that link](https://www.wikihow.com/Copy-and-Paste-a-Link) so that your interlocutor knows precisely what you are talking about!
 
 And, remember: your instructor knows that you are a student and here to learn, so you should _never_ feel intimidated or assume that _everyone knows better than you_: many students struggle in this class at time, and you could actually make them all a favor by asking your instructor to go over a particular dimension that they may have overlooked or explained poorly!
+
+Action:
+~ You may have noticed that multiple links point to <https://www.wikihow.com/>. Can you check if _the content_ and _the software platform_ of wikihow are free (as in coffee or speech)?
