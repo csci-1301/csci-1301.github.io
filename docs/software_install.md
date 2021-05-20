@@ -8,7 +8,7 @@ title: Installing Software
 You probably already installed a software in your life, be it [VLC](http://www.videolan.org/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app), or [Whatsapp](https://www.whatsapp.com/).
 However, depending on if you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.
 
-Between the Play store, the command-line interface [homebrew](http://brew.sh/) and the act of downloading a software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
+Between the [Play store](https://en.wikipedia.org/wiki/Google_Play#Play_Store_on_Android), the [command-line interface](https://en.wikipedia.org/wiki/Command-line_interface), [homebrew](http://brew.sh/) and the act of downloading a software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
 In addition of making sure that you are downloading the software from a trusted source, you should also be vigileant about the information the software will be able to access about e.g. your private life.
 
 As data can be lost or corrupted upon downloading, many plat-form now uses [checksum](https://en.wikipedia.org/wiki/Checksum) to verify the integrity of the software you downloaded before installing it.
@@ -30,8 +30,9 @@ Executing "blindly" code found on-line, on the other hand, gives a good chance o
 An [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), for "Integrated development environment", is the software or service you will be using to write, compile, execute and debug your code. 
 There are many available IDEs, and some can accomodate multiple different programming languages.
 
-For C#, the main two choices are [Visual Studio](https://visualstudio.microsoft.com/) and [MonoDevelop](https://www.monodevelop.com/).
-The former is available on Windows, Mac OS and on virtual machines, the latter is available on all plat-forms (including but not limited to Linux operating systems).
+For C#, [there are many different possibilities](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C#): some are cross-platforms (meaning you can use them on macOS, windows or Linux), some are provided free of charge, some have not been updated in a long time.
+Three natural choices are [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/).
+While the last two are accessible on every operating sysems, Visual Studio is available only for windows, and in a slightly different version for macOS.
 
 To access one or the other, you will need either
 
@@ -42,26 +43,12 @@ To access one or the other, you will need either
 The third solution is a backup plan, as instead you will access a very minimal version of an IDE to test small snippets of code.
 You should not rely on it for the duration of this course.
 
-<!--
-_We recommend that you first try MonoDevelop_ as it is lighter, simpler, and enough for this course, but provides directions for both IDEs.
--->
-
 ## Installing an Ide  On Your Own Computer
 
-This part gathers some references for you to install MonoDevelop or Visual Studio on your own computer, regardless of your operating system.
+This part gathers some references for you to install [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/) on your own computer, regardless of your operating system.
 It is strongly encouraged that you do so, especially if you want to continue in a CS/IT/Cyber degree, but is not mandatory^[Unless this class is fully online, of course.].
-The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before asking for help!
-Once you've identified your issue, try again from scratch to see if you missed a point, and if you are still facing the same issue  and can describe it, feel free to look for set-up help on the internet, from your classmates, and from your instructors.
 
-### Installing MonoDevelop On Your Own Computer
-
-Unfortunately, MonoDevelop offers pre-packaged release only for linux distributions
-
-- If you are using linux (e.g. Ubuntu, Debian, etc.), then please head out to [MonoDevelop's download page](https://www.monodevelop.com/download/#fndtn-download-lin).
-- If you are using MacOS, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#macos), but it is very likely that you will find them impossible to understand.
-- If you are using Windows, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#windows), but it is very likely that you will find them impossible to understand.
-
-If you are a MacOs or Windows user, you could use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution on top of your operating system, but it is simpler to pick Visual Studio instead.
+The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before [asking for help](labs/Introduction/#how-to-ask-a-question)!
 
 ### Installing Visual Studio On Your Own Computer
 
@@ -88,21 +75,37 @@ Note that we are *not* installing "Visual Studio *code*", but simply "Visual Stu
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".
 
-#### For Mac and Other Linux Systems
+#### For Mac
 
-You can either install another version of Visual Studio or "emulate" Windows on your computer.
+Download a version of Visual Studio at <https://visualstudio.microsoft.com/vs/mac/>. It differs a bit from the Windows version, but that should not impact your experience in this class. The only Visual Studio feature we rely on is the ability to create "Console Apps with C#", which is equally available in both the Windows and Mac versions.
 
-For the first option, download a version of Visual Studio at <https://visualstudio.microsoft.com/vs/mac/>. It differs a bit from the Windows version, but that should not impact your experience in this class. The only Visual Studio feature we rely on is the ability to create "Console Apps with C#", which is equally available in both the Windows and Mac versions.
+### Installing MonoDevelop On Your Own Computer
 
-For the second option, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
-This option works for Linux systems as well.
+Unfortunately, MonoDevelop offers pre-packaged release only for linux distributions
+
+- If you are using linux (e.g. Ubuntu, Debian, etc.), then please head out to [MonoDevelop's download page](https://www.monodevelop.com/download/#fndtn-download-lin).
+- If you are using MacOS, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#macos), but it is very likely that you will find them impossible to understand.
+- If you are using Windows, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#windows), but it is very likely that you will find them impossible to understand.
+
+### Installing Rider On Your Own Computer
+
+You can download Rider [from their website](https://www.jetbrains.com/rider/download/), for any operating system.
+Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
+
+### Installing Anything Anywhere
+
+If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution or a windows-image on top of your operating system.
+
+For this, and regardless of your current operating system, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
 
 #. You can use 
     #. "VMware Fusion 10.x Pro" (only for MacOS, available on [OnTheHub](https://e5.onthehub.com/WebStore/OfferingDetails.aspx?o=637dd37b-06b5-e711-80f7-000d3af41938&pmv=00000000-0000-0000-0000-000000000000&ws=2020165a-723a-de11-b696-0030485a8df0&vsro=8),
     #. [Virtual Box](https://www.virtualbox.org/) (for Linux and Mac),
     #. [Virtual Machine Manager](https://virt-manager.org/) (for Linux).
-#. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching),
-#. Install and run your version of Windows from your virtual machine, and follow [the instructions for windows](#install-win) to install Visual Studio.
+#. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching), or a linux-based distribution (typically, [ubuntu](https://ubuntu.com/appliance/vm) has a good reputation of being accessible and user-friendly).
+#. Install and run your version of Windows or Linux from your virtual machine, and follow the corresponding instructions to install the IDE you are interested in.
+
+Note that [it is illegal to run macOS in a virtual environment that is not hosted on a mac computer](https://law.stackexchange.com/q/18282), which drastically reduces the interest for you to consider this option.
 
 ## Accessing One of the Computers in a Computer Lab
 
