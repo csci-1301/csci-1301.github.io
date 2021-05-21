@@ -19,7 +19,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
 
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld.sln` file
-#. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](software_install.html) or that is pre-loaded on the computer lab you are using.
+#. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
@@ -50,7 +50,7 @@ Question:
     - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
 
     MacOS
-    - Build solution: <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>B</kbd>
+    - Build solution: <kbd>Command</kbd> + <kbd>B</kbd>
     - Run: <kbd>F5</kbd> 
     - Exit any program: <kbd>Command</kbd> + <kbd>Q</kbd>
 
