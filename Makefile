@@ -122,10 +122,7 @@ WEBPATH = templates/web/
 WEB_INDEX = index.md
 404_PAGE = 404.md
 # flags to apply to every HTML page
-PANDOC_HTML_ALL = --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css	
-
-# additional options for "non-index" pages
-PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) $(PANDOC_HTML_ALL) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg 
+PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css	
 
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
@@ -214,8 +211,8 @@ docs: docs-html docs-pdf docs-odt
 # -------------------------------
 
 web-index: 
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html
-	pandoc $(404_PAGE) $(PANDOC_HTML_ALL) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html
+	pandoc $(404_PAGE) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html
 
 # -------------------------------
 ## Lab Files
