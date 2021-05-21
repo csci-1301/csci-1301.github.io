@@ -1,0 +1,48 @@
+% !TeX document-id = {b23d8692-717b-4b0a-8e35-a79bfe1eca58}
+% !TeX TXS-program:compile = txs:///xelatex/[--shell-escape -8bit]
+\documentclass[margin=20pt]{standalone}
+\renewcommand\familydefault{\sfdefault} % Default family: serif 
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+\usepackage{minted}
+\newcommand{\csi}[1]{\mintinline{csharp}{#1}}
+
+\definecolor{implicit}{HTML}{37392E}
+\definecolor{explicit}{HTML}{19648E}
+\definecolor{explicit-round}{HTML}{19647E}
+\definecolor{explicit-truncate}{HTML}{28AFB0}
+
+\begin{document}
+
+\begin{tikzpicture}
+\node (int) {\csi{int}};
+\node[right = 3cm of int] (float) {\csi{float}};
+\node[right = 3cm of float] (double) {\csi{double}};
+\node[right = 3cm of double] (decimal) {\csi{decimal}};
+% Implicit
+\draw [->, very thick, implicit] (int) to[bend left  = 2cm ] (float);
+\draw [->, very thick, implicit] (float) to[bend left  = 2cm ] (double);
+\draw [->, very thick, implicit] (int) to[bend left  = 2cm ] (double);
+\draw [->, very thick, implicit] (int) to[bend left  = 2cm ] (decimal);
+% Explicit
+\draw [->, very thick, dotted, explicit] (double) to[bend left ] (decimal);
+\draw [->, very thick, dotted, explicit] (float) to[bend left] (decimal);
+%% Rounding
+\draw [->, very thick, dashed, explicit-round] (decimal) to[bend left] (double);
+\draw [->, very thick, dashed, explicit-round] (double) to[bend left] (float);
+\draw [->, very thick, dashed, explicit-round] (decimal) to[bend left] (float);
+%% Truncate
+\draw [->, very thick, explicit-truncate] (decimal) to[bend left] (int);
+\draw [->, very thick, explicit-truncate] (double) to[bend left] (int);
+\draw [->, very thick, explicit-truncate] (float) to[bend left] (int);
+% Legend
+\node (implicit) at (0, -3) {Implicit conversion};
+\draw [->, very thick, implicit] ($(implicit)+(-2.1,0)$) -- (implicit);
+\node (explicit-round) [below=of implicit.west, anchor=west] {Explicit conversion (rounding)};
+\draw [<-, very thick, dashed, explicit-round] ($(explicit-round)+(-3,0)$) -- (explicit-round);
+\node (explicit-truncate) [right = 8cm of explicit-round.west, anchor=west] {Explicit conversion (truncating)};
+\draw [<-, very thick, explicit-truncate] ($(explicit-truncate)+(-3,0)$) -- (explicit-truncate);
+\node (explicit) [right = 8cm of implicit.west, anchor=west] {Explicit conversion};
+\draw [->, very thick, explicit, dotted] ($(explicit)+(-2.1,0)$) -- (explicit);
+\end{tikzpicture}
+\end{document}
