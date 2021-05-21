@@ -7,8 +7,8 @@
     - Intermediate language is called CIL (Common Intermediate Language)
     - Interpreter is called .NET Runtime
     - Standard library is called .NET Framework, comes with the compiler and runtime
-- It's widespread and popular
-    - 7th most used language on StackOverflow, 5th-most if you discount JavaScript and HTML (which are used for websites, not programs)
+- It is widespread and popular
+    - [7th most used language on StackOverflow]((https://insights.stackoverflow.com/survey/2017#technology-programming-languages>)), 5th-most if you discount JavaScript and HTML (which are used for websites, not programs)
     - .NET is the 2nd most used library/framework
 
 ## The Object-Oriented Paradigm
@@ -106,31 +106,31 @@ Features of this program:
     - Built-in commands/features of the language
     - Can only be used for one specific purpose; meaning cannot be changed
     - Examples:
-        - using
-        - class
-        - public
-        - private
-        - namespace
-        - this
-        - if
-        - else
-        - for
-        - while
-        - do
-        - return
+        - `using`
+        - `class`
+        - `public`
+        - `private`
+        - `namespace`
+        - `this`
+        - `if`
+        - `else`
+        - `for`
+        - `while`
+        - `do`
+        - `return`
 - Identifiers: Human-chosen names
     - Names for classes, variables, methods, namespaces, etc.
-    - Some have already been chosen for the standard library (e.g. Console, WriteLine), but they're still identifiers, not keywords
+    - Some have already been chosen for the standard library (e.g. `Console`, `WriteLine`), but they are still identifiers, not keywords
     - Rules for identifiers:
         - Must not be a reserved word
-        - Must contain only letters, numbers, and underscore -- no spaces
+        - Must contain only letters (`a` → `Z`), numbers (`0` → `9`), and underscore (`_`)-- no spaces
         - Must not begin with a number
         - Are case sensitive
     - Conventions for identifiers
-        - Should be descriptive, e.g. "AudioFile" or "userInput" not "a" or "x"
+        - Should be descriptive, e.g. "`AudioFile`" or "`userInput`" not "`a`" or "`x`"
         - Should be easy for humans to read and type
-        - If name is multiple words, use CamelCase to distinguish words
-        - Class and method names should start with capitals, e.g. `class AudioFile`
-        - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. `myFavoriteNumber`
+        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) to distinguish words
+        - Class and method names should start with capitals, e.g. "`class AudioFile`"
+        - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 
  

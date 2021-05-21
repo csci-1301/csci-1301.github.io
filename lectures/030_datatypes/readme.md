@@ -97,7 +97,7 @@ Variable Name | Variable Type | Variable Size | Variable Value
 You can declare and assign a variable in one statement using what is called an "initialization statement".
 
 
-#### initialization
+#### Initialization
 
 <!-- TODO: title this code block -->
 
