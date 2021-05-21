@@ -1,4 +1,4 @@
-    # C# Fundamentals
+# C# Fundamentals
 
 ## Introduction to the C# Language
 
