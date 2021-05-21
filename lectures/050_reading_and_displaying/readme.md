@@ -2,10 +2,12 @@
 
 ## Escape Sequences
 
-\n = new line
-\t = tab
-" = display double quotes
-\ = display single backslash
+Code | Produce
+--- | ---
+`\n` | A [new line](https://en.wikipedia.org/wiki/Newline) (yes, that _is_ a character!)
+`\t` | A [tab character](https://en.wikipedia.org/wiki/Tab_key#Tab_characters) (that is generally interpreted as 4 spaces)
+`\"` | Double quotes (`"`)
+`\\` | A single backslash (`\`)
 
 The difference between `Write` and `WriteLine`.
 
