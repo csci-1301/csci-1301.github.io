@@ -56,7 +56,7 @@ Note that since a condition is always either true or false, we know that at leas
 https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tLT58QXNrIGZvciBDaXRpemVuc2hpcCBhbmQgYWdlfCBCe1VzIENpdGl6ZW5zaGlwP30KQiAtLT58VHJ1ZXwgQ3tBZ2Ugb3ZlciAxOD99CkMgLS0-fEZhbHNlfCBFW1lvdSBhcmUgdG9vIHlvdW5nIV0KQyAtLT58VHJ1ZXwgRltZb3UgY2FuIHZvdGUhXQpCIC0tPnxGYWxzZXwgRFtTb3JyeSwgeW91IGNhbid0IHZvdGUgaW4gdGhlIFVTIV0
 -->
 
-![A flowchart representation of the nested if-else statement](drawings/15nestedif.png)
+!["A flowchart representation of the nested if-else statement"](img/15nestedif.png)
 
 ~~~~~~~{.cs .numberLines}
 bool usCitizen = true;
