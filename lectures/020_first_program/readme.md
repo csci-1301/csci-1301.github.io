@@ -1,4 +1,4 @@
-# C# Fundamentals
+    # C# Fundamentals
 
 ## Introduction to the C# Language
 
@@ -63,11 +63,11 @@ Features of this program:
     - This statement contains a class name (`Console`), followed by a method name (`WriteLine`). It calls the `WriteLine` method in the `Console` class.
     - The **argument** to the `WriteLine` method is the text "Hello, world!", which is in parentheses after the name of the method. This is the text that gets printed in the console: The `WriteLine` method (which is in the standard library) takes an argument and prints it to the console.
     - Note that the argument to `WriteLine` is inside double-quotes. This means it is a **string**, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.
-- An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by teh C# compiler.
+- An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by the C# compiler.
 
 ## Rules of C# Syntax
 
-- Each statement must end in a semicolon
+- Each statement must end in a semicolon (`;`),
     - Class and method declarations are not statements
     - A method *contains* some statements, but it is not a statement
 - All words are case-sensitive
@@ -119,7 +119,7 @@ Features of this program:
         - `do`
         - `return`
 - Identifiers: Human-chosen names
-    - Names for classes, variables, methods, namespaces, etc.
+    - Names for classes (`Rectangle`, `ClassRoom`, etc.), variables (`age`, `name`, etc.), methods (`ComputeArea`, `GetLength`, etc), namespaces, etc.
     - Some have already been chosen for the standard library (e.g. `Console`, `WriteLine`), but they are still identifiers, not keywords
     - Rules for identifiers:
         - Must not be a reserved word
@@ -129,7 +129,7 @@ Features of this program:
     - Conventions for identifiers
         - Should be descriptive, e.g. "`AudioFile`" or "`userInput`" not "`a`" or "`x`"
         - Should be easy for humans to read and type
-        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) to distinguish words
+        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) (or its variation [Pascal case](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/)) to distinguish words
         - Class and method names should start with capitals, e.g. "`class AudioFile`"
         - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 

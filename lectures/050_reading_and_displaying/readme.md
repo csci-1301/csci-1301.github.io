@@ -1,4 +1,15 @@
-# Reading a String From the User
+# Reading, Displaying and Converting Values, Variables, and From the  User
+
+## Escape Sequences
+
+\n = new line
+\t = tab
+" = display double quotes
+\ = display single backslash
+
+The difference between `Write` and `WriteLine`.
+
+## Reading a String From the User
 
 We can ask _the user_ to give their name to the program while it is running as RunTime input. 
 We can use a statement like:
@@ -10,9 +21,9 @@ string yourFirstName = Console.ReadLine();
 to store the value entered by the user from the output window in the string variable labeled `yourFirstName`.
 
 
-# Reading an Int From the User
+## Reading an Int From the User
 
-## Converting a String into an Int
+### Converting a String into an Int
 
 In the `int` class, there is a method called `Parse` that converts a `string` into an `int` if possible and "crashes" otherwise.
 
@@ -29,7 +40,7 @@ Note that if the string does _not_ correspond to a number (e.g. `"Hi Mom!"`), th
 
 (In case you are curious, we can also convert an `int` into a string using the `ToString` method, as e.g. in `12.ToString()`.)
 
-## Converting a User input into an int
+### Converting a User input into an int
 
 We can simply combine the `Console.ReadLine()` instruction with the `int.Parse` method to read integers from the user:
 
@@ -58,7 +69,7 @@ Console.WriteLine($"Next year we will be in {int.Parse(Console.ReadLine()) + 1}.
 But, of course, the more that happens on a single line, the more difficult it is to debug it properly.
  
 
-# Format Specifiers
+## Format Specifiers
 
 We can use interpolation to display more nicely numerical values.
 There are four important format specifiers in C#.
