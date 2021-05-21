@@ -60,7 +60,8 @@ Using casting allows us to go "against" those safe-guards, and can lead to the f
 - Truncating a floating-point number as a "truncated" number (e.g. from `double` to `int`).
 - Rounding a precise number to fit a less precise datatype (e.g. from `decimal` to `double`).
 
-![](drawings/conversions.svg)
+!["Implicit and Explicit Conversion Between Datatypes"](img/conversions.svg)
+
 
 Note that _you can_, actually, store a `float` literal inside a `double`, but that you _can not_ store a `double` or a `float` literal inside a `decimal`.
 
@@ -89,7 +90,30 @@ Note that the integer division simply "truncates", and does not round up (that i
 Also note that in "4.2", "4" is the integer, "." (period) is the decimal separator, not to be mixed with "," (comma), the thousands separator.
 
 When performing an operation involving different datatypes, the result type of the operation is the "most precise" datatype if it is allowed (i.e., an implicit conversion can take place), otherwise an error is returned.
-Refer to [the "Result Type of Operations" chart from the cheatsheet](https://spots.augusta.edu/caubert/teaching/2020/fall/csci1301/weekly/03/datatypes/index.html#result-type-of-operations) for more detail.
+Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatypes_in_csharp.html#result-type-of-operations) for more detail.
+
+# Increment and Decrement Operators
+
+Increment and decrement operators are used to add or remove one from variables holding numerical values.
+
+
+| | Increment | Decrement |
+| --- | --- | --- | 
+| Postfix (after) | a++ | a-- |
+| Infix (before) | ++a | --a |
+
+Postfix operators are always executed before any other operators (cf. <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#operator-precedence-and-associativity>), but the way those fours operators interact with other assignments is subtle.
+Generally, postfix operators are executed _after_ the rest of the statement is executed, while prefix operators are executed _before_ the rest of the statement:
+
+~~~~~~~{.cs .numberLines}
+int a = 0;
+Console.WriteLine(a--); // The value of a (0) is displayed, then decremented (-1).
+Console.WriteLine(a);   // The value of a is (-1) displayed
+Console.WriteLine(--a); // The value of a (-1) is decremented (-2) then displayed.
+
+int b = a++;    // The value of a (-2) is assigned to b then incremented (-1).
+~~~~~~~
+
 
 # Operations on Strings
 
@@ -107,13 +131,3 @@ Console.WriteLine(text); // We can write directly the name of the variable, inst
 
 Note that the `+` sign denotes different operations depending on the type of the operands (`string` or `int`, for instance).
 
-# Reading a String From the User
-
-We can ask _the user_ to give their name to the program while it is running as RunTime input. 
-We can use a statement like:
-
-~~~~~~~{.cs}
-string yourFirstName = Console.ReadLine();
-~~~~~~~
-
-to store the value entered by the user from the output window in the string variable labeled `yourFirstName`.

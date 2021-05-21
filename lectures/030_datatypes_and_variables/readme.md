@@ -141,3 +141,31 @@ More details will be given in lab #3, in homework #2, and during lecture #4.
     ```
     int a=0, b, c;  // a, b, c are declared as three int variables, and a's value is set to 0.
     ```
+
+# Named Constant
+
+A constant is a variable whose value cannot change.
+
+~~~~~~~{.cs}
+const int MONTHS = 12;
+const double AVOGADRO = 6.0220e23; // Avogadro Number. Units  1/mol 
+const double PI = 3.14159265358979;
+const double MILES_TO_KM = 1.60934;
+~~~~~~~
+
+- Value at to be fixed at declaration (= can only be initialized), and cannot change.
+- Name is often ALL CAPS.
+
+For instance, $π$ is defined in the `Math` class and can be accessed as follows:
+
+~~~~~~~{.cs}
+Console.WriteLine(Math.PI);
+~~~~~~~
+
+<!--
+
+~~~~~~~{.cs}
+public const double PI = 3.14159265358979;
+~~~~~~~
+
+-->
