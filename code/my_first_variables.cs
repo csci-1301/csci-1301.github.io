@@ -7,12 +7,10 @@ class MyFirstVariables
         // Declaration
         int myAge;
         string myName;
-
         // Assignment
-        myAge = 40;
-        myName = "Clément";
-        
+        myAge = 29;
+        myName = "Edward";
         // Displaying
-        Console.WriteLine($"I am {myAge} old and my name is {myName}.");
+        Console.WriteLine($"My name is {myName} and I am {myAge} years old.");
     }
 }
