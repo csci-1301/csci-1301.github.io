@@ -12,6 +12,7 @@ help:
 # - https://gist.github.com/rueycheng/42e355d1480fd7a33ee81c866c7fdf78
 # - https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
 # - https://github.com/markpiffer/gmtt#call-wildcard-reclist-of-globs
+# - https://devhints.io/makefile
 
 # ===============================
 # Options
@@ -86,12 +87,20 @@ TARGET_LAB_INSTRUCTION_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix index.
 # Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with odt.
 
 #### Source Code
-SOURCE_LAB_CODE_FILES := $(shell find $(LABS_DIR)*/src/ -name '*.cs')
-# Find all the .cs files in the sub-directories "src/" in the sub-directories in "labs/"
 
-TARGET_LAB_CODE_FILES := $(BUILD_DIR)$(LABS_DIR)
-LAB_ZIP:=$(BUILD_DIR)$(LABS_DIR)$(firstword $(subst /, , $(subst $(LABS_DIR), ,$(SOLUTIONS))))/$(lastword $(subst /, , $(SOLUTIONS))).zip
-# The zips containing the source code for each solution we need to build.
+# The following Makefile trickery was possible thanks to 
+# https://stackoverflow.com/a/67600525
+# Extract directories that contain Program.cs files in the lab directory.
+SOURCEDIRS := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
+
+# Generate archive names: drop the /src/ part and add .zip extension
+ARCHIVES := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=))))
+# Suppose SOURCEDIRS contains "labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs",
+# this does the following:
+# $(SOURCEDIRS:/=) is SOURCEDIRS without the "Program.cs" part ("labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project")
+# $(dir $(SOURCEDIRS:/=)) furthermore removes the Project part ("labs/HelloWorld/src/HelloWorld_Solution/")
+# $(subst /src/,/,$(dir $(SOURCEDIRS:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
+# $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
 
 # -------------------------------
 ## Performance & Global Options
@@ -121,7 +130,7 @@ WEBPATH = templates/web/
 WEB_INDEX = index.md
 404_PAGE = 404.md
 # flags to apply to every HTML page
-PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --self-contained --template=$(WEBPATH)template.html --css=$(WEBPATH)style.css	
+PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --standalone --template=$(WEBPATH)template.html
 
 # PDF build options
 PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
@@ -145,17 +154,18 @@ clean:
 $(BUILD_DIR): 
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)$(LABS_DIR)
-	cp img/favicon/* $(BUILD_DIR)
+	cp -u img/favicon/* $(BUILD_DIR)
+	cp -u $(WEBPATH)style.css $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
-# It also copy the favicon files to the right place.
+# It also copy the favicon and css files to the right place.
 
 # -------------------------------
 ## Book
 # -------------------------------
 
 $(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book" -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the directory with the source code.
 
@@ -177,7 +187,7 @@ book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
 # make build/about.html
 #### Individual HTML files.
 $(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
-	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$<
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the original md source code.
 # cf. https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html for an explanation of (@F).
@@ -210,8 +220,8 @@ docs: docs-html docs-pdf docs-odt
 # -------------------------------
 
 web-index: 
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html
-	pandoc $(404_PAGE) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html
+	pandoc $(WEB_INDEX) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
+	pandoc $(404_PAGE) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 
 # -------------------------------
 ## Lab Files
@@ -227,7 +237,9 @@ web-index:
 ##### Individual HTML files.
 $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
+	
+	# $(foreach var,$(apps),$(info In the loop running with make: $(var)))
 # This last variable is a custom one, used in the template to add download links
 # to the pdf and odt versions.
 
@@ -255,27 +267,13 @@ labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 
 #### Index page for labs
 $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
-	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && for dir in $(LABS_DIRS); do printf ' | <a href="'$${dir}'">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">'pdf'</a>, <a href="'$${dir}/index.odt'">odt</a>, <a href="'$${dir}/index.html'">html</a>\n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES)
+	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && for dir in $(LABS_DIRS); do printf ' | <a href="'$${dir}'">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">'pdf'</a>, <a href="'$${dir}/index.odt'">odt</a>, <a href="'$${dir}/index.html'">html</a>\n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES) -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # I don't think we need odt / pdf for that page.
 	
 #### Whole labs instructions, in all formats.
 labs-instructions: labs-html labs-pdf labs-odt
 
 ### Source Code
-
-# The following Makefile trickery was possible thanks to 
-# https://stackoverflow.com/a/67600525
-# Extract directories that contain Program.cs files in the lab directory.
-SOURCEDIRS := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
-
-# Generate archive names: drop the /src/ part and add .zip extension
-ARCHIVES := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=))))
-# Suppose SOURCEDIRS contains "labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs",
-# this does the following:
-# $(SOURCEDIRS:/=) is SOURCEDIRS without the "Program.cs" part ("labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project")
-# $(dir $(SOURCEDIRS:/=)) furthermore removes the Project part ("labs/HelloWorld/src/HelloWorld_Solution/")
-# $(subst /src/,/,$(dir $(SOURCEDIRS:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
-# $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
 
 %.zip: src/%/*/Program.cs
 	echo Making $@ from $<
@@ -324,7 +322,7 @@ ARCHIVES := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=))))
 labs-source-code: $(ARCHIVES)
 
 $(BUILD_DIR)$(ARCHIVES): $(ARCHIVES) | labs-source-code
-	 cp $< $@
+	 cp -u $< $@
 
 labs: labs-instructions labs-source-code $(BUILD_DIR)$(ARCHIVES)
 
