@@ -1,0 +1,16 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld_Solution", "HelloWorld_Project\HelloWorld_Solution.csproj", "{595F9930-7C03-4428-90B8-81D385B7832C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|AnyCPU.Build.0 = Release|AnyCPU
+	EndGlobalSection
+EndGlobal
