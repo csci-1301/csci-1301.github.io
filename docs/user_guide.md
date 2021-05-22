@@ -27,15 +27,15 @@ Additional configuration files are at the root of the source code repository.
 
 How to obtain the latest version of this resource:
 
-1. visit the [accompanying website](https://csci-1301.github.io/) - this website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources
-2. latest version is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+#. visit the [accompanying website](https://csci-1301.github.io/) - this website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources
+#. latest version is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
 
 Copies of this resource will be made available through AU mirror website, box, and/or instructor's own website. Since manual effort is required to share the resources through these ways, these sources may be slightly behind latest version.
 
 How to obtain much earlier versions of this resource:
 
-1. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
-2. This resource will be periodically archived on Galileo 
+#. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
+#. This resource will be periodically archived on Galileo 
 
  
 # Editing Resources
@@ -87,11 +87,11 @@ If you are new to this project, first see [Contributing Guidelines](/contributin
 
 To create a new lecture `lecture xyz`:
 
-1. Create a directory called `NNN_lecture_xyz` under `lectures` directory
+#. Create a directory called `NNN_lecture_xyz` under `lectures` directory
 
     Following the existing pattern for naming convention which is lowercase and separation by underscores. The numbers `NNN` tell pandoc how to order book content. Use leading zero and increments of 10. Choose a number number based on where in the book the new lecture should appear.
 
-2. under that directory, create a new file `readme.md` (lowercase). Write lecture notes in this file using markdown.
+#. under that directory, create a new file `readme.md` (lowercase). Write lecture notes in this file using markdown.
 
     We use filename readme because the build script looks for files matching this pattern. Pandoc appears to use a case-insensitive matching, at least currently, but to be safe use lowercase convention when naming this file to [match the expected file pattern](https://github.com/csci-1301/csci-1301.github.io/blob/d0cca5dfab111ed9148256992b63fbed9c05b880/Makefile#L14).
 
@@ -101,12 +101,12 @@ Do not include meta section in individual lecture files because these lectures w
 
 ## Creating new labs
 
-1. Choose a short and unique name that describes the lab
-2. Create a directory matching that name (use PascalCase since this is C#)
-3. Under the lab directory create:
+#. Choose a short and unique name that describes the lab
+#. Create a directory matching that name (use PascalCase since this is C#)
+#. Under the lab directory create:
 
-    1. `readme.md` (case sensitive) - write lab instructions in this file. You should include meta fields, at minimum a title
-    2. (optional) if you want to include starter code with the lab,
+    #. `readme.md` (case sensitive) - write lab instructions in this file. You should include meta fields, at minimum a title
+    #. (optional) if you want to include starter code with the lab,
         - create a subdirectory called `src`
         - create a subdirectory with the name of the solution you would like to use,
         - create a subdirectory with the name of the project you would like to use,
@@ -115,9 +115,9 @@ Do not include meta section in individual lecture files because these lectures w
 
 If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
 
-1. readme will be converted to index (html, pdf, odt)
-2. contents of `src` will be converted to a standalone C# solution as a zip file. This solution will have the same name as the folder in the lab directory which is why directory names should use PascalCase.
-3. all matching the described format will be included in `labs.zip` which you can find on the website or under releases
+#. readme will be converted to index (html, pdf, odt)
+#. contents of `src` will be converted to a standalone C# solution as a zip file. This solution will have the same name as the folder in the lab directory which is why directory names should use PascalCase.
+#. all matching the described format will be included in `labs.zip` which you can find on the website or under releases
 
 # Content Labelling
 
@@ -194,13 +194,13 @@ Currently a github action is setup to do the following: whenever a new commit is
 
 Making a versioned release is done as follows:
 
-1. Go to [repository releases](https://github.com/csci-1301/csci-1301.github.io/releases)
-2. Choose latest, which contains the files of the latest build
-3. Edit this release, giving it a semantic name and a version, such as `v1.0.0`. Name and version can be the same.
+#. Go to [repository releases](https://github.com/csci-1301/csci-1301.github.io/releases)
+#. Choose latest, which contains the files of the latest build
+#. Edit this release, giving it a semantic name and a version, such as `v1.0.0`. Name and version can be the same.
    (cf. [semantic versioning](https://semver.org/))
-4. Enter release notes to explain what changed since last release
-5. Uncheck `This is a pre-release`
-6. Update release
+#. Enter release notes to explain what changed since last release
+#. Uncheck `This is a pre-release`
+#. Update release
 
 Following these steps will generate a new, versioned release. The versioned releases will be manually uploaded to university mirror site, box, and archived.
 
@@ -211,15 +211,15 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 ### Installing required dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
-- pandoc
-- texlive
+- [pandoc](https://pandoc.org/installing.html)
+- [texlive](https://www.tug.org/texlive/)
 - make
 - python 3.+
-- packages and filters: Pygments, pandoc-include, texlive-xetex texlive-latex-extra, lmodern, librsvg2-bin
+- packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](http://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
 
 ### Running the build
 
