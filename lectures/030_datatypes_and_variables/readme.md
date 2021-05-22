@@ -1,53 +1,3 @@
-<!-- 
-
-from list of topics, this should cover the following:
-
-## Variable
-
-- Datatype (numerical, boolean, string, character) -- including a mention of reference datatypes
-- Declaration, assignment, initialization
-- Naming variables correctly
-- The absence of default value after declaration (un-assigned variables)
-
-## Numerical Values
-
-- Integers (`int`, `long`) – range and size, signature (`uint`)
-- Floating Point (`float`, `double`, and `decimal`)  – range, size and precision, 
-- Type casting (e.g. from `int` to `double`, and legal operations between different datatypes) and casting operator (e.g. `(int)`).
-- Overflow and underflow :lock:
-
-## Booleans
-
-- Possible values (`true`, `false`)
-- Usage
-- That boolean variables are called "switches"
-
-## Strings
-
-- `ReadLine` method
-- Concatenation (`+`)
-- Interpolation
-- Additional methods: `ToLower`, `ToUpper`, `Contains` :question:
-
-### Displaying Strings on the Screen
-
-- [Format specifiers](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) for numbers:
-    – Currency (`C`), 
-    - Fixed-point (`F`) or Number (`N`)
-    - Percent (`P`) :question:
-    - Exponential (`E`) :question:
-
-- The `String.Format` method
-
-## Characters 
-
-- Possible values and the existence of binary, oct, dec and hex representation (cf. for instance [wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters))
-- Escape character and sequences: `\n`, `\t`, `\\`
-- Conversion between glyph and decimal value.
-- Various methods: `ToLower`, `ToUpper`, `Contains`, `StartsWith`, `EndsWith` :question:
-
--->
-
 # Datatypes and Variables
 
 ## Datatype Basics
@@ -98,6 +48,7 @@ from list of topics, this should cover the following:
         ```
 
       This program shows three major operations you can do with variables.
+
         - First it **declares** two variables, an `int`-type variable named "myAge" and a `string`-type variable named "myName"
         - Then, it **assigns** values to each of those variables, using literals of the same type. `myAge` is assigned the value 29, using the `int` literal `29`, and `myName` is assigned the value "Edward", using the `string` literal `"Edward"`
         - Finally, it **displays** the current value of each variable by using the `Console.WriteLine` method and **string interpolation**, in which the values of variables are inserted into a string by writing their names with some special syntax (a `$` character at the beginning of the string, and braces around the variable names)
@@ -110,9 +61,9 @@ from list of topics, this should cover the following:
     - Syntax: `[type keyword] [variable name];`
     - Examples: `int myAge;`, `string myName;`, `double winChance;`
     - A variable name is an identifier, so it should follow the rules and conventions
-         - Can only contain letters and numbers
-         - Must be unique among all variable, method, and class names
-         - Should use CamelCase if it contains multiple words
+        - Can only contain letters and numbers
+        - Must be unique among all variable, method, and class names
+        - Should use CamelCase if it contains multiple words
     - Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
 - Assignment
     - The act of changing the value of a variable
@@ -131,16 +82,19 @@ from list of topics, this should cover the following:
     - Assignment replaces the "old" value of the variable with a "new" one; it's how variables *vary*
         - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now store the value 30
     - You can assign a variable to another variable: just write a variable name on both sides of the `=` operator
+
         - This will take a "snapshot" of the current value of the variable on the right side, and store it into the variable on the left side
+
         - For example, in this code:
-        
+
             ```
             int a = 12;
             int b = a;
             a = -5;
             ```
-        
-          the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.      
+
+          the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
+
 - Displaying
     - `Console.WriteLine` can only print text -- the argument (that goes in parentheses) needs to be a `string`
     - To print a variable that is not `string`-type, we must convert it to a `string`
@@ -184,6 +138,22 @@ from list of topics, this should cover the following:
         - On the other hand, `decimal` stores data as a base-10 fraction, using base-10 scientific notation
         - This is slower for the computer to calculate with (since computers work only in binary) but has no "rounding errors" with fractions that include 0.1
         - Use `decimal` when working with money (since money uses a lot of 0.1 and 0.01 fractions), `double` when working with non-money fractions
+
+**Summary of numeric data types and sizes:**
+
+Type | Size | Range of Values | Precision
+--- | --- | ----- | ----
+`byte` | 1 bytes | $0 ... 255$ | N/A
+`short` | 2 bytes | $-2^{15} ... 2^{15}-1$ | N/A
+`ushort` | 2 bytes | $0 ... 2^{16}-1$ | N/A
+`int` | 4 bytes | $-2^{31} ... 2^{31}-1$ | N/A
+`uint` | 4 bytes | $0 ... 2^{32}-1$ | N/A
+`long` | 8 bytes | $-2^{63} ... 2^{63}-1$ | N/A
+`ulong` | 8 bytes | $0 ... 2^{64}-1$ | N/A
+`float` | 4 bytes | $\pm 1.5 \cdot 10^{-45} ... \pm 3.4 \cdot 10^{38}$ | 7 digits
+`double` | 8 bytes | $\pm 5.0 \cdot 10^{-324} ... \pm 1.7 \cdot 10^{308}$ | 15-16 digits
+`decimal` | 16 bytes | $\pm 1.0 \cdot 10^{-28} ... \pm 7.9 \cdot 10^{28}$ | 28-29 digits
+
 - Value and reference types: different ways of storing data in memory
     - Variables name memory locations, but the data that gets stored at the named location is different for each type
     - For a **value type** variable, the named memory location stores the exact data value held by the variable (just what you'd expect)
@@ -194,13 +164,16 @@ from list of topics, this should cover the following:
         - To get to the data, the computer first reads the location named by the variable, then uses that information (the memory address) to find and read the other memory location where the data is stored
     - Reference types: `string`, `object`, and all objects you create from your own classes
     - Assignment works differently for reference types
+
         - Assignment always copies the value in the variable's named memory location - but in the case of a reference type that's just a memory address, not the data
+
         - Assigning one reference-type variable to another copies the memory address, so now both variables "refer to" the same data
+
         - Example:
 
             ```
             string word = "Hello";
             string word2 = word;
             ```
-        
+
           Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.

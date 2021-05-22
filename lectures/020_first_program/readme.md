@@ -30,7 +30,7 @@
     - "Audio" object, represents a song being played in a music player
         - Attributes: Sound wave data, current playback position, target speaker device
         - Methods: Play, pause, stop, fast-forward, rewind
-    
+
 # First Program
 
 Here's a simple "hello world" program in the C# language:
@@ -46,7 +46,7 @@ Here's a simple "hello world" program in the C# language:
 
 Features of this program:
 
-- A multi-line comment: everything between the `/*` and `/*` is considered a *comment*, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.
+- A multi-line comment: everything between the `/*` and `*/` is considered a *comment*, i.e. text for humans to read. It will be ignored by the C# compiler and has no effect on the program.
 - A `using` statement: This imports code definitions from the System *namespace*, which is part of the .NET Framework (the standard library).
     - In C#, code is organized into **namespaces**, which group related classes together
     - If you want to use code from a different namespace, you need a `using` statement to "import" that namespace
@@ -137,20 +137,24 @@ Features of this program:
 ## Write and WriteLine
 
 - The `WriteLine` method
+
     - We saw this in the "Hello World" program: `Console.WriteLine("Hello World!");` results in "Hello World!" being displayed in the terminal
+
     - In general, `Console.WriteLine("text");` will display the text in the terminal, then *start a new line*
+
     - This means a second `Console.WriteLine` will display its text on the next line of the terminal. For example, this program:
 
         ```
         !include code/writeline_two_lines.cs
         ```
-    
+
       will display the following output in the terminal:
 
         ```
         Hello
         World!
         ```
+
 - Methods with multiple statements
     - Note that our two-line example has a `Main` method with multiple statements
     - In C#, each statement must end in a semicolon
@@ -158,10 +162,13 @@ Features of this program:
     - Each line of code in your .cs file is not necessarily a statement
     - A single invocation/call of the `WriteLine` method is a statement
 - The `Write` method
+
     - `Console.WriteLine("text")` prints the text, then starts a new line in the terminal -- it effectively "hits enter" after printing the text
+
     - `Console.Write("text")` just prints the text, without starting a new line. It's like typing the text without hitting "enter" afterwards.
+
     - Even though two `Console.Write` calls are two statements, and appear on two lines, they will result in the text being printed on just one line. For example, this program:
-    
+
         ```
         !include code/write_two_lines.cs
         ```
@@ -174,8 +181,11 @@ Features of this program:
 
     - Note that there is no space between "Hello" and "World!" because we didn't type one in the argument to `Console.Write`
 - Combining `Write` and `WriteLine`
+
     - We can use both `WriteLine` and `Write` in the same program
+
     - After a call to `Write`, the "cursor" is on the same line after the printed text; after a call to `WriteLine` the "cursor" is at the beginning of the next line
+
     - This program:
 
         ```
@@ -192,8 +202,11 @@ Features of this program:
 ## Escape Sequences
 
 - Explicitly writing a new line
+
     - So far we've used `WriteLine` when we want to create a new line in the output
+
     - The **escape sequence** `\n` can also be used to create a new line -- it represents the "newline character," which is what gets printed when you type "enter"
+
     - This program will produce the same output as our two-line "Hello World" example, with each word on its own line:
 
         ```
@@ -204,8 +217,10 @@ Features of this program:
     - An **escape sequence** uses "normal" letters to represent "special", hard-to-type characters
     - `\n` represents the newline character, i.e. the result of pressing "enter"
     - `\t` represents the tab character, which is a single extra-wide space (you usually get it by pressing the "tab" key)
-    - `\"` represents a double-quote character that will get printed on the screen, rather than ending the text string in the C# code. 
-        - Without this, you couldn't write a sentence with quotation marks in a `Console.WriteLine`, because the C# compiler wouls assume the quotation marks meant the string was ending
+    - `\"` represents a double-quote character that will get printed on the screen, rather than ending the text string in the C# code.
+
+        - Without this, you couldn't write a sentence with quotation marks in a `Console.WriteLine`, because the C# compiler would assume the quotation marks meant the string was ending
+
         - This program won't compile because `in quotes` is not valid C# code, and the compiler thinks it is not part of the string:
 
             ```
