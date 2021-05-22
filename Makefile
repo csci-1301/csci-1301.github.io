@@ -266,6 +266,8 @@ labs-instructions: labs-html labs-pdf labs-odt
 
 ### Instructions and Source Code
 
+# The following Makefile trickery was possible thanks to 
+# https://stackoverflow.com/a/67600525
 # Extract directories that contain Program.cs files in the lab directory.
 sourcedirs := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
 
@@ -280,28 +282,56 @@ archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
 
 
 %.zip: src/%/*/Program.cs
-	echo $(notdir $*) # Solution
-	echo $(notdir $(patsubst %/,%,$(dir $<))) # Project
-	echo $@ # Target, zip file
-	echo $*/ # Where the sln file should go
-	echo $(dir $<) # Where csproj should go
-	echo $(dir $(patsubst %/,%,$(dir $<))) # where the sln file should go
-	echo $*/$(notdir $*).sln
+	echo Making $@ from $<
+	echo sln goes to $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
+#
 # The structure of an archive is as follows:
 # └───<Solution>	 	     $(notdir $*)
-#      ├── <Solution.sln>	     $*/$(notdir $*).sln
+#      ├── <Solution.sln>	     $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
 #      └── <Project>                 $(dir $<)
-#           ├── <Project>.csproj     
-#           ├── Properties
-#           │   └── AssemblyInfo.cs
-#           ├── Program.cs
+#           ├── <Project>.csproj     $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj 
+#           ├── Properties           $(dir $<)Properties 
+#           │   └── AssemblyInfo.cs  $(dir $<)Properties/AssemblyInfo.cs
+#           └── Program.cs           $<
 #
+# We will also use the following:
+# $(notdir $*) # Name of Solution
+# $(notdir $(patsubst %/,%,$(dir $<))) # Name of Project
+# $@ # Name of target, the zip file
 #
-	
-testA: $(archives)
+# We start by creating the required Properties directory:
+	mkdir -p $(dir $<)Properties 
+# We create the .sln file,
+# The new lines have to be escaped with \n:
+	(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\n# Visual Studio 14\nVisualStudioVersion = 14.0.25420.1\nMinimumVisualStudioVersion = 10.0.40219.1\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(notdir $(patsubst %/,%,$(dir $<)))", "$(notdir $(patsubst %/,%,$(dir $<)))\$(notdir $(patsubst %/,%,$(dir $<))).csproj", "{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|Any CPU = Debug|Any CPU\n		Release|Any CPU = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU\n		{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}.Release|Any CPU.Build.0 = Release|Any CPU\n	EndGlobalSection\n	GlobalSection(SolutionProperties) = preSolution\n		HideSolutionNode = FALSE\n	EndGlobalSection\nEndGlobal\n') > $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
+# We create the .csproj file.
+# New lines are escaped as \n
+# Single quotes are escaped as '\''
+# $ are escaped as $$ (if they are *not* to be interepreted, i.e escape $(MSBuildToolsVersion) but not $(notdir $*)
+# and \ are escaped as \\
+	(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n    <StartAction>Project</StartAction>\n    <ExternalConsole>true</ExternalConsole>    <Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n    <Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n    <ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <AppDesignerFolder>Properties</AppDesignerFolder>\n    <RootNamespace>$(notdir $*)</RootNamespace>\n    <AssemblyName>$(notdir $*)</AssemblyName>\n    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n    <FileAlignment>512</FileAlignment>\n    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n    <PlatformTarget>AnyCPU</PlatformTarget>\n    <DebugSymbols>true</DebugSymbols>\n    <DebugType>full</DebugType>\n    <Optimize>false</Optimize>\n    <OutputPath>bin\Debug\</OutputPath>\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n    <PlatformTarget>AnyCPU</PlatformTarget>\n    <DebugType>pdbonly</DebugType>\n    <Optimize>true</Optimize>\n    <OutputPath>bin\Release\</OutputPath>\n    <DefineConstants>TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <ItemGroup>\n    <Reference Include="System" />\n    <Reference Include="System.Core" />\n    <Reference Include="System.Xml.Linq" />\n    <Reference Include="System.Data.DataSetExtensions" />\n    <Reference Include="Microsoft.CSharp" />\n    <Reference Include="System.Data" />\n    <Reference Include="System.Net.Http" />\n    <Reference Include="System.Xml" />\n  </ItemGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n    <Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildToolsPath)\Microsoft.CSharp.targets" />\n</Project>\n') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj
+# We create the Properties\AssemblyInfo.cs file.
+	(printf 'using System.Reflection;\nusing System.Runtime.InteropServices;\n[assembly: AssemblyTitle("Welcome_Sol")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyCopyright("Copyright ©  2018")]\n[assembly: AssemblyVersion("1.0.0.0")]\n[assembly: AssemblyFileVersion("1.0.0.0")]\n') > $(dir $<)Properties/AssemblyInfo.cs
+#
+# TODO
+# There needs to be one
+# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
+# per .cs file in the project in the .csproj file.
+# We can now only accomodate single-file projects.
+#
+# Finaly, we can zip the folder:
+	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a ../$(notdir $@) $(notdir $*)*  -xr\!.vs -xr\!.directory
 
-$(BUILD_DIR)$(archives): $(archives)
-	# echo Making $@ from $<
+# We compress the folder containing the sln and the folder containing the csproj and the code
+# But we excluse the .vs folder and .directory file
+	
+labs-source-code: $(archives)
+
+$(BUILD_DIR)$(archives): $(archives) | labs-source-code
+	 cp $< $@
+
+labs: labs-instructions labs-source-code $(BUILD_DIR)$(archives)
+
 	
 
 # Extract directories that contain Program.cs files
