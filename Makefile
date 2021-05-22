@@ -31,7 +31,6 @@ DOCS_DIR = docs/
 LABS_DIR = labs/
 LAB_TEMPLATES= templates/labs/
 LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d))
-SOLUTIONS:=$(shell find $(LABS_DIR) -mindepth 3  -maxdepth 3 -type d -not -path "*/.vs*" )
 
 # -------------------------------
 ## Files
@@ -261,25 +260,22 @@ $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as d
 	
 #### Whole labs instructions, in all formats.
 labs-instructions: labs-html labs-pdf labs-odt
+
 ### Source Code
-
-
-### Instructions and Source Code
 
 # The following Makefile trickery was possible thanks to 
 # https://stackoverflow.com/a/67600525
 # Extract directories that contain Program.cs files in the lab directory.
-sourcedirs := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
+SOURCEDIRS := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
 
 # Generate archive names: drop the /src/ part and add .zip extension
-archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
-# Suppose sourcedirs contains "labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs",
+ARCHIVES := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=))))
+# Suppose SOURCEDIRS contains "labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs",
 # this does the following:
-# $(sourcedirs:/=) is sourcedirs without the "Program.cs" part ("labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project")
-# $(dir $(sourcedirs:/=)) furthermore removes the Project part ("labs/HelloWorld/src/HelloWorld_Solution/")
-# $(subst /src/,/,$(dir $(sourcedirs:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
-# $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
-
+# $(SOURCEDIRS:/=) is SOURCEDIRS without the "Program.cs" part ("labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project")
+# $(dir $(SOURCEDIRS:/=)) furthermore removes the Project part ("labs/HelloWorld/src/HelloWorld_Solution/")
+# $(subst /src/,/,$(dir $(SOURCEDIRS:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
+# $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
 
 %.zip: src/%/*/Program.cs
 	echo Making $@ from $<
@@ -325,39 +321,12 @@ archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
 # We compress the folder containing the sln and the folder containing the csproj and the code
 # But we excluse the .vs folder and .directory file
 	
-labs-source-code: $(archives)
+labs-source-code: $(ARCHIVES)
 
-$(BUILD_DIR)$(archives): $(archives) | labs-source-code
+$(BUILD_DIR)$(ARCHIVES): $(ARCHIVES) | labs-source-code
 	 cp $< $@
 
-labs: labs-instructions labs-source-code $(BUILD_DIR)$(archives)
-
-	
-
-# Extract directories that contain Program.cs files
-#sourcedirs := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
-
-# Generate archive names: drop the /b/ part and add .zip extension
-#archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
-
-#$(BUILD_DIR)$(LABS_DIR)*/%.zip: $(LABS_DIR)%/src/*/Program.cs
-#$(BUILD_DIR)$(LABS_DIR)/*/%.zip: $(LABS_DIR)%/*/Program.cs
-#	echo Making $@ from $<
-#
-#testA: $(archives)
-#	echo Ouais? 
-	
-# Useful to debug: call
-# Make test
-# to display the variable 
-#.PHONY: test
-# "Plug" below the variable you want to test, $(<here>)
-#test = $(archives)
-#$(info $$archives is [${test}])
-#$(info $$sourcedirs is [${dir $(sourcedirs:/=)}])
-
-
-
+labs: labs-instructions labs-source-code $(BUILD_DIR)$(ARCHIVES)
 
 # -------------------------------
 ## Other Useful Rules
@@ -368,4 +337,3 @@ web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 build: docs web-index book labs
 
 all: build
-
