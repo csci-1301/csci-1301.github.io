@@ -5,7 +5,7 @@
 - Recall the basic structure of a program
     - Program receives input from some source, uses input to make decisions, produces output for the outside world to see
     - In other words, the program reads some data, manipulates data, and writes out new data
-    - In object-oriented programming languages, data is stored in objects during the program's execution, and manipulated using the methods of those objects
+    - In C#, data is stored in objects during the program's execution, and manipulated using the methods of those objects
 - This data has **types**
     - Numbers (the number 2) are different from text (the word "two")
     - Text data is called "strings" because each letter is a **character** and a word is a *string of characters*
