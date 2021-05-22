@@ -151,11 +151,12 @@ clean:
 	@echo "cleaning build artifacts..."
 	rm -rf $(BUILD_DIR)
 
-$(BUILD_DIR): 
+$(BUILD_DIR) $(BUILD_DIR)img/ $(BUILD_DIR)$(LABS_DIR): 
 	@echo "starting build..."
-	mkdir -p $(BUILD_DIR)$(LABS_DIR)
+	mkdir -p $(BUILD_DIR)$(LABS_DIR) $(BUILD_DIR)img/
 	cp -u img/favicon/* $(BUILD_DIR)
 	cp -u $(WEBPATH)style.css $(BUILD_DIR)
+	cp -r img $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
 # It also copy the favicon and css files to the right place.
