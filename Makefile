@@ -74,11 +74,11 @@ SOURCE_LAB_INSTRUCTION_FILES := $(shell find $(LABS_DIR)*/readme.md)
 
 TARGET_LAB_INSTRUCTION_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix index.html, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
 # 1. Look at the SOURCE_LAB_INSTRUCTION_FILES, (e.g. "labs/HelloWorld/readme.md")
-# 2. Extract the folder path using dir (e.g. "labs/HelloWorld/"),
+# 2. Extract the directory path using dir (e.g. "labs/HelloWorld/"),
 # 3. Append "index.html" to the end of it (e.g. "labs/HelloWorld/index.html"),
 # 4. Add the prefix "build" (e.g. "build/labs/HelloWorld/index.html").
 # This allows to automatically build the list of targets (the build/labs/*/index.html files)
-# from the list of md files in the sub-folders in labs/.
+# from the list of md files in the sub-directories in labs/.
 
 TARGET_LAB_INSTRUCTION_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix index.pdf, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
 # Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with pdf.
@@ -88,7 +88,7 @@ TARGET_LAB_INSTRUCTION_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix index.
 
 #### Source Code
 SOURCE_LAB_CODE_FILES := $(shell find $(LABS_DIR)*/src/ -name '*.cs')
-# Find all the .cs files in the sub-folders "src/" in the sub-folders in "labs/"
+# Find all the .cs files in the sub-directories "src/" in the sub-directories in "labs/"
 
 TARGET_LAB_CODE_FILES := $(BUILD_DIR)$(LABS_DIR)
 LAB_ZIP:=$(BUILD_DIR)$(LABS_DIR)$(firstword $(subst /, , $(subst $(LABS_DIR), ,$(SOLUTIONS))))/$(lastword $(subst /, , $(SOLUTIONS))).zip
@@ -158,7 +158,7 @@ $(BUILD_DIR):
 $(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book"
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
-# to the pdf and odt versions, as well as a link to the folder with the source code.
+# to the pdf and odt versions, as well as a link to the directory with the source code.
 
 $(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -M title="CSCI 1301 Book"
@@ -191,7 +191,7 @@ $(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
 $(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_ODT) $< -o $@
 
-### Whole folders
+### Whole directories
 # Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
 #### HTML
 docs-html:$(SOURCE_DOC_FILES)
@@ -241,7 +241,7 @@ $(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) $< -o $@ 
 	
-#### Whole folders
+#### Whole directories
 # Compile all the labs in a specific format, by calling the previous corresponding rule for each file.
 ##### HTML
 labs-html:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)$(LABS_DIR)index.html $(BUILD_DIR)
@@ -266,68 +266,66 @@ labs-instructions: labs-html labs-pdf labs-odt
 
 ### Instructions and Source Code
 
-# Rule for individual source code for labs.
-.SECONDEXPANSION:
-$(BUILD_DIR)$(LABS_DIR)%.zip: $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
-# Here is how this rule works.
-# This rule is called by e.g.
-# make build/labs/HelloWorld/HelloWorld_Solution.zip
-# And, because of .SECONDEXPANSION
-# "%" in the target (on the left of :) is evaluated first, 
-# and it becomes "HelloWorld/HelloWorld_Solution"
-# Then, the value in "%" is accessed thanks to $$* 
-# in the pre-requisite (on the right of :), and
-# (subst /, , $$*)
-# becomes "HelloWorld HelloWorld_Solution"
-# and then, taking the first part ("HelloWorld") or the 
-# second ("HelloWorld_Solution") allows to re-construct the 
-# correct path, as
-# $(LABS_DIR)$$(firstword $$(subst /, , $$*))/src/$$(lastword $$(subst /, , $$*))/*/Program.cs
-# becomes in this particular case
-# labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs
-# which is indeed where the source code is located.
-# Can probably be improved using the two answers at
-# https://stackoverflow.com/q/67595735/2657549
-	echo $(dir $<)$(lastword $(subst /, , $*)).csproj # Where the csproj should go.
-	echo $(patsubst %/,%.sln,$(dir $<)) # Where the sln should go.
-	echo $(lastword $(subst /, , $*)) # Name of the solution
-	echo $(lastword $(subst /, ,$(dir $<))) # Name of the project
-	echo $(lastword $(subst /, , $*)).csproj
-	# Creating the folder structure
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Release
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/bin/Debug
-	mkdir -p $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/Properties
-	# Creating the .sln
-	(printf '\nMicrosoft Visual Studio Solution File, Format Version 12.00\nProject("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "$(lastword $(subst /, , $*))", "$(lastword $(subst /, ,$(dir $<)))\$(lastword $(subst /, , $*)).csproj", "{595F9930-7C03-4428-90B8-81D385B7832C}"\nEndProject\nGlobal\n	GlobalSection(SolutionConfigurationPlatforms) = preSolution\n		Debug|AnyCPU = Debug|AnyCPU\n		Release|AnyCPU = Release|AnyCPU\n	EndGlobalSection\n	GlobalSection(ProjectConfigurationPlatforms) = postSolution\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Debug|AnyCPU.Build.0 = Debug|AnyCPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|AnyCPU.ActiveCfg = Release|AnyCPU\n		{595F9930-7C03-4428-90B8-81D385B7832C}.Release|AnyCPU.Build.0 = Release|AnyCPU\n	EndGlobalSection\nEndGlobal') > $(patsubst %/,%.sln,$(dir $<))
-	# This store a very minimal .sln file with the correct informations for our solution / project.
-	# The new lines had to be escaped with \n,
-	# and printf is more resilient than echo.
+# Extract directories that contain Program.cs files in the lab directory.
+sourcedirs := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
+
+# Generate archive names: drop the /src/ part and add .zip extension
+archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
+# Suppose sourcedirs contains "labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project/Program.cs",
+# this does the following:
+# $(sourcedirs:/=) is sourcedirs without the "Program.cs" part ("labs/HelloWorld/src/HelloWorld_Solution/HelloWorld_Project")
+# $(dir $(sourcedirs:/=)) furthermore removes the Project part ("labs/HelloWorld/src/HelloWorld_Solution/")
+# $(subst /src/,/,$(dir $(sourcedirs:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
+# $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
+
+
+%.zip: src/%/*/Program.cs
+	echo $(notdir $*) # Solution
+	echo $(notdir $(patsubst %/,%,$(dir $<))) # Project
+	echo $@ # Target, zip file
+	echo $*/ # Where the sln file should go
+	echo $(dir $<) # Where csproj should go
+	echo $(dir $(patsubst %/,%,$(dir $<))) # where the sln file should go
+	echo $*/$(notdir $*).sln
+# The structure of an archive is as follows:
+# └───<Solution>	 	     $(notdir $*)
+#      ├── <Solution.sln>	     $*/$(notdir $*).sln
+#      └── <Project>                 $(dir $<)
+#           ├── <Project>.csproj     
+#           ├── Properties
+#           │   └── AssemblyInfo.cs
+#           ├── Program.cs
+#
+#
 	
-	# Creating the .csproj
-	printf '<?xml version="1.0" encoding="utf-8"?>\n<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <PropertyGroup>\n    <Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n    <Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n    <ProjectGuid>{19ABA117-ECF6-4AAA-BE7C-76EA41E27AC6}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <RootNamespace>$(lastword $(subst /, ,$(dir $<)))</RootNamespace>\n    <AssemblyName>$(lastword $(subst /, ,$(dir $<)))</AssemblyName>\n    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)'\'' == '\''Debug'\'' ">\n    <DebugSymbols>true</DebugSymbols>\n    <DebugType>full</DebugType>\n    <Optimize>false</Optimize>\n    <OutputPath>.\\bin\\Debug</OutputPath>\n    <DefineConstants>DEBUG;</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <ExternalConsole>true</ExternalConsole>\n    <PlatformTarget>AnyCPU</PlatformTarget>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n    <Optimize>true</Optimize>\n    <OutputPath>.\\bin\\Release</OutputPath>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n    <ExternalConsole>true</ExternalConsole>\n    <PlatformTarget>AnyCPU</PlatformTarget>\n  </PropertyGroup>\n  <ItemGroup>\n    <Reference Include="System" />\n  </ItemGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n    <Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildBinPath)\Microsoft.CSharp.targets" />\n</Project>' > $(dir $<)$(lastword $(subst /, , $*)).csproj 
-	# Creating the AssemblyInfo.cs
-	printf 'using System.Reflection;\n[assembly: AssemblyTitle("$(lastword $(subst /, ,$(dir $<)))")]\n[assembly: AssemblyDescription("")]\n[assembly: AssemblyConfiguration("")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyProduct("")]\n[assembly: AssemblyCopyright("Creative Commons Attribution 4.0 International")]\n[assembly: AssemblyTrademark("")]\n[assembly: AssemblyCulture("")]\n[assembly: AssemblyVersion("2.0.0.0")]' > $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/$(lastword $(subst /, ,$(dir $<)))/Properties/AssemblyInfo.cs
-	# Similar as above, but with the .csproj file.
-	# Single quotes are escaped as '\''
-	# $ are escaped as $$
-	# and \ are escaped as \\
-	
-	# TODO
-	# There needs to be one
-	# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
-	# per .cs file in the project. We can now only accomodate single-file projects.
+testA: $(archives)
+
+$(BUILD_DIR)$(archives): $(archives)
+	# echo Making $@ from $<
 	
 
-	# Finaly, we can zip the folder:
-	#zip -r --fifo $@ $(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/
-	7z a $@ ./$(LABS_DIR)$(firstword $(subst /, , $*))/src/$(lastword $(subst /, , $*))/ -xr\!.vs -xr\!.directory
-	# We compress the folder containing the sln and the folder containing the csproj and the code
-	# But we excluse the .vs folder and .directory file
+# Extract directories that contain Program.cs files
+#sourcedirs := $(dir $(wildcard $(LABS_DIR)*/src/*/*/Program.cs))
+
+# Generate archive names: drop the /b/ part and add .zip extension
+#archives := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(sourcedirs:/=))))
+
+#$(BUILD_DIR)$(LABS_DIR)*/%.zip: $(LABS_DIR)%/src/*/Program.cs
+#$(BUILD_DIR)$(LABS_DIR)/*/%.zip: $(LABS_DIR)%/*/Program.cs
+#	echo Making $@ from $<
+#
+#testA: $(archives)
+#	echo Ouais? 
 	
-labs-source-code: $(SOURCE_LAB_CODE_FILES)
-	make $(LAB_ZIP)
-	
-labs: labs-instructions labs-source-code
+# Useful to debug: call
+# Make test
+# to display the variable 
+#.PHONY: test
+# "Plug" below the variable you want to test, $(<here>)
+#test = $(archives)
+#$(info $$archives is [${test}])
+#$(info $$sourcedirs is [${dir $(sourcedirs:/=)}])
+
 
 
 
@@ -341,10 +339,3 @@ build: docs web-index book labs
 
 all: build
 
-# Useful to debug: call
-# Make test
-# to display the variable 
-.PHONY: test
-# "Plug" below the variable you want to test, $(<here>)
-test = $(LAB_ZIP)
-$(info $$test is [${test}])
