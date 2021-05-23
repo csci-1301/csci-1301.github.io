@@ -177,3 +177,6 @@ Type | Size | Range of Values | Precision
             ```
 
           Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
+## Overflow
+
+When the result of some operations can't be entirely stored in the corresponding datatype, an overflow occurs. To understand this, assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. 
