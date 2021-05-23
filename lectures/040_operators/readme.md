@@ -60,7 +60,7 @@ Using casting allows us to go "against" those safe-guards, and can lead to the f
 - Truncating a floating-point number as a "truncated" number (e.g. from `double` to `int`).
 - Rounding a precise number to fit a less precise datatype (e.g. from `decimal` to `double`).
 
-!["Implicit and Explicit Conversion Between Datatypes"](/img/conversions.svg)
+!["Implicit and Explicit Conversion Between Datatypes"](img/conversions.svg)
 
 
 Note that _you can_, actually, store a `float` literal inside a `double`, but that you _can not_ store a `double` or a `float` literal inside a `decimal`.
