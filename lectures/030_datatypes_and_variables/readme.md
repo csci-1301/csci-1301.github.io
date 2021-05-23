@@ -180,11 +180,11 @@ Type | Size | Range of Values | Precision
 
 ## Overflow
 
-Assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called overflow error. 
+Assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called `overflow` error. 
 
-In an unsigned data type variable with N bits, we can store the numbers ranged from 0 to 2^n-1. In signed data type variables, the high order bit represents the sign of the number as follows:
-0 means zero or a positive value
-1 means a negative value 
+In an unsigned data type variable with N bits, we can store the numbers ranged from 0 to $2^n-1$. In signed data type variables, the high order bit represents the sign of the number as follows:
+    -0 means zero or a positive value
+    -1 means a negative value 
 With the remaining N-1 bits, we can represent 2^(N-1) states. Hence, considering the sign bit, we can store a number from -2^(N-1) to 2^(n-1)-1 in the variable. 
 
 
