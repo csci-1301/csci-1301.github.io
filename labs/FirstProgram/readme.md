@@ -43,7 +43,7 @@ Next use your IDE to rename the _project_:
 
 ### Editing
 
-We will now change (edit) our `FirstSolution` solution.
+We will now change (edit) our `EditedSolution` solution.
 
 #. In `Program.cs`:
     - replace `"Welcome to the lab portion of CSCI 1301!"` 
