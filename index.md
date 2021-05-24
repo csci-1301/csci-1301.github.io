@@ -10,7 +10,7 @@ based on what is defined in the makefile, just be aware of that while editing --
 Welcome to course resources website for CSCI 1301 at Augusta University.
 
 
-### Textbook
+### Book
 
 Available formats:
 

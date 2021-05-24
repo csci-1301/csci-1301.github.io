@@ -54,6 +54,7 @@
     overflow-y: scroll;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    background: var(--bg-body);
   }
   
   body {
@@ -338,10 +339,12 @@
   
   table {
     margin-bottom: 2em;
+    border-color: var(--border-table);
     border-bottom: 1px solid var(--border-table);
     border-right: 1px solid var(--border-table);
     border-spacing: 0;
     border-collapse: collapse;
+    display:table;
   }
   
   table th {
