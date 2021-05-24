@@ -116,8 +116,9 @@
         - `int` uses 4 bytes of memory, can store numbers in the range $[-2^{31}, 2^{31}-1]$
         - `long` uses 8 bytes of memory can store numbers in the range $[-2^{63}, 2^{63}-1]$
         - `short` uses 2 bytes of memory, can store numbers in the range $[-2^{15}, 2^{15}-1]$
-        - `byte` uses only 1 bytes of memory, can store numbers in the range $[0, 255]$. Note that `byte` is *unsigned* by default, and stores only positive numbers.
+        - `sbyte` uses only 1 bytes of memory, can store numbers in the range $[-128, 127]$
     - Unsigned versions of the integer types use the same amount of memory, but can store larger positive numbers
+        - `byte` uses 1 byte of memory, can store numbers in the range $[0, 255]$
         - `ushort` uses 2 bytes of memory, can store numbers in the range $[0, 2^{16}-1]$
         - `uint` uses 4 bytes of memory, can store numbers in the range $[0, 2^{32}-1]$
         - `ulong` uses 8 bytes of memory, can store numbers in the range $[0, 2^{64}-1]$
@@ -141,6 +142,7 @@
 
 Type | Size | Range of Values | Precision
 --- | --- | ----- | ----
+`sbyte` | 1 bytes | $-128 ... 127$ | N/A
 `byte` | 1 bytes | $0 ... 255$ | N/A
 `short` | 2 bytes | $-2^{15} ... 2^{15}-1$ | N/A
 `ushort` | 2 bytes | $0 ... 2^{16}-1$ | N/A
