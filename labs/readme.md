@@ -35,3 +35,5 @@ If you follow these instructions the lab will be automatically built into a dist
 | [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program |
 | [FirstProgram](/labs/FirstProgram) | TODO | [First Program](/lectures/020_first_program) | First program edits, using Write and WriteLine |
 | [Variables](/labs/Variables) | TODO | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring variables and using arithmetic operators |
+| [Casting](/labs/Casting) | TODO | TODO | Implicit and explicit type conversion |
+| [UserInput](/labs/UserInput) | TODO | TODO | Reading input from user |
