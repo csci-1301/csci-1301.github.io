@@ -34,9 +34,10 @@
         - `string` literal: text in double quotes, like `"hello"`
         - `char` literal: a character in single quotes, like `'a'`
         - `int` literal: a number without a decimal point, with or without a minus sign (e.g. `52`)
+        - `long` literal: just like an `int` literal but with the suffix `l` or `L`, e.g. `4L`
         - `double` literal: a number with a decimal point, with or without a minus sign (e.g. `-4.5`)
-        - `float` literal: just like a `double` literal but with the suffix `f` (for "float"), e.g. `4.5f`
-        - `decimal` literal: just like a `double` literal but with the suffix `m` (for "deciMal"), e.g. `6.01m`
+        - `float` literal: just like a `double` literal but with the suffix `f` or `F` (for "float"), e.g. `4.5f`
+        - `decimal` literal: just like a `double` literal but with the suffix `m` or `M`(for "deciMal"), e.g. `6.01m`
 - Variables overview
     - Variables store data that can *vary* (change) during the program's execution
     - They have a type, just like literals, and also a name
@@ -58,7 +59,7 @@
 
 - Declaration
     - This is when you specify the *name* of a variable and its *type*
-    - Syntax: `[type keyword] [variable name];`
+    - Syntax: `type_keyword variable_name;`
     - Examples: `int myAge;`, `string myName;`, `double winChance;`
     - A variable name is an identifier, so it should follow the rules and conventions
         - Can only contain letters and numbers
@@ -69,13 +70,13 @@
     - The act of changing the value of a variable
     - Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
     - Direction of assignment is **right to left**: the variable goes on the left side of the `=` symbol, and its new value goes on the right
-    - Syntax: `[variable name] = [value];`
+    - Syntax: `variable_name = value;`
     - Example: `myAge = 29;`
     - Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
 - Initialization (Declaration + Assignment)
     - Initialization statement combines declaration and assignment in one line (it's just a shortcut, not a new operation)
     - Creates a new variable and also gives it an initial value
-    - Syntax: `[type keyword] [variable name] = [value];`
+    - Syntax: `type variable_name = value;`
     - Example: `string myName = "Edward";`
     - Can only be used once per variable, since you can only declare a variable once
 - Assignment Details
