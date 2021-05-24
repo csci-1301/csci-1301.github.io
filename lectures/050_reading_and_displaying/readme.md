@@ -16,9 +16,9 @@ The difference between `Write` and `WriteLine`.
 We can ask _the user_ to give their name to the program while it is running as RunTime input. 
 We can use a statement like:
 
-~~~~~~~{.cs}
+```
 string yourFirstName = Console.ReadLine();
-~~~~~~~
+```
 
 to store the value entered by the user from the output window in the string variable labeled `yourFirstName`.
 
@@ -31,7 +31,7 @@ In the `int` class, there is a method called `Parse` that converts a `string` in
 
 For instance, one can use:
 
-```{.cs}
+```
 string test = "32";
 int testConversion = int.Parse(test);
 ```
@@ -46,7 +46,7 @@ Note that if the string does _not_ correspond to a number (e.g. `"Hi Mom!"`), th
 
 We can simply combine the `Console.ReadLine()` instruction with the `int.Parse` method to read integers from the user:
 
-```{.cs}
+```
 Console.WriteLine("Please enter the year.");
 string answer = Console.ReadLine();
 int currentYear = int.Parse(answer);
@@ -55,7 +55,7 @@ Console.WriteLine($"Next year we will be in {currentYear + 1}.");
 
 We could shorten the previous program by "chaining" the methods:
 
-```{.cs}
+```
 Console.WriteLine("Please enter the year.");
 int currentYear = int.Parse(Console.ReadLine());
 Console.WriteLine($"Next year we will be in {currentYear + 1}.");
@@ -63,7 +63,7 @@ Console.WriteLine($"Next year we will be in {currentYear + 1}.");
 
 Or even, if every line counts and we don't need to access the current year later on in the program:
 
-```{.cs}
+```
 Console.WriteLine("Please enter the year.");
 Console.WriteLine($"Next year we will be in {int.Parse(Console.ReadLine()) + 1}.");
 ```
@@ -87,13 +87,13 @@ P or p | Print percentage
 cf. Fig. 4.13
 -->
 
-~~~~~~~{.cs}
-        Console.WriteLine(
-              "\n" + $"{1234.567:N}" // 1,234.57
-            + "\n" + $"{1234.5:N}"   // 1,234.50
-            + "\n" + $"{1234.567:E}" // 1.234567E+003
-            + "\n" + $"{1234.567:C}" // $1,234.57
-            + "\n" + $"{1234.5:C}"   // $1,234.50
-            + "\n" + $"{.5:P}"       // 50.00%
+```
+Console.WriteLine(
+    "\n" + $"{1234.567:N}" // 1,234.57
+    + "\n" + $"{1234.5:N}"   // 1,234.50
+    + "\n" + $"{1234.567:E}" // 1.234567E+003
+    + "\n" + $"{1234.567:C}" // $1,234.57
+    + "\n" + $"{1234.5:C}"   // $1,234.50
+    + "\n" + $"{.5:P}"       // 50.00%
     );
-~~~~~~~
+```

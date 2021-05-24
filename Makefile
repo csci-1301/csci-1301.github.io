@@ -155,8 +155,8 @@ $(BUILD_DIR) $(BUILD_DIR)img/ $(BUILD_DIR)$(LABS_DIR):
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)$(LABS_DIR) $(BUILD_DIR)img/
 	cp -u img/favicon/* $(BUILD_DIR)
+	find img -maxdepth 1 -type f | xargs -I {} cp {}  $(BUILD_DIR)img # We copy only the files, and not the folder.
 	cp -u $(WEBPATH)style.css $(BUILD_DIR)
-	cp -r img $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
 # It also copy the favicon and css files to the right place.
@@ -220,7 +220,7 @@ docs: docs-html docs-pdf docs-odt
 ## Web Files
 # -------------------------------
 
-web-index: 
+web-index: | $(BUILD_DIR)
 	pandoc $(WEB_INDEX) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html -M path_to_root=./
 	pandoc $(404_PAGE) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html -M path_to_root=./
 
@@ -236,7 +236,7 @@ web-index:
 # insures that the target directory exists.
 
 ##### Individual HTML files.
-$(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md
+$(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 	
