@@ -214,4 +214,18 @@ else
     - uint is a 32-bit data type.
     - The binary representation of 2 and 4294967295 are 00000000000000000000000000000010 and 11111111111111111111111111111111. 
     - Therefore, the sum of these numbers should be  100000000000000000000000000000001, which needs 33 bits. 
-    - Nevertheless, there is only 32-bit available for the result, and the extra bits will be dropped, and the result will be 00000000000000000000000000000001, which is less than 10000.
+    - Nevertheless, there is only 32 bits available for the result, and the extra bits will be dropped, and the result looks like 00000000000000000000000000000001, which is less than 10000.
+
+## Underflow :lock:
+- Sometimes, the result of arithmetic operations over floating-point numbers is smaller than what can be stored in the corresponding data type. This problem is known as the underflow problem.
+- In C#, in case of an underflow problem, the result will be zero.
+
+```
+float no;
+no = 1E-45f;
+Console.WriteLine(no); //outputs 1.401298E-45
+no = no / 10;
+Console.WriteLine(no); //outputs 0
+no = no * 10;
+Console.WriteLine(no); //outputs 0
+```
