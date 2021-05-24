@@ -1,3 +1,26 @@
+# Decisions and Decision Structures
+
+Everybody needs to take decisions all the time.
+Consider an instructor teaching CSCI 1301 for instance, at the beginning of class they may
+
+- Ask if there are questions. If a student have a question, then the instructor will answer it, and ask again ("Anything else?").
+- When there are no more questions, they may move on to the nexst step, which is to introduce the class ("Today, we will be discussing Decisions and Decision Structures").
+- If there is a quiz scheduled, then they will proceed to distribute it, otherwise they may start the class.
+- etc.
+
+This type of "branching" between multiple choices can be represented with an [activity diagram](https://en.wikipedia.org/wiki/Activity_diagram):
+
+!["An Activity Diagram on Teaching a Class"](img/teaching)
+
+In C#, we will represent
+
+- repetitions (or "loops") ("As long as there are questions…") with the `while`, `do…while` and `for` keywords, 
+- branchings ("If there is a quiz…") with the `if`, `if…else` and `switch` keywords.
+
+Both structures need a datatype to express the result of a decision ("Is it _true_ that there are questions.", or "Is it _false_ that there is a quiz.") called booleans.
+Those booleans can be obtained using conditions, that can be composed ("If we are a Monday, and if it is not past 10:10 am, and if mid-term is not passed, the class will also include a brief reminder about the upcoming first exam.") in different ways using three operators ("and", "or" and "not").
+
+
 # Boolean and Conditions
 
 A condition is either true or false.

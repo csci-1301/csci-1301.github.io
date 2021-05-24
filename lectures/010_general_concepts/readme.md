@@ -140,7 +140,7 @@
 
 <!-- TODO: title this figure -->
 
-!["Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs."](img/flowchart.svg)
+!["Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs."](img/flowchart)
 
 - Integrated Development Environment (IDE)
     - Combines a text editor, compiler, file browser, debugger, and other tools
