@@ -20,7 +20,7 @@ Available formats:
 
 ### Labs
 
-- [List of labs](labs/) or [download all labs](labs.zip)
+- [List of labs](labs/)  <!-- TODO: or [download all labs](labs.zip) -->
 
 ## Other Documents
 
