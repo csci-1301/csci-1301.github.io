@@ -117,7 +117,7 @@ If you follow these instructions the lab will be automatically built into a dist
 
 #. readme will be converted to index (html, pdf, odt)
 #. contents of `src` will be converted to a standalone C# solution as a zip file. This solution will have the same name as the folder in the lab directory which is why directory names should use PascalCase.
-#. all matching the described format will be included in `labs.zip` which you can find on the website or under releases
+<!-- #. all matching the described format will be included in `labs.zip` which you can find on the website or under releases -->
 
 # Content Labelling
 
