@@ -173,6 +173,7 @@ This repository uses following tools and technologies:
 - github pages - to serve the accompanying website
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, [lua filter](https://github.com/jgm/pandoc/issues/2104), etc.
 - [Anchor.js](https://www.bryanbraun.com/anchorjs/) - for automatic links.
+- fonts-symbola - to produce the emoji and other symbols in the pdf document.
 
 ## How build outputs are generated
 

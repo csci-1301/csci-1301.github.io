@@ -126,6 +126,8 @@ PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji 
 # HTML build options
 # Path to HTML templates to use with pandoc
 WEBPATH = templates/web/
+# Path to PDF templates to use with pandoc
+PDFPATH = templates/latex/
 # generate index page for the website from this file
 WEB_INDEX = index.md
 404_PAGE = 404.md
@@ -133,7 +135,7 @@ WEB_INDEX = index.md
 PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --standalone --template=$(WEBPATH)template.html
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex
+PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
