@@ -322,8 +322,9 @@ labs-instructions: labs-html labs-pdf labs-odt
 	
 labs-source-code: $(ARCHIVES)
 
-$(BUILD_DIR)$(ARCHIVES): $(ARCHIVES) | labs-source-code
-	 cp -u $< $@
+$(BUILD_DIR)$(ARCHIVES): $(ARCHIVES) labs-source-code
+	mkdir -p $(dir $@) 
+	cp -u $< $@
 
 labs: labs-instructions labs-source-code $(BUILD_DIR)$(ARCHIVES)
 
