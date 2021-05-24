@@ -28,7 +28,7 @@ Note: the "remainder" or "modulo" operator represents the remainder after doing 
         a = b * 2;
         ```
 
-        - To execute the second line of code, the computer will first evaluate the expression on the right side of the `=` sign. It reads the value of the variable `a`, which is 4, and then computes the result of `4 + 5`, which is 9. Then, it assigns this value to the variable `b` (remember assignment goes right to left).
+        - To execute the second line of the code, the computer will first evaluate the expression on the right side of the `=` sign. It reads the value of the variable `a`, which is 4, and then computes the result of `4 + 5`, which is 9. Then, it assigns this value to the variable `b` (remember assignment goes right to left).
         - To execute the third line of code, the computer first evaluates the expression on the right side of the `=` sign, which means reading the value of `b` to use in the arithmetic operation. `b` contains 9, so the expression is `9 * 2`, which evaluates to 18. Then it assigns the value 18 to the variable `a`, which now contains 18 instead of 4.
     - A variable can appear on both sides of the `=` sign, like this:
 
