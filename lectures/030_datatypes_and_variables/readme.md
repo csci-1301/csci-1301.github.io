@@ -97,14 +97,11 @@
           the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
 
 - Displaying
-    - `Console.WriteLine` can only print text -- the argument (that goes in parentheses) needs to be a `string`
-    - To print a variable that is not `string`-type, we must convert it to a `string`
-    - **String interpolation**: a mechanism for converting a variable's value to a `string` and inserting it into another string
-        - Syntax: `$"text {variable}"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
+    - When you want to print a mixture of values and variables with `Console.WriteLine`, we should convert all of them to a string
+    - **String interpolation**: a mechanism for converting a variable's value to a `string` and inserting it into the main string
+        - Syntax: `$"text {variable} text"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
         - Example: `$"I am {myAge} years old"`
         - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
-    - If the argument to `Console.WriteLine` is the name of a variable, it will automatically convert that variable to a `string` before displaying it
-    - For example, `Console.WriteLine(myAge);` will display "29" in the console, as if we had written `Console.WriteLine($"{myAge}");`
     - When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
 
 ## Variables in Memory
