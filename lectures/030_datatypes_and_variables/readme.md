@@ -178,7 +178,7 @@ Type | Size | Range of Values | Precision
 
           Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
 
-## Overflow
+## Overflow :lock:
 
 - Assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called `overflow` error. 
 
@@ -189,7 +189,7 @@ Type | Size | Range of Values | Precision
 
 
 - In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, the extra bits are just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem. 
-- For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10000. The underneath program look like does this job, but there is the risk of attacks. 
+- For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10000. The underneath program looks like it does this job, but there is a risk of attacks. 
 
 ```
 uint n1, n2;
@@ -205,5 +205,13 @@ if(n1 + n2 < 10000)
     Console.WriteLine($"Pay ${n1} for the first person");
     Console.WriteLine($"Pay ${n2} for the second person");
 }
+else
+{
+    Console.WriteLine("Error: the sum of loans exceeds the maximum allowance.");
+}
 ```
-
+- If the user enters 2  and 4294967295, we expect to see the error message. However, it is not true. The reason can be explained as follows:
+    - uint is a 32-bit data type.
+    - The binary representation of 2 and 4294967295 are 00000000000000000000000000000010 and 11111111111111111111111111111111. 
+    - Therefore, the sum of these numbers should be  100000000000000000000000000000001, which needs 33 bits. 
+    - Nevertheless, there is only 32-bit available for the result, and the extra bits will be dropped, and the result will be 00000000000000000000000000000001, which is less than 10000.
