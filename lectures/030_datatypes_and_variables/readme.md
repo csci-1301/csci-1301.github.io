@@ -188,4 +188,22 @@ Type | Size | Range of Values | Precision
 - With the remaining $N-1$ bits, we can represent $2^(N-1)$ states. Hence, considering the sign bit, we can store a number from $-2^(N-1)$ to $2^(N-1)-1$ in the variable. 
 
 
-- In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, it is just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem. 
+- In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, the extra bits are just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem. 
+- For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10000. The underneath program look like does this job, but there is the risk of attacks. 
+
+```
+uint n1, n2;
+
+Console.WriteLine("Enter the requested loan amount for the first person:");
+n1 = uint.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter the reguested loan amount for the second person:");
+n2 = uint.Parse(Console.ReadLine());
+
+if(n1 + n2 < 10000)
+{
+    Console.WriteLine($"Pay ${n1} for the first person");
+    Console.WriteLine($"Pay ${n2} for the second person");
+}
+```
+
