@@ -159,9 +159,7 @@ Now you will start writing your own code. We'll start by writing a very familiar
 
 The documentation for C# is packed with useful information and efforts are made to make it accessible to beginners. The goal of this exercise is to help you realize that it contains answers to questions you may have asked yourself, like "what is a solution?" or "what does the `namespace` keyword do?".
 
-The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>.
-
-To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/> and answer the following:
+The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>. To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/> and answer the following:
 
 #. What C\# langauge feature is responsible for reclaiming unused memory?
 #. What file extension is used by C\# source code files?
@@ -185,9 +183,9 @@ To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-
 
 #. In the panel that appears, enter the following:
      
-    - (Find what)  `!`, 
+    - (Find what)  `!`
     - (Replace with) `*`
 
 #. Hit "Replace All" and note the modifications in your program.
 #. As you can see, this is a really useful feature of your IDE, but also a really dangerous one.
-If you were to replace all the "*" characters with "!" in all the programs we wrote so far, what could possibly go wrong?
+If you were to replace all the `*` characters with `!` in all the programs we wrote so far, what could possibly go wrong?
