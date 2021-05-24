@@ -10,7 +10,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
 
 ## Opening Your First Program
 
-#. Download [Welcome.zip](https://github.com/csci-1301/csci-1301.github.io/blob/main/code/Welcome.zip?raw=true) and save it on your computer.
+#. Download [HelloWorld_Solution.zip](https://csci-1301.github.io/labs/HelloWorld/HelloWorld_Solution.zip) and save it on your computer.
 #. Unzip the program file^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unziped!] .
     
     - on Windows: right click and choose "Extract all"
@@ -18,7 +18,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
     - on Linux: [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.com/Unzip-Files-in-Linux)
 
 #. Go in the HelloWorld folder that was created.
-#. Double-click on `HelloWorld.sln` file
+#. Double-click on `HelloWorld_Solution.sln` file
 #. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
@@ -81,8 +81,8 @@ After selecting where you want to store your backup files
 #. Create subfolder for the `HelloWorld` lab. Put all of the files related to the "HelloWorld" solution in this folder.
 #. Explore your backup. Check that you have multiple folders. Specifically check that your backup contains at least the following files:
 
-    - `HelloWorld.sln` - this is called a solution file. It tells the IDE how to load your C# source code in the IDE.
-    - `HelloWorld.csproj` - this a project file. Every C# solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
+    - `HelloWorld_Solution.sln` - this is called a solution file. It tells the IDE how to load your C# source code in the IDE.
+    - `HelloWorld_Project.csproj` - this a project file. Every C# solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
     - `Program.cs` - this is the actual source code of your program and where you write code.
 
     It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C\# programs.
@@ -104,7 +104,7 @@ Once you are done, test that you performed the backup properly.
 If not, go have another look back at the ["Compiling and Executing Your First Program"](#compiling-and-executing-your-first-program) section.
 
 If your backup went wrong (you cannot open the project, it refuses to compile, …), try to understand what happened.
-Then, re-download the `HelloWorld.zip`, unzip it, and make sure you can build the solution and run the program.
+Then, re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and run the program.
 
 Action:
 ~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning accros millions [of lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code): such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control), allowing them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.
