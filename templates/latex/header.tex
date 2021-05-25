@@ -17,3 +17,8 @@
 \newunicodechar{✔}{\setmainfont{Symbola} ✔} % U+2714, "HEAVY CHECK MARK"
 \newunicodechar{↵}{\setmainfont{Symbola} ↵} % U+21B5, "DOWNWARDS ARROW WITH CORNER LEFTWARDS"
 %\newunicodechar{️ }{\setmainfont{Symbola}st} % U+FE0F, "VARIATION SELECTOR-16"
+
+% To add line wrap for code environment
+% https://github.com/jgm/pandoc/issues/4302#issuecomment-360669013
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}

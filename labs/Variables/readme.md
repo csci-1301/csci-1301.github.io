@@ -2,7 +2,7 @@
 title: Variables Manipulation
 ---
 
-In this lab you will declare and initialize variables and learn about arithmetic operators.
+In this lab you will declare and initialize variables, and learn about arithmetic operators.
 
 # Variables Manipulation
 
@@ -16,10 +16,12 @@ Working through these labs you should have formed some habits. You should know h
 You have probably already started to read "compile and execute" as:
 
 Windows/Linux
+
 - Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
 - Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd> 
 
 MacOS
+
 - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
 - Execute: <kbd>F5</kbd> 
 
@@ -56,7 +58,7 @@ If you want a tutor or your instructor to check your answer to a previous lab, j
 #. Compile and execute your program. It should display a message like:
 
     ```text
-    My name is John Smith, and I expect to graduate in 2025.
+    My name is Evi Nemeth, and I expect to graduate in 2025.
     ```
 
 #. Answer the following by first thinking of what may happen, and then by editing your program to check your hypothesis. Would the compilation still be successful if we were to try to:
@@ -68,17 +70,21 @@ If you want a tutor or your instructor to check your answer to a previous lab, j
 
 #. At the end of your `Main` method:
 
-    #. add three statements that change the values of the three variables
-    #. Copy the `Console.WriteLine` statement that was previously given.
-    #. Compile and run the program
+    #. Add three statements that change the values of the three variables,
+    #. Copy the `Console.WriteLine` statement that was previously given,
+    #. Compile and run the program.
    
-   Notice that the very same statement will now print a different message!
+   Notice that the very same statement will now display at the screen a different message!
 
 ## Experimenting With Numeric Datatypes
 
 Compute in your head the result of the following operation: `1000000.0 + 1.2 - 1000000.0`.
 
-Now, implement it (read "implement it" as: "Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#") using the `float`, `double`, and `decimal` datatypes:
+Now, implement it (read "implement it" as: 
+
+> Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#
+
+) using the `float`, `double`, and `decimal` datatypes:
 
 ```
 Console.Write("With floats:\n\t");
