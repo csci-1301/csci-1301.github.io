@@ -6,7 +6,7 @@ Its formal syntax is as follows:
 ~~~~~~~{.cs .numberLines}
 switch (<variable name>)
 {
-    case (<literral 1>):
+    case (<literal 1>):
         <statement block 1>
         break;
     case (<literal 2>):
@@ -59,7 +59,7 @@ switch (month)
 }
 ~~~~~~~
 
-Another example, to match a section letter against 4 possibilities, where two actually result in the same behaviour:
+Another example, to match a section letter against 4 possibilities, where two actually result in the same behavior:
 
 ~~~~~~~{.cs .numberLines}
 char section = 'c';
