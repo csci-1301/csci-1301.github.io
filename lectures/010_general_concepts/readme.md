@@ -124,7 +124,7 @@
     - Fixing compile errors, if necessary
     - Running and testing the program
     - Debugging the program, if necessary
-- Intepreted language workflow (see flowchart)
+- Interpreted language workflow (see flowchart)
     - Writing down specifications
     - Creating the source code
     - Running the program in the interpreter
