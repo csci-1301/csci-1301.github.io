@@ -49,7 +49,7 @@ int[] myArray = new[] { 10, 20, 30 };
 int[] myArray = { 10, 20, 30 };
 ~~~~~~~
 
-But, we should be carefull, the following would cause an error:
+But, we should be careful, the following would cause an error:
 
 ~~~~~~~{.cs .numberLines .lineAnchors}
 int[] myArray = new int[5];
