@@ -331,7 +331,7 @@ labs-instructions: labs-html labs-pdf labs-odt
 $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
 # This rule concerns all the zip ARCHIVES, but prefixed by the BUILD_DIR 
 	mkdir -p $(dir $@) 
-	cp -u $< $@
+	cp -u $(subst $(BUILD_DIR),,$@) $@
 
 labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 
@@ -346,5 +346,5 @@ build: docs web-index book labs
 all: build
 
 # Phony rule to display variables
-# .PHONY: test
-# $(info $$var is [$(addprefix ${BUILD_DIR}, ${ARCHIVES})])
+.PHONY: test
+$(info $$var is [${ARCHIVES}])
