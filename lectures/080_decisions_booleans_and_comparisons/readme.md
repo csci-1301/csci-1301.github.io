@@ -33,7 +33,7 @@ bool flag = true;
 Console.WriteLine(true);
 ~~~~~~~
 
-But the only two possible values are `true` and `false`, and we will study three operations on them: "and" (`&&`, the conjonction), "or" (`||`, the disjunction) and "not" (`!`, the negation).
+But the only two possible values are `true` and `false`, and we will study three operations on them: "and" (`&&`, the conjunction), "or" (`||`, the disjunction) and "not" (`!`, the negation).
 They have the expected meaning that the condition "A and B" is true if and only if A is true, and B is true.
 Similarly, "A or B" is false if and only if A is false, and B is false (that is, it takes only one to make their disjunction true).
 
