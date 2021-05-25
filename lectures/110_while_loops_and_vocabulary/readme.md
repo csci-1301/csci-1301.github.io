@@ -32,7 +32,7 @@ Notes:
 It is easy to write _wrong_ `loop` statements. 
 Let us review some of the "classic" blunders.
 
-## Failling to update the variable occuring in the condition
+## Failing to update the variable occurring in the condition
 
 
 ~~~~~~~~{.cs}
@@ -197,11 +197,11 @@ Sentinel controlled loop
 
 User controlled loop
 
-: The number of iteration depends on the user.
+: The number of iterations depends on the user.
 
 Count controlled loop
 
-: The number of iteration depends on a counter.
+: The number of iterations depends on a counter.
 
 Note that a user-controlled loop can be sentinel-controlled (that is the example we just saw), but also count-controlled ("Give me a value, and I will iterate a task that many times").
 
