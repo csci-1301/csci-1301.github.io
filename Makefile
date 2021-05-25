@@ -269,9 +269,17 @@ labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
 
 #### Index page for labs
-$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
-	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && for dir in $(LABS_DIRS); do printf ' | <a href="'$${dir}'">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">'pdf'</a>, <a href="'$${dir}/index.odt'">odt</a>, <a href="'$${dir}/index.html'">html</a>\n'; done) | pandoc -o $@ $(PANDOC_HTML_PAGES) -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # I don't think we need odt / pdf for that page.
+$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
+	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && \
+		for dir in $(LABS_DIRS); do \
+			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">'pdf'</a>, <a href="'$${dir}/index.odt'">odt</a>, <a href="'$${dir}/index.html'">html</a> |' && 	\
+			for fileA in */$${dir}/*.zip; do \
+				test -f $${fileA} && printf '<a href="../'$${fileA}'">'$(basename $(basename $${fileA}))'</a> '; \
+			done;  \
+		printf "| \n" ; done \
+	) | pandoc -o $@ $(PANDOC_HTML_PAGES) -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
+
 	
 #### Whole labs instructions, in all formats.
 labs-instructions: labs-html labs-pdf labs-odt
@@ -279,8 +287,6 @@ labs-instructions: labs-html labs-pdf labs-odt
 ### Source Code
 
 %.zip: src/%/*/Program.cs
-	echo Making $@ from $<
-	echo sln goes to $(dir $(patsubst %/,%,$(dir $<)))/$(notdir $*).sln
 #
 # The structure of an archive is as follows:
 # └───<Solution>	 	     $(notdir $*)
@@ -322,13 +328,12 @@ labs-instructions: labs-html labs-pdf labs-odt
 # We compress the folder containing the sln and the folder containing the csproj and the code
 # But we excluse the .vs folder and .directory file
 	
-labs-source-code: $(ARCHIVES)
 
-$(BUILD_DIR)$(ARCHIVES): $(ARCHIVES) labs-source-code
+$(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
 	mkdir -p $(dir $@) 
 	cp -u $< $@
 
-labs: labs-instructions labs-source-code $(BUILD_DIR)$(ARCHIVES)
+labs: labs-instructions $(BUILD_DIR)$(ARCHIVES)
 
 # -------------------------------
 ## Other Useful Rules
@@ -339,3 +344,7 @@ web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 build: docs web-index book labs
 
 all: build
+
+# Phony rule to display variables
+# .PHONY: test
+# $(info $$var is [$(addprefix ${BUILD_DIR}, ${ARCHIVES})])
