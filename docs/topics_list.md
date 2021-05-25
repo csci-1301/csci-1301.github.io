@@ -100,7 +100,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - The difference between postfix and infix notation for unary operators :question:
 - Comparison operators: `!=`, `==`, `>`, `>=`, `<`, `<=`
 - Boolean logical operators: `&&`, `||`, `!`
-- Precedence and "vadidity" of some expressions (typically, `! 2 < 3` is not a valid expression) 
+- Precedence and "validity" of some expressions (typically, `! 2 < 3` is not a valid expression) 
 - Combined assignment operators: `+=`, `*=`, `-=`, `/=`, `%=`
 
 ## Strings
@@ -155,7 +155,7 @@ The student should understand
 - Their syntax,
 - Their flow,
 - When to use one or the other,
-- The common pitfals (e.g., writing a condition in a `switch`).
+- The common pitfalls (e.g., writing a condition in a `switch`).
 
 ## Repetition Statements
 
@@ -173,7 +173,7 @@ The student should understand:
 - Their syntax,
 - Their flow,
 - When to use one or the other,
-- The common pitfals (e.g. `=` instead of `==`, `<= n` vs `< n`)
+- The common pitfalls (e.g. `=` instead of `==`, `<= n` vs `< n`)
 
 As well as being capable of identifying the difference between
 
@@ -206,11 +206,11 @@ and defining the term "accumulator"
 
 - The `new` keyword
 - Object creation using default and custom constructors
-- Object manipulation: calling a method, setting an attribute, calling the `ToString` method implicitely.
+- Object manipulation: calling a method, setting an attribute, calling the `ToString` method implicitly.
 
 ## Additional Considerations
 
-- `toString` method
+- `ToString` method
 - static class and methods
 - [`Math` Class](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0) (`Abs`, `Sqrt`, `Pow`) :question:
 
