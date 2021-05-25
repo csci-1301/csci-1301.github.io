@@ -66,6 +66,7 @@
         - Must be unique among all variable, method, and class names
         - Should use CamelCase if it contains multiple words
     - Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
+    - Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`.
 - Assignment
     - The act of changing the value of a variable
     - Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
@@ -103,6 +104,10 @@
         - Example: `$"I am {myAge} years old"`
         - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
     - When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
+
+On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
+It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the "atomic steps" your program should perform.
+
 
 ## Variables in Memory
 

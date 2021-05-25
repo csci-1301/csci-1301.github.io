@@ -126,6 +126,7 @@ Features of this program:
         - Must contain only letters (`a` → `Z`), numbers (`0` → `9`), and underscore (`_`)-- no spaces
         - Must not begin with a number
         - Are case sensitive
+        - Must be unique (you cannot re-use the same identifier twice in the same scope -- a concept we will discuss later)
     - Conventions for identifiers
         - Should be descriptive, e.g. "`AudioFile`" or "`userInput`" not "`a`" or "`x`"
         - Should be easy for humans to read and type
