@@ -270,12 +270,12 @@ labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 
 #### Index page for labs
 # I don't think we need odt / pdf for that page.
-$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md # Add source code as dependency as well
+$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md | $(BUILD_DIR) $(BUILD_DIR)$(ARCHIVES)
 	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && \
 		for dir in $(LABS_DIRS); do \
-			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">'pdf'</a>, <a href="'$${dir}/index.odt'">odt</a>, <a href="'$${dir}/index.html'">html</a> |' && 	\
+			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">↓ pdf</a>, <a href="'$${dir}/index.odt'">↓ odt</a>, <a href="'$${dir}/index.html'">html</a> |' && 	\
 			for fileA in */$${dir}/*.zip; do \
-				test -f $${fileA} && printf '<a href="../'$${fileA}'">'$(basename $(basename $${fileA}))'</a> '; \
+				test -f $${fileA} && printf '<a href="../'$${fileA}'">↓ '$$(basename $${fileA})'</a> '; \
 			done;  \
 		printf "| \n" ; done \
 	) | pandoc -o $@ $(PANDOC_HTML_PAGES) -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
@@ -324,16 +324,16 @@ labs-instructions: labs-html labs-pdf labs-odt
 #
 # Finaly, we can zip the folder:
 	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a ../$(notdir $@) $(notdir $*)*  -xr\!.vs -xr\!.directory
-
 # We compress the folder containing the sln and the folder containing the csproj and the code
 # But we excluse the .vs folder and .directory file
 	
 
 $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
+# This rule concerns all the zip ARCHIVES, but prefixed by the BUILD_DIR 
 	mkdir -p $(dir $@) 
 	cp -u $< $@
 
-labs: labs-instructions $(BUILD_DIR)$(ARCHIVES)
+labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 
 # -------------------------------
 ## Other Useful Rules
