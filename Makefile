@@ -240,7 +240,7 @@ web-index: | $(BUILD_DIR)
 ##### Individual HTML files.
 $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
+	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 	
 	# $(foreach var,$(apps),$(info In the loop running with make: $(var)))
 # This last variable is a custom one, used in the template to add download links
