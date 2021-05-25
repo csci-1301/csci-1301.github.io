@@ -4,7 +4,7 @@
 
 This is source code repository for CSCI 1301 course resources.
 
-View this resource on the web: **[Website](https://csci-1301.github.io)**, or ([mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)).
+View this resource on the web: **[Website](https://csci-1301.github.io)** ([mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)).
 
 
 ### Organization of resources
