@@ -348,3 +348,8 @@ all: build
 # Phony rule to display variables
 .PHONY: test
 $(info $$var is [${ARCHIVES}])
+
+
+# Clément's Personal, to mirror on spots
+spots:
+	cp -r $(BUILD_DIR)* /home/caubert/travail/upload/site/spots/teaching/csci-1301/
