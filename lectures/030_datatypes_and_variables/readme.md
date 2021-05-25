@@ -10,9 +10,9 @@
     - Numbers (the number 2) are different from text (the word "two")
     - Text data is called "strings" because each letter is a **character** and a word is a *string of characters*
     - Within "numeric data," there are different types of numbers
-        - Natural numbers (ℕ): 0, 1, 2, ...
-        - Integers (ℤ): ... -2, -1, 0, 1, 2, ...
-        - Real numbers (ℝ): 0.5, 1.333333..., -1.4, etc.
+        - Natural numbers (ℕ): 0, 1, 2, …
+        - Integers (ℤ): … -2, -1, 0, 1, 2, …
+        - Real numbers (ℝ): 0.5, 1.333333…, -1.4, etc.
 - Basic Datatypes in C#
     - C# uses keywords to name the types of data
     - Text data:
@@ -142,17 +142,17 @@
 
 Type | Size | Range of Values | Precision
 --- | --- | ----- | ----
-`sbyte` | 1 bytes | $-128 ... 127$ | N/A
-`byte` | 1 bytes | $0 ... 255$ | N/A
-`short` | 2 bytes | $-2^{15} ... 2^{15}-1$ | N/A
-`ushort` | 2 bytes | $0 ... 2^{16}-1$ | N/A
-`int` | 4 bytes | $-2^{31} ... 2^{31}-1$ | N/A
-`uint` | 4 bytes | $0 ... 2^{32}-1$ | N/A
-`long` | 8 bytes | $-2^{63} ... 2^{63}-1$ | N/A
-`ulong` | 8 bytes | $0 ... 2^{64}-1$ | N/A
-`float` | 4 bytes | $\pm 1.5 \cdot 10^{-45} ... \pm 3.4 \cdot 10^{38}$ | 7 digits
-`double` | 8 bytes | $\pm 5.0 \cdot 10^{-324} ... \pm 1.7 \cdot 10^{308}$ | 15-16 digits
-`decimal` | 16 bytes | $\pm 1.0 \cdot 10^{-28} ... \pm 7.9 \cdot 10^{28}$ | 28-29 digits
+`sbyte` | 1 bytes | $-128 … 127$ | N/A
+`byte` | 1 bytes | $0 … 255$ | N/A
+`short` | 2 bytes | $-2^{15} … 2^{15}-1$ | N/A
+`ushort` | 2 bytes | $0 … 2^{16}-1$ | N/A
+`int` | 4 bytes | $-2^{31} … 2^{31}-1$ | N/A
+`uint` | 4 bytes | $0 … 2^{32}-1$ | N/A
+`long` | 8 bytes | $-2^{63} … 2^{63}-1$ | N/A
+`ulong` | 8 bytes | $0 … 2^{64}-1$ | N/A
+`float` | 4 bytes | $\pm 1.5 \cdot 10^{-45} … \pm 3.4 \cdot 10^{38}$ | 7 digits
+`double` | 8 bytes | $\pm 5.0 \cdot 10^{-324} … \pm 1.7 \cdot 10^{308}$ | 15-16 digits
+`decimal` | 16 bytes | $\pm 1.0 \cdot 10^{-28} … \pm 7.9 \cdot 10^{28}$ | 28-29 digits
 
 - Value and reference types: different ways of storing data in memory
     - Variables name memory locations, but the data that gets stored at the named location is different for each type
@@ -180,7 +180,7 @@ Type | Size | Range of Values | Precision
 
 ## Overflow :lock:
 
-- Assume a car has a 4-digit odometer, and currently, it shows 9999. What does the odometer show if you drive the car another mile? As you guess, it shows 0000 while it must show 10000. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called `overflow` error. 
+- Assume a car has a 4-digit odometer, and currently, it shows `9999`. What does the odometer show if you drive the car another mile? As you guess, it shows `0000` while it should show `10000`. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called `overflow` error. 
 
 - In an unsigned data type variable with $N$ bits, we can store the numbers ranged from 0 to $2^(N-1)$. In signed data type variables, the high order bit represents the sign of the number as follows:
     - 0 means zero or a positive value
@@ -189,30 +189,15 @@ Type | Size | Range of Values | Precision
 
 
 - In many programming languages like C, overflow error raise an exceptional situation that crashes the program if it is not handled. But, in C#, the extra bits are just ignored, and if the programmer does not care about such a possibility, it can lead to a severe security problem. 
-- For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10,000. The underneath program looks like it does this job, but there is a risk of attacks. 
+- For example, assume a company gives loans to its employee. Couples working for the company can get loans separately, but the total amount can not exceed $10,000. The underneath program looks like it does this job, but there is a risk of attacks. (This program uses notions you have not studied yet, but that should not prevent you from reading the source code and executing it.)
 
-```
-uint n1, n2;
-
-Console.WriteLine("Enter the requested loan amount for the first person:");
-n1 = uint.Parse(Console.ReadLine());
-
-Console.WriteLine("Enter the reguested loan amount for the second person:");
-n2 = uint.Parse(Console.ReadLine());
-
-if(n1 + n2 < 10000)
-{
-    Console.WriteLine($"Pay ${n1} for the first person");
-    Console.WriteLine($"Pay ${n2} for the second person");
-}
-else
-{
-    Console.WriteLine("Error: the sum of loans exceeds the maximum allowance.");
-}
-```
-- If the user enters 2  and 4,294,967,295, we expect to see the error message. However, it is not true. The reason can be explained as follows:
-    - uint is a 32-bit data type.
-    - The binary representation of 2 and 4294967295 are `00000000000000000000000000000010` and `11111111111111111111111111111111`. 
+    ```
+    !include code/overflow_example.cs
+    ```
+        
+- If the user enters 2  and 4,294,967,295, we expect to see the error message ("Error: the sum of loans exceeds the maximum allowance."). However, this is not what will happened, and the request will be accepted even if it should not have. The reason can be explained as follows:
+    - `uint` is a 32-bit data type.
+    - The binary representation of 2 and 4,294,967,295 are `00000000000000000000000000000010` and `11111111111111111111111111111111`. 
     - Therefore, the sum of these numbers should be  `100000000000000000000000000000001`, which needs 33 bits. 
     - Nevertheless, there is only 32 bits available for the result, and the extra bits will be dropped, and the result looks like `00000000000000000000000000000001`, which is less than 10,000.
 
