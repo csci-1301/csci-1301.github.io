@@ -30,7 +30,7 @@ Executing "blindly" code found on-line, on the other hand, gives a good chance o
 An [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), for "Integrated development environment", is the software or service you will be using to write, compile, execute and debug your code. 
 There are many available IDEs, and some can accomodate multiple different programming languages.
 
-For C#, [there are many different possibilities](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C#): some are cross-platforms (meaning you can use them on macOS, windows or Linux), some are provided free of charge, some have not been updated in a long time.
+For C#, [there are many different possibilities](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C%23): some are cross-platforms (meaning you can use them on macOS, windows or Linux), some are provided free of charge, some have not been updated in a long time.
 Three natural choices are [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/).
 While the last two are accessible on every operating sysems, Visual Studio is available only for windows, and in a slightly different version for macOS.
 

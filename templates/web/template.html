@@ -43,14 +43,6 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
-<header class="page-header">
-    <div>
-        <!-- $path_to_root$ does not work here -->
-        <a class="home" href='/'>CSCI 1301</a>
-        <a href='/#book'>Book</a>
-        <a href='/#labs'>Labs</a>
-    </div>
-</header>
 $for(include-before)$
 $include-before$
 $endfor$
@@ -58,6 +50,14 @@ $if(title)$
 </head>
 <body>
 <main>
+<header class="page-header">
+    <div>
+        <!-- $path_to_root$ does not work here -->
+        <a class="home" href='.$path_to_root$/'>CSCI 1301</a>
+        <a href='/#book'>Book</a>
+        <a href='/#labs'>Labs</a>
+    </div>
+</header>
 <header id="title-block-header">
 <h1 class="title">$title$</h1>
 $if(subtitle)$
