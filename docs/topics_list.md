@@ -15,7 +15,7 @@ _Students should understand the meaning and importance of the following notions.
     - Object-oriented paradigm and  data hiding
 - The difference between roles (user, tester, programmer)
 - How complex piece of software _reuse_ previous pieces.
-- The importance of security :lock:
+- The importance of security 🛡️
     - Types of attack (malware, phishing, social engineering, zero-day) 
     - Types of loss (loss of integrity / availability / confidentiality)
 
@@ -29,22 +29,22 @@ _Students should understand the meaning and importance of the following notions.
     - Reading the compiler's output, warning and error messages
     - Looking for documentation and help on-line and off-line
     - Testing
-    - Making sure the program is secure :lock:
+    - Making sure the program is secure 🛡️
     - Editing
     - Reusing
 - Using an IDE to
     - Create a project, 
     - Perform some of the steps of the "flow of development",
     - Correctly save and re-open projects,
-    - Understand basic features of break points and debugging. :question:
+    - Understand basic features of break points and debugging. ❓
 
 _The IDE used can be [MonoDevelop](https://www.monodevelop.com/) or [Visual Studio](https://visualstudio.microsoft.com/), the student can pick other IDEs if they wish but they will not be supported._
 
 ## Computer Usage
 
-- How to download and install an IDE in a secure way :lock:
+- How to download and install an IDE in a secure way 🛡️
 - How to share and zip a project
-- How to use shortcuts :question:
+- How to use shortcuts ❓
 - How to look for on-line documentation
 
 ## The Structure of a Program
@@ -85,7 +85,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - Integers (`int`, `long`) – range and size, signature (`uint`)
 - Floating Point (`float`, `double`, and `decimal`)  – range, size and precision, 
 - Type casting (e.g. from `int` to `double`, and legal operations between different datatypes) and casting operator (e.g. `(int)`).
-- Overflow and underflow :lock:
+- Overflow and underflow 🛡️
 
 ## Booleans
 
@@ -97,7 +97,7 @@ _The students should understand all the components of a simple "Hello World" pro
 
 - Binary arithmetic operators: `*`, `/`, `%`, `+`, `-`
 - Unary arithmetic operators: `++`, `--`
-- The difference between postfix and infix notation for unary operators :question:
+- The difference between postfix and infix notation for unary operators ❓
 - Comparison operators: `!=`, `==`, `>`, `>=`, `<`, `<=`
 - Boolean logical operators: `&&`, `||`, `!`
 - Precedence and "validity" of some expressions (typically, `! 2 < 3` is not a valid expression) 
@@ -108,15 +108,15 @@ _The students should understand all the components of a simple "Hello World" pro
 - `ReadLine` method
 - Concatenation (`+`)
 - Interpolation
-- Additional methods: `ToLower`, `ToUpper`, `Contains` :question:
+- Additional methods: `ToLower`, `ToUpper`, `Contains` ❓
 
 ### Displaying Strings on the Screen
 
 - [Format specifiers](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) for numbers:
     – Currency (`C`), 
     - Fixed-point (`F`) or Number (`N`)
-    - Percent (`P`) :question:
-    - Exponential (`E`) :question:
+    - Percent (`P`) ❓
+    - Exponential (`E`) ❓
 
 - The `String.Format` method
 
@@ -125,10 +125,10 @@ _The students should understand all the components of a simple "Hello World" pro
 - Possible values and the existence of binary, oct, dec and hex representation (cf. for instance [wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters))
 - Escape character and sequences: `\n`, `\t`, `\\`
 - Conversion between glyph and decimal value.
-- Various methods: `ToLower`, `ToUpper`, `Contains`, `StartsWith`, `EndsWith` :question:
+- Various methods: `ToLower`, `ToUpper`, `Contains`, `StartsWith`, `EndsWith` ❓
 
 
-# Lists :question:
+# Lists ❓
 
 - Creating a list of numbers or strings
 - Adding items using the `Add` method
@@ -164,7 +164,7 @@ For each of the following structure:
 - `foreach` 
 - `while`
 - `for`
-- `do{…}while(…)` :question:
+- `do{…}while(…)` ❓
 
 The student should understand:
 
@@ -187,19 +187,19 @@ and defining the term "accumulator"
 
 ## Class Conception
 
-- Need and interest of specification :lock:
+- Need and interest of specification 🛡️
 - UML Class diagram: interest, usage, and simple case (single class with attributes, methods and constructor).
 - Access modifier (private, public)
-- Principle of least privilege (private variables and methods where possible) :lock:
+- Principle of least privilege (private variables and methods where possible) 🛡️
 
 ## Class Implementation
 
 - Attributes (and their default value, as well as how to change them)
 - Get and Set methods
-- Properties :question:
+- Properties ❓
 - Method signature
 - Overloading
-- [Variable shadowing](https://en.wikipedia.org/wiki/Variable_shadowing) :question:
+- [Variable shadowing](https://en.wikipedia.org/wiki/Variable_shadowing) ❓
 - Constructors: default constructor and "custom" constructor
 
 ## Class Usage
@@ -212,7 +212,7 @@ and defining the term "accumulator"
 
 - `ToString` method
 - static class and methods
-- [`Math` Class](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0) (`Abs`, `Sqrt`, `Pow`) :question:
+- [`Math` Class](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0) (`Abs`, `Sqrt`, `Pow`) ❓
 
 # Random Class
 
@@ -220,8 +220,8 @@ and defining the term "accumulator"
 - Generating non-negative integers,
 - Generating integers between ranges,
 - Generating double,
-- Generating a random word :question:
-- Potential problems with deterministic generators :lock:
+- Generating a random word ❓
+- Potential problems with deterministic generators 🛡️
 
 # Testing and Debugging
 
@@ -231,9 +231,9 @@ and defining the term "accumulator"
 
 # Interacting with Users
 
-- Input validation  :lock:
+- Input validation  🛡️
 - `TryParse` in the `int` and `decimal` classes.
-- Reading a single character from the user :question:
+- Reading a single character from the user ❓
 
 # Data structures
 
@@ -241,13 +241,13 @@ and defining the term "accumulator"
 
 - The `const` keyword
 - Example usages (Avogadro constant, miles-to-kilometer ratio, speed of light) and use case.
-- `Math.PI` :question:
-- Static constant :question:
+- `Math.PI` ❓
+- Static constant ❓
 
 ## Enumerated Datatype
 
 - Define enumerated datatypes using `enum`
-- Enum values (i.e. numerical values assigned to enumerated values by default) :question:
+- Enum values (i.e. numerical values assigned to enumerated values by default) ❓
 - Use enumerated datatypes (variable declaration, assignment, displaying).
 
 ## Arrays
@@ -256,22 +256,22 @@ Only one-dimensional arrays should be discussed.
 
 - Vocabulary: index (starting at 0), bounds.
 - `Length` property
-- `Resize` method :question:
-- Different syntaxes for initializing and declaring arrays :question:
-- Buffer overflow :lock:
+- `Resize` method ❓
+- Different syntaxes for initializing and declaring arrays ❓
+- Buffer overflow 🛡️
 
-# Exceptions :soon:
+# Exceptions 🔜
 
 - `try…catch` blocks
 - Types of exceptions 
 - `finally`
 - Defining your own exception
 
-# File I/O :soon:
+# File I/O 🔜
 
 - `StreamWriter` and `StreamReader` classes
 - Manipulating binary and text files
-- `File` class :question:
+- `File` class ❓
 
 
 

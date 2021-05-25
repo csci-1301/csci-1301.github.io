@@ -183,7 +183,7 @@ Type | Size | Range of Values | Precision
 
           Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
 
-## Overflow :lock:
+## Overflow 🛡️
 
 - Assume a car has a 4-digit odometer, and currently, it shows `9999`. What does the odometer show if you drive the car another mile? As you guess, it shows `0000` while it should show `10000`. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called `overflow` error. 
 
@@ -206,7 +206,7 @@ Type | Size | Range of Values | Precision
     - Therefore, the sum of these numbers should be  `100000000000000000000000000000001`, which needs 33 bits. 
     - Nevertheless, there is only 32 bits available for the result, and the extra bits will be dropped, and the result looks like `00000000000000000000000000000001`, which is less than 10,000.
 
-## Underflow :lock:
+## Underflow 🛡️
 - Sometimes, the result of arithmetic operations over floating-point numbers is smaller than what can be stored in the corresponding data type. This problem is known as the underflow problem.
 - In C#, in case of an underflow problem, the result will be zero.
 
