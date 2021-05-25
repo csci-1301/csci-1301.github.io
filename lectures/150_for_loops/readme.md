@@ -99,7 +99,7 @@ for (int m = 0; m < 10; m++)
 
 ## Iterations
 
-There is another, close, structrure that allows to iterate over the elements of an array, but can only access them, not change their values (they are "read only").
+There is another, close, structure that allows to iterate over the elements of an array, but can only access them, not change their values (they are "read only").
 
 ~~~~~~~{.cs .numberLines .lineAnchors}
 for (int i = 0; i < myArray.Length; i++)
@@ -109,7 +109,7 @@ foreach (int i in myArray) // "Read only"
     Console.Write(i + " ");
 ~~~~~~~
 
-Diffference is w.r.t. to modifying the array "read Vs write".
+Difference is w.r.t (with respect to) modifying the array "read vs write".
 Having `i = 2` in the `foreach` would cause an error!
 
 That last structure is given for the sake of completeness, but it's ok if you'd rather not use it. 
