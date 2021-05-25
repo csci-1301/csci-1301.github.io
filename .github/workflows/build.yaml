@@ -47,4 +47,4 @@ jobs:
           build/book.html
           build/book.pdf
           build/book.odt
-          build/labs.zip
+          # build/labs.zip

@@ -28,9 +28,9 @@ If you follow these instructions the lab will be automatically built into a dist
 
 | Lab title | Prerequisites | Related Lectures |  Description |
 | :--- | :--- | :--- | :--- |
-| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, install IDE |
+| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey and install IDE |
 | [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program |
 | [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Creating a new program, using Write and WriteLine and escape sequences |
-| [Variables](/labs/Variables) | TODO | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring variables and using arithmetic operators |
+| [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring and displaying variables and using arithmetic operators |
 | [Casting](/labs/Casting) | TODO | TODO | Implicit and explicit type conversion |
 | [UserInput](/labs/UserInput) | TODO | TODO | Reading input from user |

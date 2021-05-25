@@ -4,6 +4,8 @@ title: Your First Own Program
 
 In this lab you will first edit an existing program then create a new program "from scratch". You will also explore C\# documentation and learn new useful IDE features.
 
+# Your First Own Program
+
 ## Editing Existing Program
 
 ### Re-using and Editing
