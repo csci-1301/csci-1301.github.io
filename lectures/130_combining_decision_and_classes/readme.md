@@ -143,7 +143,7 @@ class Program
         Console.WriteLine("How much do you need, total?");
         decimal need = decimal.Parse(Console.ReadLine());
 
-        Console.WriteLine("What is your down paiement?");
+        Console.WriteLine("What is your down payment?");
         decimal down = decimal.Parse(Console.ReadLine());
 
         Loan myLoan = new Loan(name, type, cscore, need, down);
