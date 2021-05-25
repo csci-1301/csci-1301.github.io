@@ -7,7 +7,7 @@ Let us introduce a couple of key notions for object-oriented programming languag
 
 - We will be using _classes_ and _objects_: A class is the specification (you can think of a cookie cutter, a blueprint, a model), and an object is the "actual thing" (the actual cookie my kid ate, my house, your car, …).
 - To create an object from a class will need to *instantiate* it.
-- An objet will *be* and *do*, that is, have *data* and *operations*. The class has *attributes* and *methods* (or procedures). When we instantiate, the object has *instance variables*.
+- An object will *be* and *do*, that is, have *data* and *operations*. The class has *attributes* and *methods* (or procedures). When we instantiate, the object has *instance variables*.
 - An object hides its structure: to have access to the value of the instance variables, you have to use properties (methods to access those attributes). Classes *encapsulate* the attributes and methods of the object and hides them (and the implementation details) from the other objects.
 - Inheritance: a class can inherit from another class, i.e., extend it with new attributes or methods. A class can be extended in different ways, and those extensions can also be extended!
 
@@ -19,7 +19,7 @@ class Rectangle
 
 /*
    A rectangle
-    - has a lenght, a width, (attributes)
+    - has a length, a width, (attributes)
     - can be given a length, a width, can return its length, its width, and its area (methods).
     */
 
@@ -120,7 +120,7 @@ A class is represented as follows:
 | + GetAttribute(): `int` |
 
 
-Note that `void` is optionnal.
+Note that `void` is optional.
 For our Rectangle class, this gives:
 
 | **Rectangle** |
