@@ -41,14 +41,14 @@ Even if you do not need to understand the source code and details of the impleme
 
 Your instructor will be your primary guide when it comes to the order in which you need to read the material hosted here.
 However, you should feel free to explore our [other useful documents](https://csci-1301.github.io/#other-documents), that contain information you may be interested in fairly early in the semester (like…today!).
-Typically, the [Installing Software](software_install.html) page should probably be one of the first document you should read: it explains in details how to set-up your computer to be able to execute, compile and study the code we will be discussing in class and lab, and how to access and use the computer labs.
+Typically, the [Installing Software](../../software_install.html) page should probably be one of the first document you should read: it explains in details how to set-up your computer to be able to execute, compile and study the code we will be discussing in class and lab, and how to access and use the computer labs.
 
 Action:
 ~ 
     Reading instructions is not always easy. You should try to always to understand what is crucial, what is important, and what is optional.
     Although you may have overlooked that subtlety, the previous paragraph actually meant
     
-    > Go read [Installing Software](software_install.html) as soon as possible, you want to be ready for next lab!
+    > Go read [Installing Software](../../software_install.html) as soon as possible, you want to be ready for next lab!
     
     This is particularly true for labs asking for you to set things up: there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help-1) earlier rather than later!
 

@@ -21,7 +21,7 @@ This material could not have been without the generous contribution of past CSCI
 
 # Supports
 
-The authors are supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/about/r19_grantees) ([Proposal 571](https://www.affordablelearninggeorgia.org/documents/571-proposal.docx)).
+The authors are supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/about/r19_grantees) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)).
 
 [![](img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
 
