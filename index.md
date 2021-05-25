@@ -24,12 +24,27 @@ Available formats:
 
 ## Other Documents
 
-- [Student Learning Outcomes](learning_outcomes.html) - expected student learning outcomes
-- [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
+### Programming and Computer Usage
+
 - [Installing Software](software_install.html) - guide on how to install various IDE / software
-- [How to become a UCA](uca.html) - details on becoming a UCA
-- [Contributing Guidelines](contributing.html) - help improve this resource
+- [Datatypes in C#](datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
+
+
+### Useful Documentation
+
+- [Student Learning Outcomes](learning_outcomes.html) - expected student learning outcomes
 - [List of Topics](topics_list.html) - list of required topics
-- [User Guide](user_guide.html) - details about this resource
+
+
+### Academic Life
+
+- [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
 - [Survey and Statistical Analysis](survey.html) - a brief explanation of the purpose and benefits of surveying our students
+- [How to become a UCA](uca.html) - details on becoming a UCA
+
+
+### About this Resource 
+
+- [Contributing Guidelines](contributing.html) - help improve this resource
+- [User Guide](user_guide.html) - details about this resource
 

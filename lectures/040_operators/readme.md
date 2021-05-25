@@ -178,8 +178,9 @@ Note: the "remainder" or "modulo" operator represents the remainder after doing 
 
 Summary of implicit and explicit conversions for the numeric datatypes:
 
-!["Implicit and Explicit Conversion Between Datatypes"](img/conversions.svg)
+!["Implicit and Explicit Conversion Between Datatypes"](img/conversions)
 
+Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatypes_in_csharp.html#result-type-of-operations) for more detail.
 
 ## Arithmetic on Mixed Data Types
 

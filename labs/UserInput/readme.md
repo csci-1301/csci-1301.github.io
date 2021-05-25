@@ -5,11 +5,17 @@ title: User Input
 
 # Reading From the User
 
-#. Download the PersonalizedWelcomeMessage project from the D2L module for this lab.
-#. Extract it and open it in VS.
-#. (If you are using VS on Mac, follow the instructions at <https://stackoverflow.com/a/49056993/> to have your project "Run on external console". You will need to do that for every solution where the user is supposed to enter values.)
+#. Download the [PersonalizedWelcomeMessage project](PersonalizedWelcomeMessage_Solution.zip), extract and open it as usual.
+
+#. If you are using Visual Studio on Mac or Monodevelop, you may have to perform an additional step for this program to run as expected.
+    
+    - For Visual Studio on Mac, follow the instructions at <https://stackoverflow.com/a/49056993/> to have your project "Run on external console".
+    - For Monodevelop, follow the instructions at <https://stackoverflow.com/a/67185469/> to similarly have your projeect "Run on external console".
+
+    You may have to perform this operation for every solution where the user is supposed to enter values.
+
 #. Compile and execute it.
-#. You will be prompted with the message:
+#. The user of your program (in this case, you!) will be prompted with the message:
 
         Please, enter your first name, followed by "Enter":
     

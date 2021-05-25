@@ -4,13 +4,13 @@ title: Type Casting
 
 # Numerical Datatypes
 
-For this part, it is recommended to have the datatypes cheatsheet, which is available in the Week 4 module of the lecture notes.
+For this part, it is recommended to have the [datatypes cheatsheet](../../datatypes_in_csharp.html) readily available.
 Note that it contains numerous references at its end.
 You are encouraged to open those links, if you have not already, to have a look at the official documentation, which should not scare you.
 
 ## Literals and Variables
 
-This part should be first carried out without using VS.
+This part should be first carried out without using an IDE, but with pen and paper.
 
 Assume we have the following statements:
 
@@ -38,17 +38,17 @@ Answer the following:
 Operation | Legal? | Result | Datatype
 --- | --- | --- | ---
 `a + d` | Yes | $19.7$ | `double`
-`m + f` | No |\_ | \_|
-`a / b` |\_ |\_|\_|
-`b * f` |\_ |\_|\_|
-`d + f` |\_ |\_|\_|
-`d + b` |\_ |\_|\_|
-`a + m` |\_ |\_|\_|
-`f / m` |\_ |\_|\_|
-`d * m` |\_ |\_|\_|
+`m + f` | No | N/A | N/A |
+`a / b` |   |  |  |
+`b * f` |   |  |  |
+`d + f` |   |  |  |
+`d + b` |   |  |  |
+`a + m` |   |  |  |
+`f / m` |   |  |  |
+`d * m` |   |  |  |
 
     
-You can check your answers using VS: create a new project, copy the variable declarations and assignments, and  write your own statements to perform the calculations in the `Main` method.
+You can check your answers using an IDE: create a new project, copy the variable declarations and assignments, and  write your own statements to perform the calculations in the `Main` method.
 For instance, if you want to check that the result of `a + d` is of type `double`, write something like:
 
 ~~~~~~~{.cs}
@@ -82,7 +82,7 @@ Create a new project, and then do the following.
 
     Can you explain it?
 
-#. VS is suggesting that we use a "cast" to "force" C# to store the value of the variable `floatVar` into the variable `intVar`.
+#. Your IDE is suggesting that we use a "cast" to "force" C# to store the value of the variable `floatVar` into the variable `intVar`.
 To do so, replace the previous statement with the following:
 
     ~~~~~~~{.cs}
