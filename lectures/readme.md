@@ -25,8 +25,8 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 
 | Lecture title | Prerequisites | Related Labs |  Description |
 | :--- | :--- | :--- | :--- |
-| [General Concepts](/lectures/010_general_concepts) | None | [`Introduction`](/labs/Introduction) | Basic concepts about computers and programming |
-| [First Program](/lectures/020_first_program) | None | [`HelloWorld`](/labs/HelloWorld) | Explains the components of a simple "Hello World" program |
-| [Datatypes](/lectures/030_datatypes) |  [First Program](/lectures/020_first_program) | TODO | Variable declaration and initialization and overview of data types |
-| [Operators](/lectures/040_operators) |  [Datatypes](/lectures/030_datatypes) | TODO | Operators, conversions, and precedence |
-| [User Input and Output](/lectures/050_reading_and_displaying) | [Datatypes](/lectures/030_datatypes) | TODO | ReadLine, parsing, and ToString |
+| [General Concepts](/lectures/010_general_concepts) | None | [Introduction](/labs/Introduction) | Basic concepts about computers and programming |
+| [First Program](/lectures/020_first_program) | None | [HelloWorld](/labs/HelloWorld), [FirstProgram](/labs/FirstProgram) | Explains the components of a simple "Hello World" program |
+| [Datatypes and Variables](/lectures/030_datatypes_and_variabless) |  [First Program](/lectures/020_first_program) | [Variables](/labs/Variables) | Variable declaration and initialization and overview of data types |
+| [Operators](/lectures/040_operators) |  [Datatypes](/lectures/030_datatypes_and_variables) | [Variables](/labs/Variables) | Operators, conversions, and precedence |
+| [User Input and Output](/lectures/050_reading_and_displaying) | [Datatypes](/lectures/030_datatypes_and_variables) | TODO | ReadLine, parsing, and ToString |
