@@ -22,10 +22,12 @@ In this lab you will first edit an existing program then create a new program "f
 
 Open `InitialSolution` that you just extracted in your IDE.
 
+#### Renaming the Solution
+
 Use your IDE to rename this _solution_:
 
-#. Right-click on `InitialSolution` (in "Solution Explorer" or "Explorer").
-#. Select "Rename" then rename the solution to `EditedSolution`.
+#. Right-click on `InitialSolution` (in "Solution Explorer", "Explorer", or even "Solution").
+#. Select "Rename" (it can be under "Edit"), then rename the solution to `EditedSolution`.
 #. What change(s) do you notice in your IDE?
 #. Can you still build and debug your program?
 #. Look in your file system where you unzipped the solution earlier. Did the name of the project directory change? Did the name of the `.sln` file change?
@@ -34,6 +36,7 @@ Use your IDE to rename this _solution_:
 
 Renaming C\# project files requires more than simply changing a file name. By using an IDE to perform renaming, all references to the name will be updated.
 
+#### Renaming the Project
 
 Next use your IDE to rename the _project_:
 
