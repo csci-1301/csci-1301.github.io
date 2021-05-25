@@ -33,7 +33,7 @@ A static member (variable, method, etc) belongs to the type of an object rather 
 
 Class member = methods and fields (attributes)
 
-Motivation:  the methods we are using the most (`WriteLine`, `ConsoleRead`) are static, but all the methods we are writting are not (they are "non-static", or "instance").
+Motivation:  the methods we are using the most (`WriteLine`, `ConsoleRead`) are static, but all the methods we are writing are not (they are "non-static", or "instance").
 
  Static Method | Non-static Method
  --- |---
