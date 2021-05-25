@@ -12,7 +12,7 @@ if (age >= 18)
 }
 ~~~~~~~
 
-The idea is that the statement ` Console.WriteLine("You can vote!");` is exectued only if the condition `(age >= 18)` evaluates to `true`. Otherwise, that statement is simply "skipped".
+The idea is that the statement ` Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`. Otherwise, that statement is simply "skipped".
 
 ## Syntax
 
@@ -45,7 +45,7 @@ else
 }
 ~~~~~~~
 
-With `if-else` statements, the idea is that the statement block 1 is exectued only if the condition evaluates to `true`, and that the statement block 2 is exectued only if the condition evaluates to `false`. 
+With `if-else` statements, the idea is that the statement block 1 is executed only if the condition evaluates to `true`, and that the statement block 2 is executed only if the condition evaluates to `false`. 
 Note that since a condition is always either true or false, we know that at least one of the block will be executed, and since a condition cannot be true and false at the same time, at most one block will be executed: hence, exactly one block will be executed.
 
 # Nested if-else Statements
@@ -111,7 +111,7 @@ Note that the conditions could be really different, not even testing the same th
 
 ## Example
 
-We can make an example with really different conditions, not overlaping: 
+We can make an example with really different conditions, not overlapping: 
 
 ~~~~~~~{.cs .numberLines}
 if (age > 12)
@@ -164,7 +164,7 @@ Note that the conditions could be really different, not even testing the same th
 
 ## Example
 
-We can make an example with really different conditions, not overlaping: 
+We can make an example with really different conditions, not overlapping: 
 
 ~~~~~~~{.cs .numberLines}
 if (age > 12)
@@ -199,7 +199,7 @@ else
      Console.WriteLine("Said what?");
 ~~~~~~~
 
-But we can't accomodate this 3-party situation (you either work here full-time, or you don't), so we can change the behaviour to
+But we can't accommodate this 3-party situation (you either work here full-time, or you don't), so we can change the behavior to
 
 ~~~~~~~{.cs .numberLines}
 if (ch == 'y' || ch == 'Y')
@@ -210,7 +210,7 @@ else
 
 We'll study _user input validation_, that allows to get better answers from the users, later on.
 
-But imagine we are at the beginnig of a long form, and we will need to re-use that information multiple times.
+But imagine we are at the beginning of a long form, and we will need to re-use that information multiple times.
 With this previous command, we would need to duplicate all our code in two places.
 Instead, we could "save" the result of our test in a boolean variable, like so:
 
@@ -243,7 +243,7 @@ In lab, last time, you were asked the following:
 
 > Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked 0” if the number is 0.
 
-A possible anwer is:
+A possible answer is:
 
 ~~~~~~~{.cs .numberLines}
 int a;
@@ -285,4 +285,4 @@ else // if (a % 2 != 0)
 ~~~~~~~
 
 Much better!
-Since the two conditions are actually independant, we can test them in two different `if` statements!
+Since the two conditions are actually independent, we can test them in two different `if` statements!
