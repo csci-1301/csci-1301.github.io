@@ -54,7 +54,7 @@
 - There are hundreds of programming languaes, why?
     - Different tools for different jobs
         - Some langauges are better suited for certain jobs
-          Python for scripting, Javascript for web pages          
+        -    Python for scripting, Javascript for web pages          
     - Personnel preference and popularity
 - This class is about "principles" of computer programming
     - Common principles behind all languages won't change, even though hardware and languages do
