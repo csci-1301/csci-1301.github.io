@@ -44,5 +44,5 @@ jobs:
         prerelease: true
         draft: false
         files: |
-          build/**/*
+          /build/release.zip
           
