@@ -14,7 +14,7 @@ This directory contains all lab exercises. At build time these labs are compiled
         - write lab instructions in this file. You should include meta data, at minimum a title
         - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
         - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
-        - do not make assumptions about student using Visual Studio, use the term IDE instead
+        - do not make assumptions about student using Visual Studio, refer to IDE instead
         
     2. (optional) if you want to include starter code with the lab,
         - create a subdirectory called `src`

@@ -118,7 +118,7 @@ To create a new lecture, e.g. `lecture xyz`:
 
     - Follow the existing pattern for naming convention which is lowercase and separation by underscores. 
     - The numbers `NNN` tell pandoc how to order book content. Use leading zero and increments of 10.
-    - Choose this number number based on where in the book the new lecture should appear. 
+    - Choose this number  based on where in the book the new lecture should appear. 
 
 #. under the new directory, create a file `readme.md` (lowercase). Write lecture notes in this file using markdown.
 
@@ -129,7 +129,7 @@ Following these steps will automatically include the new lecture in the book.
 If the lecture does not appear, here are the steps for troubleshooting the issue:
  
 #. Check that after committing changes, the automated build has completed successfully 
-#. The lecture directory is immediately under lectures directory
+#. The newly created lecture is immediately under `lectures/` directory
 #. The `readme.md` exists 
 #. In `gh-pages` branch, ensure the book is generated
 #. Hard refresh the browser page if viewing the resources website
@@ -152,7 +152,7 @@ All lab resources are located under `labs` directory. At build time these labs a
         - write lab instructions in this file. You should include meta data, at minimum a title
         - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
         - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
-        - do not make assumptions about student using Visual Studio, use the term IDE instead
+        - do not make assumptions about student using Visual Studio, refer to IDE instead
         
     #. (optional) if you want to include starter code with the lab,
         - create a subdirectory called `src`
@@ -258,11 +258,11 @@ Following these steps will generate a new, versioned release. The versioned rele
 ## Building the resource locally
 
 It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
-For the purposes of editing content, it is sufficient to make edits to markdown files and committing those changes. 
+For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes. 
 
 ### Installing required dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30) which lists all required packages need to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -290,21 +290,21 @@ make help
 
 Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by [utteranc.es](https://utteranc.es/). 
 
-To manage the comments over time, we will create a semester-specific repository for issues only. This must be a public repository and located under the same organization as the resources repository. The utteranc.es widget it configured to point to this repository. After the semester is over, we will archive this feedback repository and create a new one for the next semester. This simultaneously archive all older comments and reset the feedback across pages.
+To manage user feedback over time, a semester-specific repository is created for issues only. This must be a public repository and located under the same organization as the resources repository. utteranc.es widget is configured to point to this repository. After a semester is over,  this feedback repository will be archived, and a new one created for the next semester. This will simultaneously archive all older issues and reset the feedback across website pages.
 
 ### Migrating feedback repository
 
 The steps for migrating feedback target repository are as follows:
 
-#. Create a new **public** repository under `csci-1301` github org. Follow the established naming convention.
+#. Create a new **public** repository under `csci-1301` github organization. Follow the established naming convention.
 #. Go to repository Issues (make sure issues is enabled in repository settings)
-#. Create a new label whose Label name is `comment`
+#. Create a new label whose _label name_ is `comment` (to match [widget configuration](https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94))
 #. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations) 
 #. Choose configure
 #. Under "Repository access", select the repository created in step 1.
 #. Save
 #. In `csci-1301.github.io` repository open `/templates/web/template.html`
-#. Update the utteranc.es widget code to point to the new feedback repository created in step 1.
+#. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 #. Commit change to template.html
 #. Make sure the feedback works after migration. If it does not, retrace your steps.
 #. Archive the earlier feedback repository in its settings.
