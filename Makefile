@@ -344,6 +344,7 @@ web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 build: docs web-index book labs
 
 all: build
+	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
 # Phony rule to display variables
 .PHONY: test
