@@ -6,15 +6,15 @@ title: Undergraduate Course Assistant - What are they and how do I become one?
 
 
 In this course, an Undergraduate Course Assistant (UCA) is generally present in addition to your instructor.
-A UCA is a student, generally in the School of Cyber and Computer Sciences, that successfully passed CSCI 1301 and that is hired by the School to assist other students.
+A UCA is a student, generally in the School of Cyber and Computer Sciences, who successfully passed CSCI 1301 and that is hired by the School to assist other students.
 
 Their duties generally include:
 
 - Helping the students during the labs,
     - To set-up their computers,
     - To find the right resources,
-    - To understand your IDE's error messages,
-    - To investigate bugs with you,
+    - To understand their IDE's error messages,
+    - To investigate bugs with them,
     - etc.
 - Helping the students outside of the lab (through email, teams, or office hours), for similar tasks as in lab, but also to get ready for an exam or a quiz,
 - Reporting to the instructors any issue, mistake or confusion they noticed,
@@ -38,11 +38,11 @@ A UCA _must_:
 - Have an interest in tutoring,
 - Understand clearly the limits and boundaries to the help they can provide to students.
 
-Additionally, if a student want to help with this particular class, then of course they have to have successfully passed CSCI 1301.
+Additionally, if a student want to help with this particular class, then of course the student must have successfully passed CSCI 1301 with a grade of B or higher
 
 A UCA will:
 
-- Be able to work up to 25 hours per week (an average of 10 hours per week is typical, but needs to be discussed with the instructor), payed $12 per hour, without other benefits,
+- Be able to work up to 25 hours per week (an average of 10 hours per week is typical, but needs to be discussed with the instructor), paid $12.50 per hour, without other benefits,
 - Be adequately trained to use our platforms and edit our resources,
 - Be able to work on Campus and discuss their schedule with their referent instructor,
 - Develop a stronger bond with the instructors, facilitating possible future reference or research projects.
