@@ -167,7 +167,7 @@ $(BUILD_DIR) $(BUILD_DIR)img/ $(BUILD_DIR)$(LABS_DIR):
 ## Book
 # -------------------------------
 
-$(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
+$(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR) 
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_HTML_PAGES) -o $(TARGET_BOOK_FILE).html -M source_name=lectures/ -M target_name=book -M title="CSCI 1301 Book" -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the directory with the source code.
