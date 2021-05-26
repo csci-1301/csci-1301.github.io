@@ -92,3 +92,24 @@ To do so, replace the previous statement with the following:
 #. Using a `Console.WriteLine` statement, observe the value stored in `intVar`.
 Can you tell if the value stored in `floatVar` was rounded or truncated before being stored in the variable `intVar`?
 Conduct further experiments if needed to answer this question.
+
+#. Look back at the warning given by the IDE.  It uses the term "implicitly convert" before introducing the cast operator.
+#. While you needed a cast to convert a float to an int, do you need one to convert an int to a float?  Try the following:
+
+    ~~~~~~~{.cs}
+    int intVar = 21;
+    float floatVar = intVar; // Does this need a cast?
+    ~~~~~~~
+
+#. Generally, you need an explicit cast if an implicit conversion would lead to data loss.  Since all possible int values are also valid float values, no explicit cast is needed.
+#. Do these cases need an explicit cast, or will an explicit conversion work?  Try them in your IDE to check your answers!
+
+-double to int
+-int to double
+-float to double
+-double to float
+-int to decimal
+-decimal to float
+-float to decimal
+
+#. That last result may have been surprising.  While decimal is higher precision than float and double, it requires an explicit cast from either of those types.
