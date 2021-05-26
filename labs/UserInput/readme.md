@@ -5,7 +5,7 @@ title: User Input
 
 # Reading From the User
 
-#. Download the [PersonalizedWelcomeMessage project](PersonalizedWelcomeMessage_Solution.zip), extract and open it as usual.
+#. Download the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), extract and open it as usual.
 
 #. If you are using Visual Studio on Mac or Monodevelop, you may have to perform an additional step for this program to run as expected.
     
