@@ -42,7 +42,7 @@ Additionally, if a student want to help with this particular class, then of cour
 
 A UCA will:
 
-- Be able to work up to 20 hours/week, payed $12/hours, without other benefits,
+- Be able to work up to 25 hours per week (an average of 10 hours per week is typical, but needs to be discussed with the instructor), payed $12 per hour, without other benefits,
 - Be adequately trained to use our platforms and edit our resources,
 - Be able to work on Campus and discuss their schedule with their referent instructor,
 - Develop a stronger bond with the instructors, facilitating possible future reference or research projects.
