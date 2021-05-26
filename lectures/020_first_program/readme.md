@@ -8,7 +8,7 @@
     - Interpreter is called .NET Runtime
     - Standard library is called .NET Framework, comes with the compiler and runtime
 - It is widespread and popular
-    - [7th most used language on StackOverflow]((https://insights.stackoverflow.com/survey/2017#technology-programming-languages>)), 5th-most if you discount JavaScript and HTML (which are used for websites, not programs)
+    - [7th most used language on StackOverflow](https://insights.stackoverflow.com/survey/2017#technology-programming-languages), 5th-most if you discount JavaScript and HTML (which are used for websites, not programs)
     - .NET is the 2nd most used library/framework
 
 ## The Object-Oriented Paradigm
