@@ -44,7 +44,4 @@ jobs:
         prerelease: true
         draft: false
         files: |
-          build/book.html
-          build/book.pdf
-          build/book.odt
-          # build/labs.zip
+          build/*
