@@ -36,7 +36,7 @@ A UCA _must_:
 - Be a student, that is, currently enrolled in courses, or, if during the Summer, being enrolled in courses for the next Fall semester,
 - Pass our Human Resources background check,
 - Have an interest in tutoring,
-- Understand clearly the limitations and limits to the help they can provide to students.
+- Understand clearly the limits and boundaries to the help they can provide to students.
 
 Additionally, if a student want to help with this particular class, then of course they have to have successfully passed CSCI 1301.
 
