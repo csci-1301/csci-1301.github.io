@@ -40,7 +40,7 @@ Available formats:
 
 - [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
 - [Survey and Statistical Analysis](survey.html) - a brief explanation of the purpose and benefits of surveying our students
-- [How to become a UCA](uca.html) - details on becoming a UCA
+- [Undergraduate Course Assistant](uca.html) - Undergraduate Course Assistants  - What are they and how do I become one?
 
 
 ### About this Resource 
