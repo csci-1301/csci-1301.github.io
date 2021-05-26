@@ -46,11 +46,16 @@
 ## Principles of Computer Programming
 
 - Computer hardware changes frequently - from room-filling machines with punch cards and tapes to modern laptops and tablets
-- Capabilities of computers have changed rapidly (storage, speed, graphics, etc.)
-- Languages used to program computers have also changed over time
-    - Older languages: Fortran, C, C++
-    - Newer "compiled" languages: C#, Java, R
-    - Newer "interpreted" languages: Python, JavaScript
+- With these changes - the capabilities of computers increase rapidly (storage, speed, graphics, etc.)
+- Computer programming languages also change
+    - Better programming language theory leads to new programming techniques
+    - Improved programming language implementations
+    - New languages are created - old ones updated
+- There are hundreds of programming languaes, why?
+    - Different tools for different jobs
+        - Some langauges are better suited for certain jobs
+        - Python for scripting, Javascript for web pages          
+    - Personnel preference and popularity
 - This class is about "principles" of computer programming
     - Common principles behind all languages won't change, even though hardware and languages do
     - How to organize and structure data
