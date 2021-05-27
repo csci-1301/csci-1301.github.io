@@ -128,7 +128,7 @@ MAKEFLAGS:= -j
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
 	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')" \
-        --metadata-file=$(METADATA_FILE)
+        --metadata-file=$(METADATA_FILE) -N
 	
 # HTML build options
 # Path to HTML templates to use with pandoc
