@@ -8,7 +8,7 @@ This problem combines random number generation with arrays.
 The `Random` class from the C# standard library can be used to generate random numbers in any given range.
 Here is an example of how to use it to generate 15 random numbers:
 
-~~~~~~~~{.cs}
+```
 Random myRandomObject = new Random();     //Instantiate a Random object
 int randNum, i = 0;
 while (i < 15)
@@ -17,7 +17,7 @@ while (i < 15)
 	Console.WriteLine(randNum);	          //Display the random number
 	i++;
 }
-~~~~~~~~
+```
 
 Using a Random object like this, write a program that
 
@@ -71,7 +71,7 @@ Since arrays are reference types, however, it is now more important for you to u
 
 Let us show why this notion is so critical with an example:
 
-~~~~~~~{.cs}
+```{.cs}
 int[] arrayA = { 1, 2, 3, 4, 5 };  // Declare a simple array of integers
 
 // I'd like to make a copy of that array. Let me try the following:
@@ -90,7 +90,7 @@ foreach (int i in arrayA)
     Console.Write(i + " ");
 
 Console.WriteLine();
-~~~~~~~
+```
 
 Try running this program yourself to see what happens.
 The problem is that when we wrote the assignment statement `int[] arrayCopyWrong = arrayA`, we copied the _reference_ to the array, but not the array itself.
@@ -98,7 +98,7 @@ We now have two ways of accessing our array, using `arrayA` or `arrayCopyWrong`,
 
 To correctly copy the array, we need to do something like the following:
 
-~~~~~~~{.cs}
+```{.cs}
 int[] arrayB = { 1, 2, 3, 4, 5 };
 // Create a new array object and assign it to a new reference variable
 int[] arrayCopyRight = new int[arrayB.Length];
@@ -120,7 +120,7 @@ foreach (int i in arrayCopyRight)
     Console.Write(i + " ");  
 
 Console.WriteLine();
-~~~~~~~
+```
 
 Try running this program. Can you see the difference?
 

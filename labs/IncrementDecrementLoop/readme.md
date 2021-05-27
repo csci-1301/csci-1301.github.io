@@ -8,7 +8,7 @@ title: Increment and Decrement Operators, First Loops
 Copy and paste this code into a new Visual Studio project and execute it.
 Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
 
-~~~~~~~{.cs}
+```{.cs}
 int a = 0, b = 0;
 Console.WriteLine("Before changing their values:");
 Console.WriteLine($"\ta is {a}\n\tb is {b}\n-----------");
@@ -29,7 +29,7 @@ Console.WriteLine($"\ta is {a} (the decrementing took place as expected)\n"
     + $"\tc is {c}  (c got its value *before* a was decremented)\n" 
     + $"\td is {d}  (d got its value *after* b was incremented)\n"
     + $"-----------");
-~~~~~~~
+```
 
 
 # First While Loops
@@ -41,7 +41,7 @@ Console.WriteLine($"\ta is {a} (the decrementing took place as expected)\n"
 #. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.
 That is, your program should display on the screen:
 
-~~~~~~~~
+```
 **********
 **********
 **********
@@ -52,5 +52,5 @@ That is, your program should display on the screen:
 **********
 **********
 **********
-~~~~~~~~
+```
  

@@ -7,71 +7,71 @@ title: While and For Loops
 
 Rewrite the following `while` (or `do...while`) loops as `for` loops.
 
-~~~~~~~{.cs .numberLines .lineAnchors}
+```{.cs .numberLines .lineAnchors}
 int a = 0;
 while (a != 10)
 {
     Console.WriteLine(a);
     a++;
 }
-~~~~~~~
+```
 
-~~~~~~~{.cs .numberLines .lineAnchors}
+```{.cs .numberLines .lineAnchors}
 int b = 3;
 while (b >= -2)
 {
     Console.WriteLine(b);
     b -= 2;
 }
-~~~~~~~
+```
 
-~~~~~~~{.cs .numberLines .lineAnchors}
+```{.cs .numberLines .lineAnchors}
 int c = 10;
 while(c <= 100) {
     Console.WriteLine(c);
     c += 10;
 }
-~~~~~~~
+```
 
-~~~~~~~{.cs .numberLines .lineAnchors}
+```{.cs .numberLines .lineAnchors}
 int d = 1;
 do
 {
     Console.WriteLine(d);
     d *= 2;
 } while (d <= 100);
-~~~~~~~
+```
 
 # From `for` to `while`
 
 Rewrite the following `for` loops as `while` loops:
 
-~~~~~~~{.cs}
+```{.cs}
 for (int e = 10; e <= 100; e += 10)
 {
     Console.Write(e + " ");
 }
-~~~~~~~
+```
 
-~~~~~~~{.cs}
+```{.cs}
 for (double f = 150; f > 2; f/=2 ) 
 {
     Console.Write(f + " ");
 }
-~~~~~~~
+```
 
 <!--
-~~~~~~~{.cs}
+```{.cs}
 for (char g = 'A' ; g !='a'; g = (char)((int)g +1) ) Console.Write(g + " ");
-~~~~~~~
+```
 -->
 
-~~~~~~~{.cs}
+```{.cs}
 for (int h = 0; h > -30; h -= 1)
 {
     Console.Write(h + " ");
 }
-~~~~~~~ 
+``` 
 
 # A Simple Loop
 
@@ -102,22 +102,22 @@ Programmers can use two keywords in loops, `continue` and `break`, that modify t
 They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
 Try executing the following code to see what these statements do.
 
-~~~~~~~{.cs}
+```{.cs}
 for (int i = 1; i <= 5; i++)
 {
     if (i == 3) continue;
     Console.Write(i + " ");
 }
-~~~~~~~
+```
 
 
-~~~~~~~{.cs}
+```{.cs}
 for (int i = 1; i <= 5; i++)
 {
     if (i == 3) break;
     Console.Write(i + " ");
 }
-~~~~~~~
+```
 
 You can also use `break` and `continue` in `while` loops.
 Try to rewrite the previous two `for` loops as `while` loops. 
@@ -130,47 +130,47 @@ They are introduced because you may see them in your future, but, except for rar
 The exact structure of `for` loops is actually more complex than what we discussed in class.
 It is
 
-~~~~~~~{.cs}
+```{.cs}
 for(<initializations>; <condition>; <updates>)
 {
     <statement block>
 }
-~~~~~~~
+```
 
 That is, there can be more than one initialization (but only if the variables all have the same datatype) and more than one update.
 This means there are legal statements like:
 
-~~~~~~~{.cs}
+```{.cs}
 for(int z = 0, y = 10; z < y ; z++)
 { 
     Console.WriteLine($"{z} + {y} = {z+y}"); 
 }
-~~~~~~~
+```
 
 or
 
-~~~~~~~{.cs}
+```{.cs}
 for (int x = 0, y = 12 ; x != y; x++, y--)
     Console.WriteLine($"The difference between {x} and {y} is {x - y}");
-~~~~~~~
+```
 
 Also, the initialization, as well as the update condition, are actually optional: we could have
 
-~~~~~~~{.cs}
+```{.cs}
 int w = 0;
 for (; w < 5; w++) 
 { 
     Console.WriteLine(w); 
 }
-~~~~~~~
+```
 
 and
 
-~~~~~~~{.cs}
+```{.cs}
 for(int r = 10; r > 0;) 
 { 
     Console.WriteLine(r--); 
 }
-~~~~~~~
+```
 
 Try to rewrite the four `for` loops just given as "ordinary" `for` loops with exactly one initialization and one update in the header of the `for` loop.
