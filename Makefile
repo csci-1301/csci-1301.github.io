@@ -66,6 +66,10 @@ TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $
 TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # Similar to TARGET_DOC_FILES_HTML, but with odt.
 
+TARGET_DOC_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+# Similar to TARGET_DOC_FILES_HTML, but with docx.
+
+
 ### Files for labs
 
 #### Instructions
@@ -85,6 +89,9 @@ TARGET_LAB_INSTRUCTION_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix index.
 
 TARGET_LAB_INSTRUCTION_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix index.odt, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
 # Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with odt.
+
+TARGET_LAB_INSTRUCTION_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addsuffix index.docx, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
+# Similar to TARGET_LAB_INSTRUCTION_FILES_HTML, but with docx.
 
 #### Source Code
 
@@ -135,10 +142,13 @@ WEB_INDEX = index.md
 PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --standalone --template=$(WEBPATH)template.html
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex
+PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex --listings 
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
+
+# DOCX build options
+PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg 
 
 # ===============================
 # Rules
@@ -178,8 +188,11 @@ $(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DI
 $(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -M title="CSCI 1301 Book"
 
+$(TARGET_BOOK_FILE).docx:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $(TARGET_BOOK_FILE).docx -M title="CSCI 1301 Book"
+
 # Whole book, in all formats.
-book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt
+book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $(TARGET_BOOK_FILE).docx
 
 # -------------------------------
 ## Documentation Files
@@ -203,6 +216,10 @@ $(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
 $(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_ODT) $< -o $@
 
+#### Individual DOCX files
+$(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	pandoc $(PANDOC_DOCX) $< -o $@
+	
 ### Whole directories
 # Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
 #### HTML
@@ -214,7 +231,9 @@ docs-pdf:$(SOURCE_DOC_FILES)
 #### ODT
 docs-odt:$(SOURCE_DOC_FILES)
 	make $(TARGET_DOC_FILES_ODT)
-
+#### DOCX
+docs-docx:$(SOURCE_DOC_FILES)
+	make $(TARGET_DOC_FILES_DOCX)
 ### Whole doc, in all formats.
 docs: docs-html docs-pdf docs-odt
 
