@@ -134,7 +134,6 @@ Features of this program:
         - Class and method names should start with capitals, e.g. "`class AudioFile`"
         - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 
-
 ## Write and WriteLine
 
 - The `WriteLine` method
@@ -151,7 +150,7 @@ Features of this program:
 
       will display the following output in the terminal:
 
-        ```
+        ```text
         Hello
         World!
         ```
@@ -176,7 +175,7 @@ Features of this program:
 
       will display the following output in the terminal:
 
-        ```
+        ```text
         HelloWorld!
         ```
 
@@ -195,7 +194,7 @@ Features of this program:
 
       will display the following output in the terminal:
 
-        ```
+        ```text
         Hello world!
         Welcome to CSCI 1301!
         ```

@@ -107,7 +107,7 @@ Note: the "remainder" or "modulo" operator represents the remainder after doing 
 
     - Each integer data type can be implicitly converted to a larger integer type: `short` $\rightarrow$ `int` $\rightarrow$ `long`
 
-    - Unsigned integer data types can be implicitly converted to a *larger* signed integer type, but not the *same* signed integer type: `uint` $\rightarrow$ `long`, but **not** `uint` $rightarrow$ `int`
+    - Unsigned integer data types can be implicitly converted to a *larger* signed integer type, but not the *same* signed integer type: `uint` $\rightarrow$ `long`, but **not** `uint` $\rightarrow$ `int`
 
         - This is because of the "sign bit": a `uint` can store larger values than an `int` because it doesn't use a sign bit, so converting a large `uint` to an `int` might lose data
 
@@ -250,6 +250,7 @@ Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatype
         - Then division is evaluated, result is 21.0 / 6.0 = 3.5
 - Parentheses always increase priority, even with casts
     - An expression in parentheses gets evaluated before the cast "next to" it
+
     - Example:
 
         ```

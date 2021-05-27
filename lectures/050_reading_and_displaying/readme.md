@@ -32,7 +32,7 @@
 
       This will display the following output:
 
-        ```
+        ```text
         47 divided by 6 is 7.8333333
         47 plus 7 is 54
         ```
