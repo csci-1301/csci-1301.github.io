@@ -5,7 +5,7 @@
 
 using System;
 
-class Program
+class Welcome
 {
     static void Main()
     {
