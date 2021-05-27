@@ -4,7 +4,7 @@ Everybody needs to take decisions all the time.
 Consider an instructor teaching CSCI 1301 for instance, at the beginning of class they may
 
 - Ask if there are questions. If a student have a question, then the instructor will answer it, and ask again ("Anything else?").
-- When there are no more questions, they may move on to the nexst step, which is to introduce the class ("Today, we will be discussing Decisions and Decision Structures").
+- When there are no more questions, they may move on to the next step, which is to introduce the class ("Today, we will be discussing Decisions and Decision Structures").
 - If there is a quiz scheduled, then they will proceed to distribute it, otherwise they may start the class.
 - etc.
 
