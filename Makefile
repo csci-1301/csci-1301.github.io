@@ -286,7 +286,7 @@ labs-instructions: labs-html labs-pdf labs-odt
 
 ### Source Code
 
-%.zip: src/%/*/Program.cs
+%.zip: src/%/*/Program.cs | src/%/*/*.cs
 #
 # The structure of an archive is as follows:
 # └───<Solution>	 	     $(notdir $*)
@@ -295,8 +295,8 @@ labs-instructions: labs-html labs-pdf labs-odt
 #           ├── <Project>.csproj     $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj 
 #           ├── Properties           $(dir $<)Properties 
 #           │   └── AssemblyInfo.cs  $(dir $<)Properties/AssemblyInfo.cs
-#           └── Program.cs           $<
-#
+#           ├── Program.cs           $<
+#	    └── <Class>.cs	     
 # We will also use the following:
 # $(notdir $*) # Name of Solution
 # $(notdir $(patsubst %/,%,$(dir $<))) # Name of Project
@@ -312,9 +312,21 @@ labs-instructions: labs-html labs-pdf labs-odt
 # Single quotes are escaped as '\''
 # $ are escaped as $$ (if they are *not* to be interepreted, i.e escape $(MSBuildToolsVersion) but not $(notdir $*)
 # and \ are escaped as \\
-	(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n    <StartAction>Project</StartAction>\n    <ExternalConsole>true</ExternalConsole>\n    <Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n    <Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n    <ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n    <OutputType>Exe</OutputType>\n    <AppDesignerFolder>Properties</AppDesignerFolder>\n    <RootNamespace>$(notdir $*)</RootNamespace>\n    <AssemblyName>$(notdir $*)</AssemblyName>\n    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n    <FileAlignment>512</FileAlignment>\n    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n    <PlatformTarget>AnyCPU</PlatformTarget>\n    <DebugSymbols>true</DebugSymbols>\n    <DebugType>full</DebugType>\n    <Optimize>false</Optimize>\n    <OutputPath>bin\Debug\</OutputPath>\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n    <PlatformTarget>AnyCPU</PlatformTarget>\n    <DebugType>pdbonly</DebugType>\n    <Optimize>true</Optimize>\n    <OutputPath>bin\Release\</OutputPath>\n    <DefineConstants>TRACE</DefineConstants>\n    <ErrorReport>prompt</ErrorReport>\n    <WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <ItemGroup>\n    <Reference Include="System" />\n    <Reference Include="System.Core" />\n    <Reference Include="System.Xml.Linq" />\n    <Reference Include="System.Data.DataSetExtensions" />\n    <Reference Include="Microsoft.CSharp" />\n    <Reference Include="System.Data" />\n    <Reference Include="System.Net.Http" />\n    <Reference Include="System.Xml" />\n  </ItemGroup>\n  <ItemGroup>\n    <Compile Include="Program.cs" />\n    <Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildToolsPath)\Microsoft.CSharp.targets" />\n</Project>\n') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj
+# The additional difficulty is that we want the csproj to include all the .cs files in the <Solution> folder
+# (so, not only the Program.cs, but also possible (multiple) <Class>.cs).
+# We create the part in three parts: 
+#     1. The initial set-up,
+#     2. Then, we append "<Compile Include="<name of the cs file>" />" for each cs file in the <Solution> folder,
+#     3. Finally, we append the required closing to the file.
+# Apparently, another way would be to use wilcards (cf. https://stackoverflow.com/a/9438419)
+
+	(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n\t<StartAction>Project</StartAction>\n\t<ExternalConsole>true</ExternalConsole>\n\t<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n\t<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n\t<ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n\t<OutputType>Exe</OutputType>\n\t<AppDesignerFolder>Properties</AppDesignerFolder>\n\t<RootNamespace>$(notdir $*)</RootNamespace>\n\t<AssemblyName>$(notdir $*)</AssemblyName>\n\t<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n\t<FileAlignment>512</FileAlignment>\n\t<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugSymbols>true</DebugSymbols>\n\t<DebugType>full</DebugType>\n\t<Optimize>false</Optimize>\n\t<OutputPath>bin\Debug\</OutputPath>\n\t<DefineConstants>DEBUG;TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugType>pdbonly</DebugType>\n\t<Optimize>true</Optimize>\n\t<OutputPath>bin\Release\</OutputPath>\n\t<DefineConstants>TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <ItemGroup>\n\t<Reference Include="System" />\n\t<Reference Include="System.Core" />\n\t<Reference Include="System.Xml.Linq" />\n\t<Reference Include="System.Data.DataSetExtensions" />\n\t<Reference Include="Microsoft.CSharp" />\n\t<Reference Include="System.Data" />\n\t<Reference Include="System.Net.Http" />\n\t<Reference Include="System.Xml" />\n  </ItemGroup>\n  <ItemGroup>\n') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj \
+	&& for fileA in $(dir $<)*.cs; do \
+				printf '\t<Compile Include="'$$(basename $${fileA})'" />\n' >> $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj ; \
+			done;  \
+	(printf  '\t<Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildToolsPath)\Microsoft.CSharp.targets" />\n</Project>\n') >> $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj \
 # We create the Properties\AssemblyInfo.cs file.
-	(printf 'using System.Reflection;\nusing System.Runtime.InteropServices;\n[assembly: AssemblyTitle("Welcome_Sol")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyCopyright("Copyright ©  2018")]\n[assembly: AssemblyVersion("1.0.0.0")]\n[assembly: AssemblyFileVersion("1.0.0.0")]\n') > $(dir $<)Properties/AssemblyInfo.cs
+	(printf 'using System.Reflection;\nusing System.Runtime.InteropServices;\n[assembly: AssemblyTitle("'$$(notdir $*)'")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyCopyright("Copyright ©  2018")]\n[assembly: AssemblyVersion("1.0.0.0")]\n[assembly: AssemblyFileVersion("1.0.0.0")]\n') > $(dir $<)Properties/AssemblyInfo.cs
 #
 # TODO
 # There needs to be one
@@ -348,4 +360,4 @@ all: build
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$var is [${ARCHIVES}])
+$(info $$var is [${SOURCEDIRS}])

@@ -31,13 +31,13 @@ How to obtain the latest version of this resource:
 #. AU-hosted mirror of the website is located at <https://spots.augusta.edu/caubert/teaching/csci-1301>
 #. latest version of textbook is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github.
 
+A mirrored version of this website is hosted on [spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) and updated regularly.
 Additional copies of this resource can be made available through box or D2L. Because manual effort is required to share the resource through these channels, these may be slightly behind the latest version.
 
 How to obtain much earlier versions of this resource:
 
 #. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
-#. Earlier versions of this resource will be periodically archived on Galileo 
-
+#. Earlier versions of this resource will be periodically archived on Galileo.
  
 # Editing Resources
 
@@ -159,7 +159,8 @@ All lab resources are located under `labs` directory. At build time these labs a
         - create a subdirectory with the name of the solution you would like to use,
         - create a subdirectory with the name of the project you would like to use,
         - create a file called `Program.cs` in `src/<solution>/<project>/Program.cs`
-    Write your code in this file, add a class file if you want in the same folder, but only include program files (not solution or project): they will be created automatically using the project and solution's name you specified, and hosted in the lab's folder as `solution.zip`.
+        - if you want to add additional classes, add them in `src/<solution>/<project>/<Class>.cs` files. 
+    Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `<solution>.zip`.
 
 If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
 
@@ -186,11 +187,11 @@ Use emoji shortcodes to label following course resources
 
 ## Labelling using text labels
 
-1. Each resource will be labelled with prerequisites. 
+#. Each resource will be labelled with prerequisites. 
 
     This is a list of zero or more values. For zero prerequisites write `None`. These requirements are expressed in the associated index of lectures/labs/problems (cf. [lectures](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
-2. Lecture notes and slides will be labelled by related labs, and vice versa
+#. Lecture notes and slides will be labelled by related labs, and vice versa
 
     These requirements are expressed in the associated index of lectures and labs (cf. [lectures](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
