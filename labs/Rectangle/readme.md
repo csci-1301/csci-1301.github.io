@@ -12,7 +12,7 @@ The last part is challenging; therefore, we will give a possible solution to it 
 
 ## Manipulating Two `.cs` Files at a Time
 
-#. Download the Rectangle project, extract it, and open it with VS.
+#. Download [the Rectangle project](Rectangle_Solution.zip), extract it, and open it with VS.
 Note that in the "Solution Explorer", there are two `cs` files listed: `Program.cs` and `Rectangle.cs`.
 #. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what was presented during the lecture.
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
