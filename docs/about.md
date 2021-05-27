@@ -39,7 +39,7 @@ This website uses different technologies.
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 
-More details on the tools we use can be found in [our user guide](user_guide.md#repository-maintenance).
+More details on the tools we use can be found in [our user guide](user_guide.html#repository-maintenance).
 
 ## Services
 

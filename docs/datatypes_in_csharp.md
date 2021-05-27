@@ -53,7 +53,7 @@ Larger integers can be represented with `BigInteger` (<https://msdn.microsoft.co
 | Name | Corresponding datatype | Examples | 
 | :---: | :---: |  :---: | 
 | Integer Literal |  `int` | `40`, `-39`, `291838`, `0`, … | 
-| Float Litteral | `float` | `3.5F`, `-43.5f`, `309430.70006F`, … |
+| Float Literal | `float` | `3.5F`, `-43.5f`, `309430.70006F`, … |
 | Double Literal | `double` | `28.98`, `239.0`, `-391.089`, `0.0`, … |
 | Decimal Literal | `decimal` | `8.95m`, `3283.9M`, `-30m`, … |
 | Boolean Literal | `bool` | `true`, `false` |
@@ -65,12 +65,12 @@ Hexadecimal and unicode
 
 # Compatibility
 
-| | **Integer Litteral** | **Float Litteral** | **Double Litteral** | **Decimal Litteral** | 
+| | **Integer Literal** | **Float Literal** | **Double Literal** | **Decimal Literal** | 
 | ---: | :---: |  :---: |  :---: |  :---: | 
 | **`int`**    | $✓$ | ✘ | ✘ | ✘ |
-| **`float` **   | $✓$ | $✓$ | ✘ | ✘ |
-| **`double` **  | $✓$ | $✓$ | $✓$ | ✘ |
-| **`decimal` ** | $✓$ | ✘ | ✘ | $✓$ |
+| **`float`**   | $✓$ | $✓$ | ✘ | ✘ |
+| **`double`**  | $✓$ | $✓$ | $✓$ | ✘ |
+| **`decimal`** | $✓$ | ✘ | ✘ | $✓$ |
 
 # Result Type of Operations
 
