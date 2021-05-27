@@ -106,7 +106,7 @@ Conduct further experiments if needed to answer this question.
 
     Generally, you need an explicit cast if an implicit conversion would lead to data loss.  Since all possible `int` values are also valid `float` values, no explicit cast is needed!
 
-#. Do these cases need an explicit cast, or will an explicit conversion work?  Try them in your IDE to check your answers!
+#. Do these cases need an explicit cast, or will an implicit conversion work?  Try them in your IDE to check your answers!
 
 - `double` to `int`
 - `int` to `double`
