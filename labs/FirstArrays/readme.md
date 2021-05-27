@@ -13,7 +13,7 @@ Write a program that
 Now, let us write *incorrect* statements.
 Add the following statements one by one to your program, observe how C# reacts (that is, try to compile and execute after you add one, then remove it), and answer the following questions.
 
-```{.cs}
+```
 myArray = { 1, 2 ,3, 4, 5};
 Console.WriteLine(myArray[5]);
 myArray[5] = 12;
@@ -41,7 +41,7 @@ Write a program that
 
 Execute the following:
 
-```{.cs}
+```
 int[] ar = new int[5];
 ar[0] = 5;
 for (int i = 0; i < ar.Length; i++)

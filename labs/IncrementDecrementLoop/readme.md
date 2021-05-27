@@ -8,7 +8,7 @@ title: Increment and Decrement Operators, First Loops
 Copy and paste this code into a new Visual Studio project and execute it.
 Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
 
-```{.cs}
+```
 int a = 0, b = 0;
 Console.WriteLine("Before changing their values:");
 Console.WriteLine($"\ta is {a}\n\tb is {b}\n-----------");

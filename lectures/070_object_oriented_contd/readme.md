@@ -46,7 +46,7 @@ class ClassRoom
 
 What if we display the values of the instance variables before setting them?
 
-~~~~~~~{.cs}
+~~~~~~~
 ClassRoom english = new ClassRoom(); 
 Console.WriteLine(english.GetName()); // Nothing!
 Console.WriteLine(english.GetNumber()); // 0
@@ -72,7 +72,7 @@ This value depends of the variable datatype:
 - Note how different it is from the variables we have been using so far, that could not be for instance displayed if their value had not been set.
 - We can set a different default value, using, in the class declaration,
 
-~~~~~~~{.cs}
+~~~~~~~
 private string name = "Unknown";
 private int number = -1;
 ~~~~~~~
@@ -84,7 +84,7 @@ private int number = -1;
 A constructor is a method used to create an object.
 It has to have the same name as the class, and doesn't have a return type.
 
-~~~~~~~{.cs}
+~~~~~~~
 public ClassRoom(string nameParameter, int numberParameter)
 {
     name = nameParameter;
@@ -94,7 +94,7 @@ public ClassRoom(string nameParameter, int numberParameter)
 
 We use it as follows:
 
-~~~~~~~{.cs}
+~~~~~~~
 ClassRoom math = new ClassRoom("Bertrand", 5);
 ~~~~~~~
 
@@ -117,13 +117,13 @@ Note that we could skip the  \<\<constructor\>\> part, can you tell why?
 
 If we implement this constructor, then we lose the "No args", default constructor
 
-~~~~~~~{.cs}
+~~~~~~~
 public ClassRoom() { }
 ~~~~~~~~~
 
 We can re-define it, using something like:
 
-~~~~~~~{.cs}
+~~~~~~~
 public ClassRoom() {
     name = "Unknown";
     int = -1;
@@ -142,7 +142,7 @@ Note that the return type is not part of the method signature in C#.
 In a class, all the methods need to have a different signature.
 You cannot, for example, have these two methods in the same class:
 
-~~~~~~~{.cs}
+~~~~~~~
 int DoSomething(int a, int b);
 string DoSomething(int c, int d);
 ~~~~~~~
@@ -155,7 +155,7 @@ We will look at examples of overloading in lab.
 
 A particular method can be used to display information about our objects. It is called `ToString`, and can be defined as follows:
 
-~~~~~~~{.cs}
+~~~~~~~
 public override string ToString()
 {
     return "Person: " + Name + " " + Age;

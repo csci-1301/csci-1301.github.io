@@ -71,7 +71,7 @@ Since arrays are reference types, however, it is now more important for you to u
 
 Let us show why this notion is so critical with an example:
 
-```{.cs}
+```
 int[] arrayA = { 1, 2, 3, 4, 5 };  // Declare a simple array of integers
 
 // I'd like to make a copy of that array. Let me try the following:
@@ -98,7 +98,7 @@ We now have two ways of accessing our array, using `arrayA` or `arrayCopyWrong`,
 
 To correctly copy the array, we need to do something like the following:
 
-```{.cs}
+```
 int[] arrayB = { 1, 2, 3, 4, 5 };
 // Create a new array object and assign it to a new reference variable
 int[] arrayCopyRight = new int[arrayB.Length];

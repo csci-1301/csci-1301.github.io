@@ -2,7 +2,7 @@
 
 ## Formal Syntax
 
-~~~~~~~~{.cs}
+~~~~~~~~
 while (<condition>)
 {
     <statement block>
@@ -11,7 +11,7 @@ while (<condition>)
 
 ## Example
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number = 0;
 while (number <=5)
 {
@@ -35,7 +35,7 @@ Let us review some of the "classic" blunders.
 ## Failing to update the variable occurring in the condition
 
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number = 0;
 while (number <=5)
 {
@@ -48,7 +48,7 @@ Number isn't changed!
 
 ## Updating the "wrong" value
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number1, number = 0;
 while (number <=5)
 {
@@ -60,7 +60,7 @@ while (number <=5)
 
 ## Having an empty body
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number = 0; 
 while (number <=5); // Note the semi-colon here!
 {
@@ -72,7 +72,7 @@ while (number <=5); // Note the semi-colon here!
 
 ## Having an empty body (variation)
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number = 0;
 while (number <=5)
     C.WL("Hi Mom!);
@@ -82,7 +82,7 @@ while (number <=5)
 
 ## Going in the wrong direction
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int number = 0;
 while (number >=5)
 {
@@ -99,7 +99,7 @@ The variable `number` should be decremented, not incremented.
 
 We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:
 
-~~~~~~~~{.cs}
+~~~~~~~~
 Console.WriteLine("Please enter a positive number");
 int n = int.Parse(Console.ReadLine());
 while (n < 0)
@@ -117,7 +117,7 @@ Counter
 
 : Variable that is incremented every time a given event occurs.
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int i = 0; // i is a counter
 while (i < 10){
     Console.WriteLine($"{i}");
@@ -129,7 +129,7 @@ Sentinel Value
 
 :  A special value that signals that the loop needs to end.
 
-~~~~~~~~{.cs}
+~~~~~~~~
 Console.WriteLine("Give me a string.");
 string ans = Console.ReadLine();
 while (ans != "Quit") // The sentinel value is "Quit".
@@ -144,7 +144,7 @@ Accumulator
 
 : Variable used to keep the total of several values.
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int i = 0, total = 0;
 while (i < 10){
     total += i; // total is the accumulator.
@@ -157,7 +157,7 @@ Console.WriteLine($"The sum from 0 to {i} is {total}.");
 
 We can have an accumulator and a sentinel value at the same time:
 
-~~~~~~~~{.cs}
+~~~~~~~~
 Console.WriteLine("Enter a number to sum, or \"Done\" to stop and print the total.");
 string enter = Console.ReadLine();
 int sum = 0;
@@ -172,7 +172,7 @@ Console.WriteLine($"Your total is {sum}.");
 
 You can have counter, accumulator and sentinel values at the same time!
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int a = 0;
 int sum = 0;
 int counter = 0;
@@ -210,7 +210,7 @@ Note that a user-controlled loop can be sentinel-controlled (that is the example
 
 The `TryParse` method is a complex method that will allow us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
 
-~~~~~~~~{.cs}
+~~~~~~~~
 Console.WriteLine("Please, enter an integer.");
 string message = Console.ReadLine();
 int a;
@@ -231,7 +231,7 @@ You will get a chance to experiment with this code in lab.
 
 # While Loop With Complex Conditions
 
-~~~~~~~~{.cs}
+~~~~~~~~
 int c;
 string message;
 int count;
