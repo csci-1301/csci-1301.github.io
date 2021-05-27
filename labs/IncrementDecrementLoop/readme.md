@@ -41,16 +41,15 @@ Console.WriteLine($"\ta is {a} (the decrementing took place as expected)\n"
 #. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.
 That is, your program should display on the screen:
 
-```
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-```
- 
+    **********
+    **********
+    **********
+    **********
+    **********
+    **********
+    **********
+    **********
+    **********
+    **********
+
+<!-- There is a bug here, using ``` prevents the file from being compiled by pandoc. I suspect pandoc_include is causing this. -->
