@@ -14,10 +14,12 @@ Welcome to course resources website for CSCI 1301 at Augusta University.
 
 Available formats:
 
- - [HTML](book.html)
- - [PDF](book.pdf) 
- - [ODT](book.odt) 
+ - [HTML](book.html) -- to read from your browser, convenient for phones as well.
+ - [PDF](book.pdf)  -- to print and archive.
+ - [ODT](book.odt) -- to edit (using e.g. [libreoffice](https://www.libreoffice.org/)) and archive.
+ - [DOCX](book.docx)  -- to edit (using e.g. Microsoft Office) and archive.
 
+ 
 ### Labs
 
 - [List of labs](labs/)  <!-- TODO: or [download all labs](labs.zip) -->
