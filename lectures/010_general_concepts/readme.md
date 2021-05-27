@@ -51,9 +51,9 @@
     - Better programming language theory leads to new programming techniques
     - Improved programming language implementations
     - New languages are created - old ones updated
-- There are hundreds of programming languaes, why?
+- There are hundreds of programming languages, why?
     - Different tools for different jobs
-        - Some langauges are better suited for certain jobs
+        - Some languages are better suited for certain jobs
         -    Python for scripting, Javascript for web pages          
     - Personnel preference and popularity
 - This class is about "principles" of computer programming
