@@ -17,6 +17,7 @@
    --bg-selection: rgba(255, 255, 0, 0.4);
    --bg-ins: #ff9;
    --bg-mark: #ff0;
+   --bg-image: #fff;  
    --border-table: #ddd;
    --border-hr-1: #aaa;
    --border-hr-2: #eee;
@@ -226,7 +227,7 @@
   }
 
   kbd, *:not(pre) > code{
-    background: var(--bg-inline-code);
+    background-color: var(--bg-inline-code);
     display: inline-block;
     padding: 0 .4em;
     margin-left: 3px;
@@ -242,7 +243,6 @@
   }
 
   pre {
-    white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
@@ -320,6 +320,10 @@
     vertical-align: middle;
   }
   
+  section img{
+      background: var(--bg-image);
+  }
+  
   figure {
     display: block;
     text-align: center;
@@ -347,14 +351,18 @@
     display:table;
   }
   
-  table th {
+  tbody{
+      border-bottom: 1px solid var(--border-table);  
+  }
+  
+ th {
     padding: .2em 1em;
     background-color: var(--bg-table-header);
     border-top: 1px solid var(--border-table);
     border-left: 1px solid var(--border-table);
   }
   
-  table td {
+  td {
     padding: .2em 1em;
     border-top: 1px solid var(--border-table);
     border-left: 1px solid var(--border-table);
