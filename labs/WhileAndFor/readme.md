@@ -7,7 +7,7 @@ title: While and For Loops
 
 Rewrite the following `while` (or `do...while`) loops as `for` loops.
 
-```{caption="The preprocessing step"}
+```
 int a = 0;
 while (a != 10)
 {
