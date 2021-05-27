@@ -270,7 +270,7 @@ labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 
 #### Index page for labs
 # I don't think we need odt / pdf for that page.
-$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md | $(BUILD_DIR) $(BUILD_DIR)$(ARCHIVES)
+$(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md | $(BUILD_DIR) $(addprefix $(BUILD_DIR), $(ARCHIVES))
 	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && \
 		for dir in $(LABS_DIRS); do \
 			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">↓ pdf</a>, <a href="'$${dir}/index.odt'">↓ odt</a>, <a href="'$${dir}/index.html'">html</a> |' && 	\
