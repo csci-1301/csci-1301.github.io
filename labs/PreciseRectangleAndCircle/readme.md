@@ -70,6 +70,8 @@ It should be $3.14159265358979$.
 #. Test those two methods in your `Main` program, by displaying on the screen the area and the circumference of the object you created in the previous exercise.
 #. Use the format specifier `N` to round the circumference.
 
+You can find a possible solution to this problem [in this archive](Circle_Solution.zip).
+
 # Pushing Further (Optional)
 
 The following are two independent tasks, to widen your understanding of this class, and to prepare you for the next labs.
