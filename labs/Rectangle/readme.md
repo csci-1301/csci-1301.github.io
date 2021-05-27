@@ -31,7 +31,7 @@ Edit the `Main` method of `Program.cs` by adding at its end statements that perf
 #. Create a fourth `Rectangle` object, do not specify its length or width, and display them on the screen. What do you observe?
 
 In the last part, you may notice that the length and the width of the newly created object were assigned default values.
-To know more about this, refer to <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table>.
+To know more about this, refer to [the documentation on default values of C# types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table).
 
 ## Editing `Rectangle.cs`
 
@@ -59,6 +59,6 @@ Taking inspiration from the `ComputeArea()` method, write three new methods:
 #. A method that swaps the length and the width of the calling object.
 
 For each method: pick a (valid) name, think about the return type and the parameters, and write the body of the method carefully.
-After compliation succeeds, call that method in `Program.cs` and see if it has the expected behavior.
+After compilation succeeds, call that method in `Program.cs` and see if it has the expected behavior.
 
-This is more challenging than the rest of the lab, so if you are unable to finish this part during the lab session, don't worry; we will review a possible solution in the next lecture.
+This is more challenging than the rest of the lab, so if you are unable to finish this part during the lab session, do not worry, but take the time to study [a possible solution](Enriched_Rectangle.zip) to this problem.

@@ -1,12 +1,14 @@
 ﻿/*
  * CSCI 1301
  * A class: the Rectangle class
+ * 
+ * Solution File: see lines 56 and up.
  */
 
 class Rectangle
 {
     /*
-     * Declaration of the two instance variables / attributes / fields
+     * Declaration of the two intance variables / attributes / fields
      */
     private int length;
     private int width;
@@ -30,7 +32,7 @@ class Rectangle
      * Accessors for the Width
      */
 
-     // "Setter" (or "mutator") for the Width:
+    // "Setter" (or "mutator") for the Width:
     public void SetWidth(int widthParameter)
     {
         width = widthParameter;
@@ -48,5 +50,33 @@ class Rectangle
     {
         return length * width;
 
+    }
+
+    /*
+     * Method to compute the perimeter of a rectangle
+     */
+    public int ComputePerimeter()
+    {
+        return length * 2 + width * 2;
+    }
+
+    /*
+     * Method to double the height and the width of the calling object.
+     */
+    public void DoubleRectangle()
+    {
+        width *= 2;
+        length *= 2;
+    }
+
+    /*
+     * Method to swap the height and the width of the calling object.
+     */
+    public void Swap()
+    {
+        int temp;
+        temp = length;
+        length = width;
+        width = temp;
     }
 }
