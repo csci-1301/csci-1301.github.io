@@ -234,8 +234,9 @@ docs-odt:$(SOURCE_DOC_FILES)
 #### DOCX
 docs-docx:$(SOURCE_DOC_FILES)
 	make $(TARGET_DOC_FILES_DOCX)
+	
 ### Whole doc, in all formats.
-docs: docs-html docs-pdf docs-odt
+docs: docs-html docs-pdf docs-odt docs-docx
 
 # -------------------------------
 ## Web Files
@@ -269,11 +270,17 @@ $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 $(BUILD_DIR)$(LABS_DIR)%/index.pdf: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_PDF) $< -o $@ 
+	
 ##### Individual ODT files.
 $(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) $< -o $@ 
-	
+
+##### Individual DOCX files.
+$(BUILD_DIR)$(LABS_DIR)%/index.docx: $(LABS_DIR)%/readme.md
+	mkdir -p $(dir $@)
+	pandoc $(PANDOC_DOCX) $< -o $@ 
+
 #### Whole directories
 # Compile all the labs in a specific format, by calling the previous corresponding rule for each file.
 ##### HTML
@@ -283,9 +290,14 @@ labs-html:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)$(LABS_DIR)index.html $(
 ##### PDF
 labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_PDF)
+
 ##### ODT
 labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
+
+##### DOCX
+labs-docx:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
+	make $(TARGET_LAB_INSTRUCTION_FILES_DOCX)
 
 #### Index page for labs
 # I don't think we need odt / pdf for that page.
@@ -301,7 +313,7 @@ $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md | $(BUILD_DIR) $(addpr
 
 	
 #### Whole labs instructions, in all formats.
-labs-instructions: labs-html labs-pdf labs-odt
+labs-instructions: labs-html labs-pdf labs-odt labs-docx
 
 ### Source Code
 
