@@ -17,7 +17,9 @@ title: User Input
 #. Compile and execute it.
 #. The user of your program (in this case, you!) will be prompted with the message:
 
-        Please, enter your first name, followed by "Enter":
+    ```{.bash}
+    Please, enter your first name, followed by "Enter":
+    ```
     
     Enter your first name, followed by <kbd>Enter ↵</kbd>.
     You just witnessed an interaction between a program and the user!
@@ -43,9 +45,9 @@ Why is the compiler complaining?
 Comment out the statement you just added (that is, add `//` in front of it, so that the compiler will not try to execute it).
 #. Copy the following statement to "convert" the string value of `stringVar` into an integer value and assign it to `intVar`:
     
-    ~~~~~~~{.cs}
+    ```
     intVar = int.Parse(stringVar);
-    ~~~~~~~
+    ```
     
 #. Using <https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number>, try to understand what just happened.
 #. Change the value of  `stringVar` to be `"Train"` and assign it to `intVar` using `int.Parse` as previously shown.
@@ -56,20 +58,21 @@ What happened?
 #. Looking back at the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), what if you ask the user directly for an integer?  How can you store it in an int variable?
 #. Add the following to the code:
 
-```
-Console.WriteLine("Please enter your age in years as an integer.");
+    ```
+    Console.WriteLine("Please enter your age in years as an integer.");
 
-string ageInput = Console.ReadLine();
-int age = int.Parse(ageInput);
-    
-Console.WriteLine($"Your age in months is {age*12}");
-```
+    string ageInput = Console.ReadLine();
+    int age = int.Parse(ageInput);
+        
+    Console.WriteLine($"Your age in months is {age*12}");
+    ```
     
 #. Re-compile and execute your code.  Be sure to enter a whole number for your age.
 #. Are the results what you expect?
 #. Run the code again, this time with a negative number for your age.  Then try again with `0`.  Does the code still work?
 #. What if you were to enter a floating point number when asked for an integer?  What if you entered the word "twenty"?
-#. Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.
-#. Later in the course you will learn how to handle untrustworthy user input
-#. Can you think of a change you can make to the code to accept ages of type float instead of int?  Try making that change!
-#. If you were to ask a user to enter an age without specifying its type, what .Parse should you use?
+
+    Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.
+    Later in the course you will learn how to handle untrustworthy user input
+#. Can you think of a change you can make to the code to accept ages of type `float` instead of `int`?  Try making that change!
+#. If you were to ask a user to enter an age without specifying its type, what `.Parse` should you use?
