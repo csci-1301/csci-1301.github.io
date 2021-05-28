@@ -18,7 +18,7 @@ Their duties generally include:
     - etc.
 - Helping the students outside of the lab (through email, teams, or office hours), for similar tasks as in lab, but also to get ready for an exam or a quiz,
 - Reporting to the instructors any issue, mistake or confusion they noticed,
-- Suggesting improvmemts to the resources shared with the students.
+- Suggesting improvements to the resources shared with the students.
 
 Their duties _can not_ include:
 

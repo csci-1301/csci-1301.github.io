@@ -242,5 +242,14 @@ Features of this program:
     - Note that all escape sequences begin with a backslash character (`\`)
     - General format is `\[key letter]` -- the letter after the backslash is like a "keyword" indicating which special character to display
     - If you want to put an actual backslash in your string, you need the escape sequence `\\`, which prints a single backslash
-        - This will result in a compile error because `\U` is not a valid escape sequence: `Console.WriteLine("Go to C:\Users\Edward");`
-        - This will display the path correctly: `Console.WriteLine("Go to C:\\Users\\Edward");`
+        - This will result in a compile error because `\U` is not a valid escape sequence: 
+        
+            ```
+            Console.WriteLine("Go to C:\Users\Edward");
+            ```
+        
+        - This will display the path correctly: 
+        
+            ```
+            Console.WriteLine("Go to C:\\Users\\Edward");
+            ```
