@@ -4,13 +4,13 @@
 
 Variables or literals of numeric data types (`int`, `double`, etc.) can be used to do math. All the usual arithmetic operations are available in C#:
 
-Operation | C# Operator | Algebraic Expression |  C# Expression
---- | --- | --- | ---
-Addition | `+` | $x + 7$ | `myVar + 7`
-Subtraction | `-` | $x - 7$ | `myVar - 7`
-Multiplication | `*` | $x \times 7$ | `myVar * 7`
-Division | `/` | $x / 7$,  $x \div 7$ | `myVar / 7`
-Remainder (a.k.a.\ modulo) | `%` | $x \bmod 7$ | `myVar % 7`
+| Operation                  | C# Operator | Algebraic Expression | C# Expression |
+| ----------                 | ----------  | ----------           | ----------    |
+| Addition                   | `+`         | $x + 7$              | `myVar + 7`   |
+| Subtraction                | `-`         | $x - 7$              | `myVar - 7`   |
+| Multiplication             | `*`         | $x \times 7$         | `myVar * 7`   |
+| Division                   | `/`         | $x / 7$,  $x \div 7$ | `myVar / 7`   |
+| Remainder (a.k.a.\ modulo) | `%`         | $x \bmod 7$          | `myVar % 7`   |
 
 Note: the "remainder" or "modulo" operator represents the remainder after doing integer division between its two operands. For example, $44 \bmod 7 = 2$ because $44 \div 7 = 6$ *with remainder* $2$.
 
@@ -42,13 +42,13 @@ Note: the "remainder" or "modulo" operator represents the remainder after doing 
     - The pattern of "compute an expression with a variable, then assign the result to that variable" is common, so there are shortcuts for doing it
     - The **compound assignment operators** change the value of a variable by adding, subtracting, etc. from its current value, equivalent to an assignment statement that has the value on both sides:
 
-    Statement | Equivalent
-    --- | ---
-    `x += 2;` | `x = x + 2;`
-    `x -= 2;` | `x = x - 2;`
-    `x *= 2;` | `x = x * 2;`
-    `x /= 2;` | `x = x / 2;`
-    `x %= 2;` | `x = x % 2;`
+    | Statement | Equivalent   |
+    | --------- | ---------    |
+    | `x += 2;` | `x = x + 2;` |
+    | `x -= 2;` | `x = x - 2;` |
+    | `x *= 2;` | `x = x * 2;` |
+    | `x /= 2;` | `x = x / 2;` |
+    | `x %= 2;` | `x = x % 2;` |
 
 ## Implicit and Explicit Conversions Between Datatypes
 
@@ -87,15 +87,15 @@ Note: the "remainder" or "modulo" operator represents the remainder after doing 
 
     - Summary of possible implicit conversions:
 
-      Type | Possible Implicit Conversions
-      --- | ----------
-      `short` | `int`, `long`, `float`, `double`, `decimal`
-      `int` | `long`, `float`, `double`, `decimal`
-      `long` | `float`, `double`, `decimal`
-      `ushort` | `uint`, `int`, `ulong`, `long`, `decimal`, `float`, `double`
-      `uint` | `ulong`, `long`, `decimal`, `float`, `double`
-      `ulong` | `decimal`, `float`, `double`
-      `float` | `double`
+      | Type     | Possible Implicit Conversions                               |
+      | -------- | --------------------------                                  |
+      | `short`  | `int`, `long`, `float`, `double`, `decimal`                 |
+      | `int`    | `long`, `float`, `double`, `decimal`                        |
+      | `long`   | `float`, `double`, `decimal`                                |
+      | `ushort` | `uint`, `int`, `ulong`, `long`, `decimal`, `float`, `double`|
+      | `uint`   | `ulong`, `long`, `decimal`, `float`, `double`               |
+      | `ulong`  | `decimal`, `float`, `double`                                |
+      | `float`  | `double`                                                    |
 
     - In general, a data type can only be implicitly converted to one with a *larger range* of possible values
 

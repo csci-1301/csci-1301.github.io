@@ -1,163 +1,230 @@
-# A Class for ClassRoom
+# More Advanced Object Concepts
 
-## UML - Specification
+## Default Values and the ClassRoom Class
 
-| **ClassRoom** |
-| :--- |
-| - name: `string` |
-| - number: `int` |
-| + SetName(nameParameter : `string`): `void` |
-| + GetName(): `string` |
-| + SetNumber(numberParameter: `int`): void |
-| + GetNumber(): `int` |
+- Instance variables get default values
+    - In lab, you were asked to run a program like this:
 
+        ```
+        !include code/rectangle_initial_values.cs
+        ```
 
-## Implementation
+      Note that we create a Rectangle object, but do not use the `SetLength` or `SetWidth` methods to assign values to its instance variables. It displays the following output:
 
-~~~~~~~{.cs .numberLines}
-using System;
+        ```text
+        Length is 0
+        Width is 0
+        ```
 
-class ClassRoom
-{
-    private string name;
-    private int number;
+    - This works because the instance variables `length` and `width` have a default value of 0, even if you never assign them a value
 
-    public void SetName(string nameParameter)
-    {
-        name = nameParameter;
-    }
-    public string GetName()
-    {
-        return name;
-    }
+    - Local variables, like the ones we write in the Main method, do *not* have default values. You must assign them a value before using them in an expression.
 
-    public void SetNumber(int numberParameter)
-    {
-        number = numberParameter;
-    }
-    public int GetNumber()
-    {
-        return number;
-    }
-}
-~~~~~~~
+        - For example, this code will produce a compile error:
 
-## Default Values
+            ```
+            int myVar1;
+            int myVar2 = myVar1 + 5;
+            ```
 
-What if we display the values of the instance variables before setting them?
+          You can't assume `myVar1` will be 0; it has no value at all until you use an assignment statement.
 
-~~~~~~~
-ClassRoom english = new ClassRoom(); 
-Console.WriteLine(english.GetName()); // Nothing!
-Console.WriteLine(english.GetNumber()); // 0
-~~~~~~~
+    - When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
 
-Indeed, instance variables are different from "usual" variables in that sense that they receive a "default" value when created.
-This value depends of the variable datatype:
+        | **Type**      | **Default Value** |
+        | ------------- | :---------------- |
+        | Numeric types | 0                 |
+        | `string`      | `null`            |
+        | objects       | `null`            |
+        | `bool`        | `false`           |
+        | `char`        | `'\0'`            |
 
-| Type | Default |
-| :--: | :--: |
-| numerical value | `0` |
-| char | `'\x0000'` |
-| bool | `false` |
-| string | `null` |
-<!--
-| sbyte, byte, short, ushort, int, uint, long, ulong | `0` | 
-| float | `0.0f` |
-| double | `0.0d` |
-| decimal | `0.0m` |
-| object | `null` |
--->
+    - Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You can't do anything with a reference variable containing `null`.
 
-- Note how different it is from the variables we have been using so far, that could not be for instance displayed if their value had not been set.
-- We can set a different default value, using, in the class declaration,
+- A class we'll use for subsequent examples
 
-~~~~~~~
-private string name = "Unknown";
-private int number = -1;
-~~~~~~~
+    - ClassRoom: Represents a room in a building on campus
+
+    - UML Diagram:
+
+        |                **ClassRoom**            |
+        | --------------------------------------- |
+        | - building: `string`                    |
+        | - number: `int`                         |
+        | --------------------------------------- |
+        | + SetBuilding(buildingParam : `string`) |
+        | + GetBuilding(): `string`               |
+        | + SetNumber(numberParameter: `int`)     |
+        | + GetNumber(): `int`                    |
+
+        - There are two attributes: the name of the building (a string) and the room number (an `int`)
+        - Each attribute will have a "getter" and "setter" method
+
+    - Implementation:
+
+        ```
+        !include code/classroom.cs
+        ```
+
+        - Each attribute is implemented by an instance variable with the same name
+        - To write the "setter" for the building attribute, we write a method whose return type is `void`, with a single `string`-type parameter. Its body assigns the `building` instance variable to the value in the parameter `buildingParam`
+        - To write the "getter" for the building attribute, we write a method whose return type is `string`, and whose body returns the instance variable `building`
+
+    - Creating an object and using its default values:
+
+        ```
+        !include code/classroom_initial_values.cs
+        ```
+
+      This will print the following output:
+
+        ```text
+        Building is
+        Room number is 0
+        ```
+
+      Remember that the default value of a `string` variable is `null`. When you use string interpolation on `null`, you get an empty string.
 
 ## Constructors
 
-### Custom
+- Instantiation and constructors
+    - Instantiation syntax requires you to write parentheses after the name of the class, like this:
 
-A constructor is a method used to create an object.
-It has to have the same name as the class, and doesn't have a return type.
+        ```
+        ClassRoom english = new ClassRoom();
+        ```
 
-~~~~~~~
-public ClassRoom(string nameParameter, int numberParameter)
-{
-    name = nameParameter;
-    number = numberParameter;
-}
-~~~~~~~~
+    - Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
+    - In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
+    - Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
+    - If you don't write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
+    - The default constructor initializes each instance variable to its default value -- that's where default values come from
+- Writing a constructor
+    - Example for ClassRoom:
 
-We use it as follows:
+        ```
+        public ClassRoom(string buildingParam, int numberParam)
+        {
+            building = buildingParam;
+            number = numberParam;
+        }
+        ```
 
-~~~~~~~
-ClassRoom math = new ClassRoom("Bertrand", 5);
-~~~~~~~
+    - To write a constructor, write a method whose name is *exactly the same* as the class name
+    - This method has *no return type*, not even `void`. It does not have a `return` statement either
+    - For `ClassRoom`, this means the constructor's header starts with `public ClassRoom`
+        - You can think of this method as "combining" the return type and name. The name of the method is `ClassRoom`, and its output is of type `ClassRoom`, since the return value of `new ClassRoom()` is always a `ClassRoom` object
+        - You don't actually write a `return` statement, though, because `new` will always return the new object after calling the constructor
+    - A custom constructor usually has parameters that correspond to the instance variables: for `ClassRoom`, it has a `string` parameter named `buildingParam`, and an `int` parameter named `numberParam`
+        - Note that when we write a method with two parameters, we separate the parameters with a comma
+    - The body of a constructor must assign values to **all** instance variables in the object
+    - Usually this means assigning each parameter to its corresponding instance variable: initialize the instance variable to equal the parameter
+        - Very similar to calling both "setters" at once
+- Using a constructor
+    - An instantiation statement will call a constructor for the class being instantiated
+    - Arguments in parentheses must match the parameters of the constructor
+    - Example with the `ClassRoom` constructor:
 
+        ```
+        !include code/classroom_using_constructor.cs
+        ```
 
-Note:
+      This program will produce this output:
 
-- the order of the arguments matter,
-- the variables, as usual, have a particular scope,
-- constructor do not have a return type (not even `void`)
+        ```text
+        Building is Allgood East
+        Room number is 356
+        ```
 
+    - The instantiation statement `new ClassRoom("Allgood East", 356)` first creates a new "empty" object of type `ClassRoom`, then calls the constructor to initialize it. The first argument, "Allgood East", becomes the constructor's first parameter (`buildingParam`), and the second argument, 356, becomes the constructor's second parameter (`numberParam`).
 
-In the UML diagram, we would add:
+    - After executing the instantiation statement, the object referred to by `csci` has its instance variables set to these values, even though we never called `SetBuilding` or `SetNumber`
 
-\+ \<\<constructor\>\> ClassRoom(nameParameter: string, numberParameter: int)
+- Methods with multiple parameters
+    - The constructor we wrote is an example of a method with two parameters
+    - The same syntax can be used for ordinary, non-constructor methods, if we need more than one input value
+    - For example, we could write this method in the `Rectangle` class:
 
-Note that we could skip the  \<\<constructor\>\> part, can you tell why?
+        ```
+        public void MultiplyBoth(int lengthFactor, int widthFactor)
+        {
+            length *= lengthFactor;
+            width *= widthFactor;
+        }
+        ```
 
+    - The first parameter has type `int` and is named lengthFactor. The second parameter has type `int` and is named `widthFactor`
 
-### Default
+    - You can call this method by providing two arguments, separated by a comma:
 
-If we implement this constructor, then we lose the "No args", default constructor
+        ```
+        myRect.SetLength(5);
+        myRect.SetWidth(10);
+        myRect.MultiplyBoth(3, 5);
+        ```
 
-~~~~~~~
-public ClassRoom() { }
-~~~~~~~~~
+      The first argument, 3, will be assigned to the first parameter, `lengthFactor`. The second argument, 5, will be assigned to the second parameter, `widthFactor`
 
-We can re-define it, using something like:
+    - The order of the arguments matters when calling a multi-parameter method. If you write `myRect.MultiplyBoth(5, 3)`, then `lengthFactor` will be 5 and `widthFactor` will be 3.
 
-~~~~~~~
-public ClassRoom() {
-    name = "Unknown";
-    int = -1;
-}
-~~~~~~~~~
+    - The type of each argument must match the type of the corresponding parameter. For example, when you call the `ClassRoom` constructor we just wrote, the first argument must be a `string` and the second argument must be an `int`
 
+- Writing multiple constructors
+    - Remember that if you don't write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
 
-# Signature and Overloading
+    - Once you add a constructor to your class, C# will **not** generate a default constructor
+        - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
+        - The constructor we wrote has 2 parameters, so now you always need 2 arguments to instantiate a `ClassRoom`
 
-Every method has a signature made of
-- its name, 
-- its parameters types (but not the parameter names).
+    - If you still want the option to create an object with no arguments (i.e. `new ClassRoom()`), you must write a constructor with no parameters
 
-Note that the return type is not part of the method signature in C#. 
+    - A class can have more than one constructor, so it would look like this:
 
-In a class, all the methods need to have a different signature.
-You cannot, for example, have these two methods in the same class:
+        ```
+        class ClassRoom
+        {
+            //...
+            public ClassRoom(string buildingParam, int numberParam)
+            {
+                building = buildingParam;
+                number = numberParam;
+            }
+            public ClassRoom()
+            {
+                building = null;
+                number = 0;
+            }
+            //...
+        }
 
-~~~~~~~
-int DoSomething(int a, int b);
-string DoSomething(int c, int d);
-~~~~~~~
+    - The "no-argument" constructor must still initialize all the instance variables, even though it has no parameters
 
-It is possible, however, to have two methods with the same name, as long as they have different signatures.
-If we are in such a situation, then we say that we are _overloading_.
-We will look at examples of overloading in lab.
+        - You can pick any "default value" you want, or use the same ones that C# would use (0 for numeric variables, `null` for object variables, etc.)
 
-# ToString 
+    - When a class has multiple constructors, the instantiation statement must decide which constructor to call
 
-A particular method can be used to display information about our objects. It is called `ToString`, and can be defined as follows:
+    - The instantiation statement will call the constructor whose parameters match the arguments you provide
 
-~~~~~~~
-public override string ToString()
-{
-    return "Person: " + Name + " " + Age;
-}
-~~~~~~~
+        - For example, each of these statements will call a different constructor:
+
+            ```
+            ClassRoom csci = new ClassRoom("Allgood East", 356);
+            ClassRoom english = new ClassRoom();
+            ```
+
+          The first statement calls the two-parameter constructor we wrote, since it has a `string` argument and an `int` argument (in that order), and those match the parameters `(string buildingParam, int numberParam)`. The second statement calls the zero-parameter constructor since it has no arguments.
+
+        - If the arguments don't match any constructor, it's still an error:
+
+            ```
+            ClassRoom csci = new ClassRoom(356, "Allgood East");`
+            ```
+
+          This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
+
+## Writing ToString Methods
+
+- ToString usage
+    - String interpolation automatically calls the `ToString` method on each variable or value
+    - `ToString` returns a string "equivalent" to the object; for example, if `num` is an `int` variable containing 42, `num.ToString()` returns "42".
+    - C# datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
