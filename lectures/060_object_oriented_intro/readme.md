@@ -331,9 +331,9 @@ Let's look at each part of this code in order.
 - UML Class Diagram elements
 
     | **ClassName** |
-    | :--: |
+    | :--- |
     | - attribute: `type`|
-    | :--: |
+    | ---- |
     | + SetAttribute(attributeParameter: `type`): `void` |
     | + GetAttribute(): `type` |
     | + Method(paramName: `type`): `type` |
@@ -352,10 +352,10 @@ Let's look at each part of this code in order.
 - UML Diagram for the Rectangle class
 
     | **Rectangle** |
-    | :--: |
+    | :--- |
     | - width: `int`|
     | - length: `int`|
-    | :--: |
+    | ---- |
     | + SetLength(lengthParameter: `int`) |
     | + GetLength(): `int` |
     | + SetWidth(widthParameter: `int`) |
