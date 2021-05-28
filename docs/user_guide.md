@@ -263,7 +263,7 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 ### Installing required dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/f80f8f6b0dab450441e43ad09db2cda0b1fba6e1/.github/workflows/build.yaml#L27-L30), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/pull.yaml#L27-L30), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -272,6 +272,7 @@ In general the following dependencies are needed:
 - make
 - python 3.+
 - packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](http://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
+- [symbola font](https://packages.debian.org/sid/fonts-symbola)
 
 ### Running the build
 
