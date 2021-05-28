@@ -18,7 +18,7 @@ Action:
 We strive to provide to our students all the material they will need to succeed in one place, at <https://csci-1301.github.io/>.
 On this website, you will find
 
-- ["The book"](https://csci-1301.github.io/book.html), which contains the lecture notes to cover one semester, and is available [in `pdf`](https://csci-1301.github.io/book.pdf) (for printing, typically) and [in `odt`](https://csci-1301.github.io/book.odt) (for editing, typically). Along with [the `html` version](https://csci-1301.github.io/book.html) (i.e., the website), this gives three convenient ways of accessing the content of this course.
+- ["The book"](https://csci-1301.github.io/book.html), which contains the lecture notes to cover one semester, and is available [in `pdf`](https://csci-1301.github.io/book.pdf) (for printing, typically) and [in `odt`](https://csci-1301.github.io/book.odt)/[`docx`](https://csci-1301.github.io/book.docx) (for editing, typically.  docx included for Microsoft Word compatibility). Along with [the `html` version](https://csci-1301.github.io/book.html) (i.e., the website), this gives four convenient ways of accessing the content of this course.
 - Slides accompanying the lecture notes (in `pptx`). <!-- TODO: add (list of) slides to website -->
 - [The labs](https://csci-1301.github.io/labs/), which are tied to particular lectures, and contains hands-on practice exercise as well as instructions on how to use computers to complete this class.
 - Along with [other useful documents](https://csci-1301.github.io/#other-documents) about this class or studying at [our school](https://www.augusta.edu/ccs/) in particular.
@@ -27,11 +27,11 @@ The main purpose of this first lab is to help you navigating those resources.
 We want this reading to be pro-active, so we will include questions and actions like the ones below every now and then to help you being engaged in the material.
 
 Question:
-~  We used four different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's five: can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://en.wikipedia.org/wiki/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started!
+~  We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's five: can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://en.wikipedia.org/wiki/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started!
 
 Action:
-~ On the `html` version of our documents (so, on the website), you will always find [on the footer](#footer) links to the `pdf` and `odt` versions of the document you are currently reading.
-Download them by clicking on the "↓ pdf" and "↓ odt" links, then make sure you can open them both.
+~ On the `html` version of our documents (so, on the website), you will always find [on the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
+Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them both.
 You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes fewer sense to discuss the links on the footer of a `pdf` file, as there is none!]
 
 You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links on the footer: the first one will give you access to the "frame" we are using to construct all of those resources, and the second contains information about the authors, copyrights and tools used to construct this website.

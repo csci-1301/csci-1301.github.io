@@ -4,7 +4,7 @@ title: About
 
 # Purpose
 
-This website contains all the ressources used in the delivery of [CSCI 1301 - Principles of Computer Programming I](http://catalog.augusta.edu/preview_course_nopop.php?catoid=27&coid=70445) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
+This website contains all the resources used in the delivery of [CSCI 1301 - Principles of Computer Programming I](http://catalog.augusta.edu/preview_course_nopop.php?catoid=27&coid=70445) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
 
 # Authors
 
@@ -29,13 +29,13 @@ This project could not have been without the support of the [School of Computer 
 
 # Tools
 
-We strive to prioritize open-source software when possible, and occasionaly contribute to them.
+We strive to prioritize open-source software when possible, and occasionally contribute to them.
 
 ## Software
 
 This website uses different technologies.
 
-- The markdown source code is converted to `html`, `pdf`, and `odt` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
+- The markdown source code is converted to `html`, `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 

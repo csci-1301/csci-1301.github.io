@@ -9,7 +9,7 @@ You probably already installed a software in your life, be it [VLC](http://www.v
 However, depending on if you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.
 
 Between the [Play store](https://en.wikipedia.org/wiki/Google_Play#Play_Store_on_Android), the [command-line interface](https://en.wikipedia.org/wiki/Command-line_interface), [homebrew](http://brew.sh/) and the act of downloading a software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
-In addition of making sure that you are downloading the software from a trusted source, you should also be vigileant about the information the software will be able to access about e.g. your private life.
+In addition of making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g. your private life.
 
 As data can be lost or corrupted upon downloading, many plat-form now uses [checksum](https://en.wikipedia.org/wiki/Checksum) to verify the integrity of the software you downloaded before installing it.
 This is an excellent practise that can also be performed "by hand", as explained for instance for [the database manager MySQL](https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html): the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the [attack surface](https://en.wikipedia.org/wiki/Attack_surface).
@@ -22,7 +22,7 @@ How can you tell that you can trust this code?
 We have not implemented a checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a plat-form using [two-factor authentication](https://docs.github.com/en/github/authenticating-to-github/about-two-factor-authentication) and were every action is tracked using [versioning](https://en.wikipedia.org/wiki/Software_versioning).
 Concretely, this means that only somebody who manages to steal your instructor's credentials, their phone, and thwart all the other instructor's vigilance would be able to host malicious code on our plat-form: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.
 
-As often, security is not absolute, but aims at providing reasonnable confidence.
+As often, security is not absolute, but aims at providing reasonable confidence.
 Executing "blindly" code found on-line, on the other hand, gives a good chance of facing unpleasant surprises: while there certainly is a lot of useful, good code on websites like [stackoverflow](https://stackoverflow.com/)---your instructor probably uses such websites, by the way!---, copying-and-pasting it without understanding its purpose or general structure is almost guaranteed to, at best, not execute properly, at worst, make your system unstable or insecure.
 
 # Accessing an IDE
@@ -32,7 +32,7 @@ There are many available IDEs, and some can accomodate multiple different progra
 
 For C#, [there are many different possibilities](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C%23): some are cross-platforms (meaning you can use them on macOS, windows or Linux), some are provided free of charge, some have not been updated in a long time.
 Three natural choices are [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/).
-While the last two are accessible on every operating sysems, Visual Studio is available only for windows, and in a slightly different version for macOS.
+While the last two are accessible on every operating systems, Visual Studio is available only for windows, and in a slightly different version for macOS.
 
 To access one or the other, you will need either
 

@@ -29,7 +29,7 @@ How to obtain the latest version of this resource:
 
 #. visit the accompanying website [csci-1301.github.io](https://csci-1301.github.io). This website includes the latest version of the course textbook in all supported formats, links to labs, and all other available student resources.
 #. AU-hosted mirror of the website is located at <https://spots.augusta.edu/caubert/teaching/csci-1301>
-#. latest version of textbook is also available under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github.
+#. latest version of built resource is available as a .zip file under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github.
 
 A mirrored version of this website is hosted on [spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) and updated regularly.
 Additional copies of this resource can be made available through box or D2L. Because manual effort is required to share the resource through these channels, these may be slightly behind the latest version.
@@ -248,13 +248,13 @@ Making a versioned release is done as follows:
 
 #. Go to [repository releases](https://github.com/csci-1301/csci-1301.github.io/releases)
 #. Choose latest, which contains the files of the latest build
-#. Edit this release, giving it a semantic name and a version, such as `v1.0.0`. Name and version can be the same.
+#. Edit this release, giving it a semantic name and a version, such as v1.0.0. Name and version can be the same.
    (cf. [semantic versioning](https://semver.org/))
 #. Enter release notes to explain what changed since last release
-#. Uncheck `This is a pre-release`
+#. Uncheck "This is a pre-release"
 #. Update release
 
-Following these steps will generate a new, versioned release. The versioned releases will be manually uploaded to university mirror site, box, and archived.
+Following these steps will generate a new, versioned release. The versioned releases will be manually uploaded to and archived on galileo.
 
 ## Building the resource locally
 

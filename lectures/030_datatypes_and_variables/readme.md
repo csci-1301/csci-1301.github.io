@@ -207,15 +207,10 @@ Type | Size | Range of Values | Precision
     - Nevertheless, there is only 32 bits available for the result, and the extra bits will be dropped, and the result looks like `00000000000000000000000000000001`, which is less than 10,000.
 
 ## Underflow 🛡️
+
 - Sometimes, the result of arithmetic operations over floating-point numbers is smaller than what can be stored in the corresponding data type. This problem is known as the underflow problem.
 - In C#, in case of an underflow problem, the result will be zero.
 
-```
-float no;
-no = 1E-45f;
-Console.WriteLine(no); //outputs 1.401298E-45
-no = no / 10;
-Console.WriteLine(no); //outputs 0
-no = no * 10;
-Console.WriteLine(no); //outputs 0
-```
+    ```
+    !include code/underflow_example.cs
+    ```

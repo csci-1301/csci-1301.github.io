@@ -10,7 +10,7 @@
 - The difference between roles (user, tester, programmer)
 - How complex piece of software _reuse_ previous pieces.
 - The importance of security :lock:
-    - Types of attack (malware, phishing, social engineering, zero-day)
+    - Types of attack (malware, phishing, social engineering, zero-day) 
     - Types of loss (loss of integrity / availability / confidentiality)
 
 ## Writing and Compiling Programs
@@ -27,7 +27,7 @@
     - Editing
     - Reusing
 - Using an IDE to
-    - Create a project,
+    - Create a project, 
     - Perform some of the steps of the "flow of development",
     - Correctly save and re-open projects,
     - Understand basic features of break points and debugging. :question:
@@ -54,7 +54,7 @@
 - There are hundreds of programming languages, why?
     - Different tools for different jobs
         - Some languages are better suited for certain jobs
-        - Python for scripting, Javascript for web pages
+        - Python for scripting, Javascript for web pages          
     - Personnel preference and popularity
 - This class is about "principles" of computer programming
     - Common principles behind all languages won't change, even though hardware and languages do
@@ -74,7 +74,7 @@
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
-    - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s.
+    - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s. 
         - Example x86 instruction: `movq %rdx, %rbx`
     - **Assembler**: Translates assembly language code to machine instructions
         - One assembly instruction = one machine-language instruction
@@ -106,6 +106,7 @@
         - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
     - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
 
+
 ## Software Concepts
 
 - Flow of execution in a program
@@ -116,6 +117,7 @@
     - **GUI** or Graphical User Interface: Input is from clicking mouse in visual elements on screen (buttons, menus, etc.), output is by drawing onto the screen
     - **CLI** or Command Line Interface: Input is from text typed into "command prompt" or "terminal window," output is text printed at same terminal window
     - This class will use CLI because it's simple, portable, easy to work with -- no need to learn how to draw images, just read and write text
+
 
 ## Programming Concepts
 
@@ -138,7 +140,8 @@
     - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
     - **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
 
-#### Programming workflow
+
+#### Programming workflow 
 
 <!-- TODO: title this figure -->
 
