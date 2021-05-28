@@ -38,7 +38,7 @@ A UCA _must_:
 - Have an interest in tutoring,
 - Understand clearly the limits and boundaries to the help they can provide to students.
 
-Additionally, if a student want to help with this particular class, then of course the student must have successfully passed CSCI 1301 with a grade of B or higher
+Additionally, if a student wants to help with this particular class, then the student must have successfully passed CSCI 1301 with a grade of B or higher
 
 A UCA will:
 
@@ -47,5 +47,4 @@ A UCA will:
 - Be able to work on Campus and discuss their schedule with their referent instructor,
 - Develop a stronger bond with the instructors, facilitating possible future reference or research projects.
 
-So, in short: talk to any CSCI 1301 instructor if you feel like applying!
-
+So, in short: talk to any CSCI 1301 instructor if you feel like becoming a UCA.
