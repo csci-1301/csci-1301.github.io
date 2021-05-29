@@ -224,7 +224,191 @@
 
 ## Writing ToString Methods
 
-- ToString usage
+- ToString recap
     - String interpolation automatically calls the `ToString` method on each variable or value
     - `ToString` returns a string "equivalent" to the object; for example, if `num` is an `int` variable containing 42, `num.ToString()` returns "42".
     - C# datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
+- Writing a ToString method
+    - To add a `ToString` method to your class, you must write this header: `public override string ToString()`
+    - The access modifier must be `public` (so other code, like string interpolation, can call it)
+    - The return type must be `string` (ToString must output a string)
+    - It must have no parameters (the string interpolation code won't know what arguments to supply)
+    - The keyword `override` means your class is "overriding," or providing its own version of, a method that is already defined elsewhere -- `ToString` is defined by the base `object` type, which is why string interpolation "knows" it can call `ToString` on any object
+    - The goal of ToString is to return a "string representation" of the object, so the body of the method should use all of the object's attributes and combine them into a string somehow
+    - Example ToString method for `ClassRoom`:
+
+        ```
+        public override string ToString()
+        {
+            return building + " " + number;
+        }
+        ```
+
+        - There are two instance variables, `building` and `number`, and we use both of them
+        - A natural way to write the name of a classroom is the building name followed by the room number, like "University Hall 124", so we concatenate the variables in that order
+        - Note that we add a space between the variables
+        - Note that `building` is already a string, but `number` is an `int`, so string concatenation will implicitly call `number.ToString()` -- ToString methods can call other ToString methods
+        - Another way to write the body would be `return $"{building} {number}";`
+- Using a ToString method
+    - Any time an object is used in string interpolation or concatenation, its ToString method will be called
+    - You can also call ToString by name using the "dot operator," like any other method
+    - This code will call the ToString method we just wrote for `ClassRoom`:
+
+        ```
+        ClassRoom csci = new ClassRoom("Allgood East", 356);
+        Console.WriteLine(csci);
+        Console.WriteLine($"The classroom is {csci}");
+        Console.WriteLine("The classroom is " + csci.ToString());
+        ```
+
+## Method Signatures and Overloading
+
+- Name uniqueness in C#
+    - In general, variables, methods, and classes must have unique names, but there are several exceptions
+    - **Variables** can have the same name if they are in *different scopes*
+        - Two methods can each have a local variable with the same name
+        - A local variable (scope limited to the method) can have the same name as an instance variable (scope includes the whole class), but this will result in **shadowing**
+    - **Classes** can have the same name if they are in *different namespaces*
+        - This is one reason C# has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
+        - For example, imagine you were using a "shapes library" that provided a class named `Rectangle`, but you also wanted to write your own class named `Rectangle`
+        - The library's code would use its own namespace, like this:
+
+            ```
+            namespace ShapesLibrary
+            {
+                class Rectangle
+                {
+                    //instance variables, methods, etc.
+                }
+            }
+            ```
+
+          Then your own code could have a `Rectangle` class in your own namespace:
+
+            ```
+            namespace MyProject
+            {
+                class Rectangle
+                {
+                    //instance variables, methods, etc.
+                }
+            }
+            ```
+
+        - You can use both `Rectangle` classes in the same code, as long as you specify the namespace, like this:
+
+            ```
+            MyProject.Rectangle rect1 = new MyProject.Rectangle();
+            ShapesLibrary.Rectangle rect2 = new ShapesLibrary.Rectangle();
+            ```
+
+    - **Methods** can have the same name if they have *different signatures*; this is called **overloading**
+        - We'll explain signatures in more detail in a minute
+        - Briefly, methods can have the same name if they have different parameters
+        - For example, you can have two methods named Multiply in the Rectangle class, as long as one has one parameter and the other has two parameters:
+
+            ```
+            public void Multiply(int factor)
+            {
+                length *= factor;
+                width *= factor;
+            }
+            public void Multiply(int lengthFactor, int widthFactor)
+            {
+                length *= lengthFactor;
+                width *= widthFactor;
+            }
+            ```
+
+          C# understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
+
+        - We have used overloading already when we wrote multiple constructors -- constructors are methods too. For example, these two constructors have the same name, but different parameters:
+
+            ```
+            public ClassRoom(string buildingParam, int numberParam)
+            {
+                building = buildingParam;
+                number = numberParam;
+            }
+            public ClassRoom()
+            {
+                building = null;
+                number = 0;
+            }
+            ```
+
+- Method signatures
+    - A method's **signature** has 3 components: its **name**, the **type** of each parameter, and the **order** the parameters appear in
+    - Methods are unique if their *signatures* are unique, which is why they can have the same name
+    - Signature examples:
+        - `public void Multiply(int lengthFactor, int widthFactor)` -- the signature is `Multiply(int, int)` (name is `Multiply`, parameters are `int` and `int` type)
+        - `public void Multiply(int factor)` -- signature is `Multiply(int)`
+        - `public void Multiply(double factor)` -- signature is `Multiply(double)`
+        - These could all be in the same class since they all have different signatures
+    - Parameter *names* are not part of the signature, just their types
+        - Note that the parameter names are omitted when I write down the signature
+        - That means these two methods are not unique and could not be in the same class:
+
+            ```
+            public void SetWidth(int widthInMeters)
+            {
+                //...
+            }
+            public void SetWidth(int widthInFeet)
+            {
+                //...
+            }
+            ```
+
+          Both have the same signature, `SetWidth(int)`, even though the parameters have different names. You might intend the parameters to be different (i.e. represent feet vs. meters), but any `int`-type parameter is the same to C#
+
+    - The method's return type is not part of the signature
+        - So far all the examples have the same return type (`void`), but changing it would not change the signature
+        - The signature of `public int Multiply(int factor)`  is `Multiply(int)`, which is the same as `public void Multiply(int factor)`
+        - The signature "begins" with the name of the method; everything "before" that doesn't count (i.e. `public`, `int`)
+    - The order of parameters is part of the signature, as long as the types are different
+        - Since parameter name is not part of the signature, only the type can determine the order
+        - These two methods have different signatures:
+
+            ```
+            public int Update(int number, string name)
+            {
+                //...
+            }
+            public int Update(string name, int number)
+            {
+                //..
+            }
+            ```
+
+          The signature of the first method is `Update(int, string)`. The signature of the second method is `Update(string, int)`.
+
+        - These two methods have the same signature, and could not be in the same class:
+
+            ```
+            public void Multiply(int lengthFactor, int widthFactor)
+            {
+                //...
+            }
+            public void Multiply(int widthFactor, int lengthFactor)
+            {
+                //...
+            }
+            ```
+
+          The signature for both methods is `Multiply(int, int)`, even though we switched the order of the parameters -- the name doesn't count, and they are both `int` type
+
+    - Constructors have signatures too
+        - The constructor `ClassRoom(string buildingParam, int numberParam)` has the signature `ClassRoom(string, int)`
+        - The constructor `ClassRoom()` has the signature `ClassRoom()`
+        - Constructors all have the same name, but they are unique if their signatures (parameters) are different
+
+- Calling overloaded methods
+    - Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to run -- `myRect.GetLength()` would call the `GetLength` method
+    - When a method is overloaded, you must use the entire signature to determine which method gets executed
+    - A method call has a "signature" too: the name of the method, and the type and order of the arguments
+    - C# will execute the method whose signature matches the signature of the method call
+    - Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
+    - Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
+    - The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
+    - If no method or constructor matches the signature of the method call, you get a compile error. You still can't write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
