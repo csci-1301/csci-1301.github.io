@@ -67,7 +67,7 @@ You can find a possible solution to this problem [in this archive](Circle_Soluti
 
 The following is an independent task, to widen your understanding of this class, and to prepare you for the next labs.
 
-#. Now that you know more about naming conventions, have a look at [microsoft's naming guideline](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines(, and particularly at
+#. Now that you know more about naming conventions, have a look at [microsoft's naming guideline](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines), and particularly at
 - [the documentation on general naming conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions),
 - and [the documentation on capitalization conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions).
  
