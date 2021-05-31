@@ -396,4 +396,4 @@ all: build
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$var is [${SOURCEDIRS}])
+$(info $$var is [${ARCHIVES}])
