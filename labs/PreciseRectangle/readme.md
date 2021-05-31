@@ -7,17 +7,7 @@ title: Precise Rectangle and Circle Class
 In this exercise, you will create your own first class instead of using and expanding one that was written for you.
 The idea is to take inspiration from the class you already know (`Rectangle`) to create a new class, called `PreciseRectangle`, that will manipulate rectangles whose width and length are floating-point values, instead of integers (as in `Rectangle`).
 
-This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for the UML part, and how to create a class in your IDE).
-
-## Conception 
-
-Draw the UML diagram of this class: it should have two attributes, of type `double`, and eight methods:
-
-- two setters, two getters (i.e., one for each attribute), 
-- one method to compute the area of a precise rectangle,
-- one method to compute the perimeter of a precise rectangle,
-- one method to swap the length and the width of a precise rectangle,
-- one method to multiply the length and width of a precise rectangle by an ratio given in argument as an integer.
+This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for how to create a class in your IDE).
 
 ## Implementation
 
@@ -75,12 +65,7 @@ You can find a possible solution to this problem [in this archive](Circle_Soluti
 
 # Pushing Further (Optional)
 
-The following are two independent tasks, to widen your understanding of this class, and to prepare you for the next labs.
-
-#. Class diagrams (the ones we will be using) are just a special case of UML diagram.
-Have a look at <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams>.
-In which category are class diagrams: behaviour, or structure diagram?
-Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to read the example of activity diagram for a guided brainstorming process.
+The following is an independent task, to widen your understanding of this class, and to prepare you for the next labs.
 
 #. Now that you know more about naming conventions, have a look at [microsoft's naming guideline](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines(, and particularly at
 - [the documentation on general naming conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions),
