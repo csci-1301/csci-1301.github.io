@@ -7,7 +7,7 @@ title: Precise Rectangle and Circle Class
 In this exercise, you will create your own first class instead of using and expanding one that was written for you.
 The idea is to take inspiration from the class you already know (`Rectangle`) to create a new class, called `PreciseRectangle`, that will manipulate rectangles whose width and length are floating-point values, instead of integers (as in `Rectangle`).
 
-This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for the UML part, and for how to create a class in Visual Studio).
+This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for the UML part, and how to create a class in your IDE).
 
 ## Conception 
 
@@ -30,6 +30,7 @@ It is recommended to pick the one you feel the most comfortable with (you will g
 #. Within your IDE, re-name the project to "PreciseRectangle", and rename the "Rectangle.cs" file to "PreciseRectangle.cs"
 #. In the "PreciseRectangle.cs" file, replace `class Rectangle` with `class PreciseRectangle`.
 #. Comment out the body of the `Main` method in "Program.cs".
+#. It is important that you re-name the files within your IDE.  If you try to rename your files, or their folders, outside of the IDE then it will break your solution.  The solution will still be looking for the original file/folder names, and will not recognize the changed names.  If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.
 #. Your program should compile as it is, but you have to edit `PreciseRectangle.cs` to now store the `width` and the `length` with `double`, and to propagate this change accordingly. What should be the return type of `GetWidth`, for instance?
 #. Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 #. Add the missing methods (`ComputePerimeter`, `Swap`, `MultiplyRectangle`).
