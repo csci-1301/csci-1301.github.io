@@ -6,13 +6,11 @@ title: Introduction to Classes -- Rectangle Class
 
 # Using a Pre-Defined Class
 
-This lab will guide you in your first manipulation of a programmer-defined class.
-We will use the example shown in lecture.
-The last part is challenging; therefore, we will give a possible solution to it in the next class, but make sure you try to solve it by yourself beforehand.
+This lab will guide you in your first manipulation of a programmer-defined class. The last part is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
 
 ## Manipulating Two `.cs` Files at a Time
 
-#. Download [the Rectangle project](Rectangle_Solution.zip), extract it, and open it with VS.
+#. Download [the Rectangle project](Rectangle.zip), extract it, and open it with your IDE.
 Note that in the "Solution Explorer", there are two `cs` files listed: `Program.cs` and `Rectangle.cs`.
 #. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what was presented during the lecture.
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
@@ -37,12 +35,13 @@ To know more about this, refer to [the documentation on default values of C# typ
 
 Edit `Rectangle.cs`:
 
-#. Rename every instance of `lengthParameter` to `lengthP` in the `SetLength` method (that is, replace the two occurrences). You can use the [symbol refactoring](https://docs.microsoft.com/en-us/visualstudio/ide/reference/rename?view=vs-2019) feature of C# to do so. Compile and run your program. What do you observe?
+#. Rename every instance of `lengthParameter` to `lengthP` in the `SetLength` method (that is, replace both occurrences). You can use the [symbol refactoring](https://docs.microsoft.com/en-us/visualstudio/ide/reference/rename?view=vs-2019) feature of C# to do so. If you are having difficulty finding this feature, look for `rename`, or check these links for [Mono](https://www.monodevelop.com/documentation/feature-list/refactoring/#rename) and [Rider](https://www.jetbrains.com/help/rider/Refactorings__Rename.html). Compile and run your program. What do you observe? What happens if you change one instance to `lengthP` while leaving the other as `lengthParameter`?  Try it out by manually editing one of these instances and compiling the program.  Be sure to change it back after.
 #. Some people use the convention of prefixing instance variables with `_` (the underscore character), `m` (for "member"), or even `m_`.
 You can always find someone furiously advocating for one particular convention, but the truth is that if you're not forced to use one (for example, by the rules of a software company you work for), you should pick whichever suits you best.
 Still, just to use it at least once, rename every instance of `width` into `m_width` and see how it feels. Compile and run your program. What do you observe?
 Either undo this modification or rename `length` into `m_length` (you have to be consistent!).
 #. Change the name of one of the accessor methods in `Rectangle.cs` without changing it in `Program.cs`. Compile and run your program. What do you observe? Undo your modification.
+#. What has this section taught you about variable and method names within `.cs` files and across `.cs` files within the same project?  What about naming is important to the compiler, and what is only important to the programmer?
 
 <!--
 You can find a good summary of the pro and cons underscore Vs this
