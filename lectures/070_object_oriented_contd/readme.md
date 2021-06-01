@@ -348,6 +348,7 @@
         - These could all be in the same class since they all have different signatures
     - Parameter *names* are not part of the signature, just their types
         - Note that the parameter names are omitted when I write down the signature
+
         - That means these two methods are not unique and could not be in the same class:
 
             ```
@@ -369,6 +370,7 @@
         - The signature "begins" with the name of the method; everything "before" that doesn't count (i.e. `public`, `int`)
     - The order of parameters is part of the signature, as long as the types are different
         - Since parameter name is not part of the signature, only the type can determine the order
+
         - These two methods have different signatures:
 
             ```
@@ -413,3 +415,128 @@
     - Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
     - The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
     - If no method or constructor matches the signature of the method call, you get a compile error. You still can't write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
+
+## Constructors in UML
+
+- Now that we can write constructors, they should be part of the UML diagram of a class
+    - No need to include the default constructor, or one you write yourself that takes no arguments
+    - Non-default constructors go in the operations section (box 3) of the UML diagram
+    - Similar syntax to a method: `[+/-] <<constructor>> [name]([parameter name]: [parameter type])`
+    - Note that the name will always match the class name
+    - No return type, ever
+    - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it's a constructor
+- Example for ClassRoom:
+
+    |                                   **ClassRoom**                              |
+    | ---------------------------------------------------------------------------- |
+    | - building: `string`                                                         |
+    | - number: `int`                                                              |
+    | ---------------------------------------------------------------------------- |
+    | + \<\<constructor\>\> ClassRoom(buildingParam: `string`, numberParam: `int`) |
+    | + SetBuilding(buildingParam : `string`)                                      |
+    | + GetBuilding(): `string`                                                    |
+    | + SetNumber(numberParameter: `int`)                                          |
+    | + GetNumber(): `int`                                                         |
+
+## Properties
+
+- Attributes are implemented with a standard "template" of code
+    - Remember, "attribute" is the abstract concept of some data stored in an object; "instance variable" is the way that data is actually stored
+    - First, declare an instance variable for the attribute
+    - Then write a "getter" method for the instance variable
+    - Then write a "setter" method for the instance variable
+    - With this combination of instance variable and methods, the object has an attribute that can be read (with the getter) and written (with the setter)
+    - For example, this code implements a "width" attribute for the class Rectangle:
+
+        ```
+        class Rectangle
+        {
+            private int width;
+            public void SetWidth(int value)
+            {
+                width = value;
+            }
+            public int GetWidth()
+            {
+                return width;
+            }
+        }
+        ```
+
+    - Note that there's a lot of repetitive or "obvious" code here:
+        - The name of the attribute is intended to be "width," so you must name the instance variable `width`, and the methods `GetWidth` and `SetWidth`, repeating the name three times.
+        - The attribute is intended to be type `int`, so you must ensure that the instance variable is type `int`, the getter has a return type of `int`, and the setter has a parameter type of `int`. Similarly, this repeats the data type three times.
+        - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
+    - Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition
+- Writing properties
+    - Declare an instance variable for the attribute, like before
+    - A **property declaration** has 3 parts:
+        - Header, which gives the property a name and type (very similar to variable declaration)
+        - `get` section, which declares the "getter" method for the property
+        - `set` section, which declares the "setter" method for the property
+    - Example code, implementing the "width" attribute for Rectangle (this replaces the code in the previous example):
+
+        ```
+        class Rectangle
+        {
+            private int width;
+            public int Width
+            {
+                get
+                {
+                    return width;
+                }
+                set
+                {
+                    width = value;
+                }
+            }
+        }
+        ```
+
+    - Header syntax: `[public/private] [type] [name]`
+    - *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
+    - `get` section: Starts with the keyword `get`, then a method body inside a code block (between braces)
+        - `get` is like a method header that always has the same name, and its other features are implied by the property's header
+        - Access modifier: Same as the property header's, i.e. `public` in this example
+        - Return type: Same as the property header's type, i.e. `int` in this example (so imagine it says `public int get()`)
+        - Body of `get` section is exactly the same as body of a "getter": return the instance variable
+    - `set` section: Starts with the keyword `set`, then a method body inside a code block
+        - Also a method header with a fixed name, access modifier, return type, and parameter
+        - Access modifier: Same as the property header's, i.e. `public` in this example
+        - Return type: Always `void` (like a setter)
+        - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
+        - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
+- Using properties
+    - Properties are members of an object, just like instance variables and methods
+    - Access them with the "member access" operator, aka the dot operator
+        - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
+    - A complete example, where the "length" attribute is implemented the "old" way with a getter and setter, and the "width" attribute is implemented with a property:
+
+        ```
+        !include code/using_width_property.cs
+        ```
+
+    - Properties "act like" variables: you can assign to them and read from them
+    - Reading from a property will *automatically* call the `get` method for that property
+        - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` section inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
+        - This is equivalent to `Console.WriteLine($"The width is {myRectangle.GetWidth()}");` using the "old" Rectangle code
+    - Assigning to (writing) a property will *automatically* call the `set` method for that property, with an argument equal to the right side of the `=` operator
+        - For example, `myRectangle.Width = 15;` will call the `set` section inside the `Width` property, with `value` equal to 15
+        - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
+- Properties in UML
+    - Since properties represent attributes, they go in the "attributes" box (the second box)
+    - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
+        - No need to write both the property `Width` and the instance variable `width`
+    - Syntax: `[+/-] <<property>> [name]: [type]`
+    - Note that the access modifier (+ or -) is for the property, not the instance variable, so it's + if the property is `public` (which it usually is)
+    - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
+
+        |             **Rectangle**            |
+        | ------------------------------------ |
+        | + \<\<property\>\> Width: `int`      |
+        | + \<\<property\>\> Length: `int`     |
+        | ------------------------------------ |
+        | + ComputeArea(): `int`               |
+
+    - We no longer need to write all those setter and getter methods, since they are "built in" to the properties
