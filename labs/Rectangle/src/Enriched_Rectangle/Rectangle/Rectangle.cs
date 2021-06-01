@@ -8,7 +8,7 @@
 class Rectangle
 {
     /*
-     * Declaration of the two intance variables / attributes / fields
+     * Declaration of the two instance variables / attributes / fields
      */
     private int length;
     private int width;
