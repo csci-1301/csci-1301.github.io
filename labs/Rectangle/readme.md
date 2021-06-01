@@ -16,7 +16,7 @@ Note that in the "Solution Explorer", there are two `cs` files listed: `Program.
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
 #. Compile and execute the code.
 #. Now, do the following:
-  - Introduce a syntactical error in `Program.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Restore the program to its previous state, using <kbd>CTRL</kbd> + <kbd>z</kbd> to "undo" your operation.
+  - Introduce a syntactical error in `Program.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Restore the program to its previous state, using <kbd>CTRL</kbd> + <kbd>z</kbd> to "undo" your operation. (*This shortcut is for Windows*; for MacOS, to undo your operation, use <kbd>CMD</kbd> + <kbd>z</kbd> instead).
   - Introduce a syntactical error in `Rectangle.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Undo the modification using <kbd>CTRL</kbd> + <kbd>z</kbd>.
   - Add `length = 12;` in the main method of `Program.cs` and try to build the solution: what do you observe? Undo the modification using <kbd>CTRL</kbd> + <kbd>z</kbd>.
 
