@@ -236,7 +236,7 @@ This resource is built automatically every time changes are committed to the mai
 
 The build configuration uses texlive to keep the dependency installation time low. Similarly, the choice of Python packages is preferable for pandoc filters, because they are usually straightforward and fast to install. We want to avoid choosing packages that significantly increase build time.
 
-Currently (May 2021) Github actions offers 2,000 free build minutes/month, which _should be_ sufficient for the needs of this project and hopefully remains free in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
+Currently Github actions offers unlimited free build minutes for public repositories (and 2000 min/mo. for _private_ repositories, should we ever need them), which hopefully continues in perpetuity (if it does not there are other alternative services). Going with one specific CI service over another is simply a matter of preference. 
 
 Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs.
 
