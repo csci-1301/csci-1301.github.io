@@ -41,7 +41,7 @@ You can always find someone furiously advocating for one particular convention, 
 Still, just to use it at least once, rename every instance of `width` into `m_width` and see how it feels. Compile and run your program. What do you observe?
 Either undo this modification or rename `length` into `m_length` (you have to be consistent!).
 #. Change the name of one of the accessor methods in `Rectangle.cs` without changing it in `Program.cs`. Compile and run your program. What do you observe? Undo your modification.
-#. What has this section taught you about variable and method names within `.cs` files and across `.cs` files within the same project?  What about naming is important to the compiler, and what is only important to the programmmer?
+#. What has this section taught you about variable and method names within `.cs` files and across `.cs` files within the same project?  What about naming is important to the compiler, and what is only important to the programmer?
 
 <!--
 You can find a good summary of the pro and cons underscore Vs this
