@@ -6,9 +6,7 @@ title: Introduction to Classes -- Rectangle Class
 
 # Using a Pre-Defined Class
 
-This lab will guide you in your first manipulation of a programmer-defined class.
-We will use the example shown in lecture.
-The last part is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
+This lab will guide you in your first manipulation of a programmer-defined class. The last part is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
 
 ## Manipulating Two `.cs` Files at a Time
 
