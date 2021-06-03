@@ -4,8 +4,7 @@ title: Precise Rectangle and Circle Class
 
 # Writing Your Own PreciseRectangle Class
 
-In this exercise, you will create your own first class instead of using and expanding one that was written for you.
-The idea is to take inspiration from the class you already know (`Rectangle`) to create a new class, called `PreciseRectangle`, that will manipulate rectangles whose width and length are floating-point values, instead of integers (as in `Rectangle`).
+In this exercise, you will create your own first class instead of using and expanding one that was written for you. The idea is to take inspiration from the class you already know (`Rectangle`) to create a new class, called `PreciseRectangle`, that will manipulate rectangles whose width and length are floating-point values, instead of integers (as in `Rectangle`).
 
 This should be a fairly straightforward exercise, that mostly re-enforce what you should know already (except for how to create a class in your IDE).
 
@@ -16,11 +15,13 @@ It is recommended to pick the one you feel the most comfortable with (you will g
 
 ### Edit the Pre-Existing Project
 
-#. Re-download [the "Rectangle" project](../Rectangle/Rectangle_Solution.zip), extract it in a folder, and open it with your IDE.
+#. Re-download [the "Rectangle" project](../Rectangle/Rectangle.zip), extract it in a folder, and open it with your IDE.
 #. Within your IDE, re-name the project to "PreciseRectangle", and rename the "Rectangle.cs" file to "PreciseRectangle.cs"
-#. In the "PreciseRectangle.cs" file, replace `class Rectangle` with `class PreciseRectangle`.
+
+    It is important that you re-name the files within your IDE.  If you try to rename your files, or their folders, outside of the IDE then it will break your solution.  The solution will still be looking for the original file/folder names, and will not recognize the changed names.  If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.
+    
+#. In the "PreciseRectangle.cs" file, replace `class Rectangle` with `class PreciseRectangle`.     
 #. Comment out the body of the `Main` method in "Program.cs".
-#. It is important that you re-name the files within your IDE.  If you try to rename your files, or their folders, outside of the IDE then it will break your solution.  The solution will still be looking for the original file/folder names, and will not recognize the changed names.  If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.
 #. Your program should compile as it is, but you have to edit `PreciseRectangle.cs` to now store the `width` and the `length` with `double`, and to propagate this change accordingly. What should be the return type of `GetWidth`, for instance?
 #. Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 #. Add the missing methods (`ComputePerimeter`, `Swap`, `MultiplyRectangle`).
@@ -28,10 +29,19 @@ It is recommended to pick the one you feel the most comfortable with (you will g
 ### Starting From Scratch
 
 #. Create a new project in your IDE, name it "PreciseRectangle".
-#. In the Solution Explorer, right-click on "PreciseRectangle", then on "Add..." and select "Class".
+#. In the Solution Explorer, right-click on "PreciseRectangle", then on "Add..." and select "Class". 
 Then, select "Class", write "PreciseRectangle.cs" as the name of the file, and click on "Add".
 #. You are now supposed to have two ".cs" files opened and displayed in the Solution Explorer: "Program.cs" and "PreciseRectangle.cs".
-#. Implement the `PreciseRectangle` class according to your UML diagram. Don't forget about the `ComputePerimeter`, `Swap`,  and `MultiplyRectangle` methods.
+#. Implement the `PreciseRectangle` class according to the following specification:
+
+    - it should have two attributes, of type `double`
+    - it should have and eight methods:
+        - two setters, two getters (i.e., one for each attribute), 
+        - one method to compute the area of a precise rectangle,
+        - one method `ComputePerimeter` to compute the perimeter of a precise rectangle,
+        - one method `Swap` to swap the length and the width of a precise rectangle,
+        - one method `MultiplyRectangle` to multiply the length and width of a precise rectangle by an ratio given in argument as an integer.
+
 #. Declare and manipulate rectangles with floating-point values for the width and the length in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 
 # Writing A Circle Class

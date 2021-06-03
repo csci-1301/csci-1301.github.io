@@ -45,5 +45,5 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring and displaying variables and using arithmetic operators |
 | [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator |
 | [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
-| [Rectangle](/labs/Rectangle) | TODO | TODO | |
-| [PreciseRectangle](/labs/PreciseRectangle) | TODO | TODO | |
+| [Rectangle](/labs/Rectangle) | [Introduction](/labs/Introduction) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
+| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | |

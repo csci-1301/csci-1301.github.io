@@ -30,7 +30,7 @@ Available formats:
 
 - [Installing Software](software_install.html) - guide on how to install various IDE / software
 - [Datatypes in C#](datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
-
+- [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of shortcuts you will likely to use often
 
 ### Useful Documentation
 
