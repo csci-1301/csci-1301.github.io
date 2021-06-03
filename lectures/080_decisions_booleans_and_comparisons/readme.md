@@ -92,4 +92,7 @@ We can also compare `char`, but the order is a bit complex (you can find it, for
 The precedence, that we will study in lab, is as follows:
 
 `! (* / %) (+ -) (< > <= >=) (== !=) && ||`
+
+- Operators with higher precedence are on the left and operators with lower precedence are on the right (ex: `1*2+3` = `1*2` will have higher precedence than `2+3`)
+- Operators in parenthesis have equal precedence and are evaluated in the order they appear, from left to right (ex: `1+2-3` = `1+2` be evaluated before `2-3`)
  
