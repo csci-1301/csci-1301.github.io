@@ -78,6 +78,7 @@
     - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s. 
         - Example x86 instruction: `movq %rdx, %rbx`
     - **Assembler**: Translates assembly language code to machine instructions
+        - For example: movq %rdx, %rbx becomes 001011001010110
         - One assembly instruction = one machine-language instruction
         - x86 assembly produces x86 machine code
     - Computers can only execute the machine code
