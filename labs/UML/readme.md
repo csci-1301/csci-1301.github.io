@@ -5,6 +5,8 @@ title: UML
 
 ## Conception 
 
+<! -- TODO: we should use different class here, since PreciseRectangle is already done in PreciseRectangle lab -->
+
 Draw the UML diagram of a PreciseRectangle class: it should have two attributes, of type `double`, and eight methods:
 
 - two setters, two getters (i.e., one for each attribute), 

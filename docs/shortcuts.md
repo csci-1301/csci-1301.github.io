@@ -1,8 +1,10 @@
 ---
-title: Keyboard shortcuts Cheat Sheet
+title: Keyboard Shortcuts Cheat Sheet
 ---
 
-This document contains useful hotkey commands for different operating systems
+This document contains useful keyboard shortcuts for different operating systems and IDEs.
+
+\* = these commands work generally everywhere, beyond your IDE.
 
 <!-- alphabetical list -->
 <!-- make the action the title so it is possible to link to it -->
@@ -17,7 +19,7 @@ This document contains useful hotkey commands for different operating systems
 | MacOS | <kbd>Cmd</kbd> + <kbd>B</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> |
 
-## Exit any program
+## Exit any program*
 
 | OS | Keys |
 | :--- | :--- |
@@ -25,8 +27,7 @@ This document contains useful hotkey commands for different operating systems
 | MacOS | <kbd>Cmd</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
 
-
-## Run program (in IDE)
+## Run/execute program
 
 | OS | Keys |
 | :--- | :--- |
@@ -34,8 +35,7 @@ This document contains useful hotkey commands for different operating systems
 | MacOS | <kbd>F5</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
 
-
-## Undo
+## Undo*
 
 | OS | Keys |
 | :--- | :--- |
