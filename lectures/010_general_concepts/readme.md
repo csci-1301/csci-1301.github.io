@@ -84,7 +84,7 @@
     - Computers can only execute the machine code
 - High-level language
     - More human-readable than assembly language
-    - Each statement does not need to correspond to a machine instruction
+    - Each statement does not need to correspond to a single machine instruction
     - Statements represent more "high-level" concepts, such as storing a value in a variable, not "machine-level" concepts like "read these bits from this address"
     - Most languages we program in are high-level (C, C#, Python...)
     - **Compiler**: Translates high-level language to machine code
