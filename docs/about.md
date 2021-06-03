@@ -49,5 +49,13 @@ More details on the tools we use can be found in [our user guide](user_guide.htm
 # Licence
 
 This work is under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+Concretely, this means that you are free to:
+
+- Save, print, copy and redistribute the entirety of the resources presented here,
+- Modify them as you see fit,
+
+as long as you give proper credit and keep the same licence.
+
+
 Please refer to [our licence file](https://github.com/csci-1301/csci-1301.github.io/blob/main/LICENSE.md) for the detail of this licence.
 
