@@ -31,7 +31,7 @@ LECTURES_DIR = lectures/
 DOCS_DIR = docs/
 LABS_DIR = labs/
 LAB_TEMPLATES= templates/labs/
-LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d))
+LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d | sort))
 
 # -------------------------------
 ## Files
@@ -396,4 +396,4 @@ all: build
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$var is [${ARCHIVES}])
+$(info $$var is [${LABS_DIRS}])
