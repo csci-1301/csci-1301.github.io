@@ -235,6 +235,7 @@
     - The return type must be `string` (ToString must output a string)
     - It must have no parameters (the string interpolation code won't know what arguments to supply)
     - The keyword `override` means your class is "overriding," or providing its own version of, a method that is already defined elsewhere -- `ToString` is defined by the base `object` type, which is why string interpolation "knows" it can call `ToString` on any object
+        - If you do not use the keyword `override`, then the pre-existing `ToString` method (defined by the base `object` type) will be used instead, which only returns the name of the class 
     - The goal of ToString is to return a "string representation" of the object, so the body of the method should use all of the object's attributes and combine them into a string somehow
     - Example ToString method for `ClassRoom`:
 
