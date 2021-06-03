@@ -304,7 +304,7 @@ labs-docx:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
 $(BUILD_DIR)$(LABS_DIR)index.html: $(LABS_DIR)*/readme.md | $(BUILD_DIR) $(addprefix $(BUILD_DIR), $(ARCHIVES))
 	(cat $(LAB_TEMPLATES)labs.md && printf '\n' && \
 		for dir in $(LABS_DIRS); do \
-			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">↓ pdf</a>, <a href="'$${dir}/index.odt'">↓ odt</a>, <a href="'$${dir}/index.docx'">↓ docx</a>, <a href="'$${dir}/index.html'">html</a> |' && 	\
+			printf ' | <a href="'$${dir}'/">'$${dir}'</a> | <a href="'$${dir}/index.pdf'">↓ pdf</a>, <a href="'$${dir}/index.odt'">↓ odt</a>, <a href="'$${dir}/index.docx'">↓ docx</a>, <a href="'$${dir}/index.html'">↓ html</a> |' && 	\
 			for fileA in */$${dir}/*.zip; do \
 				test -f $${fileA} && printf '<a href="../'$${fileA}'">↓ '$$(basename $${fileA})'</a> '; \
 			done;  \
