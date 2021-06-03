@@ -127,7 +127,7 @@ MAKEFLAGS:= -j
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
-	-M date="$$(LANG=en_us_88591 date '+%B  %e, %Y (%r)')" \
+	-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
         --metadata-file=$(METADATA_FILE)  --email-obfuscation=references
 	
 # HTML build options
