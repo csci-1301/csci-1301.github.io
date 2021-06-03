@@ -199,7 +199,7 @@
         Console.WriteLine("Please enter the year.");
         string userInput = Console.ReadLine();
         int curYear = int.Parse(userInput);
-        Console.WriteLine("Next year it will be {curYear + 1}");
+        Console.WriteLine($"Next year it will be {curYear + 1}");
         ```
 
       In order to do arithmetic with the user's input (i.e. add 1), it must be a numeric type (i.e. `int`), not a `string`.
