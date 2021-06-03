@@ -68,7 +68,7 @@
     - Computers are made of electronic circuits
         - Circuits are components connected by wires
         - Some wires carry data - e.g. numbers
-        - Some carry control signals - e.g. add or subtract numbers
+        - Some carry control signals - e.g. do an add or a subtract operation
     - Instructions are settings on these control signals
         - A setting is represented as a 0 or 1
         - A machine language instruction is a group of settings - For example: 001011001010110
