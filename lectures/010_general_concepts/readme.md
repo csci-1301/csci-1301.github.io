@@ -71,14 +71,14 @@
         - Some carry control signals - e.g. do an add or a subtract operation
     - Instructions are settings on these control signals
         - A setting is represented as a 0 or 1
-        - A machine language instruction is a group of settings - For example: 001011001010110
+        - A machine language instruction is a group of settings - For example: 1000100111011000
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
     - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s. 
-        - Example x86 instruction: `MOV AX, BX` which makes a copy of the data in component called BX and places it in one called AX
-    - **Assembler**: Translates assembly language code to machine instructions
-        - For example: MOV AX, BX becomes 001011001010110
+        - Example x86 instruction: `MOV BX, AX` which makes a copy of data stored in a component called AX and places it in one called BX
+    - **Assembler**: Translates assembly language instructions to machine language instructions
+        - For example: `MOV BX, AX` translates into `1000100111011000`
         - One assembly instruction = one machine-language instruction
         - x86 assembly produces x86 machine code
     - Computers can only execute the machine code
