@@ -103,6 +103,7 @@
         - Syntax: `$"text {variable} text"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
         - Example: `$"I am {myAge} years old"`
         - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
+        - Displayed: `I am 29 years old`
     - When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
 
 On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
