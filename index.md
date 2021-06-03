@@ -45,8 +45,9 @@ Available formats:
 - [Undergraduate Course Assistant](uca.html) - Undergraduate Course Assistants  - What are they and how do I become one?
 
 
-### About this Resource 
+### About this Resource
 
+- [About](about.html) - brief explanation of the purpose and presentation of the authors and licence
 - [Contributing Guidelines](contributing.html) - help improve this resource
 - [User Guide](user_guide.html) - details about this resource
 
