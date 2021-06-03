@@ -15,7 +15,7 @@ It is recommended to pick the one you feel the most comfortable with (you will g
 
 ### Edit the Pre-Existing Project
 
-#. Re-download [the "Rectangle" project](../Rectangle/Rectangle_Solution.zip), extract it in a folder, and open it with your IDE.
+#. Re-download [the "Rectangle" project](../Rectangle/Rectangle.zip), extract it in a folder, and open it with your IDE.
 #. Within your IDE, re-name the project to "PreciseRectangle", and rename the "Rectangle.cs" file to "PreciseRectangle.cs"
 
     It is important that you re-name the files within your IDE.  If you try to rename your files, or their folders, outside of the IDE then it will break your solution.  The solution will still be looking for the original file/folder names, and will not recognize the changed names.  If such an error occurs, restore the previous names and then rename your files through the IDE as instructed.
