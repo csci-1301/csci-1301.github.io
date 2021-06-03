@@ -18,7 +18,7 @@ The authors of this material are:
 - [Edward Tremel](https://edwardtremel.com/)
 
 This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
-Additionally, the [School of Computer & Cyber Sciences][https://www.augusta.edu/ccs/)'s  [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Markus Bacha and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
+Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s  [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Markus Bacha and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
 
 # Supports
 

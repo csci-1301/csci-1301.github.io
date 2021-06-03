@@ -124,6 +124,11 @@ MAKEFLAGS:= -j
 # Pandoc Settings
 # -------------------------------
 
+# The flags are explained at https://pandoc.org/MANUAL.html
+# The only "custom" parts are:
+# - the lua filter and the -M option that follows, that allows to have all code displayed as C# by default,
+# - the -M date parameter, that sets the timezone and language to avoid inconsistencies accross systems,
+
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
