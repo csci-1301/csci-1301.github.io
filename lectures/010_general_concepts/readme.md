@@ -66,11 +66,12 @@
 
 - Machine language
     - Computers are made of electronic circuits
-    - Basic instructions are encoded by setting wires to "on" or "off"
-        - Read data, write data, add, subtract, etc.
-    - Binary digits represent on/off state of wires in a circuit
-    - Machine language: which sequence of binary digits (circuit state) represents which computer instruction
-        - Example instruction: 0010110010101101
+        - Circuits are components connected by wires
+        - Some wires carry data - e.g. numbers
+        - Some carry control signals - e.g. add or subtract numbers
+    - Instructions are settings on these control signals
+        - A setting is represented as a 0 or 1
+        - A machine language instruction is a group of settings - For example: 001011001010110
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
