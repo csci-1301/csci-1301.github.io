@@ -10,6 +10,12 @@ This document contains useful keyboard shortcuts for different operating systems
 <!-- make the action the title so it is possible to link to it -->
 <!-- if there is a diff between IDEs, then can add IDE column to handle such cases -->
 
+More advanced shortcuts may be available to your particular IDE:
+
+- For Visual Studio, refer to [the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019),
+- For Rider, refer to [the documentation](https://www.jetbrains.com/help/rider/mastering_keyboard_shortcuts.html),
+- For MonoDevelop, you can refer to [this cheatsheet](https://shortcutworld.com/Xamarin-Studio/win/Xamarin-Studio-(MonoDevelop)_Shortcuts) or directly access [the key binding panel](https://mhut.ch/journal/2011/02/05/monodevelop-tips-key-bindings).
+
 
 ## Build solution
 
@@ -23,7 +29,7 @@ This document contains useful keyboard shortcuts for different operating systems
 
 | OS | Keys |
 | :--- | :--- |
-| Linux | <kbd>Alt</kbd> + <kbd>F4</kbd> |
+| Linux | <kbd>Alt</kbd> + <kbd>F4</kbd> or <kbd>Ctrl</kbd> + <kbd>q</kbd> |
 | MacOS | <kbd>Cmd</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
 
@@ -39,8 +45,8 @@ This document contains useful keyboard shortcuts for different operating systems
 
 | OS | Keys |
 | :--- | :--- |
-| Linux | <kbd>CTRL</kbd> + <kbd>z</kbd> |
+| Linux | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
 | MacOS | <kbd>Cmd</kbd> + <kbd>z</kbd> |
-| Windows | <kbd>CTRL</kbd> + <kbd>z</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
  
  
