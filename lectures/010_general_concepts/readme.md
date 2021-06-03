@@ -76,9 +76,9 @@
 - Assembly language
     - Easier way for humans to write machine-language instructions
     - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s. 
-        - Example x86 instruction: `movq %rdx, %rbx`
+        - Example x86 instruction: `MOV AX, BX` which makes a copy of the data in component called BX and places it in one called AX
     - **Assembler**: Translates assembly language code to machine instructions
-        - For example: movq %rdx, %rbx becomes 001011001010110
+        - For example: MOV AX, BX becomes 001011001010110
         - One assembly instruction = one machine-language instruction
         - x86 assembly produces x86 machine code
     - Computers can only execute the machine code
