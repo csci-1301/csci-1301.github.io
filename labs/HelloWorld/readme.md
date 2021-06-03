@@ -50,9 +50,9 @@ Question:
     - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
 
     MacOS
-    - Build solution: <kbd>Command</kbd> + <kbd>B</kbd>
+    - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
     - Run: <kbd>F5</kbd> 
-    - Exit any program: <kbd>Command</kbd> + <kbd>Q</kbd>
+    - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
 That makes 3 shortcuts already!
 

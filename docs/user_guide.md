@@ -57,6 +57,7 @@ If you are new to this project, first read through [Contributing Guidelines](/co
     - see [Content Labelling](#content-labelling) for more details
 
 Resources to assess accessibility:
+
 - [Affordable Learning Georgia's guide](https://www.affordablelearninggeorgia.org/open_resources/accessibility)
 - [Specific Review Standards from the QM Higher Education Rubric](https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMHigherEducationRubric.pdf)
 - [UWG Accessibility Services's guide](https://docs.google.com/document/d/16Ri1XgaXiGx28ooO-zRvYPraV3Aq3F5ZNJYbVDGVnEA/edit?ts=57b4c82d#)
