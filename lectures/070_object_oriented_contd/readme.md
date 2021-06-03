@@ -158,6 +158,7 @@
     - You can call this method by providing two arguments, separated by a comma:
 
         ```
+        Rectangle myRect = new Rectangle();
         myRect.SetLength(5);
         myRect.SetWidth(10);
         myRect.MultiplyBoth(3, 5);
@@ -218,7 +219,7 @@
         - If the arguments don't match any constructor, it's still an error:
 
             ```
-            ClassRoom csci = new ClassRoom(356, "Allgood East");`
+            ClassRoom csci = new ClassRoom(356, "Allgood East");
             ```
 
           This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
