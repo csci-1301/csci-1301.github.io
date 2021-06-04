@@ -92,7 +92,7 @@
         - Incorporates code libraries – commonly used pieces of code previously written such as Math.Sqrt(9)
         - Optimizes high-level instructions – your code may look very different after it has been optimized
         - Compiler is specific to both the source language and the target computer
-    - Compile high-level instructions into machine code then execute run since computers can only execute machine code
+    - Compile high-level instructions into machine code then run since computers can only execute machine code
 - Compiled vs. Interpreted languages
     - Not all high-level languages use a compiler - some use an interpreter
     - **Interpreter**: Lets a computer "execute" high-level code by translating one statement at a time to machine code
