@@ -75,7 +75,7 @@
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
-    - Use a sequence of letters/symbols to represent an instruction instead of 1s and 0s. 
+    - Instead of 1s and 0s, it uses letters and "words" to represent an instruction. 
         - Example x86 instruction: `MOV BX, AX` which makes a copy of data stored in a component called AX and places it in one called BX
     - **Assembler**: Translates assembly language instructions to machine language instructions
         - For example: `MOV BX, AX` translates into `1000100111011000`
