@@ -103,7 +103,7 @@
     - Combine features of compiled and interpreted languages
     - Compiler translates high-level statements to **intermediate language** instructions, not machine code
         - Intermediate language: Looks like assembly language, but not specific to any CPU
-    - **Runtime** executes compiled program by *interpreting* the intermediate language instructions - translates one at a time to machine code
+    - **Runtime** executes by *interpreting* the intermediate language instructions - translates one at a time to machine code
         - faster since translation step is partially done and only its last step is done when running the program  
     - Advantages of managed languages:
         - In a "non-managed" language, a compiled program only works on one OS + CPU combination (**platform**) because it is machine code
