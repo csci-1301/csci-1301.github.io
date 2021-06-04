@@ -31,9 +31,9 @@ Console.WriteLine("Negation (not, !) truth table:"
 
 Compile and execute it.
 
-Then, write the code that will display on the screen the truth tables for the binary operators disjunction (or, `||`), identity (equality, `==`) and difference (inequality, `!=`).
+This should display to the screen truth tables for conjection (and, `&&`) and negation (not, `!`).  Next, write code that will display truth tables for the binary operators disjunction (or, `||`), identity (equality, `==`) and difference (inequality, `!=`).
 
-Normally, using the find-and-replace feature of VS should make this task easy and fast.
+Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
 
 # Precedence and Order of Evaluation
 
@@ -63,9 +63,9 @@ So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
 `false ||` **`false && true`** | $⇒$ | `false ||` **`false`**
 **`false || false`** | $⇒$ | **`false`**
 
-Note that an expression like `!3 > 2` doesn't make any sense: C# would try to take the negation of `3`, but you can't negate an integer!
+Note that an expression like `!3 > 2` doesn't make any sense: C# would try to take the negation of `3`, but you can't negate the truth value of an integer!
 Along the same lines, an expression like `false * true` doesn't make any sense: you can't multiply booleans!
-Similarly, `3 % false` will cause an error: can you see why?
+Similarly, `3 % false` will cause an error: can you see why?  These are all examples of "illegal" expressions.
 
 ## Computing Simple Boolean Expressions
 
@@ -83,8 +83,8 @@ Try to do this "by hand," and write your answers down on paper.
 
 ## Computing Expressions Involving Booleans and Numerical Values
 
-For each of the following expression, decide if they are "legal" or not.
-If they are, give the result of their evaluation.
+For each of the following expressions, decide if it is "legal" or not.
+If it is, give the result of its evaluation.
 
 - `3 > 2`
 - `2 == 4`
@@ -106,4 +106,4 @@ Create a new project, and write portions of code that perform the following:
 #. Ask the user for an integer, and display on the screen "positive and odd" if the number is positive and odd, "positive and even" if the number is positive and even, "negative and odd" if the number is negative and odd, "negative and even" if the number is negative and even, and "You picked $0$" if the number is $0$.
 
 For each of those questions, write *on paper* whenever you should use `if`, `if-else`, `if-else-if` or nested conditional structures, and what the condition(s) should be.
-Once you feel confident, write the code in VS, and then test it intensively: enter all kind of values (positive and odd, negative and even, $0$,  and remember that [$0$ is even](https://en.wikipedia.org/wiki/Parity_of_zero), etc.) and make sure that what is displayed on the screen is always correct.
+Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, $0$,  and remember that [$0$ is even](https://en.wikipedia.org/wiki/Parity_of_zero), etc.) and make sure that what is displayed on the screen is always correct.
