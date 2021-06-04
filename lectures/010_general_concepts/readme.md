@@ -75,14 +75,15 @@
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
-    - Use a sequence of letters/symbols to represent an instruction, instead of 1s and 0s. 
+    - Use a sequence of letters/symbols to represent an instruction instead of 1s and 0s. 
         - Example x86 instruction: `MOV BX, AX` which makes a copy of data stored in a component called AX and places it in one called BX
     - **Assembler**: Translates assembly language instructions to machine language instructions
         - For example: `MOV BX, AX` translates into `1000100111011000`
         - One assembly instruction = one machine-language instruction
         - x86 assembly produces x86 machine code
     - Computers can only execute the machine code
-- High-level language such as C#, C++, Java, Lisp, Python
+- High-level language
+    - Hundreds including C#, C++, Java, Python, etc.
     - Most programs are written in a high-level language since:
         - More human-readable than assembly language
         - High-level concepts such as processing a collection of items are easier to write and understand 
@@ -97,16 +98,18 @@
     - Not all high-level languages use a compiler - some use an interpreter
     - **Interpreter**: Lets a computer "execute" high-level code by translating one statement at a time to machine code
     - Advantage: Less waiting time before you can run the program (no separate "compile" step)
-    - Disadvantage: Program runs slower, since you wait for each high-level statement to be translated before the program can continue
+    - Disadvantage: Program runs slower since you wait for the high-level statements to be translated then the program is run
 - Managed high-level languages (like C#)
     - Combine features of compiled and interpreted languages
     - Compiler translates high-level statements to **intermediate language** instructions, not machine code
         - Intermediate language: Looks like assembly language, but not specific to any CPU
     - **Runtime** executes compiled program by *interpreting* the intermediate language instructions - translates one at a time to machine code
+        - faster since translation step is partially done and only its last step is done when running the program  
     - Advantages of managed languages:
         - In a "non-managed" language, a compiled program only works on one OS + CPU combination (**platform**) because it is machine code
         - Managed-language programs can be reused on a different platform without recompiling - intermediate language is not machine code and not CPU-specific
-        - Still need to write an intermediate language interpreter for each platform (so it produces the right machine code), but in a non-managed language you must write a compiler for each platform
+        - Still need to write an intermediate language interpreter for each platform (so it produces the right machine code), but, for a non-managed language, you must write a compiler for each platform
+        - Writing a compiler is more complicated and more work than writing an interpreter thus an interpreter is a quicker (and cheaper) way to put your language on different platforms
         - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
     - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
 
