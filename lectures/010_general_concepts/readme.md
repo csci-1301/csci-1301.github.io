@@ -82,15 +82,17 @@
         - One assembly instruction = one machine-language instruction
         - x86 assembly produces x86 machine code
     - Computers can only execute the machine code
-- High-level language
-    - More human-readable than assembly language
-    - Each statement does not need to correspond to a single machine instruction
-    - Statements represent more "high-level" concepts, such as storing a value in a variable, not "machine-level" concepts like "read these bits from this address"
-    - Most languages we program in are high-level (C, C#, Python...)
+- High-level language such as C#, C++, Java, Lisp, Python
+    - Most programs are written in a high-level language since:
+        - More human-readable than assembly language
+        - High-level concepts such as processing a collection of items are easier to write and understand 
+        - Takes less code since each statement might be translated into several assembly instructions
     - **Compiler**: Translates high-level language to machine code
-        - Small programs in high-level language might produce lots of machine code
-        - Compiler is specific to both the source language and the target machine code
-    - Compile then execute, since computers can only execute machine code
+        - Finds “spelling” errors but not problem-solving errors
+        - Incorporates code libraries – commonly used pieces of code previously written such as Math.Sqrt(9)
+        - Optimizes high-level instructions – your code may look very different after it has been optimized
+        - Compiler is specific to both the source language and the target computer
+    - Compile high-level instructions into machine code then execute run since computers can only execute machine code
 - Compiled vs. Interpreted languages
     - Not all high-level languages use a compiler - some use an interpreter
     - **Interpreter**: Lets a computer "execute" high-level code by translating one statement at a time to machine code
