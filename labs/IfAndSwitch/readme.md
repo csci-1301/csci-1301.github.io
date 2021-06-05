@@ -4,8 +4,7 @@ title: Practising if and switch
 
 # Practicing `if` and `switch`
 
-This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables.
-Initialize a `string` variable named "day," an `int` variable named "myVar," a `char` variable named "initial," and a Boolean variable named "flag."
+This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables. Create a new project and do the following in Main. Initialize a `string` variable named "day," an `int` variable named "myVar," a `char` variable named "initial," and a Boolean variable named "flag."
 Set and change the value of these variables to make good tests as you progress through this problem.
 You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.
 
@@ -19,7 +18,7 @@ You can also display them on the screen to help you in making sure that your sta
 #. Write a `if-else` statement that doubles the value of `myVar` if `myVar` is `3`, `5` or `7`.
 #. Can you rewrite the previous statement as a `switch` statement? If so, do it. If not, explain why not.
 
-## Deciding
+## Deciding Between Condition Types
 
 #. Write a statement that doubles the value of `myVar` and sets `initial` to `'M'` if `day` is equal to `"Sat"`.
 What is the appropriate kind of statement to do this?
