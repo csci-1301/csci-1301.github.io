@@ -30,18 +30,3 @@ What is the appropriate kind of statement to do this?
 #. Write a statement that doubles the value of `myVar` if `day` is `"Sun."`, triples the value of `myVar` if `day` is not `"Sun."` and `initial` is `'a'`, and sets `myVar` to `0` otherwise.
 #. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You will need to understand how to use the `IsUpper` method (<https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0>).
 
- 
-# Conditional Operator (optional)
-
-You were introduced to the conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions).
-Its structure is:
-
-`condition ? first_expression : second_expression;`
-
-You can read more about it [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
-
-If you have time, practice using the conditional operator by adding these statements to your program:
-
-#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You already wrote an `if` statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.
-#. Write a statement that sets `initial` to `'B'` if `myVar` is greater than 500 and to `'S'` if `myVar` is less than or equal to 500.
-#. Write a statement that doubles the value of `myVar` if `day` is `"Sat."` or `"Sun."` and adds 1 to the value of `myVar` otherwise.
