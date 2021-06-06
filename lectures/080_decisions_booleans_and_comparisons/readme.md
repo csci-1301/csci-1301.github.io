@@ -21,10 +21,9 @@ Both structures need a datatype to express the result of a decision ("Is it _tru
 Those booleans can be obtained using conditions, that can be composed ("If we are a Monday, and if it is not past 10:10 am, and if mid-term is not passed, the class will also include a brief reminder about the upcoming first exam.") in different ways using three operators ("and", "or" and "not").
 
 
-# Boolean and Conditions
+# Boolean Variables and Values
 
-A condition is either true or false.
-We can store if something is true or false in a (boolean) *flag*, which is simply a variable of type boolean.
+We can store if something ("The user has reached the majority", "The switch is on", "The user is using windows", "This computer's clock indicate that we are in the afternoon", …) is true or false in a (boolean) *flag*, which is simply a variable of type boolean.
 
 We can declare, assign, initialize and display it as any other variable:
 
@@ -58,10 +57,11 @@ We present this behavior with _truth tables_, as follows:
 `!true` | `false`
 `!false` | `true`
 
-We could also have represented those tables in $2$-dimensions, and will do so in lab.
-
+We could also have represented those tables in $2$-dimensions, as it is done [for instance on wikipedia](https://en.wikipedia.org/wiki/Truth_table#Logical_conjunction_(AND)) for the conjunction.
 
 # Equality and Relational Operators
+
+
 
 **Equality Operators** ||
 :---: | :---: | :---: 
