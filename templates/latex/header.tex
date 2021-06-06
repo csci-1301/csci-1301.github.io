@@ -7,17 +7,20 @@
 % List of symbols supported by Symbola at
 % https://www.fileformat.info/info/unicode/font/symbola/list.htm
 
-\newunicodechar{🔒}{\setmainfont{Symbola} 🔒} % U+1F512, "LOCK"
-\newunicodechar{✘}{\setmainfont{Symbola} ✘} % U+2718, "HEAVY BALLOT X"
-\newunicodechar{⚠}{\setmainfont{Symbola} ⚠} % U+26A0, "WARNING SIGN"
-\newunicodechar{❓}{\setmainfont{Symbola} ❓} % U+2753, "BLACK QUESTION MARK ORNAMENT"
-\newunicodechar{🔜}{\setmainfont{Symbola} 🔜} % U+1F51C, "SOON WITH RIGHTWARDS ARROW ABOVE"
-\newunicodechar{ℕ}{\setmainfont{Symbola} ℕ} % U+2115, "DOUBLE-STRUCK CAPITAL N"
-\newunicodechar{ℤ}{\setmainfont{Symbola} ℤ} % U+2124, "DOUBLE-STRUCK CAPITAL Z"
-\newunicodechar{✔}{\setmainfont{Symbola} ✔} % U+2714, "HEAVY CHECK MARK"
-\newunicodechar{↵}{\setmainfont{Symbola} ↵} % U+21B5, "DOWNWARDS ARROW WITH CORNER LEFTWARDS"
-\newunicodechar{🛡}{\setmainfont{Symbola} 🛡} % U+1F6E1, "SHIELD"
-%\newunicodechar{️ }{\setmainfont{Symbola}st} % U+FE0F, "VARIATION SELECTOR-16"
+\newfontfamily\sym{Symbola}
+\DeclareTextFontCommand{\symb}{\sym}
+
+\newunicodechar{🔒}{\symb 🔒} % U+1F512, "LOCK"
+\newunicodechar{✘}{\symb ✘} % U+2718, "HEAVY BALLOT X"
+\newunicodechar{⚠}{\symb ⚠} % U+26A0, "WARNING SIGN"
+\newunicodechar{❓}{\symb ❓} % U+2753, "BLACK QUESTION MARK ORNAMENT"
+\newunicodechar{🔜}{\symb 🔜} % U+1F51C, "SOON WITH RIGHTWARDS ARROW ABOVE"
+\newunicodechar{ℕ}{\symb ℕ} % U+2115, "DOUBLE-STRUCK CAPITAL N"
+\newunicodechar{ℤ}{\symb ℤ} % U+2124, "DOUBLE-STRUCK CAPITAL Z"
+\newunicodechar{✔}{\symb ✔} % U+2714, "HEAVY CHECK MARK"
+\newunicodechar{↵}{\symb ↵} % U+21B5, "DOWNWARDS ARROW WITH CORNER LEFTWARDS"
+\newunicodechar{🛡}{\symb 🛡} % U+1F6E1, "SHIELD"
+%\newunicodechar{️ }{\symb } % U+FE0F, "VARIATION SELECTOR-16"
 
 % To add line wrap for code environment
 % https://github.com/jgm/pandoc/issues/4302#issuecomment-360669013
