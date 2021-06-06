@@ -31,7 +31,7 @@
 	\draw [arrow] (initial) -- (ask);
 	\draw [arrow] (ask) -- (decision1);
 	\draw [arrow] (decision1) -- node[above, pos=1pt]{[Question]} ++(-2cm, 0) -| (answer);
-	\draw [arrow] (answer) --  ++(2cm, 0) -| (decision1);
+	\draw [arrow] (answer.west) --  ++(-0.1, 0) -- ++(0, 2.8) |- (ask);
 	\draw [arrow] (decision1) -- node[above, pos=.4pt]{[No question]} (intro);
 	\draw [arrow] (intro) -- (decision2);
 	\draw [arrow] (decision2) -- node[above, pos=1pt]{[Quiz]} ++(-2cm, 0) -| (quiz);

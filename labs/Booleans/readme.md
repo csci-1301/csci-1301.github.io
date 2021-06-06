@@ -3,43 +3,47 @@ title: Booleans
 ---
 
 
+This lab has four core goals:
+- To help you manipulate boolean values,
+- To practise boolean operators,
+- To understand the concept of _precedence_,
+- To practise simple calculation mentally.
+
+
 # Truth Tables
 
-Copy-and-paste the following code into the `Main` method of a new project:
+#. Copy-and-paste the following code into the `Main` method of a new project:
 
 ```
-/* 
- * We have two boolean values: true and false.
- * We can use the constant "true" and "false",
- * we can also declare constants with the same value,
- * but a shorter name:
- */
-const bool t = true;
-const bool f = false;
-
 Console.WriteLine("Conjunction (and, &&) truth table:"
-+ "\n\n\t" + t+ "\t" + f
-+ "\n" + t+ "\t" + (t && t)+ "\t" + (t && f)
-+ "\n" + f+ "\t" + (f && t)+ "\t" + (f && f)
++ "\n\n &&   ||\t" + true+ "\t| " + false
++ "\n------||------------|--------"
++ "\n" + true + "  ||\t" + (true && true)+ "\t| " + (true && false)
++ "\n" + false+ " ||\t" + (false && true)+ "\t| " + (false && false)
 + "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 
 Console.WriteLine("Negation (not, !) truth table:"
-+ "\n\n\t" + t+ "\t" + f
-+ "\n\t" + (!t)+ "\t" + (!f)
++ "\n\n value   ||\t ! \t " 
++ "\n---------||------"
++ "\n" + true+ "\t ||\t" + false
++ "\n" + (!true)+ "\t ||\t" + (!false)
 + "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 ```
-
-Compile and execute it.
-
-This should display to the screen truth tables for conjunction (and, `&&`) and negation (not, `!`).  Next, write code that will display truth tables for the binary operators disjunction (or, `||`), identity (equality, `==`) and difference (inequality, `!=`).
-
-Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
-
+#. Compile and execute it. This should display to the screen truth tables for conjunction (and, `&&`) and negation (not, `!`). 
+#. Make sure you understand both the code and its output.
+#. Add after the truth table for the negation the code that will display truth tables for 
+    #. the binary operators disjunction (or, `||`), 
+    #. identity (equality, `==`) and 
+    #. difference (inequality, `!=`).
+    Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
+#. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality).
+    
 # Precedence and Order of Evaluation
 
 ## Reading and Understanding
 
-If you look at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence>, you will see that
+If you read the [documentation on operator precedence](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence), you will see that operators are evaluated in a particular order.
+That is,
 
 |
 :---: | :---: 
@@ -64,22 +68,22 @@ So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
 **`false || false`** | $⇒$ | **`false`**
 
 Note that an expression like `!3 > 2` doesn't make any sense: C# would try to take the negation of `3`, but you can't negate the truth value of an integer!
-Along the same lines, an expression like `false * true` doesn't make any sense: you can't multiply booleans!
+Along the same lines, an expression like `false * true` doesn't make any sense: you can not multiply booleans (what would be "true times false"?)!
 Similarly, `3 % false` will cause an error: can you see why?  These are all examples of "illegal" expressions.
 
 ## Computing Simple Boolean Expressions
 
-Evaluate the following expressions (where `t` stands for `true`, and `f` for `false`).
+Evaluate the following expressions.
 Try to do this "by hand," and write your answers down on paper.
 
-- `t && f || t`
-- `!t && f`
-- `f || t && !f`
-- `f == !t || f`
-- `!(t || f || t && t)`
-- `!(t || f) && (t && !f)`
-- `!t || f && (t && !f)`
-- `t != !(f || t)`
+- `true && false || true`
+- `!true && false`
+- `false || true && !false`
+- `false == !true || false`
+- `!(true || false || true && true)`
+- `!(true || false) && (true && !false)`
+- `!true || false && (true && !false)`
+- `true != !(false || true)`
 
 ## Computing Expressions Involving Booleans and Numerical Values
 
@@ -88,7 +92,7 @@ If it is, give the result of its evaluation.
 
 - `3 > 2`
 - `2 == 4`
-- `3 >= 2 != f`
-- `3 > f`
-- `t && 3 + 5 * 8 == 43`
-- `3 + t != f`
+- `3 >= 2 != false`
+- `3 > false`
+- `true && 3 + 5 * 8 == 43`
+- `3 + true != false`
