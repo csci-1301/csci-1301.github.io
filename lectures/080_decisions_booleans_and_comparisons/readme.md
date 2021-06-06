@@ -27,7 +27,7 @@ We can store if something ("The user has reached the majority", "The switch is o
 
 We can declare, assign, initialize and display it as any other variable:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 bool flag = true;
 Console.WriteLine(true);
 ~~~~~~~
@@ -71,7 +71,7 @@ $\neq$  | `!=` | `3!=4` $\to$ `true`
 
 We test numerical value for equality, as well as `string`, `char` and `bool`!
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 Console.WriteLine(3 == 4);
 Console.WriteLine(myStringVar == "Train");
 Console.WriteLine(myCharVar == 'b');

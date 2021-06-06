@@ -3,7 +3,7 @@
 
 When we write:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 Console.WriteLine(Math.PI);
 ~~~~~~~
 
@@ -14,13 +14,13 @@ Actually, everything in the `MATH` class is _static_ (`public static class Math`
 
 Class attribute: can be static or not, public or private, a constant or variable.
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 public const double PI = 3.14159265358979;
 ~~~~~~~
 
 We also have static methods:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 Math.Min(x,y);
 Math.Max(x,y);
 Math.Pow(x,y);
@@ -50,7 +50,7 @@ Non-static method | ✔ OK | ✔ OK
 
 # A Static Class for Arrays
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 using System;
     static class Lib
     {
@@ -80,7 +80,7 @@ using System;
 }
 ~~~~~~~
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 using System;
     class Program
     {

@@ -3,7 +3,7 @@
 
 ## First Example
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 Console.WriteLine("Enter your age");
 int age = int.Parse(Console.ReadLine());
 if (age >= 18)
@@ -16,7 +16,7 @@ The idea is that the statement ` Console.WriteLine("You can vote!");` is execute
 
 ## Syntax
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (<condition>)
 {
     <statement block>
@@ -34,7 +34,7 @@ Please observe the following.
 
 ## Syntax
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (<condition>)
 {
     <statement block 1>
@@ -58,7 +58,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 
 !["A flowchart representation of the nested if-else statement"](img/15nestedif.png)
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 bool usCitizen = true;
 int age = 19;
 
@@ -87,7 +87,7 @@ Note that
 
 # if-else-if Statements
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (<condition 1>)
 {
     <statement block> // Executed if condition 1 is true
@@ -113,7 +113,7 @@ Note that the conditions could be really different, not even testing the same th
 
 We can make an example with really different conditions, not overlapping: 
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (age > 12)
     x = 0;
 else if (charVar == 'c')
@@ -132,7 +132,7 @@ There is an operator for `if else` statements for particular cases (assignment, 
 
 `condition ? first_expression : second_expression;`
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 int price = adult ? 5 : 3;
 ~~~~~~~
 
@@ -140,7 +140,7 @@ We will have a brief look at it if time allows, otherwise you can read about it 
 
 # if-else-if Statements
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (<condition 1>)
 {
     <statement block 1> // Executed if condition 1 is true
@@ -166,7 +166,7 @@ Note that the conditions could be really different, not even testing the same th
 
 We can make an example with really different conditions, not overlapping: 
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (age > 12)
     x = 0;
 else if (charVar == 'c')
@@ -187,7 +187,7 @@ We can use it to "store" the result of an interaction with a user.
 
 Assume we want to know if the user work full time at some place, we could get started with:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 Console.WriteLine("Do you work full-time here?");
 char ch = Console.ReadKey().KeyChar; // Note that here, passing by, we are using a new method, to read characters.
 
@@ -201,7 +201,7 @@ else
 
 But we can't accommodate this 3-party situation (you either work here full-time, or you don't), so we can change the behavior to
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 if (ch == 'y' || ch == 'Y')
      Console.WriteLine("Answered Yes");
 else
@@ -214,7 +214,7 @@ But imagine we are at the beginning of a long form, and we will need to re-use t
 With this previous command, we would need to duplicate all our code in two places.
 Instead, we could "save" the result of our test in a boolean variable, like so:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 bool fullTime;
 if (ch == 'y' || ch == 'Y')
     fullTime = true;
@@ -224,13 +224,13 @@ else
 
 If you looked at the `?` operator in lab, you can even shorten that statement to:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 fullTime = (ch == 'y' || ch == 'Y') ? true : false;
 ~~~~~~~
 
 Why stop here? We could even do
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 fullTime = (ch == 'y' || ch == 'Y');
 ~~~~~~~
 
@@ -245,7 +245,7 @@ In lab, last time, you were asked the following:
 
 A possible answer is:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 int a;
 Console.WriteLine("Enter an integer");
 a = int.Parse(Console.ReadLine());
@@ -268,7 +268,7 @@ else
 That is a lot of repetition!
 We could actually construct "progressively" the message we will be displaying:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 string msg;
 if (a >= 0)
 {

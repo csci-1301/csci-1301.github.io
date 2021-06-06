@@ -3,7 +3,7 @@
 Note that we can have a decision structure inside a method!
 If we were to re-visit the Rectangle class, we could have a constructor of the following type:
 
-~~~~~~~{.cs .numberLines}
+~~~~~~~
 public Rectangle(int wP, int lP)
     {
         if (wP <= 0 || lP <= 0)
