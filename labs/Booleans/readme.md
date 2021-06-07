@@ -3,11 +3,11 @@ title: Booleans
 ---
 
 
-This lab has four core goals:
+This lab serves four core goals:
 - To help you manipulate boolean values,
-- To practise boolean operators,
+- To practice boolean operators,
 - To understand the concept of _precedence_,
-- To practise simple calculation mentally.
+- To practice simple mental calculations.
 
 
 # Truth Tables
@@ -31,12 +31,12 @@ Console.WriteLine("Negation (not, !) truth table:"
 ```
 #. Compile and execute it. This should display to the screen truth tables for conjunction (and, `&&`) and negation (not, `!`). 
 #. Make sure you understand both the code and its output.
-#. Add after the truth table for the negation the code that will display truth tables for 
+#. Add after the truth table for the negation, write code to display truth tables for 
     #. the binary operators disjunction (or, `||`), 
     #. identity (equality, `==`) and 
     #. difference (inequality, `!=`).
     Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
-#. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality).
+#. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). For inequality, in this case check against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality, but has the same truth table.
     
 # Precedence and Order of Evaluation
 
