@@ -23,18 +23,30 @@ Those booleans can be obtained using conditions, that can be composed ("If we ar
 
 # Boolean Variables and Values
 
+## Variables
+
 We can store if something ("The user has reached the majority", "The switch is on", "The user is using windows", "This computer's clock indicate that we are in the afternoon", …) is true or false in a (boolean) *flag*, which is simply a variable of type boolean.
+Note that `true` and `false` are the only possible two values for boolean variables: there is no third option!
 
-We can declare, assign, initialize and display it as any other variable:
+We can declare, assign, initialize and display a boolean variable, a flag, as any other variable:
 
 ```
-bool flag = true;
-Console.WriteLine(true);
+bool learning_how_to_program = true;
+Console.WriteLine(learning_how_to_program);
 ```
+## Operations on Boolean Values
 
-But the only two possible values are `true` and `false`, and we will study three operations on them: "and" (`&&`, the conjunction), "or" (`||`, the disjunction) and "not" (`!`, the negation).
-They have the expected meaning that the condition "A and B" is true if and only if A is true, and B is true.
-Similarly, "A or B" is false if and only if A is false, and B is false (that is, it takes only one to make their disjunction true).
+The only two possible values are `true` and `false`, and we will study three operations on them:
+
+#. "and" (`&&`, the conjunction),
+#. "or" (`||`, the disjunction),
+#. and "not" (`!`, the negation).
+
+They have the expected meaning that 
+
+#. the condition "A and B" is true if and only if A is true, and B is true,
+#. "A or B" is false if and only if A is false, and B is false (that is, it takes only one to make their disjunction true),
+#. "not A" is true if and only if A is false (that is, "not" "flips" the value it is applied to).
 
 We present this behavior with _truth tables_, as follows:
 
@@ -61,7 +73,17 @@ We could also have represented those tables in $2$-dimensions, as it is done [fo
 
 # Equality and Relational Operators
 
+There is another way of obtaining boolean values, and it is to write expressions, or tests, that "evaluates", or transforms themselves, into a boolean value.
+For instance, you can write an expression meaning "my variable `myAge` has the value 12" which will evaluates to `true` if the value of `myAge` is indeed 12, and to false otherwise.
+_To ease your understanding_, we will write "expressions $\to$ `true`" to express that "expression" evaluates to `true` below, but this is _not_ part of C#'s syntax.
 
+Operators are of two kinds:
+- Equality operators, that can test if two values or variables have the same value and works on all datatypes,
+- Relational operators, that can test if a value or variable have values that is greater or smaller (stricly or largely) than an other value or variable.
+
+Relational operators will be primarily used for numerical values.
+
+## Equality Operators
 
 **Equality Operators** ||
 :---: | :---: | :---: 
@@ -76,8 +98,9 @@ Console.WriteLine(3 == 4);
 Console.WriteLine(myStringVar == "Train");
 Console.WriteLine(myCharVar == 'b');
 ```
+## Relational Operators
 
-We can also test if a value is greater than another, using the following _relational_ operators.
+We can also test if a value or a variable is greater than another, using the following _relational_ operators.
 
 **Relational Operators** | |
 :---: | :---: | :---: 
@@ -87,12 +110,12 @@ $<$ | `<` | `3 < 4` $\to$ `true`
 $\geqslant$| `>=` | `3 >= 4` $\to$ `false`
 $\leqslant$ | `<=` | `3 <= 4` $\to$ `true`
 
-We can also compare `char`, but the order is a bit complex (you can find it, for instance, at <https://stackoverflow.com/a/14967721/>).
+We can also compare `char`, but the order is a bit complex (you can find it explained, for instance, [in this stack overflow answer](https://stackoverflow.com/a/14967721/)).
 
-The precedence, that we will study in lab, is as follows:
+The precedence is as follows:
 
 `! (* / %) (+ -) (< > <= >=) (== !=) && ||`
 
-- Operators with higher precedence are on the left and operators with lower precedence are on the right (ex: `1*2+3` = `1*2` will have higher precedence than `2+3`)
-- Operators in parenthesis have equal precedence and are evaluated in the order they appear, from left to right (ex: `1+2-3` = `1+2` be evaluated before `2-3`)
+- Operators with higher precedence are on the left and operators with lower precedence are on the right: for instance, in an expression like `2*3+4`, `2*3` will have higher precedence than `3+4`, and thus be evaluated first: `2*3+4` is to be read as `(2*3)+4 = 6 + 4 = 10` and _not_ as `2*(3+4) = 2*7 = 14`.
+- Operators in parenthesis have equal precedence and are evaluated in the order they appear, from left to right: in `1-2+3`, `1-2` will be evaluated before `2+3`: `1-2+3` is to be read as `(1-2)+3 = -1 + 3 = 2` and _not_ as `1-(2+3) = 1-5 = 4`.
  
