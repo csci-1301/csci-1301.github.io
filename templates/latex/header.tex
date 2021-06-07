@@ -2,7 +2,7 @@
 % Emoji support for latex
 %%%%%
 
-\usepackage{newunicodechar}
+\usepackage[verbose]{newunicodechar}
 
 % List of symbols supported by Symbola at
 % https://www.fileformat.info/info/unicode/font/symbola/list.htm
@@ -20,7 +20,12 @@
 \newunicodechar{✔}{\symb ✔} % U+2714, "HEAVY CHECK MARK"
 \newunicodechar{↵}{\symb ↵} % U+21B5, "DOWNWARDS ARROW WITH CORNER LEFTWARDS"
 \newunicodechar{🛡}{\symb 🛡} % U+1F6E1, "SHIELD"
-%\newunicodechar{️ }{\symb } % U+FE0F, "VARIATION SELECTOR-16"
+\newunicodechar{ℝ}{\symb ℝ} % U+211D, "Double-Struck Capital R"
+
+% This character "🛡", apparently also represented with "◌️" and ️" " 
+% and known as U+FE0F, "VARIATION SELECTOR-16"
+% was weirdly added, and tracked in the lecture notes using
+% grep "$(printf '\uFE0F')" lectures/*/readme.md
 
 % To add line wrap for code environment
 % https://github.com/jgm/pandoc/issues/4302#issuecomment-360669013
