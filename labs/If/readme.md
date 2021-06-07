@@ -2,8 +2,8 @@
 title: If Statements
 ---
 
-This lab aims at having you practise simple conditional statements.
-It may seem repetitive, but that is because you need to practise `if` statements _a lot_ to understand their mechanism and to be able to write them properly.
+This lab is aimed at having you practice simple conditional statements.
+It may seem repetitive, but you need to practice `if` statements _a lot_ to understand their mechanics and to be able to write them properly.
 
 # Basic Conditional Statements
 
@@ -26,16 +26,16 @@ else{
 
 The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).
 
-#. _Without executing it_, write down what you think will be displayed if the user enters
+#. _Without executing it_, write down what you expect to be displayed if the user enters
     #. "That's confidential",
     #. 10
     #. 18
     #. 19
     #. 22
     #. 29339
-#. Copy-and-paste the code in the body of the `main` method, and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
+#. Copy-and-paste the code in the body of the `main` method and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
 #. There is at least one issue with this code, as "You have reached the age of majority in all US states." will never be displayed. Can you understand why?
-#. Fix the program so that all the messages can be displayed when relevant.
+#. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter your conditions.
 
 ## Writing Simple Conditional Statements
 
