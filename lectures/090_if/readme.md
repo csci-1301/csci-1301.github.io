@@ -3,25 +3,25 @@
 
 ## First Example
 
-~~~~~~~
+```
 Console.WriteLine("Enter your age");
 int age = int.Parse(Console.ReadLine());
 if (age >= 18)
 {
     Console.WriteLine("You can vote!");
 }
-~~~~~~~
+```
 
 The idea is that the statement ` Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`. Otherwise, that statement is simply "skipped".
 
 ## Syntax
 
-~~~~~~~
+```
 if (<condition>)
 {
     <statement block>
 }
-~~~~~~~
+```
 
 Please observe the following.
 
@@ -34,7 +34,7 @@ Please observe the following.
 
 ## Syntax
 
-~~~~~~~
+```
 if (<condition>)
 {
     <statement block 1>
@@ -43,7 +43,7 @@ else
 {
     <statement block 2>
 }
-~~~~~~~
+```
 
 With `if-else` statements, the idea is that the statement block 1 is executed only if the condition evaluates to `true`, and that the statement block 2 is executed only if the condition evaluates to `false`. 
 Note that since a condition is always either true or false, we know that at least one of the block will be executed, and since a condition cannot be true and false at the same time, at most one block will be executed: hence, exactly one block will be executed.
@@ -58,7 +58,7 @@ https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tL
 
 !["A flowchart representation of the nested if-else statement"](img/15nestedif.png)
 
-~~~~~~~
+```
 bool usCitizen = true;
 int age = 19;
 
@@ -77,7 +77,7 @@ else
 {
     Console.WriteLine("Sorry, only citizens can vote");
 }
-~~~~~~~
+```
 
 Note that
 
@@ -87,7 +87,7 @@ Note that
 
 # if-else-if Statements
 
-~~~~~~~
+```
 if (<condition 1>)
 {
     <statement block> // Executed if condition 1 is true
@@ -105,7 +105,7 @@ else
 {
     <statement block>  // Executed if all the conditions are false
 }
-~~~~~~~
+```
 
 Note that the conditions could be really different, not even testing the same thing!
 
@@ -113,7 +113,7 @@ Note that the conditions could be really different, not even testing the same th
 
 We can make an example with really different conditions, not overlapping: 
 
-~~~~~~~
+```
 if (age > 12)
     x = 0;
 else if (charVar == 'c')
@@ -122,7 +122,7 @@ else if (boolFlag)
     x = 2;
 else 
     x = 3;
-~~~~~~~
+```
 
 Giving various values to age, charVar and boolFlag, we will see which value would `x` get in each case.
 
@@ -132,15 +132,15 @@ There is an operator for `if else` statements for particular cases (assignment, 
 
 `condition ? first_expression : second_expression;`
 
-~~~~~~~
+```
 int price = adult ? 5 : 3;
-~~~~~~~
+```
 
 We will have a brief look at it if time allows, otherwise you can read about it at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator>.
 
 # if-else-if Statements
 
-~~~~~~~
+```
 if (<condition 1>)
 {
     <statement block 1> // Executed if condition 1 is true
@@ -158,7 +158,7 @@ else
 {
     <statement block N+1>  // Executed if all the conditions are false
 }
-~~~~~~~
+```
 
 Note that the conditions could be really different, not even testing the same thing!
 
@@ -166,7 +166,7 @@ Note that the conditions could be really different, not even testing the same th
 
 We can make an example with really different conditions, not overlapping: 
 
-~~~~~~~
+```
 if (age > 12)
     x = 0;
 else if (charVar == 'c')
@@ -175,7 +175,7 @@ else if (boolFlag)
     x = 2;
 else 
     x = 3;
-~~~~~~~
+```
 
 Try to give various values to `age`, `charVar` and `boolFlag`, and see which value would `x` get in each case.
 
@@ -187,7 +187,7 @@ We can use it to "store" the result of an interaction with a user.
 
 Assume we want to know if the user work full time at some place, we could get started with:
 
-~~~~~~~
+```
 Console.WriteLine("Do you work full-time here?");
 char ch = Console.ReadKey().KeyChar; // Note that here, passing by, we are using a new method, to read characters.
 
@@ -197,16 +197,16 @@ else if (ch == 'n' || ch == 'N')
      Console.WriteLine("Answered No");
 else
      Console.WriteLine("Said what?");
-~~~~~~~
+```
 
 But we can't accommodate this 3-party situation (you either work here full-time, or you don't), so we can change the behavior to
 
-~~~~~~~
+```
 if (ch == 'y' || ch == 'Y')
      Console.WriteLine("Answered Yes");
 else
      Console.WriteLine("Answered No");
-~~~~~~~
+```
 
 We'll study _user input validation_, that allows to get better answers from the users, later on.
 
@@ -214,25 +214,25 @@ But imagine we are at the beginning of a long form, and we will need to re-use t
 With this previous command, we would need to duplicate all our code in two places.
 Instead, we could "save" the result of our test in a boolean variable, like so:
 
-~~~~~~~
+```
 bool fullTime;
 if (ch == 'y' || ch == 'Y')
     fullTime = true;
 else
     fullTime = false;
-~~~~~~~
+```
 
 If you looked at the `?` operator in lab, you can even shorten that statement to:
 
-~~~~~~~
+```
 fullTime = (ch == 'y' || ch == 'Y') ? true : false;
-~~~~~~~
+```
 
 Why stop here? We could even do
 
-~~~~~~~
+```
 fullTime = (ch == 'y' || ch == 'Y');
-~~~~~~~
+```
 
 Tada! We went from a long, convoluted code, to a very simple line!
 We already did this trick last time, but I thought that seeing it again would help.
@@ -245,7 +245,7 @@ In lab, last time, you were asked the following:
 
 A possible answer is:
 
-~~~~~~~
+```
 int a;
 Console.WriteLine("Enter an integer");
 a = int.Parse(Console.ReadLine());
@@ -263,12 +263,12 @@ else
     else
         Console.WriteLine("Negative and odd");
 }
-~~~~~~~
+```
 
 That is a lot of repetition!
 We could actually construct "progressively" the message we will be displaying:
 
-~~~~~~~
+```
 string msg;
 if (a >= 0)
 {
@@ -282,7 +282,7 @@ if (a % 2 == 0)
     msg += " and even";
 else // if (a % 2 != 0)
     msg += " and odd";
-~~~~~~~
+```
 
 Much better!
 Since the two conditions are actually independent, we can test them in two different `if` statements!

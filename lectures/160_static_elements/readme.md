@@ -3,9 +3,9 @@
 
 When we write:
 
-~~~~~~~
+```
 Console.WriteLine(Math.PI);
-~~~~~~~
+```
 
 The `Math` actually refers to _a class_, and not to _an object_.
 How is that?
@@ -14,17 +14,17 @@ Actually, everything in the `MATH` class is _static_ (`public static class Math`
 
 Class attribute: can be static or not, public or private, a constant or variable.
 
-~~~~~~~
+```
 public const double PI = 3.14159265358979;
-~~~~~~~
+```
 
 We also have static methods:
 
-~~~~~~~
+```
 Math.Min(x,y);
 Math.Max(x,y);
 Math.Pow(x,y);
-~~~~~~~
+```
 
 A static member (variable, method, etc) belongs to the type of an object rather than to an instance of that type.
 
@@ -50,7 +50,7 @@ Non-static method | ✔ OK | ✔ OK
 
 # A Static Class for Arrays
 
-~~~~~~~
+```
 using System;
     static class Lib
     {
@@ -78,9 +78,9 @@ using System;
         return res;
     }
 }
-~~~~~~~
+```
 
-~~~~~~~
+```
 using System;
     class Program
     {
@@ -97,4 +97,4 @@ using System;
         Console.WriteLine(Lib.ValueMatch(arrayA, arrayB));
         }
     }
-~~~~~~~
+```

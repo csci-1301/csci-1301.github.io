@@ -27,10 +27,10 @@ We can store if something ("The user has reached the majority", "The switch is o
 
 We can declare, assign, initialize and display it as any other variable:
 
-~~~~~~~
+```
 bool flag = true;
 Console.WriteLine(true);
-~~~~~~~
+```
 
 But the only two possible values are `true` and `false`, and we will study three operations on them: "and" (`&&`, the conjunction), "or" (`||`, the disjunction) and "not" (`!`, the negation).
 They have the expected meaning that the condition "A and B" is true if and only if A is true, and B is true.
@@ -71,11 +71,11 @@ $\neq$  | `!=` | `3!=4` $\to$ `true`
 
 We test numerical value for equality, as well as `string`, `char` and `bool`!
 
-~~~~~~~
+```
 Console.WriteLine(3 == 4);
 Console.WriteLine(myStringVar == "Train");
 Console.WriteLine(myCharVar == 'b');
-~~~~~~~
+```
 
 We can also test if a value is greater than another, using the following _relational_ operators.
 
