@@ -3,7 +3,7 @@
 `switch` statements allow to simplify the "matching" of a value against a pre-determined set of values.
 Its formal syntax is as follows:
 
-~~~~~~~{.cs .numberLines}
+```
 switch (<variable name>)
 {
     case (<literal 1>):
@@ -17,7 +17,7 @@ switch (<variable name>)
         <statement block n>
         break;
 }
-~~~~~~~
+```
 
 The `(…)` are mandatory, the `{…}` are optional.
 
@@ -28,7 +28,7 @@ The `(…)` are mandatory, the `{…}` are optional.
 For instance, imagine we want to go from a month's number to its name.
 We could do that with an `if…else if …`:
 
-~~~~~~~{.cs .numberLines}
+```
 int month = 11;
 string monthname;
 if (month == 1) monthname = "January";
@@ -36,11 +36,11 @@ else if (month == 2) monthname = "February";
 // ...
 else if (month == 12) monthname = "December";
 else monthname = "Error!";
-~~~~~~~
+```
 
 But since we know that "month" will be a value between 1 and 12, or else we have an error, we could also have:
 
-~~~~~~~{.cs .numberLines}
+```
 switch (month)
 {
     case (1):
@@ -57,11 +57,11 @@ switch (month)
         monthname = "Error!";
         break;
 }
-~~~~~~~
+```
 
 Another example, to match a section letter against 4 possibilities, where two actually result in the same behavior:
 
-~~~~~~~{.cs .numberLines}
+```
 char section = 'c';
 string meet;
 switch (section)
@@ -81,4 +81,4 @@ switch (section)
         meet = "Invalid code";
         break;
 }
-~~~~~~~
+```
