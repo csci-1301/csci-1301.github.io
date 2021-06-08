@@ -22,8 +22,8 @@ switch (<variable name>)
 The `(…)` are mandatory, the `{…}` are optional.
 
 - All the literals need to be different.
-- The literal and the variable have to be of the same type.
-- You can't have case(\<variable name\>)
+- The literals and the variable have to be of the same type.
+- You can't have case(\<variable name\>).
 
 For instance, imagine we want to go from a month's number to its name.
 We could do that with an `if…else if …`:
@@ -59,7 +59,7 @@ switch (month)
 }
 ```
 
-Another example, to match a section letter against 4 possibilities, where two actually result in the same behavior:
+Here is another example, switching on section letter. There are 4 possibilities, but two result in the same behavior:
 
 ```
 char section = 'c';
@@ -82,3 +82,6 @@ switch (section)
         break;
 }
 ```
+
+The `break`statement identifies where the program should stop reading a case.  Here case c contains all of case d, with no additional information added.
+It is also possible to add content exclusively to case c without including the break.  In that situation case c would contain both the c-exclusive content and all of the d content.
