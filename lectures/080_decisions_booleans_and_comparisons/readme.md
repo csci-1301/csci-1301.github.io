@@ -95,7 +95,7 @@ $=$ | `==` | `3 == 4` $\to$ `false`
 $\neq$  | `!=` | `3!=4` $\to$ `true`
 
 Note that testing for equality uses _two equal signs_: C# already uses a single equal sign for assignments (e.g. `myAge = 12;`), so it had to pick another notation!
-This is fairly common accross programing languages, that rarely use a single equal sign for comparision operator.
+It is fairly common accross programing languages to use a single equal sign for assignments and double equal for comparisons.
 
 Writing `a != b` ("`a` is not the same as `b`") is actually logically equivalent to writing `!(a == b)` ("it is not true that `a` is the same as `b`"), and both expressions are acceptable in C#.
 
@@ -122,7 +122,7 @@ My initial is Q: False
 My major is Computer Science: True
 ```
 
-Remember that C# is case-sensitive, and that applies to the equality operators as well: for C#, the string `Thomas` is not the same as the string `thomas`, and similarly for characters.
+Remember that C# is case-sensitive, and that applies to the equality operators as well: for C#, the string `Thomas` is not the same as the string `thomas`. This also holds for characters like `a` versus `A`.
 
 ```
 Console.WriteLine("C# is case-sensitive for string comparison: " + ("thomas" != "Thomas"));
@@ -140,7 +140,7 @@ But C# does not care about 0 decimal values: True
 
 ## Relational Operators
 
-We can also test if a value or a variable is greater than another, using the following _relational_ operators.
+We can test if a value or a variable is greater than another, using the following _relational_ operators.
 
 Mathematical Notation | C# Notation | Example 
 :---: | :---: | :---: 
@@ -169,8 +169,8 @@ Operator |
 
 - Operators with higher precedence are on the left and operators with lower precedence are on the right: for instance, in an expression like `2*3+4`, `2*3` will have higher precedence than `3+4`, and thus be evaluated first: `2*3+4` is to be read as `(2*3)+4 = 6 + 4 = 10` and _not_ as `2*(3+4) = 2*7 = 14`.
 - Operators on the same row have equal precedence and are evaluated in the order they appear, from left to right: in `1-2+3`, `1-2` will be evaluated before `2+3`: `1-2+3` is to be read as `(1-2)+3 = -1 + 3 = 2` and _not_ as `1-(2+3) = 1-5 = 4`.
-- Forgetting about precendence can lead to errors that can be hard for debug: for instance, an expression such as `! 4 == 2` will give an error
+- Forgetting about precendence can lead to errors that can be hard for debug: for instance, an expression such as `! 4 == 2` will give the error
 ```text
 The `!' operator cannot be applied to operand of type `int'
 ```
-The reason for that is, since `!` has a higher precendence than `==`, C# tries first to compute the result of `!4`, which corresponds to "not 4": as negation (`!`) is an operation that can be applied only to booleans, this expression does not make sense and C# reports it. A way of fixing that expression could be to force another order of evaluation using parenthesis, e.g. to write `!(4 == 2)`, which will correctly be evaluated to `true`.
+Since `!` has a higher precendence than `==`, C# first attempts to compute the result of `!4`, which corresponds to "not 4". As negation (`!`) is an operation that can be applied only to booleans, this expression does not make sense and C# reports an error. The expression can be rewritten to change the order of evaluation by using parenthesis, e.g. to write `!(4 == 2)`, which will correctly be evaluated to `true`.
