@@ -1,10 +1,10 @@
 # if Statements
 
-The possibility of "branching" between multiple flows of execution is given thanks to the keyword `if`.
-So far, all the code we studied was executed one line after the other: line $n$ is always executed before line $n+1$ and after line $n-1$ (this order is called "sequential").
-With `if` statement, we now have the possibility of expressing in C# that some lines need to be "skipped", depending if a condition (that evaluates to a boolean value) is met or not.
+The keyword `if` allows us to write code that "branches" between multiple flows of execution.
+So far, all the code we have studied has been executed one line after the other: line $n$ is always executed before line $n+1$ and after line $n-1$ (this order is called "sequential").
+With `if` statements, we can tell C# that some lines need to be "skipped" depending if a condition (that evaluates to a boolean value) is met or not.
 
-We will start by motivating with a simple example, before introducing the syntax of `if` and `if-else` statements formally, and discussing more advanced topics.
+We will start by motivating with a simple example, then introduce the formal syntax of `if` and `if-else` statements, and conclude with a discussion of more advanced topics.
 
 ## First Example
 
@@ -20,7 +20,7 @@ if (age >= 18)
 Console.WriteLine("Thanks for using our program!");
 ```
 
-This code is such that the statement `Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`.
+The code is written such that the statement `Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`.
 Otherwise, that statement is simply "skipped".
 Note that regardless of the truth value of the condition `(age >= 18)`, "Thanks for using our program" will always be displayed: once the body of the `if` statement is executed, the flow of execution resumes its sequential course.
 
@@ -42,12 +42,12 @@ Please observe the following.
 - The curly braces can be removed if the statement block is just one statement. What is between them is called _the body_ of the `if` statement.
 - The following statements (that is, after the `}` that terminates the body of the `if` statement) are executed in any case.
 
-The body of an `if` statement can be arbitrarily complicated: it can contains multiple statements, other `if` statements, object creations, etc.
+The body of an `if` statement can be arbitrarily complicated: it can contain multiple statements, including other `if` statements, object instantiation, etc.
 
 # if-else Statements
 
-One limitation of `if` statements is that they do not permit to describe what should happen if the condition is _not_ met.
-One could use an artifice to fulfill this purpose:
+One limit of `if` statements is that they only describe what happens if the condition is met, and not what should happen if the condition is _not_ met.
+This can be worked around with a clever use of the negation operator (`!`):
 
 ```
 if(<condition>)
@@ -61,9 +61,9 @@ if(!<condition>)
 ```
 
 If `<condition>` is met, then `<statement block 1>` will be executed. 
-If `<condition>` is not met, that is, if it evaluate to `false`, then we know that `!<condition>` will evaluate to `true`, and hence `<statement block 2>` will be executed.
+If `<condition>` is not met, that is, if it evaluates to `false`, then we know that `!<condition>` will evaluate to `true`, and hence `<statement block 2>` will be executed.
 
-This way of doing is not very convenient, and there is a built-in way of achieving the same in C#, thanks to the keyword `else` that enables exactly the behavior we just described.
+This method is inconvenient and clunky, but luckily C# contains the keyword `else` that enables the described behavior in a more elegant syntax.
 
 ## Syntax
 
@@ -83,7 +83,7 @@ Note that since a condition always evaluates to either `true` or `false`, we kno
 Since a condition cannot be `true` and `false` at the same time, we also know that at most one block will be executed.
 Hence, exactly one block will be executed.
 
-A simple example could re-use our previous example:
+Here we modify our previous example to include else:
 
 ```
 Console.WriteLine("Enter your age");
@@ -106,14 +106,14 @@ Console.WriteLine("Thanks for using our program!");
 As we wrote previously, the body of an `if` statement (that is, the `<statement block>`) can be arbitrarily complex.
 In particular, it can include an `if-else` statement itself!
 
-Imagine we want to make our previous program that decides if the user can vote a bit better: we would like to ask not only for the age of the user, but only for its citizenship, and take a decision based on both parameters.
+Imagine we want to improve our previous program that decides if the user can vote: we would like to ask not only for the age of the user, but also citizenship, and make a decision based on both parameters.
 A possible way of doing that is by _nesting the options_, so that we would _first_ check the citizenship, and _then_ the age, before displaying a more personalized message.
 
-The behaviour we would like to implement can be represented with the following activity diagram:
+The behavior we would like to implement can be represented with the following activity diagram:
 
 !["A flowchart representation of the nested if-else statement"](img/vote_age_citizenship)
 
-This particular behaviour can be implemented as follow (where we simply "hard-code" the value of `usCitizen` and `age` to simplify the code):
+This particular behavior can be implemented as follows (where we simply "hard-code" the value of `usCitizen` and `age` to simplify the code):
 
 ```
 bool usCitizen = true;
@@ -140,14 +140,14 @@ Console.WriteLine("Thanks for using our program!");
 Note that
 
 - There is a simpler way to write `usCitizen == true`: simply write `usCitizen`!
-- We could remove the braces since each condition corresponds to exactly one statement, and the new lines and indentation as well. Observe that it would make the code harder to read and debug, though:
+- We could remove the braces (and new lines/indentation) since each condition corresponds to exactly one statement. However, notice that it would make the code harder to read and debug:
     ```
     if (usCitizen == true)if (age >= 18)Console.WriteLine("You can vote!");
     else Console.WriteLine("You are too young!");
     else Console.WriteLine("Sorry, only citizens can vote");
     ```
 
-- We could have a similar program with only one `if else`, but a more complex condition: `if(age > 18 && usCitizen) … else …`, but the messages would be less accurate (as if this condition fails, we cannot tell if it is because of the age or the citizenship).
+- We could have a similar program with only one `if else`, but using a more complex condition: `if(age > 18 && usCitizen) … else …`, but the messages would be less precise (as if this condition fails, we cannot tell if it is because of the age or the citizenship).
 
 # if-else-if Statements
 
@@ -200,13 +200,13 @@ else
 }
 ```
 
-This reduces the need of nesting (that comes with identation for readability) and makes the code easier to read and debug.
+This reduces the need of nesting _statements_ (that comes with identation for readability) and makes the code easier to read and debug.
 
-An important aspect to note is that the conditions could be really different, not even accessing for the same variable!
+An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable!
 
 ## Example
 
-We can make an example with really different conditions, not overlapping: 
+We can make an example with really different, non-overlapping, conditions: 
 
 ```
 if (age > 12)
