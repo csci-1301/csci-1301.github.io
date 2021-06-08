@@ -1,6 +1,14 @@
-# if Statement
+# if Statements
+
+The possibility of "branching" between multiple flows of execution is given thanks to the keyword `if`.
+So far, all the code we studied was executed one line after the other: line $n$ is always executed before line $n+1$ and after line $n-1$ (this order is called "sequential").
+With `if` statement, we now have the possibility of expressing in C# that some lines need to be "skipped", depending if a condition (that evaluates to a boolean value) is met or not.
+
+We will start by motivating with a simple example, before introducing the syntax of `if` and `if-else` statements formally, and discussing more advanced topics.
 
 ## First Example
+
+Let us study the following lines:
 
 ```
 Console.WriteLine("Enter your age");
@@ -9,11 +17,16 @@ if (age >= 18)
 {
     Console.WriteLine("You can vote!");
 }
+Console.WriteLine("Thanks for using our program!");
 ```
 
-Here, the idea is that the statement ` Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`. Otherwise, that statement is simply "skipped".
+This code is such that the statement `Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`.
+Otherwise, that statement is simply "skipped".
+Note that regardless of the truth value of the condition `(age >= 18)`, "Thanks for using our program" will always be displayed: once the body of the `if` statement is executed, the flow of execution resumes its sequential course.
 
 ## Syntax
+
+The syntax of an `if` statement is as follows:
 
 ```
 if (<condition>)
@@ -24,12 +37,33 @@ if (<condition>)
 
 Please observe the following.
 
-- `<Condition>` is something that evaluates to a `bool`. For instance, having a number like in `if(3)` would not compile.
+- `<Condition>` is something that evaluates to a `bool`, such as `myAge > 18` or `firstName == "Thomas"`. Having something that is not an expression or a boolean variable, such as a number, would result in a compilation error: `if(3)` is not syntactically correct.
 - Note the absence of semicolon after `if (<condition>)`.
-- The curly braces can be removed if the statement block is just one statement.
+- The curly braces can be removed if the statement block is just one statement. What is between them is called _the body_ of the `if` statement.
 - The following statements (that is, after the `}` that terminates the body of the `if` statement) are executed in any case.
 
+The body of an `if` statement can be arbitrarily complicated: it can contains multiple statements, other `if` statements, object creations, etc.
+
 # if-else Statements
+
+One limitation of `if` statements is that they do not permit to describe what should happen if the condition is _not_ met.
+One could use an artifice to fulfill this purpose:
+
+```
+if(<condition>)
+{
+    <statement block 1>
+}
+if(!<condition>)
+{
+    <statement block 2>
+}
+```
+
+If `<condition>` is met, then `<statement block 1>` will be executed. 
+If `<condition>` is not met, that is, if it evaluate to `false`, then we know that `!<condition>` will evaluate to `true`, and hence `<statement block 2>` will be executed.
+
+This way of doing is not very convenient, and there is a built-in way of achieving the same in C#, thanks to the keyword `else` that enables exactly the behavior we just described.
 
 ## Syntax
 
@@ -44,18 +78,42 @@ else
 }
 ```
 
-With `if-else` statements, statement block 1 is executed only if the condition evaluates to `true`, and block 2 is executed only if the condition evaluates to `false`. 
-Note that since a condition is always either true or false, we know that at least one of the blocks will be executed. Since a condition cannot be true and false at the same time, we also know that at most one block will be executed. Hence, exactly one block will be executed.
+With `if-else` statements, `<statement block 1>` is executed only if the condition evaluates to `true`, and `<statement block 2>` is executed only if the condition evaluates to `false`. 
+Note that since a condition always evaluates to either `true` or `false`, we know that at least one of the blocks will be executed.
+Since a condition cannot be `true` and `false` at the same time, we also know that at most one block will be executed.
+Hence, exactly one block will be executed.
+
+A simple example could re-use our previous example:
+
+```
+Console.WriteLine("Enter your age");
+int age = int.Parse(Console.ReadLine());
+if (age >= 18)
+{
+    Console.WriteLine("You can vote!");
+}
+else
+{
+    Console.WriteLine("It seems that you are too young to vote!");
+}
+
+Console.WriteLine("Thanks for using our program!");
+```
+
 
 # Nested if-else Statements
 
-A `<statement block>` can actually include an `if-else` statement itself!
+As we wrote previously, the body of an `if` statement (that is, the `<statement block>`) can be arbitrarily complex.
+In particular, it can include an `if-else` statement itself!
 
-<!--
-https://mermaidjs.github.io/mermaid-live-editor/#/view/Z3JhcGggVEQKQVtTdGFydF0tLT58QXNrIGZvciBDaXRpemVuc2hpcCBhbmQgYWdlfCBCe1VzIENpdGl6ZW5zaGlwP30KQiAtLT58VHJ1ZXwgQ3tBZ2Ugb3ZlciAxOD99CkMgLS0-fEZhbHNlfCBFW1lvdSBhcmUgdG9vIHlvdW5nIV0KQyAtLT58VHJ1ZXwgRltZb3UgY2FuIHZvdGUhXQpCIC0tPnxGYWxzZXwgRFtTb3JyeSwgeW91IGNhbid0IHZvdGUgaW4gdGhlIFVTIV0
--->
+Imagine we want to make our previous program that decides if the user can vote a bit better: we would like to ask not only for the age of the user, but only for its citizenship, and take a decision based on both parameters.
+A possible way of doing that is by _nesting the options_, so that we would _first_ check the citizenship, and _then_ the age, before displaying a more personalized message.
 
-!["A flowchart representation of the nested if-else statement"](img/15nestedif.png)
+The behaviour we would like to implement can be represented with the following activity diagram:
+
+!["A flowchart representation of the nested if-else statement"](img/vote_age_citizenship)
+
+This particular behaviour can be implemented as follow (where we simply "hard-code" the value of `usCitizen` and `age` to simplify the code):
 
 ```
 bool usCitizen = true;
@@ -63,7 +121,7 @@ int age = 19;
 
 if (usCitizen == true)
 {
-    if (age > 18)
+    if (age >= 18)
     {
         Console.WriteLine("You can vote!");
     }
@@ -76,15 +134,51 @@ else
 {
     Console.WriteLine("Sorry, only citizens can vote");
 }
+Console.WriteLine("Thanks for using our program!");
 ```
 
 Note that
 
 - There is a simpler way to write `usCitizen == true`: simply write `usCitizen`!
-- We could remove the braces since each condition corresponds to exactly one statement.
-- We could have a similar flavor with only if: `if(age > 18 && usCitizen) … else …`, but the messages would be less accurate.
+- We could remove the braces since each condition corresponds to exactly one statement, and the new lines and indentation as well. Observe that it would make the code harder to read and debug, though:
+    ```
+    if (usCitizen == true)if (age >= 18)Console.WriteLine("You can vote!");
+    else Console.WriteLine("You are too young!");
+    else Console.WriteLine("Sorry, only citizens can vote");
+    ```
+
+- We could have a similar program with only one `if else`, but a more complex condition: `if(age > 18 && usCitizen) … else …`, but the messages would be less accurate (as if this condition fails, we cannot tell if it is because of the age or the citizenship).
 
 # if-else-if Statements
+
+We can also nest the conditions in a different way: instead of writing
+
+```
+if (<condition 1>)
+{
+    <statement block1> // Executed if condition 1 is true.
+}
+else{
+    if (<condition 2>)
+    {
+        <statement block2> // Executed if condition 1 is false and condition 2 is true.
+    }
+    else{
+        if (<condition 3>)
+        {
+            <statement block3> // Executed if condition 1 and 2 are false and condition 3 is true.
+        }
+        else
+        {
+            <statement block4> // Executed if condition 1, 2 and 3 are false.
+        }
+        
+    }
+}
+
+```
+
+We can use a convenient `if-else-if` structure, as follows:
 
 ```
 if (<condition 1>)
@@ -95,7 +189,7 @@ else if (<condition 2>)
 {
    <statement block> // Executed if condition 1 is false and condition 2 is true
 }
-...
+…
 else if (<condition N>)
 {
     <statement block> // Executed if all the previous conditions are false and condition N is true
@@ -106,7 +200,9 @@ else
 }
 ```
 
-Note that the conditions could be really different, not even testing the same thing!
+This reduces the need of nesting (that comes with identation for readability) and makes the code easier to read and debug.
+
+An important aspect to note is that the conditions could be really different, not even accessing for the same variable!
 
 ## Example
 
@@ -123,20 +219,54 @@ else
     x = 3;
 ```
 
-Giving various values for age, charVar and boolFlag, we can see which value would `x` get in each case.
+Giving various values for `age`, `charVar` and `boolFlag`, we can see which value would `x` get in each case:
 
-# ?: Operator
+`age` | `charVar` | `boolFlag` | `x`
+--- | --- | --- | --- | 
+13 | 'c' | `true`  | 0
+10 | 'c' | `true`  | 1
+10 | 'd' | `true`  | 2
+10 | 'd' | `false` | 3
 
-There is an operator for `if else` statements for particular cases (assignment, call, increment, decrement, and new object expressions):
+Note that, in this particular case, the order of the conditions matters quite a lot!
+If we had
+```
+if (boolFlag)
+    x = 2;
+else if (age > 12)
+    x = 0;
+else if (charVar == 'c')
+    x = 1;
+else 
+    x = 3;
+```
 
-`condition ? first_expression : second_expression;`
+Then we would obtain:
+
+`age` | `charVar` | `boolFlag` | `x`
+--- | --- | --- | --- | 
+13 | 'c' | `true`  | 2
+10 | 'c' | `true`  | 2
+10 | 'd' | `true`  | 2
+10 | 'd' | `false` | 3
+
+
+# Shorthand notation: the `?:` Operator
+
+There is an operator for `if else` statements for particular cases (assignment, call, increment, decrement, and new object expressions).
+Its syntax is as follow:
+
+`<condition> ? <first_expression> : <second_expression>;`
+
+For example, one can write:
 
 ```
 int price = adult ? 5 : 3;
 ```
 
-We will have a brief look at it if time allows, otherwise you can read about it at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator>.
+which means that `price` will receive the value `5` if `adult` is `true`, and `3` otherwise.
 
+You can read more about this convenient operator [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
 
 # Boolean Flags
 
@@ -147,7 +277,7 @@ Assume we want to know if the user works full time at some place, we could get s
 
 ```
 Console.WriteLine("Do you work full-time here?");
-char ch = Console.ReadKey().KeyChar; // Note that here, passing by, we are using a new method, to read characters.
+char ch = Console.ReadKey().KeyChar; // Note that we are using a new method, to read characters.
 
 if (ch == 'y' || ch == 'Y')
      Console.WriteLine("Answered Yes");
@@ -157,7 +287,7 @@ else
      Console.WriteLine("Said what?");
 ```
 
-But there aren't three answers to this question (you either work here full-time, or you don't), so we can change the behavior to
+But there are not three answers to this question (you either work here full-time, or you do not), so we can change the behavior to
 
 ```
 if (ch == 'y' || ch == 'Y')
@@ -180,67 +310,18 @@ else
     fullTime = false;
 ```
 
-If you understand the `?` operator (from the link in lecture or from lab), you can even shorten that statement to:
+If you understand the `?` operator, you can even shorten that statement to:
 
 ```
 fullTime = (ch == 'y' || ch == 'Y') ? true : false;
 ```
 
-Why stop here? We could even do
+But why stop here? We could even do
 
 ```
 fullTime = (ch == 'y' || ch == 'Y');
 ```
 
-Tada! We went from long, convoluted code, to a very simple line!
-We already did this trick last time, but I thought that seeing it again would help.
-
-#  Constructing a Value Progressively
-
-In the if statement lab, you are asked the following:
-
-> Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked 0” if the number is 0.
-
-A possible answer is:
-
-```
-int a;
-Console.WriteLine("Enter an integer");
-a = int.Parse(Console.ReadLine());
-if (a >= 0)
-{
-    if (a % 2 == 0)
-        Console.WriteLine("Positive and even");
-    else // if (a % 2 != 0)
-        Console.WriteLine("Positive and odd");
-}
-else
-{
-    if (a % 2 == 0)
-        Console.WriteLine("Negative and even");
-    else
-        Console.WriteLine("Negative and odd");
-}
-```
-
-That is a lot of repetition!
-We could actually "progressively" construct the message we will be displaying:
-
-```
-string msg;
-if (a >= 0)
-{
-    msg = "Positive";
-}
-else
-{
-    msg = "Negative";
-}
-if (a % 2 == 0)
-    msg += " and even";
-else // if (a % 2 != 0)
-    msg += " and odd";
-```
-
-Much better!
-Since the two conditions are actually independent, we can test them in two different `if` statements!
+And that is it!
+We went from long, convoluted code, to a very simple line!
+This allows to simply store result of tests in variables, and to access it easily.

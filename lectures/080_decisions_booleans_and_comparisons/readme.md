@@ -146,8 +146,8 @@ Mathematical Notation | C# Notation | Example
 :---: | :---: | :---: 
 $>$ |  `>` | `3 > 4` $\to$ `false`
 $<$ | `<` | `3 < 4` $\to$ `true`
-$\geqslant$| `>=` | `3 >= 4` $\to$ `false`
-$\leqslant$ | `<=` | `3 <= 4` $\to$ `true`
+$≥$ or $⩾$ | `>=` | `3 >= 4` $\to$ `false`
+$≤$ or $⩽$ | `<=` | `3 <= 4` $\to$ `true`
 
 Relational operators can also compare `char`, but the order is a bit complex (you can find it explained, for instance, [in this stack overflow answer](https://stackoverflow.com/a/14967721/)).
 

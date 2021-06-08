@@ -1,0 +1,43 @@
+\documentclass[border=20pt]{standalone}
+\renewcommand\familydefault{\sfdefault} % Default family: serif
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta,arrows}
+\usetikzlibrary{positioning}
+\tikzset{
+  initial/.style={circle, fill},
+  decision/.style={diamond, black, draw},
+  action/.style={rectangle, draw, rounded corners},
+  arrow/.style={draw, -{Latex[length=3mm]}, thick}
+  }
+\begin{document}
+\begin{tikzpicture}[node distance=1.5cm]
+	% Frame
+	\draw [rounded corners] (-6.8,-1.5) rectangle (7, -11);
+	\node (title) at (3.6, -1.3) {\textbf{Determining if a user can vote in the US}};
+
+	% Nodes
+	\node[initial] (initial) at (0,-1) {};
+	\node[action, below of = initial] (ask)  {Ask for citizenship and age};
+	\node[decision, below = .7cm of ask] (decision1)  {Citizen?};
+	\node[action, below right = 2.3cm of decision1] (sorry) {Sorry, only citizens can vote};
+	\node[decision, below left = 1cm and 2cm of decision1] (decision2)  {Age?};
+	\node[action, below left = 1cm and 1cm of decision2] (major) {You can vote!};
+	\node[action, below right = 1cm and 1cm of decision2] (young) {You are too young!};
+	\node[action, below = 2cm of young] (exit) {Thanks for using our program.};
+
+	% Arrow
+	\draw [arrow] (initial) -- (ask);
+	\draw [arrow] (ask) -- (decision1);
+	\draw [arrow] (decision1) -- node[above, pos=1pt]{[US citizen]} ++(-2cm, 0) -| (decision2);
+	\draw [arrow] (decision1) -- node[above, pos=.4pt]{[Non-US citizen]} ++(3.9cm, 0) -| (sorry);
+	\draw [arrow] (decision2) -- node[above, pos=1pt]{[Major]} ++(-2cm, 0) -| (major);
+	\draw [arrow] (decision2) -- node[above, pos=.7pt]{[Not major]} ++(2cm, 0) -| (young);
+	% Arrows to exit
+	\draw [arrow] (young) -- (exit);
+	\draw [arrow] (major) -- ++(0cm, -1cm) -| (exit);
+	\draw [arrow] (sorry) -- ++(0cm, -2.1cm) -| (exit);
+\end{tikzpicture}
+\end{document}
+

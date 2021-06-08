@@ -50,7 +50,60 @@ Read all the instructions in this part before starting to type code. Create a ne
 
 For each of those questions, write on paper whenever you should use if, if-else, if-else-if or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, $0$, and remember that $0$ is even, etc.) and make sure that what is displayed on the screen is always correct.
 
- 
+## Observation: How to Construct a Value Progressively
+
+Please, read this part only once you have solved the last question of the previous exercise.
+You were asked the following:
+
+> Ask the user for an integer, and display on the screen “positive and odd” if the number is positive and odd, “positive and even” if the number is positive and even, “negative and odd” if the number is negative and odd, “negative and even” if the number is negative and even, and “You picked 0” if the number is 0.
+
+A possible answer is:
+
+```
+int a;
+Console.WriteLine("Enter an integer");
+a = int.Parse(Console.ReadLine());
+if (a >= 0)
+{
+    if (a % 2 == 0)
+        Console.WriteLine("Positive and even");
+    else // if (a % 2 != 0)
+        Console.WriteLine("Positive and odd");
+}
+else
+{
+    if (a % 2 == 0)
+        Console.WriteLine("Negative and even");
+    else
+        Console.WriteLine("Negative and odd");
+}
+```
+
+That is a lot of repetition!
+And, as you know, programmers _hate_ having to copy-and-paste the very same code, as it requires twice the editing in case of improvment!
+
+We could actually "progressively" construct the message we will be displaying:
+
+```
+string msg;
+if (a >= 0)
+{
+    msg = "Positive";
+}
+else
+{
+    msg = "Negative";
+}
+if (a % 2 == 0)
+    msg += " and even";
+else // if (a % 2 != 0)
+    msg += " and odd";
+```
+
+Much better!
+Since the two conditions are actually independent, we can test them in two different `if` statements!
+
+
 # Conditional Operator (optional)
 
 You were introduced to the conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions).
