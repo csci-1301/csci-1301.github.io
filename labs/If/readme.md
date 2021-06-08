@@ -80,7 +80,7 @@ else
 ```
 
 That is a lot of repetition!
-And, as you know, programmers _hate_ having to copy-and-paste the very same code, as it requires twice the editing in case of improvment!
+And, as you know, programmers _hate_ having to copy-and-paste the very same code, as it requires twice the editing every time you make an update!
 
 We could actually "progressively" construct the message we will be displaying:
 
