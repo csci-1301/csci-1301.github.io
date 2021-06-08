@@ -43,19 +43,8 @@ Console.WriteLine("Negation (not, !) truth table:"
 ## Reading and Understanding
 
 If you read the [documentation on operator precedence](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence), you will see that operators are evaluated in a particular order.
-That is,
-
-|
-:---: | :---: 
-`!` | is evaluated before
-`*`, `/`, and `%` | which are evaluated before
-`+` and `-` | which are evaluated before
-`<`, `>`, `<=`, and `>=` | which are evaluated before
-`==` and `!=` | which are evaluated before
-`&&` | which is evaluated before
-`||`| which comes last.
-
-and that within those groups, operations are evaluated from left to right.
+From higher precedence (that is, evaluated first) to lower precedence (that is, evaluated last), this order is: `! (* / %) (+ -) (< > <= >=) (== !=) && ||`.
+Inside each group in parenthesis, operations are evaluated from left to right.
 
 So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
 
