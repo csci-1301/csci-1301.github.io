@@ -1,4 +1,4 @@
-# if Statements
+# if, if-else and Nested if Statements
 
 The keyword `if` allows us to write code that "branches" between multiple flows of execution.
 So far, all the code we have studied has been executed one line after the other: line $n$ is always executed before line $n+1$ and after line $n-1$ (this order is called "sequential").
@@ -6,7 +6,9 @@ With `if` statements, we can tell C# that some lines need to be "skipped" depend
 
 We will start by motivating with a simple example, then introduce the formal syntax of `if` and `if-else` statements, and conclude with a discussion of more advanced topics.
 
-## First Example
+## if Statements
+
+### First Example
 
 Let us study the following lines:
 
@@ -28,9 +30,7 @@ This behaviour can be represented as follows:
 
 !["A flowchart representation of an if statement"](img/activity_diag_vote_if)
 
-
-## Syntax
-
+### Syntax
 
 The syntax of an `if` statement is as follows:
 
@@ -50,7 +50,7 @@ Please observe the following.
 
 The body of an `if` statement can be arbitrarily complicated: it can contain multiple statements, including other `if` statements, object instantiation, etc.
 
-# if-else Statements
+## if-else Statements
 
 One limit of `if` statements is that they only describe what happens if the condition is met, and not what should happen if the condition is _not_ met.
 This can be worked around with a clever use of the negation operator (`!`):
@@ -71,7 +71,7 @@ If `<condition>` is not met, that is, if it evaluates to `false`, then we know t
 
 This method is inconvenient and clunky, but luckily C# contains the keyword `else` that enables the described behavior in a more elegant syntax.
 
-## Syntax
+### Syntax
 
 ```
 if (<condition>)
@@ -88,6 +88,8 @@ With `if-else` statements, `<statement block 1>` is executed only if the conditi
 Note that since a condition always evaluates to either `true` or `false`, we know that at least one of the blocks will be executed.
 Since a condition cannot be `true` and `false` at the same time, we also know that at most one block will be executed.
 Hence, exactly one block will be executed.
+
+### Example 
 
 Here we modify our previous example to include else:
 
@@ -111,10 +113,12 @@ This behaviour can be represented as follows:
 !["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
 
 
-# Nested if-else Statements
+## Nested if-else Statements
 
 As we wrote previously, the body of an `if` statement (that is, the `<statement block>`) can be arbitrarily complex.
 In particular, it can include an `if-else` statement itself!
+
+### Example
 
 Imagine we want to improve our previous program that decides if the user can vote: we would like to ask not only for the age of the user, but also citizenship, and make a decision based on both parameters.
 A possible way of doing that is by _nesting the options_, so that we would _first_ check the citizenship, and _then_ the age, before displaying a more personalized message.
@@ -159,7 +163,9 @@ Note that
 
 - We could have a similar program with only one `if else`, but using a more complex condition: `if(age > 18 && usCitizen) … else …`, but the messages would be less precise (as if this condition fails, we cannot tell if it is because of the age or the citizenship).
 
-# if-else-if Statements
+## if-else-if Statements
+
+### Syntax
 
 We can also nest the conditions in a different way: instead of writing
 
@@ -214,7 +220,7 @@ This reduces the need of nesting _statements_ (that comes with identation for re
 
 An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable!
 
-## Example
+### Example
 
 We can make an example with really different, non-overlapping, conditions: 
 
@@ -261,7 +267,7 @@ Then we would obtain:
 10 | 'd' | `false` | 3
 
 
-# Shorthand notation: the `?:` Operator
+## Shorthand notation: the `?:` Operator
 
 There is an operator for `if else` statements for particular cases (assignment, call, increment, decrement, and new object expressions).
 Its syntax is as follow:
@@ -278,7 +284,7 @@ which means that `price` will receive the value `5` if `adult` is `true`, and `3
 
 You can read more about this convenient operator [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
 
-# Boolean Flags
+## Coming Back to Boolean Flags
 
 Do you remember that a boolean *flag* is a boolean variable?
 We can use it to "store" the result of an interaction with a user.
