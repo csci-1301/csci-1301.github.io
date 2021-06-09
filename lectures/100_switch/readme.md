@@ -1,7 +1,14 @@
 # Switch Statements
 
-`switch` statements allow to simplify the "matching" of a value against a pre-determined set of values.
-Its formal syntax is as follows:
+Another way of selecting which "branch" of code to execute is given thanks to `switch` statements.
+Those statements have a flair similar to `if…else if … else`, except that they "force" all the conditions to test the value of the same variable.
+While using _more restrictive_ structures can seem odd at first, it is important to understand that they allow the programmer to think differently about their program, and, in this particular case, that it allows to easily read, understand and check a particular decision structure.
+
+Stated differently, `switch` statements allow to simplify the "matching" of a value against a pre-determined set of values.
+
+## Syntax
+
+The formal syntax of `switch` statements is as follows:
 
 ```
 switch (<variable name>)
@@ -12,28 +19,32 @@ switch (<variable name>)
     case (<literal 2>):
         <statement block 2>
         break;
-    ...
+    …
     default:
         <statement block n>
         break;
 }
 ```
 
-The `(…)` are mandatory, the `{…}` are optional.
+The `(…)` are mandatory, but the `{…}` are optional.
+
+Note that to be correct, you have to follow multiple restrictions:
 
 - All the literals need to be different.
 - The literals and the variable have to be of the same type.
-- You can't have case(\<variable name\>).
+- A literal _cannot be_ a variable name: it has to be an actual value!
 
-For instance, imagine we want to go from a month's number to its name.
+## Example
+
+For instance, imagine we want to go from a month's number (e.g., `1`) to its name (e.g. `"January"`).
 We could do that with an `if…else if …`:
 
 ```
-int month = 11;
+int month = 11; // simply assume that we obtained this information somehow.
 string monthname;
 if (month == 1) monthname = "January";
 else if (month == 2) monthname = "February";
-// ...
+// fill in cases for March to November
 else if (month == 12) monthname = "December";
 else monthname = "Error!";
 ```

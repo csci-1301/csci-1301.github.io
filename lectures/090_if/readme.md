@@ -199,26 +199,28 @@ We can use a convenient `if-else-if` structure, as follows:
 ```
 if (<condition 1>)
 {
-    <statement block> // Executed if condition 1 is true
+    <statement block 1> // Executed if condition 1 is true
 }
 else if (<condition 2>)
 {
-   <statement block> // Executed if condition 1 is false and condition 2 is true
+   <statement block 2> // Executed if condition 1 is false and condition 2 is true
 }
 …
 else if (<condition N>)
 {
-    <statement block> // Executed if all the previous conditions are false and condition N is true
+    <statement block N> // Executed if all the previous conditions are false and condition N is true
 }
 else
 {
-    <statement block>  // Executed if all the conditions are false
+    <statement block N+1>  // Executed if all the conditions are false
 }
 ```
 
 This reduces the need of nesting _statements_ (that comes with identation for readability) and makes the code easier to read and debug.
 
 An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable!
+However, if a "trailing else" (the last else) is present, than at least one statement block will always be executed: if all the conditions fails, then the `<statement block N+1>` will be executed.
+Note that this trailing else is not mandatory and could be ommited.
 
 ### Example
 
