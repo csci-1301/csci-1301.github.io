@@ -24,7 +24,13 @@ This code is such that the statement `Console.WriteLine("You can vote!");` is ex
 Otherwise, that statement is simply "skipped".
 Note that regardless of the truth value of the condition `(age >= 18)`, "Thanks for using our program" will always be displayed: once the body of the `if` statement is executed, the flow of execution resumes its sequential course.
 
+This behaviour can be represented as follows:
+
+!["A flowchart representation of an if statement"](img/activity_diag_vote_if)
+
+
 ## Syntax
+
 
 The syntax of an `if` statement is as follows:
 
@@ -94,11 +100,15 @@ if (age >= 18)
 }
 else
 {
-    Console.WriteLine("It seems that you are too young to vote!");
+    Console.WriteLine("You are too young!");
 }
 
 Console.WriteLine("Thanks for using our program!");
 ```
+
+This behaviour can be represented as follows:
+
+!["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
 
 
 # Nested if-else Statements
