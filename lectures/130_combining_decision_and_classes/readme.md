@@ -22,7 +22,7 @@ public Rectangle(int wP, int lP)
 
 # Putting it all together!
 
-```{.cs .numberLines .lineAnchors}
+```
 using System;
 
 class Loan
@@ -105,7 +105,7 @@ class Loan
 ```
 
 
-```{.cs .numberLines .lineAnchors}
+```
 using System;
 class Program
 {
