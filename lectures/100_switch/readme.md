@@ -40,18 +40,26 @@ For instance, imagine we want to go from a month's number (e.g., `1`) to its nam
 We could do that with an `if…else if …`:
 
 ```
-int month = 11; // simply assume that we obtained this information somehow.
+Console.WriteLine("Enter the month as a number between 1 and 12.");
+int month = int.Parse(Console.ReadLine()); .
 string monthname;
+
 if (month == 1) monthname = "January";
 else if (month == 2) monthname = "February";
 // fill in cases for March to November
 else if (month == 12) monthname = "December";
 else monthname = "Error!";
+
+Console.WriteLine("The number " + month + " corresponds to the month " + monthname + ".");
 ```
 
 But since we know that "month" will be a value between 1 and 12, or else we have an error, we could also have:
 
 ```
+Console.WriteLine("Enter the month as a number between 1 and 12.");
+int month = int.Parse(Console.ReadLine()); .
+string monthname;
+
 switch (month)
 {
     case (1):
@@ -69,6 +77,10 @@ switch (month)
         break;
 }
 ```
+
+Both structures have the same activity diagram:
+
+
 
 Here is another example, switching on section letter. There are 4 possibilities, but two result in the same behavior:
 
