@@ -124,6 +124,7 @@ Multiple online platforms exist, such as:
 - <https://www.onlinegdb.com/online_csharp_compiler>
 - <https://www.jdoodle.com/compile-c-sharp-online/>
 - <https://dotnetfiddle.net/>
+- <https://www.w3schools.com/cs/trycs.asp?filename=demo_helloworld>
 
 Note that none of them are endorsed by the school and that they can pose security and privacy challenges: never enter any sensitive information and do not rely on them too heavily.
 However, they can be a good support if you would like to test a short snippet of code but do not have access at the moment to a computer with MonoDevelop or Visual Studio installed.

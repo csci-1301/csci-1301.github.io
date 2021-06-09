@@ -2,11 +2,63 @@
 title: Practising if and switch
 ---
 
+# Mastering `switch` statement
+
+Copy-and-paste the following code in a `Main` method:
+
+```
+Console.WriteLine("Please, enter the day of the week.");
+string string_day = Console.ReadLine();
+int num_day;
+switch (string_day) {
+    case ("Monday"):
+        num_day = 1;
+        break;
+    case ("Tuesday"):
+        num_day = 2;
+        break;
+    case ("Wednesday"):
+        num_day = 3;
+        break;
+    case ("Thursday"):
+        num_day = 4;
+        break;
+    case ("Friday"):
+        num_day = 5;
+        break;
+    case ("Saturday"):
+        num_day = 6;
+        break;
+    case ("Sunday"):
+        num_day = 7;
+        break;
+    default:
+        num_day = -1; // This is an error code.
+        break;
+}
+Console.WriteLine("The number corresponding to " + string_day + " is " + num_day + ".");
+```
+
+Now, do the following:
+
+#. Test the program with various values and make sure it behaves as expected.
+#. Comment the `default:` case along with the two lines below it, and compile your program. Why is the compiler complaining?
+#. Restore the code to its original state.
+#. Change the code so that "monday" would make the value 1 being assigned to `num_day`.
+#. Change the code so that [the days of the week would start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday), i.e., "Sunday" trigger the value 1 to being assigned to `num_day`, "Monday" trigger the value 2 to being assigned to `num_day`, etc.
+#. Finally, change the last message if the code is in error: use an `if` statement to display a different message if the user input did not matched one of the literals in your `switch` statement.
+
 # Practicing `if` and `switch`
 
-This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables. Create a new project and do the following in Main. Initialize a `string` variable named "day," an `int` variable named "myVar," a `char` variable named "initial," and a Boolean variable named "flag."
-Set and change the value of these variables to make good tests as you progress through this problem.
-You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.
+This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables.
+The main goal is to have you practise "transforming" `if` statements into `switch` statements, and reciprocally.
+This will help you in memorizing both, and in chosing the most convenient to perform certain task.
+
+Create a new project and do the following in `Main`. 
+
+#. Initialize a `string` variable named "day," an `int` variable named "myVar," a `char` variable named "initial," and a Boolean variable named "flag."
+#. Set and change the value of these variables to make good tests as you progress through this problem.
+#. You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.
 
 ## From `switch` to `if-else`
 
@@ -28,5 +80,5 @@ What is the appropriate kind of statement to do this?
 ## Complex Conditions
 
 #. Write a statement that doubles the value of `myVar` if `day` is `"Sun."`, triples the value of `myVar` if `day` is not `"Sun."` and `initial` is `'a'`, and sets `myVar` to `0` otherwise.
-#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You will need to understand how to use the `IsUpper` method (<https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0>).
+#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You will need to understand how to use the `IsUpper` method, and the [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0) can help you with that.
 
