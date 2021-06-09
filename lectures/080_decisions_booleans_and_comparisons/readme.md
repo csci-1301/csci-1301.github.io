@@ -12,7 +12,7 @@ At the beginning of class the instructor may
 
 This type of "branching" between multiple choices can be represented with an [activity diagram](https://en.wikipedia.org/wiki/Activity_diagram):
 
-!["An Activity Diagram on Teaching a Class"](img/teaching)
+!["An Activity Diagram on Teaching a Class"](img/activity_diag_teaching)
 
 In C#, we will express
 

@@ -111,7 +111,7 @@ A possible way of doing that is by _nesting the options_, so that we would _firs
 
 The behaviour we would like to implement can be represented with the following activity diagram:
 
-!["A flowchart representation of the nested if-else statement"](img/vote_age_citizenship)
+!["A flowchart representation of the nested if-else statement"](img/activity_diag_vote_nested_if)
 
 This particular behaviour can be implemented as follow (where we simply "hard-code" the value of `usCitizen` and `age` to simplify the code):
 
