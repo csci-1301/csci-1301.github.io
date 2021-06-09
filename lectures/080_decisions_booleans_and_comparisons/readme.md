@@ -170,7 +170,8 @@ Operator |
 - Operators with higher precedence are on the left and operators with lower precedence are on the right: for instance, in an expression like `2*3+4`, `2*3` will have higher precedence than `3+4`, and thus be evaluated first: `2*3+4` is to be read as `(2*3)+4 = 6 + 4 = 10` and _not_ as `2*(3+4) = 2*7 = 14`.
 - Operators on the same row have equal precedence and are evaluated in the order they appear, from left to right: in `1-2+3`, `1-2` will be evaluated before `2+3`: `1-2+3` is to be read as `(1-2)+3 = -1 + 3 = 2` and _not_ as `1-(2+3) = 1-5 = 4`.
 - Forgetting about precendence can lead to errors that can be hard for debug: for instance, an expression such as `! 4 == 2` will give an error
-```text
-The `!' operator cannot be applied to operand of type `int'
-```
-The reason for that is, since `!` has a higher precendence than `==`, C# tries first to compute the result of `!4`, which corresponds to "not 4": as negation (`!`) is an operation that can be applied only to booleans, this expression does not make sense and C# reports it. A way of fixing that expression could be to force another order of evaluation using parenthesis, e.g. to write `!(4 == 2)`, which will correctly be evaluated to `true`.
+
+    ```text
+    The `!' operator cannot be applied to operand of type `int'
+    ```
+    The reason for that is, since `!` has a higher precendence than `==`, C# tries first to compute the result of `!4`, which corresponds to "not 4": as negation (`!`) is an operation that can be applied only to booleans, this expression does not make sense and C# reports it. A way of fixing that expression could be to force another order of evaluation using parenthesis, e.g. to write `!(4 == 2)`, which will correctly be evaluated to `true`.
