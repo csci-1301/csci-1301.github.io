@@ -109,6 +109,12 @@ ARCHIVES := $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=))))
 # $(subst /src/,/,$(dir $(SOURCEDIRS:/=)) furthermore replaces /src/ with noting ("labs/HelloWorld/HelloWorld_Solution/")
 # $(patsubst %/,%.zip,$(subst /src/,/,$(dir $(SOURCEDIRS:/=)))) finally replaces the last "/" with ".zip" ("labs/HelloWorld/HelloWorld_Solution.zip")
 
+### Image files
+
+SOURCE_IMAGES_FILES := $(shell find img/ -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
+
+TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
+
 # -------------------------------
 ## Performance & Global Options
 # -------------------------------
@@ -167,12 +173,20 @@ PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg
 clean:
 	@echo "cleaning build artifacts..."
 	rm -rf $(BUILD_DIR)
+	
+# Individual images:
+$(BUILD_DIR)img/%: img/%
+	rsync -av $<  $@
 
-$(BUILD_DIR) $(BUILD_DIR)img/ $(BUILD_DIR)$(LABS_DIR): 
+# Every images:
+build/img: $(SOURCE_IMAGES_FILES)
+	mkdir -p $(BUILD_DIR)img/
+	make $(TARGET_IMAGES_FILES)
+
+$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img
 	@echo "starting build..."
-	mkdir -p $(BUILD_DIR)$(LABS_DIR) $(BUILD_DIR)img/
+	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	rsync -av img/favicon/* $(BUILD_DIR)
-	find img -maxdepth 1 -type f | xargs -I {} rsync -av {} $(BUILD_DIR)img # We copy only the files, and not the folder.
 	rsync -av $(WEBPATH)style.css $(BUILD_DIR)
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
@@ -401,4 +415,4 @@ all: build
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$var is [${LABS_DIRS}])
+$(info $$var is [${TARGET_IMAGES_FILES}])
