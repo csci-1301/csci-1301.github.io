@@ -89,7 +89,7 @@ Both structures have the same activity diagram:
 
 However, note that a more faithful representation of the `if…else if …` structure would actually be made only of _binary_ choices: `switch` statements open the possiblity of representing $n$-ary choices "natively", without having to represent them with $n-1$ binary choices.
 
-Furthermore, note that _not all `if…else…if` statements can be rewritten as `switch`!
+Furthermore, note that _not_ all `if…else…if` statements can be rewritten as `switch`!
 Typically, consider a condition `mileage > 1000` over an `int` `mileage`, a `switch` could never express that condition, as it would have to list all the `int` greater than 1,000!
 
 ## Second Example: Switching on Characters

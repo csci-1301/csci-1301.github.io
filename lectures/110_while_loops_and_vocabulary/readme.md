@@ -2,16 +2,16 @@
 
 ## Formal Syntax
 
-```~
+```
 while (<condition>)
 {
     <statement block>
 }
-```~
+```
 
 ## Example
 
-```~
+```
 int number = 0;
 while (number <=5)
 {
@@ -19,7 +19,7 @@ while (number <=5)
     C.WL(number);
     number++;
 }
-```~
+```
 
 Notes:
 
@@ -35,20 +35,20 @@ Let us review some of the "classic" blunders.
 ## Failing to update the variable occurring in the condition
 
 
-```~
+```
 int number = 0;
 while (number <=5)
 {
     C.WL("Hi Mom!);
     C.WL(number);
 }
-```~
+```
 
 Number isn't changed!
 
 ## Updating the "wrong" value
 
-```~
+```
 int number1, number = 0;
 while (number <=5)
 {
@@ -56,11 +56,11 @@ while (number <=5)
     C.WL(number);
     number1++;
 }
-```~
+```
 
 ## Having an empty body
 
-```~
+```
 int number = 0; 
 while (number <=5); // Note the semi-colon here!
 {
@@ -68,21 +68,21 @@ while (number <=5); // Note the semi-colon here!
     C.WL(number);
     number++;
 }
-```~
+```
 
 ## Having an empty body (variation)
 
-```~
+```
 int number = 0;
 while (number <=5)
     C.WL("Hi Mom!);
     C.WL(number);
     number++;
-```~
+```
 
 ## Going in the wrong direction
 
-```~
+```
 int number = 0;
 while (number >=5)
 {
@@ -90,7 +90,7 @@ while (number >=5)
     C.WL(number);
     number++;
 }
-```~
+```
 
 The variable `number` should be decremented, not incremented.
 
@@ -99,7 +99,7 @@ The variable `number` should be decremented, not incremented.
 
 We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:
 
-```~
+```
 Console.WriteLine("Please enter a positive number");
 int n = int.Parse(Console.ReadLine());
 while (n < 0)
@@ -107,7 +107,7 @@ while (n < 0)
     Console.WriteLine($"You entered {n}, I asked you for a positive number. Please try again.");
     n = int.Parse(Console.ReadLine());
 }
-```~
+```
 
 # Vocabulary
 
@@ -117,19 +117,19 @@ Counter
 
 : Variable that is incremented every time a given event occurs.
 
-```~
+```
 int i = 0; // i is a counter
 while (i < 10){
     Console.WriteLine($"{i}");
     i++;
 }
-```~
+```
 
 Sentinel Value
 
 :  A special value that signals that the loop needs to end.
 
-```~
+```
 Console.WriteLine("Give me a string.");
 string ans = Console.ReadLine();
 while (ans != "Quit") // The sentinel value is "Quit".
@@ -138,13 +138,13 @@ while (ans != "Quit") // The sentinel value is "Quit".
     Console.WriteLine("Enter \"Quit\" to quit, or anything else to continue.");
     ans = Console.ReadLine();
 }
-```~
+```
 
 Accumulator
 
 : Variable used to keep the total of several values.
 
-```~
+```
 int i = 0, total = 0;
 while (i < 10){
     total += i; // total is the accumulator.
@@ -152,12 +152,12 @@ while (i < 10){
 }
 
 Console.WriteLine($"The sum from 0 to {i} is {total}.");
-```~
+```
 
 
 We can have an accumulator and a sentinel value at the same time:
 
-```~
+```
 Console.WriteLine("Enter a number to sum, or \"Done\" to stop and print the total.");
 string enter = Console.ReadLine();
 int sum = 0;
@@ -168,11 +168,11 @@ while (enter != "Done")
     enter = Console.ReadLine();
 }
 Console.WriteLine($"Your total is {sum}.");
-```~
+```
 
 You can have counter, accumulator and sentinel values at the same time!
 
-```~
+```
 int a = 0;
 int sum = 0;
 int counter = 0;
@@ -187,7 +187,7 @@ while (entered != "N") // Sentinel value
     counter++; // counter
 }
 Console.WriteLine($"The average is {sum / (double)counter}");
-```~
+```
 
 We can distinguish between three "flavors" of loops (that are not mutually exclusive):
 
@@ -210,7 +210,7 @@ Note that a user-controlled loop can be sentinel-controlled (that is the example
 
 The `TryParse` method is a complex method that will allow us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
 
-```~
+```
 Console.WriteLine("Please, enter an integer.");
 string message = Console.ReadLine();
 int a;
@@ -224,14 +224,14 @@ else
         Console.WriteLine("The value entered was not an integer, so 0 is assigned to a.");
     }
 Console.WriteLine(a);
-```~
+```
 
 As you can see, `int.TryParse` takes two arguments, a string and a variable name (prefixed by the "magic" novel keyword `out`) and returns a boolean.
 You will get a chance to experiment with this code in lab.
 
 # While Loop With Complex Conditions
 
-```~
+```
 int c;
 string message;
 int count;
@@ -258,4 +258,4 @@ while (!res && count < 3)
         }
 }
 Console.WriteLine("The value is: " + c);
-```~
+```
