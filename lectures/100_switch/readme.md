@@ -31,7 +31,7 @@ The `(…)` are mandatory, but the `{…}` are optional.
 Note that to be correct, you have to follow multiple restrictions:
 
 - All the literals need to be different.
-- The literals and the variable have to be of the same type.
+- The literals and the variable have to be of the same type; the `switch` statement compares the variable and the literals using the equality comparison (and _only_ the equality comparison--it cannot use the greater than/less than comparisons) and a comparison cannot be made between different types because it would return an error.
 - A literal _cannot be_ a variable name: it has to be an actual value!
 
 Finally, note that since all the literals have to be different, the order of the literal does not matter in `switch` statements!
