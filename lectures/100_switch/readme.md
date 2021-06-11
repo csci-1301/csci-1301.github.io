@@ -60,7 +60,7 @@ But since we know that "month" will be a value between 1 and 12, or else we have
 
 ```
 Console.WriteLine("Enter the month as a number between 1 and 12.");
-int month = int.Parse(Console.ReadLine()); .
+int month = int.Parse(Console.ReadLine()); 
 string monthname;
 
 switch (month)
@@ -128,7 +128,7 @@ switch (section)
 Console.WriteLine("Your section (" + section + ") meets on " + meet + ".");
 ```
 
-The `break`statement identifies where the program should stop reading a case.
+The `break` statement identifies where the program should stop reading a case.
 Here, the case for the literal `c` also contains the case for the literal `d`: the same statements are executed if one of those two values match the user-input for `section`.
 
 <!--
