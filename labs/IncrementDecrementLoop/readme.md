@@ -39,19 +39,17 @@ Console.WriteLine($"\ta is {a} (the decrementing took place as expected)\n"
 #. Write a `while` loop that displays the `*` (asterisk) character 100 times on the screen.
 
 #. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.
-That is, your program should display on the screen:
+That is, your program should display this 10 x 10 grid on the screen:
 
 ```text
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
 ```
-
-<!-- There is a bug here, using ``` prevents the file from being compiled by pandoc. I suspect pandoc_include is causing this. -->
