@@ -1,7 +1,9 @@
 # Loops
+
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
 ## `while` Statement
+
 The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the begining of each iteration.
 
 ### Formal Syntax
@@ -10,7 +12,9 @@ The `while` statement executes a block of statements while a specified _boolean 
 while (<boolean expression>)
     <code block> or <a statement>
 ```
+
 - In the above code, `<code block>` or `<a statement>` is called the loop body.
+<!-- This notion should have been introduced earlier, and I believe it has been. -->
 
 ### Example 1
 
@@ -24,6 +28,8 @@ while (number <=5)
 ```
 - Note, one or more statements enclosed in left and right braces is called a code block.
 
+<!-- This is redundant with the previous comment on code block. -->
+
 ### Example 2
 
 ```
@@ -32,17 +38,25 @@ while (number <=5)
     Console.WriteLine(number++);
 ```
 
+<!-- It should be explicitely explained that braces are optional, and what that entails. -->
+
 ### Example 3
+
 ```
 int number = 1;
 while (true)
     Console.WriteLine(number++);
 ```
 
-- Note, if `<boolean expression>` is always true, then the program loops until the program fails or a statement in the loop body ends the loop!
+- Note, if `<boolean expression>` is always true, then the program loops until the program fails 
+<!-- I don't think the students know what "failing" means for a program. -->
+or a statement in the loop body ends the loop!
+<!-- Explain that we will explain how that can happen in the following. They don't know it's possible at that point. -->
 
 ## `break` statement
 This command ends a loop immediately. 
+
+<!-- Which command? Give it explicitely, and explain that it is a statement, so that it must be followed by a `;` -->
 
 ### Example
 ```
@@ -56,7 +70,8 @@ while (true)
 ```
 
 ## `continue` statement
-This command ends the current iteration of a loop. 
+
+This command ends the current iteration of a loop and skips the remaming statements in the body of the loop.
 
 ### Example
 ```
