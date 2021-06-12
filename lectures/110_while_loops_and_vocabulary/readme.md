@@ -12,7 +12,7 @@ while (<boolean expression>)
 ```
 - Remember, one or more statements enclosed in left and right braces is called a code block.  
 
-## Example
+## Example 1
 
 ```
 int number = 1;
@@ -21,6 +21,14 @@ while (number <=5)
     Console.WriteLine(number);
     number++;
 }
+```
+
+## Example 2
+
+```
+int number = 1;
+while (number <=5)
+    Console.WriteLine(number++);
 ```
 
 Notes:
