@@ -41,6 +41,7 @@ while (true)
 
 - Note, if `<boolean expression>` is always true, then the program loops until the program fails or a statement in the loop body ends the loop!
 
+## `break` 
 ### Five Ways a `while` Loop Can Go Wrong
 
 It is easy to write _wrong_ `loop` statements. 
