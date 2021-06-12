@@ -46,7 +46,7 @@ while (true)
 It is easy to write _wrong_ `loop` statements. 
 Let us review some of the "classic" blunders.
 
-#### Failing to update the variable occurring in the condition
+#### 1- Failing to update the variable occurring in the condition
 
 
 ```
@@ -59,7 +59,7 @@ while (number <=5)
 
 Number isn't changed!
 
-#### Updating the "wrong" value
+#### 2- Updating the "wrong" value
 
 ```
 int number1, number = 0;
@@ -70,7 +70,7 @@ while (number <=5)
 }
 ```
 
-#### Having an empty body
+#### 3- Having an empty body
 
 ```
 int number = 0; 
@@ -81,7 +81,7 @@ while (number <=5); // Note the semi-colon here!
 }
 ```
 
-#### Missing braces
+#### 4- Missing braces
 
 ```
 int number = 0;
@@ -90,7 +90,7 @@ while (number <=5)
     number++;
 ```
 
-#### Going in the wrong direction
+#### 5- Going in the wrong direction
 
 ```
 int number = 5;
