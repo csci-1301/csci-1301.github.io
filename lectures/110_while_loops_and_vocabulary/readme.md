@@ -38,7 +38,7 @@ while (number <=5)
     Console.WriteLine(number++);
 ```
 
-<!-- It should be explicitely explained that braces are optional, and what that entails. -->
+<!-- It should be explicitly explained that braces are optional, and what that entails. -->
 
 ### Example 3
 
