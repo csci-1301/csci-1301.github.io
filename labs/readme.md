@@ -46,4 +46,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator |
 | [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
 | [Rectangle](/labs/Rectangle) | [Introduction](/labs/Introduction) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
-| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | |
+| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
+| [Booleans](/labs/Booleans) | [Introduction](/labs/Introduction) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
+| [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
+| [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |

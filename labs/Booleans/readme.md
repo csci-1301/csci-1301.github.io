@@ -4,6 +4,7 @@ title: Booleans
 
 
 This lab serves four core goals:
+
 - To help you manipulate boolean values,
 - To practice boolean operators,
 - To understand the concept of _precedence_,
