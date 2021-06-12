@@ -1,7 +1,7 @@
 # Loops
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
-## while statement
+## `while` Statement
 The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the begining of each iteration.
 
 ### Formal Syntax
@@ -132,6 +132,26 @@ while (number >=0)
 
 The variable `number` should be decremented, not incremented.
 
+## `do-while` Statement
+As like as the `while` statement, the `do-while` statement executes a block or a statement while a specified _boolean expression_ evaluates to true. But, the boolean expression is evaluated at the end of each iteration. Consequently, the loop body of a `do-while` loop executes at least once.
+
+### Formal Syntax
+
+```
+do
+    <code block> or <a statement>
+while (<boolean expression>);
+```
+
+### Example
+```
+int number = 1;
+do
+{
+    Console.WriteLine(number);
+    number++;
+}while (number <=5);
+```
 
 # User-Input Validation
 
