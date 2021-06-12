@@ -1,41 +1,37 @@
 # Loops
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
-# Definition and First Example of while loops
+# while statement
+The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true before starting a new iteration.
 
 ## Formal Syntax
 
 ```
-while (<condition>)
-{
-    <statement block>
-}
+while (<boolean expression>)
+    <code block> or <a statement>
 ```
+- Remember, one or more statements enclosed in left and right braces is called a code block.  
 
 ## Example
 
 ```
-int number = 0;
+int number = 1;
 while (number <=5)
 {
-    C.WL("Hi Mom!);
-    C.WL(number);
+    Console.WriteLine(number);
     number++;
 }
 ```
 
 Notes:
+- If `<boolean expression>` is always true, then the program loops for ever!
 
-- If `<condition>` is `false`: 0 execution of the body.
-- If `<condition>` is always true: program loop for ever!
-- The conditions under which `<condition>` changes should be given a chance to change in the body of the loop!
-
-# Five Ways Things Can Go Wrong
+## Five Ways Things Can Go Wrong
 
 It is easy to write _wrong_ `loop` statements. 
 Let us review some of the "classic" blunders.
 
-## Failing to update the variable occurring in the condition
+### Failing to update the variable occurring in the condition
 
 
 ```
@@ -49,7 +45,7 @@ while (number <=5)
 
 Number isn't changed!
 
-## Updating the "wrong" value
+### Updating the "wrong" value
 
 ```
 int number1, number = 0;
@@ -61,7 +57,7 @@ while (number <=5)
 }
 ```
 
-## Having an empty body
+### Having an empty body
 
 ```
 int number = 0; 
@@ -73,7 +69,7 @@ while (number <=5); // Note the semi-colon here!
 }
 ```
 
-## Having an empty body (variation)
+### Having an empty body (variation)
 
 ```
 int number = 0;
@@ -83,7 +79,7 @@ while (number <=5)
     number++;
 ```
 
-## Going in the wrong direction
+### Going in the wrong direction
 
 ```
 int number = 0;
