@@ -1,3 +1,6 @@
+#Loops
+One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
+
 # Definition and First Example of while loops
 
 ## Formal Syntax
