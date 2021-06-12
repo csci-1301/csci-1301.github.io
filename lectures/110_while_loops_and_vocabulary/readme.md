@@ -1,18 +1,18 @@
 # Loops
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
-# while statement
+## while statement
 The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the begining of each iteration.
 
-## Formal Syntax
+### Formal Syntax
 
 ```
 while (<boolean expression>)
     <code block> or <a statement>
 ```
-- Remember, one or more statements enclosed in left and right braces is called a code block.  
+- In the above code, `<code block>` or `<a statement>` is called the loop body.
 
-## Example 1
+### Example 1
 
 ```
 int number = 1;
@@ -22,8 +22,9 @@ while (number <=5)
     number++;
 }
 ```
+- Note, one or more statements enclosed in left and right braces is called a code block.
 
-## Example 2
+### Example 2
 
 ```
 int number = 1;
@@ -31,70 +32,71 @@ while (number <=5)
     Console.WriteLine(number++);
 ```
 
-Notes:
-- If `<boolean expression>` is always true, then the program loops for ever!
+### Example 3
+```
+int number = 1;
+while (true)
+    Console.WriteLine(number++);
+```
 
-## Five Ways Things Can Go Wrong
+- Note, if `<boolean expression>` is always true, then the program loops until the program fails or a statement in the loop body ends the loop!
+
+### Five Ways a `while` Loop Can Go Wrong
 
 It is easy to write _wrong_ `loop` statements. 
 Let us review some of the "classic" blunders.
 
-### Failing to update the variable occurring in the condition
+#### Failing to update the variable occurring in the condition
 
 
 ```
 int number = 0;
 while (number <=5)
 {
-    C.WL("Hi Mom!);
-    C.WL(number);
+    Console.WriteLine(number);
 }
 ```
 
 Number isn't changed!
 
-### Updating the "wrong" value
+#### Updating the "wrong" value
 
 ```
 int number1, number = 0;
 while (number <=5)
 {
-    C.WL("Hi Mom!);
-    C.WL(number);
+    Console.WriteLine(number);
     number1++;
 }
 ```
 
-### Having an empty body
+#### Having an empty body
 
 ```
 int number = 0; 
 while (number <=5); // Note the semi-colon here!
 {
-    C.WL("Hi Mom!");
-    C.WL(number);
+    Console.WriteLine(number);
     number++;
 }
 ```
 
-### Having an empty body (variation)
+#### Missing braces
 
 ```
 int number = 0;
 while (number <=5)
-    C.WL("Hi Mom!);
-    C.WL(number);
+    Console.WriteLine(number);
     number++;
 ```
 
-### Going in the wrong direction
+#### Going in the wrong direction
 
 ```
-int number = 0;
-while (number >=5)
+int number = 5;
+while (number >=0)
 {
-    C.WL("Hi Mom!);
-    C.WL(number);
+    Console.WriteLine(number);
     number++;
 }
 ```
