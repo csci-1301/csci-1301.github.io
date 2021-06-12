@@ -167,6 +167,8 @@ while (n < 0)
     n = int.Parse(Console.ReadLine());
 }
 ```
+- The `TryParse` method is a method that allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
+- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean. If the first argument is convertable to the desired data type, the method returns _true_; otherwise it returns _false_. 
 
 ### Example 2
 ```
@@ -275,29 +277,6 @@ Count controlled loop
 Note that a user-controlled loop can be sentinel-controlled (that is the example we just saw), but also count-controlled ("Give me a value, and I will iterate a task that many times").
 
  
-# More Input Validation, Using TryParse
-
-The `TryParse` method is a complex method that will allow us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
-
-```
-Console.WriteLine("Please, enter an integer.");
-string message = Console.ReadLine();
-int a;
-bool res = int.TryParse(message, out a);
-if (res)
-    {
-        Console.WriteLine($"The value entered was an integer: {a}.");
-    }
-else
-    {
-        Console.WriteLine("The value entered was not an integer, so 0 is assigned to a.");
-    }
-Console.WriteLine(a);
-```
-
-As you can see, `int.TryParse` takes two arguments, a string and a variable name (prefixed by the "magic" novel keyword `out`) and returns a boolean.
-You will get a chance to experiment with this code in lab.
-
 # While Loop With Complex Conditions
 
 ```
