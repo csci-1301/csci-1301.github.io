@@ -153,21 +153,32 @@ do
 }while (number <=5);
 ```
 
-# User-Input Validation
+## User-Input Validation
 
 We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:
 
+### Example 1
 ```
 Console.WriteLine("Please enter a positive number");
 int n = int.Parse(Console.ReadLine());
 while (n < 0)
 {
-    Console.WriteLine($"You entered {n}, I asked you for a positive number. Please try again.");
+    Console.WriteLine($"You entered <{n}>, I asked you for a positive number. Please try again.");
     n = int.Parse(Console.ReadLine());
 }
 ```
 
-# Vocabulary
+### Example 2
+```
+Console.WriteLine("Please enter a positive number");
+int n;
+while ( ! int.TryParse(Console.ReadLine() , out n))
+{
+    Console.WriteLine("The input is not correct. Please enter a positive number.");
+}
+```
+
+## Vocabulary
 
 Variables and values can have multiple roles, but it is useful to mention three different roles in the context of loops:
 
