@@ -41,7 +41,35 @@ while (true)
 
 - Note, if `<boolean expression>` is always true, then the program loops until the program fails or a statement in the loop body ends the loop!
 
-## `break` 
+## `break` statement
+This command ends a loop immediately. 
+
+### Example
+```
+int number = 1;
+while (true)
+{
+    Console.WriteLine(number);
+    number++;
+    if(number > 5) break;
+}
+```
+
+## `continue` statement
+This command ends the current iteration of a loop. 
+
+### Example
+```
+int number = 0;
+while (number <= 100)
+{
+    number++;
+    if(number % 2 == 1) continue;
+    Console.WriteLine(number);
+}
+```
+- The above code prints all the even numbers from 1 to 100.
+
 ### Five Ways a `while` Loop Can Go Wrong
 
 It is easy to write _wrong_ `loop` statements. 
