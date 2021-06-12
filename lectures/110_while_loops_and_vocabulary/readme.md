@@ -2,7 +2,7 @@
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
 # while statement
-The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true before starting a new iteration.
+The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the begining of each iteration.
 
 ## Formal Syntax
 
