@@ -251,15 +251,15 @@ We can distinguish between three "flavors" of loops (that are not mutually exclu
 
 Sentinel controlled loop
 
-: The exit condition test if a variable has (or is different from) a specific value.
+: The exit condition tests if a variable has (or is different from) a _specific value_.
 
 User controlled loop
 
-: The number of iterations depends on the user.
+: The number of iterations depends on the _user_.
 
 Count controlled loop
 
-: The number of iterations depends on a counter.
+: The number of iterations depends on a _counter_.
 
 Note that a user-controlled loop can be sentinel-controlled (that is the example we just saw), but also count-controlled ("Give me a value, and I will iterate a task that many times").
 
