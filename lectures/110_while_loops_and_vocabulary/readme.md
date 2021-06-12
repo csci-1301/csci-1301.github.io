@@ -293,17 +293,17 @@ while (!res && count < 3)
 {
     count++;
     if (count == 3)
-        {
+    {
         c = 1;
         Console.WriteLine("I'm using the default value 1.");
-        }
+    }
     else
-        {
+    {
         Console.WriteLine("The value entered was not an integer.");
         Console.WriteLine("Please, enter an integer.");
         message = Console.ReadLine();
         res = int.TryParse(message, out c);
-        }
+    }
 }
 Console.WriteLine("The value is: " + c);
 ```
