@@ -25,16 +25,20 @@
     Analogy: A *class* is like a floorplan while an  *object* is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan. 
     - **Attribute**: A piece of data stored in an object\
     Example: A *House* class has a spot for a color property while an house object has a color(e.g. "Green").
-    - **Method**: A function that modifies an object. This is code that is defined (written) in the class, but when it runs, it only runs on/for a specific object and modifies that object.\
-    Example: A *House* class has a method to change the house color. Using this method to change the color  a single house object doesn't change the color on any other houses.
+    - **Method**: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.\
+    Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but doesn't change the *House* class or the color on any other house objects.
     
-- Example objects:
-    - "Car" object, represents a car
-        - Attributes: Color, wheel size, engine status (on/off/idle), gear position
-        - Methods: Press gas or brake pedal, turn key on/off, shift transmission
-    - "Audio" object, represents a song being played in a music player
+- Examples:
+    - A Car *Class*
+        - Attributes: Color, engine status (on/off), gear position
+        - Methods: Press gas or brake pedal, turn key on/off, shift transmission\
+    - A Car *Object*\
+      Example: A *Porsche911* object that is Red, Engine On, and in 1st gear 
+    - An "Audio File" *Class* represents a song being played in a music player
         - Attributes: Sound wave data, current playback position, target speaker device
         - Methods: Play, pause, stop, fast-forward, rewind
+    - An Audio File *Object*\
+      Example: A *NeverGonnaGiveYouUp* object that is "rolled wave data", 0:00, speaker01
 
 # First Program
 
