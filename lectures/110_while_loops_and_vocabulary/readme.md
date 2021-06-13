@@ -15,9 +15,10 @@ while (<boolean expression>)
 
 - In the above code, `<code block>` or `<a statement>` is called the loop body.
 <!-- This notion should have been introduced earlier, and I believe it has been. -->
+<!-- Since this is the first time that we introduce loops, I assume we have not introduced the loop body. But, if we have, remove the code -->
 
 ### Example 1
-
+The underneath example prints numbers 1 to 5 in the console. Note that the loop bode is a code block consist of two statements.
 ```
 int number = 1;
 while (number <=5)
@@ -26,11 +27,11 @@ while (number <=5)
     number++;
 }
 ```
-- Note, one or more statements enclosed in left and right braces is called a code block.
+- Remember, one or more statements enclosed in left and right braces is called a code block.
 
-<!-- This is redundant with the previous comment on code block. -->
 
 ### Example 2
+The underneath example does the same as Example 1, but its body loop consists of only one statement. Hence, there is no need for braces).
 
 ```
 int number = 1;
@@ -38,7 +39,7 @@ while (number <=5)
     Console.WriteLine(number++);
 ```
 
-<!-- It should be explicitly explained that braces are optional, and what that entails. -->
+
 
 ### Example 3
 
@@ -48,11 +49,12 @@ while (true)
     Console.WriteLine(number++);
 ```
 
-- Note, if `<boolean expression>` is always true, then the program loops until the program fails 
-<!-- I don't think the students know what "failing" means for a program. -->
-or a statement in the loop body ends the loop!
-<!-- Explain that we will explain how that can happen in the following. They don't know it's possible at that point. -->
-
+- Note, if `<boolean expression>` is always true, then the program loops until the program fails or an special statement(See the next section) in the loop body ends the loop!
+- A program may fail for sevral reasons like
+    - Power outage
+    - Hardware issue
+    - Operating System issue.
+    
 ## `break` statement
 This command ends a loop immediately. 
 
