@@ -14,13 +14,16 @@ The formal syntax of `switch` statements is as follows:
 switch (<variable name>)
 {
     case (<literal 1>):
-        <statement block 1>
-        break;
-    case (<literal 2>):
-        {
-            <statement block 2>
+        {    
+            <statement block 1>
             break;
         }
+    case (<literal 2>):
+        <statement block 2>
+        break;
+    case <literal 3>:
+        <statement block 3>
+        break;
     …
     default:
         <statement block n>
@@ -28,7 +31,7 @@ switch (<variable name>)
 }
 ```
 
-The `(…)` in each `case` are mandatory, but the `{…}` are optional. The `{…}` are _not_ optional for the `switch` statement. 
+The `(…)` and the `{…}` in each `case` are optional, but they are _mandatory_  for the `switch` statement. 
 
 Note that to be correct, you have to follow multiple restrictions:
 
