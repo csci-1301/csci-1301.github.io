@@ -1,345 +1,406 @@
-# if, if-else and Nested if Statements
-
-The keyword `if` allows us to write code that "branches" between multiple flows of execution.
-So far, all the code we have studied has been executed one line after the other: line $n$ is always executed before line $n+1$ and after line $n-1$ (this order is called "sequential").
-With `if` statements, we can tell C# that some lines need to be "skipped" depending if a condition (that evaluates to a boolean value) is met or not.
-
-We will start by motivating with a simple example, then introduce the formal syntax of `if` and `if-else` statements, and conclude with a discussion of more advanced topics.
+# if, if-else and if-else-if Statements
 
 ## if Statements
 
-### First Example
+- Introduction
+    - Recall from a previous lecture (Booleans and Comparisons) that decision structures change the flow of code execution based on conditions
+    - Now that we know how to write conditions in C#, we can write decision structures
+    - Our first decision structure is the **if statement**, which executes a block of code *only if a condition is true*
+- Example code with an if statement:
 
-Let us study the following lines:
+    ```
+    Console.WriteLine("Enter your age");
+    int age = int.Parse(Console.ReadLine());
+    if (age >= 18)
+    {
+        Console.WriteLine("You can vote!");
+    }
+    Console.WriteLine("Goodbye");
+    ```
 
-```
-Console.WriteLine("Enter your age");
-int age = int.Parse(Console.ReadLine());
-if (age >= 18)
-{
-    Console.WriteLine("You can vote!");
-}
-Console.WriteLine("Thanks for using our program!");
-```
+    - After the keyword `if` is a condition, in parentheses: `age >= 18`
+    - On the next line after the `if` statement, the curly brace begins a code block. The code in this block is "controlled" by the `if` statement.
+    - If the condition `age >= 18` is true, the code in the block (the WriteLine statement with the text "You can vote!") gets executed, then execution proceeds to the next line (the WriteLine statement that prints "Goodbye")
+    - If the condition `age >= 18` is false, the code in the block gets *skipped*, and execution proceeds directly to the line that prints "Goodbye"
+    - The behavior of this program can be represented by this flowchart:
 
-The code is written such that the statement `Console.WriteLine("You can vote!");` is executed only if the condition `(age >= 18)` evaluates to `true`.
-Otherwise, that statement is simply "skipped".
-Note that regardless of the truth value of the condition `(age >= 18)`, "Thanks for using our program" will always be displayed: once the body of the `if` statement is executed, the flow of execution resumes its sequential course.
+        !["A flowchart representation of an if statement"](img/activity_diag_vote_if)
+    
+    - Example interaction 1:
+    
+        ```text
+        Enter your age
+        20
+        You can vote!
+        Goodbye
+        ```
+    
+      When the user enters "20", the value 20 is assigned to the `age` variable, so the condition `age >= 18` is true. This means the code inside the `if` statement's block gets executed.
 
-This behaviour can be represented as follows:
+    - Example interaction 2:
 
-!["A flowchart representation of an if statement"](img/activity_diag_vote_if)
+        ```text
+        Enter your age
+        17
+        Goodbye
+        ```
 
-### Syntax
+      When the user enters "17", the value 17 is assigned to the `age` variable, so the condition `age >= 18` is false, and the `if` statement's code block gets skipped.
 
-The syntax of an `if` statement is as follows:
+- Syntax and rules for if statements
+    - Formally, the syntax for an `if` statement is this:
 
-```
-if (<condition>)
-{
-    <statement block>
-}
-```
+        ```
+        if (<condition>)
+        {
+            <statements>
+        }
+        ```
 
-Please observe the following.
+    - The "condition" in parentheses can be any expression that produces a `bool` value, including all of the combinations of conditions we saw in the previous lecture (Booleans and Comparisons). It can even be a `bool` variable, since a `bool` variable "contains" a `bool` value.
+    - Note that there is no semicolon after the `if (<condition>)`. It's a kind of "header" for the following block of code, like a method header.
+    - The statements in the code block will be executed if the condition evaluates to `true`, or skipped if it evaluates to `false`
+    - If the code block contains only *one* statement, the curly braces can be omitted, producing the following syntax:
 
-- `<Condition>` is something that evaluates to a `bool`, such as `myAge > 18` or `firstName == "Thomas"`. Having something that is not an expression or a boolean variable, such as a number, would result in a compilation error: `if(3)` is not syntactically correct.
-- Note the absence of semicolon after `if (<condition>)`.
-- The curly braces can be removed if the statement block is just one statement. What is between them is called _the body_ of the `if` statement.
-- The following statements (that is, after the `}` that terminates the body of the `if` statement) are executed in any case.
+        ```
+        if(<condition>)
+            <statement>
+        ```
 
-The body of an `if` statement can be arbitrarily complicated: it can contain multiple statements, including other `if` statements, object instantiation, etc.
+      For example, the `if` statement in our previous example could be written like this, since there was only one statement in the code block:
+
+        ```
+        if(age >= 18)
+            Console.WriteLine("You can vote!");
+        Console.WriteLine("Goodbye");
+        ```
+
+    - Omitting the curly braces is slightly dangerous, though, because it makes it less obvious which line of code is controlled by the `if` statement. It is up to you, the programmer, to remember to indent the line after the `if` statement, and then de-indent the line after that; indentation is just a convention. Curly braces make it easier to see where the `if` statement starts and ends.
 
 ## if-else Statements
 
-One limit of `if` statements is that they only describe what happens if the condition is met, and not what should happen if the condition is _not_ met.
-This can be worked around with a clever use of the negation operator (`!`):
+- Introductory example:
 
-```
-if(<condition>)
-{
-    <statement block 1>
-}
-if(!<condition>)
-{
-    <statement block 2>
-}
-```
-
-If `<condition>` is met, then `<statement block 1>` will be executed. 
-If `<condition>` is not met, that is, if it evaluates to `false`, then we know that `!<condition>` will evaluate to `true`, and hence `<statement block 2>` will be executed.
-
-This method is inconvenient and clunky, but luckily C# contains the keyword `else` that enables the described behavior in a more elegant syntax.
-
-### Syntax
-
-```
-if (<condition>)
-{
-    <statement block 1>
-}
-else
-{
-    <statement block 2>
-}
-```
-
-With `if-else` statements, `<statement block 1>` is executed only if the condition evaluates to `true`, and `<statement block 2>` is executed only if the condition evaluates to `false`. 
-Note that since a condition always evaluates to either `true` or `false`, we know that at least one of the blocks will be executed.
-Since a condition cannot be `true` and `false` at the same time, we also know that at most one block will be executed.
-Hence, exactly one block will be executed.
-
-### Example 
-
-Here we modify our previous example to include else:
-
-```
-Console.WriteLine("Enter your age");
-int age = int.Parse(Console.ReadLine());
-if (age >= 18)
-{
-    Console.WriteLine("You can vote!");
-}
-else
-{
-    Console.WriteLine("You are too young!");
-}
-
-Console.WriteLine("Thanks for using our program!");
-```
-
-This behaviour can be represented as follows:
-
-!["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
-
-
-## Nested if-else Statements
-
-As we wrote previously, the body of an `if` statement (that is, the `<statement block>`) can be arbitrarily complex.
-In particular, it can include an `if-else` statement itself!
-
-### Example
-
-Imagine we want to improve our previous program that decides if the user can vote: we would like to ask not only for the age of the user, but also citizenship, and make a decision based on both parameters.
-A possible way of doing that is by _nesting the options_, so that we would _first_ check the citizenship, and _then_ the age, before displaying a more personalized message.
-
-The behavior we would like to implement can be represented with the following activity diagram:
-
-!["A flowchart representation of the nested if-else statement"](img/activity_diag_vote_nested_if)
-
-This particular behavior can be implemented as follows (where we simply "hard-code" the value of `usCitizen` and `age` to simplify the code):
-
-```
-bool usCitizen = true;
-int age = 19;
-
-if (usCitizen == true)
-{
-    if (age >= 18)
+    ```
+    if(age >= 18)
     {
         Console.WriteLine("You can vote!");
     }
     else
     {
-        Console.WriteLine("You are too young!");
+        Console.WriteLine("You are too young to vote");
     }
-}
-else
-{
-    Console.WriteLine("Sorry, only citizens can vote");
-}
-Console.WriteLine("Thanks for using our program!");
-```
-
-Note that
-
-- There is a simpler way to write `usCitizen == true`: simply write `usCitizen`!
-- We could remove the braces (and new lines/indentation) since each condition corresponds to exactly one statement. However, notice that it would make the code harder to read and debug:
-    ```
-    if (usCitizen == true)if (age >= 18)Console.WriteLine("You can vote!");
-    else Console.WriteLine("You are too young!");
-    else Console.WriteLine("Sorry, only citizens can vote");
+    Console.WriteLine("Goodbye");
     ```
 
-- We could have a similar program with only one `if else`, but using a more complex condition: `if(age > 18 && usCitizen) … else …`, but the messages would be less precise (as if this condition fails, we cannot tell if it is because of the age or the citizenship).
+    - The **if-else statement** is a decision structure that chooses *which* block of code to execute, based on whether a condition is true or false
+    - In this example, the condition is `age >= 18` again
+    - The first block of code (underneath the `if`) will be executed if the statement is true -- the console will display "You can vote!"
+    - The *second* block of code, which comes after the keyword `else`, will be executed if the statement is *false* -- so if the user's age is less than 18, the console will display "You are too young to vote"
+    - Only one of these blocks of code will be executed; the other will be skipped
+    - After executing one of the two code blocks, execution continues at the next line after the `else` block, so in either case the console will next display "Goodbye"
+    - The behavior of this program can be represented by this flowchart:
 
-## if-else-if Statements
+        !["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
 
-### Syntax
+- Syntax and comparison
+    - Formally, the syntax for an `if-else` statement is this:
 
-We can also nest the conditions in a different way: instead of writing
-
-```
-if (<condition 1>)
-{
-    <statement block1> // Executed if condition 1 is true.
-}
-else{
-    if (<condition 2>)
-    {
-        <statement block2> // Executed if condition 1 is false and condition 2 is true.
-    }
-    else{
-        if (<condition 3>)
+        ```
+        if (<condition>)
         {
-            <statement block3> // Executed if condition 1 and 2 are false and condition 3 is true.
+            <statement block 1>
         }
         else
         {
-            <statement block4> // Executed if condition 1, 2 and 3 are false.
+            <statement block 2>
         }
-        
-    }
-}
+        ```
 
-```
-
-We can use a convenient `if-else-if` structure, as follows:
-
-```
-if (<condition 1>)
-{
-    <statement block 1> // Executed if condition 1 is true
-}
-else if (<condition 2>)
-{
-   <statement block 2> // Executed if condition 1 is false and condition 2 is true
-}
-…
-else if (<condition N>)
-{
-    <statement block N> // Executed if all the previous conditions are false and condition N is true
-}
-else
-{
-    <statement block N+1>  // Executed if all the conditions are false
-}
-```
-
-This reduces the need of nesting _statements_ (that comes with identation for readability) and makes the code easier to read and debug.
-
-An important aspect to note is that the conditions could be really different, and may not even pertain to the same variable!
-However, if a "trailing else" (the last else) is present, than at least one statement block will always be executed: if all the conditions fails, then the `<statement block N+1>` will be executed.
-Note that this trailing else is not mandatory and could be ommited.
-
-### Example
-
-We can make an example with really different, non-overlapping, conditions: 
-
-```
-if (age > 12)
-    x = 0;
-else if (charVar == 'c')
-    x = 1;
-else if (boolFlag)
-    x = 2;
-else 
-    x = 3;
-```
-
-Giving various values for `age`, `charVar` and `boolFlag`, we can see which value would `x` get in each case:
-
-`age` | `charVar` | `boolFlag` | `x`
---- | --- | --- | --- | 
-13 | 'c' | `true`  | 0
-10 | 'c' | `true`  | 1
-10 | 'd' | `true`  | 2
-10 | 'd' | `false` | 3
-
-Note that, in this particular case, the order of the conditions matters quite a lot!
-If we had
-```
-if (boolFlag)
-    x = 2;
-else if (age > 12)
-    x = 0;
-else if (charVar == 'c')
-    x = 1;
-else 
-    x = 3;
-```
-
-Then we would obtain:
-
-`age` | `charVar` | `boolFlag` | `x`
---- | --- | --- | --- | 
-13 | 'c' | `true`  | 2
-10 | 'c' | `true`  | 2
-10 | 'd' | `true`  | 2
-10 | 'd' | `false` | 3
+    - As with the `if` statement, the condition can be anything that produces a `bool` value
+    - Note that there is no semicolon after the `else` keyword
+    - If the condition is true, the code in statement block 1 is executed (this is sometimes called the "if block"), and statement block 2 is skipped
+    - If the condition is false, the code in statement block 2 is executed (this is sometimes called the "else block"), and statement block 1 is skipped
+    - This is very similar to an if statement; the difference is what happens if the condition is false
+        - With an `if` statement, the "if block" is executed if the condition is true, but *nothing happens* if the condition is false.
+        - With an `if-else` statement, the code in the "else block" is executed if the condition is false, so something always happens - one of the two code blocks will get executed
 
 
-## Shorthand notation: the `?:` Operator
+## Nested if-else Statements
 
-There is an operator for `if else` statements for particular cases (assignment, call, increment, decrement, and new object expressions).
-Its syntax is as follow:
+- Decisions with more complex conditions
+    - If-else statements are used to change program flow based on a condition; they represent making a decision
+    - Sometimes decisions are more complex than a single yes/no question: once you know whether a certain condition is true or false, you then need to ask another question (check another condition) based on the outcome
+    - For example, we could improve our voting program to ask the user whether he/she is a US citizen, as well as his/her age. This means there are two conditions to evaluate, as shown in this flowchart:
 
-`<condition> ? <first_expression> : <second_expression>;`
+        !["A flowchart representation of the nested if-else statement"](img/activity_diag_vote_nested_if)
 
-For example, one can write:
+        - First, the program should test whether the user is a citizen. If not, there is no need to check the user's age, since he/she can't vote anyway
+        - If the user is a citizen, the program should then test whether the user is over 18 to determine if he/she is old enough to vote.
 
-```
-int price = adult ? 5 : 3;
-```
+- Using nested if statements
+    - An `if` statement's code block can contain any kind of statements, including another `if` statement
+    - Putting an `if` statement inside an if block represents making a sequence of decisions - once execution has reached the inside of an if block, your program "knows" that the `if` condition is true, so it can proceed to make the next decision
+    - For the voting example, we can implement the decision structure from the flowchart above with this code, assuming `age` is an `int` and `usCitizen` is a `bool`:
 
-which means that `price` will receive the value `5` if `adult` is `true`, and `3` otherwise.
+        ```
+        if(usCitizen == true)
+        {
+            if(age >= 18)
+            {
+                Console.WriteLine("You can vote!");
+            }
+            else
+            {
+              Console.WriteLine("You are too young to vote");  
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sorry, only citizens can vote");
+        }
+        Console.WriteLine("Goodbye");
+        ```
 
-You can read more about this convenient operator [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
+        - First, the program tests the condition `usCitizen == true`, and if it is true, the code in the first "if block" is executed
+        - Within this if block is another `if` statement that tests the condition `age >= 18`. This represents checking the user's age after determining that he/she is a US citizen - execution only reaches this second `if` statement if the first one evaluated to true. So "You can vote" is printed if both `usCitizen == true` and `age >= 18`
+        - If the condition `usCitizen == true` is false, the if block is skipped and the else block is executed instead, so the entire inner `if` statement is never executed -- the user's age doesn't matter if he/she isn't a citizen
+        - Note that the condition `usCitizen == true` could also be expressed by just writing the name of the variable `usCitizen` (i.e. the if statement would be `if(usCitizen)`), because `usCitizen` is a `bool` variable. We don't need the equality comparison operator to test if it is `true`, because an `if` statement already tests whether its condition is `true` (and a `bool` variable by itself is a valid condition)
+        - Note that indentation helps you match up an `else` block to its corresponding `if` block. The meaning of `else` depends on which `if` statement it goes with: the "outer" `else` will be executed if the condition `usCitizen == true` is false, while the "inner" `else` will be executed if the condition `age >= 18` is false.
 
-## Coming Back to Boolean Flags
+    - Nested `if` statements don't need to be the *only* code in the if block; you can still write other statements before or after the nested `if`
+    - For example, we could change our voting program so that it only asks for the user's age if he/she is a citizen:
 
-Do you remember that a boolean *flag* is a boolean variable?
-We can use it to "store" the result of an interaction with a user.
+        ```
+        if(usCitizen == true)
+        {
+            Console.WriteLine("Enter your age");
+            int age = int.Parse(Console.ReadLine());
+            if(age >= 18)
+            {
+                Console.WriteLine("You can vote!");
+            }
+            else
+            {
+              Console.WriteLine("You are too young to vote");  
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sorry, only citizens can vote");
+        }
+        Console.WriteLine("Goodbye");
+        ```
 
-Assume we want to know if the user works full time at some place, we could get started with:
 
-```
-Console.WriteLine("Do you work full-time here?");
-char ch = Console.ReadKey().KeyChar; // Note that we are using a new method, to read characters.
+## if-else-if Statements
 
-if (ch == 'y' || ch == 'Y')
-     Console.WriteLine("Answered Yes");
-else if (ch == 'n' || ch == 'N')
-     Console.WriteLine("Answered No");
-else
-     Console.WriteLine("Said what?");
-```
+- Mutually exclusive conditions
+    - Sometimes your program needs to test multiple conditions at once, and take different actions depending on which one is true
+    - Example: We want to write a program that tells the user which floor a `ClassRoom` object is on, based on its room number
+        - If the room number is between 100 and 200 it's on the first floor; if it's between 200 and 300 it's on the second floor; if it's greater than 300 it's on the third floor
+    - There are 3 ranges of numbers to test, and 3 possible results, so we can't do it with a single if-else statement
+- If-else-if syntax
+    - An if-else-if statement looks like this:
 
-But there are not three answers to this question (you either work here full-time, or you do not), so we can change the behavior to
+        ```
+        if(<condition 1>)
+        {
+            <statement block 1>
+        }
+        else if(<condition 2>)
+        {
+            <statement block 2>
+        }
+        else if(<condition 3>)
+        {
+            <statement block 3>
+        }
+        else
+        {
+            <statement block 4>
+        }
+        ```
 
-```
-if (ch == 'y' || ch == 'Y')
-     Console.WriteLine("Answered Yes");
-else
-     Console.WriteLine("Answered No");
-```
+    - Unlike an `if` statement, there are multiple conditions
+    - They are evaluated *in order*, top to bottom
+    - Just like with `if-else`, exactly one block of code will get executed
+    - If condition 1 is true, statement block 1 is executed, and everything else is skipped
+    - If condition 1 is false, statement block 1 is skipped, and execution proceeds to the first `else if` line; condition 2 is then evaluated
+    - If condition 2 is true, statement block 2 is executed, and everything else is skipped
+        - Thus, statement block 2 is only executed if condition 1 is false *and* condition 2 is true
+    - Same process repeats for condition 3: If condition 2 is false, condition 3 is evaluated, and statement block 3 is either executed or skipped
+    - If *all* the conditions are false, the final else block (statement block 4) is executed
+- Using if-else-if to solve the "floors problem"
+    - Assuming `myRoom` is a `ClassRoom` object, this code will display which floor it is on:
 
-We'll study _user input validation_, that allows us to require better answers from users, later on.
+        ```
+        if(myRoom.GetNumber() >= 300)
+        {
+            Console.WriteLine("Third floor");
+        }
+        else if(myRoom.GetNumber() >= 200)
+        {
+            Console.WriteLine("Second floor");
+        }
+        else if(myRoom.GetNumber() >= 100)
+        {
+            Console.WriteLine("First floor");
+        }
+        else
+        {
+            Console.WriteLine("Invalid room number");
+        }
+        ```
+    
+    - If the room number 300 or greater (e.g. 365), the first "if" block is executed, and the rest are skipped. The program prints "Third floor"
+    - If the room number is less than 300, the program continues to the line `else if(myRoom.GetNumber() >= 200)` and evaluates the condition
+    - If `myRoom.GetNumber() >= 200` is true, it means the room number is between 200 and 299, and the program will print "Second floor." Even though the condition only tests whether the room number is >= 200, this condition is only evaluated if the first one was false, so we know the room number must be < 300.
+    - If the second condition is false, the program continues to the line `else if(myRoom.GetNumber() >= 100)`, evaluates the condition, and prints "First floor" if it is true.
+    - Again, the condition `myRoom.GetNumber() >= 100` is only evaluated if the first two conditions have already been tested and turned out false, so we know the room number is less than 300 and less than 200.
+    - In the final `else` block, the program prints "Invalid room number" because this block is only executed if the room number is less than 100 (all three conditions were false).
+- if-else-if with different conditions
+    - We often use if-else-if statements to test the same variable multiple times, but there is no requirement for the conditions to use the same variable
+    - An if-else-if statement can use several different variables, and its conditions can be completely unrelated, like this:
 
-But imagine we are at the beginning of a long form, and we will need to re-use that information multiple times.
-If we use this code fragment, we would need to duplicate all our code.
-Instead, we could "save" the result of our test in a boolean variable, like so:
+        ```
+        int x;
+        if(myIntVar > 12)
+        {
+            x = 10;
+        }
+        else if(myStringVar == "Yes")
+        {
+            x = 20;
+        }
+        else if(myBoolVar)
+        {
+            x = 30;
+        }
+        else
+        {
+            x = 40;
+        }
+        ```
 
-```
-bool fullTime;
-if (ch == 'y' || ch == 'Y')
-    fullTime = true;
-else
-    fullTime = false;
-```
+    - Note that the order of the else-if statements still matters, because they are evaluated top-to-bottom. If `myIntVar` is 15, it doesn't matter what values `myStringVar` or `myBoolVar` have, because the first if block (setting `x` to 10) will get executed.
+    - Example outcomes of running this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
 
-If you understand the `?` operator, you can even shorten that statement to:
+        | `myIntVar` | `myStringVar` | `myBoolVar` | `x` |
+        | ---------- | ----------    | ----------  | --- |
+        | 12         | "Yes"         | `true`      | 20  |
+        | 15         | "Yes"         | `false`     | 10  |
+        | -15        | "yes"         | `true`      | 30  |
+        | 10         | "yes"         | `false`     | 40  |
 
-```
-fullTime = (ch == 'y' || ch == 'Y') ? true : false;
-```
+- if-else-if vs. nested if
+    
+    - Sometimes a nested `if` statement can be rewritten as an `if-else-if` statement
+    
+    - This reduces the amount of indentation in your code, which makes it easier to read
+    
+    - To convert a nested `if` statement to `if-else-if`, you'll need to combine the conditions of the "outer" and "inner" `if` statements, using the logical operators
+    
+    - A nested `if` statement inside an `if` block is testing whether the outer `if`'s condition is true *and* its own condition is true, so combine them with the `&&` operator
+    
+    - The `else` block of the inner `if` statement can be rewritten as an `else if` by combining the outer `if`'s condition with the *opposite* of the inner `if`'s condition, since "else" means "the condition is false." We need to explicitly write down the "false condition" that is normally implied by `else`.
+    
+    - For example, we can rewrite this nested `if` statement:
 
-But why stop here? We could even do
+        ```
+        if(usCitizen == true)
+        {
+            if(age >= 18)
+            {
+                Console.WriteLine("You can vote!");
+            }
+            else
+            {
+              Console.WriteLine("You are too young to vote");  
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sorry, only citizens can vote");
+        }
+        ```
 
-```
-fullTime = (ch == 'y' || ch == 'Y');
-```
+      as this `if-else-if` statement:
 
-And that is it!
-We went from long, convoluted code, to a very simple line!
-This allows to simply store result of tests in variables, and to access it easily.
+        ```
+        if(usCitizen == true && age >= 18)
+        {
+            Console.WriteLine("You can vote!");
+        }
+        else if(usCitizen == true && age < 18)
+        {
+            Console.WriteLine("You are too young to vote");  
+        }
+        else
+        {
+            Console.WriteLine("Sorry, only citizens can vote");
+        }
+        ```
+
+    - Note that the `else` from the inner if statement becomes `else if(usCitizen == true && age < 18)` because we combined the outer if condition (`usCitizen == true`) with the opposite of the inner if condition (`age >= 18`).
+
+    - Not all nested `if` statements can be rewritten this way. If there is additional code in a block, other than the nested `if` statement, it's harder to convert it to an if-else-if
+
+    - For example, in this nested `if` statement:
+
+        ```
+        if(usCitizen == true)
+        {
+            Console.WriteLine("Enter your age");
+            int age = int.Parse(Console.ReadLine());
+            if(age >= 18)
+            {
+                Console.WriteLine("You can vote!");
+            }
+            else
+            {
+              Console.WriteLine("You are too young to vote");  
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sorry, only citizens can vote");
+        }
+        Console.WriteLine("Goodbye");
+        ```
+
+      the code that asks for the user's age executes after the outer `if` condition is determined to be true, but before the inner `if` condition is tested. There would be nowhere to put this code if we tried to convert it to an if-else-if statement, since both conditions must be tested at the same time (in `if(usCitizen == true && age >= 18)`).
+
+    - On the other hand, any if-else-if statement can be rewritten as a nested `if` statement
+
+    - To convert an if-else-if statement to a nested `if` statement, rewrite each `else if` as an `else` block with a nested `if` statement inside it -- like you're splitting the "if" from the "else"
+    
+    - This results in a lot of indenting if there are many `else if` lines, since each one becomes another nested `if` inside an `else` block
+
+    - For example, the "floors problem" could be rewritten like this:
+
+        ```
+        if(myRoom.GetNumber() >= 300)
+        {
+            Console.WriteLine("Third floor");
+        }
+        else
+        {
+            if(myRoom.GetNumber() >= 200) 
+            {
+                Console.WriteLine("Second floor");
+            }
+            else
+            {
+                if(myRoom.GetNumber() >= 100)
+                {
+                    Console.WriteLine("First floor");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid room number");
+                }
+            }
+        }
+
+        ```

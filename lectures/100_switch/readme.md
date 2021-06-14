@@ -1,4 +1,4 @@
-# Switch Statements
+# Switch Statements and the Conditional Operator
 
 Another way of selecting which "branch" of code to execute is given thanks to `switch` statements.
 Those statements have a flair similar to `if…else if … else`, except that they "force" all the conditions to test the value of the same variable.
