@@ -15,13 +15,9 @@ Write a loop that displays...
 
 In these problems you will need to ask for user for input then perform described actions on the input.
 
-#. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series where $n$ represents the number obtained from user:  
+#. Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
 
-    ```text
-    1.0 + 1.0/2 + 1.0/3 + 1.0/4 + 1.0/5 + ... + 1.0/n
-    ```
-
-#. Assume you have the following mapping of zip codes to cities:
+#. Assume you have the following table of zip codes and cities:
 
     | zip code | city name |
     | --- | --- |
@@ -33,7 +29,7 @@ In these problems you will need to ask for user for input then perform described
     | 30815 | Hephzibah | 
     | 29842 | North Augusta |
 
-    Write a small program that asks the user to enter a zip code. Then display to the user the city name based on the zip code user entered. If the zip code is not included in the table given above, the program should display "unknown city!". Allow the user to repeat the input until the user indicates they are ready to quit by entering approprite sentinel value.
+    Write a small program that asks the user to enter a zip code. Then display to the user the city name based on the zip code user entered. If the zip code is not included in the table given above, the program should display "unknown city!". Allow the user to repeat the input until the user indicates they are ready to quit by entering appropriate sentinel value.
     
     
 # Do while Loops
@@ -47,13 +43,9 @@ Next solve the following problems using a do while loop:
 
 #. Display numbers 0 to 50.
 #. Display numbers 30 to -20.
-#. Write a do while loop that generates this output:
+#. Write a do while loop that generates this output: `1 10 100 1000 10000 100000 1000000`
 
-    ```text
-    1 10 100 1000 10000 100000 1000000
-    ```
-
-#. Ask the user to enter positive integers. Keep track of the largest number user enters. After user indicates they are done, display the largest number user entered.
+#. Ask user to enter integers. Keep track of the largest value user enters. After user indicates they are done, display the largest value user entered. If user did not enter any integers display `You did not enter anything.`
 
 # Infinite Loops
 
