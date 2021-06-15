@@ -4,9 +4,23 @@ title: while and do while
 
 # Practicing while Loops
 
-Write a loop that displays...
+#. Create a new projec, and replace the content of the _main_ method with the following code
+```
+int i = 0;
+while(i<100)
+{
+    Console.WriteLine(i);
+    i++;
+}
+```
+#. Execute the code. You should see the numbers 0 to 99 in the console.
 
-#. all integers between 0 and 100 that are divisible by 3.
+#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
+
+#. Modyfy the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+
+#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
+
 #. all integers between 1 and 100 but do not display numbers between 10-20 and 40-60. 
 #. `Hello World` ten times.
 #. 10 rows of text where `Hello` is displayed on every other row and `World` on every other row
