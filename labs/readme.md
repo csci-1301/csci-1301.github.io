@@ -50,5 +50,5 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
 | [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
-| [IncrementDecrement](/labs/IncrementDecrement) | [FirstProgram](/labs/FirstProgram) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
-| [While](/labs/While) | [FirstProgram](/labs/FirstProgram) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |
+| [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
+| [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |

@@ -2,11 +2,6 @@
 title: while and do while
 ---
 
-In Part 1 of this lab you practice implementing while loops with different terminating conditions and applied to different types of problems.
-
-In Part 2 of this lab you will practice using do while loops. 
-
-
 # Practicing while Loops
 
 Write a loop that displays...
@@ -19,7 +14,6 @@ Write a loop that displays...
 
 
 In these problems you will need to ask for user for input then perform described actions on the input.
-
 
 #. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series where $n$ represents the number obtained from user:  $1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + ... + \frac{1}{n}$
 
@@ -57,3 +51,52 @@ Next solve the following problems using a do while loop:
     ```
 
 #. Ask the user to enter positive integers. Keep track of the largest number user enters. After user indicates they are done, display the largest number user entered.
+
+# Infinite Loops
+
+All of the following are examples of infinite loops. Can you spot the problem? How would you change the code to fix it?
+
+```
+int number = 0;
+while (number <=5) {
+Console.WriteLine("Hi!");
+Console.WriteLine(number);
+}
+```
+
+```
+int number1, number = 0;
+while (number <=5) {
+Console.WriteLine("Hi!");
+Console.WriteLine(number);
+number1++;
+}
+```
+
+```
+int number = 0;
+while (number <=5);
+{
+Console.WriteLine("Hi!");
+Console.WriteLine(number);
+number++;
+}
+```
+
+```
+int number = 0;
+while (number <=5)
+Console.WriteLine("Hi!");
+Console.WriteLine(number);
+number++;
+```
+
+```
+int number = 0;
+while (number >=5)
+{
+Console.WriteLine("Hi!");
+Console.WriteLine(number);
+number++;
+}
+```
