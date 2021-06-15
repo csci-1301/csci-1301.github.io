@@ -12,8 +12,8 @@ Before writing code, think through the following questions.
 Assuming `int i` is initialized and its current value is 5,
 
 #. What does `i++` do to `i`?
-#. What dies `i--` do to `i`? 
-#. Can you explain what is the difference between `++i` and `i++`? 
+#. What does `i--` do to `i`? 
+#. In your own words, can you explain what is the difference between `++i` and `i++`? 
 
 ## Practice
 
@@ -21,7 +21,7 @@ Copy and paste this code into a new C\# project in your IDE and execute it.
 
 Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
 
-Compare your answers from previous section to what you observe in the output. Do your answers match?
+Compare your answers from previous section to what you observe in the output. Do your answers match with what you observe in the output?
 
 ```
 !include code/increment_decrement.cs
@@ -54,36 +54,36 @@ That is, your program should display this on the screen (this example has a spac
 
 Here are additional (fun!) pattern problems. Try generating them using a while loop.
 
-##. Triangle:
+1. Triangle:
 
-    ```text
-     * 
-     * *
-     * * *
-     * * * * 
-     * * * * *
-     * * * * * *
-     * * * * * * * 
-     * * * * * * * * 
-     * * * * * * * * * 
-     * * * * * * * * * *
-    ``` 
+```text
+ * 
+ * *
+ * * *
+ * * * * 
+ * * * * *
+ * * * * * *
+ * * * * * * * 
+ * * * * * * * * 
+ * * * * * * * * * 
+ * * * * * * * * * *
+``` 
 
-##. Triangle of numbers 
+2. Triangle of numbers 
 
-    ```text
-    1
-    222
-    33333
-    4444444
-    555555555
-    ``` 
+```text
+1
+222
+33333
+4444444
+555555555
+``` 
 
-##. Upside-down binary triangle
+3. Upside-down binary triangle
 
-    ```
-    1010101
-     10101 
-      101  
-       1
-    ``` 
+```text
+1010101
+ 10101 
+  101  
+   1
+``` 
