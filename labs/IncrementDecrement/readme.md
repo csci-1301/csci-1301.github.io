@@ -31,11 +31,8 @@ Compare your answers from previous section to what you observe in the output. Do
 
 
 #. Write a `while` loop that displays the integers between $1$ and $100$ on the screen, with a space between them.
-
 #. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between them.
-
 #. Write a `while` loop that displays the `*` (asterisk) character 100 times on the screen.
-
 #. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.
 
 That is, your program should display this on the screen (this example has a space after each asterisk for display purposes):
@@ -57,36 +54,36 @@ That is, your program should display this on the screen (this example has a spac
 
 Here are additional (fun!) pattern problems. Try generating them using a while loop.
 
-#. Triangle:
+##. Triangle:
 
-```text
- * 
- * *
- * * *
- * * * * 
- * * * * *
- * * * * * *
- * * * * * * * 
- * * * * * * * * 
- * * * * * * * * * 
- * * * * * * * * * *
-``` 
+    ```text
+     * 
+     * *
+     * * *
+     * * * * 
+     * * * * *
+     * * * * * *
+     * * * * * * * 
+     * * * * * * * * 
+     * * * * * * * * * 
+     * * * * * * * * * *
+    ``` 
 
-#. Triangle of numbers 
+##. Triangle of numbers 
 
-```text
-1
-222
-33333
-4444444
-555555555
-``` 
+    ```text
+    1
+    222
+    33333
+    4444444
+    555555555
+    ``` 
 
-#. Upside-down binary triangle
+##. Upside-down binary triangle
 
-```
-1010101
- 10101 
-  101  
-   1
-``` 
+    ```
+    1010101
+     10101 
+      101  
+       1
+    ``` 
