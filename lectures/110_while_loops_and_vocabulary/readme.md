@@ -1,3 +1,24 @@
+# `--` and `++` Operators
+
+In programming, there are many cases that we either need to increment or decrement the value of one variable by one unit. C# provides special optimized operators for this purpose.
+
+- The `++` operator takes an operand and adds one to the value of the operand. Hence, the operand must be a variable.
+- `x++;` or `++x;` are similar to  `x = x + 1;`
+- Similarly, the `--` operator takes an operand and decrements the value of the operand by one. Hence, the operand must be a variable.
+- `x--;` or `--x;` are similar to  `x = x - 1;`
+- Both of the `--` and `++` operators can be written before or after an operand.
+- If they are put before the operand, they act on the operand, and then the result will be returned. See the bellow example:
+```
+int x = 10;
+int y = x++;  \\ First y = 10; then x = x + 1
+```
+- If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed.
+```
+int x = 10;
+int y = ++x;  \\ First x = x+ 1, so x = 11; then y = x, So y = 11
+```
+
+
 # Loops
 
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
