@@ -293,6 +293,7 @@ Note that a user-controlled loop can be sentinel-controlled (that is the example
 
  
 # While Loop With Complex Conditions
+In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be convertible to an integer, the program tries again, but not more than three times.
 
 ```
 int c;
