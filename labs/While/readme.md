@@ -5,7 +5,7 @@ title: while and do while
 # Practicing while Loops
 
 ## problem 1
-#. Create a new projec, and replace the content of the _main_ method with the following code
+. Create a new projec, and replace the content of the _main_ method with the following code
 ```
 int i = 0;
 while(i<100)
@@ -14,15 +14,15 @@ while(i<100)
     i++;
 }
 ```
-#. Execute the code. You should see the numbers 0 to 99 in the console.
+. Execute the code. You should see the numbers 0 to 99 in the console.
 
-#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
+. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
 
-#. Modyfy the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+. Modyfy the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
 
-#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
+. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
 
-#. To implement the above problem, you may code one of the following:
+. To implement the above problem, you may code one of the following:
 ```
 int i = 0;
 while(i<100)
@@ -45,7 +45,7 @@ while(i<100)
 - Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
 
 ## Problem 2
-#. Create a new project and replace the content of the _main_ method with the following code:
+##. Create a new project and replace the content of the _main_ method with the following code:
 
 ```
 int n;
@@ -61,8 +61,8 @@ if (i == n)
 else
     Console.WriteLine($"{n} is not a ... number");
 ```
-#. What does the code do? Explain the boolean expession of the looop
-#. Replace `...` with a meaningful word.
+##. What does the code do? Explain the boolean expession of the looop
+##. Replace `...` with a meaningful word.
 
 
 ## Problem 3
