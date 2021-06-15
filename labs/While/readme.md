@@ -191,3 +191,38 @@ Console.WriteLine(number);
 }
 number++;
 ```
+# `++`  and `--` Operators
+
+For each of the following peace of code, determine the final value of _n_. Explain your answer. 
+```
+int x = 5;
+int n = x++;
+```
+
+```
+int x = 5;
+int n = ++x;
+```
+
+```
+int x = 5;
+int n = x++ + x++;
+```
+
+```
+int x = 5;
+int n = ++x + ++x;
+```
+
+```
+int x = 5, y = 6;
+int n = x++ * ++y;
+```
+
+```
+int x = 5;
+int n = x++ + --x;
+```
+
+
+
