@@ -15,22 +15,9 @@ Write a loop that displays...
 
 In these problems you will need to ask for user for input then perform described actions on the input.
 
+#. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from user
+
 #. Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
-
-#. Assume you have the following table of zip codes and cities:
-
-    | zip code | city name |
-    | --- | --- |
-    | 30901 | Augusta |
-    | 30904 | Augusta |
-    | 30809 | Evans |
-    | 30813 | Grovetown |
-    | 30814 | Harlem |
-    | 30815 | Hephzibah | 
-    | 29842 | North Augusta |
-
-    Write a small program that asks the user to enter a zip code. Then display to the user the city name based on the zip code user entered. If the zip code is not included in the table given above, the program should display "unknown city!". Allow the user to repeat the input until the user indicates they are ready to quit by entering appropriate sentinel value.
-    
     
 # Do while Loops
 
