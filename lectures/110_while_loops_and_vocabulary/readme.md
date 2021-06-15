@@ -52,13 +52,11 @@ while (true)
 - Note, if `<boolean expression>` is always true, then the program loops until the program fails or an special statement(See the next section) in the loop body ends the loop!
 - A program may fail for sevral reasons like
     - Power outage
-    - Hardware issue
+    - Hardware malfunctinong
     - Operating System issue.
     
 ## `break` statement
-This command ends a loop immediately. 
-
-<!-- Which command? Give it explicitely, and explain that it is a statement, so that it must be followed by a `;` -->
+The `break` statement ends a loop immediately. 
 
 ### Example
 ```
