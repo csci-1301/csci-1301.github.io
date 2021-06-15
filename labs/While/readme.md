@@ -15,7 +15,11 @@ Write a loop that displays...
 
 In these problems you will need to ask for user for input then perform described actions on the input.
 
-#. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series where $n$ represents the number obtained from user:  $1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + ... + \frac{1}{n}$
+#. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series where $n$ represents the number obtained from user:  
+
+    ```text
+    1.0 + 1.0/2 + 1.0/3 + 1.0/4 + 1.0/5 + ... + 1.0/n
+    ```
 
 #. Assume you have the following mapping of zip codes to cities:
 
@@ -23,7 +27,6 @@ In these problems you will need to ask for user for input then perform described
     | --- | --- |
     | 30901 | Augusta |
     | 30904 | Augusta |
-    | 30912 | Augusta |
     | 30809 | Evans |
     | 30813 | Grovetown |
     | 30814 | Harlem |
