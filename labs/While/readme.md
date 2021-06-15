@@ -21,6 +21,28 @@ while(i<100)
 
 #. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
 
+#. To implement the above problem, you may code one of the following:
+```
+int i = 0;
+while(i<100)
+{
+    if(i%3 ==0)
+        Console.WriteLine(i);
+    i++;
+}
+```
+or
+```
+int i = 0;
+while(i<100)
+{
+    Console.WriteLine(i);
+    i+=3;
+}
+```
+- Which one of the above codes is more efficient? Why?
+- Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
+
 #. all integers between 1 and 100 but do not display numbers between 10-20 and 40-60. 
 #. `Hello World` ten times.
 #. 10 rows of text where `Hello` is displayed on every other row and `World` on every other row
