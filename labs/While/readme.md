@@ -107,7 +107,7 @@ Write a program that display numbers 30 to -20.
 
 Write a `do while` loop that generates this output: `1 10 100 1000 10000 100000 1000000`
 
-# `while` vs `do while'
+# `while` vs `do while`
 
 Both of the following programs keep getting inputs from the user until the user enters a valid integer. Which one is better? Explain your answer.
 
