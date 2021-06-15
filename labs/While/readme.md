@@ -47,7 +47,7 @@ Console.WriteLine(number);
 ```
 
 ```
-int number1, number = 0;
+int number1 = 0, number = 0;
 while (number <=5) {
 Console.WriteLine("Hi!");
 Console.WriteLine(number);
@@ -75,10 +75,10 @@ number++;
 
 ```
 int number = 0;
-while (number >=5)
+while (number <= 5)
 {
 Console.WriteLine("Hi!");
 Console.WriteLine(number);
-number++;
 }
+number++;
 ```
