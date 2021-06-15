@@ -4,6 +4,7 @@ title: while and do while
 
 # Practicing while Loops
 
+## problem 1
 #. Create a new projec, and replace the content of the _main_ method with the following code
 ```
 int i = 0;
@@ -43,18 +44,50 @@ while(i<100)
 - Which one of the above codes is more efficient? Why?
 - Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
 
-#. all integers between 1 and 100 but do not display numbers between 10-20 and 40-60. 
-#. `Hello World` ten times.
-#. 10 rows of text where `Hello` is displayed on every other row and `World` on every other row
-#. value that decreases by 0.5 on each iteration. Start from 10.0 and iterate as long as the value remains positive.    
+## Problem 2
+#. Create a new project and replace the content of the _main_ method with the following code:
+
+```
+int n;
+Console.Write("Enter a natrual number greater than 2:");
+n = int.Parse(Console.ReadLine());
+int i = 2;
+while(n % i != 0 && i < n )
+{
+    i++;
+}
+if (i == n)
+    Console.WriteLine($"{n} is a ... number");
+else
+    Console.WriteLine($"{n} is not a ... number");
+```
+#. What does the code do? Explain the boolean expession of the looop
+#. Replace `...` with a meaningful word.
 
 
-In these problems you will need to ask for user for input then perform described actions on the input.
+## Problem 3
+#. Create a new project and replace the content of the _main_ method with the following code:
+```
+int n = 100;
+while (n > 0 )
+{
+    Console.WriteLine(n);
+    n--;
+}
+```
+#. Execute the code, and explain what you see in the console. Note that the counter is incremental. 
 
-#. Ask the user for a positive integer value (1 or greater). After the user provides a number, compute the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from user
+## Problem 4
+Write a program that gets a number from the console and finds its biggest divisor less than the number itself.
 
-#. Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
+
+## Problem 5
+Write a new program that asks an integer vaue geater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
+
+## Problem 6
+Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
     
+
 # Do while Loops
 
 Before writing code, think through the following problems:
