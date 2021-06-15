@@ -12,10 +12,10 @@ In programming, there are many cases that we either need to increment or decreme
 int x = 10;
 int y = x++;  \\ First y = 10; then x = x + 1
 ```
-- If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed.
+- If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed. See the bellow example:
 ```
 int x = 10;
-int y = ++x;  \\ First x = x+ 1, so x = 11; then y = x, So y = 11
+int y = ++x;  \\ First x = x + 1, so x = 11; then y = x, So y = 11
 ```
 
 
