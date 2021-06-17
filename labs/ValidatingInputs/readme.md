@@ -114,6 +114,7 @@ In the following problems ask the user for input, then check that the input is v
 # Input validation with classes
 
 Start by downloading the [LoanCalculator](LoanCalculator.zip) solution, that mixes classes and decision structures.
+Spend some time reading through the implementation to understand _what_ the program is doing and _how_ it is doing it.
 
 Edit the `Program.cs` file of the project you previously downloaded to add the following validation features:
 
