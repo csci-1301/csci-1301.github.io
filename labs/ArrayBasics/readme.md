@@ -73,7 +73,7 @@ Write a program that
 
 # Exploring arrays
 
-For this part you will need an array to work with. Let's create a new one:
+For this part, create a new array:
 
 - declare a `char` array of length $6$, name it `letters`
 - initialize the first 4 indices of `letters` with following values: `'a', 'b', 'c', 'd'` 
