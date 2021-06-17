@@ -52,4 +52,4 @@ Using this established build system generates labs that are cross-platform (Wind
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
 | [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
 | [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |
-| [ValidatingInputs](/labs/ValidatingInputs) | [While](/labs/While) | ? | using TryParse and validating user input |
+| [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | ? | using TryParse and validating user input |
