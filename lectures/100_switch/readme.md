@@ -3,13 +3,13 @@
 ## Switch Statements
 
 - Introduction: Multiple equality comparisons
-    
+
     - In some situations, your program will need to test if a variable is equal to one of several values, and perform a different action based on which value the variable matches
-    
+
     - For example, you have an `int` variable named `month` containing a month number, and want to convert it to a `string` with the name of the month. This means your program needs to take a different action depending on whether `month` is equal to 1, 2, 3, ... or 12:
 
         !["A flowchart representation of the mapping between month number and name"](img/activity_diag_month)
-    
+
     - One way to do this is with a series of `if-else-if` statements, one for each possible value, like this:
 
         ```
@@ -76,7 +76,7 @@
 - Syntax for `switch` statements
 
     - A `switch` statement is a simpler, easier way to compare a single variable against multiple possible values
-    
+
     - It is written like this:
 
         ```
@@ -158,7 +158,7 @@
                 break;
         }
         Console.WriteLine("The number " + month + " corresponds to the month " + monthName + ".")
-        ``` 
+        ```
 
     - Since the variable in the `switch` statement is `month`, each `case` statement means, effectively, `if (month == <value>)`. For example, `case 1:` has the same effect as `if (month == 1)`
 
@@ -220,7 +220,7 @@
       When this program executes, if `month` is equal to 1, this is what will happen:
 
         - When the computer encounters `switch(month)`, it compares `month` to each value in a `case`
-        - Since `month == 1`, the computer starts executing code at the line `case 1:` 
+        - Since `month == 1`, the computer starts executing code at the line `case 1:`
         - `monthName` gets assigned the value "January"
         - The computer continues past the line `case 2:` without doing anything, since the `switch` comparison has already been done
         - The computer executes `monthName = "February";` and `monthName` gets assigned the value "February"
@@ -253,7 +253,7 @@
         }
         ```
 
-      The statements in block 1 will execute if the variable matches value 1 *or* value 2, and the statements in block 2 will execute if the variable matches value 3 *or* value 4. 
+      The statements in block 1 will execute if the variable matches value 1 *or* value 2, and the statements in block 2 will execute if the variable matches value 3 *or* value 4.
 
     - For example, imagine our program needs to tell the user which season the month is in. If the month number is 1, 2, or 3, the season is the same (winter), so we can combine these 3 cases. This code will correctly initialize the string `season`:
 
@@ -282,7 +282,7 @@
                 break;
             default:
                 season = "Error!"
-                break; 
+                break;
         }
         ```
 
@@ -315,7 +315,7 @@
         }
 
         ```
-    
+
       The line `int nextMonth = 3` would cause a compile error because a variable named `nextMonth` already exists -- the one declared within `case 1`.
 
 - Limitations of `switch`
@@ -421,4 +421,3 @@
         decimal price = isAdult ? 5.0m : 2.5m;
         string closingTime = isAdult ? "10:00 pm" : "8:00 pm";
         ```
-        

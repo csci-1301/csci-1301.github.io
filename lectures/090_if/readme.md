@@ -25,16 +25,16 @@
     - The behavior of this program can be represented by this flowchart:
 
         !["A flowchart representation of an if statement"](img/activity_diag_vote_if)
-    
+
     - Example interaction 1:
-    
+
         ```text
         Enter your age
         20
         You can vote!
         Goodbye
         ```
-    
+
       When the user enters "20", the value 20 is assigned to the `age` variable, so the condition `age >= 18` is true. This means the code inside the `if` statement's block gets executed.
 
     - Example interaction 2:
@@ -152,7 +152,7 @@
             }
             else
             {
-              Console.WriteLine("You are too young to vote");  
+              Console.WriteLine("You are too young to vote");
             }
         }
         else
@@ -182,7 +182,7 @@
             }
             else
             {
-              Console.WriteLine("You are too young to vote");  
+              Console.WriteLine("You are too young to vote");
             }
         }
         else
@@ -252,7 +252,7 @@
             Console.WriteLine("Invalid room number");
         }
         ```
-    
+
     - If the room number 300 or greater (e.g. 365), the first "if" block is executed, and the rest are skipped. The program prints "Third floor"
     - If the room number is less than 300, the program continues to the line `else if(myRoom.GetNumber() >= 200)` and evaluates the condition
     - If `myRoom.GetNumber() >= 200` is true, it means the room number is between 200 and 299, and the program will print "Second floor." Even though the condition only tests whether the room number is >= 200, this condition is only evaluated if the first one was false, so we know the room number must be < 300.
@@ -294,17 +294,17 @@
         | 10         | "yes"         | `false`     | 40  |
 
 - if-else-if vs. nested if
-    
+
     - Sometimes a nested `if` statement can be rewritten as an `if-else-if` statement
-    
+
     - This reduces the amount of indentation in your code, which makes it easier to read
-    
+
     - To convert a nested `if` statement to `if-else-if`, you'll need to combine the conditions of the "outer" and "inner" `if` statements, using the logical operators
-    
+
     - A nested `if` statement inside an `if` block is testing whether the outer `if`'s condition is true *and* its own condition is true, so combine them with the `&&` operator
-    
+
     - The `else` block of the inner `if` statement can be rewritten as an `else if` by combining the outer `if`'s condition with the *opposite* of the inner `if`'s condition, since "else" means "the condition is false." We need to explicitly write down the "false condition" that is normally implied by `else`.
-    
+
     - For example, we can rewrite this nested `if` statement:
 
         ```
@@ -316,7 +316,7 @@
             }
             else
             {
-              Console.WriteLine("You are too young to vote");  
+              Console.WriteLine("You are too young to vote");
             }
         }
         else
@@ -334,7 +334,7 @@
         }
         else if(usCitizen == true && age < 18)
         {
-            Console.WriteLine("You are too young to vote");  
+            Console.WriteLine("You are too young to vote");
         }
         else
         {
@@ -359,7 +359,7 @@
             }
             else
             {
-              Console.WriteLine("You are too young to vote");  
+              Console.WriteLine("You are too young to vote");
             }
         }
         else
@@ -374,7 +374,7 @@
     - On the other hand, any if-else-if statement can be rewritten as a nested `if` statement
 
     - To convert an if-else-if statement to a nested `if` statement, rewrite each `else if` as an `else` block with a nested `if` statement inside it -- like you're splitting the "if" from the "else"
-    
+
     - This results in a lot of indenting if there are many `else if` lines, since each one becomes another nested `if` inside an `else` block
 
     - For example, the "floors problem" could be rewritten like this:
@@ -386,7 +386,7 @@
         }
         else
         {
-            if(myRoom.GetNumber() >= 200) 
+            if(myRoom.GetNumber() >= 200)
             {
                 Console.WriteLine("Second floor");
             }

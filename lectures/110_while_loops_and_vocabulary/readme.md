@@ -1,121 +1,286 @@
-# `--` and `++` Operators
+# Loops, Increment Operators, and Input Validation
 
-In programming, there are many cases that we either need to increment or decrement the value of one variable by one unit. C# provides special optimized operators for this purpose.
+## The `--` and `++` Operators
 
-- The `++` operator takes an operand and adds one to the value of the operand. Hence, the operand must be a variable.
-- `x++;` or `++x;` are similar to  `x = x + 1;`
-- Similarly, the `--` operator takes an operand and decrements the value of the operand by one. Hence, the operand must be a variable.
-- `x--;` or `--x;` are similar to  `x = x - 1;`
-- Both of the `--` and `++` operators can be written before or after an operand.
-- If they are put before the operand, they act on the operand, and then the result will be returned. See the bellow example:
-```
-int x = 10;
-int y = x++;  \\ First y = 10; then x = x + 1
-```
-- If they are put after the operand, the current value of the operand will be returned, and then the current value of the operand will be changed. See the bellow example:
-```
-int x = 10;
-int y = ++x;  \\ First x = x + 1, so x = 11; then y = x, So y = 11
-```
+- Increment and decrement basics
+    - In C#, we have already seen multiple ways to add 1 to a numeric variable:
 
+        ```
+        int myVar = 1;
+        myVar = myVar + 1;
+        myVar += 1
+        ```
 
-# Loops
+      These two lines of code have the same effect; the `+=` operator is "shorthand" for "add and assign"
 
-One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
+    - The **increment operator**, `++`, is an even shorter way to add 1 to a variable. It can be used in two ways:
 
-## Increment and Decrement Operators
+        ```
+        myVar++;
+        ++myVar;
+        ```
 
-An important tool for traversing loops is the increment (++) and decrement (--) unary operators. The **increment operator** increases a value by one while the **decrement operator** decreases a value by one:
+    - Writing `++` after the name of the variable is called a **postfix increment**, while writing `++` before the name of the variable is called a **prefix increment**. They both have the same effect on the variable: its value increases by 1.
 
-```
-int i = 0;
-i++;
-Console.WriteLine(i); // 1 is displayed
-```
+    - Similarly, there are multiple ways to subtract 1 from a numeric variable:
 
-The placement of the increment/decrement operators _will_ affect when the value changes :
+        ```
+        int myVar = 10;
+        myVar = myVar - 1;
+        myVar -= 1;
+        ```
 
-```
-int i = 0;
-Console.WriteLine(i++); // i is displayed then i is incremented
-```
+    - The **decrement operator**, `--`, is a shortcut for subtracting 1 from a variable, and is used just like the increment operator:
 
-- Placing the decrement operator _after_ the value will cause the value to be changed _after_ it is displayed.
-- In this case, the program will display 0 then increment i to 1.
+        ```
+        myVar--;
+        --myVar;
+        ```
 
-```
-int i = 0;
-Console.WriteLine(++i); // i is incremented then i is displayed
-```
+    - To summarize, the increment and decrement operators both have a prefix and postfix version:
 
-- Placing the increment operator _before_ the value will cause the value to be changed _before_ it is displayed.
-- In this case, the program will increment i to 1 then display 1.
+        |         | Increment | Decrement |
+        | Postfix | `myVar++` | `myVar--` |
+        | Prefix  | `++myVar` | `--myVar` |
 
-Furthermore, the increment/decrement operators fundamentally change the value:
+- Difference between prefix and postfix
 
-```
-int i = 5;
-Console.WriteLine(i+1); // i = 5, 6 is displayed
-Console.WriteLine(++i); // i = 6, 6 is displayed
-```
-- While the output is the same, `i+1` only changes the value when displaying it, whereas `++i` changes the actual value 
+    - The prefix and postfix versions of the increment and decrement operators both have the same effect on the variable: Its value increases or decreases by 1
 
-## `while` Statement
+    - The difference between prefix and postfix is whether the "old" or "new" value of the variable is *returned* by the expression
 
-The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the beginning of each iteration. 
-- Essentially, the boolean expression should evaluate to true as many times as you want the block of statements to loop, and the boolean expression should evaluate to false when you want the looping to end.
+    - With postfix increment/decrement, the operator returns the value of the variable, *then* increases/decreases it by 1
 
-### Formal Syntax
+        - This means the value of the increment/decrement expression is the *old* value of the variable, before it was incremented/decremented
 
-```
-while (<boolean expression>)
-    <code block> or <a statement>
-```
+        - Consider this example:
 
-- In the above code, `<code block>` or `<a statement>` is called the loop body.
-<!-- This notion should have been introduced earlier, and I believe it has been. -->
-<!-- Since this is the first time that we introduce loops, I assume we have not introduced the loop body. But, if we have, remove the code -->
+            ```
+            int a = 1;
+            Console.WriteLine(a++);
+            Console.WriteLine(a--);
+            ```
 
-### Example 1
-The underneath example prints numbers 1 to 5 in the console. Note that the loop bode is a code block consist of two statements.
-```
-int number = 1;
-while (number <=5)
-{
-    Console.WriteLine(number);
-    number++;
-}
-```
-- Remember, one or more statements enclosed in left and right braces is called a code block.
+        - The expression `a++` returns the current value of `a`, which is 1, to be used in Console.WriteLine. *Then* it increments `a` by 1, giving it a new value of 2. Thus, the first Console.WriteLine displays "1" on the screen.
 
+        - The expression `a--` returns the current value of `a`, which is 2, to be used in Console.WriteLine, and *then* decrements `a` by 1. Thus, the second Console.WriteLine displays "2" on the screen.
 
-### Example 2
-The underneath example does the same as Example 1, but its body loop consists of only one statement. Hence, there is no need for braces).
+    - With prefix increment/decrement, the operator increases/decreases the value of the variable by 1, *then* returns its value
 
-```
-int number = 1;
-while (number <=5)
-    Console.WriteLine(number++);
-```
+        - This means the value of the increment/decrement expression is the *new* value of the variable, after the increment/decrement
 
+        - Consider the same code, but with prefix instead of postfix operators:
 
+            ```
+            int a = 1;
+            Console.WriteLine(++a);
+            Console.WriteLine(--a);
+            ```
 
-### Example 3
+        - The expression `++a` increments `a` by 1, then returns the value of `a` for use in Console.WriteLine. Thus, the first Console.WriteLine displays "2" on the screen.
 
-```
-int number = 1;
-while (true)
-    Console.WriteLine(number++);
-```
+        - The expression `--a` decrements `a` by 1, then returns the value of `a` for use in Console.WriteLine. Thus, the second Console.WriteLine displays "1" on the screen.
 
-- Note, if `<boolean expression>` is always true, then the program loops until the program fails or an special statement(See the next section) in the loop body ends the loop!
-- A program may fail for sevral reasons like
-    - Power outage
-    - Hardware malfunctinong
-    - Operating System issue.
-    
+- Using increment/decrement in expressions
+
+    - The `++` and `--` operators have higher precedence than the other math operators, so if you use them in an expression they will get executed first
+
+    - The "result" of the operator, i.e. the value that will be used in the rest of the math expression, depends on whether it is the prefix or postfix increment/decrement operator: The prefix operator returns the variable's new value, while the postfix operator returns the variable's old value
+
+    - Consider these examples:
+
+        ```
+        int a = 1;
+        int b = a++;
+        int c = ++a * 2 + 4;
+        int d = a-- + 1;
+        ```
+
+    - The variable `b` gets the value 1, because `a++` returns the "old" value of `a` (1) and then increments `a` to 2
+
+    - In the expression `++a * 2 + 4`, the operator `++a` executes first, and it returns the new value of `a`, which is 3. Then the multiplication executes (`3 * 2`, which is 6), then the addition (`6 + 4`, which is 10). Thus `c` gets the value 10.
+
+    - In thee expression `a-- + 1`, the operator `a--` executes first, and it returns the *old* value of `a`, which is 3 (even though `a` is now 2). Then the addition executes, so `d` gets the value 4.
+
+## While Loops
+
+- Introduction to `while` loops
+    - There are two basic types of decision structures in all programming languages. We've just learned about the first, which is the "selection structure," or `if` statement. This allows the program to choose whether or not to execute a block of code, based on a condition.
+    - The second basic decision structure is the loop, which allows the program to execute the same block of code repeatedly, and choose when to stop based on a condition.
+    - The **while statement** executes a block of code repeatedly, *as long as a condition is true*. You can also think of it as executing the code repeatedly *until a condition is false*
+- Example code with a `while` loop
+
+    ```
+    int counter = 0;
+    while(counter <= 3)
+    {
+        Console.WriteLine("Hello again!");
+        Console.WriteLine(counter);
+        counter++;
+    }
+    Console.WriteLine("Done");
+    ```
+
+    - After the keyword `while` is a condition, in parentheses: `counter <= 3`
+    - On the next line after the `while` statement, the curly brace begins a code block. The code in this block is "controlled" by the `while` statement.
+    - The computer will repeatedly execute that block of code as long as the condition `counter <= 3` is true
+    - Note that inside this block of code is the statement `counter++`, which increments `counter` by 1. So eventually, `counter` will be greater than 3, and the loop will stop because the condition is false.
+    - This program produces the following output:
+
+        ```text
+        Hello again!
+        0
+        Hello again!
+        1
+        Hello again!
+        2
+        Hello again!
+        3
+        Done
+        ```
+
+- Syntax and rules for `while` loops
+
+    - Formally, the syntax for a `while` loop is this:
+
+        ```
+        while(<condition>)
+        {
+            <statements>
+        }
+        ```
+
+    - Just like with an `if` statement, the condition is any expression that produces a `bool` value (including a `bool` variable by itself)
+
+    - When the computer encounters a `while` loop, it first evaluates the condition
+
+    - If the condition is false, the loop body (code block) is skipped, just like with an `if` statement
+
+    - If the condition is true, the loop body is executed
+
+    - After executing the loop body, the computer goes back to the `while` statement and evaluates the condition again to decide whether to execute the loop again
+
+    - Just like with an `if` statement, the curly braces can be omitted if the loop body is just one statement:
+
+        ```
+        while(<condition>)
+            <statement>
+        ```
+
+- Examining the example in detail
+
+    - When our example program runs, it initializes `counter` to 0, then it encounters the loop
+
+    - It evaluates the condition `counter <= 0`, which is true, so it executes the loop's body. The program displays "Hello again!" and "0" on the screen.
+
+    - At the end of the code block (after `counter++`) the program returns to the `while` statement and evaluates the condition again. 1 is less than 3, so it executes the loop's body again.
+
+    - This process repeats two more times, and the program displays "Hello again!" with "2" and "3"
+
+    - After displaying "3", `counter++` increments `counter` to 4. Then the program returns to the `while` statement and evaluates the condition, but `counter <= 3` is false, so it skips the loop body and executes the last line of code (displaying "Done")
+
+- While loops may execute zero times
+    - You might think that a "loop" always repeats code, but nothing requires a while loop to execute at least once
+    - If the condition is false when the computer first encounters the loop, the loop body is skipped
+    - For example, if we initialize `counter` to 5 with our previous loop:
+
+        ```
+        int counter = 5;
+        while(counter <= 3)
+        {
+            Console.WriteLine("Hello again!");
+            Console.WriteLine(counter);
+            counter++;
+        }
+        Console.WriteLine("Done");
+        ```
+
+      The program will only display "Done," because the body of the loop never executes. `counter <= 3` is false the first time it is evaluated, so the program skips the code block and continues on the next line.
+
+- Ensuring the loop ends
+
+    - If the loop condition is always true, the loop will never end, and your program will run "forever" (until you forcibly stop it, or the computer shuts down)
+
+    - Obviously, if you use the value `true` for the condition, the loop will run forever, like in this example:
+
+        ```
+        int number = 1;
+        while (true)
+            Console.WriteLine(number++);
+        ```
+
+    - If you don't intend your loop to run forever, you must ensure the statements in the loop's body do something to *change a variable* in the loop condition, otherwise the condition will stay true
+
+    - For example, this loop will run forever because the loop condition uses the variable `counter`, but the loop body does not change the value of `counter`:
+
+        ```
+        int counter = 0;
+        while(counter <= 3)
+        {
+            Console.WriteLine("Hello again!");
+            Console.WriteLine(counter);
+        }
+        Console.WriteLine("Done");
+        ```
+
+    - This loop will also run forever because the loop condition uses the variable `num1`, but the loop body changes the variable `num2`:
+
+        ```
+        int num1 = 0, num2 = 0;
+        while(num1 <= 5)
+        {
+            Console.WriteLine("Hello again!");
+            Console.WriteLine(num1);
+            num2++;
+        }
+        Console.WriteLine("Done");
+        ```
+
+    - It's not enough for the loop body to simply change the variable; it must change the variable in a way that will eventually *make the condition false*
+
+        - For example, if the loop condition is `counter <= 5`, then the loop body must increase the value of `counter` so that it is eventually greater than 5
+
+        - This loop will run forever, even though it changes the right variable, because it changes the value in the wrong "direction":
+
+            ```
+            int number = 10;
+            while(number >= 0)
+            {
+                Console.WriteLine("Hello again!");
+                Console.WriteLine(number);
+                number++;
+            }
+            ```
+
+          The loop condition checks to see whether `number` is $\geq$ 0, and `number` starts out at the value 10. But the loop body increments `number`, which only moves it further away from 0 in the positive direction. In order for this loop to work correctly, we need to *decrement* `number` in the loop body, so that eventually it will be less than 0.
+
+        - This loop will run forever, even though it uses the right variable in the loop body, because it multiplies the variable by 0:
+
+            ```
+            int number = 0;
+            while (number <= 64)
+            {
+                Console.WriteLine(number);
+                number *= 2;
+            }
+            ```
+
+          Since `number` was initialized to 0, `number *= 2` doesn't actually change the value of `number`: $2 \times 0 = 0$. So the loop body will never make the condition `number <= 64` false.
+
+- Principles of writing a `while` loop
+
+    - When writing a `while` loop, ask yourself these questions about your program:
+
+        1. When (under what conditions) do I want the loop to continue?
+        2. When (under what conditions) do I want the loop to stop?
+        3. How will the body of the loop bring it closer to its ending condition?
+
+    - This will help you think clearly about how to write your loop condition. You should write a condition (Boolean expression) that will be `true` in the circumstances described by (1), and `false` in the circumstances described by (2)
+
+    - Keep your answer to (3) in mind as you write the body of the loop, and make sure the actions in your loop's body match the condition you wrote.
+
 ## `break` statement
-The `break` statement ends a loop immediately. 
+The `break` statement ends a loop immediately.
 
 ### Example
 ```
@@ -130,7 +295,7 @@ while (true)
 
 ## `continue` statement
 
-This command ends the current iteration of a loop and skips the remaming statements in the body of the loop.
+This command ends the current iteration of a loop and skips the remaining statements in the body of the loop.
 
 ### Example
 ```
@@ -144,80 +309,6 @@ while (number <= 100)
 ```
 - The above code prints all the even numbers from 1 to 100.
 
-### Six Ways a `while` Loop Can Go Wrong
-
-It is easy to write _wrong_ `loop` statements. 
-Let us review some of the "classic" blunders.
-
-#### 1- Failing to update the variable occurring in the condition
-
-
-```
-int number = 0;
-while (number <=5)
-{
-    Console.WriteLine(number);
-}
-```
-
-Number isn't changed!
-
-#### 2- Updating the "wrong" value
-
-```
-int number1, number = 0;
-while (number <=5)
-{
-    Console.WriteLine(number);
-    number1++;
-}
-```
-
-#### 3- Having an empty body
-
-```
-int number = 0; 
-while (number <=5); // Note the semi-colon here!
-{
-    Console.WriteLine(number);
-    number++;
-}
-```
-
-#### 4- Missing braces
-
-```
-int number = 0;
-while (number <=5)
-    Console.WriteLine(number);
-    number++;
-```
-
-#### 5- Going in the wrong direction
-
-```
-int number = 5;
-while (number >=0)
-{
-    Console.WriteLine(number);
-    number++;
-}
-```
-
-The variable `number` should be decremented, not incremented.
-
-#### 6- Multiplying by zero
-
-```
-int number = 0;
-while (number <=64)
-{
-    Console.WriteLine(number);
-    number *= 2;
-}
-```
-
-The variable `number` will always result in zero, causing the condition to never be fulfilled, so the loop will go on infinitely. (The intended behavior here was to get `0 2 4 8 16 ...` but they got `0 0 0 ...` instead.)
 
 ## `do-while` Statement
 As like as the `while` statement, the `do-while` statement executes a block or a statement while a specified _boolean expression_ evaluates to true. But, the boolean expression is evaluated at the end of each iteration. Consequently, the loop body of a `do-while` loop executes at least once.
@@ -258,8 +349,8 @@ while (n < 0)
 ### TryParse
 
 - The `TryParse` method allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
-- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean. 
-    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.     
+- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean.
+    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.
     - If the first argument is _not_ convertable to the desired datatype, it returns _false_ and 0 is saved into the variable name.
 - The `TryParse` method is typically structured like so:
 
@@ -277,7 +368,7 @@ bool result = <numeric datatype>.TryParse(<string to convert>, out <numeric vari
 int myInt;
 bool result = int.TryParse("5", out myInt);
 
-// string variable to double type 
+// string variable to double type
 // the output variable can be declared simultaneously
 string numStr = "3.25";
 bool success = double.TryParse(numStr, out double myDoubleVar);
@@ -394,7 +485,7 @@ Count controlled loop
 
 Note that a user-controlled loop can be sentinel-controlled (that is the example we just saw), but also count-controlled ("Give me a value, and I will iterate a task that many times").
 
- 
+
 # While Loop With Complex Conditions
 In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be convertible to an integer, the program tries again, but not more than three times.
 
