@@ -96,7 +96,7 @@ First few lines are given as examples, your task is to complete the rest of the 
 </table>
 
 Question:
-~  After completing the table, can you detect a pattern between return type and resulting value?
+~  After completing the table, can you detect a pattern between "returns" and "value"?
 
 # Validating Inputs
 
