@@ -61,7 +61,13 @@ Features of this program:
     - If you want to use code from a different namespace, you need a `using` statement to "import" that namespace
     - All the standard library code is in different namespaces from the code you will be writing, so you'll need `using` statements to access it
 - A class declaration
-    - Syntax: `class [name of class]`, then `{` to begin the body of the class, then `}` to end the body of the class
+    - Syntax:
+      <pre>
+      class [name of class]
+      {
+           body of the class
+      }
+      </pre>
     - All code between opening `{` and closing `}` is part of the class named by the `class [name]` statement
 - A method declaration
     - The name of the method is `Main`, and is followed by empty parentheses (we'll get to those later, but they're required)
