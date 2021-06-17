@@ -259,7 +259,8 @@ while (n < 0)
 
 - The `TryParse` method allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
 - `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean. 
-    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.     - If the first argument is _not_ convertable to the desired datatype, it returns _false_ and 0 is saved into the variable name.
+    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.     
+    - If the first argument is _not_ convertable to the desired datatype, it returns _false_ and 0 is saved into the variable name.
 - The `TryParse` method is typically structured like so:
 
 ```
