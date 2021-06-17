@@ -12,15 +12,15 @@ Write a program that implements the following steps:
 #. declares an array `myArray` of `int` of size $5$,
     
     Question
-    ~ What values are stored in this array
+    ~ What values are stored in this array after declaring it?
 
 #. initializes `myArray` with the values $1$, $2$, $3$, $4$ and $5$,
 
     Question
     ~ There are a few different ways you can declare and initialize array of size $5$ holding values $1$, $2$, $3$, $4$ and $5$.
-     Can you think of two different ways to do this?
+     Can you think of two different ways of doing this?
 
-#. displays the content of `myArray`.
+#. displays the content of `myArray` at the screen.
 
        
 ## Going wrong
@@ -33,7 +33,7 @@ Add the following statement to the program you created in the warm-up part, and 
 myArray = { 1, 2 ,3, 4, 5};
 ```
 
-Remove the previous line. Then add this statement:
+Remove the previous line. Then add this statement in its place:
 
 ```
 Console.WriteLine(myArray[5]);
@@ -41,7 +41,7 @@ Console.WriteLine(myArray[5]);
 
 try to compile and execute the program.
 
-Then, remove previous line, and add this:
+Then, remove previous line, and now add this:
 
 ```
 myArray[5] = 12;
@@ -49,7 +49,7 @@ myArray[5] = 12;
 
 try to compile and execute the program again.
 
-Remove previous line. Add this line and try executing the program:
+Remove previous line. Add this line and execute the program:
 
 ```
 Console.WriteLine(myArray);
@@ -73,7 +73,7 @@ Write a program that
 
 # Exploring arrays
 
-For this exercise you will need an array to work with. Let's create one:
+For this part you will need an array to work with. Let's create a new one:
 
 - declare a `char` array of length $6$, name it `letters`
 - initialize the first 4 indices of `letters` with following values: `'a', 'b', 'c', 'd'` 
@@ -81,17 +81,17 @@ For this exercise you will need an array to work with. Let's create one:
 
 Now, write the following statements:
 
-#. Write a statement to display the last `char` value in `letters`? (should display `f`)
-#. Write a statement to display value stored at index 4. What is the value? Why?
-#. Write a statement to display characters in the first half of the array (`'a', 'b', 'c'` but no others).
+#. Write a statement to display the last `char` value in `letters` (should display `f`).
+#. Write a statement to display value stored at index 4. What is that value? Why?
+#. Write a statement to display characters in the _first half_ of the array (`'a', 'b', 'c'` but no others).
 
-Execute your program to ensure you seeing the expected output before proceeding.
+Execute your program to ensure you are seeing the expected output before proceeding.
 
 Next, update the part of the program where `letters` is declared and change `letters` length to $8$. Do not modify any other parts of the program. Then execute the program again.
 
 Answer the following questions:
 
-#. What is the last `char` of the `letters` array now after changing the length? 
+#. What is the last `char` of the `letters` array now, after changing its length? 
 #. Does your program still output _the last_ `char` value in `letters` array?
 #. When displaying the first half of the array, does your program still display _the first half_? (After changing length the first half contains values `'a', 'b', 'c', 'd'`) 
-#. If you did not get the last value, or first half you expected, can you think of a way to perform these array operations in a way that can accomodate arrays of different lengths? 
+#. If you did not get the last value or the first half you should have, can you think of a way to perform these array operations in a way that can accomodate arrays of different lengths? 
