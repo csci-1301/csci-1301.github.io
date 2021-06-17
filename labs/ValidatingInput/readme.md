@@ -8,8 +8,8 @@ In your IDE, write statements using `int.TryParse` and `double.TryParse` to dete
 
 For each input:
 
-#. in returns column, write whether the operation succeeded (`true` or `false`) 
-#. in value column, write the value stored at the variable (second argument) after `TryParse` operation
+#. in returns column, write whether the TryParse operation succeeded (`true` or `false`). 
+#. in value column, write the obtained numeric value after `TryParse` operation.
 
 First few lines are given as examples, your task is to complete the rest of the table.
 
@@ -100,7 +100,13 @@ Question:
 
 # Validating Inputs
 
-In the following problems ask the user for input, then check that the input is valid according to the specific problem, and _only then_ perform the subsequent action. If the provided input is not valid, request new input from user until the user provides valid input.
+In the following problems, always perform the following steps: 
+
+- ask the user for input
+- then check that the input is valid according to the specific problem
+- _only then_ perform the subsequent action
+
+If the provided input is not valid, request new input from user until the user provides valid input.
 
 #. Write a loop that displays: `Enter yes to quit: ` then check the user's input. Consider any of these variations to mean yes: "yes", "YES", "y", "Y". Once user enters yes, exit the loop. 
 
@@ -114,7 +120,7 @@ In the following problems ask the user for input, then check that the input is v
 # Input validation with classes
 
 Start by downloading the [LoanCalculator](LoanCalculator.zip) solution, that mixes classes and decision structures.
-Spend some time reading through the implementation to understand _what_ the program is doing and _how_ it is doing it.
+Spend some time studying the implementation to understand _what_ the program is doing and _how_ it is doing it.
 
 Edit the `Program.cs` file of the project you previously downloaded to add the following validation features:
 
@@ -124,4 +130,4 @@ Edit the `Program.cs` file of the project you previously downloaded to add the f
 #. (Optional) Use the [ToLower()](https://docs.microsoft.com/en-us/dotnet/api/system.char.tolower?view=netframework-4.7.2) or [ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.char.toupper?view=netframework-4.7.2) methods of the `char` class to make the program more readable -- you will be able to greatly simplify the `if` statement that checks the loan type.
 #. (Optional, hard) Write a method for the Loan class that takes a character as an argument, and returns the string describing the type of loan designed by that character. Then, use this method in the `ToString` and in the application program instead of doing it "by hand". 
 
-You can find a possible solution [in this archive](LoanCalculatorSol.zip).
+You can find a possible solution [in this archive](Solution_LoanCalculator.zip).
