@@ -4,8 +4,8 @@ title: while and do while
 
 # Practicing while Loops
 
-## problem 1
-- Create a new projec, and replace the content of the _main_ method with the following code
+## Problem 1
+- Create a new project, and replace the content of the _main_ method with the following code
 ```
 int i = 0;
 while(i<100)
@@ -18,7 +18,7 @@ while(i<100)
 
 - Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
 
-- Modyfy the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+- Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
 
 - Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
 
@@ -49,7 +49,7 @@ while(i<100)
 
 ```
 int n;
-Console.Write("Enter a natrual number greater than 2:");
+Console.Write("Enter a natural number greater than 2: ");
 n = int.Parse(Console.ReadLine());
 int i = 2;
 while(n % i != 0 && i < n )
@@ -82,7 +82,7 @@ Write a program that gets a number from the console and finds its biggest diviso
 
 
 ## Problem 5
-Write a new program that asks an integer vaue geater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
+Write a new program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
 ## Problem 6
 Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
@@ -150,17 +150,17 @@ All of the following are examples of infinite loops. Can you spot the problem? H
 ```
 int number = 0;
 while (number <=5) {
-Console.WriteLine("Hi!");
-Console.WriteLine(number);
+    Console.WriteLine("Hi!");
+    Console.WriteLine(number);
 }
 ```
 
 ```
 int number1 = 0, number = 0;
 while (number <=5) {
-Console.WriteLine("Hi!");
-Console.WriteLine(number);
-number1++;
+    Console.WriteLine("Hi!");
+    Console.WriteLine(number);
+    number1++;
 }
 ```
 
@@ -168,9 +168,9 @@ number1++;
 int number = 0;
 while (number <=5);
 {
-Console.WriteLine("Hi!");
-Console.WriteLine(number);
-number++;
+    Console.WriteLine("Hi!");
+    Console.WriteLine(number);
+    number++;
 }
 ```
 
@@ -186,14 +186,14 @@ number++;
 int number = 0;
 while (number <= 5)
 {
-Console.WriteLine("Hi!");
-Console.WriteLine(number);
+    Console.WriteLine("Hi!");
+    Console.WriteLine(number);
 }
 number++;
 ```
 # `++`  and `--` Operators
 
-For each of the following peace of code, determine the final value of _n_. Explain your answer. 
+For each of the following pieces of code, determine the final value of _n_. Explain your answer. 
 ```
 int x = 5;
 int n = x++;
