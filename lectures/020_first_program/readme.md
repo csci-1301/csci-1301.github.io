@@ -31,7 +31,7 @@
 - Examples:
     - A Car *Class*
         - Attributes: Color, engine status (on/off), gear position
-        - Methods: Press gas or brake pedal, turn key on/off, shift transmission\
+        - Methods: Press gas or brake pedal, turn key on/off, shift transmission
     - A Car *Object*\
       Example: A *Porsche911* object that is Red, Engine On, and in 1st gear 
     - An "Audio File" *Class* represents a song being played in a music player
