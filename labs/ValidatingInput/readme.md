@@ -43,8 +43,8 @@ If the provided input is not valid, request new input from user until user provi
 
 #. Ask the user to enter a positive integer, between 2 and 100 (including these boundary values 2 and 100). Make sure the value user enters is between these bounds. Then compute the sum of integers starting from 1 up to the integer user entered, and finally display that sum. Here are examples: 
 
-- if user enters 5, compute: 1 + 2 + 3 + 4 + 5, then display 15 at the screen
-- if user enters 8, compute: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, then display 36 at the screen  
+    - if user enters 5, compute: 1 + 2 + 3 + 4 + 5, then display 15 at the screen
+    - if user enters 8, compute: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, then display 36 at the screen  
 
 #. Do this next problem using `decimal` type. Ask the user to enter any numbers (can be positive, negative, or zero). Ignore all non-numeric inputs. Choose an appropriate sentinel value to enable user to indicate when they are done. Compute and display the average of all numbers user entered. If user entered no values, display "You did not enter any numbers".
 
