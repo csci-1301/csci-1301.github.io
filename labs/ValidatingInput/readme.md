@@ -46,14 +46,14 @@ If the provided input is not valid, request new input from user until user provi
     - if user enters 5, compute: 1 + 2 + 3 + 4 + 5, then display 15 at the screen
     - if user enters 8, compute: 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8, then display 36 at the screen  
 
-#. Do this next problem using `decimal` type. Ask the user to enter any numbers (can be positive, negative, or zero). Ignore all non-numeric inputs. Choose an appropriate sentinel value to enable user to indicate when they are done. Compute and display the average of all numbers user entered. If user entered no values, display "You did not enter any numbers".
+#. Do this next problem using `decimal` type. Ask the user to enter any numbers (can be positive, negative, or zero). Ignore all non-numeric inputs. Choose an appropriate sentinel value to enable user to indicate when they are done. Compute and display the average of all numbers user entered. If user entered no numbers, display "You did not enter any numbers".
 
 # Input validation with classes
 
 Start by downloading the [LoanCalculator](LoanCalculator.zip) solution, that mixes classes and decision structures.
 Spend some time studying the implementation to understand _what_ the program is doing and _how_ it is doing it.
 
-Edit the `Program.cs` file of the project you previously downloaded to add the following validation features:
+Next edit the `Program.cs` file of the `LoanCalculator` to add the following validation features:
 
 #. Users entering a value other than `A`, `a`, `H`, `h`, `O` and `o` for the loan type will be asked again, and asked as long as they do not give a valid answer.
 #. Users entering a credit score not between 300 and 850, or that is not an integer, will be asked again, and asked as long as they do not give a valid answer.
