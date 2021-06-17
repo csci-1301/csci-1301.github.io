@@ -100,13 +100,13 @@ Question:
 
 # Validating Inputs
 
-In the following problems, always perform the following steps: 
+For the following problems, always perform these steps: 
 
 - ask the user for input
 - then check that the input is valid according to the specific problem
-- _only then_ perform the subsequent action
+- _only then_ perform the subsequent action.
 
-If the provided input is not valid, request new input from user until the user provides valid input.
+If the provided input is not valid, request new input from user until user provides valid input.
 
 #. Write a loop that displays: `Enter yes to quit: ` then check the user's input. Consider any of these variations to mean yes: "yes", "YES", "y", "Y". Once user enters yes, exit the loop. 
 
