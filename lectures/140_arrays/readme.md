@@ -4,14 +4,24 @@
 ## Motivation
 
 Arrays are collection, or grouping, of values held in a single place.
-They can store multiple values of the same datatype, and are useful, for instance,
+They can store multiple values of the same datatype and are useful for...
 
-- When we want to store a collection of related values,
-- When we don't know in advance how many variables we need.
+- when we want to store a collection of related values
+- when we don't know in advance how many variables we need
 
 ## Declaration and Initialization of Arrays
 
-Declaration and assignment
+Structure
+
+- To declare an array, the structure is like so: `<datatype>[] <name> = new <datatype>[];`
+- To access a value in an array index, the structure looks like so: `arrayName[index]`
+   - An array's **index** (or cell) refers to the location in an array
+   - Arrays are **zero-indexed**, or in other words, arrays _start with zero_
+- To display the value in an array index, the structure looks like so: `Console.Write(arrayName[index]);`
+
+PLACE VISUAL REPRESENTATION OF ARRAY HERE WITH INDICES 
+
+Declaration and Assignment
 
 ```
 int[] myArray;
@@ -86,7 +96,7 @@ while (counter < size)
 }
 ```
 
-We can use `length`, a property of our `array`.
+We can use `Length`, a property of our `array`.
 That is, the integer value `myArray.Length` is the length (= size) of the array, we can access it directly.
 
 To display an array, we need to iterate as well (this time using the `Length` property):
