@@ -15,7 +15,7 @@ First few lines are given as examples, your task is to complete the rest of the 
 
 | |	int.TryParse | | double.TryParse | |
 | :--- | :---: | :---: | :---: | :---: |
-| Input	| returns |	value	| returns	value |
+| Input	| returns |	value	| returns |	value |
 | `"9432.0"`	| `false` |	`0`	| `true` |	`9432.0` |
 | `"160519"`	| `true`  |	`160519` | `true` |	`160519` |
 | `"12,804"` | | | | |				
