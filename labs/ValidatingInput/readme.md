@@ -13,87 +13,18 @@ For each input:
 
 First few lines are given as examples, your task is to complete the rest of the table.
 
-<table>
-    <thead>
-    <tr>
-        <th></th>
-        <th colspan="2"><code>int.TryParse</code></th>
-        <th colspan="2"><code>double.TryParse</code></th>
-    </tr>
-    <tr>
-        <th>Input</th>
-        <th>returns</th>
-        <th>value</th>
-        <th>returns</th>
-        <th>value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>"9432.0"</code></td>
-        <td><code>false</code></td>
-        <td><code>0</code></td>
-        <td><code>true</code></td>
-        <td><code>9432.0</code></td>
-    </tr>
-    <tr>
-        <td><code>"160519"</code></td>
-        <td><code>true</code></td>
-        <td><code>160519</code></td>
-        <td><code>true</code></td>
-        <td><code>160519</code></td>
-    </tr>
-    <tr>
-        <td><code>"12,804"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"+5102"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"2+2"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"   -322   "</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"(72);"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"000"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><code>"78 095"</code></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>    
-    </tbody>
-</table>
+| |	int.TryParse | | double.TryParse | |
+| :--- | :---: | :---: | :---: | :---: |
+| Input	| returns |	value	| returns	value |
+| `"9432.0"`	| `false` |	`0`	| `true` |	`9432.0` |
+| `"160519"`	| `true`  |	`160519` | `true` |	`160519` |
+| `"12,804"` | | | | |				
+| `"+5102"` |||||				
+| `"2+2"` |||||				
+| `" -322 "` |||||				
+| `"(72);"` |||||				
+| `"000"` |||||				
+| `"78 095"` |||||				
 
 Question:
 ~  After completing the table, can you detect a pattern between "returns" and "value"?
