@@ -23,43 +23,6 @@ int y = ++x;  \\ First x = x + 1, so x = 11; then y = x, So y = 11
 
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
-## Increment and Decrement Operators
-
-An important tool for traversing loops is the increment (++) and decrement (--) unary operators. The **increment operator** increases a value by one while the **decrement operator** decreases a value by one:
-
-```
-int i = 0;
-i++;
-Console.WriteLine(i); // 1 is displayed
-```
-
-The placement of the increment/decrement operators _will_ affect when the value changes :
-
-```
-int i = 0;
-Console.WriteLine(i++); // i is displayed then i is incremented
-```
-
-- Placing the decrement operator _after_ the value will cause the value to be changed _after_ it is displayed.
-- In this case, the program will display 0 then increment i to 1.
-
-```
-int i = 0;
-Console.WriteLine(++i); // i is incremented then i is displayed
-```
-
-- Placing the increment operator _before_ the value will cause the value to be changed _before_ it is displayed.
-- In this case, the program will increment i to 1 then display 1.
-
-Furthermore, the increment/decrement operators fundamentally change the value:
-
-```
-int i = 5;
-Console.WriteLine(i+1); // i = 5, 6 is displayed
-Console.WriteLine(++i); // i = 6, 6 is displayed
-```
-- While the output is the same, `i+1` only changes the value when displaying it, whereas `++i` changes the actual value 
-
 ## `while` Statement
 
 The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the beginning of each iteration. 
