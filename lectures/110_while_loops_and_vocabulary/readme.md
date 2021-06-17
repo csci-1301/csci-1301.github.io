@@ -23,9 +23,47 @@ int y = ++x;  \\ First x = x + 1, so x = 11; then y = x, So y = 11
 
 One of the significant reasons humans use computers is to execute a specific process without mistakes repeatedly. Therefore, each programming language provides some statements that iterate a block of code. In this course, you will learn `while`, `do-while`, `for`, and `foreach` statements that are used for implementing loops. 
 
+## Increment and Decrement Operators
+
+An important tool for traversing loops is the increment (++) and decrement (--) unary operators. The **increment operator** increases a value by one while the **decrement operator** decreases a value by one:
+
+```
+int i = 0;
+i++;
+Console.WriteLine(i); // 1 is displayed
+```
+
+The placement of the increment/decrement operators _will_ affect when the value changes :
+
+```
+int i = 0;
+Console.WriteLine(i++); // i is displayed then i is incremented
+```
+
+- Placing the decrement operator _after_ the value will cause the value to be changed _after_ it is displayed.
+- In this case, the program will display 0 then increment i to 1.
+
+```
+int i = 0;
+Console.WriteLine(++i); // i is incremented then i is displayed
+```
+
+- Placing the increment operator _before_ the value will cause the value to be changed _before_ it is displayed.
+- In this case, the program will increment i to 1 then display 1.
+
+Furthermore, the increment/decrement operators fundamentally change the value:
+
+```
+int i = 5;
+Console.WriteLine(i+1); // i = 5, 6 is displayed
+Console.WriteLine(++i); // i = 6, 6 is displayed
+```
+- While the output is the same, `i+1` only changes the value when displaying it, whereas `++i` changes the actual value 
+
 ## `while` Statement
 
-The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the begining of each iteration.
+The `while` statement executes a block of statements while a specified _boolean expression_ evaluates to true at the beginning of each iteration. 
+- Essentially, the boolean expression should evaluate to true as many times as you want the block of statements to loop, and the boolean expression should evaluate to false when you want the looping to end.
 
 ### Formal Syntax
 
@@ -106,7 +144,7 @@ while (number <= 100)
 ```
 - The above code prints all the even numbers from 1 to 100.
 
-### Five Ways a `while` Loop Can Go Wrong
+### Six Ways a `while` Loop Can Go Wrong
 
 It is easy to write _wrong_ `loop` statements. 
 Let us review some of the "classic" blunders.
@@ -167,6 +205,19 @@ while (number >=0)
 ```
 
 The variable `number` should be decremented, not incremented.
+
+#### 6- Multiplying by zero
+
+```
+int number = 0;
+while (number <=64)
+{
+    Console.WriteLine(number);
+    number *= 2;
+}
+```
+
+The variable `number` will always result in zero, causing the condition to never be fulfilled, so the loop will go on infinitely. (The intended behavior here was to get `0 2 4 8 16 ...` but they got `0 0 0 ...` instead.)
 
 ## `do-while` Statement
 As like as the `while` statement, the `do-while` statement executes a block or a statement while a specified _boolean expression_ evaluates to true. But, the boolean expression is evaluated at the end of each iteration. Consequently, the loop body of a `do-while` loop executes at least once.
