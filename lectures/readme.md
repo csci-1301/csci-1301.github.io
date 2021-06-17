@@ -35,4 +35,7 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | [User Input and Output](/lectures/050_reading_and_displaying) | [Booleans](/labs/Booleans) | Boolean expressions and related operators |
 | [if, if-else and Nested if Statements](/lectures/090_if) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | [If](/labs/If) | Reading and writing if statements |
 | [Switch Statements](/lectures/100_switch) | [if, if-else and Nested if Statements](/lectures/090_if) | [IfAndSwitch](/labs/IfAndSwitch) | Switch statement and the conditional operator |
-| [Loops](/lectures/110_while_loops_and_vocabulary) | [if, if-else and Nested if Statements](/lectures/090_if) | | while and do while loops; TryParse | 
+| [Loops](/lectures/110_while_loops_and_vocabulary) | [if, if-else and Nested if Statements](/lectures/090_if) | [ValidatingInput](/labs/ValidatingInput) | while and do while loops; TryParse |
+| [Combining Methods and Decision Structures](/lectures/130_combining_decision_and_classes) | [Introduction to Objects](/lectures/060_object_oriented_intro), [Switch Statements](/lectures/100_switch) | [ValidatingInput](/labs/ValidatingInput) | The "LoanCalculator" ... |
+| [Arrays](/lectures/140_arrays) | | [ArrayBasics](/labs/ArrayBasics) | Arrays |
+ 
