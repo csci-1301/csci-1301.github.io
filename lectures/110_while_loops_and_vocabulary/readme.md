@@ -254,10 +254,40 @@ while (n < 0)
     n = int.Parse(Console.ReadLine());
 }
 ```
-- The `TryParse` method is a method that allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
-- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean. If the first argument is convertable to the desired data type, the method returns _true_; otherwise it returns _false_. 
+
+### TryParse
+
+- The `TryParse` method allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
+- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean. 
+    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.     - If the first argument is _not_ convertable to the desired datatype, it returns _false_ and 0 is saved into the variable name.
+- The `TryParse` method is typically structured like so:
+
+```
+bool result = <numeric datatype>.TryParse(<string to convert>, out <numeric variable to store result>)
+```
+
+- The first argument in TryParse can be string variable, literal, or any method call that returns a string, e.g. `Console.ReadLine()`.
+- The second argument is a variable of the same type as the `TryParse` operation
 
 ### Example 2
+
+```
+// literal to int type
+int myInt;
+bool result = int.TryParse("5", out myInt);
+
+// string variable to double type 
+// the output variable can be declared simultaneously
+string numStr = "3.25";
+bool success = double.TryParse(numStr, out double myDoubleVar);
+
+// calling TryParse with result of ReadLine() method call
+// without intermediate variables
+bool isNumeric = float.TryParse(Console.ReadLine(), out float myFloatVar);
+```
+
+### Example 3
+
 ```
 Console.WriteLine("Please enter a positive number");
 int n;
