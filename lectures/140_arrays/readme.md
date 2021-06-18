@@ -77,6 +77,9 @@ Rectangle[] arrayOfRectangle = new Rectangle[5];
 
 ## Custom Size and Values
 
+Not all arrays will be of the same size. How will you create an array best suited for a user? 
+Asking the user for the size of the array!
+
 ```
 Console.WriteLine("What is size of the array that you want?");
 int size = int.Parse(Console.ReadLine());
@@ -121,4 +124,6 @@ myArray[3] = 40;
 Array.Resize(ref myArray, 2);
 ```
 
-`Resize` shrinks (and content is lost) and extends (and store the default value, i.e., $0$ for `int`, etc.)!
+`Resize` can shrink and extend an array!
+- If an array is shrunk, the contents that do not fit in the new size is lost 
+- If an array is extended, the new spaces in the array are filled with the default value (for int, it is $0$)
