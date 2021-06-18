@@ -41,7 +41,7 @@ for (int l = 0; l <= 5; l++)
 Structure : initialization / condition / update
 
 ## Ways Things Can Go Wrong
- 
+
 Don't:
 
 - Increment the counter in the body of the for loop!
@@ -49,9 +49,9 @@ Don't:
 - Declare the variable twice.
 
 ## For loops With Arrays
- 
+
 `for` loops actually go very well with arrays:
- 
+
 ```
 for (int i = 0; i < size; i++)
 {
@@ -112,4 +112,34 @@ foreach (int i in myArray) // "Read only"
 Difference is w.r.t (with respect to) modifying the array "read vs write".
 Having `i = 2` in the `foreach` would cause an error!
 
-That last structure is given for the sake of completeness, but it's ok if you'd rather not use it. 
+That last structure is given for the sake of completeness, but it's ok if you'd rather not use it.
+
+## `break` statement
+The `break` statement ends a loop immediately.
+
+### Example
+```
+int number = 1;
+while (true)
+{
+    Console.WriteLine(number);
+    number++;
+    if(number > 5) break;
+}
+```
+
+## `continue` statement
+
+This command ends the current iteration of a loop and skips the remaining statements in the body of the loop.
+
+### Example
+```
+int number = 0;
+while (number <= 100)
+{
+    number++;
+    if(number % 2 == 1) continue;
+    Console.WriteLine(number);
+}
+```
+- The above code prints all the even numbers from 1 to 100.

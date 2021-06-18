@@ -279,115 +279,315 @@
 
     - Keep your answer to (3) in mind as you write the body of the loop, and make sure the actions in your loop's body match the condition you wrote.
 
-## `break` statement
-The `break` statement ends a loop immediately.
+## Loops and Input Validation
 
-### Example
-```
-int number = 1;
-while (true)
-{
-    Console.WriteLine(number);
-    number++;
-    if(number > 5) break;
-}
-```
+- Valid and invalid data
 
-## `continue` statement
+    - Depending on the purpose of your program, each variable might have a limited range of values that are "valid" or "good," even if the data type can hold more
 
-This command ends the current iteration of a loop and skips the remaining statements in the body of the loop.
+    - For example, a `decimal` variable that holds a price (in dollars) should have a positive value, even though it's legal to store negative numbers in a `decimal`
 
-### Example
-```
-int number = 0;
-while (number <= 100)
-{
-    number++;
-    if(number % 2 == 1) continue;
-    Console.WriteLine(number);
-}
-```
-- The above code prints all the even numbers from 1 to 100.
+    - On a recent quiz we saw the `Item` class, which represents an item sold in a store, and it has a `price` attribute that should only store positive values
+
+    - When you write a program that constructs an `Item` from literal values, you (the programmer) can make sure you only use positive prices. However, if you construct an `Item` based on input provided by the user, you can't be certain that the user will follow directions and enter a valid price:
+
+        ```
+        Console.WriteLine("Enter the item's description");
+        string desc = Console.ReadLine();
+        Console.WriteLine("Enter the item's price (must be positive)");
+        decimal price = decimal.Parse(Console.ReadLine());
+        Item myItem = new Item(desc, price);
+        ```
+
+      In this code, if the user enters a negative number, the `myItem` object will have a negative price, even though that doesn't make sense.
+
+    - One way to guard against "bad" user input values is to use an `if` statement or a conditional operator, as we saw in the previous lecture (Switch and Conditional), to provide a default value if the user's input is invalid. In our example with Item, we could add a conditional operator to check whether `price` is negative before providing it to the `Item` constructor:
+
+        ```
+        decimal price = decimal.Parse(Console.ReadLine());
+        Item myItem = new Item(desc, (price >= 0) ? price : 0);
+        ```
+
+      In this code, the second argument to the `Item` constructor is the result of the conditional operator, which will be 0 if `price` is negative.
+
+    - You can also put the conditional operator inside the constructor, to ensure that an `Item` with an invalid price can never be created. If we wrote this constructor inside the `Item` class:
+
+        ```
+        public Item(string initDesc, decimal initPrice)
+        {
+            description = initDesc;
+            price = (initPrice >= 0) ? initPrice : 0;
+        }
+        ```
+
+      then the instantiation `new Item(desc, price)` would never be able to create an object with a negative price. If the user provides an invalid price, the constructor will ignore their value and initialize the `price` instance variable to 0 instead.
+
+- Ensuring data is valid with a loop
+
+    - Another way to protect your program from "bad" user input is to check whether the data is valid as soon as the user enters it, and prompt him/her to re-enter the data if it is not valid
+
+    - A `while` loop is the perfect fit for this approach: you can write a loop condition that is true when the user's input is *invalid*, and ask the user for input in the body of the loop. This means your program will repeatedly ask the user for input until he/she enters valid data.
+
+    - This code uses a `while` loop to ensure the user enters a non-negative price:
+
+        ```
+        Console.WriteLine("Enter the item's price.");
+        decimal price = decimal.Parse(Console.ReadLine());
+        while(price < 0)
+        {
+            Console.WriteLine("Invalid price. Please enter a non-negative price.");
+            price = decimal.Parse(Console.ReadLine());
+        }
+        Item myItem = new Item(desc, price);
+        ```
+
+        - The condition for the `while` loop is `price < 0`, which is true when the user's input is invalid
+        - If the user enters a valid price the first time, the loop will not run at all -- remember that a `while` loop will skip the code block if the condition is false
+        - Inside the loop's body, we ask the user for input again, and assign the result of `decimal.Parse` to the same `price` variable we use in the loop condition. This is what ensures that the loop will end: the variable in the condition gets changed in the body.
+        - If the user still enters a negative price, the loop condition will be true, and the body will execute again (prompting them to try again)
+        - If the user enters a valid price, the loop condition will be false, so the program will proceed to the next line and instantiate the Item
+        - Note that the *only* way for the program to "escape" from the `while` loop is for the user to enter a valid price. This means that `new Item(desc, price)` is guaranteed to create an Item with a non-negative price, even if we did not write the constructor that checks whether `initPrice >= 0`. On the next line of code after the end of a `while` loop, you can be certain that the loop's condition is false, otherwise execution would not have reached that point.
+
+- Ensuring the user enters a number with `TryParse`
+
+    - Another way that user input might be invalid: When asked for a number, the user could enter something that is not a number
+
+    - The `Parse` methods we have been using assume that the `string` they are given (in the argument) is a valid number, and produce a run-time error if it is not
+
+        - For example, this program that you might remember from lab will crash if the user enters "hello" instead of a number:
+
+            ```
+            Console.WriteLine("Guess a number"):
+            int guess = int.Parse(Console.ReadLine());
+            if(guess == favoriteNumber)
+            {
+                Console.WriteLine("That's my favorite number!");
+            }
+            ```
+
+    - Each built-in data type has a **TryParse method** that will *attempt* to convert a `string` to a number, but will not crash (produce a run-time error) if the conversion fails. Instead, TryParse indicates failure by returning the Boolean value `false`
+
+    - The `TryParse` method is used like this:
+
+        ```
+        string userInput = Console.ReadLine();
+        int intVar;
+        bool success = int.TryParse(userInput, out intVar);
+        ```
+
+        - The first parameter is a `string` to be parsed (`userInput`)
+
+        - The second parameter is an **out parameter**, and it is the name of a variable that will be assigned the result of the conversion. The keyword `out` indicates that a method parameter is used for *output* rather than *input*, and so the variable you use for that argument will be changed by the method.
+
+        - The return type of `TryParse` is `bool`, not `int`, and the value returned indicates whether the input string was successfully parsed
+
+        - If the string `userInput` contains an integer, `TryParse` will assign that integer value to `intVar` and return `true` (which gets assigned to `success`)
+
+        - If the string `userInput` does not contain an integer, `TryParse` will assign 0 to `intVar` and return `false` (which gets assigned to `success`)
+
+        - Either way, the program will not crash, and `intVar` will be assigned a new value
+
+    - The other data types have `TryParse` methods that are used the same way. The code will follow this general format:
+
+        ```
+        bool success = <numeric datatype>.TryParse(<string to convert>, out <numeric variable to store result>)
+        ```
+
+      Note that the variable you use in the out parameter must be the same type as the one whose `TryParse` method is being called. If you write `decimal.TryParse`, the out parameter must be a `decimal` variable.
+
+    - A more complete example of using `TryParse`:
+
+        ```
+        Console.WriteLine("Please enter an integer");
+        string userInput = Console.ReadLine();
+        int intVar;
+        bool success = int.TryParse(userInput, out intVar);
+        if(success)
+        {
+            Console.WriteLine($"The value entered was an integer: {intVar}");
+        }
+        else
+        {
+            Console.WriteLine($"\"{userInput}\" was not an integer");
+        }
+        Console.WriteLine(intVar);
+        ```
+
+        - The `TryParse` method will attempt to convert the user's input to an `int` and store the result in `intVar`
+
+        - If the user entered an integer, `success` will be `true`, and the program will display "The value entered was an integer: " followed by the user's value
+
+        - If the user entered some other string, `success` will be `false`, and the program will display a message indicating that it was not an integer
+
+        - Either way, `intVar` will be assigned a value, so it's safe to write `Console.WriteLine(intVar)`. This  will display the user's input if the user entered an integer, or "0" if the user did not enter an integer.
+
+    - Just like with `Parse`, you can use `Console.ReadLine()` itself as the first argument rather than a `string` variable. Also, you can declare the output variable within the out parameter, instead of on a previous line. So we can read user input, declare an `int` variable, and attempt to parse the user's input all on one line:
+
+        ```
+        bool success = int.TryParse(Console.ReadLine(), out int intVar);
+        ```
+
+    - You can use the return value of `TryParse` in a `while` loop to keep prompting the user until they enter valid input:
+
+        ```
+        Console.WriteLine("Please enter an integer");
+        bool success = int.TryParse(Console.ReadLine(), out int number);
+        while(!success)
+        {
+            Console.WriteLine("That was not an integer, please try again.");
+            success = int.TryParse(Console.ReadLine(), out number);
+        }
+        ```
+
+        - The loop condition should be true when the user's input is *invalid*, so we use the negation operator `!` to write a condition that is true when `success` is `false`
+
+        - Each time the loop body executes, both `success` and `number` are assigned new values by `TryParse`
 
 
-## `do-while` Statement
-As like as the `while` statement, the `do-while` statement executes a block or a statement while a specified _boolean expression_ evaluates to true. But, the boolean expression is evaluated at the end of each iteration. Consequently, the loop body of a `do-while` loop executes at least once.
+# Do-While Loops and Loop Vocabulary
 
-### Formal Syntax
+## The `do-while` Statement
 
-```
-do
-    <code block> or <a statement>
-while (<boolean expression>);
-```
+- Comparing `while` and `if` statements
 
-### Example
-```
-int number = 1;
-do
-{
-    Console.WriteLine(number);
-    number++;
-}while (number <=5);
-```
+    - `while` and `if` are very similar: Both test a condition, execute a block of code if the condition is true, and skip the block of code if the condition is false
 
-## User-Input Validation
+    - There's only a difference if the condition is true: `if` statements only execute the block of code once if the condition is true, but `while` statements may execute the block of code multiple times if the condition is true
 
-We can use loops to test what was entered by the user, and ask again if the value does not fit our needs:
+    - Compare these snippets of code:
 
-### Example 1
-```
-Console.WriteLine("Please enter a positive number");
-int n = int.Parse(Console.ReadLine());
-while (n < 0)
-{
-    Console.WriteLine($"You entered <{n}>, I asked you for a positive number. Please try again.");
-    n = int.Parse(Console.ReadLine());
-}
-```
+        ```
+        if(number < 3)
+        {
+            Console.WriteLine("Hello!");
+            Console.WriteLine(number);
+            number++;
+        }
+        Console.WriteLine("Done");
+        ```
 
-### TryParse
+      and
 
-- The `TryParse` method allows us to parse strings, and to "extract" a number out of them if they contain one, or to be given a way to recover if they don't.
-- `int.TryParse` takes two arguments, a string and a variable name (prefixed by the keyword `out`) and returns a boolean.
-    - If the first argument is convertable to the desired data type, the method returns _true_ and saves the string into the variable name as the desired datatype.
-    - If the first argument is _not_ convertable to the desired datatype, it returns _false_ and 0 is saved into the variable name.
-- The `TryParse` method is typically structured like so:
+        ```
+        while(number < 3)
+        {
+            Console.WriteLine("Hello!");
+            Console.WriteLine(number);
+            number++;
+        }
+        Console.WriteLine("Done");
+        ```
 
-```
-bool result = <numeric datatype>.TryParse(<string to convert>, out <numeric variable to store result>)
-```
+        - If `number` is 4, then both will do the same thing: skip the block of code and display "Done".
+        - If `number` is 2, both will also do the same thing: Display "Hello!" and "2", then increment `number` to 3 and print "Done".
+        - If `number` is 1, there is a difference: The `if` statement will only display "Hello!" once, but the `while` statement will display "Hello! 2" and "Hello! 3" before displaying "Done"
 
-- The first argument in TryParse can be string variable, literal, or any method call that returns a string, e.g. `Console.ReadLine()`.
-- The second argument is a variable of the same type as the `TryParse` operation
+- Since the `while` loop evaluates the condition before executing the code in the body (like an `if` statement), you sometimes end up duplicating code
 
-### Example 2
+    - For example, consider an input-validation loop like the one we wrote for Item prices:
 
-```
-// literal to int type
-int myInt;
-bool result = int.TryParse("5", out myInt);
+        ```
+        Console.WriteLine("Enter the item's price.");
+        decimal price = decimal.Parse(Console.ReadLine());
+        while(price < 0)
+        {
+            Console.WriteLine("Invalid price. Please enter a non-negative price.");
+            price = decimal.Parse(Console.ReadLine());
+        }
+        Item myItem = new Item(desc, price);
+        ```
 
-// string variable to double type
-// the output variable can be declared simultaneously
-string numStr = "3.25";
-bool success = double.TryParse(numStr, out double myDoubleVar);
+    - Before the `while` loop, we wrote two lines of code to prompt the user for input, read the user's input, convert it to `decimal`, and store it in `price`
 
-// calling TryParse with result of ReadLine() method call
-// without intermediate variables
-bool isNumeric = float.TryParse(Console.ReadLine(), out float myFloatVar);
-```
+    - In the body of the `while` loop, we also wrote two lines of code to prompt the user for input, read the user's input, convert it to `decimal`, and store it in `price`
 
-### Example 3
+    - The code before the `while` loop is necessary to give `price` an initial value, so that we can check it for validity in the `while` statement
 
-```
-Console.WriteLine("Please enter a positive number");
-int n;
-while ( ! int.TryParse(Console.ReadLine() , out n))
-{
-    Console.WriteLine("The input is not correct. Please enter a positive number.");
-}
-```
+    - It would be nice if we could tell the `while` loop to execute the body first, and then check the condition
+
+- The `do-while` loop executes the loop body **before** evaluating the condition
+
+    - Otherwise works the same as a `while` loop: If the condition is true, execute the loop body again; if the condition is false, stop the loop
+
+    - This can reduce repeated code, since the loop body is executed *at least once*
+
+    - Example:
+
+        ```
+        decimal price;
+        do
+        {
+            Console.WriteLine("Please enter a non-negative price.");
+            price = decimal.Parse(Console.ReadLine());
+        } while(price < 0);
+        Item myItem = new Item(desc, price);
+        ```
+
+        - The keyword `do` starts the code block for the loop body, but it doesn't have a condition, so the computer simply starts executing the body
+
+        - In the loop body, we prompt the user for input, read and parse the input, and store it in `price`
+
+        - The condition `price < 0` is evaluated at the end of the loop body, so `price` has its initial value by the time the condition is evaluated
+
+        - If the user entered a valid price, and the condition is false, execution simply proceeds to the next line
+
+        - If the user entered a negative price (the condition is true), the computer returns to the beginning of the code block and executes the loop body again
+
+        - This has the same effect as the `while` loop: the user is prompted repeatedly until he/she enters a valid price, and the program can only reach the line `Item myItem = new Item(desc, price)` when `price < 0` is false
+
+        - Note that the variable `price` must be declared before the `do-while` loop so that it is in scope after the loop. It would not be valid to declare `price` inside the body of the loop (e.g. on the line with `decimal.Parse`) because then its scope would be limited to inside that code block.
+
+- Formal syntax and details
+
+    - A `do-while` loop is written like this:
+
+        ```
+        do
+        {
+            <statements>
+        } while(<condition>);
+        ```
+
+    - The `do` keyword does nothing, but it is required to indicate the start of the loop. You can't just write a `{` by itself.
+
+    - Unlike a `while` loop, a semicolon is required after `while(<condition>)`
+
+    - It's a convention to write the `while` keyword on the same line as the closing `}`, rather than on its own line as in a `while` loop
+
+    - When the computer encounters a `do-while` loop, it first executes the body (code block), then evaluates the condition
+
+    - If the condition is true, the computer jumps back to the `do` keyword and executes the loop body again
+
+    - If the condition is false, execution continues to the next line after teh `while` keyword
+
+    - If the loop body is only a single statement, you can omit the curly braces, but not the semicolon:
+
+        ```
+        do
+            <statement>
+        while(<condition>);
+        ```
+
+- A `do-while` loop with multiple conditions
+
+    - We can combine both types of user-input validation in one loop: Ensuring the user entered a number (not some other string), and ensuring the number is valid. This is easier to do with a `do-while` loop:
+
+        ```
+        decimal price;
+        bool parseSuccess;
+        do
+        {
+            Console.WriteLine("Please enter a price (must be non-negative).");
+            parseSuccess = decimal.TryParse(Console.ReadLine(), out price);
+        } while(!parseSuccess || price < 0);
+        Item myItem = new Item(desc, price);
+        ```
+
+    - There are two parts to the loop condition: (1) it should be true if the user did not enter a number, and (2) it should be true if the user entered a negative number.
+
+    - We combine these two conditions with `||` because either one, by itself, represents invalid input. Even if the user entered a valid number (which means `!parseSuccess` is false), the loop should not stop unless `price < 0` is also false.
+
+    - Note that both variables must be declared before the loop begins, so that they are in scope both inside and outside the loop body
 
 ## Vocabulary
 
@@ -450,7 +650,7 @@ while (enter != "Done")
 Console.WriteLine($"Your total is {sum}.");
 ```
 
-You can have counter, accumulator and sentinel values at the same time!
+You can have counter, accumulator and sentinel values at the same time:
 
 ```
 int a = 0;
@@ -486,8 +686,9 @@ Count controlled loop
 Note that a user-controlled loop can be sentinel-controlled (that is the example we just saw), but also count-controlled ("Give me a value, and I will iterate a task that many times").
 
 
-# While Loop With Complex Conditions
-In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be convertible to an integer, the program tries again, but not more than three times.
+## While Loop With Complex Conditions
+
+In the following example, a complex boolean expression is used in the _while_ statement. The program gets a value and tries to parse it as an integer. If the value can not be converted to an integer, the program tries again, but not more than three times.
 
 ```
 int c;
@@ -495,7 +696,7 @@ string message;
 int count;
 bool res;
 
-Console.WriteLine("Please, enter an integer.");
+Console.WriteLine("Please enter an integer.");
 message = Console.ReadLine();
 res = int.TryParse(message, out c);
 count = 0; // The user has 3 tries: count will be 0, 1, 2, and then we default.
@@ -510,7 +711,7 @@ while (!res && count < 3)
     else
     {
         Console.WriteLine("The value entered was not an integer.");
-        Console.WriteLine("Please, enter an integer.");
+        Console.WriteLine("Please enter an integer.");
         message = Console.ReadLine();
         res = int.TryParse(message, out c);
     }
