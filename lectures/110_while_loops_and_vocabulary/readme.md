@@ -40,6 +40,7 @@
     - To summarize, the increment and decrement operators both have a prefix and postfix version:
 
         |         | Increment | Decrement |
+        | ------- | -------   | -------   |
         | Postfix | `myVar++` | `myVar--` |
         | Prefix  | `++myVar` | `--myVar` |
 
