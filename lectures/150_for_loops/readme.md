@@ -80,7 +80,7 @@ for (int o = 0; o < 11; o++)
 {
     for (int p = 0; p < 11; p++)
         Console.Write($"{o} × {p} = {o * p}  \t ");
-    Console.Write();
+    Console.WriteLine();
 }
 ```
 
