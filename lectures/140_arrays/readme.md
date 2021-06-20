@@ -1,25 +1,22 @@
 # Arrays
 
 Arrays are structures that allow you to store multiple values in memory using a single name and indexes.
-    - Usually all the elements of an array have the same type.
-    - You limit the type of array elements when you declare the array.
-    - If you want the array to store elements of any type, you can specify object as its type. 
+- Usually all the elements of an array have the same type.
+- You limit the type of array elements when you declare the array.
+- If you want the array to store elements of any type, you can specify object as its type. 
 
 An array can be:
-    - Single-Dimensional
-    - Multidimensional
-    - Jagged
+- Single-Dimensional
+- Multidimensional
+- Jagged
 
 
-## Motivation
+Arrays are useful, for instance,
+- When you want to store a collection of related values,
+- When you don't know in advance how many variables we need.
+- When you need too many variables of the same type.
 
-Arrays are collection, or grouping, of values held in a single place.
-They can store multiple values of the same datatype, and are useful, for instance,
-
-- When we want to store a collection of related values,
-- When we don't know in advance how many variables we need.
-
-## Declaration and Initialization of Arrays
+## Declaration and Initialization of Single-Dimensional Arrays
 
 Declaration and assignment
 
