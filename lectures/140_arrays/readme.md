@@ -1,5 +1,4 @@
-
-#Arrays
+# Arrays
 
 Arrays are structures that allow you to store multiple values in memory using a single name and indexes.
     - Usually all the elements of an array have the same type.
