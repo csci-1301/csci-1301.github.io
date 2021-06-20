@@ -1,5 +1,12 @@
- 
-# Arrays
+
+Arrays are rays
+
+Arrsays are strcyoures that allow you to store multiple values in memory using a single name.
+Usually all the elements of an array have the same type.
+You declare an array by specifying the type of its elements.
+If you want the array to store elements of any type, you can specify object as its type. 
+An array can be Single-Dimensional, Multidimensional or Jagged.
+![image](https://user-images.githubusercontent.com/23177840/122676314-9e470780-d1ab-11eb-94e7-ed9ce7203e27.png)
 
 ## Motivation
 
