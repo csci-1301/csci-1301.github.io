@@ -36,7 +36,7 @@ value = arrayName[Index]; \\ Reading the current value of an element
 - The index of the first element in an array is always zero; the index of the second element is one, and so on.
 - If you specify an index greater or equal to the number of elements, a run time error will happen.
 
-### Example 1
+### Example 
 
 In the following example, we define an array named _myArray_ with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element. 
 ```
@@ -95,17 +95,15 @@ Rectangle[] arrayOfRectangle = new Rectangle[5];  \\ Assume there is a class cal
 ```
 
 ## Custom Size and Values
+One of the benefits of arrays is that they allow you to specify the number of their elements at run-time. Hence, depending on the run-time conditions, we can have enough space to store and process values.
 
+### Example 
+In the following example, we get the number of elements at run-time from the user, create an array with the appropriate size, and fill the array.
 ```
-Console.WriteLine("What is size of the array that you want?");
+Console.WriteLine("What is the size of the array that you want?");
 int size = int.Parse(Console.ReadLine());
 int[] customArray = new int[size];
-```
 
-How can we fill it with values, since we do not know its size?
-Using iteration!
-
-```
 int counter = 0;
 while (counter < size)
 {
@@ -115,11 +113,13 @@ while (counter < size)
 }
 ```
 
-We can use `length`, a property of our `array`.
-That is, the integer value `myArray.Length` is the length (= size) of the array, we can access it directly.
+## Array Size
 
-To display an array, we need to iterate as well (this time using the `Length` property):
+Every single-dimensional array has a property called `Length` that returns the number of the elements in the array (or size of the array).
 
+To process an array that its size is not fixed, we can use this property to find out the number of elements in the array
+
+### Example
 ```
 int counter2 = 0;
 while (counter2 < customArray.Length)
