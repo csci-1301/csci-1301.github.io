@@ -64,6 +64,9 @@
 
 ## Programming Language Concepts
 
+We begin by discussing three categories of languages manipulated by computers.
+We will be studying and writing programs in _high-level languages_, but understanding their differences and relationships to other languages^[That will be studied in the course of your study if you continue as a CS major.] is of importance to become familiar with them.
+
 - Machine language
     - Computers are made of electronic circuits
         - Circuits are components connected by wires
@@ -94,6 +97,13 @@
         - Optimizes high-level instructions – your code may look very different after it has been optimized
         - Compiler is specific to both the source language and the target computer
     - Compile high-level instructions into machine code then run since computers can only execute machine code
+
+!["A Visual Representation of the Relationships Between Languages"](img/overview_languages_1)
+
+A more subtle difference exist between high-level languages.
+Some (like C) are _compiled_ (as we discussed above), some (like python) are _interpreted_, and some (like C#) are in an in-between called _managed_.
+
+
 - Compiled vs. Interpreted languages
     - Not all high-level languages use a compiler - some use an interpreter
     - **Interpreter**: Lets a computer "execute" high-level code by translating one statement at a time to machine code
@@ -112,6 +122,8 @@
         - Writing a compiler is more complicated and more work than writing an interpreter thus an interpreter is a quicker (and cheaper) way to put your language on different platforms
         - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
     - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
+
+!["A Visual Representation of the Differences Between High-Level Languages"](img/overview_languages_2)
 
 
 ## Software Concepts
