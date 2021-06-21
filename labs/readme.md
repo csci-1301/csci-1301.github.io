@@ -60,6 +60,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
 | [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
 | [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
-| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Rectangle](/labs/Rectangle), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long, 1h+) Implementing array methods to find first/last index, min/max, etc. |
+| [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays |
+| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [ChemicalElements](/labs/ChemicalElements), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
 | [Char](/labs/Char) | [For](/labs/For) | ? | char ⬄ int; ReadKey, relational comparison |
 | [Random](/labs/Random) | ? | ? | Problems using Random class |
