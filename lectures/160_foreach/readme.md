@@ -17,7 +17,6 @@ The _foreach_ statement picks an element from the array. The _ItemName_ is the a
 
 ## Example
 ```
-```
 string[] contries = { "USA", "Iran", "China", "Germany", "Canada" };
 Console.WriteLine("Here is the list of eligible countries:");
 foreach (string CntName in contries)
