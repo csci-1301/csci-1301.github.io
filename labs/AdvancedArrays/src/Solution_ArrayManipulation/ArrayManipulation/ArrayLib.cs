@@ -82,19 +82,23 @@
     }
 
     /*
-     * Other ideas of algorithms include:
-     * • Return an array without the value at index i, and resized to its previous size -1.
-     * • Return the smallest index where the greatest value is
-     * • Return the smallest index where the smallest value is
-     * • Return the number of time a number given as an argument occurs in the array
-     * • Given two indexes a and b, swap the values stored at a and b
-     * • Given an integer, fill the array with this integer
-     * • "Reverse" the array: if the array containing {1, 2, 3} is given as input, return {3, 2, 1}
-     * • Sort the array
+     * 
+     * If you want to push further, you can consider the following other ideas for algorithms.
+     * They will help you in your future if you want to become a CS or IT major.
+     * 
+     *  Other ideas for algorithms include:
+     * - "Remove" one cell whose index was given as an argument from the array, using a Resize method.
+     * - Return the smallest index where the greatest value in the array is located.
+     * - Return the smallest index where the smallest value in the array is located.
+     * - Return the number of time a number given as an argument occurs in the array.
+     * - Given two indexes a and b, swap the values stored at a and b.
+     * - Given an integer, fill the array with this integer.
+     * - "Reverse" the array: if the array containing {1, 2, 3} is given as input, return {3, 2, 1}.
+     * - Sort the array.
      * 
      * The last two algorithms are clearly harder than the first ones:
-     * looking around for hints is fine, but do not copy a solution that you don't understand,
-     * the code turned back must be your own, and you must be able to explain it.
+     * looking around for hints is fine, but do not copy a solution that you don't understand.
+     * The code turned in must be your own, and you must be able to explain it.
      */
 
 

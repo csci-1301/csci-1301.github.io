@@ -1,34 +1,39 @@
 ---
-title: Arrays Manipulation
+title: Advanced Arrays
 ---
 
-# Array Manipulation Practice (Advanced)
+# Array Manipulation Practice
+
+Read the following instructions ("set-up" and "your goal") completely and carefully before starting.
 
 ## Set-Up
 
 For this exercise:
 
-- Download and extract [the ArrayManiplutaion project](ArrayManipulation.zip). It contains two .cs files, `ArrayLib.cs` and `Program.cs`.
+- Download and extract [ArrayManipulation](ArrayManipulation.zip) project. 
+- It contains two .cs files, `ArrayLib.cs` and `Program.cs`.
 - Compile and execute it.
-- Observe `Program.cs`: this is a _test program_ that you **should not modify**. It will be useful to test the methods that you will be writing in the `ArrayLib.cs` class file. For each method, this program displays the expected value, and what is actually returned. As you can see, only the `Display` method seems to be always correct.
-- Now, read `ArrayLib.cs`. Every method used by `Program.cs` has a header, but all the bodies are returning "default" values or do nothing, with the exception of `Display`. This last method was written for you.
+- Observe `Program.cs`: this is a _test program_ that you **should not modify**. It will be useful to test the methods that you will be writing in the `ArrayLib.cs` class file. For each method, this program displays the expected value, and what is actually returned. As you can see, only the `Display` method seems to be always correct.    
+- Now, read `ArrayLib.cs`. Every method used by `Program.cs` has a header, but all the bodies are returning "default" values or do nothing, with the exception of `Display`. This method was written for you.
+
 
 ## Your goal
 
-Your goal is to write the body of the methods in the `ArrayLib` class.
-You should not change their headers. 
-Modify only their bodies, so that they return the "right" values, according to their description (in comments after their headers) and the test given in `Program.cs`.
-You can change their order within `ArrayLib`, and you can write them in any order.
-Some of them are actually easier to write, and they are not the first ones: can you find a method that seems easy enough to start your project?
+- Your goal is to write the body of the methods in the `ArrayLib` class.
+- Do not change any method headers in `ArrayLib` class. 
+- Modify only method bodies, so that they return the "right" values, according to their description (in comments after their headers) and the test given in `Program.cs`.
+- You can change their order within `ArrayLib`, and you can implement them in any order.
+- Some of them are actually easier to write, and they are not the first ones: can you find a method that seems easy enough to start your project?
+
 
 If you have the time and interest, have a look at the challenges offered at the end of the `ArrayLib.cs` file.
-You can find a possible solution [in this archive](ArrayManipulationSolution.zip).
+
+You can find a possible solution [in this archive](Solution_ArrayManipulation.zip).
 
 # Pushing Further (Optional)
 
 Here, we will explore the difference between value and reference types.
-We have mentioned this concept in class several times, but we have not used it in the programs we have written so far.
-Since arrays are reference types, however, it is now more important for you to understand how reference types work.
+Since arrays are reference types, it is important for you to understand how reference types work.
 
 Let us show why this notion is so critical with an example:
 
