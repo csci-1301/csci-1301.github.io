@@ -1,7 +1,10 @@
 ---
-title: First Problem Solving
+title: Problem Solving
 ---
 
+<!-- 
+
+moved to random lab
 # Problem Solving
 
 Those problems are fairly advanced considering our progress so far.
@@ -21,6 +24,8 @@ Write a program that
 You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of your favorite number, only one message is displayed.
 
 A solution is proposed [in this archive](GuessingGame.zip).
+
+-->
 
 
 ## Computing the Entry Price

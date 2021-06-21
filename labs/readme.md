@@ -23,6 +23,8 @@ This directory contains all lab exercises. At build time these labs are compiled
         - create a file called `Program.cs` in `src/<solution>/<project>/Program.cs`
     
         Write your code in this file, add a class file if you want in the same folder, but only include program files (not solution or project): they will be created automatically using the project and solution's name you specified, and hosted in the lab's folder as `solution.zip`.
+        
+        Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
 
     3. Create an entry for the new lab in the table below. List all prerequisite labs and related lectures.
 

@@ -169,7 +169,10 @@ All lab resources are located under `labs` directory. At build time these labs a
         - create a subdirectory with the name of the project you would like to use,
         - create a file called `Program.cs` in `src/<solution>/<project>/Program.cs`
         - if you want to add additional classes, add them in `src/<solution>/<project>/<Class>.cs` files. 
+        
     Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `<solution>.zip`.
+    
+    Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
 
 If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
 
