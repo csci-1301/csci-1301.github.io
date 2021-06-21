@@ -34,8 +34,11 @@ arrayName[Index] = value;  \\ assigning a value to an element
 value = arrayName[Index]; \\ Reading the current value of an element
 ```
 - The index of the first element in an array is always zero; the index of the second element is one, and so on.
+- If you specify an index greater or equal to the number of elements, a run time error will happen.
 
-### Example
+### Example 1
+
+In the following example, we define an array named _myArray_ with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element. 
 ```
  int[] myArray;
 myArray = new int[3]; // 3 is the size declarator
@@ -52,8 +55,11 @@ myArray[2] = 30;
 // "Array bound checking": happen at runtime.
 ```
 
-As usual, we can combine declaration and assignment on one line:
-
+If you know the number of elements when you are defining an array, you can combine declaration and assignment on one line as follow:
+```
+type[] arrayName = new type[number of elements];
+```
+So, we can combine the first two lines of the previous example and write:
 ```
 int[] myArray = new int[3];
 ```
@@ -85,7 +91,7 @@ Other datatype, and even objects, can be stored in arrays:
 
 ```
 string[] myArray = { "Bob", "Mom", "Train", "Console" };
-Rectangle[] arrayOfRectangle = new Rectangle[5];
+Rectangle[] arrayOfRectangle = new Rectangle[5];  \\ Assume there is a class called Rectangle
 ```
 
 ## Custom Size and Values
