@@ -132,8 +132,9 @@ while (counter2 < customArray.Length)
 
 ## Changing the Size
 
-`Array` is actually a class, and it comes with methods!
+There is a class named `Array` that can be used to resize an array. But, note that if you resize an array, you will lose all the current values and the elements will be reset to the data-type default.
 
+### Example
 ```
 Array.Resize(ref myArray, 4);
 myArray[3] = 40;
