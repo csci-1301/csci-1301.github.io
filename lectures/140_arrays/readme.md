@@ -16,12 +16,28 @@ Arrays are useful, for instance,
 - When you don't know in advance how many variables we need.
 - When you need too many variables of the same type.
 
-## Declaration and Initialization of Single-Dimensional Arrays
-
-Declaration and assignment
-
+## Single-Dimensional Arrays
+You can define a single-dimensional array as follow:
 ```
-int[] myArray;
+type[] arrayName;
+```
+- `type` can be any data-type and specifies the data-type of the array elements.
+- `arrayName` is an identifier that you will use to access and modify the array elements.
+- Before using an array, you must specify the number of elements of the array as follow:
+```
+arrayName = new type[number of elements];
+```
+- An element of a single-dimentional array can be accessed and modified by using the name of the array and the index of the element as follow:
+```
+arrayName[Index] = value;  \\ assigning a value to an element
+
+value = arrayName[Index]; \\ Reading the current value of an element
+```
+- The index of the first element in an array is always zero; the index of the second element is one, and so on.
+
+### Example
+```
+ int[] myArray;
 myArray = new int[3]; // 3 is the size declarator
 // We can now store 3 ints in this array,
 // at index 0, 1 and 2
