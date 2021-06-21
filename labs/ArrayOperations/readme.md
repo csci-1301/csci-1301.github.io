@@ -27,20 +27,20 @@ After declaring and initializing this array, write statements to:
 Next, write statements that provide answers to following questions:
 
 #. Count the sum of all `numbers` then display the result. (The expected value is 102)
-#. Count how many times value 7 occurs in `numbers`, then display that value. Check that your program outputs the correct answer, which you can determine by visually observing the array contents.
+#. Count how many times value 7 occurs in `numbers`, then display that value. Check that your program outputs the correct answer, which you can determine by visually observing the array values.
 
 ## Finding values
 
 Lastly, implement the following statements:
 
-#. Find the _index_ of first 7, then display the index. If the value does not exist, display -1 to indicate it was not found. Check that your solution is correct by comparing your result to array contents.
-#. Find the maximum value in `numbers`. Check that statement you implement obtains the expected value.
+#. Find the _index_ of first 7, then display the index. If the value does not exist, display -1 to indicate it was not found. Check that your solution is correct by comparing your result what you can see by visually observing the array values.
+#. Find the maximum value in `numbers`. Check that statements you implement obtain the expected value.
 
 ## Evaluate your solution
 
-After implementing all methods above, and assuming you have obtained the expected values, _ideally_ your solution should still work even if the values stored in `numbers` array change, or if the array length changes.
+After implementing above methods, and assuming you have obtained the expected values, _ideally_ your solution should still work even if the values stored in `numbers` array change, or if the array length changes.
 
-To test your solution, go back to the beginning of the program where you declared `letters` array, then change the initialization so that the new array values are:
+To test your solution, go back to the beginning of the program where you declared `numbers` array, then change the initialization so that the new array values are:
 
 ```
 55, 92, 12, 90, 37, 18, 6, 20, 80, 18, 46, 19, 65, 68, 18
@@ -48,7 +48,7 @@ To test your solution, go back to the beginning of the program where you declare
 
 Check that you obtain expected values:
 
-- the new sum should be 644
+- the sum should now be 644
 - since 7 does not occur in the array anymore, 
     - count should be 0 
     - first index of 7 should be -1
@@ -67,7 +67,7 @@ char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w'
 Next, write statements that answer the following questions:
 
 #. Does value `w` occur in both arrays (true/false)?
-#. What is the first value (searching left -> right) that occurs in both arrays? 
+#. What is the first value (searching left to right) that occurs in both arrays? 
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
 
@@ -82,7 +82,9 @@ char[] chars1 = {'s', 'p', 'd', 'P', 'y', 'D', 'w', '?'};
 char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 ```
 
-Run the program again. Ideally, after changing array values, the program should not crash and should still produce correct results, which should now be:
+Then run the program again. 
+
+Ideally, after changing array values, the program should not crash and should still produce correct results:
 
 - Does `w` occur in both arrays -> `true`
 - first value that occurs in both arrays -> `P`
