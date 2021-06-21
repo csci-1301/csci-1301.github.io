@@ -22,7 +22,7 @@
             total += num;
             num++;
         }
-        Console.WriteLine($"The sum is {total}")
+        Console.WriteLine($"The sum is {total}");
         ```
 
       Notice that in both cases, we've written the same three pieces of code:
