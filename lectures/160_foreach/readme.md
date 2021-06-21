@@ -14,14 +14,27 @@ foreach(Type ItemName in CollectionName)
 - **CollectionName**: The name of the collection
 Since, arrays are the only object that we study in this course, we will use the term array instead of the collections. 
 - The _foreach_ statement picks an element from the array and copies it to _ItemName_.
-- Note that you are not allowed to change the value of _ItemName_.
+- You are not allowed to change the value of _ItemName_, but if it is a complex object, you can change its member fields and properties.
+- You should use `foreach` statement whenever you want to process only one element in each iteration.
 
-## Example
+## Example 1
+In the following example, we define an array of strings. Then, using the foreach statement, we print all the element of the array in the console. Not that to access the elements we **do not use indexes**. 
 ```
 string[] contries = { "USA", "Iran", "China", "Germany", "Canada" };
 Console.WriteLine("Here is the list of eligible countries:");
 foreach (string CntName in contries)
 {
     Console.WriteLine(CntName);
+    CntName = "something"; \\ Error: this is not allowed
+}
+```
+## Example 2
+In the following example, we use _foreach_ statement to accommodate an array of complex objects without dealing with indexes.
+```
+Employee[] empArray = new TestClass[5]; \\ Assume we have a class called Employee
+foreach(TestClass m in empArray)
+{
+   Console.Write("Enter the name of the employee:");
+   m.Name = Console.ReadLine();  \\ Assume the class Employee has a property called Name
 }
 ```
