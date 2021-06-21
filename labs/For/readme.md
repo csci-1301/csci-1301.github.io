@@ -88,7 +88,7 @@ Then, answer the following questions:
 #. How would you change the program to make it display on the screen the divisors of the integer entered? Examples:
  
     - divisors of $5$ are: $1$, $5$
-    - divisors of $10$ are: $1$, $2$, $5$, $10$)?
+    - divisors of $10$ are: $1$, $2$, $5$, $10$?
 
 You can modify your program to check your answers to the previous questions.
 Once you are done, modify your original program in these two respects:
@@ -97,7 +97,7 @@ Once you are done, modify your original program in these two respects:
 #. Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).
 
 
-# `continue` and `break`
+# Using `continue` and `break`
 
 Programmers can use two keywords in loops, `continue` and `break`, that modify the control flow.
 They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
