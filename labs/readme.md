@@ -49,6 +49,8 @@ Using this established build system generates labs that are cross-platform (Wind
 | [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
 | [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
 | [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
+| [UML](/labs/UML) | [Rectangle](/labs/Rectangle)  | ? | UML diagrams |
+| [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | ? | Static class members |
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
 | [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
@@ -58,4 +60,6 @@ Using this established build system generates labs that are cross-platform (Wind
 | [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
 | [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
 | [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
-| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Rectangle](/labs/Rectangle), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | Implementing array methods to find first/last index, min/max, etc. |
+| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Rectangle](/labs/Rectangle), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long, 1h+) Implementing array methods to find first/last index, min/max, etc. |
+| [Char](/labs/Char) | [For](/labs/For) | ? | char ⬄ int; ReadKey, relational comparison |
+| [Random](/labs/Random) | ? | ? | Problems using Random class |

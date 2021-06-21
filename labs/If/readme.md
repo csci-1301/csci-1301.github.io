@@ -95,7 +95,9 @@ Much better!
 Since the two conditions are actually independent, we can test them in two different `if` statements!
 
 
-# Conditional Operator (optional)
+# Pushing Further (Optional)
+
+## Conditional Operator
 
 You were introduced to the conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions).
 Its structure is:
@@ -109,3 +111,21 @@ If you have time, practice using the conditional operator by adding these statem
 #. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You already wrote an `if` statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.
 #. Write a statement that sets `initial` to `'B'` if `myVar` is greater than 500 and to `'S'` if `myVar` is less than or equal to 500.
 #. Write a statement that doubles the value of `myVar` if `day` is `"Sat."` or `"Sun."` and adds 1 to the value of `myVar` otherwise.
+
+## Computing Entry Price
+
+You are asked to write a simple program that computes the total price for a group of people to enter a park.
+
+Your program should:
+
+- Ask the user how many adults and how many children want to enter the park,
+- If the group comprises $6$ persons or more, offer to sell a group pass for \$$30$ (that allows everyone in the group to enter the park),
+- Compute and display the total price on the screen, knowing that:
+    - Adults pay \$$7$,
+    - Children pay \$$4$,
+    - *If* purchasing the group pass allowed the group to save money (which isn't always the case!), you should display on the screen the amount saved.
+
+Some tips:
+
+- When asking "yes" / "no" questions, treat "y" and "Y" as a "Yes", and any other string as a "No".
+- Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, $\$4 \times 6 = \$24 < \$ 30$, but we would still sell them the pass).
