@@ -7,8 +7,8 @@ Arrays are structures that allow you to store multiple values in memory using a 
 
 An array can be:
 - Single-Dimensional
-- Multidimensional
-- Jagged
+- Multidimensional (not covered)
+- Jagged (not covered)
 
 
 Arrays are useful, for instance,
