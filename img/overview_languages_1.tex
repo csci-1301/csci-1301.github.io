@@ -1,0 +1,192 @@
+% !TeX document-id = {543bad56-0a75-4f2c-a11d-a94f42751e3d}
+% !TeX TXS-program:compile = txs:///xelatex/[--shell-escape]
+\documentclass[border=20pt,varwidth=\maxdimen]{standalone}
+\renewcommand\familydefault{\sfdefault} % Default family: serif 
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+%\usepackage{soul}
+\usetikzlibrary{calc} 
+\usetikzlibrary{arrows, decorations.markings,positioning,backgrounds,shapes}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fit}
+\usepackage[normalem]{ulem}
+\usepackage{minted}
+
+% Colors for c, assembly and machine codes.
+\definecolor{c}{HTML}{002f55}
+\definecolor{a}{HTML}{A5ACAF}
+\definecolor{m}{HTML}{00AEEF}
+% Colors for compiler and assembler.
+\definecolor{compiler}{HTML}{64A0C8}
+\definecolor{assembler}{HTML}{44D62C}
+
+\begin{document}
+% C Code (as C# is not compiled into assembly, we can not use it as an example).
+\newsavebox{\ccode}
+\begin{lrbox}{\ccode}
+\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
+\begin{minted}{c}
+int age = 10;
+char initial = 'C';
+\end{minted}
+\end{lrbox}
+% Assembly code
+% Extracted from what you get if you run gcc -S on the following source code:
+%int main(void)
+%{
+%	int age = 10;
+%	char initial = 'C';
+%}
+\newsavebox{\acode}
+\begin{lrbox}{\acode}
+	\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
+\begin{minted}{gas}
+movq    %rsp, %rbp
+.cfi_def_cfa_register 6
+movl    $10, -4(%rbp)
+movb    $67, -5(%rbp)
+movl    $0, %eax
+popq    %rbp
+	\end{minted}
+\end{lrbox}
+
+% Machine code
+% Extracted from what you get if you run xxd -b a.out after compiling the following source code with gcc:
+%int main(void)
+%{
+%	int age = 10;
+%	char initial = 'C';
+%}
+\newsavebox{\mcode}
+\begin{lrbox}{\mcode}
+	\RecustomVerbatimEnvironment{Verbatim}{BVerbatim}{}%
+	\begin{minted}{text}
+01000010 01001001
+00000000 00101110
+00101110 01100111
+01110101 01101001
+01100100 00000000
+	\end{minted}
+\end{lrbox}
+	
+\begin{tikzpicture}[
+		block/.style={
+				rectangle,
+				thick,
+				minimum width=5em,
+				align=center,
+				rounded corners,
+				minimum height=2em
+			},
+		data/.style={
+				cylinder,
+				draw=black,
+				thick,
+				aspect=0.7,
+				minimum height=1.7cm,
+				minimum width=1.5cm,
+				shape border rotate=90,
+				cylinder uses custom fill,
+				cylinder body fill=red!30,
+				cylinder end fill=red!10
+			}
+	]
+% Code blocks
+%% High-level Language
+	\node [color=c] (c) {High-Level Language};
+	\node [below = .3cm of c, block, fill=c!20, draw=c] {\usebox\ccode};
+%% Assembly
+	\node [right = 2cm of c, color=a] (assemb) {Assembly Language};
+	\node [below = .3cm of assemb, block, fill=a!20, draw=a] {\usebox\acode};	
+%% Machine-level Language
+	\node [right = 2cm of assemb, color=m] (machine) {Machine Language};
+	\node [below = .3cm of machine, block, fill=m!20, draw=m] {\usebox\mcode};	
+% Arrows
+%% Compiler
+\draw[thick, ->, color=compiler] (c)  to[bend left=30] node[above]{Compiler} (machine) ;
+%% Assembler
+\draw[thick, ->, color=assembler] (assemb)  to[bend left=15] node[above]{Assembler} (machine) ;
+
+%	\node [block, fill=yellow!20, draw=yellow] (program) at (3,1) {Program};
+%	\node [block, fill=green!20, draw=green] (cli) at (3,-1) {C.L.I.};
+%	\node [block, fill=green!20, draw=green] (process) at (8, -1) {Software to process queries};
+%	\node [block, fill=green!20, draw=green] (access) at (8, -3) {Software to access data};
+%	\node [data] (data) at (6, -6) {Data};
+%	\node [data] (metadata) at (10, -6) {Catalog};
+%
+%	%% Frame
+%
+%	
+%	\draw[thick,dotted] ($(cli.north west)+(-0.25,0.5)$) node[above right]{DBMS Software} rectangle ($(access.south east)+(0.75,-0.5)$) ;
+%	%% Arrows
+%
+%	\draw [<->, thick] (user) to [bend left] (program.west);
+%	\draw [<->, thick] (user) to [bend right] (cli.west);
+%	\draw [<->, thick] (program) to [bend left] (process);
+%	\draw [<->, thick] (cli) to [bend right] (process);
+%	\draw [<->, thick] (process) to (access);
+%	\draw [<->, thick] (access) to (data);
+%	\draw [<->, thick] (access) to (metadata);
+
+	%	% Caption:
+	%	\node (caption) at (-5.5,2) {	Common term, \emph{CS term}, \underline{Relational Model term}, \sout{To be avoided}};
+	%	
+	%	% Table:
+	%	\node (name) {\textbf{STUDENT}};
+	%	\node [below of=name] (Name) {\textbf{Name}};
+	%	\node [right= 3 of Name] (dots1) {\(\cdots\)};
+	%	\node [right= 3 of dots1] (Major) {\textbf{Major}};
+	%	\node [below of= Name] (Morgan) {Morgan};
+	%	\node [below of= dots1] (dots2) {\(\cdots\)};
+	%	\node [below of= Major] (CS) {CS};
+	%	\node [below of= Morgan] (dots3) {\(\vdots\)};
+	%	\node [below of= dots2] (dots4) {\(\vdots\)};
+	%	\node [below of= CS] (dots5) {\(\vdots\)};
+	%	\node [below of= dots3] (Bob) {Bob};
+	%	\node [below of= dots4] (dots6) {\(\cdots\)};
+	%	\node [below of= dots5] (IT) {IT};
+	%	% Annotations:
+	%%	\draw [-, dashed] (-1.5, 0.75) -- ++ (11,0);
+	%%	\draw [-, dashed] (-1.5, -1.45) -- ++ (11,0);
+	%	\node (meta) at (11.2, -0.35) {\(\left.\rule{0cm}{1.2cm}\right\}\) Structure, \emph{meta-data}, \underline{schema}};
+	%	\node (data) at (10.4, -3.0) {\(\left.\rule{0cm}{1.65cm}\right\}\)  \emph{data}, \underline{relation state}};
+	%	\begin{scope}[on background layer]
+	%		\node [fit=(name)(IT), fill=gray!20, draw = none, inner sep= 15pt] (box1) {};	
+	%		\node [fit=(Name)(Major), fill=blue!20, draw = none, inner sep= 5pt] (box2) {};	
+	%		\node [fit=(Bob)(IT), fill=red!20, draw = none, inner sep= 10pt] (box3) {};	
+	%		\node [fit=(Name)(Bob), draw = black, inner sep= 3pt] (box4) {};	
+	%		\node [fit=(IT), draw = black, inner sep= 3pt] (box5) {};	
+	%				
+	%%		\draw [fill=gray!20, draw=none] (IT)+(1,-0.5) rectangle (name.north west);
+	%%		
+	%		%
+	%%		\draw [fill=blue!20, draw=none] (Bob)+(0.6,-0.2) rectangle  (Name.north west);
+	%%		\draw [pattern=north west lines, pattern color=blue!40, draw=none] (Bob)+(0.6,-0.2) rectangle  (Name.north west);
+	%%		\draw [] (Major.south east) rectangle  (Name.north west);
+	%%		\draw [] (CS.south east) rectangle  (Morgan.north west);
+	%%		\draw [] (IT.south east) rectangle  (IT.north west);
+	%%		\node[inner sep=10pt,draw,fit=(IT)] (box) {};
+	%%		\node [fit=(Bob)(Name)(Bob)(Name), fill=blue!20] () {};
+	%	\end{scope}
+	%	
+	%	\node (names) [left = 1cm of name] {Table name, \emph{file name}, \underline{relation name}};
+	%	\draw[->] (names) -- (name);
+	%	\node (Table) [above = 0.1 of name, xshift = -3.5cm]{\textcolor{gray}{Table, \emph{file}, \underline{relation}}};
+	%	\draw[->, bend right=-80, gray] (Table.east) -- (box1);
+	%	\node (header) [left = 1.4cm of Name] {\textcolor{blue!50}{Heading, column names, \underline{list of attributes}}};	
+	%	\draw[->, blue!50] (header) -- (box2);
+	%
+	%%	\node (acc) [left = 0.9cm of names, yshift = -0.4cm] {Meta-data \(\left\{\rule{0cm}{0.9cm}\right.\)};	
+	%	
+	%	\node (entry) [left = 1.6cm of Bob] {\textcolor{red!50}{Entry, row, line, \emph{data record}, \underline{tuple}}};
+	%	\draw[->, red!50] (entry) -- (box3);
+	%	
+	%	\node (column) [left = 1.6cm of Bob, yshift=-1cm] {Column, \sout{field}};
+	%	\draw[->] (column) -| (box4);
+	%	
+	%	\node (value) [left = 1.6cm of Bob, yshift=-2cm] {Value, \emph{data element}, \underline{element}, \sout{field}};
+	%	\draw[->] (value) -| (box5);
+\end{tikzpicture}
+
+
+\end{document}
