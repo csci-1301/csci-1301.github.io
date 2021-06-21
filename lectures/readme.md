@@ -38,4 +38,4 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 | [Loops](/lectures/110_while_loops_and_vocabulary) | [if, if-else and Nested if Statements](/lectures/090_if) | [ValidatingInput](/labs/ValidatingInput) | while and do while loops; TryParse |
 | [Combining Methods and Decision Structures](/lectures/130_combining_decision_and_classes) | [Introduction to Objects](/lectures/060_object_oriented_intro), [Switch Statements](/lectures/100_switch) | [ValidatingInput](/labs/ValidatingInput) | The "LoanCalculator" ... |
 | [Arrays](/lectures/140_arrays) | | [ArrayBasics](/labs/ArrayBasics) | Arrays |
- 
+| [For Loops](/lectures/150_for_loops) | [Loops](/lectures/110_while_loops_and_vocabulary), [Arrays](/lectures/140_arrays) | TODO | For loops, foreach loops, break and continue |
