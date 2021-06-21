@@ -1,5 +1,5 @@
 ---
-title: While and For Loops
+title: For Loops
 ---
 
 
@@ -73,7 +73,7 @@ for (int h = 0; h > -30; h -= 1)
 }
 ``` 
 
-# A Simple Loop
+# Implementing for Loops
 
 This exercise is to practice `for` loops.
 
@@ -84,8 +84,11 @@ Then, answer the following questions:
 
 #. Without running your program, can you tell what will happen if the user enters a negative value?
 #. Do you think you could have written the same program using a `while` loop?
-#. How could you change your program so that it would compute the product instead of the sum  (i.e., for $5$, $1 × 2 × 3 × 4 × 5 = 120$)?
-#. How could you change your program so that it would display on the screen the divisors of the integer entered (i.e., for $5$, only $1$ and $5$)?
+#. How would you change the program to make it compute the product instead of the sum  (i.e., for $5$, $1 × 2 × 3 × 4 × 5 = 120$)?
+#. How would you change the program to make it display on the screen the divisors of the integer entered? Examples:
+ 
+    - divisors of $5$ are: $1$, $5$
+    - divisors of $10$ are: $1$, $2$, $5$, $10$)?
 
 You can modify your program to check your answers to the previous questions.
 Once you are done, modify your original program in these two respects:
@@ -94,9 +97,7 @@ Once you are done, modify your original program in these two respects:
 #. Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).
 
 
-# Pushing Further (Optional)
-
-## `continue` and `break`
+# `continue` and `break`
 
 Programmers can use two keywords in loops, `continue` and `break`, that modify the control flow.
 They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
@@ -123,11 +124,13 @@ You can also use `break` and `continue` in `while` loops.
 Try to rewrite the previous two `for` loops as `while` loops. 
 There is a trick to make the `while` loop using `continue` work properly; can you spot it?
 
+# Pushing Further (Optional)
+
 ## Multiple Initializations and Updates
 
 This section is about two modifications of `for` loops that are sometimes considered bad design: used poorly, they can make the code harder to read and to debug, and sometimes make it hard to follow the flow of control of your program.
 They are introduced because you may see them in your future, but, except for rare cases, should be avoided in your own code.
-The exact structure of `for` loops is actually more complex than what we discussed in class.
+The exact structure of `for` loops is actually more complex than discussed in class.
 It is
 
 ```
