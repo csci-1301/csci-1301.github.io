@@ -479,6 +479,7 @@
                 + "Enter anything else to stop.");
             success = int.TryParse(Console.ReadLine(), out userNum);
         }
+        Console.WriteLine($"The sum of your numbers is {sum}");
         ```
 
         - The condition `success && userNum >= 0` is true if the user entered a valid number that was not negative
@@ -501,11 +502,12 @@
         while(userNum >= 0)
         {
             sum += userNum;
-            Console.WriteLine("Enter a positive number. "
+            Console.WriteLine("Enter a positive number to add it. "
                 + "Enter anything else to stop.");
             if(!int.TryParse(Console.ReadLine(), out userNum))
                 break;
         }
+        Console.WriteLine($"The sum of your numbers is {sum}");
         ```
 
         - Inside the body of the loop, the return value of `TryParse` can be used directly in an `if` statement instead of assigning it to the `success` variable
