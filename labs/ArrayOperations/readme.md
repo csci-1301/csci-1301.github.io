@@ -6,9 +6,7 @@ title: Operations on Arrays
 
 Start by creating a new C\# solution. 
 
-After creating the solution, in `Main` method, declare and initialize an int array called `numbers`.
-
-Initialize the array so that it holds the following values, in the same order:
+After creating the solution, declare and initialize an int array called `numbers`. Initialize the array so that it holds the following values, in the same order:
 
 ```
 4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7
@@ -16,9 +14,9 @@ Initialize the array so that it holds the following values, in the same order:
 
 ## Displaying values
 
-After declaring and initializing this array, write statements to:
+After declaring and initializing `numbers` array, write statements to:
 
-#. Display every array value left to right
+#. Display every value left to right
 #. Display every value at even indices (skip odd indices)
 #. Display all values that are greater than 5    
 
@@ -31,20 +29,22 @@ Next, write statements that provide answers to following questions:
 
 ## Finding values
 
-Lastly, implement the following statements:
+Now implement the following statements:
 
-#. Find the _index_ of first 7, then display the index. If the value does not exist, display -1 to indicate it was not found. Check that your solution is correct by comparing your result what you can see by visually observing the array values.
-#. Find the maximum value in `numbers`. Check that statements you implement obtain the expected value.
+#. Find the _index_ of first 7, then display that index. If the value does not exist, display -1 to indicate it was not found. Check that your solution is correct by comparing what you obtain from the program with what you know by visually observing the array.
+#. Find the maximum value in `numbers`. Check that the solution you implement obtains the expected value.
 
 ## Evaluate your solution
 
-After implementing above methods, and assuming you have obtained the expected values, _ideally_ your solution should still work even if the values stored in `numbers` array change, or if the array length changes.
+After implementing these methods and assuming the program you implemented obtained the expected values, _ideally_ the solution should still work even if the values stored in `numbers` array change, or even if the array length changes.
 
 To test your solution, go back to the beginning of the program where you declared `numbers` array, then change the initialization so that the new array values are:
 
 ```
 55, 92, 12, 90, 37, 18, 6, 20, 80, 18, 46, 19, 65, 68, 18
 ``` 
+
+Then re-run the program.
 
 Check that you obtain expected values:
 
