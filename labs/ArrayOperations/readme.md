@@ -57,7 +57,7 @@ Check that you obtain expected values:
 
 # Working with two arrays
 
-For this part of lab, create two `char` arrays, with following values:
+For this part, declare and initialize the following two `char` arrays:
 
 ```
 char[] chars1 = {'K', 's', 'Q', 'U', 'i', 'N', 'K', 'N', 'h', 't', 'u'};
@@ -66,13 +66,13 @@ char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w'
 
 Next, write statements that answer the these two questions:
 
-#. Does value `'w'` occur in both arrays (true/false)?
-#. What is the first value that occurs in both arrays (searching left to right)? If these is no match, display `no match`.
+#. Does value `'w'` occur in both arrays (display true/false)?
+#. What is the first value that occurs in both arrays, searching from left to right? If none is found, display `no match`.
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
 
 - Does `'w'` occur in both arrays -> `false`
-- first value that occurs in both arrays -> `U` 
+- first value that occurs in both arrays -> `'U'` 
  
 Again, evaluate your work by changing the array initialization to:
 
@@ -83,13 +83,13 @@ char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 
 Then run the program again. 
 
-Ideally the program should not crash and should still produce correct results:
+Ideally the program does not crash and should still produce correct results:
 
 - Does `'w'` occur in both arrays -> `true`
-- first value that occurs in both arrays -> `P`
+- first value that occurs in both arrays -> `'P'`
 
 If the program does not produce these expected answers after changing the array values, 
-review your program and try to determine how to write a solution that works for \*any\* array values.
+review your program and try to determine how to write a solution that works for \*any\* two char arrays.
 
 # Pushing Further (Optional)
 
@@ -100,7 +100,7 @@ int[] left = { 101, 76, 74, 94, 94 };
 int[] right = { 73, 74, 67, 107, 111, 108, 66 };
 ```
 
-Implement statements to merge these two arrays, such that the resulting array contains the following values, in this order:
+Implement statements to merge `left` and `right` by creating a new, larger array that holds both of their values, in this order:
 
 ```
 101, 76, 74, 94, 94, 73, 74, 67, 107, 111, 108, 66
