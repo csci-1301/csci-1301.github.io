@@ -26,3 +26,16 @@ foreach(int n in primes)
 - Which one needs fewer variables?
 
 ## Problem 2
+
+- Can you rewrite the following code with `foreach` statement? Why?
+
+```
+double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
+
+for(int i = 0; i< numbers.Length; i++)
+{
+    numbers[i] = numbers[i] * 1.1;
+    Console.WriteLine(numbers[i]);
+}
+```
+## problem 3
