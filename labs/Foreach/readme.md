@@ -51,7 +51,7 @@ for(int i = 0; i< numbers.Length - 1; i++)
     Console.WriteLine((numbers[i] + numbers[i+1] )/2);
 }
 ```
-# Problem 4
+## Problem 4
 - Create a new project and replace the content of the file _Program.cs_ with the following code:
 ```
 using System;
