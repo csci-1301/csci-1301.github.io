@@ -1,7 +1,7 @@
 ---
 title: foreach
 ---
-# Practicing `foeeach` Loop
+# Practicing `foreach` Loop
 ## Problem 1
 
 - Create a new project, and replace the content of the _main_ method with the following code:
@@ -23,8 +23,6 @@ foreach(int n in primes)
 ```
 - Explain two differences between the above codes. 
 - Which one is easier to understand?
-- Which one needs less variables?
-
-- Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+- Which one needs fewer variables?
 
 ## Problem 2
