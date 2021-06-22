@@ -90,3 +90,20 @@ Ideally the program should not crash and should still produce correct results:
 
 If the program does not produce these expected answers after changing the array values, 
 review your program and try to determine how to write a solution that works for \*any\* array values.
+
+# Pushing Further (Optional)
+
+Start with two integer arrays with the following values:
+
+```
+int[] left = { 101, 76, 74, 94, 94 };
+int[] right = { 73, 74, 67, 107, 111, 108, 66 }
+```
+
+Implement statements to merge these two arrays, such that the resulting array contains the following values, in this order:
+
+```
+101, 76, 74, 94, 94, 73, 74, 67, 107, 111, 108, 66
+```
+
+Do not use built-in array methods.
