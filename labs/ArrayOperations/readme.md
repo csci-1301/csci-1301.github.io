@@ -97,7 +97,7 @@ Start with two integer arrays with the following values:
 
 ```
 int[] left = { 101, 76, 74, 94, 94 };
-int[] right = { 73, 74, 67, 107, 111, 108, 66 }
+int[] right = { 73, 74, 67, 107, 111, 108, 66 };
 ```
 
 Implement statements to merge these two arrays, such that the resulting array contains the following values, in this order:
