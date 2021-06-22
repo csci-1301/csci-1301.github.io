@@ -84,4 +84,6 @@ namespace Practice
 ```
 - As you notice, in the above code we define an array of 10 Book objects, and using a _for_ loop, we accommodate the array.
 - Replace the _for_ statement with _foreach_ statement and apply the required changes.
-- Add a piece of code that, using a _foreach_ statement, gets a year from the user and prints all the books published in the given year. 
+- Add a piece of code that, using a _foreach_ statement, gets a year from the user and prints all the books published in the given year.
+- Add a piece of code that, using a _for_ statement, gets a year from the user and prints all the books published in the given year. 
+- _foreach_ or _for_? Which one do you prefer to implement the above search? Explain your answer.
