@@ -1,3 +1,30 @@
 ---
 title: foreach
 ---
+# Practicing `foeeach` Loop
+## Problem 1
+
+- Create a new project, and replace the content of the _main_ method with the following code:
+```
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19}
+for(int i = 0; i< primes.Length; i++)
+{
+    Console.WriteLine(primes[i]);
+}
+```
+- Execute the code. You should see the elements of the array _primes_ (the prime numbers less than 20) in the console.
+- Rewrite the code with **foreach** statement. Try to code yourself. Then check your answer with the following answer.
+```
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19}
+foreach(int n in primes)
+{
+    Console.WriteLine(n);
+}
+```
+- Explain two differences between the above codes. 
+- Which one is easier to understand?
+- Which one needs less variables?
+
+- Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+
+## Problem 2
