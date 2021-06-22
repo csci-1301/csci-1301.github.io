@@ -51,3 +51,37 @@ for(int i = 0; i< numbers.Length - 1; i++)
     Console.WriteLine((numbers[i] + numbers[i+1] )/2);
 }
 ```
+# Problem 4
+- Create a new project and replace the content of the file _Program.cs_ with the following code:
+```
+using System;
+
+namespace Practice
+{
+    class Book
+    {
+        public string Title;
+        public int Year;
+        public string Publisher;
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Book[] bookList = new Book[10];
+            for(int i =0; i< 10; i++)
+            {
+                Console.Write("Enter the book title:");
+                bookList[i].Title = Console.ReadLine();
+                Console.Write("Enter the publish year:");
+                bookList[i].Year = int.Parse(Console.ReadLine());
+                Console.Write("Enter the publisher:");
+                bookList[i].Publisher = Console.ReadLine();
+            }
+        }
+    }
+}
+```
+- As you notice, in the above code we define an array of 10 Book objects, and using a _for_ loop, we accommodate the array.
+- Replace the _for_ statement with _foreach_ statement and apply the required changes.
+- Add a piece of code that, using a _foreach_ statement, gets a year from the user and prints all the books published in the given year. 
