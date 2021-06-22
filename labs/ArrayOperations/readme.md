@@ -64,9 +64,9 @@ char[] chars1 = {'K', 's', 'Q', 'U', 'i', 'N', 'K', 'N', 'h', 't', 'u'};
 char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w', 'J', 'U' };
 ```
 
-Next, write statements that answer the these two questions:
+Next, write statements that answer these two questions:
 
-#. Does value `'w'` occur in both arrays (display true/false)?
+#. Does value `'w'` occur in both arrays? Display the answer, true/false.
 #. What is the first value that occurs in both arrays, searching from left to right? If none is found, display `no match`.
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
@@ -74,7 +74,7 @@ After completing these two problems, make sure the program answers these questio
 - Does `'w'` occur in both arrays -> `false`
 - first value that occurs in both arrays -> `'U'` 
  
-Again, evaluate your work by changing the array initialization to:
+Again, evaluate your work by changing the array initializations to:
 
 ```
 char[] chars1 = {'s', 'p', 'd', 'P', 'y', 'D', 'w', '?'};
@@ -83,7 +83,7 @@ char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 
 Then run the program again. 
 
-Ideally the program does not crash and should still produce correct results:
+Ideally the program does not crash and should still produce correct answers:
 
 - Does `'w'` occur in both arrays -> `true`
 - first value that occurs in both arrays -> `'P'`
