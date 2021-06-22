@@ -13,7 +13,8 @@ foreach(Type ItemName in CollectionName)
 - **ItemName**: The chosen item is accessible using ItemName
 - **CollectionName**: The name of the collection
 Since, arrays are the only object that we study in this course, we will use the term array instead of the collections. 
-- The _foreach_ statement picks an element from the array and copies it to _ItemName_.
+
+The _foreach_ statement picks an element from the array and copies it to _ItemName_.
 - You are not allowed to change the value of _ItemName_, but if it is a complex object, you can change its member fields and properties.
 - You should use `foreach` statement whenever you want to process only one element in each iteration.
 
