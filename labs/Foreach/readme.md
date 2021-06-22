@@ -25,33 +25,8 @@ foreach(int n in primes)
 - Which one is easier to understand?
 - Which one needs fewer variables?
 
+
 ## Problem 2
-
-- Can you rewrite the following code with `foreach` statement? Why?
-
-```
-double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
-
-for(int i = 0; i< numbers.Length; i++)
-{
-    numbers[i] = numbers[i] * 1.1;
-    Console.WriteLine(numbers[i]);
-}
-```
-## problem 3
-
-
-- Can you rewrite the following code with `foreach` statement? Why?
-
-```
-double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
-
-for(int i = 0; i< numbers.Length - 1; i++)
-{   
-    Console.WriteLine((numbers[i] + numbers[i+1] )/2);
-}
-```
-## Problem 4
 - Create a new project and replace the content of the file _Program.cs_ with the following code:
 ```
 using System;
@@ -87,3 +62,32 @@ namespace Practice
 - Add a piece of code that, using a _foreach_ statement, gets a year from the user and prints all the books published in the given year.
 - Add a piece of code that, using a _for_ statement, gets a year from the user and prints all the books published in the given year. 
 - _foreach_ or _for_? Which one do you prefer to implement the above search? Explain your answer.
+## Problem 3
+
+- Can you rewrite the following code with `foreach` statement? Why?
+
+```
+double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
+
+for(int i = 0; i< numbers.Length; i++)
+{
+    numbers[i] = numbers[i] * 1.1;
+    Console.WriteLine(numbers[i]);
+}
+```
+## problem 4
+
+
+- Can you rewrite the following code with `foreach` statement? Why?
+
+```
+double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
+
+for(int i = 0; i< numbers.Length - 1; i++)
+{   
+    Console.WriteLine((numbers[i] + numbers[i+1] )/2);
+}
+```
+
+## Problem 5
+- Can you think of any loops that are implementable by _foreach_ but not with _for_?
