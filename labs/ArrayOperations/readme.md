@@ -57,23 +57,22 @@ Check that you obtain expected values:
 
 # Working with two arrays
 
-For this part of lab, lets create two `char` arrays, with following values:
+For this part of lab, create two `char` arrays, with following values:
 
 ```
 char[] chars1 = {'K', 's', 'Q', 'U', 'i', 'N', 'K', 'N', 'h', 't', 'u'};
 char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w', 'J', 'U' };
 ```
 
-Next, write statements that answer the following questions:
+Next, write statements that answer the these two questions:
 
 #. Does value `w` occur in both arrays (true/false)?
-#. What is the first value (searching left to right) that occurs in both arrays? 
+#. What is the first value that occurs in both arrays (searching left to right)? 
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
 
 - Does `w` occur in both arrays -> `false`
 - first value that occurs in both arrays -> `U` 
- 
  
 Again, evaluate your work by changing the array initialization to:
 
@@ -84,7 +83,10 @@ char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 
 Then run the program again. 
 
-Ideally, after changing array values, the program should not crash and should still produce correct results:
+Ideally the program should not crash and should still produce correct results:
 
 - Does `w` occur in both arrays -> `true`
 - first value that occurs in both arrays -> `P`
+
+If the program does not produce these expected answers after changing the array values, 
+review your program and try to determine how to write a solution that works for \*any\* array values.
