@@ -20,7 +20,7 @@ The _foreach_ statement picks an element from the array and copies it to _ItemNa
 - You should use `foreach` statement whenever you want to process only one element in each iteration.
 
 ### Example 1
-In the following example, we define an array of strings. Then, using the foreach statement, we print all the element of the array in the console. Not that to access the elements we **do not use indexes**. 
+In the following example, we define an array of strings. Then, using the foreach statement, we print all the element of the array in the console. Note that to access the elements we **do not use indexes**. 
 ```
 string[] countries = { "USA", "Iran", "China", "Germany", "Canada" };
 Console.WriteLine("Here is the list of eligible countries:");
