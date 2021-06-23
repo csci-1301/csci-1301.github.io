@@ -18,6 +18,7 @@ Since, arrays are the only object that we study in this course, we will use the 
 The _foreach_ statement picks an element from the array and copies it to _ItemName_.
 - You are not allowed to change the value of _ItemName_, but if it is a complex object, you can change its member fields and properties.
 - You should use `foreach` statement whenever you want to process only one element in each iteration.
+- `Foreach` is **read-only**, which means you can read or view elements of an array but you cannot modify them. 
 
 ### Example 1
 In the following example, we define an array of strings. Then, using the foreach statement, we print all the element of the array in the console. Note that to access the elements we **do not use indexes**. 
