@@ -20,6 +20,6 @@ class Book
 
     public override string ToString()
     {
-        return $"Title: {title}\nYear:  {year}\n=====";
+        return $"Title: {title}\nYear:  {year}\n";
     }
 }

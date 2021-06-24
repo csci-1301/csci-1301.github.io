@@ -54,8 +54,8 @@ for(int i = 0; i< numbers.Length - 1; i++)
 
 ## Problem 4
 
-#. Can you think of any loops that can be implemented by _foreach_ but not with _for_?
-#. Can you think of any loops that can be implemented by _for_ but not with _foreach_?
+#. Can you think of any loops that can be implemented with _foreach_ but not with _for_?
+#. Can you think of any loops that can be implemented with _for_ but not with _foreach_?
 
 
 ## Problem 5
