@@ -27,17 +27,17 @@ Console.WriteLine("Here is the list of eligible countries:");
 foreach (string CntName in countries)
 {
     Console.WriteLine(CntName);
-    CntName = "something"; \\ Error: this is not allowed
+    CntName = "something"; // Error: this is not allowed
 }
 ```
 ### Example 2
 In the following example, we use _foreach_ statement to accommodate an array of complex objects without dealing with indexes.
 ```
-Employee[] empArray = new TestClass[5]; \\ Assume we have a class called Employee
+Employee[] empArray = new TestClass[5]; // Assume we have a class called Employee
 foreach(TestClass m in empArray)
 {
    Console.Write("Enter the name of the employee:");
-   m.Name = Console.ReadLine();  \\ Assume the class Employee has a property called Name
+   m.Name = Console.ReadLine();  // Assume the class Employee has a property called Name
 }
 ```
 ## `break` and `continue`
@@ -56,7 +56,7 @@ foreach (string CntName in countries)
     if(CntName  == target)
     {
         flag = true;
-        break;  \\ ends the loop immediately. 
+        break;  // ends the loop immediately. 
     }
 }
 if(flag)

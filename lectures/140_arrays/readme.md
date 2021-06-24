@@ -27,11 +27,11 @@ type[] arrayName;
 ```
 arrayName = new type[number of elements];
 ```
-- An element of a single-dimentional array can be accessed and modified by using the name of the array and the index of the element as follow:
+- An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:
 ```
-arrayName[Index] = value;  \\ assigning a value to an element
+arrayName[Index] = value;  // assigning a value to an element
 
-value = arrayName[Index]; \\ Reading the current value of an element
+value = arrayName[Index]; // Reading the current value of an element
 ```
 - The index of the first element in an array is always zero; the index of the second element is one, and so on.
 - If you specify an index greater or equal to the number of elements, a run time error will happen.
@@ -91,7 +91,7 @@ Other datatype, and even objects, can be stored in arrays:
 
 ```
 string[] myArray = { "Bob", "Mom", "Train", "Console" };
-Rectangle[] arrayOfRectangle = new Rectangle[5];  \\ Assume there is a class called Rectangle
+Rectangle[] arrayOfRectangle = new Rectangle[5];  // Assume there is a class called Rectangle
 ```
 
 ## Custom Size and Values
