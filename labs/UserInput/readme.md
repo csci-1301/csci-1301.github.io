@@ -17,7 +17,7 @@ title: User Input
 #. Compile and execute it.
 #. The user of your program (in this case, you!) will be prompted with the message:
 
-    ```{.bash}
+    ```text
     Please, enter your first name, followed by "Enter":
     ```
     

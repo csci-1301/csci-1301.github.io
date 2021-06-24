@@ -77,7 +77,7 @@ Create a new project, and then do the following.
 
     You will get an error that reads
 
-    ```{.bash}
+    ```text
     Cannot implicitly convert type 'float' to 'int'. An explicit conversion exists (are you missing a cast?)
     ```
 

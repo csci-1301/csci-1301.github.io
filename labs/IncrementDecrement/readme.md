@@ -27,6 +27,41 @@ Compare your answers from previous section to what you observe in the output. Do
 !include code/increment_decrement.cs
 ```
 
+Next, for each of the following, determine the final value of _n_.  
+
+```
+int x = 5;
+int n = x++;
+```
+
+```
+int x = 5;
+int n = ++x;
+```
+
+```
+int x = 5;
+int n = x++ + x++;
+```
+
+```
+int x = 5;
+int n = ++x + ++x;
+```
+
+```
+int x = 5, y = 6;
+int n = x++ * ++y;
+```
+
+```
+int x = 5;
+int n = x++ + --x;
+```
+
+
+
+
 # First While Loops
 
 

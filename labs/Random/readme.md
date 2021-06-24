@@ -28,7 +28,7 @@ Using a Random object like this, write a program that
 
 An example execution of this program would display:
 
-~~~~{.plain}
+```text
 0       8       L
 5       3       W
 3       3       T
@@ -37,7 +37,7 @@ An example execution of this program would display:
 9       0       W
 9       0       W
 1       5       L
-~~~~
+```
 
 In this example, the first array contains "0 5 3 1 3 9 9 1" and the second contains "8 3 3 2 1 0 0 5".
 
