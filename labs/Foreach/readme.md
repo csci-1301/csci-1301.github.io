@@ -9,7 +9,7 @@ title: foreach
 Create a new project, and replace the content of the `Main` method with the following code:
 
 ```
-int[] primes = {2, 3, 5, 7, 11, 13, 17, 19}
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19};
 for(int i = 0; i< primes.Length; i++)
 {
     Console.WriteLine(primes[i]);
@@ -29,7 +29,7 @@ Next rewrite the code using a **foreach** statement, then answer the following q
 Can you rewrite the following code with `foreach` statement? Why?
 
 ```
-double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
+double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7};
 
 for(int i = 0; i< numbers.Length; i++)
 {
@@ -38,13 +38,13 @@ for(int i = 0; i< numbers.Length; i++)
 }
 ```
 
-## problem 3
+## Problem 3
 
 
 Can you rewrite the following code with `foreach` statement? Why?
 
 ```
-double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7}
+double [] numbers = {1.2, 4.3, 5.7, 11, -3.13, 1.7};
 
 for(int i = 0; i< numbers.Length - 1; i++)
 {   
