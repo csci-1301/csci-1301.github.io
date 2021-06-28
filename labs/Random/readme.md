@@ -76,3 +76,42 @@ Write a program that:
    
 You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of computer's number, only one message is displayed.
 
+# Pushing Further (Optional)
+
+## Cryptographically secure random numbers
+
+Random number generation is only pseudo-random, meaning these are algorithmically generated numbers that approximate a sequence of truly random numbers.
+Using the default `Random` class is not recommended for applications that need cryptographically secure random numbers, for example, to generate suggested passwords.
+
+When an application needs cryptographically secure random numbers, RandomNumberGenerator class should be used instead. It works as follows:
+
+```
+using System;
+using System.Security.Cryptography; // include definition!
+
+class Program
+{
+    static void Main()
+    {
+        
+        // choose secure (!) random integer
+        // between 0 (inclusive) and 100 (exclusive)
+        int secureRandom = RandomNumberGenerator.GetInt32(100);
+        
+        // display cryptographically secure int
+        Console.WriteLine(secureRandom);
+        
+        // choose secure (!) random integer
+        // between 50 (inclusive) and 500 (exclusive)
+        int anotherSecureRandom = RandomNumberGenerator.GetInt32(50, 500);
+        
+        // display cryptographically secure int
+        Console.WriteLine(anotherSecureRandom);
+    }
+}
+```
+
+You can learn more about secure random numbers by reading through:
+
+- the technical description of [RandomNumberGenerator class](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator)
+- discussion on [how to choose which Random generator to use](https://stackoverflow.com/questions/1257299/why-use-the-c-sharp-class-system-random-at-all-instead-of-system-security-crypto)
