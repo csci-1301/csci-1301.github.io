@@ -86,29 +86,7 @@ Using the default `Random` class is not recommended for applications that need c
 When an application needs cryptographically secure random numbers, RandomNumberGenerator class should be used instead. It works as follows:
 
 ```
-using System;
-using System.Security.Cryptography; // include definition!
-
-class Program
-{
-    static void Main()
-    {
-        
-        // choose secure (!) random integer
-        // between 0 (inclusive) and 100 (exclusive)
-        int secureRandom = RandomNumberGenerator.GetInt32(100);
-        
-        // display cryptographically secure int
-        Console.WriteLine(secureRandom);
-        
-        // choose secure (!) random integer
-        // between 50 (inclusive) and 500 (exclusive)
-        int anotherSecureRandom = RandomNumberGenerator.GetInt32(50, 500);
-        
-        // display cryptographically secure int
-        Console.WriteLine(anotherSecureRandom);
-    }
-}
+!include code/secure_random.cs
 ```
 
 You can learn more about secure random numbers by reading through:
