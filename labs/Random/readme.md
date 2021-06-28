@@ -61,10 +61,10 @@ Write a program that:
 
 #. Let computer choose a random number between 0 and 100 and store that number at a variable.
 #. Asks the user to enter a numerical value, and stores the user's answer in a variable.
-#. Add an `if` statement, displays on the screen `"You guessed correctly"` if the number entered by the user matches the number selected by computer.
-#. Add an `if` statement that displays on the screen `"Too high!"` if the number entered by the user is strictly greater than the number selected by computer.
-#. Add an `if` statement that displays on the screen `"Too low!"` if the number entered by the user is strictly than the number selected by computer.
-#. Add an `if` statement that displays on the screen `"You found a multiple of my favorite number!"` if the number entered by the user is a multiple of the number selected by computer, 
+#. Add an if statement, displays on the screen `"You guessed correctly"` if the number entered by the user matches the number selected by computer.
+#. Add an if statement that displays on the screen `"Too high!"` if the number entered by the user is strictly greater than the number selected by computer.
+#. Add an if statement that displays on the screen `"Too low!"` if the number entered by the user is strictly than the number selected by computer.
+#. Add an if statement that displays on the screen `"You found a multiple of my favorite number!"` if the number entered by the user is a multiple of the number selected by computer, 
    but different from it.  
 #. When user enters a number that does not match computers selection, the user should be able to enter another number. This continues until user guesses correctly.       
 #. Keep count of how many guesses it takes for the user to arrive to the correct answer. After user guesses correctly, display that count, for example:
