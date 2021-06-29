@@ -2,17 +2,18 @@
 
 ## Arithmetic Operators
 
-Variables or literals of numeric data types (`int`, `double`, etc.) can be used to do math. All the usual arithmetic operations are available in C#:
+Variables can be used to do math. All the usual arithmetic operations are available in C#:
 
-| Operation                  | C# Operator | Algebraic Expression | C# Expression |
-| ----------                 | ----------  | ----------           | ----------    |
-| Addition                   | `+`         | $x + 7$              | `myVar + 7`   |
-| Subtraction                | `-`         | $x - 7$              | `myVar - 7`   |
-| Multiplication             | `*`         | $x \times 7$         | `myVar * 7`   |
-| Division                   | `/`         | $x / 7$,  $x \div 7$ | `myVar / 7`   |
-| Remainder (a.k.a.\ modulo) | `%`         | $x \bmod 7$          | `myVar % 7`   |
+| Operation                  | C# Operator | C# Expression |
+| ----------                 | ----------  | ----------    |
+| Addition                   | `+`         |  `myVar + 7`   |
+| Subtraction                | `-`         |  `myVar - 7`   |
+| Multiplication             | `*`         |  `myVar * 7`   |
+| Division                   | `/`         |  `myVar / 7`   |
+| Remainder (a.k.a.\ modulo) | `%`         |  `myVar % 7`   |
 
-Note: the "remainder" or "modulo" operator represents the remainder after doing integer division between its two operands. For example, $44 \bmod 7 = 2$ because $44 \div 7 = 6$ *with remainder* $2$.
+Note: the "remainder" or "modulo" operator represents the remainder after doing integer division between its two operands. \
+For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 42 and 44 - 42 = 2.
 
 - Arithmetic and variables
     - The result of an arithmetic expression (like those shown in the table) is a numeric value
