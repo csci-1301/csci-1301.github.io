@@ -74,7 +74,7 @@ Features of this program:
     - Can be used by typing its name
     - Similar to a paragraph and a class is similar to a chapter in that it can have multiple methods within its body
     - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we'll get to those later, but they're required)
-    - Just like with the class declaration, after the name, `{` begins the body of the method, `}` ends it
+    - Just like the class declaration, the body of the method beings with `{` and ends with `}`
 - A statement inside the body of the method
     - This is the part of the program that actually "does something": It prints a line of text to the console
     - A statement *must* end in a semicolon (the class header and method header aren't statements)
