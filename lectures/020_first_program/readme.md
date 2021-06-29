@@ -75,12 +75,12 @@ Features of this program:
     - Similar to a paragraph and a class is similar to a chapter in that it can have multiple methods within its body
     - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we'll get to those later, but they're required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
-- A statement inside the body of the method
+- A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
     - This is the part of the program that actually "does something": It prints a line of text to the console
-    - A statement *must* end in a semicolon (the class header and method header aren't statements)
     - This statement contains a class name (`Console`), followed by a method name (`WriteLine`). It calls the `WriteLine` method in the `Console` class.
     - The **argument** to the `WriteLine` method is the text "Hello, world!", which is in parentheses after the name of the method. This is the text that gets printed in the console: The `WriteLine` method (which is in the standard library) takes an argument and prints it to the console.
     - Note that the argument to `WriteLine` is inside double-quotes. This means it is a **string**, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.
+    - A statement *must* end in a semicolon (the class header and method header aren't statements)
 - An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by the C# compiler.
 
 ## Rules of C# Syntax
