@@ -86,7 +86,10 @@ Features of this program:
 ## Rules of C# Syntax
 
 - Each statement must end in a semicolon (`;`),
-    - Class and method declarations are not statements
+    - Exceptions: 
+        - opening `{` and closing `}` don't end in a ;
+        - Class and method declarations don't end in a ; since they end in a }\
+          Example: class Program { .... `}`
     - A method *contains* some statements, but it is not a statement
 - All words are case-sensitive
     - A class named `Program` is not the same as one named `program`
@@ -158,7 +161,7 @@ Features of this program:
 
     - We saw this in the "Hello World" program: `Console.WriteLine("Hello World!");` results in "Hello World!" being displayed in the terminal
 
-    - In general, `Console.WriteLine("text");` will display the text in the terminal, then *start a new line*
+    - In general, `Console.WriteLine("text");` will display the text but not the "'s in the terminal, then *start a new line*
 
     - This means a second `Console.WriteLine` will display its text on the next line of the terminal. For example, this program:
 
