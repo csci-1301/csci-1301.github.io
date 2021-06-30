@@ -7,7 +7,7 @@ title: Class Diagram
 UML is used to represents many different [types of diagrams](https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams).
 In this lab you will practice interpreting and creating one of them: a _class diagram_. 
 
-## Interpreting a UML class diagram
+# Interpreting a UML class diagram
 
 Study the following diagram, then answer follow up questions:
 
@@ -38,7 +38,7 @@ Knowing that:
 
 implement your version of this class in C\#.
 
-## Writing your own class diagram 
+# Writing your own class diagram 
 
 In this next exercise you will practice drawing your own diagram, on paper.
 
