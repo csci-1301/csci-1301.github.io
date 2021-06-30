@@ -28,7 +28,9 @@ Study the following diagram, then answer follow up questions:
 
 #. What is the name of this class?
 #. How many attributes does this class have?
+#. What is the data type of `balance`?
 #. How many methods does this class have?
+#. What is the significance of `+` and `-` in the diagram?
 #. You will notice that there are two similar methods: `GetBalance` and `DisplayBalance`
     - based on the name can you interpret the behavior of these methods?
     - can you think of _why_ we might need two such similar methods?
@@ -40,18 +42,21 @@ Class diagram provides a concise way to represent attributes and methods, but it
 Knowing that:
 
 #. `GetBalance` returns the current value of balance,
-#. `DisplayBalance` displays the current balance at the screen formatted as currency, for example:
+#. `DisplayBalance` displays the current balance at the screen formatted as currency, 
+
+    for example:
 
     ```text
     Your current balance is $1,000,000.00 dollars!
     ``` 
     
 #. `AddFunds` increments the current balance value by specified `amount`, and
-#. `Withdraw` reduces balance by specified amount.
+#. `Withdraw` reduces balance by specified `amount`.
 
-implement your version of this class in C\#.
+implement your version of this class in C\#. For completeness, after you are done you should
+instantiate an object of the class and ensure it works as described.
 
-# Writing your own class diagram 
+# Creating your own class diagram 
 
 In this next exercise you will practice drawing your own diagram, on paper.
 
