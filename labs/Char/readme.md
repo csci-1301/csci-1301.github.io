@@ -13,7 +13,7 @@ In the referenced table, each character's integer code is given for different [n
 - Dec: decimal, base 10
 - Hex: hexadecimal, base 16
 
-Base 10 ("decimal") is the system we use everyday, but computer programs occasionally use other numerical systems, and these values are listed for convenience.
+_Decimal system_ is what we use everyday, but computer programs occasionally use other numerical systems.
 
 Note that the characters are divided in groups, and that there are 95 printable characters.
 
@@ -48,7 +48,6 @@ Next write code to determine the `int` values for the following characters:
 | `A` | |
 | `5` | |
 | `#` | |
-| `p` | |
 
 Also determine what characters the following integers (in decimal base) represent:
 
@@ -75,32 +74,30 @@ else
 Implement the following short program to practice this concept:
   
 #. Ask  user  to  enter  a  lowercase  character. 
-#. Check that the alphabet is within a - z range, to check that it _is_ a lowercase character
-#. when it is not display "not a lowercase character"
+#. Check that the character is within a - z range, to check that it _is_ a lowercase character
+#. when it is not, display "not a lowercase character"
 #. otherwise perform the following steps:
     - if  user  enters character `'n'`,  display "You entered n"
-    - if  the  character  occurs  before `'n'` in the  alphabet, display "Before n"
-    - if  the  character  occurs  after `'n'` in the  alphabet, display "After n"
+    - if  the  character  occurs  before `'n'`, display "Before n"
+    - if  the  character  occurs  after `'n'`, display "After n"
 - To read *a single character* (instead of a whole string), use ReadKey() method: `Console.ReadKey().KeyChar`
 
 
 ## Testing for Equality
 
-Note that you can also test if a character is equal to an other by using `==`, as for integer values.
+You can also test if a character is equal to an other by using `==`, as for integer values.
 This is particularly useful when we want to ask the user for a "yes" / "no" decision.
 
 Write a program that
 
 - Asks the user for a character,
-- Displays on the screen "The user said yes" if the user entered "Y" or "y",
-- Displays on the screen "The user said no" if the user entered "N" or "n",
+- Displays on the screen "The user said yes" if the user entered `'Y'` or `'y'`,
+- Displays on the screen "The user said no" if the user entered `'N'` or `'n'`,
 - Displays on the screen "The user entered an incorrect value" if the user entered any other character.
-
 
 # Pushing Further (Optional)
 
 ## String Comparison
-
 
 Comparing strings cannot be done with `>` and `<` operators.
 To compare them, we have to use the [CompareOrdinal](https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal)
