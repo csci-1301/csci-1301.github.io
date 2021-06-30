@@ -49,7 +49,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
 | [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
 | [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
-| [UML](/labs/UML) | [Rectangle](/labs/Rectangle)  | ? | UML diagrams |
+| [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  | ? | Practice reading and creating a UML class diagrams |
 | [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | ? | Static class members |
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
 | [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
@@ -62,5 +62,5 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
 | [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays |
 | [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [ChemicalElements](/labs/ChemicalElements), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
-| [Char](/labs/Char) | [For](/labs/For) | ? | char ⬄ int; comparing characters, string comparison |
-| [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | ? | Working with Random class |
+| [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison |
+| [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class |

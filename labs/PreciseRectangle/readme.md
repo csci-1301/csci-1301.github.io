@@ -34,7 +34,7 @@ Then, select "Class", write "PreciseRectangle.cs" as the name of the file, and c
 #. You are now supposed to have two ".cs" files opened and displayed in the Solution Explorer: "Program.cs" and "PreciseRectangle.cs".
 #. Implement the `PreciseRectangle` class according to the following specification:
 
-    - it should have two attributes, of type `double`
+    - it should have two attributes, `width` and `length`, of type `double`
     - it should have and eight methods:
         - two setters, two getters (i.e., one for each attribute), 
         - one method to compute the area of a precise rectangle,

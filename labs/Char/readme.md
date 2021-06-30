@@ -49,7 +49,7 @@ Next write code to determine the `int` values for the following characters:
 | `5` | |
 | `#` | |
 
-Also determine what characters the following integers (in decimal base) represent:
+Also determine what characters the following integers (in decimal system) represent:
 
 | `int` value | `char` value |
 | :---: | :---: |  
