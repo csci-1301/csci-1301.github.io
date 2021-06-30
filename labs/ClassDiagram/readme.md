@@ -11,7 +11,7 @@ In this lab you will practice interpreting and creating one of them: a _class di
 
 Study the following diagram, then answer follow up questions:
 
-!["Class diagram for a bank account"](img/account_class.png)
+!["Class diagram for a bank account"](./img/account_class.png)
 
 #. What is the name of this class?
 #. How many attributes does this class have?
@@ -66,7 +66,7 @@ The following is an independent task, to widen your understanding of UML modelli
 #. Activity Diagram is another type of UML diagram for representing program actions. 
    You will occasionally see activity diagrams in the lecture notes.
 
-   !["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
+   !["A flowchart representation of an if-else statement"](./img/activity_diag_vote_if_else)
     
    Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to 
    understand the example: "Activity diagram for a guided brainstorming process".
