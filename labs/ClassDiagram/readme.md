@@ -1,5 +1,5 @@
 ---
-title: Class Diagram
+title: UML Class Diagram
 ---
 
 
@@ -8,6 +8,8 @@ UML can represent many different types of diagrams.
 In this lab you will practice interpreting and creating one of them: a _class diagram_. 
 
 # Interpreting a UML class diagram
+
+## Reading the diagram
 
 Study the following diagram, then answer follow up questions:
 
@@ -20,7 +22,7 @@ Study the following diagram, then answer follow up questions:
 | + GetBalance():decimal                    |
 | + DisplayBalance():void                   |
 | + AddFunds(amount:decimal):void           |
-| + Withdraw(amount:decimal):bool           |
+| + Withdraw(amount:decimal):void           |
 |===========================================|
 ```
 
@@ -30,6 +32,8 @@ Study the following diagram, then answer follow up questions:
 #. You will notice that there are two similar methods: `GetBalance` and `DisplayBalance`
     - based on the name can you interpret the behavior of these methods?
     - can you think of _why_ we might need two such similar methods?
+
+## Implementing the class
 
 Class diagram provides a concise way to represent attributes and methods, but it does not explain the implementation of the methods.
 
@@ -43,9 +47,7 @@ Knowing that:
     ``` 
     
 #. `AddFunds` increments the current balance value by specified `amount`, and
-#. `Withdraw` performs following operation:
-    - if sufficient funds are available, it reduces balance by specified amount and returns `true` to indicate withdrawl succeeded
-    - if funds are insufficient, it does nothing to balance, and returns `false` to indicate withdrawal was unsuccessful.
+#. `Withdraw` reduces balance by specified amount.
 
 implement your version of this class in C\#.
 
@@ -67,21 +69,7 @@ In this next exercise you will practice drawing your own diagram, on paper.
 
 The following is an independent task, to widen your understanding of UML modelling concepts:
 
-#. Class diagrams are just a special case of UML diagram. Have a look at 
-   
-   <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams>
-   
-   In which category are class diagrams: behavior, or structure diagram?
-   
-#. Besides modelling attributes and methods, class diagrams can also represent relationships between classes.  
-   Have a look at 
-   
-   <https://en.wikipedia.org/wiki/Class_diagram/> 
-   
-   for more examples of class diagrams and its uses.
-
-#. Activity Diagram is another type of UML diagram for representing program actions. 
-   You will occasionally see activity diagrams in the lecture notes.    
-   Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to 
-   understand the example: "Activity diagram for a guided brainstorming process".
+#. Class diagrams are just a special case of UML diagram. Have a look at <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams> In which category are class diagrams: behavior, or structure diagram?   
+#. Besides modelling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://en.wikipedia.org/wiki/Class_diagram/> for more examples of class diagrams and its uses.
+#. Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".
 
