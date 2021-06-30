@@ -6,12 +6,14 @@ title: Char and Int Conversion, Ordering of Characters
 
 Characters are represented by integers: cf. <https://en.wikipedia.org/wiki/ASCII#Printable_characters> for a mapping between the glyphs (i.e., space, `A`, `!`, etc.) and **dec**imal values, to be read as "integer code", i.e., 32, 33, 34, etc.
 
-In the references table, each character's integer code is given for different [numeral systems](https://en.wikipedia.org/wiki/Radix#In_numeral_systems):
+In the referenced table, each character's integer code is given for different [numeral systems](https://en.wikipedia.org/wiki/Radix#In_numeral_systems):
  
 - Binary: base 2
 - Oct: octal, base 8
 - Dec: decimal, base 10
 - Hex: hexadecimal, base 16
+
+Base 10 ("decimal") is the system we use everyday, but computer programs occasionally use other numerical systems, and these values are listed for convenience.
 
 Note that the characters are divided in groups, and that there are 95 printable characters.
 
@@ -48,12 +50,12 @@ Next write code to determine the `int` values for the following characters:
 | `#` | |
 | `p` | |
 
-Also determine what characters the following integers (in decimal base) represent: 49, 104, 89.
+Also determine what characters the following integers (in decimal base) represent:
 
 | `int` value | `char` value |
 | :---: | :---: |  
-| `59` | |
-| `112` | |
+| `49` | |
+| `104` | |
 | `89` | |
 
 
@@ -70,16 +72,15 @@ else
     Console.Write("A is less than a");
 ```
 
-Implement the following short program:
-
-Ask  user  to  enter  a  lowercase  character.   
-
-#. First check that the alphabet is within a - z range
-#. if it is not, display "not a lowercase character"
-#. if it is, perform the following steps:
-    - if  user  enters  letter n,  display "You entered n"
-    - if  the  character  occurs  before n in the  alphabet, display "Before n"
-    - if  the  character  occurs  after n in the  alphabet, display "After n"
+Implement the following short program to practice this concept:
+  
+#. Ask  user  to  enter  a  lowercase  character. 
+#. Check that the alphabet is within a - z range, to check that it _is_ a lowercase character
+#. when it is not display "not a lowercase character"
+#. otherwise perform the following steps:
+    - if  user  enters character `'n'`,  display "You entered n"
+    - if  the  character  occurs  before `'n'` in the  alphabet, display "Before n"
+    - if  the  character  occurs  after `'n'` in the  alphabet, display "After n"
 - To read *a single character* (instead of a whole string), use ReadKey() method: `Console.ReadKey().KeyChar`
 
 
@@ -88,12 +89,12 @@ Ask  user  to  enter  a  lowercase  character.
 Note that you can also test if a character is equal to an other by using `==`, as for integer values.
 This is particularly useful when we want to ask the user for a "yes" / "no" decision.
 
-Write a snippet of code that 
+Write a program that
 
-- Ask the user for a character,
-- Display on the screen "The user said yes" if the user entered "Y" or "y",
-- Display on the screen "The user said no" if the user entered "N" or "n",
-- Display on the screen "The user entered an incorrect value" if the user entered any other character.
+- Asks the user for a character,
+- Displays on the screen "The user said yes" if the user entered "Y" or "y",
+- Displays on the screen "The user said no" if the user entered "N" or "n",
+- Displays on the screen "The user entered an incorrect value" if the user entered any other character.
 
 
 # Pushing Further (Optional)
