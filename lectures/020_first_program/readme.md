@@ -70,20 +70,26 @@ Features of this program:
       </pre>
     - All code between opening `{` and closing `}` is part of the class named by the `class [name]` statement
 - A method declaration
-    - The name of the method is `Main`, and is followed by empty parentheses (we'll get to those later, but they're required)
-    - Just like with the class declaration, after the name, `{` begins the body of the method, `}` ends it
-- A statement inside the body of the method
+    - A collection of instructions with a name
+    - Can be used by typing its name
+    - Similar to a paragraph and a class is similar to a chapter in that it can have multiple methods within its body
+    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we'll get to those later, but they're required)
+    - Just like the class declaration, the body of the method beings with `{` and ends with `}`
+- A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
     - This is the part of the program that actually "does something": It prints a line of text to the console
-    - A statement *must* end in a semicolon (the class header and method header aren't statements)
     - This statement contains a class name (`Console`), followed by a method name (`WriteLine`). It calls the `WriteLine` method in the `Console` class.
     - The **argument** to the `WriteLine` method is the text "Hello, world!", which is in parentheses after the name of the method. This is the text that gets printed in the console: The `WriteLine` method (which is in the standard library) takes an argument and prints it to the console.
     - Note that the argument to `WriteLine` is inside double-quotes. This means it is a **string**, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.
+    - A statement *must* end in a semicolon (the class header and method header aren't statements)
 - An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by the C# compiler.
 
 ## Rules of C# Syntax
 
 - Each statement must end in a semicolon (`;`),
-    - Class and method declarations are not statements
+    - Exceptions: 
+        - opening `{` and closing `}` don't end in a ;
+        - Class and method declarations don't end in a ; since they end in a }\
+          Example: class Program { .... `}`
     - A method *contains* some statements, but it is not a statement
 - All words are case-sensitive
     - A class named `Program` is not the same as one named `program`
@@ -155,7 +161,7 @@ Features of this program:
 
     - We saw this in the "Hello World" program: `Console.WriteLine("Hello World!");` results in "Hello World!" being displayed in the terminal
 
-    - In general, `Console.WriteLine("text");` will display the text in the terminal, then *start a new line*
+    - In general, `Console.WriteLine("text");` will display the text but not the "'s in the terminal, then *start a new line*
 
     - This means a second `Console.WriteLine` will display its text on the next line of the terminal. For example, this program:
 
