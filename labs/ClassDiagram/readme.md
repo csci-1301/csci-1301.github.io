@@ -60,15 +60,14 @@ instantiate an object of the class and ensure it works as described.
 
 In this next exercise you will practice drawing your own diagram, on paper.
 
-#. Draw the UML class diagram of a PreciseRectangle class.
+#. Draw the UML class diagram of a `PreciseRectangle` class.
 #. It should have two attributes: `width` and `length` of type `double`
 #. It should have eight methods:
     - two setters, two getters (i.e., one for each attribute) 
-    - one method to compute the area of a precise rectangle
-    - one method to compute the perimeter of a precise rectangle
-    - one method to swap the length and the width of a precise rectangle
-    - one method to multiply the length and width of a precise rectangle by an ratio given in argument as an integer
-
+    - `ComputeArea` method to compute the area of a precise rectangle
+    - `ComputePerimeter` method to compute the perimeter of a precise rectangle
+    - `Swap` method to swap the length and the width of a precise rectangle
+    - `Multiply` method to multiply the length and width of a precise rectangle by an ratio given in argument as an integer (`int`)
 
 # Pushing Further (Optional)
 
