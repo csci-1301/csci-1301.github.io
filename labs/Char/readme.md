@@ -2,7 +2,7 @@
 title: Char and Int Conversion, Ordering of Characters
 ---
 
-## Reading and Understanding
+# Reading and Understanding
 
 Characters are represented by integers: cf. <https://en.wikipedia.org/wiki/ASCII#Printable_characters> for a mapping between the glyphs (i.e., space, `A`, `!`, etc.) and **dec**imal values, to be read as "integer code", i.e., 32, 33, 34, etc.
 
@@ -17,7 +17,7 @@ _Decimal system_ is what we use everyday, but computer programs occasionally use
 
 Note that the characters are divided in groups, and that there are 95 printable characters.
 
-## Converting
+# Converting
 
 Copy the following snippet of code in a `Main` method:
 
@@ -58,7 +58,7 @@ Also determine what characters the following integers (in decimal system) repres
 | `89` | |
 
 
-## Comparing
+# Comparing
 
 Exactly as $65$ is less than $97$, the character associated with $65$, `A`, is less than the character associated with $97$, `a`.
 
@@ -83,7 +83,7 @@ Implement the following short program to practice this concept:
 - To read *a single character* (instead of a whole string), use ReadKey() method: `Console.ReadKey().KeyChar`
 
 
-## Testing for Equality
+# Testing for Equality
 
 You can also test if a character is equal to an other by using `==`, as for integer values.
 This is particularly useful when we want to ask the user for a "yes" / "no" decision.
