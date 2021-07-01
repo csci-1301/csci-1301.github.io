@@ -67,13 +67,13 @@ In this next exercise you will practice drawing your own diagram, on paper.
     - `ComputeArea` method to compute the area of a precise rectangle
     - `ComputePerimeter` method to compute the perimeter of a precise rectangle
     - `Swap` method to swap the length and the width of a precise rectangle
-    - `Multiply` method to multiply the length and width of a precise rectangle by an ratio given in argument as an integer (`int`)
+    - `Multiply` method to multiply the length *and* width of a precise rectangle by an ratio given in argument as an integer (`int`)
 
 # Pushing Further (Optional)
 
 The following is an independent task, to widen your understanding of UML modelling concepts:
 
-#. Class diagrams are just a special case of UML diagram. Have a look at <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams> In which category are class diagrams: behavior, or structure diagram?   
-#. Besides modelling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://en.wikipedia.org/wiki/Class_diagram/> for more examples of class diagrams and its uses.
+#. Class diagrams are just a special case of UML diagram. Have a look at <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior, or structure diagram?   
+#. Besides modelling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://en.wikipedia.org/wiki/Class_diagram> for more examples of class diagrams and its uses.
 #. Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".
 
