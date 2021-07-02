@@ -66,7 +66,7 @@
         }
         else
         {
-            monthName = "Invalid month"
+            monthName = "Error!"; // Invalid month
         }
         Console.WriteLine("The number " + month + " corresponds to the month " + monthName + ".")
         ```
@@ -154,7 +154,7 @@
                 monthName = "December";
                 break;
             default:
-                monthName = "Invalid month"
+            monthName = "Error!"; // Invalid month
                 break;
         }
         Console.WriteLine("The number " + month + " corresponds to the month " + monthName + ".")
