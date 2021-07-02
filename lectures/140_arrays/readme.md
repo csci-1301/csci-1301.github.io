@@ -23,34 +23,42 @@ Arrays are useful, for instance,
 You can define a single-dimensional array as follow:
 
 ```
-type[] arrayName;
+<type>[] arrayName;
 ```
 
-- `type` can be any data-type and specifies the data-type of the array elements.
+where
+
+- `<type>` can be any data-type and specifies the data-type of the array elements.
 - `arrayName` is an identifier that you will use to access and modify the array elements.
-- Before using an array, you must specify the number of elements of the array as follow:
+
+Before using an array, you must specify the number of elements of the array as follow:
 
     ```
-    arrayName = new type[number of elements];
+    arrayName = new <type>[<number of elements>];
     ```
+    
+where `<type>` is as previously, and `<number of elements>`, called the _size declarator_, needs to be a strictly positive integer which will correspond to the size of the array.
 
 - An element of a single-dimensional array can be accessed and modified by using the name of the array and the index of the element as follow:
 
     ```
-    arrayName[Index] = value;  // assigning a value to an element
-    
-    value = arrayName[Index]; // Reading the current value of an element
+    arrayName[<index>] = <value>;  // Assigns <value> to the <index> element of the array arrayName.
+     
+    Console.WriteLine(arrayName[<index>]); // Display the <index> element of the array arrayName.
     ```
   
-- The index of the first element in an array is always zero; the index of the second element is one, and so on.
-- If you specify an index greater or equal to the number of elements, a run time error will happen.
+
+The index of the first element in an array is always _zero_; the index of the second element is one, and the index of the last element is the size of the array minus one. 
+As a consequence, if you specify an index greater or equal to the number of elements, a run time error will happen.
+
+Indexing starting from 0 may seem surprizing and counter-intuitive, but this is a largely respected convention accross programing languages and computer-scientists. Some insights on the reasons behind this (collective) choice can be found [in this answer on Computer Science Educators](https://cseducators.stackexchange.com/a/5026).
 
 ### Example 
 
 In the following example, we define an array named _myArray_ with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element. 
 
 ```
- int[] myArray;
+int[] myArray;
 myArray = new int[3]; // 3 is the size declarator
 // We can now store 3 ints in this array,
 // at index 0, 1 and 2
@@ -58,17 +66,27 @@ myArray = new int[3]; // 3 is the size declarator
 myArray[0] = 10; // 0 is the subscript, or index
 myArray[1] = 20;
 myArray[2] = 30;
-
-// the following would give an error:
-//myArray[3] = 40;
-// Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()
-// "Array bound checking": happen at runtime.
 ```
+
+If we were to try to store a fourth value in our array, at index 3, using e.g.
+
+```
+myArray[3] = 40;
+```
+
+our program would compile just fine, which may seems surprizing.
+However, when executing this program, the _array bound checking_ would be performed and detect that there is a mismatch between the size of the array and the index we are trying to use, resulting in a quite explicit error message:
+
+```text
+Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()
+```
+
+### Abridged Syntaxes
 
 If you know the number of elements when you are defining an array, you can combine declaration and assignment on one line as follow:
 
 ```
-type[] arrayName = new type[number of elements];
+<type>[] arrayName = new <type>[<number of elements>];
 ```
 
 So, we can combine the first two lines of the previous example and write:
@@ -100,7 +118,7 @@ myArray = { 1, 2 ,3, 4, 5}; // ERROR
 
 If we use the shorter notation, we _have to_ give the values at initialization, we cannot re-use this notation once the array was created.
 
-Other datatype, and even objects, can be stored in arrays:
+Other datatype, and even objects, can be stored in arrays in a perfectly similar way:
 
 ```
 string[] myArray = { "Bob", "Mom", "Train", "Console" };
@@ -128,6 +146,11 @@ while (counter < size)
     counter++;
 }
 ```
+
+Observe that:
+
+- If the user enters a negative value or a string that does not correspond to an integer for the `size` value, our program will crash: we are not performing any user-input validation here, to keep our example compact.
+- We are asking for the `{counter +1}th` value because we prefer not to confuse the user by asking for the "0th" value. Note that a more elaborated program would decline "th" in "st", "nd" and "rd" for the first three values.
 
 ## Array Size
 
