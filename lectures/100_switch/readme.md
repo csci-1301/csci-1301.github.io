@@ -193,9 +193,13 @@
 
     - The computer knows which statements are included in each case because of the `break` keyword. For the "1" case, the block of statements starts after `case 1:` and ends with the `break;` after `monthAbbrev = "Jan";`
 
-- The importance of `break`
+<!--
+Commented out because C# doesn't actually support fall-through like every other language with a switch statement.
+Still might be useful to discuss as a comparison with other languages like Java.
 
-    - The curly braces in an `if` statement *must* be matched up because this is a rule in C#; you will get a compile error if you forget the `}`
+- The importance of `break` (in languages other than C#)
+
+    - The curly braces in an `if` statement *must* be matched up because this is a rule; you will get a compile error if you forget the `}`
 
     - There is *not* a rule stating that each `case` must have a matching `break`, so if you forget the `break`, the compiler will not give you an error -- but your program might not behave the way you want
 
@@ -205,7 +209,7 @@
 
     - For example, imagine you forgot to write `break` at the end of the first "case block" in the months program:
 
-        ```
+        ```java
         switch(month)
         {
             case 1:
@@ -227,12 +231,17 @@
         - The computer encounters a `break;` statement and stops executing code from the `switch`. It skips to the closing `}` for the `switch` and continues with the next line of code after that.
 
       As a result, `monthName` will end up with the value "February" even though `month` was equal to 1.
+-->
 
 - Intentionally omitting `break`
 
-    - It's not always a mistake to write a `case` without a matching `break`
+    - Each block of code that starts with a `case` statement must end with a `break` statement; it won't automatically end at the next `case` statement
 
-    - If there is more than one value that should have the same behavior (i.e. you would write an `if` condition with an `||`, like `if(x == 1 || x == 2)`), you can "combine" multiple cases by omitting the `break` between them
+        - The `case` statement only defines where code execution *starts* when the variable matches a value (like an open `{`). The `break` statement defines where it *ends* (like a close `}`).
+
+    - However, there's one exception: A `case` statement with *no body* (code block) after it does not need a matching `break`
+
+    - If there is more than one value that should have the same behavior, you can write `case` statements for both values above a single block of code, with no `break` between them. If *either one* matches, the computer will execute that block of code, and then stop at the `break` statement.
 
     - In a switch statement with this structure:
 
@@ -286,7 +295,34 @@
         }
         ```
 
-      If `month` is equal to 1, execution will start at `case 1:`, but the computer will continue past `case 2` and `case 3` and execute `season = "Winter"`. It will then stop when it reaches the `break`, so `season` gets the value "Winter".
+      If `month` is equal to 1, execution will start at `case 1:`, but the computer will continue past `case 2` and `case 3` and execute `season = "Winter"`. It will then stop when it reaches the `break`, so `season` gets the value "Winter". Similarly, if `month` is equal to 2, execution will start at `case 2:`, and continue until the `break` statement, so `season` will also get the value "Winter".
+
+    - This syntax allows `switch` statements to have conditions with a logical OR, equivalent to an `if` condition with an `||`, like `if(x == 1 || x == 2)`
+
+    - For example, the "seasons" statement could also be written as an `if-else-if` with `||` operators, like this:
+
+        ```
+        if(month == 1 || month == 2 || month == 3)
+        {
+            season = "Winter";
+        }
+        else if(month == 4 || month == 5 || month == 6)
+        {
+            season = "Spring";
+        }
+        else if(month == 7 || month == 8 || month == 9)
+        {
+            season = "Summer";
+        }
+        else if(month == 10 || month == 11 || month == 12)
+        {
+            season = "Fall"
+        }
+        else
+        {
+            season = "Error!"
+        }
+        ```
 
 - Scope and `switch`
 
