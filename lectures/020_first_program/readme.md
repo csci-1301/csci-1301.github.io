@@ -23,8 +23,8 @@
     - **Class**: A blueprint or template for an object. Code that defines what kind of data the object will contain and what operations (functions) you will be able to do with that data
     - **Object**: A single instance of a class, containing running code with specific values for the data. Each object is a separate "copy" based on the template given by the class.\
     Analogy: A *class* is like a floorplan while an  *object* is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan. 
-    - **Attribute**: A piece of data stored in an object\
-    Example: A *House* class has a spot for a color property while an house object has a color(e.g. "Green").
+    - **Attribute**: A piece of data stored in an object.\
+    Example: A *House* class has a spot for a color property while an house object has a color (e.g. "Green").
     - **Method**: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.\
     Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but doesn't change the *House* class or the color on any other house objects.
     
