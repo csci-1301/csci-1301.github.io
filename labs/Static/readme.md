@@ -45,7 +45,7 @@ In your IDE create a new project. Then add a new class file called Calculator.cs
 In Calculator.cs:
 
 #. Declare a `static` class and name it `Calculator`.
-#. Next add 5 `public` methods to `Calculator` class. Each method takes 2 arguments, `x` and `y`, of type `double`:
+#. Add 5 `public` methods to `Calculator` class. Each method takes 2 arguments `x` and `y` of type `double`:
     #. `Add` method that returns result of `x + y`.
     #. `Subtract` method that returns result of `x - y`.
     #. `Multiply` method that returns result of `x * y`.
