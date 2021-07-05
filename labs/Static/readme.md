@@ -11,7 +11,7 @@ anywhere in the program. Some examples of static classes in C\# are `Math` and `
 Pay attention to how these classes are used: 
 
 - `Console` object is never instantiated before use
-- `WriteLine` method is called referring to the _name of the class_ (not some object)
+- `WriteLine` method is called referring to the _name of the class_ (not object identifier)
 
 ```
 using System;
@@ -23,7 +23,7 @@ class Program {
 }
 ```
 
-Using your IDE, see what happens if you do the following:
+Using your IDE, check what happens if you do the following:
 
 ```
 using System;
@@ -36,7 +36,7 @@ class Program {
 ```
 
 Indeed, it is _not possible_ to instantiate an object when a class is declared `static`.
-Further, in a static class, all class members (attributes, methods, constructors, etc.) must also be declared `static`. 
+Further, if a class is declared static, all its members (attributes, methods, constructors, etc.) must also be declared `static`. 
 
 ## static Calculator
 
@@ -81,8 +81,8 @@ Review [Calculator](Calculator.zip) for a sample solution.
 
 A non-static class can contain both static or non-static class members.
 
-Study the following program implementation, but do not execute it. 
-After reading through the implementation, answer the follow-up questions below.
+Study the following program implementation but \*do not\* execute it. 
+After reading through the implementation, answer the questions below.
 
 "Student.cs"
 
@@ -135,7 +135,11 @@ class Program {
 }
 ```
 
+#. How many non-static attributes does `Student` class have?
 #. How many static attributes does `Student` class have?
+#. How many non-static methods does `Student` class have?
+#. How many static methods does `Student` class have?
+
 #. What is the output of each of the following lines in "Program.cs"
     #. `Console.WriteLine(alice);`
     #. `Student.DisplayStudentCount(); // first time`
