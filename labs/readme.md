@@ -50,7 +50,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
 | [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
 | [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  | ? | Practice reading and creating a UML class diagrams |
-| [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | ? | Static class members |
+| [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | ? | static methods and method calls in non-static class |
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
 | [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
