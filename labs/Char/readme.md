@@ -4,7 +4,7 @@ title: Char and Int Conversion, Ordering of Characters
 
 # Reading and Understanding
 
-Characters are represented by integers: cf. <https://en.wikipedia.org/wiki/ASCII#Printable_characters> for a mapping between the glyphs (i.e., space, `A`, `!`, etc.) and **dec**imal values, to be read as "integer code", i.e., 32, 33, 34, etc.
+Characters are represented by integers: cf. <https://en.wikipedia.org/wiki/ASCII#Printable_characters> for a mapping between the glyphs (i.e., space, `A`, `!`, etc.) and decimal values, to be read as "integer code", i.e., 32, 33, 34, etc.
 
 In the referenced table, each character's integer code is given for different [numeral systems](https://en.wikipedia.org/wiki/Radix#In_numeral_systems):
  
@@ -30,13 +30,13 @@ Console.WriteLine($"{charVar} corresponds to the value 84");
 
 And note that we can explicitly convert `int` into `char`, and `char` into `int`.
 
-Actually, the conversion from `char` to `int` could be done implicitly by C#: replace the previous first line with
+Actually, the conversion from `char` to `int` could be done implicitly by C#; replace the previous first line with:
 
 ```
 int intVar = 'C';
 ```
 
-And note that your program still compiles.
+and note that your program still compiles.
 
 Can you also convert implicitly `int` into `char`?
 
@@ -74,9 +74,9 @@ else
 Implement the following short program to practice this concept:
   
 #. Ask  user  to  enter  a  lowercase  character. 
-#. Check that the character is within a - z range, to check that it _is_ a lowercase character
-#. when it is not, display "not a lowercase character"
-#. otherwise perform the following steps:
+#. Check that the character is within the **a - z** range (it _is_ a lowercase character)
+#. When it is not in this range, display "not a lowercase character"
+#. Otherwise, perform the following steps:
     - if  user  enters character `'n'`,  display "You entered n"
     - if  the  character  occurs  before `'n'`, display "Before n"
     - if  the  character  occurs  after `'n'`, display "After n"
