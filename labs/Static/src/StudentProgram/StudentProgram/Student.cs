@@ -14,6 +14,9 @@ class Student{
     } 
 
     public static void DisplayStudentCount(){
+        // does this work? uncomment next line to check!
+        // Console.WriteLine(name);
+        
         Console.WriteLine($"Number of students: {studentCount}");
     }
 

@@ -75,7 +75,7 @@ After implementing `Calculator`,
     - If your implementation of `Calculator` class matches the instructions, you will see meaningful output after executing the program. 
     - Otherwise review the instructions again and retrace your implementation steps to resolve any issues.
 
-Review [Calculator](Calculator.zip) for a sample solution.
+Review [SimpleCalculator](SimpleCalculator.zip) for a sample solution.
 
 # Static members in non-static class
 
@@ -153,5 +153,5 @@ class Program {
 #. When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method?
    For example, if we try to refer to `name` attribute inside `DisplayStudentCount`, will it work? Why or why not?
       
-Check your answers by downloading and extracting [Student](Student.zip) and executing it.
+Check your answers by downloading and extracting [StudentProgram](StudentProgram.zip) and executing it.
 To check the last question, uncomment line 16 in downloaded version of "Student.cs".
