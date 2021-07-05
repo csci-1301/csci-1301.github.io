@@ -75,8 +75,6 @@ After implementing `Calculator`,
     - If your implementation of `Calculator` class matches the instructions, you will see meaningful output after executing the program. 
     - Otherwise review the instructions again and retrace your implementation steps to resolve any issues.
 
-Review [Calculator_Solution](Calculator_Solution.zip) for a sample solution.
-
 # Static members in a non-static class
 
 A non-static class can contain both static and non-static class members.
