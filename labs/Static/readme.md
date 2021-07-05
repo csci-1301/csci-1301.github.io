@@ -84,12 +84,12 @@ A non-static class can contain both static or non-static class members.
 Study the following program implementation but \*do not\* execute it. 
 After reading through the implementation, answer the questions below.
 
-"Student.cs"
+Student.cs
 
 ```
 using System;
 
-class Student{
+class Student {
 
     private int id;
     private string name; 
@@ -103,6 +103,9 @@ class Student{
     } 
 
     public static void DisplayStudentCount(){
+        // does this work? uncomment next line to check!
+        // Console.WriteLine(name);
+        
         Console.WriteLine($"Number of students: {studentCount}");
     }
 
@@ -114,13 +117,12 @@ class Student{
 }
 ```
 
-"Program.cs"
+Program.cs
 
 ```
 using System;
 
-class Program 
-{
+class Program {
     static void Main() 
     {
         Student alice = new Student(1111, "Alice");
@@ -141,7 +143,7 @@ class Program
 #. How many non-static methods does `Student` class have?
 #. How many static methods does `Student` class have?
 
-#. What is the output of each of the following lines in "Program.cs"
+#. What is the output of each of the following lines in "Program.cs":
     #. `Console.WriteLine(alice);`
     #. `Student.DisplayStudentCount(); // first time`
     #. `Console.WriteLine(bob);`
@@ -154,5 +156,11 @@ class Program
 #. When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method?
    For example, if we try to refer to `name` attribute inside `DisplayStudentCount`, will it work? Why or why not?
       
-Check your answers by downloading and extracting [Student_Solution](Student_Solution.zip) and executing it.
-To check the last question, uncomment line 16 in downloaded version of "Student.cs".
+Check your answers by creating a matching program in your IDE and executing it.
+
+To check the last question, in Student.cs, uncomment the following line and verify its behavior matches your answer:
+
+```
+// Console.WriteLine(name);
+```` 
+
