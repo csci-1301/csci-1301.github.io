@@ -38,7 +38,7 @@ class Program {
 Indeed, it is _not possible_ to instantiate an object when a class is declared `static`.
 Further, if a class is declared static, all its members (attributes, methods, constructors, etc.) must also be declared `static`. 
 
-## static Calculator
+## Static Calculator
 
 In your IDE create a new project. Then add a new class file called Calculator.cs
 
@@ -75,7 +75,7 @@ After implementing `Calculator`,
     - If your implementation of `Calculator` class matches the instructions, you will see meaningful output after executing the program. 
     - Otherwise review the instructions again and retrace your implementation steps to resolve any issues.
 
-Review [SimpleCalculator](SimpleCalculator.zip) for a sample solution.
+Review [Calculator_Solution](Calculator_Solution.zip) for a sample solution.
 
 # Static members in non-static class
 
@@ -94,7 +94,7 @@ class Student{
     private int id;
     private string name; 
     private static string universityName = "Augusta University";
-    private static int studentCount = 0;
+    private static int studentCount;
 
     public Student(int id, string name){
         this.id = id;
@@ -119,9 +119,10 @@ class Student{
 ```
 using System;
 
-class Program {
-    static void Main() {
-
+class Program 
+{
+    static void Main() 
+    {
         Student alice = new Student(1111, "Alice");
         Console.WriteLine(alice);
 
@@ -153,5 +154,5 @@ class Program {
 #. When a class contains both static and non-static members, is it possible to refer to non-static members inside a static method?
    For example, if we try to refer to `name` attribute inside `DisplayStudentCount`, will it work? Why or why not?
       
-Check your answers by downloading and extracting [StudentProgram](StudentProgram.zip) and executing it.
+Check your answers by downloading and extracting [Student_Solution](Student_Solution.zip) and executing it.
 To check the last question, uncomment line 16 in downloaded version of "Student.cs".

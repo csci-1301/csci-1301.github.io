@@ -15,7 +15,7 @@ class Program
         // Of course, we can create objects, using our custom constructor:
         ChemElem hydrogen = new ChemElem(1, "Hydrogen", 14.01M);
 
-        // Note that the following implicitely calls the ToString method:
+        // Note that the following implicitly calls the ToString method:
         Console.WriteLine(hydrogen);
     }
 }

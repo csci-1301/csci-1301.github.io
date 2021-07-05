@@ -5,7 +5,7 @@ class Student{
     private int id;
     private string name; 
     private static string universityName = "Augusta University";
-    private static int studentCount = 0;
+    private static int studentCount;
 
     public Student(int id, string name){
         this.id = id;
