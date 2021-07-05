@@ -77,9 +77,9 @@ After implementing `Calculator`,
 
 Review [Calculator_Solution](Calculator_Solution.zip) for a sample solution.
 
-# Static members in non-static class
+# Static members in a non-static class
 
-A non-static class can contain both static or non-static class members.
+A non-static class can contain both static and non-static class members.
 
 Study the following program implementation but \*do not\* execute it. 
 After reading through the implementation, answer the questions below.
@@ -103,7 +103,7 @@ class Student {
     } 
 
     public static void DisplayStudentCount(){
-        // does this work? uncomment next line to check!
+        // does this work? uncomment to check
         // Console.WriteLine(name);
         
         Console.WriteLine($"Number of students: {studentCount}");
@@ -123,8 +123,9 @@ Program.cs
 using System;
 
 class Program {
-    static void Main() 
-    {
+
+    static void Main() {
+
         Student alice = new Student(1111, "Alice");
         Console.WriteLine(alice);
 
@@ -149,7 +150,7 @@ class Program {
     #. `Console.WriteLine(bob);`
     #. `Student.DisplayStudentCount(); // second time`
 
-#. if the `studentCount` attribute was _not_ `static`, what would be the output of: 
+#. if the `studentCount` attribute was \*not\* `static`, what would be the output of: 
     #. `Student.DisplayStudentCount(); // first time`
     #. `Student.DisplayStudentCount(); // second time` 
     

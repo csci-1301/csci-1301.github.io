@@ -1,7 +1,7 @@
 using System;
 
-class Program
-{
+class Program {
+    
     static void Main()
     {
         double x = 10d, y = 2d;
