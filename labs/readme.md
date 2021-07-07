@@ -62,6 +62,6 @@ Using this established build system generates labs that are cross-platform (Wind
 | [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
 | [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
 | [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays |
-| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [ChemicalElements](/labs/ChemicalElements), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
+| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
 | [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison |
 | [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class |
