@@ -331,7 +331,7 @@
 
     - This table summarizes how methods are allowed to access them:
 
-        \                 | Static Field | Non-static Field
+                          | Static Field | Non-static Field
         :---:             | :---:        | :---:
         Static method     | Yes          | No
         Non-static method | Yes          | Yes
