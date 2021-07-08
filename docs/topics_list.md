@@ -118,7 +118,7 @@ _The students should understand all the components of a simple "Hello World" pro
     - Percent (`P`) ❓
     - Exponential (`E`) ❓
 
-- The `String.Format` method
+- The `String.Format` method ❓
 
 ## Characters
 
@@ -244,7 +244,7 @@ and defining the term "accumulator"
 - `Math.PI` ❓
 - Static constant ❓
 
-## Enumerated Datatype
+## Enumerated Datatype ❓
 
 - Define enumerated datatypes using `enum`
 - Enum values (i.e. numerical values assigned to enumerated values by default) ❓
