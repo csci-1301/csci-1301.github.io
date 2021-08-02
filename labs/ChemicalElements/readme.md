@@ -39,10 +39,10 @@ Do the following:
 
 We now want to significantly improve this class, by adding:
 
-#. An attribute for the billing point,
+#. An attribute for the boiling point,
 #. All the tools needed to display the information in Fahrenheit degree, in addition to Celsius and Kelvin.
 
-You may want to comment part, of all of your "Program.cs" file, before starting to change your class.
+You may want to comment part, or all of your "Program.cs" file, before starting to change your class.
 
 - Add an attribute for the boiling point (in Kelvin).
 - Modify the constructor, so that it takes a 4th argument, and sets its value to be the value of the boiling point attribute.
