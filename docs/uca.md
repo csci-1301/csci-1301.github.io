@@ -24,6 +24,7 @@ Their duties _can not_ include:
 
 - Understanding for you^[Althought that may sound curious, we believe it is important to remind you of the fact that they can only _help_ you understanding, but that you have to do your part!],
 - Helping you or even commenting on graded material _before_ it was graded,
+- Grading students' work,
 - Helping you with other classes,
 - Helping you becoming a self-regulated learner and work on your schedule^[That's a job really well taken care of by the [Academic Success Center](https://www.augusta.edu/academicsuccess/)!].
 
