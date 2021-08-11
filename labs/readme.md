@@ -39,29 +39,29 @@ Using this established build system generates labs that are cross-platform (Wind
 
 <!-- Add a short description of what each lab contains. Also list prerequisite labs and add a link to related lecture notes. -->
 
-| Lab title | Prerequisites | Related Lectures |  Description | Topics | 
-| :--- | :--- | :--- | :--- | :--- |
-| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey, install IDE | <ul><li>Navigating course resources</li></ul>
-| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program | <ul><li>Compilation, execution<li><li>basic C# syntax</li><li><code>Write</code>, <code>WriteLine</code></li></ul> |
-| [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Creating a new program, using Write and WriteLine and escape sequences ||
-| [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring and displaying variables and using arithmetic operators ||
-| [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator ||
-| [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user ||
-| [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods ||
-| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch ||
-| [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  |[Introduction to Objects](/lectures/060_object_oriented_intro) | Practice reading and creating a UML class diagrams ||
-| [Static](/labs/Static) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static classes, static class members ||
-| [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static methods and method calls in non-static class ||
-| [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions ||
-| [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator ||
-| [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch ||
-| [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops ||
-| [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops ||
-| [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input ||
-| [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break ||
-| [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values ||
-| [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop ||
-| [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays ||
-| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. ||
-| [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison ||
-| [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class ||
+| Lab title | Prerequisites | Related Lectures |  Description & Topics | 
+| :--- | :--- | :--- | :--- | 
+| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey, install IDE 
+| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run provided hello world program <br/>- compilation, execution<br/>- basic C# syntax<br/>- `Write`, `WriteLine` |
+| [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Creating a new program, using Write and WriteLine and escape sequences |
+| [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring and displaying variables and using arithmetic operators |
+| [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator |
+| [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
+| [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
+| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
+| [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  |[Introduction to Objects](/lectures/060_object_oriented_intro) | Practice reading and creating a UML class diagrams |
+| [Static](/labs/Static) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static classes, static class members |
+| [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static methods and method calls in non-static class |
+| [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions |
+| [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
+| [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
+| [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
+| [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |
+| [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input |
+| [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
+| [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
+| [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
+| [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays |
+| [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
+| [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison |
+| [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class |
