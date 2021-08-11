@@ -44,13 +44,12 @@ However, you should feel free to explore our [other useful documents](https://cs
 Typically, the [Installing Software](../../software_install.html) page should probably be one of the first documents you read: it explains in detail how to set-up your computer to be able to execute, compile and study the code we will be discussing in class and lab, and how to access and use the computer labs.
 
 Action:
-~
-    Reading instructions is not always easy. You should try to always understand what is crucial, what is important, and what is optional.
-    Although you may have overlooked that subtlety, the previous paragraph actually meant
+~ Reading instructions is not always easy. You should try to always understand what is crucial, what is important, and what is optional.
+Although you may have overlooked that subtlety, the previous paragraph actually meant
 
-    > Go read [Installing Software](../../software_install.html) as soon as possible, you want to be ready for the next lab!
+> Go read [Installing Software](../../software_install.html) as soon as possible, you want to be ready for the next lab!
 
-    This is particularly true for labs asking for you to set things up: there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help-1) earlier rather than later!
+This is particularly true for labs asking for you to set things up: there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help-1) earlier rather than later!
 
 Some of the resources on this website are still in flux: the instructors are working hard to construct the material from scratch, and we are sorry if at times you feel that you are going through dry runs.
 On the flip side, remember that you did not have to buy a textbook, and that these resources will be tailored for your use and course of study here at Augusta University: among many other specificities, like using C#, we are making sure that security and other cyber-related issues are regularly discussed!
@@ -103,8 +102,10 @@ Action:
 
 The [Augusta University chapter](https://spots.augusta.edu/cyberdefense/) of the [A.C.M](https://www.acm.org/ "Association for Computing Machinery") is one of the university's best resources for Computer Science, Information Technology and Cyber Security students.
 It provides a platform to network with other students in similar majors; presenting countless opportunities to expand not only the people you know, but also a fantastic place to learn and ask questions.
-Because of Covid-19, they are holding meetings virtually in [their Discord server](https://discord.gg/QGuGmsF).
-If you are interested in joining these meetings, or you have any questions about Computer Science or Cyber Security, feel free to join through their link.
+
+<!-- This link is invalid -->
+<!-- Because of Covid-19, they are holding meetings virtually in [their Discord server](https://discord.gg/QGuGmsF). -->
+<!-- If you are interested in joining these meetings, or you have any questions about Computer Science or Cyber Security, feel free to join through their link. -->
 
 ## How to Ask a Question?
 

@@ -16,7 +16,6 @@ The source code repository is organized as follows
 | `img` | all images |
 | `labs` | lab exercises |
 | `lectures` | lecture notes |
-| `problems` | practice problems |
 | `templates` | templates and meta data files used for building this resource |
 | `index.md` | website index page |
 | `404.md` | website 404 page |

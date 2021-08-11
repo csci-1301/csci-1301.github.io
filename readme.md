@@ -4,8 +4,11 @@
 
 This is source code repository for CSCI 1301 course resources.
 
-View this resource on the web: **[Website](https://csci-1301.github.io)** ([mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/), [mirror on box.com](https://augustauniversity.box.com/s/omis1adqth97bouvwxfwmlhwyiv6gwo1).).
+View this resource on the web:
 
+- [csci-1301.github.io](https://csci-1301.github.io)
+- [mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)
+- [mirror on box.com](https://augustauniversity.box.com/s/omis1adqth97bouvwxfwmlhwyiv6gwo1)
 
 ### Organization of resources
 
@@ -16,7 +19,6 @@ View this resource on the web: **[Website](https://csci-1301.github.io)** ([mirr
 | `img` | all images |
 | `labs` | lab exercises |
 | `lectures` | lecture notes |
-| `problems` | practice problems |
 
 Other directories are used for building and maintenance of this resources.
 
