@@ -49,3 +49,19 @@ A UCA will:
 - Develop a stronger bond with the instructors, facilitating possible future reference or research projects.
 
 So, in short: talk to any CSCI 1301 instructor if you feel like becoming a UCA.
+
+# I Am a UCA, What Should I Do Now?
+
+Congratulations!
+Once you have done the paperwork (contract, background request form, …) with our Academic Program Coordinator, Wennie Squires, you can start working and clock-in on [augusta.edu/oneusg](https://www.augusta.edu/oneusg/).
+Please, be on the lookout for monthly "Time Reporting Reminders for Student Assistants" emails from Wennie, that contains important information and reminders.
+Any question about human resource, pay, hour caps and the like should be directed to our Academic Program Coordinator.
+
+Once this is done, your first task is to get in touch with your instructor, if they have not already done it, to know what they expect from you. 
+You can discuss topics such as the need for (virtual or physical) office hours, whenever you need to seat in class, how to help students, etc.
+
+On top of supporting students and helping the instructor, you are also encouraged to work up to 4 hours per week on the improvement of those resources.
+Your contribution may range from spell-checking to pointing inconsistencies, from clarifying statements to re-organizing exercises.
+Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
+
+Please, have a [look at our user guide](user_guide.html), follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca), and start editing!
