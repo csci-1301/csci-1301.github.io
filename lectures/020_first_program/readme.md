@@ -23,25 +23,25 @@
 - Object-oriented terms
     - **Class**: A blueprint or template for an object. Code that defines what kind of data the object will contain and what operations (functions) you will be able to do with that data
     - **Object**: A single instance of a class, containing running code with specific values for the data. Each object is a separate "copy" based on the template given by the class.\
-    Analogy: A *class* is like a floorplan while an  *object* is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan. 
+    Analogy: A *class* is like a floorplan while an  *object* is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan.
     - **Attribute**: A piece of data stored in an object.\
     Example: A *House* class has a spot for a color property while an house object has a color (e.g. "Green").
     - **Method**: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.\
     Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but doesn't change the *House* class or the color on any other house objects.
-    
+
 - Examples:
     - A Car *Class*
         - Attributes: Color, engine status (on/off), gear position
         - Methods: Press gas or brake pedal, turn key on/off, shift transmission
     - A Car *Object*\
-      Example: A *Porsche911* object that is Red, Engine On, and in 1st gear 
+      Example: A *Porsche911* object that is Red, Engine On, and in 1st gear
     - An "Audio File" *Class* represents a song being played in a music player
         - Attributes: Sound wave data, current playback position, target speaker device
         - Methods: Play, pause, stop, fast-forward, rewind
     - An Audio File *Object*\
       Example: A *NeverGonnaGiveYouUp* object that is "rolled wave data", 0:00, speaker01
 
-# First Program
+## First Program
 
 Here's a simple "hello world" program in the C# language:
 
@@ -73,7 +73,7 @@ Features of this program:
 - A method declaration
     - A collection of instructions with a name
     - Can be used by typing its name
-    - Similar to a paragraph and a class is similar to a chapter in that it can have multiple methods within its body
+    - A method is similar to a paragraph, in that it can contain multiple statements, and a class is similar to a chapter, in that it can have multiple methods within its body.
     - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we'll get to those later, but they're required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
 - A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
@@ -87,7 +87,7 @@ Features of this program:
 ## Rules of C# Syntax
 
 - Each statement must end in a semicolon (`;`),
-    - Exceptions: 
+    - Exceptions:
         - opening `{` and closing `}` don't end in a ;
         - Class and method declarations don't end in a ; since they end in a }\
           Example: class Program { .... `}`
@@ -264,14 +264,14 @@ Features of this program:
     - Note that all escape sequences begin with a backslash character (`\`)
     - General format is `\[key letter]` -- the letter after the backslash is like a "keyword" indicating which special character to display
     - If you want to put an actual backslash in your string, you need the escape sequence `\\`, which prints a single backslash
-        - This will result in a compile error because `\U` is not a valid escape sequence: 
-        
+        - This will result in a compile error because `\U` is not a valid escape sequence:
+
             ```
             Console.WriteLine("Go to C:\Users\Edward");
             ```
-        
-        - This will display the path correctly: 
-        
+
+        - This will display the path correctly:
+
             ```
             Console.WriteLine("Go to C:\\Users\\Edward");
             ```

@@ -10,7 +10,7 @@
 - The difference between roles (user, tester, programmer)
 - How complex piece of software _reuse_ previous pieces.
 - The importance of security :lock:
-    - Types of attack (malware, phishing, social engineering, zero-day) 
+    - Types of attack (malware, phishing, social engineering, zero-day)
     - Types of loss (loss of integrity / availability / confidentiality)
 
 ## Writing and Compiling Programs
@@ -27,7 +27,7 @@
     - Editing
     - Reusing
 - Using an IDE to
-    - Create a project, 
+    - Create a project,
     - Perform some of the steps of the "flow of development",
     - Correctly save and re-open projects,
     - Understand basic features of break points and debugging. :question:
@@ -50,12 +50,12 @@
 - Computer programming languages also change
     - Better programming language theory leads to new programming techniques
     - Improved programming language implementations
-    - New languages are created - old ones updated
+    - New languages are created, old ones updated
 - There are hundreds of programming languages, why?
     - Different tools for different jobs
         - Some languages are better suited for certain jobs
-        - Python for scripting, Javascript for web pages          
-    - Personnel preference and popularity
+        - Python for scripting, Javascript for web pages
+    - Personal preference and popularity
 - This class is about "principles" of computer programming
     - Common principles behind all languages won't change, even though hardware and languages do
     - How to organize and structure data
@@ -78,7 +78,7 @@ We will be studying and writing programs in _high-level languages_, but understa
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
-    - Instead of 1s and 0s, it uses letters and "words" to represent an instruction. 
+    - Instead of 1s and 0s, it uses letters and "words" to represent an instruction.
         - Example x86 instruction: `MOV BX, AX` which makes a copy of data stored in a component called AX and places it in one called BX
     - **Assembler**: Translates assembly language instructions to machine language instructions
         - For example: `MOV BX, AX` translates into `1000100111011000`
@@ -89,7 +89,7 @@ We will be studying and writing programs in _high-level languages_, but understa
     - Hundreds including C#, C++, Java, Python, etc.
     - Most programs are written in a high-level language since:
         - More human-readable than assembly language
-        - High-level concepts such as processing a collection of items are easier to write and understand 
+        - High-level concepts such as processing a collection of items are easier to write and understand
         - Takes less code since each statement might be translated into several assembly instructions
     - **Compiler**: Translates high-level language to machine code
         - Finds “spelling” errors but not problem-solving errors
@@ -100,9 +100,8 @@ We will be studying and writing programs in _high-level languages_, but understa
 
 !["A Visual Representation of the Relationships Between Languages"](img/overview_languages_1)
 
-A more subtle difference exist between high-level languages.
-Some (like C) are _compiled_ (as we discussed above), some (like python) are _interpreted_, and some (like C#) are in an in-between called _managed_.
-
+A more subtle difference exists between high-level languages.
+Some (like C) are _compiled_ (as we discussed above), some (like Python) are _interpreted_, and some (like C#) are in an in-between called _managed_.
 
 - Compiled vs. Interpreted languages
     - Not all high-level languages use a compiler - some use an interpreter
@@ -114,7 +113,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like python) are _in
     - Compiler translates high-level statements to **intermediate language** instructions, not machine code
         - Intermediate language: Looks like assembly language, but not specific to any CPU
     - **Runtime** executes by *interpreting* the intermediate language instructions - translates one at a time to machine code
-        - faster since translation step is partially done and only its last step is done when running the program  
+        - Faster since translation is partially done already (by compiler), only a simple "last step" is done when running the program
     - Advantages of managed languages:
         - In a "non-managed" language, a compiled program only works on one OS + CPU combination (**platform**) because it is machine code
         - Managed-language programs can be reused on a different platform without recompiling - intermediate language is not machine code and not CPU-specific
@@ -160,7 +159,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like python) are _in
     - **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
 
 
-#### Programming workflow 
+#### Programming workflow
 
 <!-- TODO: title this figure -->
 
