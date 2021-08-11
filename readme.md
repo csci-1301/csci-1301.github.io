@@ -18,7 +18,7 @@ View this resource on the web:
 | `docs` | additional helpful documents |
 | `img` | all images |
 | `labs` | lab exercises |
-| `lectures` | lecture notes |
+| `lectures` | lecture notes and slides |
 
 Other directories are used for building and maintenance of this resources.
 

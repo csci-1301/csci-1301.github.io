@@ -1,5 +1,5 @@
 ---
-title: Hello World Lab
+title: Hello World
 ---
 
 In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.

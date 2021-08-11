@@ -41,8 +41,8 @@ Using this established build system generates labs that are cross-platform (Wind
 
 | Lab title | Prerequisites | Related Lectures |  Description | Topics | 
 | :--- | :--- | :--- | :--- | :--- |
-| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey and install IDE | <ul><li>Navigating course resource</li></ul>
-| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program ||
+| [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey, install IDE | <ul><li>Navigating course resources</li></ul>
+| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Compile and run hello world program | <ul><li>Compilation, execution<li><li>basic C# syntax</li><li><code>Write</code>, <code>WriteLine</code></li></ul> |
 | [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | Creating a new program, using Write and WriteLine and escape sequences ||
 | [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | Declaring and displaying variables and using arithmetic operators ||
 | [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator ||

@@ -47,7 +47,7 @@ Action:
 ~ Reading instructions is not always easy. You should try to always understand what is crucial, what is important, and what is optional.
 Although you may have overlooked that subtlety, the previous paragraph actually meant
 
-> Go read [Installing Software](../../software_install.html) as soon as possible, you want to be ready for the next lab!
+> _Go read [Installing Software](../../software_install.html) as soon as possible, you want to be ready for the next lab!_
 
 This is particularly true for labs asking for you to set things up: there is little to gain in postponing that step, and if you are facing difficulties, it is better [to ask](#how-to-get-help-1) earlier rather than later!
 
