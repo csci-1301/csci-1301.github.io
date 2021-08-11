@@ -2,9 +2,12 @@
 title: List of Labs
 ---
 
+<!-- this is a draft -->
+<!-- TODO: how do you make this better ux? otherwise continue generating it... -->
+
 | Lab title | Instructions | Program | Solution |
 | :-- | --- | :--- | :--- |
-| [Advanced Arrays](labs/AdvancedArrays/index.html) | [↓ pdf](labs/AdvancedArrays/index.pdf) [↓ odt](labs/AdvancedArrays/index.odt) [↓ docx](labs/AdvancedArrays/index.docx) [↓ html](labs/AdvancedArrays/index.html) | [↓ ArrayManipulation.zip](../labs/AdvancedArrays/ArrayManipulation.zip) | [↓ Solution](../labs/AdvancedArrays/Solution_ArrayManipulation.zip) |
+| [Advanced Arrays](labs/AdvancedArrays/index.html) | [pdf](labs/AdvancedArrays/index.pdf) [odt](labs/AdvancedArrays/index.odt) [docx](labs/AdvancedArrays/index.docx) [html](labs/AdvancedArrays/index.html) | [↓ ArrayManipulation.zip](../labs/AdvancedArrays/ArrayManipulation.zip) | [Solution](../labs/AdvancedArrays/Solution_ArrayManipulation.zip) |
 
 
 <!-- <tr class="even">

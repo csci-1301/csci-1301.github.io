@@ -19,9 +19,9 @@ Available formats:
  - [ODT](book.odt) -- to edit (using e.g. [libreoffice](https://www.libreoffice.org/)) and archive.
  - [DOCX](book.docx)  -- to edit (using e.g. Microsoft Office) and archive.
  
-### Lecture Slides
+### Slides
 
- - [List of lecture slides](lecture_slides.html) 
+ - [List of lecture slides](slides.html) 
 
 ### Labs
 
