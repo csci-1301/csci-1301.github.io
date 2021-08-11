@@ -79,11 +79,12 @@
     display: block;
   }
 
-  .page-header .home {
+  .page-header a {
     font-size: 120%; 
     display: inline-block;
     /* make this touch target big enough */
     line-height: 48px;
+    padding: 0 .5rem;
   }
 
   #title-block-header .title{
