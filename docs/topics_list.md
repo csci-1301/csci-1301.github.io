@@ -108,7 +108,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - `ReadLine` method
 - Concatenation (`+`)
 - Interpolation
-- Additional methods: `ToLower`, `ToUpper`, `Contains` ❓
+- Additional methods: `ToLower`, `ToUpper`, `Contains`, `StartsWith`, `EndsWith` ❓
 
 ### Displaying Strings on the Screen
 
@@ -125,8 +125,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - Possible values and the existence of binary, oct, dec and hex representation (cf. for instance [wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters))
 - Escape character and sequences: `\n`, `\t`, `\\`
 - Conversion between glyph and decimal value.
-- Various methods: `ToLower`, `ToUpper`, `Contains`, `StartsWith`, `EndsWith` ❓
-
+- Various methods: `ToLower`, `ToUpper` ❓ 
 
 # Lists ❓
 
