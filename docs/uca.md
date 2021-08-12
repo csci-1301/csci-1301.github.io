@@ -64,4 +64,4 @@ On top of supporting students and helping the instructor, you are also encourage
 Your contribution may range from spell-checking to pointing inconsistencies, from clarifying statements to re-organizing exercises.
 Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
 
-Please, have a [look at our user guide](user_guide.html), follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca), and start editing!
+Please, follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) to obtain editin permission, then review [Editing instructions for UCAs](uca_guide.html) and start editing! 
