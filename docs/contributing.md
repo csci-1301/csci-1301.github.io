@@ -18,11 +18,11 @@ If you have suggestions on how to make it better, we encourage you to share thos
 
 ### If you are an instructor
 
-You will need to have a [Github account](https://github.com/). Next contact any of the [authors](about#authors) of this resource over email, provide your Github username, and request an invitation to be added to the instructors team. 
+You will need to have a [Github account](https://github.com/join). Next contact any of the [authors](about#authors) of this resource over email, provide your Github username, and request an invitation to be added to the instructors team. 
 
 ### If you are a UCA
 
-You will need to have a [Github account](https://github.com/). Next ask your course section instructor to invite you to the 1301 UCAs team. Your instructor needs your Github username to send you the invitation.
+You will need to have a [Github account](https://github.com/join). Next ask your course section instructor to invite you to the 1301 UCAs team. Your instructor needs your Github username to send you the invitation.
 
 ### If you are an outside collaborator
 

@@ -38,7 +38,7 @@ Next create an entry for the new lecture in the table below. Label all prerequis
 | [Loops](/lectures/110_while_loops_and_vocabulary) | [if, if-else and Nested if Statements](/lectures/090_if) | [ValidatingInput](/labs/ValidatingInput) | while and do while loops; TryParse |
 | [Combining Methods and Decision Structures](/lectures/130_combining_decision_and_classes) | [Introduction to Objects](/lectures/060_object_oriented_intro), [Switch Statements](/lectures/100_switch) | [ValidatingInput](/labs/ValidatingInput) | The "LoanCalculator" ... |
 | [Arrays](/lectures/140_arrays) | | [ArrayBasics](/labs/ArrayBasics), [ArrayOperations](/labs/ArrayOperations), [AdvancedArrays](/labs/AdvancedArrays) | Arrays |
-| [For Loops](/lectures/150_for_loops) | [Loops](/lectures/110_while_loops_and_vocabulary), [Arrays](/lectures/140_arrays) | [For](/labs/For) | For loops, break and continue |
-| [Foreach](/lectures/160_foreach) | [Arrays](/lectures/140_arrays) | [Foreach](/labs/Foreach) | foreach loop |
-| [Static](/lectures/170_static_elements) | [Introduction to Objects](/lectures/060_object_oriented_intro) | [ChemicalElements](/labs/ChemicalElements) | | 
-| [Random](/lectures/180_random) | [Datatypes and Variables](/lectures/030_datatypes_and_variables), [User Input and Output](/lectures/050_reading_and_displaying) | [Random](/labs/Random) | Random class | 
+| [For Loops](/lectures/150_for_loops) | [Loops](/lectures/110_while_loops_and_vocabulary), [Arrays](/lectures/140_arrays) | [For](/labs/For) | For loops and their use with arrays |
+| [Foreach](/lectures/160_foreach) | [Arrays](/lectures/140_arrays) | [Foreach](/labs/Foreach) | foreach loop, break, and continue |
+| [Static](/lectures/170_static_elements) | [Introduction to Objects](/lectures/060_object_oriented_intro) | [ChemicalElements](/labs/ChemicalElements) | |
+| [Random](/lectures/180_random) | [Datatypes and Variables](/lectures/030_datatypes_and_variables), [User Input and Output](/lectures/050_reading_and_displaying) | [Random](/labs/Random) | Random class |
