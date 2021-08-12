@@ -22,7 +22,7 @@ Their duties generally include:
 
 Their duties _can not_ include:
 
-- Understanding for you^[Althought that may sound curious, we believe it is important to remind you of the fact that they can only _help_ you understanding, but that you have to do your part!],
+- Understanding for you^[Although that may sound curious, we believe it is important to remind you of the fact that they can only _help_ you understanding, but that you have to do your part!],
 - Helping you or even commenting on graded material _before_ it was graded,
 - Grading students' work,
 - Helping you with other classes,
@@ -37,7 +37,7 @@ A UCA _must_:
 - Be a student, that is, currently enrolled in courses, or, if during the Summer, being enrolled in courses for the next Fall semester,
 - Pass our Human Resources background check,
 - Have an interest in tutoring,
-- Understand clearly the limits and boundaries to the help they can provide to students.
+- Clearly understand the limits and boundaries to the help they can provide to students.
 
 Additionally, if a student wants to help with this particular class, then the student must have successfully passed CSCI 1301 with a grade of B or higher
 
@@ -64,4 +64,4 @@ On top of supporting students and helping the instructor, you are also encourage
 Your contribution may range from spell-checking to pointing inconsistencies, from clarifying statements to re-organizing exercises.
 Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
 
-Please, follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) to obtain editin permission, then review [Editing instructions for UCAs](uca_guide.html) and start editing! 
+Please, follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) to obtain editing permission, then review [Editing instructions for UCAs](uca_guide.html) and start editing! 
