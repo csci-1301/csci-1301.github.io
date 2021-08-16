@@ -19,6 +19,7 @@ jobs:
         path: |
           ~/.cache
           build
+          !build/release.zip
           pandoc-2.14.0.1-1-amd64.deb
         key: ${{ runner.os }}-pip-
         restore-keys: |
