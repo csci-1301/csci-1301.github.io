@@ -12,7 +12,7 @@ It may seem repetitive, but you need to practice `if` statements _a lot_ to unde
 Consider the following code:
 
 ```
-!include code/voting_age.cs
+!include`snippetStart="/* Start included */", snippetEnd="/* End included */",incrementSection=-20` code/voting_age.cs
 ```
 
 The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).
