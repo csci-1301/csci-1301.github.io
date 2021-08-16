@@ -18,7 +18,7 @@ jobs:
       with:
         path: |
           ~/.cache
-          pandoc-2.14.0.1-1-amd64.deb
+          pandoc-2.14.1-1-amd64.deb
         key: ${{ runner.os }}-pip-
         restore-keys: |
           ${{ runner.os }}-pip-
@@ -28,8 +28,8 @@ jobs:
         python-version: 3.9  
     - name: Install dependencies
       run: |
-        test -f pandoc-2.14.0.1-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/2.14.0.1/pandoc-2.14.0.1-1-amd64.deb
-        sudo dpkg -i pandoc-2.14.0.1-1-amd64.deb
+        test -f pandoc-2.14.1-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/2.14.1/pandoc-2.14.1-1-amd64.deb
+        sudo dpkg -i pandoc-2.14.1-1-amd64.deb
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
         pip install Pygments pandoc-include
     - name: build
