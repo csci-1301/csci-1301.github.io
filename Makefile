@@ -115,6 +115,12 @@ SOURCE_IMAGES_FILES := $(shell find img/ -mindepth 1  -maxdepth 1 -iname "*.jpg"
 
 TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
 
+### Video files
+
+SOURCE_VIDEOS_FILES := $(shell find vid/ -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v")
+
+TARGET_VIDEOS_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_VIDEOS_FILES))
+
 # -------------------------------
 ## Performance & Global Options
 # -------------------------------
@@ -183,7 +189,17 @@ build/img: $(SOURCE_IMAGES_FILES)
 	mkdir -p $(BUILD_DIR)img/
 	make $(TARGET_IMAGES_FILES)
 
-$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img
+
+# Individual videos:
+$(BUILD_DIR)vid/%: vid/%
+	rsync -av $< $@
+
+# Every videos:
+build/vid: $(SOURCE_VIDEOS_FILES)
+	mkdir -p $(BUILD_DIR)vid/
+	make $(TARGET_VIDEOS_FILES)
+	
+$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img build/vid
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	rsync -av img/favicon/* $(BUILD_DIR)
