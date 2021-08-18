@@ -11,8 +11,8 @@ It may seem repetitive, but you need to practice `if` statements _a lot_ to unde
 
 Consider the following code:
 
-```
-!include`snippetStart="/* Start included */", snippetEnd="/* End included */",incrementSection=-20` code/voting_age.cs
+```{.cs .numberLines}
+!include`snippetStart="/* Start included */", snippetEnd="/* End included */",dedent=8` code/voting_age.cs
 ```
 
 The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).
@@ -50,7 +50,7 @@ You were asked the following:
 
 A possible answer is:
 
-```
+```{.cs .numberLines}
 int a;
 Console.WriteLine("Enter an integer");
 a = int.Parse(Console.ReadLine());
