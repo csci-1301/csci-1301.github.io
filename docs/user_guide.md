@@ -325,13 +325,13 @@ The steps for migrating feedback target repository are as follows:
 #. In `csci-1301.github.io` repository open `/templates/web/template.html`
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 
-```js
-    <script data-external="1"
-            src="https://utteranc.es/client.js"
-            repo="csci-1301/{REPOSITORY_NAME}"
-            label="comment" ....>
-    </script>
-```
+    ```js
+        <script data-external="1"
+                src="https://utteranc.es/client.js"
+                repo="csci-1301/{REPOSITORY_NAME}"
+                label="comment" ....>
+        </script>
+    ```
 
 #. Commit change to template.html
 #. Make sure the feedback works after migration. If it does not, retrace your steps.

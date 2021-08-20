@@ -23,7 +23,7 @@ Windows/Linux
 MacOS
 
 - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
-- Execute: <kbd>F5</kbd> or <kbd>⌘</kbd> + <kbd>⏎</kbd>
+- Execute: <kbd>F5</kbd> &nbsp; -or- &nbsp; <kbd>Command</kbd> + <kbd>return</kbd>
 
 From now on, read "Create a new project" as 
 

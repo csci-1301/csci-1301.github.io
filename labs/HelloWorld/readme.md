@@ -52,10 +52,10 @@ Question:
 
     MacOS
     - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
-    - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> -or- <kbd>F5</kbd>
+    - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> &nbsp; -or- &nbsp; <kbd>F5</kbd>
     - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
-That makes 4 shortcuts already!
+That makes 3 shortcuts already!
 
 ## Backups
 
