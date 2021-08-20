@@ -40,21 +40,22 @@ Question:
 
 #. Let's compile this program. Look for an option to `Build solution` and click on it. What happened?
 
-#. Let's run this program. Look for a menu option `Debug > Start without Debugging` or `Run > Run Project` and click on it. What happened?
+#. Let's run this program. The exact wording varies between different IDEs, but look for one of the following: `Debug > Start without Debugging` or 
+   `Run > Start without Debugging` or `Run > Run Project` and click on it. What happened?
 
 #. You will **extensively** compile and run programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
 
     Windows/Linux
     - Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
-    - Run: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+    - Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
     - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
 
     MacOS
     - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
-    - Run: <kbd>F5</kbd>
+    - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> -or- <kbd>F5</kbd>
     - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
-That makes 3 shortcuts already!
+That makes 4 shortcuts already!
 
 ## Backups
 

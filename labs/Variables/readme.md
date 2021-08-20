@@ -23,7 +23,7 @@ Windows/Linux
 MacOS
 
 - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
-- Execute: <kbd>F5</kbd> 
+- Execute: <kbd>F5</kbd> or <kbd>⌘</kbd> + <kbd>⏎</kbd>
 
 From now on, read "Create a new project" as 
 
@@ -80,11 +80,11 @@ If you want a tutor or your instructor to check your answer to a previous lab, j
 
 Compute in your head the result of the following operation: `1000000.0 + 1.2 - 1000000.0`.
 
-Now, implement it (read "implement it" as: 
+Now, implement it
 
-> Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#
+> read "implement it" as:  Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#
 
-) using the `float`, `double`, and `decimal` datatypes:
+using the `float`, `double`, and `decimal` datatypes:
 
 ```
 Console.Write("With floats:\n\t");

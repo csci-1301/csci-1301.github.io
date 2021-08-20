@@ -12,7 +12,8 @@ This document contains useful keyboard shortcuts for different operating systems
 
 More advanced shortcuts may be available to your particular IDE:
 
-- For Visual Studio, refer to [the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019),
+- For Visual Studio for Windows, refer to [the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019),
+- For Visual Studio for MacOS, refer to [the documentation](https://docs.microsoft.com/en-us/visualstudio/mac/keyboard-shortcuts?view=vsmac-2019)
 - For Rider, refer to [the documentation](https://www.jetbrains.com/help/rider/mastering_keyboard_shortcuts.html),
 - For MonoDevelop, you can refer to [this cheatsheet](https://shortcutworld.com/Xamarin-Studio/win/Xamarin-Studio-(MonoDevelop)_Shortcuts) or directly access [the key binding panel](https://mhut.ch/journal/2011/02/05/monodevelop-tips-key-bindings).
 
@@ -38,7 +39,7 @@ More advanced shortcuts may be available to your particular IDE:
 | OS | Keys |
 | :--- | :--- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>F5</kbd>  |
-| MacOS | <kbd>F5</kbd> |
+| MacOS | <kbd>F5</kbd> -or- <kbd>option</kbd> + <kbd>⌘</kbd> + <kbd>return</kbd>  |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
 
 ## Undo*
