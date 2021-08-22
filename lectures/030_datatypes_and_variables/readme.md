@@ -167,7 +167,7 @@ It is generally recommended to separate those instructions in different statemen
 - Format specifiers with custom rounding
     - Each format specifier uses a default number of decimal places, but you can change this with a precision specifier
     - **Precision specifier**: A number added after a format specifier indicating how many digits past the decimal point to display
-    - Format is `{[variable]:[format specifier]}`, e.g. `{numVar:N3}`. Note there is no space or other symbol between the format specifier and the precision specifier, and the number can be more than one digit (`{numVar:N12}` is valid)
+    - Format is `{[variable]:[format specifier][precision specifier]}`, e.g. `{numVar:N3}`. Note there is no space or other symbol between the format specifier and the precision specifier, and the number can be more than one digit (`{numVar:N12}` is valid)
     - Examples:
         - Given the declarations
 
