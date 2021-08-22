@@ -89,8 +89,7 @@ Features of this program:
 - Each statement must end in a semicolon (`;`),
     - Exceptions:
         - opening `{` and closing `}` don't end in a ;
-        - Class and method declarations don't end in a ; since they end in a }\
-          Example: class Program { .... `}`
+        - Class and method declarations don't end in a ; since they end in a `}` (Example: `class Program { .... }`)
     - A method *contains* some statements, but it is not a statement
 - All words are case-sensitive
     - A class named `Program` is not the same as one named `program`

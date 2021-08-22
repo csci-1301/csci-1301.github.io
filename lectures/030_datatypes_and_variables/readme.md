@@ -98,16 +98,96 @@
           the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
 
 - Displaying
-    - When you want to print a mixture of values and variables with `Console.WriteLine`, we should convert all of them to a string
+    - Only text (strings) can be displayed in the console
+    - When we want to print a mixture of text and variables with `Console.WriteLine`, we need to convert all of them to a string
     - **String interpolation**: a mechanism for converting a variable's value to a `string` and inserting it into the main string
         - Syntax: `$"text {variable} text"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
         - Example: `$"I am {myAge} years old"`
         - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
         - Displayed: `I am 29 years old`
+    - If the argument to `Console.WriteLine` is the name of a variable, it will automatically convert that variable to a `string` before displaying it
+    - For example, `Console.WriteLine(myAge);` will display "29" in the console, as if we had written `Console.WriteLine($"{myAge}");`
     - When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
 
 On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
 It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the "atomic steps" your program should perform.
+
+## Format Specifiers
+
+- Formats for displaying numbers
+    - There are lots of possible ways to display a number, especially a fraction (how many decimal places to use?)
+    - String interpolation has a default way to format numbers, but it might not always be the best
+    - For example, consider this program:
+
+        ```
+        decimal price = 19.99m;
+        decimal discount = 0.25m;
+        decimal salePrice = price – discount * price;
+        Console.WriteLine($"{price} with a discount of " +
+            $"{discount} is {salePrice}");
+        ```
+
+      It will display this output:
+
+        ```text
+        19.99 with a discount of 0.25 is 14.9925
+        ```
+
+      But this isn't the best way to display prices and discounts. Obviously, the prices should have dollar signs, but also, it doesn't make sense to show a price with fractional cents (14.9925) -- it should be rounded to two decimal places. You might also prefer to display the discount as 25% instead of 0.25, since people usually think of discounts as percentages.
+
+- Improving interpolation with format specifiers
+    - You can change how numbers are displayed by adding a format specifier to a variable's name in string interpolation
+    - **Format specifier**: A special letter indicating how a numeric value should be converted to a string
+    - General format is `{[variable]:[format specifier]}`, e.g. `{numVar:N}`
+    - Common format specifiers:
+
+        | Format specifier | Description                                                        |
+        | ---------------- | ------------------------------------------------------------------ |
+        | N or n           | Adds a thousands separator, displays 2 decimal places (by default) |
+        | E or e           | Uses scientific notation, displays 6 decimal places (by default)   |
+        | C or c           | Formats as currency: Adds a currency symbol, adds thousands separator, displays 2 decimal places (by default) |
+        | P or p           | Formats as percentage with 2 decimal places (by default)           |
+
+    - Example usage with our "discount" program:
+
+        ```
+        decimal price = 19.99m;
+        decimal discount = 0.25m;
+        decimal salePrice = price – discount * price;
+        Console.WriteLine($"{price:C} with a discount of " +
+            $"{discount:P} is {salePrice:C}");
+        ```
+
+      will display
+
+        ```text
+        $19.99 with a discount of 25.00% is $14.99
+        ```
+
+- Format specifiers with custom rounding
+    - Each format specifier uses a default number of decimal places, but you can change this with a precision specifier
+    - **Precision specifier**: A number added after a format specifier indicating how many digits past the decimal point to display
+    - Format is `{[variable]:[format specifier]}`, e.g. `{numVar:N3}`. Note there is no space or other symbol between the format specifier and the precision specifier, and the number can be more than one digit (`{numVar:N12}` is valid)
+    - Examples:
+        - Given the declarations
+
+            ```
+            double bigNumber = 1537963.666;
+            decimal discount = 0.1337m;
+            ```
+
+        - `Console.WriteLine($"{bigNumber:N}");` will display `1,537,963.67`
+
+        - `Console.WriteLine($"{bigNumber:N3}");` will display `1,537,963.666`
+
+        - `Console.WriteLine($"{bigNumber:N1}");` will display `1,537,963.7`
+
+        - `Console.WriteLine($"{discount:P1}");` will display `13.4%`
+
+        - `Console.WriteLine($"{discount:P4}");` will display `13.3700%`
+
+
+
 
 
 ## Variables in Memory
