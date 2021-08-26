@@ -67,22 +67,22 @@ int n = x++ + --x;
 
 #. Write a `while` loop that displays the integers between $1$ and $100$ on the screen, with a space between them.
 #. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between them.
-#. Write a `while` loop that displays the `*` (asterisk) character 100 times on the screen.
-#. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisks have been displayed on the screen.
+#. Write a `while` loop that displays the `°` (degree symbol) character 100 times on the screen.
+#. Modify your previous loop, so that a new line character is displayed on the screen every time 10 degree symbols have been displayed on the screen.
 
-That is, your program should display this on the screen (this example has a space after each asterisk for display purposes):
+That is, your program should display this on the screen (this example has a space after each degree symbol for display purposes):
 
 ```text
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
- * * * * * * * * * *
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
+ ° ° ° ° ° ° ° ° ° °
 ```
 
 # Pushing Further (Optional)
@@ -92,16 +92,16 @@ Here are additional (fun!) pattern problems. Try generating them using a while l
 1. Triangle:
 
 ```text
- * 
- * *
- * * *
- * * * * 
- * * * * *
- * * * * * *
- * * * * * * * 
- * * * * * * * * 
- * * * * * * * * * 
- * * * * * * * * * *
+ ° 
+ ° °
+ ° ° °
+ ° ° ° ° 
+ ° ° ° ° °
+ ° ° ° ° ° °
+ ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° ° 
+ ° ° ° ° ° ° ° ° ° °
 ``` 
 
 2. Triangle of numbers 
