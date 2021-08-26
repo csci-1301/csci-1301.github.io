@@ -33,9 +33,9 @@ where
 
 Before using an array, you must specify the number of elements of the array as follow:
 
-    ```
-    arrayName = new <type>[<number of elements>];
-    ```
+```
+arrayName = new <type>[<number of elements>];
+```
     
 where `<type>` is as previously, and `<number of elements>`, called the _size declarator_, needs to be a strictly positive integer which will correspond to the size of the array.
 
