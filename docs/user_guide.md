@@ -110,9 +110,7 @@ Resources to assess accessibility:
     <pre>
     ```text
     This will be treated as plain text without highlighting
-    ```</pre>    
-    
-    
+    ```</pre>
 
 - only include code in text form such that it can be copy-pasted for reuse
 
@@ -326,11 +324,11 @@ The steps for migrating feedback target repository are as follows:
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
 
     ```js
-        <script data-external="1"
-                src="https://utteranc.es/client.js"
-                repo="csci-1301/{REPOSITORY_NAME}"
-                label="comment" ....>
-        </script>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/{REPOSITORY_NAME}"
+            label="comment" ...
+    </script>
     ```
 
 #. Commit change to template.html
