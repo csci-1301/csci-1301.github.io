@@ -2,9 +2,20 @@
 title: Keyboard Shortcuts Cheat Sheet
 ---
 
-This document contains useful keyboard shortcuts for different operating systems and IDEs.
+# Foreword
 
-\* = these commands work generally everywhere, beyond your IDE.
+This document contains useful keyboard shortcuts for different operating systems and IDEs.
+We use the following symbols:
+
+Symbol | Common Name
+--- | ---
+<kbd>⇧</kbd> | Shift
+<kbd>⌥</kbd>| Option (or Alt)
+<kbd>⌘</kbd> | Command (or Cmd)
+<kbd>↵</kbd> | (Carriage) Return
+
+
+The sections labeled with the star symbol ("\*") work generally everywhere, beyond your IDE.
 
 <!-- alphabetical list -->
 <!-- make the action the title so it is possible to link to it -->
@@ -17,21 +28,22 @@ More advanced shortcuts may be available to your particular IDE:
 - For Rider, refer to [the documentation](https://www.jetbrains.com/help/rider/mastering_keyboard_shortcuts.html),
 - For MonoDevelop, you can refer to [this cheatsheet](https://shortcutworld.com/Xamarin-Studio/win/Xamarin-Studio-(MonoDevelop)_Shortcuts) or directly access [the key binding panel](https://mhut.ch/journal/2011/02/05/monodevelop-tips-key-bindings).
 
+# Useful Shortcuts
 
 ## Build solution
 
 | OS | Keys |
 | :--- | :--- |
-| Linux | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> |
-| MacOS | <kbd>Cmd</kbd> + <kbd>B</kbd> |
-| Windows | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> |
+| Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>B</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
 
 ## Exit any program*
 
 | OS | Keys |
 | :--- | :--- |
 | Linux | <kbd>Alt</kbd> + <kbd>F4</kbd> or <kbd>Ctrl</kbd> + <kbd>q</kbd> |
-| MacOS | <kbd>Cmd</kbd> + <kbd>q</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
 
 ## Run/execute program
@@ -39,7 +51,7 @@ More advanced shortcuts may be available to your particular IDE:
 | OS | Keys |
 | :--- | :--- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>F5</kbd>  |
-| MacOS | <kbd>F5</kbd> -or- <kbd>option</kbd> + <kbd>⌘</kbd> + <kbd>return</kbd>  |
+| MacOS | <kbd>F5</kbd> -or- <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>↵</kbd>  |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
 
 ## Undo*
@@ -47,7 +59,7 @@ More advanced shortcuts may be available to your particular IDE:
 | OS | Keys |
 | :--- | :--- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
-| MacOS | <kbd>Cmd</kbd> + <kbd>z</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>z</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
  
  
