@@ -11,5 +11,7 @@ class Program
         Console.WriteLine(myNumber); //outputs 0
         myNumber = myNumber * 10;
         Console.WriteLine(myNumber); //outputs 0
+        myNumber = (1E-45f / 10) * 10;
+        Console.WriteLine(myNumber); //outputs 0
     }
 }

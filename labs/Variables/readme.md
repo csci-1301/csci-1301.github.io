@@ -18,14 +18,14 @@ You have probably already started to read "compile and execute" as:
 Windows/Linux
 
 - Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
-- Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd> 
+- Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
 
 MacOS
 
 - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
 - Execute: <kbd>F5</kbd> &nbsp; -or- &nbsp; <kbd>Command</kbd> + <kbd>return</kbd>
 
-From now on, read "Create a new project" as 
+From now on, read "Create a new project" as
 
  - Create a new project using the "Console Application" template for C\#.
  - Pick simple and valid names for your project and solution, and make sure you save it in the right place, like a folder that matches the lab name.
@@ -49,7 +49,7 @@ If you want a tutor or your instructor to check your answer to a previous lab, j
 
 #. Below those three statements, write statements that assign your last name to the first variable, your first name to the second variable, and your anticipated graduation year (i.e., 2025, for instance) to the third variable.
 
-#. Display at the screen the values of the three variables, using the following statement:
+#. Display on the screen the values of the three variables, using the following statement:
 
     ```
     Console.WriteLine($"My name is {firstName} {lastName}, and I expect to graduate in {classOf}.");
@@ -73,8 +73,8 @@ If you want a tutor or your instructor to check your answer to a previous lab, j
     #. Add three statements that change the values of the three variables,
     #. Copy the `Console.WriteLine` statement that was previously given,
     #. Compile and run the program.
-   
-   Notice that the very same statement will now display at the screen a different message!
+
+   Notice that the very same statement will now display on the screen a different message!
 
 ## Experimenting With Numeric Datatypes
 
