@@ -327,7 +327,7 @@ The steps for migrating feedback target repository are as follows:
     <script data-external="1"
             src="https://utteranc.es/client.js"
             repo="csci-1301/{REPOSITORY_NAME}"
-            label="comment" ...
+            label="comment" …>
     </script>
     ```
 

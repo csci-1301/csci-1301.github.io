@@ -4,7 +4,6 @@ title: Increment and Decrement Operators, First Loops
 
 In this lab you will learn about increment and decrement operators and implement your first while loops.
 
-
 # Increment and Decrement Operators
 
 Before writing code, think through the following questions.
@@ -59,52 +58,49 @@ int x = 5;
 int n = x++ + --x;
 ```
 
-
-
-
 # First While Loops
-
 
 #. Write a `while` loop that displays the integers between $1$ and $100$ on the screen, with a space between them.
 #. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between them.
-#. Write a `while` loop that displays the `°` (degree symbol) character 100 times on the screen.
-#. Modify your previous loop, so that a new line character is displayed on the screen every time 10 degree symbols have been displayed on the screen.
+#. Write a `while` loop that displays the `*` (asterisk symbol) character 100 times on the screen.
+#. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisk symbols have been displayed on the screen.
 
-That is, your program should display this on the screen (this example has a space after each degree symbol for display purposes):
+That is, your program should display this on the screen (this example has a space after each asterisk symbol for display purposes):
 
 ```text
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
- ° ° ° ° ° ° ° ° ° °
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
 ```
 
 # Pushing Further (Optional)
 
-Here are additional (fun!) pattern problems. Try generating them using a while loop.
+Here are additional (fun!) pattern problems.
+Try generating them using a while loop.
 
-1. Triangle:
+#. Triangle:
 
 ```text
- ° 
- ° °
- ° ° °
- ° ° ° ° 
- ° ° ° ° °
- ° ° ° ° ° °
- ° ° ° ° ° ° ° 
- ° ° ° ° ° ° ° ° 
- ° ° ° ° ° ° ° ° ° 
- ° ° ° ° ° ° ° ° ° °
+ * 
+ * *
+ * * *
+ * * * * 
+ * * * * *
+ * * * * * *
+ * * * * * * * 
+ * * * * * * * * 
+ * * * * * * * * * 
+ * * * * * * * * * *
 ``` 
 
-2. Triangle of numbers 
+#. Triangle of numbers 
 
 ```text
 1
@@ -114,7 +110,7 @@ Here are additional (fun!) pattern problems. Try generating them using a while l
 555555555
 ``` 
 
-3. Upside-down binary triangle
+#. Upside-down binary triangle
 
 ```text
 1010101
