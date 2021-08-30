@@ -45,8 +45,8 @@ Using this established build system generates labs that are cross-platform (Wind
 | [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | - compilation, execution<br/>- basic C# syntax<br/>- `Write`, `WriteLine` |
 | [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | - `Write`, `WriteLine`<br/>- escape sequences |
 | [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | - datatypes (`string`,`int`,`float`,`double`,`decimal`)<br/>- string interpolation</br>- variable declaration, assignment<br/>- operators: `+ - * / %`<br/>- compound assignment: `+= -= *= /= %=`<br/>- "read-only" example with explicit cast |
-| [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | Implicit and explicit type conversion, using cast operator |
-| [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user |
+| [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | - operators: `+ - * / %`<br/>- string interpolation<br/>- implicit and explicit cast |
+| [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user<br/>- `Parse` method<br/>- `ReadLine()` |
 | [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods |
 | [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class and writing a class from scratch |
 | [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  |[Introduction to Objects](/lectures/060_object_oriented_intro) | Practice reading and creating a UML class diagrams |
