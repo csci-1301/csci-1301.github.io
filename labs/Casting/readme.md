@@ -20,8 +20,8 @@ float f = 2.5000000f;
 double d = -1.3;
 decimal m = 2.5m;
 ```
- 
-Answer the following: 
+
+Answer the following:
 
 - How many variables are declared?
 - What are their datatypes?
@@ -31,7 +31,7 @@ Answer the following:
 ## Operations
 
 
-- Consider the following expressions. For each of them, tell if they are legal and if so, give the result and its corresponding datatype.  The first two are given as examples:
+- Consider the following expressions, which use the variables we have declared above. For each of them, tell if they are legal and if so, give the result and its corresponding datatype.  The first two are given as examples:
 
 
 Operation | Legal? | Result | Datatype
@@ -46,7 +46,7 @@ Operation | Legal? | Result | Datatype
 `f / m` |   |  |  |
 `d * m` |   |  |  |
 
-    
+
 You can check your answers using an IDE: create a new project, copy the variable declarations and assignments, and  write your own statements to perform the calculations in the `Main` method.
 For instance, if you want to check that the result of `a + d` is of type `double`, write something like:
 
@@ -56,7 +56,7 @@ Console.WriteLine($"The value of d+f is {tempVariable1}");
 int tempVariable2 = a + d; // This line should give you an error.
 ```
 
-<!-- 
+<!--
 There has to be a better way!
 https://stackoverflow.com/questions/11634079/how-can-i-get-the-data-type-of-a-variable-in-c
 Check the actual type!
