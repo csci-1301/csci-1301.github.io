@@ -209,32 +209,32 @@ It is generally recommended to separate those instructions in different statemen
 #### Sizes of Numeric Datatypes
 
 - Numeric datatypes have different sizes
-    - Amount of memory used/reserved by each variable depends on the variable's type
-    - Amount of memory needed for an integer data type depends on the size of the number
-        - `int` uses 4 bytes of memory, can store numbers in the range $[-2^{31}, 2^{31}-1]$
-        - `long` uses 8 bytes of memory can store numbers in the range $[-2^{63}, 2^{63}-1]$
-        - `short` uses 2 bytes of memory, can store numbers in the range $[-2^{15}, 2^{15}-1]$
-        - `sbyte` uses only 1 bytes of memory, can store numbers in the range $[-128, 127]$
-    - Unsigned versions of the integer types use the same amount of memory, but can store larger positive numbers
-        - `byte` uses 1 byte of memory, can store numbers in the range $[0, 255]$
-        - `ushort` uses 2 bytes of memory, can store numbers in the range $[0, 2^{16}-1]$
-        - `uint` uses 4 bytes of memory, can store numbers in the range $[0, 2^{32}-1]$
-        - `ulong` uses 8 bytes of memory, can store numbers in the range $[0, 2^{64}-1]$
-        - This is because in a signed integer, one bit (digit) of the binary number is needed to represent the sign (+ or -). This means the actual number stored must be 1 bit smaller than the size of the memory (e.g. 31 bits out of the 32 bits in 4 bytes). In an unsigned integer, there is no "sign bit", so all the bits can be used for the number.
-    - Amount of memory needed for a floating-point data type depends on the precision (significant figures) of the number
-        - `float` uses 4 bytes of memory, can store positive or negative numbers in a range of approximately $[10^{-45}, 10^{38}]$, with 7 significant figures of precision
-        - `double` uses 8 bytes of memory, and has both a wider range ($10^{-324}$ to $10^{308}$) and more significant figures (15 or 16)
-        - `decimal` uses 16 bytes of memory, and has 28 or 29 significant figures of precision, but it actually has the smallest range ($10^{-28}$ to $10^{28}$) because it stores decimal fractions exactly
-    - Difference between binary fractions and decimal fractions
-        - `float` and `double` store their data as binary (base 2) fractions, where each digit represents a power of 2
-            - The binary number 101.01 represents $4+1+1/4$, or 5.25 in base 10
-        - More specifically, they use binary scientific notation: A mantissa (a binary integer), followed by an exponent assumed to be a power of 2, which is applied to the mantissa
-            - 10101e-10 means a mantissa of 10101 (i.e. 21 in base 10) with an exponent of -10 (i.e. $2^{-2}$ in base 10), which also produces the value 101.01 or 5.25 in base 10
-        - Binary fractions can't represent all base-10 fractions, because they can only represent fractions that are negative powers of 2. $1/10$ is not a negative power of 2 and can't be represented as a sum of $1/16$, $1/32$, $1/64$, etc.
-        - This means some base-10 fractions will get "rounded" to the nearest finite binary fraction, and this will cause errors when they are used in arithmetic
-        - On the other hand, `decimal` stores data as a base-10 fraction, using base-10 scientific notation
-        - This is slower for the computer to calculate with (since computers work only in binary) but has no "rounding errors" with fractions that include 0.1
-        - Use `decimal` when working with money (since money uses a lot of 0.1 and 0.01 fractions), `double` when working with non-money fractions
+- Amount of memory used/reserved by each variable depends on the variable's type
+- Amount of memory needed for an integer data type depends on the size of the number
+    - `int` uses 4 bytes of memory, can store numbers in the range $[-2^{31}, 2^{31}-1]$
+    - `long` uses 8 bytes of memory can store numbers in the range $[-2^{63}, 2^{63}-1]$
+    - `short` uses 2 bytes of memory, can store numbers in the range $[-2^{15}, 2^{15}-1]$
+    - `sbyte` uses only 1 bytes of memory, can store numbers in the range $[-128, 127]$
+- Unsigned versions of the integer types use the same amount of memory, but can store larger positive numbers
+    - `byte` uses 1 byte of memory, can store numbers in the range $[0, 255]$
+    - `ushort` uses 2 bytes of memory, can store numbers in the range $[0, 2^{16}-1]$
+    - `uint` uses 4 bytes of memory, can store numbers in the range $[0, 2^{32}-1]$
+    - `ulong` uses 8 bytes of memory, can store numbers in the range $[0, 2^{64}-1]$
+    - This is because in a signed integer, one bit (digit) of the binary number is needed to represent the sign (+ or -). This means the actual number stored must be 1 bit smaller than the size of the memory (e.g. 31 bits out of the 32 bits in 4 bytes). In an unsigned integer, there is no "sign bit", so all the bits can be used for the number.
+- Amount of memory needed for a floating-point data type depends on the precision (significant figures) of the number
+    - `float` uses 4 bytes of memory, can store positive or negative numbers in a range of approximately $[10^{-45}, 10^{38}]$, with 7 significant figures of precision
+    - `double` uses 8 bytes of memory, and has both a wider range ($10^{-324}$ to $10^{308}$) and more significant figures (15 or 16)
+    - `decimal` uses 16 bytes of memory, and has 28 or 29 significant figures of precision, but it actually has the smallest range ($10^{-28}$ to $10^{28}$) because it stores decimal fractions exactly
+- Difference between binary fractions and decimal fractions
+    - `float` and `double` store their data as binary (base 2) fractions, where each digit represents a power of 2
+        - The binary number 101.01 represents $4+1+1/4$, or 5.25 in base 10
+    - More specifically, they use binary scientific notation: A mantissa (a binary integer), followed by an exponent assumed to be a power of 2, which is applied to the mantissa
+        - 10101e-10 means a mantissa of 10101 (i.e. 21 in base 10) with an exponent of -10 (i.e. $2^{-2}$ in base 10), which also produces the value 101.01 or 5.25 in base 10
+    - Binary fractions can't represent all base-10 fractions, because they can only represent fractions that are negative powers of 2. $1/10$ is not a negative power of 2 and can't be represented as a sum of $1/16$, $1/32$, $1/64$, etc.
+    - This means some base-10 fractions will get "rounded" to the nearest finite binary fraction, and this will cause errors when they are used in arithmetic
+    - On the other hand, `decimal` stores data as a base-10 fraction, using base-10 scientific notation
+    - This is slower for the computer to calculate with (since computers work only in binary) but has no "rounding errors" with fractions that include 0.1
+    - Use `decimal` when working with money (since money uses a lot of 0.1 and 0.01 fractions), `double` when working with non-money fractions
 
 **Summary of numeric data types and sizes:**
 
