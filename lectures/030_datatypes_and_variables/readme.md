@@ -27,87 +27,98 @@
 
 ## Literals and Variables
 
-- Literals and their types
-    - A **literal** is a data value written in the code
-    - A form of "input" provided by the programmer rather than the user; its value is fixed throughout the program's execution
-    - Literal data must have a type, indicated by syntax:
-        - `string` literal: text in double quotes, like `"hello"`
-        - `char` literal: a character in single quotes, like `'a'`
-        - `int` literal: a number without a decimal point, with or without a minus sign (e.g. `52`)
-        - `long` literal: just like an `int` literal but with the suffix `l` or `L`, e.g. `4L`
-        - `double` literal: a number with a decimal point, with or without a minus sign (e.g. `-4.5`)
-        - `float` literal: just like a `double` literal but with the suffix `f` or `F` (for "float"), e.g. `4.5f`
-        - `decimal` literal: just like a `double` literal but with the suffix `m` or `M`(for "deciMal"), e.g. `6.01m`
-- Variables overview
-    - Variables store data that can *vary* (change) during the program's execution
-    - They have a type, just like literals, and also a name
-    - You can use literals to write data that gets stored in variables
-    - Sample program with variables:
+#### Literals and their types
 
-        ```
-        !include code/my_first_variables.cs
-        ```
+- A **literal** is a data value written in the code
+- A form of "input" provided by the programmer rather than the user; its value is fixed throughout the program's execution
+- Literal data must have a type, indicated by syntax:
+    - `string` literal: text in double quotes, like `"hello"`
+    - `char` literal: a character in single quotes, like `'a'`
+    - `int` literal: a number without a decimal point, with or without a minus sign (e.g. `52`)
+    - `long` literal: just like an `int` literal but with the suffix `l` or `L`, e.g. `4L`
+    - `double` literal: a number with a decimal point, with or without a minus sign (e.g. `-4.5`)
+    - `float` literal: just like a `double` literal but with the suffix `f` or `F` (for "float"), e.g. `4.5f`
+    - `decimal` literal: just like a `double` literal but with the suffix `m` or `M`(for "deciMal"), e.g. `6.01m`
 
-      This program shows three major operations you can do with variables.
+#### Variables overview
 
-        - First it **declares** two variables, an `int`-type variable named "myAge" and a `string`-type variable named "myName"
-        - Then, it **assigns** values to each of those variables, using literals of the same type. `myAge` is assigned the value 29, using the `int` literal `29`, and `myName` is assigned the value "Edward", using the `string` literal `"Edward"`
-        - Finally, it **displays** the current value of each variable by using the `Console.WriteLine` method and **string interpolation**, in which the values of variables are inserted into a string by writing their names with some special syntax (a `$` character at the beginning of the string, and braces around the variable names)
+- Variables store data that can *vary* (change) during the program's execution
+- They have a type, just like literals, and also a name
+- You can use literals to write data that gets stored in variables
+- Sample program with variables:
+
+    ```
+    !include code/my_first_variables.cs
+    ```
+
+    This program shows three major operations you can do with variables.
+
+    - First it **declares** two variables, an `int`-type variable named "myAge" and a `string`-type variable named "myName"
+    - Then, it **assigns** values to each of those variables, using literals of the same type. `myAge` is assigned the value 29, using the `int` literal `29`, and `myName` is assigned the value "Edward", using the `string` literal `"Edward"`
+    - Finally, it **displays** the current value of each variable by using the `Console.WriteLine` method and **string interpolation**, in which the values of variables are inserted into a string by writing their names with some special syntax (a `$` character at the beginning of the string, and braces around the variable names)
 
 
 ## Variable Operations
 
-- Declaration
-    - This is when you specify the *name* of a variable and its *type*
-    - Syntax: `type_keyword variable_name;`
-    - Examples: `int myAge;`, `string myName;`, `double winChance;`
-    - A variable name is an identifier, so it should follow the rules and conventions
-        - Can only contain letters and numbers
-        - Must be unique among all variable, method, and class names
-        - Should use CamelCase if it contains multiple words
-    - Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
-    - Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`.
-- Assignment
-    - The act of changing the value of a variable
-    - Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
-    - Direction of assignment is **right to left**: the variable goes on the left side of the `=` symbol, and its new value goes on the right
-    - Syntax: `variable_name = value;`
-    - Example: `myAge = 29;`
-    - Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
-- Initialization (Declaration + Assignment)
-    - Initialization statement combines declaration and assignment in one line (it's just a shortcut, not a new operation)
-    - Creates a new variable and also gives it an initial value
-    - Syntax: `type variable_name = value;`
-    - Example: `string myName = "Edward";`
-    - Can only be used once per variable, since you can only declare a variable once
-- Assignment Details
-    - Assignment replaces the "old" value of the variable with a "new" one; it's how variables *vary*
-        - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now store the value 30
-    - You can assign a variable to another variable: just write a variable name on both sides of the `=` operator
+#### Declaration
 
-        - This will take a "snapshot" of the current value of the variable on the right side, and store it into the variable on the left side
+- This is when you specify the *name* of a variable and its *type*
+- Syntax: `type_keyword variable_name;`
+- Examples: `int myAge;`, `string myName;`, `double winChance;`
+- A variable name is an identifier, so it should follow the rules and conventions
+    - Can only contain letters and numbers
+    - Must be unique among all variable, method, and class names
+    - Should use CamelCase if it contains multiple words
+- Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
+- Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`.
 
-        - For example, in this code:
+#### Assignment
 
-            ```
-            int a = 12;
-            int b = a;
-            a = -5;
-            ```
+- The act of changing the value of a variable
+- Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
+- Direction of assignment is **right to left**: the variable goes on the left side of the `=` symbol, and its new value goes on the right
+- Syntax: `variable_name = value;`
+- Example: `myAge = 29;`
+- Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
 
-          the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
+#### Initialization (Declaration + Assignment)
 
-- Displaying
-    - Only text (strings) can be displayed in the console
-    - When we want to print a mixture of text and variables with `Console.WriteLine`, we need to convert all of them to a string
-    - **String interpolation**: a mechanism for converting a variable's value to a `string` and inserting it into the main string
-        - Syntax: `$"text {variable} text"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
-        - Example: `$"I am {myAge} years old"`
-        - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
-        - Displayed: `I am 29 years old`
-    - If the argument to `Console.WriteLine` is the name of a variable, it will automatically convert that variable to a `string` before displaying it
-    - For example, `Console.WriteLine(myAge);` will display "29" in the console, as if we had written `Console.WriteLine($"{myAge}");`
-    - When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
+- Initialization statement combines declaration and assignment in one line (it's just a shortcut, not a new operation)
+- Creates a new variable and also gives it an initial value
+- Syntax: `type variable_name = value;`
+- Example: `string myName = "Edward";`
+- Can only be used once per variable, since you can only declare a variable once
+
+#### Assignment Details
+
+- Assignment replaces the "old" value of the variable with a "new" one; it's how variables *vary*
+    - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now store the value 30
+- You can assign a variable to another variable: just write a variable name on both sides of the `=` operator
+
+    - This will take a "snapshot" of the current value of the variable on the right side, and store it into the variable on the left side
+
+    - For example, in this code:
+
+        ```
+        int a = 12;
+        int b = a;
+        a = -5;
+        ```
+
+        the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
+
+#### Displaying
+
+- Only text (strings) can be displayed in the console
+- When we want to print a mixture of text and variables with `Console.WriteLine`, we need to convert all of them to a string
+- **String interpolation**: a mechanism for converting a variable's value to a `string` and inserting it into the main string
+    - Syntax: `$"text {variable} text"` -- begin with a `$` symbol, then put variable's name inside brackets within the string
+    - Example: `$"I am {myAge} years old"`
+    - When this line of code is executed, it reads the variable's current value, converts it to a string (`29` becomes `"29"`), and inserts it into the surrounding string
+    - Displayed: `I am 29 years old`
+- If the argument to `Console.WriteLine` is the name of a variable, it will automatically convert that variable to a `string` before displaying it
+- For example, `Console.WriteLine(myAge);` will display "29" in the console, as if we had written `Console.WriteLine($"{myAge}");`
+- When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
 
 On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
 It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the "atomic steps" your program should perform.
@@ -188,14 +199,15 @@ It is generally recommended to separate those instructions in different statemen
 
 
 
-
-
 ## Variables in Memory
 
 - A variable names a memory location
-    - Data is stored in memory (RAM), so a variable "stores data" by storing it in memory
-    - Declaring a variable reserves a memory location (address) and gives it a name
-    - Assigning to a variable stores data to the memory location (address) named by that variable
+- Data is stored in memory (RAM), so a variable "stores data" by storing it in memory
+- Declaring a variable reserves a memory location (address) and gives it a name
+- Assigning to a variable stores data to the memory location (address) named by that variable
+
+#### Sizes of Numeric Datatypes
+
 - Numeric datatypes have different sizes
     - Amount of memory used/reserved by each variable depends on the variable's type
     - Amount of memory needed for an integer data type depends on the size of the number
@@ -240,29 +252,31 @@ Type      | Size     | Range of Values      | Precision
 `double`  | 8 bytes  | $\pm 5.0 \cdot 10^{-324} … \pm 1.7 \cdot 10^{308}$ | 15-16 digits
 `decimal` | 16 bytes | $\pm 1.0 \cdot 10^{-28} … \pm 7.9 \cdot 10^{28}$   | 28-29 digits
 
-- Value and reference types: different ways of storing data in memory
-    - Variables name memory locations, but the data that gets stored at the named location is different for each type
-    - For a **value type** variable, the named memory location stores the exact data value held by the variable (just what you'd expect)
-    - Value types: all the numeric types (`int`, `float`, `double`, `decimal`, etc.), `char`, and `bool`
-    - For a **reference type** variable, the named memory location stores a *reference* to the data, not the data itself
-        - The contents of the memory location named by the variable are the address of another memory location
-        - The *other* memory location is where the variable's data is stored
-        - To get to the data, the computer first reads the location named by the variable, then uses that information (the memory address) to find and read the other memory location where the data is stored
-    - Reference types: `string`, `object`, and all objects you create from your own classes
-    - Assignment works differently for reference types
+#### Value and Reference types
 
-        - Assignment always copies the value in the variable's named memory location - but in the case of a reference type that's just a memory address, not the data
+- Value and reference types are different ways of storing data in memory
+- Variables name memory locations, but the data that gets stored at the named location is different for each type
+- For a **value type** variable, the named memory location stores the exact data value held by the variable (just what you'd expect)
+- Value types: all the numeric types (`int`, `float`, `double`, `decimal`, etc.), `char`, and `bool`
+- For a **reference type** variable, the named memory location stores a *reference* to the data, not the data itself
+    - The contents of the memory location named by the variable are the address of another memory location
+    - The *other* memory location is where the variable's data is stored
+    - To get to the data, the computer first reads the location named by the variable, then uses that information (the memory address) to find and read the other memory location where the data is stored
+- Reference types: `string`, `object`, and all objects you create from your own classes
+- Assignment works differently for reference types
 
-        - Assigning one reference-type variable to another copies the memory address, so now both variables "refer to" the same data
+    - Assignment always copies the value in the variable's named memory location - but in the case of a reference type that's just a memory address, not the data
 
-        - Example:
+    - Assigning one reference-type variable to another copies the memory address, so now both variables "refer to" the same data
 
-            ```
-            string word = "Hello";
-            string word2 = word;
-            ```
+    - Example:
 
-          Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
+        ```
+        string word = "Hello";
+        string word2 = word;
+        ```
+
+        Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
 
 ## Overflow 🛡
 
