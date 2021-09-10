@@ -2,227 +2,229 @@
 
 ## Default Values and the ClassRoom Class
 
-- Instance variables get default values
-    - In lab, you were asked to run a program like this:
+- In lab, you were asked to run a program like this:
+
+    ```
+    !include code/rectangle_initial_values.cs
+    ```
+
+    Note that we create a Rectangle object, but do not use the `SetLength` or `SetWidth` methods to assign values to its instance variables. It displays the following output:
+
+    ```text
+    Length is 0
+    Width is 0
+    ```
+
+- This works because the instance variables `length` and `width` have a default value of 0, even if you never assign them a value
+
+- Local variables, like the ones we write in the Main method, do *not* have default values. You must assign them a value before using them in an expression.
+
+    - For example, this code will produce a compile error:
 
         ```
-        !include code/rectangle_initial_values.cs
+        int myVar1;
+        int myVar2 = myVar1 + 5;
         ```
 
-      Note that we create a Rectangle object, but do not use the `SetLength` or `SetWidth` methods to assign values to its instance variables. It displays the following output:
+        You can't assume `myVar1` will be 0; it has no value at all until you use an assignment statement.
 
-        ```text
-        Length is 0
-        Width is 0
-        ```
+- When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
 
-    - This works because the instance variables `length` and `width` have a default value of 0, even if you never assign them a value
+    | **Type**      | **Default Value** |
+    | ------------- | :---------------- |
+    | Numeric types | 0                 |
+    | `string`      | `null`            |
+    | objects       | `null`            |
+    | `bool`        | `false`           |
+    | `char`        | `'\0'`            |
 
-    - Local variables, like the ones we write in the Main method, do *not* have default values. You must assign them a value before using them in an expression.
+- Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You can't do anything with a reference variable containing `null`.
 
-        - For example, this code will produce a compile error:
+#### A class we'll use for subsequent examples
 
-            ```
-            int myVar1;
-            int myVar2 = myVar1 + 5;
-            ```
+- ClassRoom: Represents a room in a building on campus
 
-          You can't assume `myVar1` will be 0; it has no value at all until you use an assignment statement.
+- UML Diagram:
 
-    - When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
+    |                **ClassRoom**            |
+    | --------------------------------------- |
+    | - building: `string`                    |
+    | - number: `int`                         |
+    | --------------------------------------- |
+    | + SetBuilding(buildingParam : `string`) |
+    | + GetBuilding(): `string`               |
+    | + SetNumber(numberParameter: `int`)     |
+    | + GetNumber(): `int`                    |
 
-        | **Type**      | **Default Value** |
-        | ------------- | :---------------- |
-        | Numeric types | 0                 |
-        | `string`      | `null`            |
-        | objects       | `null`            |
-        | `bool`        | `false`           |
-        | `char`        | `'\0'`            |
+    - There are two attributes: the name of the building (a string) and the room number (an `int`)
+    - Each attribute will have a "getter" and "setter" method
 
-    - Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You can't do anything with a reference variable containing `null`.
+- Implementation:
 
-- A class we'll use for subsequent examples
+    ```
+    !include code/classroom.cs
+    ```
 
-    - ClassRoom: Represents a room in a building on campus
+    - Each attribute is implemented by an instance variable with the same name
+    - To write the "setter" for the building attribute, we write a method whose return type is `void`, with a single `string`-type parameter. Its body assigns the `building` instance variable to the value in the parameter `buildingParam`
+    - To write the "getter" for the building attribute, we write a method whose return type is `string`, and whose body returns the instance variable `building`
 
-    - UML Diagram:
+- Creating an object and using its default values:
 
-        |                **ClassRoom**            |
-        | --------------------------------------- |
-        | - building: `string`                    |
-        | - number: `int`                         |
-        | --------------------------------------- |
-        | + SetBuilding(buildingParam : `string`) |
-        | + GetBuilding(): `string`               |
-        | + SetNumber(numberParameter: `int`)     |
-        | + GetNumber(): `int`                    |
+    ```
+    !include code/classroom_initial_values.cs
+    ```
 
-        - There are two attributes: the name of the building (a string) and the room number (an `int`)
-        - Each attribute will have a "getter" and "setter" method
+    This will print the following output:
 
-    - Implementation:
+    ```text
+    Building is
+    Room number is 0
+    ```
 
-        ```
-        !include code/classroom.cs
-        ```
-
-        - Each attribute is implemented by an instance variable with the same name
-        - To write the "setter" for the building attribute, we write a method whose return type is `void`, with a single `string`-type parameter. Its body assigns the `building` instance variable to the value in the parameter `buildingParam`
-        - To write the "getter" for the building attribute, we write a method whose return type is `string`, and whose body returns the instance variable `building`
-
-    - Creating an object and using its default values:
-
-        ```
-        !include code/classroom_initial_values.cs
-        ```
-
-      This will print the following output:
-
-        ```text
-        Building is
-        Room number is 0
-        ```
-
-      Remember that the default value of a `string` variable is `null`. When you use string interpolation on `null`, you get an empty string.
+    Remember that the default value of a `string` variable is `null`. When you use string interpolation on `null`, you get an empty string.
 
 ## Constructors
 
-- Instantiation and constructors
-    - Instantiation syntax requires you to write parentheses after the name of the class, like this:
+- Instantiation syntax requires you to write parentheses after the name of the class, like this:
 
-        ```
-        ClassRoom english = new ClassRoom();
-        ```
+    ```
+    ClassRoom english = new ClassRoom();
+    ```
 
-    - Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
-    - In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
-    - Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
-    - If you don't write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
-    - The default constructor initializes each instance variable to its default value -- that's where default values come from
-- Writing a constructor
-    - Example for ClassRoom:
+- Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
+- In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
+- Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
+- If you don't write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
+- The default constructor initializes each instance variable to its default value -- that's where default values come from
 
-        ```
+#### Writing a constructor
+
+- Example for ClassRoom:
+
+    ```
+    public ClassRoom(string buildingParam, int numberParam)
+    {
+        building = buildingParam;
+        number = numberParam;
+    }
+    ```
+
+- To write a constructor, write a method whose name is *exactly the same* as the class name
+- This method has *no return type*, not even `void`. It does not have a `return` statement either
+- For `ClassRoom`, this means the constructor's header starts with `public ClassRoom`
+    - You can think of this method as "combining" the return type and name. The name of the method is `ClassRoom`, and its output is of type `ClassRoom`, since the return value of `new ClassRoom()` is always a `ClassRoom` object
+    - You don't actually write a `return` statement, though, because `new` will always return the new object after calling the constructor
+- A custom constructor usually has parameters that correspond to the instance variables: for `ClassRoom`, it has a `string` parameter named `buildingParam`, and an `int` parameter named `numberParam`
+    - Note that when we write a method with two parameters, we separate the parameters with a comma
+- The body of a constructor must assign values to **all** instance variables in the object
+- Usually this means assigning each parameter to its corresponding instance variable: initialize the instance variable to equal the parameter
+    - Very similar to calling both "setters" at once
+- Using a constructor
+- An instantiation statement will call a constructor for the class being instantiated
+- Arguments in parentheses must match the parameters of the constructor
+- Example with the `ClassRoom` constructor:
+
+    ```
+    !include code/classroom_using_constructor.cs
+    ```
+
+    This program will produce this output:
+
+    ```text
+    Building is Allgood East
+    Room number is 356
+    ```
+
+- The instantiation statement `new ClassRoom("Allgood East", 356)` first creates a new "empty" object of type `ClassRoom`, then calls the constructor to initialize it. The first argument, "Allgood East", becomes the constructor's first parameter (`buildingParam`), and the second argument, 356, becomes the constructor's second parameter (`numberParam`).
+
+- After executing the instantiation statement, the object referred to by `csci` has its instance variables set to these values, even though we never called `SetBuilding` or `SetNumber`
+
+#### Methods with multiple parameters
+
+- The constructor we wrote is an example of a method with two parameters
+- The same syntax can be used for ordinary, non-constructor methods, if we need more than one input value
+- For example, we could write this method in the `Rectangle` class:
+
+    ```
+    public void MultiplyBoth(int lengthFactor, int widthFactor)
+    {
+        length *= lengthFactor;
+        width *= widthFactor;
+    }
+    ```
+
+- The first parameter has type `int` and is named lengthFactor. The second parameter has type `int` and is named `widthFactor`
+
+- You can call this method by providing two arguments, separated by a comma:
+
+    ```
+    Rectangle myRect = new Rectangle();
+    myRect.SetLength(5);
+    myRect.SetWidth(10);
+    myRect.MultiplyBoth(3, 5);
+    ```
+
+    The first argument, 3, will be assigned to the first parameter, `lengthFactor`. The second argument, 5, will be assigned to the second parameter, `widthFactor`
+
+- The order of the arguments matters when calling a multi-parameter method. If you write `myRect.MultiplyBoth(5, 3)`, then `lengthFactor` will be 5 and `widthFactor` will be 3.
+
+- The type of each argument must match the type of the corresponding parameter. For example, when you call the `ClassRoom` constructor we just wrote, the first argument must be a `string` and the second argument must be an `int`
+
+#### Writing multiple constructors
+
+- Remember that if you don't write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
+
+- Once you add a constructor to your class, C# will **not** generate a default constructor
+    - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
+    - The constructor we wrote has 2 parameters, so now you always need 2 arguments to instantiate a `ClassRoom`
+
+- If you still want the option to create an object with no arguments (i.e. `new ClassRoom()`), you must write a constructor with no parameters
+
+- A class can have more than one constructor, so it would look like this:
+
+    ```
+    class ClassRoom
+    {
+        //...
         public ClassRoom(string buildingParam, int numberParam)
         {
             building = buildingParam;
             number = numberParam;
         }
-        ```
-
-    - To write a constructor, write a method whose name is *exactly the same* as the class name
-    - This method has *no return type*, not even `void`. It does not have a `return` statement either
-    - For `ClassRoom`, this means the constructor's header starts with `public ClassRoom`
-        - You can think of this method as "combining" the return type and name. The name of the method is `ClassRoom`, and its output is of type `ClassRoom`, since the return value of `new ClassRoom()` is always a `ClassRoom` object
-        - You don't actually write a `return` statement, though, because `new` will always return the new object after calling the constructor
-    - A custom constructor usually has parameters that correspond to the instance variables: for `ClassRoom`, it has a `string` parameter named `buildingParam`, and an `int` parameter named `numberParam`
-        - Note that when we write a method with two parameters, we separate the parameters with a comma
-    - The body of a constructor must assign values to **all** instance variables in the object
-    - Usually this means assigning each parameter to its corresponding instance variable: initialize the instance variable to equal the parameter
-        - Very similar to calling both "setters" at once
-- Using a constructor
-    - An instantiation statement will call a constructor for the class being instantiated
-    - Arguments in parentheses must match the parameters of the constructor
-    - Example with the `ClassRoom` constructor:
-
-        ```
-        !include code/classroom_using_constructor.cs
-        ```
-
-      This program will produce this output:
-
-        ```text
-        Building is Allgood East
-        Room number is 356
-        ```
-
-    - The instantiation statement `new ClassRoom("Allgood East", 356)` first creates a new "empty" object of type `ClassRoom`, then calls the constructor to initialize it. The first argument, "Allgood East", becomes the constructor's first parameter (`buildingParam`), and the second argument, 356, becomes the constructor's second parameter (`numberParam`).
-
-    - After executing the instantiation statement, the object referred to by `csci` has its instance variables set to these values, even though we never called `SetBuilding` or `SetNumber`
-
-- Methods with multiple parameters
-    - The constructor we wrote is an example of a method with two parameters
-    - The same syntax can be used for ordinary, non-constructor methods, if we need more than one input value
-    - For example, we could write this method in the `Rectangle` class:
-
-        ```
-        public void MultiplyBoth(int lengthFactor, int widthFactor)
+        public ClassRoom()
         {
-            length *= lengthFactor;
-            width *= widthFactor;
+            building = null;
+            number = 0;
         }
-        ```
+        //...
+    }
+    ```
 
-    - The first parameter has type `int` and is named lengthFactor. The second parameter has type `int` and is named `widthFactor`
+- The "no-argument" constructor must still initialize all the instance variables, even though it has no parameters
 
-    - You can call this method by providing two arguments, separated by a comma:
+    - You can pick any "default value" you want, or use the same ones that C# would use (0 for numeric variables, `null` for object variables, etc.)
 
-        ```
-        Rectangle myRect = new Rectangle();
-        myRect.SetLength(5);
-        myRect.SetWidth(10);
-        myRect.MultiplyBoth(3, 5);
-        ```
+- When a class has multiple constructors, the instantiation statement must decide which constructor to call
 
-      The first argument, 3, will be assigned to the first parameter, `lengthFactor`. The second argument, 5, will be assigned to the second parameter, `widthFactor`
+- The instantiation statement will call the constructor whose parameters match the arguments you provide
 
-    - The order of the arguments matters when calling a multi-parameter method. If you write `myRect.MultiplyBoth(5, 3)`, then `lengthFactor` will be 5 and `widthFactor` will be 3.
-
-    - The type of each argument must match the type of the corresponding parameter. For example, when you call the `ClassRoom` constructor we just wrote, the first argument must be a `string` and the second argument must be an `int`
-
-- Writing multiple constructors
-    - Remember that if you don't write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
-
-    - Once you add a constructor to your class, C# will **not** generate a default constructor
-        - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
-        - The constructor we wrote has 2 parameters, so now you always need 2 arguments to instantiate a `ClassRoom`
-
-    - If you still want the option to create an object with no arguments (i.e. `new ClassRoom()`), you must write a constructor with no parameters
-
-    - A class can have more than one constructor, so it would look like this:
+    - For example, each of these statements will call a different constructor:
 
         ```
-        class ClassRoom
-        {
-            //...
-            public ClassRoom(string buildingParam, int numberParam)
-            {
-                building = buildingParam;
-                number = numberParam;
-            }
-            public ClassRoom()
-            {
-                building = null;
-                number = 0;
-            }
-            //...
-        }
+        ClassRoom csci = new ClassRoom("Allgood East", 356);
+        ClassRoom english = new ClassRoom();
         ```
 
-    - The "no-argument" constructor must still initialize all the instance variables, even though it has no parameters
+        The first statement calls the two-parameter constructor we wrote, since it has a `string` argument and an `int` argument (in that order), and those match the parameters `(string buildingParam, int numberParam)`. The second statement calls the zero-parameter constructor since it has no arguments.
 
-        - You can pick any "default value" you want, or use the same ones that C# would use (0 for numeric variables, `null` for object variables, etc.)
+    - If the arguments don't match any constructor, it's still an error:
 
-    - When a class has multiple constructors, the instantiation statement must decide which constructor to call
+        ```
+        ClassRoom csci = new ClassRoom(356, "Allgood East");
+        ```
 
-    - The instantiation statement will call the constructor whose parameters match the arguments you provide
-
-        - For example, each of these statements will call a different constructor:
-
-            ```
-            ClassRoom csci = new ClassRoom("Allgood East", 356);
-            ClassRoom english = new ClassRoom();
-            ```
-
-          The first statement calls the two-parameter constructor we wrote, since it has a `string` argument and an `int` argument (in that order), and those match the parameters `(string buildingParam, int numberParam)`. The second statement calls the zero-parameter constructor since it has no arguments.
-
-        - If the arguments don't match any constructor, it's still an error:
-
-            ```
-            ClassRoom csci = new ClassRoom(356, "Allgood East");
-            ```
-
-          This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
+        This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
 
 ## Writing ToString Methods
 
@@ -266,157 +268,160 @@
 
 ## Method Signatures and Overloading
 
-- Name uniqueness in C#
-    - In general, variables, methods, and classes must have unique names, but there are several exceptions
-    - **Variables** can have the same name if they are in *different scopes*
-        - Two methods can each have a local variable with the same name
-        - A local variable (scope limited to the method) can have the same name as an instance variable (scope includes the whole class), but this will result in **shadowing**
-    - **Classes** can have the same name if they are in *different namespaces*
-        - This is one reason C# has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
-        - For example, imagine you were using a "shapes library" that provided a class named `Rectangle`, but you also wanted to write your own class named `Rectangle`
-        - The library's code would use its own namespace, like this:
+#### Name uniqueness in C#
 
-            ```
-            namespace ShapesLibrary
+- In general, variables, methods, and classes must have unique names, but there are several exceptions
+- **Variables** can have the same name if they are in *different scopes*
+    - Two methods can each have a local variable with the same name
+    - A local variable (scope limited to the method) can have the same name as an instance variable (scope includes the whole class), but this will result in **shadowing**
+- **Classes** can have the same name if they are in *different namespaces*
+    - This is one reason C# has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
+    - For example, imagine you were using a "shapes library" that provided a class named `Rectangle`, but you also wanted to write your own class named `Rectangle`
+    - The library's code would use its own namespace, like this:
+
+        ```
+        namespace ShapesLibrary
+        {
+            class Rectangle
             {
-                class Rectangle
-                {
-                    //instance variables, methods, etc.
-                }
+                //instance variables, methods, etc.
             }
-            ```
+        }
+        ```
 
-          Then your own code could have a `Rectangle` class in your own namespace:
+        Then your own code could have a `Rectangle` class in your own namespace:
 
-            ```
-            namespace MyProject
+        ```
+        namespace MyProject
+        {
+            class Rectangle
             {
-                class Rectangle
-                {
-                    //instance variables, methods, etc.
-                }
+                //instance variables, methods, etc.
             }
-            ```
+        }
+        ```
 
-        - You can use both `Rectangle` classes in the same code, as long as you specify the namespace, like this:
+    - You can use both `Rectangle` classes in the same code, as long as you specify the namespace, like this:
 
-            ```
-            MyProject.Rectangle rect1 = new MyProject.Rectangle();
-            ShapesLibrary.Rectangle rect2 = new ShapesLibrary.Rectangle();
-            ```
+        ```
+        MyProject.Rectangle rect1 = new MyProject.Rectangle();
+        ShapesLibrary.Rectangle rect2 = new ShapesLibrary.Rectangle();
+        ```
 
-    - **Methods** can have the same name if they have *different signatures*; this is called **overloading**
-        - We'll explain signatures in more detail in a minute
-        - Briefly, methods can have the same name if they have different parameters
-        - For example, you can have two methods named Multiply in the Rectangle class, as long as one has one parameter and the other has two parameters:
+- **Methods** can have the same name if they have *different signatures*; this is called **overloading**
+    - We'll explain signatures in more detail in a minute
+    - Briefly, methods can have the same name if they have different parameters
+    - For example, you can have two methods named Multiply in the Rectangle class, as long as one has one parameter and the other has two parameters:
 
-            ```
-            public void Multiply(int factor)
-            {
-                length *= factor;
-                width *= factor;
-            }
-            public void Multiply(int lengthFactor, int widthFactor)
-            {
-                length *= lengthFactor;
-                width *= widthFactor;
-            }
-            ```
+        ```
+        public void Multiply(int factor)
+        {
+            length *= factor;
+            width *= factor;
+        }
+        public void Multiply(int lengthFactor, int widthFactor)
+        {
+            length *= lengthFactor;
+            width *= widthFactor;
+        }
+        ```
 
-          C# understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
+        C# understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
 
-        - We have used overloading already when we wrote multiple constructors -- constructors are methods too. For example, these two constructors have the same name, but different parameters:
+    - We have used overloading already when we wrote multiple constructors -- constructors are methods too. For example, these two constructors have the same name, but different parameters:
 
-            ```
-            public ClassRoom(string buildingParam, int numberParam)
-            {
-                building = buildingParam;
-                number = numberParam;
-            }
-            public ClassRoom()
-            {
-                building = null;
-                number = 0;
-            }
-            ```
+        ```
+        public ClassRoom(string buildingParam, int numberParam)
+        {
+            building = buildingParam;
+            number = numberParam;
+        }
+        public ClassRoom()
+        {
+            building = null;
+            number = 0;
+        }
+        ```
 
-- Method signatures
-    - A method's **signature** has 3 components: its **name**, the **type** of each parameter, and the **order** the parameters appear in
-    - Methods are unique if their *signatures* are unique, which is why they can have the same name
-    - Signature examples:
-        - `public void Multiply(int lengthFactor, int widthFactor)` -- the signature is `Multiply(int, int)` (name is `Multiply`, parameters are `int` and `int` type)
-        - `public void Multiply(int factor)` -- signature is `Multiply(int)`
-        - `public void Multiply(double factor)` -- signature is `Multiply(double)`
-        - These could all be in the same class since they all have different signatures
-    - Parameter *names* are not part of the signature, just their types
-        - Note that the parameter names are omitted when I write down the signature
+#### Method signatures
 
-        - That means these two methods are not unique and could not be in the same class:
+- A method's **signature** has 3 components: its **name**, the **type** of each parameter, and the **order** the parameters appear in
+- Methods are unique if their *signatures* are unique, which is why they can have the same name
+- Signature examples:
+    - `public void Multiply(int lengthFactor, int widthFactor)` -- the signature is `Multiply(int, int)` (name is `Multiply`, parameters are `int` and `int` type)
+    - `public void Multiply(int factor)` -- signature is `Multiply(int)`
+    - `public void Multiply(double factor)` -- signature is `Multiply(double)`
+    - These could all be in the same class since they all have different signatures
+- Parameter *names* are not part of the signature, just their types
+    - Note that the parameter names are omitted when I write down the signature
 
-            ```
-            public void SetWidth(int widthInMeters)
-            {
-                //...
-            }
-            public void SetWidth(int widthInFeet)
-            {
-                //...
-            }
-            ```
+    - That means these two methods are not unique and could not be in the same class:
 
-          Both have the same signature, `SetWidth(int)`, even though the parameters have different names. You might intend the parameters to be different (i.e. represent feet vs. meters), but any `int`-type parameter is the same to C#
+        ```
+        public void SetWidth(int widthInMeters)
+        {
+            //...
+        }
+        public void SetWidth(int widthInFeet)
+        {
+            //...
+        }
+        ```
 
-    - The method's return type is not part of the signature
-        - So far all the examples have the same return type (`void`), but changing it would not change the signature
-        - The signature of `public int Multiply(int factor)`  is `Multiply(int)`, which is the same as `public void Multiply(int factor)`
-        - The signature "begins" with the name of the method; everything "before" that doesn't count (i.e. `public`, `int`)
-    - The order of parameters is part of the signature, as long as the types are different
-        - Since parameter name is not part of the signature, only the type can determine the order
+        Both have the same signature, `SetWidth(int)`, even though the parameters have different names. You might intend the parameters to be different (i.e. represent feet vs. meters), but any `int`-type parameter is the same to C#
 
-        - These two methods have different signatures:
+- The method's return type is not part of the signature
+    - So far all the examples have the same return type (`void`), but changing it would not change the signature
+    - The signature of `public int Multiply(int factor)`  is `Multiply(int)`, which is the same as `public void Multiply(int factor)`
+    - The signature "begins" with the name of the method; everything "before" that doesn't count (i.e. `public`, `int`)
+- The order of parameters is part of the signature, as long as the types are different
+    - Since parameter name is not part of the signature, only the type can determine the order
 
-            ```
-            public int Update(int number, string name)
-            {
-                //...
-            }
-            public int Update(string name, int number)
-            {
-                //..
-            }
-            ```
+    - These two methods have different signatures:
 
-          The signature of the first method is `Update(int, string)`. The signature of the second method is `Update(string, int)`.
+        ```
+        public int Update(int number, string name)
+        {
+            //...
+        }
+        public int Update(string name, int number)
+        {
+            //..
+        }
+        ```
 
-        - These two methods have the same signature, and could not be in the same class:
+        The signature of the first method is `Update(int, string)`. The signature of the second method is `Update(string, int)`.
 
-            ```
-            public void Multiply(int lengthFactor, int widthFactor)
-            {
-                //...
-            }
-            public void Multiply(int widthFactor, int lengthFactor)
-            {
-                //...
-            }
-            ```
+    - These two methods have the same signature, and could not be in the same class:
 
-          The signature for both methods is `Multiply(int, int)`, even though we switched the order of the parameters -- the name doesn't count, and they are both `int` type
+        ```
+        public void Multiply(int lengthFactor, int widthFactor)
+        {
+            //...
+        }
+        public void Multiply(int widthFactor, int lengthFactor)
+        {
+            //...
+        }
+        ```
 
-    - Constructors have signatures too
-        - The constructor `ClassRoom(string buildingParam, int numberParam)` has the signature `ClassRoom(string, int)`
-        - The constructor `ClassRoom()` has the signature `ClassRoom()`
-        - Constructors all have the same name, but they are unique if their signatures (parameters) are different
+        The signature for both methods is `Multiply(int, int)`, even though we switched the order of the parameters -- the name doesn't count, and they are both `int` type
 
-- Calling overloaded methods
-    - Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to run -- `myRect.GetLength()` would call the `GetLength` method
-    - When a method is overloaded, you must use the entire signature to determine which method gets executed
-    - A method call has a "signature" too: the name of the method, and the type and order of the arguments
-    - C# will execute the method whose signature matches the signature of the method call
-    - Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
-    - Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
-    - The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
-    - If no method or constructor matches the signature of the method call, you get a compile error. You still can't write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
+- Constructors have signatures too
+    - The constructor `ClassRoom(string buildingParam, int numberParam)` has the signature `ClassRoom(string, int)`
+    - The constructor `ClassRoom()` has the signature `ClassRoom()`
+    - Constructors all have the same name, but they are unique if their signatures (parameters) are different
+
+#### Calling overloaded methods
+
+- Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to run -- `myRect.GetLength()` would call the `GetLength` method
+- When a method is overloaded, you must use the entire signature to determine which method gets executed
+- A method call has a "signature" too: the name of the method, and the type and order of the arguments
+- C# will execute the method whose signature matches the signature of the method call
+- Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
+- Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
+- The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
+- If no method or constructor matches the signature of the method call, you get a compile error. You still can't write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
 
 ## Constructors in UML
 
@@ -443,102 +448,108 @@
 ## Properties
 
 - Attributes are implemented with a standard "template" of code
-    - Remember, "attribute" is the abstract concept of some data stored in an object; "instance variable" is the way that data is actually stored
-    - First, declare an instance variable for the attribute
-    - Then write a "getter" method for the instance variable
-    - Then write a "setter" method for the instance variable
-    - With this combination of instance variable and methods, the object has an attribute that can be read (with the getter) and written (with the setter)
-    - For example, this code implements a "width" attribute for the class Rectangle:
+- Remember, "attribute" is the abstract concept of some data stored in an object; "instance variable" is the way that data is actually stored
+- First, declare an instance variable for the attribute
+- Then write a "getter" method for the instance variable
+- Then write a "setter" method for the instance variable
+- With this combination of instance variable and methods, the object has an attribute that can be read (with the getter) and written (with the setter)
+- For example, this code implements a "width" attribute for the class Rectangle:
 
-        ```
-        class Rectangle
+    ```
+    class Rectangle
+    {
+        private int width;
+        public void SetWidth(int value)
         {
-            private int width;
-            public void SetWidth(int value)
-            {
-                width = value;
-            }
-            public int GetWidth()
+            width = value;
+        }
+        public int GetWidth()
+        {
+            return width;
+        }
+    }
+    ```
+
+- Note that there's a lot of repetitive or "obvious" code here:
+    - The name of the attribute is intended to be "width," so you must name the instance variable `width`, and the methods `GetWidth` and `SetWidth`, repeating the name three times.
+    - The attribute is intended to be type `int`, so you must ensure that the instance variable is type `int`, the getter has a return type of `int`, and the setter has a parameter type of `int`. Similarly, this repeats the data type three times.
+    - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
+- Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition
+
+#### Writing properties
+
+- Declare an instance variable for the attribute, like before
+- A **property declaration** has 3 parts:
+    - Header, which gives the property a name and type (very similar to variable declaration)
+    - `get` section, which declares the "getter" method for the property
+    - `set` section, which declares the "setter" method for the property
+- Example code, implementing the "width" attribute for Rectangle (this replaces the code in the previous example):
+
+    ```
+    class Rectangle
+    {
+        private int width;
+        public int Width
+        {
+            get
             {
                 return width;
             }
-        }
-        ```
-
-    - Note that there's a lot of repetitive or "obvious" code here:
-        - The name of the attribute is intended to be "width," so you must name the instance variable `width`, and the methods `GetWidth` and `SetWidth`, repeating the name three times.
-        - The attribute is intended to be type `int`, so you must ensure that the instance variable is type `int`, the getter has a return type of `int`, and the setter has a parameter type of `int`. Similarly, this repeats the data type three times.
-        - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
-    - Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition
-- Writing properties
-    - Declare an instance variable for the attribute, like before
-    - A **property declaration** has 3 parts:
-        - Header, which gives the property a name and type (very similar to variable declaration)
-        - `get` section, which declares the "getter" method for the property
-        - `set` section, which declares the "setter" method for the property
-    - Example code, implementing the "width" attribute for Rectangle (this replaces the code in the previous example):
-
-        ```
-        class Rectangle
-        {
-            private int width;
-            public int Width
+            set
             {
-                get
-                {
-                    return width;
-                }
-                set
-                {
-                    width = value;
-                }
+                width = value;
             }
         }
-        ```
+    }
+    ```
 
-    - Header syntax: `[public/private] [type] [name]`
-    - *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
-    - `get` section: Starts with the keyword `get`, then a method body inside a code block (between braces)
-        - `get` is like a method header that always has the same name, and its other features are implied by the property's header
-        - Access modifier: Same as the property header's, i.e. `public` in this example
-        - Return type: Same as the property header's type, i.e. `int` in this example (so imagine it says `public int get()`)
-        - Body of `get` section is exactly the same as body of a "getter": return the instance variable
-    - `set` section: Starts with the keyword `set`, then a method body inside a code block
-        - Also a method header with a fixed name, access modifier, return type, and parameter
-        - Access modifier: Same as the property header's, i.e. `public` in this example
-        - Return type: Always `void` (like a setter)
-        - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
-        - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
-- Using properties
-    - Properties are members of an object, just like instance variables and methods
-    - Access them with the "member access" operator, aka the dot operator
-        - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
-    - A complete example, where the "length" attribute is implemented the "old" way with a getter and setter, and the "width" attribute is implemented with a property:
+- Header syntax: `[public/private] [type] [name]`
+- *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
+- `get` section: Starts with the keyword `get`, then a method body inside a code block (between braces)
+    - `get` is like a method header that always has the same name, and its other features are implied by the property's header
+    - Access modifier: Same as the property header's, i.e. `public` in this example
+    - Return type: Same as the property header's type, i.e. `int` in this example (so imagine it says `public int get()`)
+    - Body of `get` section is exactly the same as body of a "getter": return the instance variable
+- `set` section: Starts with the keyword `set`, then a method body inside a code block
+    - Also a method header with a fixed name, access modifier, return type, and parameter
+    - Access modifier: Same as the property header's, i.e. `public` in this example
+    - Return type: Always `void` (like a setter)
+    - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
+    - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
 
-        ```
-        !include code/using_width_property.cs
-        ```
+#### Using properties
 
-    - Properties "act like" variables: you can assign to them and read from them
-    - Reading from a property will *automatically* call the `get` method for that property
-        - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` section inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
-        - This is equivalent to `Console.WriteLine($"The width is {myRectangle.GetWidth()}");` using the "old" Rectangle code
-    - Assigning to (writing) a property will *automatically* call the `set` method for that property, with an argument equal to the right side of the `=` operator
-        - For example, `myRectangle.Width = 15;` will call the `set` section inside the `Width` property, with `value` equal to 15
-        - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
-- Properties in UML
-    - Since properties represent attributes, they go in the "attributes" box (the second box)
-    - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
-        - No need to write both the property `Width` and the instance variable `width`
-    - Syntax: `[+/-] <<property>> [name]: [type]`
-    - Note that the access modifier (+ or -) is for the property, not the instance variable, so it's + if the property is `public` (which it usually is)
-    - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
+- Properties are members of an object, just like instance variables and methods
+- Access them with the "member access" operator, aka the dot operator
+    - For example, `myRect.Width` will access the property we wrote, assuming `myRect` is a Rectangle
+- A complete example, where the "length" attribute is implemented the "old" way with a getter and setter, and the "width" attribute is implemented with a property:
 
-        |             **Rectangle**            |
-        | ------------------------------------ |
-        | + \<\<property\>\> Width: `int`      |
-        | + \<\<property\>\> Length: `int`     |
-        | ------------------------------------ |
-        | + ComputeArea(): `int`               |
+    ```
+    !include code/using_width_property.cs
+    ```
 
-    - We no longer need to write all those setter and getter methods, since they are "built in" to the properties
+- Properties "act like" variables: you can assign to them and read from them
+- Reading from a property will *automatically* call the `get` method for that property
+    - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` section inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
+    - This is equivalent to `Console.WriteLine($"The width is {myRectangle.GetWidth()}");` using the "old" Rectangle code
+- Assigning to (writing) a property will *automatically* call the `set` method for that property, with an argument equal to the right side of the `=` operator
+    - For example, `myRectangle.Width = 15;` will call the `set` section inside the `Width` property, with `value` equal to 15
+    - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
+
+#### Properties in UML
+
+- Since properties represent attributes, they go in the "attributes" box (the second box)
+- If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
+    - No need to write both the property `Width` and the instance variable `width`
+- Syntax: `[+/-] <<property>> [name]: [type]`
+- Note that the access modifier (+ or -) is for the property, not the instance variable, so it's + if the property is `public` (which it usually is)
+- Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
+
+    |             **Rectangle**            |
+    | ------------------------------------ |
+    | + \<\<property\>\> Width: `int`      |
+    | + \<\<property\>\> Length: `int`     |
+    | ------------------------------------ |
+    | + ComputeArea(): `int`               |
+
+- We no longer need to write all those setter and getter methods, since they are "built in" to the properties

@@ -142,182 +142,187 @@ Let's look at each part of this code in order.
     - In `rect2.SetLength(7)`, `rect2` is the calling object, so `SetLength` will modify `rect2`
         - `SetLength` begins executing with `lengthParameter` equal to 7
         - The instance variable `length` in `length = lengthParameter` refers to `rect2`'s length
-- Accessing object members
-    - The "dot operator" that we use to call methods is technically the **member access operator**
-    - A **member** of an object is either a method or an instance variable
-    - When we write `objectName.methodName()`, e.g. `rect1.SetLength(12)`, we are using the dot operator to access the "SetLength" member of `rect1`, which is a method; this means we want to call (execute) the `SetLength` method of `rect1`
-    - We can also use the dot operator to access instance variables, although we usually don't do that because of encapsulation
-    - If we wrote the `Rectangle` class like this:
 
-        ```
-        class Rectangle
-        {
-            public int length;
-            public int width;
-        }
-        ```
+#### Accessing object members
 
-      Then we could write a Main method that uses the dot operator to access the `length` and `width` instance variables, like this:
+- The "dot operator" that we use to call methods is technically the **member access operator**
+- A **member** of an object is either a method or an instance variable
+- When we write `objectName.methodName()`, e.g. `rect1.SetLength(12)`, we are using the dot operator to access the "SetLength" member of `rect1`, which is a method; this means we want to call (execute) the `SetLength` method of `rect1`
+- We can also use the dot operator to access instance variables, although we usually don't do that because of encapsulation
+- If we wrote the `Rectangle` class like this:
 
-        ```
-        static void Main(string[] args)
-        {
-            Rectangle rect1 = new Rectangle();
-            rect1.length = 12;
-            rect1.width = 3;
-        }
-        ```
+    ```
+    class Rectangle
+    {
+        public int length;
+        public int width;
+    }
+    ```
 
-     But this code violates encapsulation, so we won't do this.
-- Method calls in more detail
-    - Now that we know about the member access operator, we can explain how method calls work a little better
+    Then we could write a Main method that uses the dot operator to access the `length` and `width` instance variables, like this:
 
-    - When we write `rect1.SetLength(12)`, the `SetLength` method is executed with `rect1` as the calling object -- we're accessing the `SetLength` member of `rect1` in particular (even though every Rectangle has the same `SetLength` method)
+    ```
+    static void Main(string[] args)
+    {
+        Rectangle rect1 = new Rectangle();
+        rect1.length = 12;
+        rect1.width = 3;
+    }
+    ```
 
-    - This means that when the code in `SetLength` uses an instance variable, i.e. `length`, it will automatically access `rect1`'s copy of the instance variable
+    But this code violates encapsulation, so we won't do this.
 
-    - You can imagine that the `SetLength` method "changes" to this when you call `rect1.SetLength()`:
+#### Method calls in more detail
+
+- Now that we know about the member access operator, we can explain how method calls work a little better
+
+- When we write `rect1.SetLength(12)`, the `SetLength` method is executed with `rect1` as the calling object -- we're accessing the `SetLength` member of `rect1` in particular (even though every Rectangle has the same `SetLength` method)
+
+- This means that when the code in `SetLength` uses an instance variable, i.e. `length`, it will automatically access `rect1`'s copy of the instance variable
+
+- You can imagine that the `SetLength` method "changes" to this when you call `rect1.SetLength()`:
+
+    ```
+    public void SetLength(int lengthParameter)
+    {
+        rect1.length = lengthParameter;
+    }
+    ```
+
+    Note that we use the "dot" (member access) operator on `rect1` to access its `length` instance variable.
+
+- Similarly, you can imagine that the `SetLength` method "changes" to this when you call `rect2.SetLength()`:
+
+    ```
+    public void SetLength(int lengthParameter)
+    {
+        rect2.length = lengthParameter;
+    }
+    ```
+
+- The calling object is automatically "inserted" before any instance variables in a method
+
+- The keyword `this` is an explicit reference to "the calling object"
+
+    - Instead of imagining that the calling object's name is inserted before each instance variable, you could write the `SetLength` method like this:
 
         ```
         public void SetLength(int lengthParameter)
         {
-            rect1.length = lengthParameter;
+            this.length = lengthParameter;
         }
         ```
 
-      Note that we use the "dot" (member access) operator on `rect1` to access its `length` instance variable.
+    - This is valid code (unlike our imaginary examples) and will work exactly the same as our previous way of writing `SetLength`
 
-    - Similarly, you can imagine that the `SetLength` method "changes" to this when you call `rect2.SetLength()`:
+    - When `SetLength` is called with `rect1.SetLength(12)`, `this` becomes equal to `rect1`, just like `lengthParameter` becomes equal to 12
+
+    - When `SetLength` is called with `rect2.SetLength(7)`, `this` becomes equal to `rect2` and `lengthParameter` becomes equal to 7
+
+
+#### Methods and instance variables
+
+- Using a variable in an expression means *reading* its value
+
+- A variable only changes when it's on the left side of an assignment statement; this is *writing* to the variable
+
+- A method that uses instance variables in an expression, but doesn't assign to them, will not modify the object
+
+- For example, consider the `ComputeArea` method:
+
+    ```
+    public int ComputeArea()
+    {
+        return length * width;
+    }
+    ```
+
+    It reads the current values of `length` and `width` to compute their product, but the product is returned to the method's caller. The instance variables are not changed.
+
+- After executing the following code:
+
+    ```
+    Rectangle rect1 = new Rectangle();
+    rect1.SetLength(12);
+    rect1.SetWidth(3);
+    int area = rect1.ComputeArea();
+    ```
+
+    `rect1` has a `length` of 12 and a `width` of 3. The call to `rect1.ComputeArea()` computes $12 \cdot 3 = 36$, and the `area` variable is assigned this return value, but it does not change `rect1`.
+
+#### Methods and return values
+
+- Recall the basic structure of a program: receive input, compute something, produce output
+
+- A method has the same structure: it *receives input* from its parameters, *computes* by executing the statements in its body, then *produces output* by returning a value
+
+    - For example, consider this method defined in the Rectangle class:
 
         ```
-        public void SetLength(int lengthParameter)
+        public int LengthProduct(int factor)
         {
-            rect2.length = lengthParameter;
+            return length * factor;
         }
         ```
 
-    - The calling object is automatically "inserted" before any instance variables in a method
+        Its input is the parameter `factor`, which is an `int`. In the method body, it computes the product of the rectangle's length and `factor`. The method's output is the resulting product.
 
-    - The keyword `this` is an explicit reference to "the calling object"
+- The `return` statement specifies the output of the method: a variable, expression, etc. that produces some value
 
-        - Instead of imagining that the calling object's name is inserted before each instance variable, you could write the `SetLength` method like this:
+- A method call can be used in other code as if it were a value. The "value" of a method call is the method's return value.
 
-            ```
-            public void SetLength(int lengthParameter)
-            {
-                this.length = lengthParameter;
-            }
-            ```
+    - In previous examples, we wrote `int area = rect1.ComputeArea();`, which assigns a variable (`area`) a value (the return value of `ComputeArea()`)
 
-        - This is valid code (unlike our imaginary examples) and will work exactly the same as our previous way of writing `SetLength`
-
-        - When `SetLength` is called with `rect1.SetLength(12)`, `this` becomes equal to `rect1`, just like `lengthParameter` becomes equal to 12
-
-        - When `SetLength` is called with `rect2.SetLength(7)`, `this` becomes equal to `rect2` and `lengthParameter` becomes equal to 7
-
-- Methods don't always change instance variables
-
-    - Using a variable in an expression means *reading* its value
-
-    - A variable only changes when it's on the left side of an assignment statement; this is *writing* to the variable
-
-    - A method that uses instance variables in an expression, but doesn't assign to them, will not modify the object
-
-    - For example, consider the `ComputeArea` method:
-
-        ```
-        public int ComputeArea()
-        {
-            return length * width;
-        }
-        ```
-
-      It reads the current values of `length` and `width` to compute their product, but the product is returned to the method's caller. The instance variables are not changed.
-
-    - After executing the following code:
+    - The `LengthProduct` method can be used like this:
 
         ```
         Rectangle rect1 = new Rectangle();
         rect1.SetLength(12);
-        rect1.SetWidth(3);
-        int area = rect1.ComputeArea();
+        int result = rect1.LengthProduct(2) + 1;
         ```
 
-      `rect1` has a `length` of 12 and a `width` of 3. The call to `rect1.ComputeArea()` computes $12 \cdot 3 = 36$, and the `area` variable is assigned this return value, but it does not change `rect1`.
+        When executing the third line of code, the computer first runs the `LengthProduct` method with argument (input) 2, which computes the product $12 \cdot 2 = 24$. Then it uses the return value of `LengthProduct`, which is 24, to evaluate the expression `rect1.LengthProduct(2) + 1`, producing a result of 25. Finally, it assigns the value 25 to the variable `result`.
 
-- Methods and return values
+- When writing a method that returns a value, the value in the `return` statement **must** be the same type as the method's return type
 
-    - Recall the basic structure of a program: receive input, compute something, produce output
+    - If the value returned by `LengthProduct` is not an `int`, we'll get a compile error
 
-    - A method has the same structure: it *receives input* from its parameters, *computes* by executing the statements in its body, then *produces output* by returning a value
+    - This won't work:
 
-        - For example, consider this method defined in the Rectangle class:
+        ```
+        public int LengthProduct(double factor)
+        {
+            return length * factor;
+        }
+        ```
 
-            ```
-            public int LengthProduct(int factor)
-            {
-              return length * factor;
-            }
-            ```
+        Now that `factor` has type `double`, the expression `length * factor` will need to implicitly convert `length` from `int` to `double` in order to make the types match. Then the product will also be a `double`, so the return value does not match the return type (`int`).
 
-          Its input is the parameter `factor`, which is an `int`. In the method body, it computes the product of the rectangle's length and `factor`. The method's output is the resulting product.
+    - We could fix it by either changing the return type of the method to `double`, or adding a cast to `int` to the product so that the return value is still an `int`
 
-    - The `return` statement specifies the output of the method: a variable, expression, etc. that produces some value
+- Not all methods return a value, but all methods must have a return type
 
-    - A method call can be used in other code as if it were a value. The "value" of a method call is the method's return value.
+    - The return type `void` means "nothing is returned"
 
-        - In previous examples, we wrote `int area = rect1.ComputeArea();`, which assigns a variable (`area`) a value (the return value of `ComputeArea()`)
+    - If your method does not return a value, its return type *must* be `void`. If the return type is not `void`, the method *must* return a value.
 
-        - The `LengthProduct` method can be used like this:
+    - This will cause a compile error because the method has a return type of `int` but no return statement:
 
-            ```
-            Rectangle rect1 = new Rectangle();
-            rect1.SetLength(12);
-            int result = rect1.LengthProduct(2) + 1;
-            ```
+        ```
+        public int SetLength(int lengthP)
+        {
+            length = lengthP;
+        }
+        ```
 
-          When executing the third line of code, the computer first runs the `LengthProduct` method with argument (input) 2, which computes the product $12 \cdot 2 = 24$. Then it uses the return value of `LengthProduct`, which is 24, to evaluate the expression `rect1.LengthProduct(2) + 1`, producing a result of 25. Finally, it assigns the value 25 to the variable `result`.
+    - This will cause a compile error because the method has a return type of `void`, but it attempts to return something anyway:
 
-    - When writing a method that returns a value, the value in the `return` statement **must** be the same type as the method's return type
-
-        - If the value returned by `LengthProduct` is not an `int`, we'll get a compile error
-
-        - This won't work:
-
-            ```
-            public int LengthProduct(double factor)
-            {
-                return length * factor;
-            }
-            ```
-
-          Now that `factor` has type `double`, the expression `length * factor` will need to implicitly convert `length` from `int` to `double` in order to make the types match. Then the product will also be a `double`, so the return value does not match the return type (`int`).
-
-        - We could fix it by either changing the return type of the method to `double`, or adding a cast to `int` to the product so that the return value is still an `int`
-
-    - Not all methods return a value, but all methods must have a return type
-
-        - The return type `void` means "nothing is returned"
-
-        - If your method does not return a value, its return type *must* be `void`. If the return type is not `void`, the method *must* return a value.
-
-        - This will cause a compile error because the method has a return type of `int` but no return statement:
-
-            ```
-            public int SetLength(int lengthP)
-            {
-                length = lengthP;
-            }
-            ```
-
-        - This will cause a compile error because the method has a return type of `void`, but it attempts to return something anyway:
-
-            ```
-            public void GetLength()
-            {
-                return length;
-            }
-            ```
+        ```
+        public void GetLength()
+        {
+            return length;
+        }
+        ```
 
 ## Introduction to UML
 
@@ -378,126 +383,126 @@ Let's look at each part of this code in order.
 
 ## Variable Scope
 
-- Instance variables are different from local variables
+#### Instance variables vs. local variables
 
-    - Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
+- Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
 
-    - Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the Main method (they're local to the Main method!).
+- Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the Main method (they're local to the Main method!).
 
-    - Example: In class Rectangle, we have these two methods:
+- Example: In class Rectangle, we have these two methods:
 
-        ```
-        public void SwapDimensions()
+    ```
+    public void SwapDimensions()
+    {
+        int temp = length;
+        length = width;
+        width = temp;
+    }
+    public int GetLength()
+    {
+        return length;
+    }
+    ```
+
+    - `temp` is a local variable within `SwapDimensions`, while `length` and `width` are instance variables
+    - The `GetLength` method can't use `temp`; it is visible only to `SwapDimensions`
+    - When `SwapDimensions` changes `length`, that change is persistent -- it will still be different when `GetLength` executes, and the next call to `GetLength` after `SwapDimensions` will return the new length
+    - When `SwapDimensions` assigns a value to `temp`, it only has that value within the current call to `SwapDimensions` -- after `SwapDimensions` finishes, `temp` disappears, and the next call to `SwapDimensions` creates a new `temp`
+
+#### Definition of scope
+
+- Variables exist only in limited **time** and **space** within the program
+- Outside those limits, the variable cannot be accessed -- e.g. local variables cannot be accessed outside their method
+- Scope of a variable: The region of the program where it is accessible/visible
+    - A variable is "in scope" when it is accessible
+    - A variable is "out of scope" when it doesn't exist or can't be accessed
+- Time limits to scope: Scope begins *after* the variable has been declared
+    - This is why you can't use a variable before declaring it
+- Space limits to scope: Scope is within the same *code block* where the variable is declared
+    - Code blocks are defined by curly braces: everything between matching `{` and `}` is in the same code block
+    - Instance variables are declared in the class's code block (they are inside `class Rectangle`'s body, but not inside anything else), so their scope extends to the entire class
+    - Code blocks nest: A method's code block is inside the class's code block, so instance variables are also in scope within each method's code block
+    - Local variables are declared inside a method's code block, so their scope is limited to that single method
+- The scope of a parameter (which is a variable) is the method's code block - it's the same as a local variable for that method
+- Scope example:
+
+    ```
+    public void SwapDimensions()
+    {
+        int temp = length;
+        length = width;
+        width = temp;
+    }
+    public void SetWidth(int widthParam)
+    {
+        int temp = width;
+        width = widthParam;
+    }
+    ```
+
+    - The two variables named `temp` have different scopes: One has a scope limited to the `SwapDimensions` method's body, while the other has a scope limited to the `SetWidth` method's body
+    - This is why they can have the same name: variable names must be unique *within the variable's scope*. You can have two variables with the same name if they are in different scopes.
+    - The scope of instance variables `length` and `width` is the body of class `Rectangle`, so they are in scope for both of these methods
+
+#### Variables with overlapping scopes
+
+- This code is legal (compiles) but doesn't do what you want:
+
+    ```
+    class Rectangle
+    {
+        private int length;
+        private int width;
+        public void UpdateWidth(int newWidth)
         {
-            int temp = length;
-            length = width;
-            width = temp;
+            int width = 5;
+            width = newWidth;
         }
-        public int GetLength()
+    }
+    ```
+
+- The instance variable `width` and the local variable `width` have different scopes, so they can have the same name
+
+- But the instance variable's scope (the class `Rectangle`) *overlaps* with the local variable's scope (the method `UpdateWidth`)
+
+- If two variables have the same name and overlapping scopes, the variable with the *closer* or *smaller* scope **shadows** the variable with the *farther* or *wider* scope: the name will refer *only* to the variable with the smaller scope
+
+- In this case, that means `width` inside `UpdateWidth` refers only to the local variable named `width`, whose scope is smaller because it is limited to the `UpdateWidth` method. The line `width = newWidth` actually changes the local variable, not the instance variable named `width`.
+
+- Since instance variables have a large scope (the whole class), they will always get shadowed by variables declared within methods
+
+- You can prevent shadowing by using the keyword `this`, like this:
+
+    ```
+    class Rectangle
+    {
+        private int length;
+        private int width;
+        public void UpdateWidth(int newWidth)
         {
-            return length;
+            int width = 5;
+            this.width = newWidth;
         }
-        ```
+    }
+    ```
 
-        - `temp` is a local variable within `SwapDimensions`, while `length` and `width` are instance variables
-        - The `GetLength` method can't use `temp`; it is visible only to `SwapDimensions`
-        - When `SwapDimensions` changes `length`, that change is persistent -- it will still be different when `GetLength` executes, and the next call to `GetLength` after `SwapDimensions` will return the new length
-        - When `SwapDimensions` assigns a value to `temp`, it only has that value within the current call to `SwapDimensions` -- after `SwapDimensions` finishes, `temp` disappears, and the next call to `SwapDimensions` creates a new `temp`
+    Since `this` means "the calling object", `this.width` means "access the `width` member of the calling object." This can only mean the instance variable `width`, not the local variable with the same name
 
-- Each variable has a **scope**
+- Incidentally, you can also use `this` to give your parameters the same name as the instance variables they're modifying:
 
-    - Variables exist only in limited **time** and **space** within the program
-    - Outside those limits, the variable cannot be accessed -- e.g. local variables cannot be accessed outside their method
-    - Scope of a variable: The region of the program where it is accessible/visible
-        - A variable is "in scope" when it is accessible
-        - A variable is "out of scope" when it doesn't exist or can't be accessed
-    - Time limits to scope: Scope begins *after* the variable has been declared
-        - This is why you can't use a variable before declaring it
-    - Space limits to scope: Scope is within the same *code block* where the variable is declared
-        - Code blocks are defined by curly braces: everything between matching `{` and `}` is in the same code block
-        - Instance variables are declared in the class's code block (they are inside `class Rectangle`'s body, but not inside anything else), so their scope extends to the entire class
-        - Code blocks nest: A method's code block is inside the class's code block, so instance variables are also in scope within each method's code block
-        - Local variables are declared inside a method's code block, so their scope is limited to that single method
-    - The scope of a parameter (which is a variable) is the method's code block - it's the same as a local variable for that method
-    - Scope example:
-
-        ```
-        public void SwapDimensions()
+    ```
+    class Rectangle
+    {
+        private int length;
+        private int width;
+        public void SetWidth(int width)
         {
-            int temp = length;
-            length = width;
-            width = temp;
+            this.width = width;
         }
-        public void SetWidth(int widthParam)
-        {
-            int temp = width;
-            width = widthParam;
-        }
-        ```
+    }
+    ```
 
-        - The two variables named `temp` have different scopes: One has a scope limited to the `SwapDimensions` method's body, while the other has a scope limited to the `SetWidth` method's body
-        - This is why they can have the same name: variable names must be unique *within the variable's scope*. You can have two variables with the same name if they are in different scopes.
-        - The scope of instance variables `length` and `width` is the body of class `Rectangle`, so they are in scope for both of these methods
-
-- Be careful when mixing instance and local variables
-
-    - This code is legal (compiles) but doesn't do what you want:
-
-        ```
-        class Rectangle
-        {
-            private int length;
-            private int width;
-            public void UpdateWidth(int newWidth)
-            {
-                int width = 5;
-                width = newWidth;
-            }
-        }
-        ```
-
-    - The instance variable `width` and the local variable `width` have different scopes, so they can have the same name
-
-    - But the instance variable's scope (the class `Rectangle`) *overlaps* with the local variable's scope (the method `UpdateWidth`)
-
-    - If two variables have the same name and overlapping scopes, the variable with the *closer* or *smaller* scope **shadows** the variable with the *farther* or *wider* scope: the name will refer *only* to the variable with the smaller scope
-
-    - In this case, that means `width` inside `UpdateWidth` refers only to the local variable named `width`, whose scope is smaller because it is limited to the `UpdateWidth` method. The line `width = newWidth` actually changes the local variable, not the instance variable named `width`.
-
-    - Since instance variables have a large scope (the whole class), they will always get shadowed by variables declared within methods
-
-    - You can prevent shadowing by using the keyword `this`, like this:
-
-        ```
-        class Rectangle
-        {
-            private int length;
-            private int width;
-            public void UpdateWidth(int newWidth)
-            {
-                int width = 5;
-                this.width = newWidth;
-            }
-        }
-        ```
-
-      Since `this` means "the calling object", `this.width` means "access the `width` member of the calling object." This can only mean the instance variable `width`, not the local variable with the same name
-
-    - Incidentally, you can also use `this` to give your parameters the same name as the instance variables they're modifying:
-
-        ```
-        class Rectangle
-        {
-            private int length;
-            private int width;
-            public void SetWidth(int width)
-            {
-                this.width = width;
-            }
-        }
-        ```
-
-      Without `this`, the body of the `SetWidth` method would be `width = width;`, which doesn't do anything (it would assign the parameter `width` to itself).
+    Without `this`, the body of the `SetWidth` method would be `width = width;`, which doesn't do anything (it would assign the parameter `width` to itself).
 
 ## Constants
 
