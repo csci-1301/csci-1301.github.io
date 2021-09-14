@@ -70,6 +70,10 @@ It should be $3.14159265358979$.
     #. A method that returns the area of the circle that calls it (i.e., $π$ times the radius squared).
 #. Test those two methods in your `Main` program, by displaying on the screen the area and the circumference of the object you created in the previous exercise.
 #. Use the format specifier `N` to round the circumference.
+#. Add two contructors:
+    #. a default, parameterless constructor: it does nothing
+    #. a constructor with 1 parameter for radius: it initializes radius attribute
+#. Add a `ToString` method that returns values or radius, circumference and area or the circle
 
 You can find a possible solution to this problem [in this archive](Circle_Solution.zip).
 
