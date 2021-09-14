@@ -30,6 +30,7 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
+        apt-get update
         test -f pandoc-2.14.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/2.14.2/pandoc-2.14.2-1-amd64.deb
         sudo dpkg -i pandoc-2.14.2-1-amd64.deb
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
