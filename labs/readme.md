@@ -53,8 +53,8 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Static](/labs/Static) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static classes, static class members |
 | [ChemicalElements](/labs/ChemicalElements) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static methods and method calls in non-static class |
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions<br/>- truth tables<br/>- operators: `==`,`!=`,`<`,`>`,`<=`,`>=`,`&&`,`\|\|`,`!` <br/>- evaluation, precedence |
-| [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements; ternary conditional operator |
-| [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch statement, choosing between if and switch |
+| [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements <br/>- `if`, `if-else`, `if-else-if`<br/>- using `%` operator to determine parity |
+| [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch, choosing between if and switch<br/>- `switch` syntax<br/>- convert: `if` ⬄ `switch`<br/>- ternary conditional operator (optional) |
 | [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
 | [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |
 | [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input |
