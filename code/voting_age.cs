@@ -17,23 +17,20 @@ class Program
             Console.WriteLine(
                 "I believe you made a mistake, nobody can live that long!");
         }
-        else
+        else if (yourAge >= 18)
         {
-            if (yourAge >= 18)
-            {
-                Console.WriteLine(
-                    "In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.");
-            }
-            else if (yourAge >= 19)
-            {
-                Console.WriteLine(
-                    "In all States but Mississippi and Puerto Rico, you have reached the age of majority.");
-            }
-            else if (yourAge >= 21)
-            {
-                Console.WriteLine(
-                    "You have reached the age of majority in all US states.");
-            }
+            Console.WriteLine(
+                "In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.");
+        }
+        else if (yourAge >= 19)
+        {
+            Console.WriteLine(
+                "In all States but Mississippi and Puerto Rico, you have reached the age of majority.");
+        }
+        else if (yourAge >= 21)
+        {
+            Console.WriteLine(
+                "You have reached the age of majority in all US states.");
         }
     }
 }
