@@ -76,6 +76,7 @@ We could actually "progressively" construct the message we will be displaying:
 
 ```
 string msg;
+
 if (a >= 0)
 {
     msg = "Positive";
@@ -91,7 +92,9 @@ if (a % 2 == 0)
 else // if (a % 2 != 0)
 {
     msg += " and odd";
-}    
+}
+
+Console.WriteLine(msg);
 ```
 
 Much better!
