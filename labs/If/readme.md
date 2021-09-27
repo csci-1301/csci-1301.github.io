@@ -39,7 +39,7 @@ Read all the instructions in this part before starting to type code. Create a ne
 #. Ask the user for an integer, and display on the screen "Negative" if the integer is negative, "Positive" if the integer in positive, and nothing if the integer is $0$.
 #. Ask the user for an integer, and display on the screen "positive and odd" if the number is positive and odd, "positive and even" if the number is positive and even, "negative and odd" if the number is negative and odd, "negative and even" if the number is negative and even, and "You picked $0$" if the number is $0$.
 
-For each of those questions, write on paper whenever you should use if, if-else, if-else-if or nested conditional structures, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, $0$, and remember that $0$ is even, etc.) and make sure that what is displayed on the screen is always correct.
+For each of those questions, write on paper whenever you should use `if`, `if-else`, `if-else-if`, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively: enter all kinds of values (positive and odd, negative and even, $0$, and remember that $0$ is even, etc.) and make sure that what is displayed on the screen is always correct.
 
 ## Observation: How to Construct a Value Progressively
 
@@ -54,24 +54,23 @@ A possible answer is:
 int a;
 Console.WriteLine("Enter an integer");
 a = int.Parse(Console.ReadLine());
-if (a >= 0)
-{
-    if (a % 2 == 0)
-        Console.WriteLine("Positive and even");
-    else // if (a % 2 != 0)
-        Console.WriteLine("Positive and odd");
+
+if (a >= 0 && a % 2 == 0){
+	Console.WriteLine("Positive and even");
 }
-else
-{
-    if (a % 2 == 0)
-        Console.WriteLine("Negative and even");
-    else
-        Console.WriteLine("Negative and odd");
+else if (a >= 0 && a % 2 != 0) {
+	Console.WriteLine("Positive and odd");	
+}
+else if (a < 0 && a % 2 == 0){
+	Console.WriteLine("Negative and even");
+}
+else if (a < 0 && a % 2 != 0){
+	Console.WriteLine("Negative and odd");
 }
 ```
 
 That is a lot of repetition!
-And, as you know, programmers _hate_ having to copy-and-paste the very same code, as it requires twice the editing every time you make an update!
+And, as you know, it is not good practice to copy-and-paste the very same code, as it requires twice the editing every time you make an update!
 
 We could actually "progressively" construct the message we will be displaying:
 
@@ -85,10 +84,14 @@ else
 {
     msg = "Negative";
 }
-if (a % 2 == 0)
+if (a % 2 == 0) 
+{
     msg += " and even";
+}    
 else // if (a % 2 != 0)
+{
     msg += " and odd";
+}    
 ```
 
 Much better!
@@ -96,21 +99,6 @@ Since the two conditions are actually independent, we can test them in two diffe
 
 
 # Pushing Further (Optional)
-
-## Conditional Operator
-
-You were introduced to the conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions).
-Its structure is:
-
-`condition ? first_expression : second_expression;`
-
-You can read more about it [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
-
-If you have time, practice using the conditional operator by adding these statements to your program:
-
-#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You already wrote an `if` statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.
-#. Write a statement that sets `initial` to `'B'` if `myVar` is greater than 500 and to `'S'` if `myVar` is less than or equal to 500.
-#. Write a statement that doubles the value of `myVar` if `day` is `"Sat."` or `"Sun."` and adds 1 to the value of `myVar` otherwise.
 
 ## Computing Entry Price
 
@@ -129,3 +117,18 @@ Some tips:
 
 - When asking "yes" / "no" questions, treat "y" and "Y" as a "Yes", and any other string as a "No".
 - Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, $\$4 \times 6 = \$24 < \$ 30$, but we would still sell them the pass).
+
+## Conditional Operator
+
+Here we introduced a conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:
+
+`condition ? first_expression : second_expression;`
+
+You can read more about it [in the documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
+
+If you have time, practice using the conditional operator by adding these statements to your program:
+
+#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You already wrote an `if` statement that accomplishes this in the previous exercise, so you just need to rewrite it using the conditional operator.
+#. Write a statement that sets `initial` to `'B'` if `myVar` is greater than 500 and to `'S'` if `myVar` is less than or equal to 500.
+#. Write a statement that doubles the value of `myVar` if `day` is `"Sat"` or `"Sun"` and adds 1 to the value of `myVar` otherwise.
+
