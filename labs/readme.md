@@ -48,7 +48,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | - operators: `+ - * / %`<br/>- string interpolation<br/>- implicit and explicit cast |
 | [UserInput](/labs/UserInput) | [Variables](/labs/Variables) | [Reading and Displaying](/lectures/050_reading_and_displaying) | Reading input from user<br/>- `Parse` method<br/>- `ReadLine()` |
 | [Rectangle](/labs/Rectangle) | [Variables](/labs/Variables)  | [Introduction to Objects](/lectures/060_object_oriented_intro) | Implementing a class with attributes and methods<br/>- getters, setters<br/>- implementing other methods |
-| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class, writing a class from scratch<br/>- attributes, methods<br/>- constructors, `ToString()` |
+| [PreciseRectangle](/labs/PreciseRectangle) | [Rectangle](/labs/Rectangle) | [Introduction to Objects](/lectures/060_object_oriented_intro) | Extending a class, writing a class from scratch<br/>- attributes, methods<br/>- constants |
 | [ClassDiagram](/labs/ClassDiagram) | [Rectangle](/labs/Rectangle)  |[Introduction to Objects](/lectures/060_object_oriented_intro) | Practice reading and creating a UML class diagrams |
 | [ConstructorToString](/labs/ConstructorToString) | [PreciseRectangle](/labs/PreciseRectangle) | [Advanced Objects](/lectures/070_object_oriented_contd) | Writing a class with custom constructors and `ToString()` |
 | [Static](/labs/Static) | [Rectangle](/labs/Rectangle) | [Static](/lectures/170_static_elements) | static classes, static class members |

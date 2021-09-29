@@ -23,7 +23,7 @@ It is recommended to pick the one you feel the most comfortable with (you will g
 #. In the "PreciseRectangle.cs" file, replace `class Rectangle` with `class PreciseRectangle`.
 #. Comment out the body of the `Main` method in "Program.cs".
 #. Your program should compile as it is, but you have to edit `PreciseRectangle.cs` to now store the `width` and the `length` with `double`, and to propagate this change accordingly. What should be the return type of `GetWidth`, for instance?
-#. Declare and manipulate precise rectangles (i.e., with floating-point values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
+#. Declare and manipulate precise rectangles (with non-integer values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 #. Add the missing methods `ComputePerimeter`, `Swap`, `MultiplyRectangle`, described in the section below.
 
 ### Starting From Scratch
@@ -42,7 +42,7 @@ Then, select "Class" in the dialog box, write "PreciseRectangle.cs" as the name 
         - one method `Swap` to swap the length and the width of a precise rectangle,
         - one method `MultiplyRectangle` to multiply the length and width of a precise rectangle by a factor given in the argument as an integer.
 
-#. Declare and manipulate rectangles with floating-point values for the width and the length in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
+#. Declare and manipulate rectangles with floating-point (i.e. `double`) values for the width and the length in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 
 # Writing A Circle Class
 
@@ -61,7 +61,7 @@ Display its radius on the screen using the method you defined previously.
 
 ## Extending the Class
 
-#. In C#, `Math.PI` is a `double` holding an approximation of $π$.
+#. In C#, the constant `Math.PI` is a `double` holding an approximation of $π$.
 In the `Main` method of `Program.cs`, write a statement that displays its value on the screen.
 It should be $3.14159265358979$.
 #. Now, edit this statement and use the format specifier `N`, to display the value of $π$ rounded to $3.14$.
@@ -70,10 +70,6 @@ It should be $3.14159265358979$.
     #. A method that returns the area of the circle that calls it (i.e., $π$ times the radius squared).
 #. Test those two methods in your `Main` program, by displaying on the screen the area and the circumference of the object you created in the previous exercise.
 #. Use the format specifier `N` to round the circumference.
-#. Add two constructors:
-    #. a default, parameterless constructor: it does nothing
-    #. a constructor with 1 parameter for radius: it initializes the radius attribute
-#. Add a `ToString` method that returns the values of the radius, circumference and area of the circle
 
 You can find a possible solution to this problem [in this archive](Circle_Solution.zip).
 
