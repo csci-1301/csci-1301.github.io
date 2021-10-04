@@ -82,8 +82,7 @@ That is, your program should display this on the screen (this example has a spac
 
 # Pushing Further (Optional)
 
-Here are additional (fun!) pattern problems.
-Try generating them using a while loop.
+Here are additional pattern problems. Try generating them using a while loop.
 
 #. Triangle:
 
@@ -114,7 +113,7 @@ Try generating them using a while loop.
 
 ```text
 1010101
- 10101 
-  101  
-   1
+10101 
+101  
+1
 ``` 
