@@ -4,6 +4,7 @@ Before writing code, think through the following problems:
 
 - In your own words, what is the difference between `while` and `do while` loops?
 - Can you think of a problem using `while` preferred over the `do while` loop?
+
 In all the problems in this section, use `do while` loop.
 
 ## Problem 1
