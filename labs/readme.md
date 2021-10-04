@@ -58,7 +58,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch, choosing between if and switch<br/>- `switch` syntax<br/>- convert: `if` ⬄ `switch`<br/>- ternary conditional operator (optional) |
 | [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | - operators: `++`, `--`<br/>- simple `while` loop |
 | [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | - `++`, `--`<br/>- Boolean expressions<br/>- string interpolation<br/>- implementing `while` loops<br/>- infinite loops<br>- user I/O, `Parse` |
-| [DoWhile](/labs/DoWhile) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | - `do while` loops<br/>-`TryParse` |
+| [DoWhile](/labs/DoWhile) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | - `do while` loops<br/>- `TryParse` |
 | [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input<br/>- `TryParse`<br/>- `if`, `switch`<br/>- `Console.ReadKey()`<br/>- `ToUpper()`, `ToLower()`<br/>- `char` type |
 | [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
 | [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
