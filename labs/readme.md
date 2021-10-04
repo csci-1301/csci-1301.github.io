@@ -56,8 +56,8 @@ Using this established build system generates labs that are cross-platform (Wind
 | [Booleans](/labs/Booleans) | [FirstProgram](/labs/FirstProgram) | [Decisions and Decision Structures](/lectures/080_decisions_booleans_and_comparisons) | Evaluating Boolean expressions<br/>- truth tables<br/>- operators: `==`,`!=`,`<`,`>`,`<=`,`>=`,`&&`,`\|\|`,`!` <br/>- evaluation of expressions<br/>- precedence |
 | [If](/labs/If) | [Booleans](/labs/Booleans) | [if, if-else and Nested if Statements](/lectures/090_if) | Reading and writing if statements <br/>- `if`, `if-else`, `if-else-if`<br/>- using `%` operator to determine parity |
 | [IfAndSwitch](/labs/IfAndSwitch) | [If](/labs/If) | [Switch Statements](/lectures/100_switch) | Using switch, choosing between if and switch<br/>- `switch` syntax<br/>- convert: `if` ⬄ `switch`<br/>- ternary conditional operator (optional) |
-| [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | increment and decrement operators, first while loops |
-| [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | more advanced while loops |
+| [IncrementDecrement](/labs/IncrementDecrement) | [If](/labs/If) | [Loops](/lectures/110_while_loops_and_vocabulary) | - operators: `++`, `--`<br/>- simple `while` loop |
+| [While](/labs/While) | [IncrementDecrement](/labs/IncrementDecrement) | [Loops](/lectures/110_while_loops_and_vocabulary) | - `++`, `--`<br/>- Boolean expressions<br/>- string interpolation<br/>- implementing `while` loops<br/>- infinite loops<br>- user I/O, `Parse` |
 | [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input |
 | [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
 | [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |

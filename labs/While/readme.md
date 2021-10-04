@@ -5,47 +5,51 @@ title: while and do while
 # Practicing while Loops
 
 ## Problem 1
-- Create a new project, and replace the content of the _main_ method with the following code
+
+- Create a new project, and replace the content of the `Main` method with the following code:
+
 ```
 int i = 0;
-while(i<100)
+while(i < 100)
 {
     Console.WriteLine(i);
     i++;
 }
 ```
-- Execute the code. You should see the numbers 0 to 99 in the console.
 
-- Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
+#. Execute the code. You should see the numbers 0 to 99 in the console.
+#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
+#. Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
+#. To implement the above problem, you may code one of the following:
 
-- Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
-
-- Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
-
-- To implement the above problem, you may code one of the following:
 ```
 int i = 0;
-while(i<100)
+while(i < 100)
 {
-    if(i%3 ==0)
+    if(i % 3 == 0)
         Console.WriteLine(i);
     i++;
 }
 ```
+
 or
+
 ```
 int i = 0;
-while(i<100)
+while(i < 100)
 {
     Console.WriteLine(i);
-    i+=3;
+    i += 3;
 }
 ```
-- Which one of the above codes is more efficient? Why?
-- Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
+
+Which one of the above codes is more efficient? Why?
+Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
 
 ## Problem 2
-- Create a new project and replace the content of the _main_ method with the following code:
+
+Create a new project and replace the content of the `Main` method with the following code:
 
 ```
 int n;
@@ -61,88 +65,38 @@ if (i == n)
 else
     Console.WriteLine($"{n} is not a ... number");
 ```
-- What does the code do? Explain the boolean expession of the looop
-- Replace `...` with a meaningful word.
+
+#. What does the code do? Explain the boolean expession of the looop
+#. Replace `...` with a meaningful word.
 
 
 ## Problem 3
-- Create a new project and replace the content of the _main_ method with the following code:
+
+Create a new project and replace the content of the `Main` method with the following code:
+
 ```
 int n = 100;
-while (n > 0 )
+while (n > 0)
 {
     Console.WriteLine(n);
     n--;
 }
 ```
-- Execute the code, and explain what you see in the console. Note that the counter is incremental. 
+
+Execute the code, and explain what you see in the console. Note that the counter is incremental. 
 
 ## Problem 4
+
 Write a program that gets a number from the console and finds its biggest divisor less than the number itself.
 
-
 ## Problem 5
+
 Write a new program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
 ## Problem 6
+
 Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
     
-
-# Do while Loops
-
-Before writing code, think through the following problems:
-
-- In your own words, what is the difference between `while` and `do while` loops?
-- Can you think of a problem using `while` preferred over the `do while` loop?
-In all the problems in this section, use `do while` loop.
-
-## Problem 1
-Write a program that display numbers 0 to 50.
-
-## Problem 2
-
-Write a program that display numbers 30 to -20.
-
-## Problem 3
-
-Write a `do while` loop that generates this output: `1 10 100 1000 10000 100000 1000000`
-
-# `while` vs `do while`
-
-Both of the following programs keep getting inputs from the user until the user enters a valid integer. Which one is better? Explain your answer.
-
-```
-int n;
-bool flag = false;
-do
-{
-    Console.Write("Enter an integer:");
-    flag = int.TryParse(Console.ReadLine(), out n);
-    if (!flag)
-    {
-        Console.WriteLine("The value you entered is not a valid integer. Try one more time.");
-    }
-} while (!flag);
-
-Console.WriteLine($"The number you entered is {n}");
- ```
- 
- ```
- int n;
-bool flag = false;
-
-Console.Write("Enter an integer:");
-flag = int.TryParse(Console.ReadLine(), out n);
-
-while(! flag)
-{
-    Console.WriteLine("The value you entered is not a valid integer. Try one more time.");
-    Console.Write("Enter an integer:");
-    flag = int.TryParse(Console.ReadLine(), out n);
-} 
-
-Console.WriteLine($"The number you entered is {n}");
-```
 # Infinite Loops
 
 All of the following are examples of infinite loops. Can you spot the problem? How would you change the code to fix it?
