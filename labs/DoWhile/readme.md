@@ -1,3 +1,7 @@
+---
+title: do while Loops
+---
+
 # Do while Loops
 
 Before writing code, think through the following problems:
@@ -13,7 +17,11 @@ In all the problems in this section, use a `do while` loop.
 
 #. Write a program that display numbers 0 to 50.
 #. Write a program that display numbers 30 to -20.
-#. Write a `do while` loop that generates this output: `1 10 100 1000 10000 100000 1000000`
+#. Write a `do while` loop that generates this output: 
+
+    ```text
+    1 10 100 1000 10000 100000 1000000
+    ```
 
 In the next problem, implement a program combining `do-while` loop with user input to achieve the following behavior:
 
@@ -61,5 +69,5 @@ Console.WriteLine($"The number you entered is {n}");
     - floating point input (invalid)
     - negative integer (valid)
     - positive integer (valid)
-    - 0 (valid)
+    - number 0 (valid)
 #. Compare the `while` and `do while` implementations: which one is better, in your opinion, and why? 
