@@ -24,7 +24,7 @@ After declaring and initializing `numbers` array, write statements to:
 
 Next, write statements that provide answers to following questions:
 
-#. Count the sum of all `numbers` then display the result. (The expected answer is 102)
+#. Calculate the sum of all `numbers` then display the result. (The expected answer is 102)
 #. Count how many times `7` occurs in `numbers`, then display that count. Check that your program outputs the correct answer, which you can determine by visually observing the array values.
 
 ## Finding values
