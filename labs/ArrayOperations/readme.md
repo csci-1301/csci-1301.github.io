@@ -67,7 +67,7 @@ char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w'
 Next, write statements that answer these two questions:
 
 #. Does value `'w'` occur in both arrays? Display the answer, true/false.
-#. What is the first value that occurs in both arrays, searching from left to right? If none is found, display `no match`.
+#. What is the first value of the array `chars1` that also occurs in the second array `chars2`, searching from left to right? If none is found, display `no match`.
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
 
