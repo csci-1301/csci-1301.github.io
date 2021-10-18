@@ -61,7 +61,7 @@ Using this established build system generates labs that are cross-platform (Wind
 | [DoWhile](/labs/DoWhile) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | - `do while` loops<br/>- `while` loops<br/>- `TryParse`, user I/O |
 | [ValidatingInput](/labs/ValidatingInput) | [While](/labs/While) | [Loops](/lectures/110_while_loops_and_vocabulary) | using TryParse and validating user input<br/>- `while` loop and `TryParse`<br/>- `if`, `switch`<br/>- `ToUpper()`, `ToLower()`<br/>- `char` type<br/>- `Console.ReadKey()`: assumed unknown, introduced in the lab |
 | [For](/labs/For) | [ValidatingInput](/labs/ValidatingInput) | [For Loops](/lectures/150_for_loops) | while loops ⬄ for loops; using for loops (incl. validation); for with continue, break |
-| [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | Declaring and initializing arrays, get and set array values |
+| [ArrayBasics](/labs/ArrayBasics) | [Variables](/labs/Variables) | [Arrays](/lectures/140_arrays) | - declaring and initializing arrays<br/>- get and set array values<br/>- array `Length` property<br/>- (optional) loop over an array  |
 | [Foreach](/labs/Foreach) | [ArrayBasics](/labs/ArrayBasics) | [Foreach](/lectures/160_foreach) | Using foreach loop |
 | [ArrayOperations](/labs/ArrayOperations) | [ArrayBasics](/labs/ArrayBasics), [For](/labs/For) | [Arrays](/lectures/140_arrays) | Displaying, counting, and finding values; nested loops and arrays |
 | [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
