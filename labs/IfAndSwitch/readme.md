@@ -1,13 +1,13 @@
 ---
-title: Practising if and switch
+title: Practicing if and switch
 ---
 
-# Mastering `switch` statement
+# Mastering the `switch` statement
 
 Copy-and-paste the following code in a `Main` method:
 
 ```
-Console.WriteLine("Please, enter the day of the week.");
+Console.WriteLine("Please enter the day of the week.");
 string string_day = Console.ReadLine();
 int num_day;
 switch (string_day) {
@@ -42,31 +42,31 @@ Console.WriteLine("The number corresponding to " + string_day + " is " + num_day
 Now, do the following:
 
 #. Test the program with various values and make sure it behaves as expected.
-#. Comment the `default:` case along with the two lines below it, and compile your program. Why is the compiler complaining?
+#. Comment out the `default:` case along with the two lines below it, and compile your program. Why is the compiler complaining?
 #. Restore the code to its original state.
-#. Change the code so that "monday" would make the value 1 being assigned to `num_day`.
-#. Change the code so that [the days of the week would start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday), i.e., "Sunday" trigger the value 1 to being assigned to `num_day`, "Monday" trigger the value 2 to being assigned to `num_day`, etc.
-#. Finally, change the last message if the code is in error: use an `if` statement to display a different message if the user input did not matched one of the literals in your `switch` statement.
+#. Change the code so that "monday" would make the value 1 get assigned to `num_day`.
+#. Change the code so that [the days of the week start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday), i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.
+#. Finally, change the last message to tell the user if the code encountered an error: use an `if` statement to display a different message if the user input did not match one of the literals in your `switch` statement.
 
 # Practicing `if` and `switch`
 
 This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables.
-The main goal is to have you practise "transforming" `if` statements into `switch` statements, and reciprocally.
-This will help you in memorizing both, and in chosing the most convenient to perform certain task.
+The main goal is to have you practice "transforming" `if` statements into `switch` statements, and reciprocally.
+This will help you in memorizing both, and in understanding how to choose the most convenient to perform certain tasks.
 
-Create a new project and do the following in `Main`. 
+Create a new project and do the following in `Main`.
 
 #. Declare and initialize following variables:
     - a `string` variable named `day`
     - an `int` variable named `myVar`
-    - a `char` variable named `initial`, and 
+    - a `char` variable named `initial`, and
     - a `bool` variable named `flag`
 #. Set and change the value of these variables to make good tests as you progress through this problem.
 #. You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.
 
 ## From `switch` to `if-else`
 
-#. Write a `switch` statement that sets `flag` to `true` if the value of `day` is `"Mon"`, `"Tue"`, `"Wed"`, `"Thu"` or `"Fri"`, and to `false` otherwise. 
+#. Write a `switch` statement that sets `flag` to `true` if the value of `day` is `"Mon"`, `"Tue"`, `"Wed"`, `"Thu"` or `"Fri"`, and to `false` otherwise.
 #. Rewrite the previous statement as an `if-else` statement.
 
 ## From `if-else` to `switch`
@@ -78,7 +78,7 @@ Create a new project and do the following in `Main`.
 
 #. Write a statement that doubles the value of `myVar` and sets `initial` to `'M'` if `day` is equal to `"Sat"`.
 What is the appropriate kind of statement to do this?
-#. Write a statement that displays "Hello" on the screen if the value of `initial` is `'E'` or `'e'`, "Bonjour" if the value of `initial` is `'F'` or `'f'`, "Guten Tag" if the value of `inital` is `'D'` or `'d'`.
+#. Write a statement that displays "Hello" on the screen if the value of `initial` is `'E'` or `'e'`, "Bonjour" if the value of `initial` is `'F'` or `'f'`, "Guten Tag" if the value of `initial` is `'D'` or `'d'`.
 What is the appropriate kind of statement to do this?
 
 ## Complex Conditions
@@ -90,7 +90,7 @@ What is the appropriate kind of statement to do this?
 
 ## Conditional Operator
 
-Here we introduced a conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:
+In class we introduced a conditional operator, which can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:
 
 `condition ? first_expression : second_expression;`
 
