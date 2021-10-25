@@ -171,7 +171,7 @@ while (counter2 < customArray.Length)
 
 ## Changing the Size
 
-There is a class named `Array` that can be used to resize an array. But, note that if you resize an array, you will lose all the current values and the elements will be reset to the data-type default.
+There is a class named `Array` that can be used to resize an array. Upon expanding an array, the additional indices will be filled with the default value of the corresponding type.  Shrinking an array will cause the data in the removed indices (those beyond the new length) to be lost.
 
 ### Example
 
@@ -181,4 +181,5 @@ myArray[3] = 40;
 Array.Resize(ref myArray, 2);
 ```
 
-`Resize` shrinks (and content is lost) and extends (and store the default value, i.e., $0$ for `int`, etc.)!
+
+In the above example, all data statring index 2 is lost.
