@@ -5,10 +5,11 @@ Now that we have learned about decision structures, we can revisit classes and m
 ## Using `if` Statements with Methods
 
 There are several ways we can use `if-else` and `if-else-if` statements with methods:
-    - For input validation in setters and properties
-    - For input validation in constructors
-    - With Boolean parameters to change a method's behavior
-    - Inside a method to evaluate instance variables
+
+- For input validation in setters and properties
+- For input validation in constructors
+- With Boolean parameters to change a method's behavior
+- Inside a method to evaluate instance variables
 
 #### Setters with Input Validation
 
@@ -310,6 +311,226 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
       ```
 
       Note that we can also use `AddMinutes` in the first `if` statement, since it will perform the same integer division and remainder operations that we originally wrote for `minuteParam`.
+
+### Boolean Parameters
+
+- When writing a method, we might want a single method to take one of two different actions depending on some condition, instead of doing the same thing every time. In this case we can declare the method with a `bool` parameter, whose value represents whether the method should (true) or should not (false) have a certain behavior.
+
+- For example, in the `Room` class we wrote in lab, we wrote two separate methods to compute the area of the room: `ComputeArea()` would compute and return the area in meters, while `ComputeAreaFeet()` would compute and return the area in feet. Instead, we could write a single method that computes the area in either feet or meters depending on a parameter:
+
+    ```
+    public double ComputeArea(bool useMeters)
+    {
+        if(useMeters)
+            return length * width;
+        else
+            return GetLengthFeet() * GetWidthFeet();
+    }
+    ```
+
+    - If the `useMeters` parameter is `true`, this method acts like the original ComputeArea method and returns the area in meters
+
+    - If the `useMeters` parameter is `false`, this method acts like ComputeAreaFeet and returns the area in feet
+
+    - We can use the method like this:
+
+      ```
+      Console.WriteLine("Compute area in feet (f) or meters (m)?");
+      char userChoice = char.Parse(Console.ReadLine());
+      if(userChoice == 'f')
+      {
+          Console.WriteLine($"Area: {myRoom.ComputeArea(false)}");
+      }
+      else if(userChoice == 'm')
+      {
+          Console.WriteLine($"Area: {myRoom.ComputeArea(true)}");
+      }
+      else
+      {
+          Console.WriteLine("Invalid choice");
+      }
+      ```
+
+      Regardless of whether the user requests feet or meters, we can call the same method. Instead of calling `ComputeAreaFeet()` when the user requests the area in feet, we call `ComputeArea(false)`
+
+    - Note that the `bool` argument to `ComputeArea` can be any expression that results in a Boolean value, not just true or false. This means that we can actually eliminate the `if` statement from the previous example:
+
+      ```
+      Console.WriteLine("Compute area in feet (f) or meters (m)?");
+      char userChoice = char.Parse(Console.ReadLine());
+      bool wantsMeters = userChoice == 'm';
+      Console.WriteLine($"Area: {myRoom.ComputeArea(wantsMeters)}");
+      ```
+
+      The expression `userChoice == 'm'` is true if the user has requested to see the area in meters. Instead of testing this expression in an `if` statement, we can simply use it as the argument to `ComputeArea` -- if the expression is true, we should call `ComputeArea(true)` to get the area in meters.
+
+- Constructors are also methods, and we can add Boolean parameters to constructors as well, if we want to change their behavior. Remember that the parameters of a constructor do not need to correspond directly to instance variables that the constructor will initialize.
+
+- For example, in the lab we wrote two different constructors for the `Room` class: one that would interpret its parameters as meters, and one that would interpret its parameters as feet. Since parameter names ("meters" or "feet") are not part of a method's signature, we ensured the two constructors had different signatures by omitting the "name" parameter from the feet constructor.
+
+    - Meters constructor:
+
+      ```
+      public Room(double lengthMeters, double widthMeters, string initName)
+      ```
+
+    - Feet constructor:
+
+      ```
+      public Room(double lengthFeet, double widthFeet)
+      ```
+
+    - The problem with this approach is that the feet constructor can't initialize the name of the room; if we gave it a `string` parameter for the room name, it would have the same signature as the meters constructor.
+
+    - Using a Boolean parameter, we can write a single constructor that accepts either meters or feet, and is equally capable of initializing the name attribute in both cases:
+
+      ```
+      public Room(double lengthP, double widthP, string nameP, bool meters)
+      {
+          if(meters)
+          {
+              length = lengthP;
+              width = widthP;
+          }
+          else
+          {
+              length = lengthP * 0.3048;
+              width = widthP * 0.3048;
+          }
+          name = nameP;
+      }
+      ```
+
+    - If the parameter `meters` is true, this constructor interprets the length and width parameters as meters (acting like the previous "meters constructor"), but if `meters` is false, this constructor interprets the length and width parameters as feet (acting like the previous "feet constructor").
+
+#### Ordinary Methods Using `if`
+
+- Besides enhancing our "setter" methods, we can also use `if` statements to write other methods that change their behavior based on conditions
+
+- For example, we could add a `GetFloor` method to `ClassRoom` that returns a string describing which floor the classroom is on. This looks very similar to the example `if-else-if` statement we wrote in a previous lecture, but inside the `ClassRoom` class rather than in a `Main` method:
+
+  ```
+  public string GetFloor()
+  {
+      if(number >= 300)
+      {
+          return "Third floor";
+      }
+      else if(number >= 200)
+      {
+          return "Second floor";
+      }
+      else if(number >= 100)
+      {
+          return "First floor";
+      }
+      else
+      {
+          return "Invalid room";
+      }
+  }
+  ```
+
+    - Now we can replace the `if-else-if` statement in the `Main` method with a single statement: `Console.WriteLine(myRoom.GetFloor());`
+
+- We can add a `MakeCube` method to the `Prism` class that transforms the prism into a cube by "shrinking" two of its three dimensions, so that all three are equal to the smallest dimension. For example, if `myPrism` is a prism with length 4, width 3, and depth 6, `myPrism.MakeCube()` should change its length and depth to 3.
+
+  ```
+  public void MakeCube()
+  {
+      if(length <= width && length <= depth)
+      {
+          width = length;
+          depth = length;
+      }
+      else if(width <= length && width <= depth)
+      {
+          length = width;
+          depth = width;
+      }
+      else
+      {
+          length = depth;
+          width = depth;
+      }
+  }
+  ```
+
+    - This `if-else-if` statement first checks to see if `length` is the smallest dimension, and if so, sets the other two dimensions to be equal to `length`
+    - Similarly, if `width` is the smallest dimension, it sets both other dimensions to `width`
+    - No condition is necessary in the `else` clause, because one of the three dimensions must be the smallest. If the first two conditions are false, `depth` must be the smallest dimension.
+    - Note that we need to use `<=` in both comparisons, not `<`: if `length` is equal to `width`, but smaller than `depth`, we should still set all dimensions to be equal to `length`
+
+#### Boolean Instance Variables
+
+- A class might need a `bool` instance variable if it has an attribute that can only be in one of two states, e.g. on/off, feet/meters, on sale/not on sale
+
+- For example, we can add an instance variable called "taxable" to the Item class to indicate whether or not the item should have sales tax added to its price at checkout. The UML diagram for Item with this instance variable would look like this:
+
+    |                              **Item**                                      |
+    | -------------------------------------------------------------------------- |
+    | - price: `decimal`                                                         |
+    | - description: `string`                                                    |
+    | - taxable: `bool`                                                          |
+    | + SALES_TAX: `decimal`                                                     |
+    | -------------------------------------------------------------------------- |
+    | + Item(initDescription: `string`, initPrice: `decimal`, isTaxable: `bool`) |
+    | + SetPrice(priceParameter: `decimal`)                                      |
+    | + GetPrice(): `decimal`                                                    |
+    | + SetDescription(descriptionParameter: `string`)                           |
+    | + GetDescription(): `string`                                               |
+    | + SetTaxable(taxableParam: `bool`)                                         |
+    | + IsTaxable() : `bool`                                                     |
+
+    - Note that the "getter" for a Boolean variable is conventionally named with a word like "Is" or "Has" rather than "Get"
+    - We will add a constant named SALES_TAX to the Item class to store the sales tax rate that should be applied if the item is taxable. The sales tax rate is not likely to change during the program's execution, but it's better to store it in a named variable instead of writing the same literal value (e.g. `0.08m`) every time we want to compute a total price with tax.
+
+- The instance variables and constructor for `Item` now look like this:
+
+    ```
+    class Item
+    {
+        private string description;
+        private decimal price;
+        private bool taxable
+        public const decimal SALES_TAX = 0.08m;
+
+        public Item(string initDesc, decimal initPrice, bool isTaxable)
+        {
+            description = initDesc;
+            price = (initPrice >= 0) ? initPrice : 0;
+            taxable = isTaxable;
+        }
+    ...
+    }
+    ```
+
+- We can use this instance variable in a `Main` method to compute the final price of an Item based on whether or not it is taxable:
+
+  ```
+  Item myItem = new Item("Blue Polo Shirt", 19.99m, true);
+  decimal totalPrice = myItem.GetPrice();
+  if(myItem.isTaxable())
+  {
+      totalPrice = totalPrice + (totalPrice * Item.SALES_TAX);
+  }
+  Console.WriteLine($"Final price: {totalPrice:C}");
+  ```
+
+- However, if we were writing a program that handled large numbers of items, we might find it tedious to write this `if` statement every time. To make it easier to compute the "real" (with tax) price of an item, we could instead modify the `GetPrice()` method to automatically include sales tax if applicable:
+
+  ```
+  public decimal GetPrice()
+  {
+      if(taxable)
+          return price + (price * SALES_TAX);
+      else
+          return price;
+  }
+  ```
+
+  Now, `myItem.GetPrice()` will return the price with tax if the item is taxable, so our `Main` method can simply use `myItem.GetPrice()` as the total price without needing to check `myItem.isTaxable()`.
+
 
 
 # The Loan Class

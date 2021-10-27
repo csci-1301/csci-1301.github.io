@@ -268,7 +268,7 @@
 
 ## Method Signatures and Overloading
 
-#### Name uniqueness in C#
+#### Name uniqueness in C\#
 
 - In general, variables, methods, and classes must have unique names, but there are several exceptions
 - **Variables** can have the same name if they are in *different scopes*
