@@ -15,7 +15,6 @@
     - **Encapsulation** means instance variables (attributes) are "hidden" inside an object: other code cannot access them directly
         - Only the object's own methods can access the instance variables
         - Other code must "ask permission" from the object in order to read or write the variables
-    - **Accessor** method: a method written specifically to allow other code to access instance variables (i.e. attributes)
 
 ## Writing Our First Class
 
@@ -30,7 +29,7 @@
         - Set length
         - Set width
         - Compute the rectangle's area
-    - Note that the first four are **accessor** methods because they allow other code to read (get) or write (set) the rectangle's instance variables
+    - Note that the first four are a specific type of method called "getters" and "setters" because they allow other code to read (get) or write (set) the rectangle's instance variables while respecting encapsulation
 
 The Rectangle class:
 
@@ -44,10 +43,10 @@ Let's look at each part of this code in order.
     - Each attribute (length and width) is stored in an instance variable
     - Instance variables are declared similarly to "regular" variables, but with one additional feature: the **access modifier**
     - Syntax: `[access modifier] [type] [variable name]`
-    - The access modifier can be either `public` or `private`
+    - The access modifier can have several values, the most common of which are `public` and `private`. (There are other access modifiers, such as `protected` and `internal`, but in this class we will only be using `public` and `private`).
     - An access modifier of `private` is what enforces encapsulation: when you use this access modifier, it means the instance variable cannot be accessed by any code outside the `Rectangle` class
     - The C# compiler will give you an error if you write code that attempts to use a `private` instance variable anywhere other than a method of that variable's class
-- SetLength method - our first accessor method
+- SetLength method, an example of a "setter" method
     - This method will allow code outside the `Rectangle` class to modify a `Rectangle` object's "length" attribute
     - Note that the header of this method has an access modifier, just like the instance variable
     - In this case the access modifier is `public` because we *want* to allow other code to call the `SetLength` method
@@ -59,7 +58,7 @@ Let's look at each part of this code in order.
     - When you call a method with a particular argument, like 15, the parameter is assigned this value, so within the method's code you can assume the parameter value is "the argument to this method"
     - The body of the `SetLength` method has one statement, which assigns the instance variable `length` to the value contained in the parameter `lengthParameter`. In other words, whatever argument `SetLength` is called with will get assigned to `length`
     - This is why it's called a "setter": `SetLength(15)` will set `length` to 15.
-- GetLength method
+- GetLength method, an example of a "getter" method
     - This method will allow code outside the `Rectangle` class to read the current value of a `Rectangle` object's "length" attribute
     - The **return type** of this method is `int`, which means that the value it returns to the calling code is an `int` value
     - Recall that `Console.ReadLine()` returns a `string` value to the caller, which is why you can write `string userInput = Console.ReadLine()`. The `GetLength` method will do the same thing, only with an `int` instead of a `string`
@@ -75,7 +74,7 @@ Let's look at each part of this code in order.
     - This is the "getter" method for the width attribute
     - It looks very similar to `GetLength`, except the instance variable in the `return` statement is `width` rather than `length`
 - The ComputeArea method
-    - This is *not* an accessor method: its goal is not to read or write a single instance variable
+    - This is *not* a getter or setter: its goal is not to read or write a single instance variable
     - The goal of this method is to compute and return the rectangle's area
     - Since the area of the rectangle will be an `int` (it's the product of two `int`s), we declare the return type of the method to be `int`
     - This method has no parameters, because it doesn't need any arguments. Its only "input" is the instance variables, and it will always do the same thing every time you call it.

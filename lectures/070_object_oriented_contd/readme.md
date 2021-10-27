@@ -481,8 +481,8 @@
 - Declare an instance variable for the attribute, like before
 - A **property declaration** has 3 parts:
     - Header, which gives the property a name and type (very similar to variable declaration)
-    - `get` section, which declares the "getter" method for the property
-    - `set` section, which declares the "setter" method for the property
+    - `get` accessor, which declares the "getter" method for the property
+    - `set` accessor, which declares the "setter" method for the property
 - Example code, implementing the "width" attribute for Rectangle (this replaces the code in the previous example):
 
     ```
@@ -505,12 +505,12 @@
 
 - Header syntax: `[public/private] [type] [name]`
 - *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
-- `get` section: Starts with the keyword `get`, then a method body inside a code block (between braces)
+- `get` accessor: Starts with the keyword `get`, then a method body inside a code block (between braces)
     - `get` is like a method header that always has the same name, and its other features are implied by the property's header
     - Access modifier: Same as the property header's, i.e. `public` in this example
     - Return type: Same as the property header's type, i.e. `int` in this example (so imagine it says `public int get()`)
     - Body of `get` section is exactly the same as body of a "getter": return the instance variable
-- `set` section: Starts with the keyword `set`, then a method body inside a code block
+- `set` accessor: Starts with the keyword `set`, then a method body inside a code block
     - Also a method header with a fixed name, access modifier, return type, and parameter
     - Access modifier: Same as the property header's, i.e. `public` in this example
     - Return type: Always `void` (like a setter)
@@ -529,11 +529,11 @@
     ```
 
 - Properties "act like" variables: you can assign to them and read from them
-- Reading from a property will *automatically* call the `get` method for that property
-    - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` section inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
+- Reading from a property will *automatically* call the `get` accessor for that property
+    - For example, `Console.WriteLine($"The width is {myRectangle.Width}");` will call the `get` accessor inside the `Width` property, which in turn executes `return width` and returns the current value of the instance variable
     - This is equivalent to `Console.WriteLine($"The width is {myRectangle.GetWidth()}");` using the "old" Rectangle code
-- Assigning to (writing) a property will *automatically* call the `set` method for that property, with an argument equal to the right side of the `=` operator
-    - For example, `myRectangle.Width = 15;` will call the `set` section inside the `Width` property, with `value` equal to 15
+- Assigning to (writing) a property will *automatically* call the `set` accessor for that property, with an argument equal to the right side of the `=` operator
+    - For example, `myRectangle.Width = 15;` will call the `set` accessor inside the `Width` property, with `value` equal to 15
     - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
 
 #### Properties in UML
