@@ -1,5 +1,5 @@
 ---
-title: while and do while
+title: while Loop
 ---
 
 # Practicing while Loops
