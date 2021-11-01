@@ -18,8 +18,8 @@ while(i < 100)
 ```
 
 #. Execute the code. You should see the numbers 0 to 99 in the console.
-#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the diffrence between `<` and `<=` operators. 
-#. Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish. 
+#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the difference between `<` and `<=` operators.
+#. Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish.
 #. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
 #. To implement the above problem, you may code one of the following:
 
@@ -66,7 +66,7 @@ else
     Console.WriteLine($"{n} is not a ... number");
 ```
 
-#. What does the code do? Explain the boolean expession of the looop
+#. What does the code do? Explain the boolean expression of the loop
 #. Replace `...` with a meaningful word.
 
 
@@ -83,7 +83,7 @@ while (n > 0)
 }
 ```
 
-Execute the code, and explain what you see in the console. Note that the counter is incremental. 
+Execute the code, and explain what you see in the console. Note that the counter is incremental.
 
 ## Problem 4
 
@@ -95,8 +95,8 @@ Write a new program that asks an integer value greater than 1 from the user, and
 
 ## Problem 6
 
-Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display `You did not enter anything.`
-    
+Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display "You did not enter anything."
+
 # Infinite Loops
 
 All of the following are examples of infinite loops. Can you spot the problem? How would you change the code to fix it?
