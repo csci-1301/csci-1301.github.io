@@ -83,7 +83,7 @@ while (n > 0)
 }
 ```
 
-Execute the code, and explain what you see in the console. Note that the counter is incremental.
+Execute the code, and explain what you see in the console. Note that the counter is decremented, not incremented.
 
 ## Problem 4
 
