@@ -531,11 +531,208 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
   Now, `myItem.GetPrice()` will return the price with tax if the item is taxable, so our `Main` method can simply use `myItem.GetPrice()` as the total price without needing to check `myItem.isTaxable()`.
 
+## Using `while` Loops with Classes
 
+There are several ways that `while` loops are useful when working with classes and methods:
+
+- To validate input before calling a method
+- Inside a method, to interact with the user
+- Inside a method, to take repeated action based on the object's attributes
+- To control program behavior based on the return value of a method
+
+#### Input Validation with Objects
+
+- As we have seen in a previous section (Loops and Input Validation), `while` loops can be used with the `TryParse` method to repeatedly prompt the user for input until he/she enters a valid value
+
+- This is a useful technique to use before initializing an object's attributes with user-provided data
+
+- For example, the length and width of a `Rectangle` object should be non-negative integers. If we want to create a `Rectangle` with a length and width provided by the user, we can use a `while` loop for each attribute to ensure the user enters valid values before constructing the `Rectangle`.
+
+    ```
+    int length, width;
+    bool isInt;
+    do
+    {
+        Console.WriteLine("Enter a positive length");
+        isInt = int.TryParse(Console.ReadLine(), out length);
+    } while(!isInt || length < 0);
+    do
+    {
+        Console.WriteLine("Enter a positive width");
+        isInt = int.TryParse(Console.ReadLine(), out width);
+    } while(!isInt || width < 0);
+    Rectangle myRectangle = new Rectangle(length, width);
+    ```
+
+    - Each loop asks the user to enter a number, and repeats if the user enters a non-integer (`TryParse` returns `false`) or enters a negative number (`length` or `width` is less than 0).
+    - Note that we can re-use the `bool` variable `isInt` to contain the return value of `TryParse` in the second loop, since it would otherwise have no purpose or meaning after the first loop ends.
+    - After both loops have ended, we know that `length` and `width` are sensible values to use to construct a `Rectangle`
+
+- Similarly, we can use `while` loops to validate user input before calling a non-constructor method that takes arguments, such as `Rectangle`'s `Multiply` method or `Item`'s `SetPrice` method
+
+- For example, if a program has an already-initialized `Item` object named `myItem` and wants to use `SetPrice` to change its price to a user-provided value, we can use a `while` loop to keep prompting the user for input until he/she enters a valid price.
+
+    ```
+    bool isNumber;
+    decimal newPrice;
+    do
+    {
+        Console.WriteLine($"Enter a new price for {myItem.GetDescription()}");
+        isNumber = decimal.TryParse(Console.ReadLine(), out newPrice);
+    } while(!isNumber || newPrice < 0);
+    myItem.SetPrice(newPrice);
+    ```
+
+    - Like with our previous example, the `while` loop's condition will be `true` if the user enters a non-numeric string, or a negative value. Thus the loop will only stop when `newPrice` contains a valid price provided by the user.
+    - Although it is "safe" to pass a negative value as the argument to `SetPrice`, now that we added an `if` statement to `SetPrice`, it can still be useful to write this `while` loop
+    - The `SetPrice` method will use a default value of 0 if its argument is negative, but it will not alert the user that the price they provided is invalid or give them an opportunity to provide a new price
+
+- The `ComputeArea` method that we wrote earlier for the `Room` class demonstrates another situation where it is useful to write a `while` loop before calling a method
+
+    - Note that in the version of the code that passes the user's input directly to the `ComputeArea` method, instead of using an `if-else-if` statement, there is nothing to ensure the user enters one of the choices "f" or "m":
+
+      ```
+      Console.WriteLine("Compute area in feet (f) or meters (m)?");
+      char userChoice = char.Parse(Console.ReadLine());
+      Console.WriteLine($"Area: {myRoom.ComputeArea(userChoice == 'm')}");
+      ```
+
+    - This means that if the user enters a multiple-letter string the program will crash (`char.Parse` throws an exception if its input string is larger than one character), and if the user enters a letter other than "m" the program will act as if he/she entered "f"
+
+    - Instead, we can use `TryParse` and a `while` loop to ensure that `userChoice` is either "f" or "m" and nothing else
+
+      ```
+      bool validChar;
+      char userChoice;
+      do
+      {
+          Console.WriteLine("Compute area in feet (f) or meters (m)?");
+          validChar = char.TryParse(Console.ReadLine(), out userChoice);
+      } while(!validChar || !(userChoice == 'f' || userChoice == 'm'));
+      Console.WriteLine($"Area: {myRoom.ComputeArea(userChoice == 'm')}");
+      ```
+
+    - This loop will prompt the user for input again if `TryParse` returns `false`, meaning he/she did not enter a single letter. It will also prompt again if the user's input was not equal to `'f'` or `'m'`.
+    - Note that we needed to use parentheses around the expression `!(userChoice == 'f' || userChoice == 'm')` in order to apply the `!` operator to the entire "OR" condition. This represents the statement "it is not true that userChoice is equal to 'f' or 'm'." We could also write this expression as `(userChoice != 'f' && userChoice != 'm')`, which represents the equivalent statement "userChoice is not equal to 'f' and also not equal to 'm'."
+
+#### Using Loops Inside Methods
+
+- A class's methods can contain `while` loops if they need to execute some code repeatedly. This means that when you call such a method, control will not return to the `Main` program until the loop has stopped.
+
+- Reading input from the user, validating it, and using it to set the attributes of an object is a common task in the programs we have been writing. If we want to do this for several objects, we might end up writing many very similar `while` loops in the `Main` method. Instead, we could write a method that will read and validate user input for an object's attribute every time it is called.
+
+    - For example, we could add a method `SetLengthFromUser` to the `Rectangle` class:
+
+      ```
+      public void SetLengthFromUser()
+      {
+          bool isInt;
+          do
+          {
+              Console.WriteLine("Enter a positive length");
+              isInt = int.TryParse(Console.ReadLine(), out length);
+          } while(!isInt || length < 0);
+      }
+      ```
+
+    - This method is similar to a setter, but it has no parameters because its only input comes from the user
+    - The `while` loop is just like the one we wrote before constructing a `Rectangle` in a previous example, except the `out` parameter of `TryParse` is the instance variable `length` instead of a local variable in the `Main` method
+    - `TryParse` will assign the user's input to the `length` instance variable when it succeeds, so by the time the loop ends, the Rectangle's length has been set to the user-provided value
+    - Assuming we wrote a similar method `SetWidthFromUser()` (substituting `width` for `length` in the code), we would use these methods in the `Main` method like this:
+
+      ```
+      Rectangle rect1 = new Rectangle();
+      Rectangle rect2 = new Rectangle();
+      rect1.SetLengthFromUser();
+      rect1.SetWidthFromUser();
+      rect2.SetLengthFromUser();
+      rect2.SetWidthFromUser();
+      ```
+
+      After executing this code, both `rect1` and `rect2` have been initialized with length and width values the user entered.
+
+- Methods can also contain `while` loops that are not related to validating input. A method might use a `while` loop to repeat an action several times based on the object's instance variables.
+
+    - For example, we could add a method to the `Rectangle` class that will display the Rectangle object as a rectangle of asterisks on the screen:
+
+      ```
+      public void DrawInConsole()
+      {
+          int counter = 1;
+          while(counter <= width * length)
+          {
+              Console.Write(" * ");
+              if(counter % width == 0)
+              {
+                  Console.WriteLine();
+              }
+              counter++;
+          }
+      }
+      ```
+
+    - This `while` loop prints a number of asterisks equal to the area of the rectangle. Each time it prints `width` of them on the same line, it adds a line break with `WriteLine()`.
+
+#### Using Methods to Control Loops
+
+- Methods can return Boolean values, as we showed previously in the section on Boolean instance variables
+
+- Other code can use the return value of an object's method in the loop condition of a `while` loop, so the loop is controlled (in part) by the state of the object
+
+- For example, recall the `Time` class, which stores hours, minutes, and seconds in instance variables.
+
+    - In a previous example we wrote a `GetTotalSeconds()` method to convert these three instance variables into a single value:
+
+      ```
+      public int GetTotalSeconds()
+      {
+          return hours * 60 * 60 + minutes * 60 + seconds;
+      }
+      ```
+
+    - We can now write a method `ComesBefore` that compares two Time objects:
+
+      ```
+      public bool ComesBefore(Time otherTime)
+      {
+          return GetTotalSeconds() < otherTime.GetTotalSeconds();
+      }
+      ```
+
+      This method will return `true` if the calling object (i.e. `this` object) represents a smaller amount of time than the other Time object passed as an argument
+
+    - Since it returns a Boolean value, we can use the `ComesBefore` method to control a loop. Specifically, we can write a program that asks the user to enter a Time value that is smaller than a specified maximum, and use `ComesBefore` to validate the user's input.
+
+      ```
+      Time maximumTime = new Time(2, 45, 0);
+      Time userTime;
+      do
+      {
+          Console.WriteLine($"Enter a time less than {maximumTime}");
+          int hours, minutes, seconds;
+          do
+          {
+              Console.Write("Enter the hours: ");
+          } while(!int.TryParse(Console.ReadLine(), out hours));
+          do
+          {
+              Console.Write("Enter the minutes: ");
+          } while(!int.TryParse(Console.ReadLine(), out minutes));
+          do
+          {
+              Console.Write("Enter the seconds: ");
+          } while(!int.TryParse(Console.ReadLine(), out seconds));
+          userTime = new Time(hours, minutes, seconds);
+      } while(!userTime.ComesBefore(maximumTime));
+      //At this point, userTime is valid Time object
+      ```
+
+    - Note that there are `while` loops to validate each number the user inputs for hours, minutes, and seconds, as well as an outer `while` loop that validates the Time object as a whole.
+    - The outer loop will continue until the user enters values that make `userTime.ComesBefore(maximumTime)` return `true`.
 
 # The Loan Class
 
-This class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program.
+This class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code.
 
 ```
 using System;

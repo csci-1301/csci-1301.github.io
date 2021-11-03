@@ -292,7 +292,11 @@ Console.WriteLine("Done");
 
 - For example, a `decimal` variable that holds a price (in dollars) should have a positive value, even though it's legal to store negative numbers in a `decimal`
 
-- On a recent quiz we saw the `Item` class, which represents an item sold in a store, and it has a `price` attribute that should only store positive values
+- Consider the `Item` class, which represents an item sold in a store. It has a `price` attribute that should only store positive values:
+
+  ```
+  !include code/item.cs
+  ```
 
 - When you write a program that constructs an `Item` from literal values, you (the programmer) can make sure you only use positive prices. However, if you construct an `Item` based on input provided by the user, you can't be certain that the user will follow directions and enter a valid price:
 
@@ -359,7 +363,7 @@ Console.WriteLine("Done");
 
 - The `Parse` methods we have been using assume that the `string` they are given (in the argument) is a valid number, and produce a run-time error if it is not
 
-    - For example, this program that you might remember from lab will crash if the user enters "hello" instead of a number:
+    - For example, this program will crash if the user enters "hello" instead of a number:
 
         ```
         Console.WriteLine("Guess a number"):
