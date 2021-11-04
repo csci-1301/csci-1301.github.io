@@ -95,7 +95,7 @@ Write a new program that asks an integer value greater than 1 from the user, and
 
 ## Problem 6
 
-Ask user to enter integers. Keep track of the smallest value user enters. After user indicates they are done, display the smallest value user entered. If user did not enter any integers display "You did not enter anything."
+Ask the user to enter integers. Keep track of the smallest value the user enters. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
 
 # Infinite Loops
 
