@@ -312,7 +312,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
       Note that we can also use `AddMinutes` in the first `if` statement, since it will perform the same integer division and remainder operations that we originally wrote for `minuteParam`.
 
-### Boolean Parameters
+#### Boolean Parameters
 
 - When writing a method, we might want a single method to take one of two different actions depending on some condition, instead of doing the same thing every time. In this case we can declare the method with a `bool` parameter, whose value represents whether the method should (true) or should not (false) have a certain behavior.
 
