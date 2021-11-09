@@ -118,16 +118,52 @@ myArray = { 1, 2 ,3, 4, 5}; // ERROR
 
 If we use the shorter notation, we _have to_ give the values at initialization, we cannot re-use this notation once the array has been created.
 
-Other datatype, and even objects, can be stored in arrays in a perfectly similar way:
+Other datatypes, and even objects, can be stored in arrays in a perfectly similar way:
 
 ```
 string[] myArray = { "Bob", "Mom", "Train", "Console" };
 Rectangle[] arrayOfRectangle = new Rectangle[5];  // Assume there is a class called Rectangle
 ```
 
-## Custom Size and Values
+### Default Values
 
-One of the benefits of arrays is that they allow you to specify the number of their elements at run-time. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.
+If we initialize an array but do not assign any values to its elements, each element will get the default value for that element's data type. (These are the same default values that are assigned to instance variables if we do not write a constructor, as we learned in "More Advanced Object Concepts"). In the following example, each element of `myArray` gets initialized to 0, the default value for `int`:
+
+```
+int[] myArray = new int[5];
+Console.WriteLine(myArray[2]); // Displays "0"
+myArray[1]++;
+Console.WriteLine(myArray[1]); // Displays "1"
+```
+
+However, remember that the default value for any *object* data type is `null`, which is an object that does not exist. Attempting to call a method on a `null` object will cause a run-time error of the type `System.NullReferenceException`;
+
+```
+Rectangle[] shapes = new Rectangle[3];
+shapes[0].SetLength(5);  // ERROR
+```
+
+Before we can use an array element that should contain an object, we must instantiate an object and assign it to the array element. For our array of `Rectangle` objects, we could either write code like this:
+
+```
+Rectangle[] shapes = new Rectangle[3];
+shapes[0] = new Rectangle();
+shapes[1] = new Rectangle();
+shapes[2] = new Rectangle();
+```
+
+or use the abridged initialization syntax as follows:
+
+```
+Rectangle[] shapes = {new Rectangle(), new Rectangle(), new Rectangle()};
+```
+
+## Custom Size and Loops
+
+One of the benefits of arrays is that they allow you to specify the number of their elements at run-time: the size declarator can be a variable, not just an integer literal. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.
+
+In order to access the elements of whose size is not known until runtime, we will need to use a loop.
+If the size of `myArray` comes from user input, it wouldn't be safe to try to access a specific element like `myArray[5]`, because we can't guarantee that the array will have at least 6 elements. Instead, we can write a loop that uses a counter variable to access the array, and use the loop condition to ensure that the variable does not exceed the size of the array.
 
 ### Example
 
@@ -150,13 +186,14 @@ while (counter < size)
 Observe that:
 
 - If the user enters a negative value or a string that does not correspond to an integer for the `size` value, our program will crash: we are not performing any user-input validation here, to keep our example compact.
+- The loop condition is `counter < size` because we do *not* want the loop to execute when `counter` is equal to `size`. The last valid index in `customArray` is `size - 1`.
 - We are asking for the `{counter +1}th` value because we prefer not to confuse the user by asking for the "0th" value. Note that a more sophisticated program would replace "th" with "st", "nd" and "rd" for the first three values.
 
-## Array Size
+### The Length Property
 
 Every single-dimensional array has a property called `Length` that returns the number of the elements in the array (or size of the array).
 
-To process an array whose size is not fixed, we can use this property to find out the number of elements in the array
+To process an array whose size is not fixed at compile-time, we can use this property to find out the number of elements in the array.
 
 ### Example
 
@@ -168,6 +205,47 @@ while (counter2 < customArray.Length)
     counter2++;
 }
 ```
+
+Observe that this code doesn't need the variable `size`.
+
+### Loops with Arrays of Objects
+
+In the following example, we will ask the user how many `Item` objects they want to create, then fill an array with `Item` objects initialized from user input:
+
+```
+Console.WriteLine("How many items would you like to stock?");
+Item[] items = new Item[int.Parse(Console.ReadLine())];
+int i = 0;
+while(i < items.Length)
+{
+    Console.WriteLine($"Enter description of item {i+1}:");
+    string description = Console.ReadLine();
+    Console.WriteLine($"Enter price of item {i+1}:");
+    decimal price = decimal.Parse(Console.ReadLine());
+    items[i] = new Item(description, price);
+    i++;
+}
+```
+
+Observe that, since we do not perform any user-input validation, we can simply use the result of `int.Parse()` as the size declarator for the `items` array - no `size` variable is needed at all.
+
+We can also use `while` loops to search through arrays for a particular value. For example, this code will find and display the lowest-priced item in the array `items`, which was initialized by user input:
+
+```
+Item lowestItem = items[0];
+int i = 1;
+while(i < items.Length)
+{
+    if(items[i].GetPrice() < lowestItem.GetPrice())
+    {
+        lowestItem = items[i];
+    }
+    i++;
+}
+Console.WriteLine($"The lowest-priced item is {lowestItem}");
+```
+
+Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we can't call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
 
 ## Changing the Size
 

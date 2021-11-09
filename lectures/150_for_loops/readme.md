@@ -309,17 +309,23 @@
 
 ## For Loops With Arrays
 
-- Previously, we learned that you can access a single array element using the `<array>[<index>]` syntax. However, it can be tedious to access each element of an array one at a time.
+- Previously, we learned that you can iterate over the elements of an array using a `while` loop. We can also process arrays using `for` loops, and in many cases they are more concise than the equivalent `while` loop.
 
 - For example, consider this code that finds the average of all the elements in an array:
 
     ```
     int[] homeworkGrades = {89, 72, 88, 80, 91};
-    double average = (homeworkGrades[0] + homeworkGrades[1] +
-        homeworkGrades[2] + homeworkGrades[3] + homeworkGrades[4]) / 5.0;
+    int counter = 0;
+    int sum = 0;
+    while(counter < 5)
+    {
+        sum += homeworkGrades[counter];
+        counter++
+    }
+    double average = sum / 5.0;
     ```
 
-- The sum of the array elements repeatedly accesses `homeworkGrades[<index>]` with index values that increment by 1 at a time. This can be written much more concisely by using a variable for the index value, and incrementing the variable in a `for` loop:
+- This can also be written with a `for` loop:
 
     ```
     int sum = 0;
@@ -331,9 +337,7 @@
     ```
 
     - In a `for` loop that iterates over an array, the counter variable is also used as the array index
-    - The loop condition should ensure that the loop stops on the last index of the array, and doesn't attempt to access the array with an invalid index
-    - Since the last index is 1 less than the length of the array, the loop condition should be false when the counter is *greater than or equal to* the length of the array.
-    - In this case, the array's length is 5, so the loop condition `i < 5` will ensure that the loop does not execute the body when `i` equals 5 (it will stop when `i` equals 4)
+    - Since we didn't need to use the counter variable outside the body of the loop, we can declare it in the loop header and limit its scope to the loop's body
 
 - Using a `for` loop to access array elements makes it easy to process "the whole array" when the size of the array is user-provided:
 
@@ -347,10 +351,6 @@
         homeworkGrades[i] = int.Parse(Console.ReadLine());
     }
     ```
-
-    - Since the size of the `homeworkGrades` array depends on user input, we don't know when writing the program how many elements it has or which indices are valid. It wouldn't be safe to try to access a specific element like `homeworkGrades[4]` because the user might enter a size smaller than 5.
-    - Using a counter that starts at 0 with the loop condition `i < numGrades` means the loop body will run once on each element of the array, no matter what the user enters
-    - Note that since array elements start at 0, but humans usually number their lists starting at 1, the user directions in the loop body display `"homework {i+1}"`
 
 - You can use the `Length` property of an array to write a loop condition, even if you didn't store the size of the array in a variable. For example, this code doesn't need the variable `numGrades`:
 
