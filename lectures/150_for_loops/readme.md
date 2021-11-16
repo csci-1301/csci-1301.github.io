@@ -279,7 +279,7 @@
 
 - `while` loops are good for sentinel-controlled loops or user-input validation, and `for` loops are good for counter-controlled loops
 
-- This program asks the user to enter a number, then uses a `for` loop to print that number of lines of asterisks:
+- This program asks the user to enter a number, then uses a `for` loop to print that number of asterisks on a single line:
 
     ```
     string userInput;
@@ -293,15 +293,16 @@
         {
             for(int c = 0; c < inputNum; c++)
             {
-                Console.WriteLine("**********");
+                Console.Write("*");
             }
+            Console.WriteLine();
         }
     } while(userInput != "Q");
     ```
 
     - The sentinel value "Q" is used to end the program, so the outer `while` loop repeats until the user enters this value
 
-    - Once the user enters a number, that number is used in the condition for a `for` loop that prints lines of asterisks
+    - Once the user enters a number, that number is used in the condition for a `for` loop that prints asterisks using `Console.Write()`. After the `for` loop ends, we use `Console.WriteLine()` with no argument to end the line (print a newline).
 
     - Since the user could enter either a letter or a number, we need to use `TryParse` to convert the user's input to a number
 
