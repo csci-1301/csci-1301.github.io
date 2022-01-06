@@ -161,4 +161,3 @@ If you have time or need ideas, you can try with the following, and see which on
 - Replace  `Main()` with `Method()`
 - Remove the indentation (i.e., the space between the beginning of the line and the first character of the instruction) on all lines
 
-<!--- Comment. -->
