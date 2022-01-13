@@ -11,7 +11,7 @@ It may seem repetitive, but you need to practice `if` statements _a lot_ to unde
 
 Consider the following code:
 
-```{.cs .numberLines}
+```
 !include`snippetStart="/* Start included */", snippetEnd="/* End included */",dedent=8` code/voting_age.cs
 ```
 

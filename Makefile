@@ -137,7 +137,7 @@ MAKEFLAGS:= -j
 
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
-	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
+	--lua-filter templates/filters/default-code-class.lua -M default-code-class="cs" \
 	-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
         --metadata-file=$(METADATA_FILE)  --email-obfuscation=references
 	
@@ -414,5 +414,5 @@ all: build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
 # Phony rule to display variables
-.PHONY: test
-$(info $$var is [${TARGET_IMAGES_FILES}])
+#.PHONY: test
+#$(info $$var is [${TARGET_IMAGES_FILES}])
