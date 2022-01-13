@@ -86,11 +86,8 @@ Features of this program:
 
 ## Rules of C# Syntax
 
-- Each statement must end in a semicolon (`;`),
-    - Exceptions:
-        - opening `{` and closing `}` don't end in a ;
-        - Class and method declarations don't end in a ; since they end in a `}` (Example: `class Program { .... }`)
-    - A method *contains* some statements, but it is not a statement
+- Each statement must end in a semicolon (`;`), except for some statements that we will study in the future that contains opening `{` and closing `}`, that do not end in a `;`. 
+    - Note that class and method declarations, as well as comments, [are not statements](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements) and hence do not need to ends with a `;`. Typically, a method *contains* some statements, but it is not a statement.
 - All words are case-sensitive
     - A class named `Program` is not the same as one named `program`
     - A method named `writeline` is not the same as one named `WriteLine`
