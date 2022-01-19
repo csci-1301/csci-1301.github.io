@@ -87,5 +87,3 @@ If it is, give the result of its evaluation.
 - `3 > false`
 - `true && 3 + 5 * 8 == 43`
 - `3 + true != false`
-
-<!--This is a test for forking/pull requests, please disregard-->
