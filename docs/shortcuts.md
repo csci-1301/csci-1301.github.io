@@ -46,6 +46,14 @@ More advanced shortcuts may be available to your particular IDE:
 | MacOS | <kbd>⌘</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
 
+## Redo*
+
+| OS | Keys |
+| :--- | :--- |
+| Linux | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>y</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
+
 ## Run/execute program
 
 | OS | Keys |
@@ -53,6 +61,22 @@ More advanced shortcuts may be available to your particular IDE:
 | Linux | <kbd>Ctrl</kbd> + <kbd>F5</kbd>  |
 | MacOS | <kbd>F5</kbd> -or- <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>↵</kbd>  |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
+
+## Save*
+
+| OS | Keys |
+| :--- | :--- |
+| Linux | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>s</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
+
+## Save All*
+
+| OS | Keys |
+| :--- | :--- |
+| Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 
 ## Undo*
 
