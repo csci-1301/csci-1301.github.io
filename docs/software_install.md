@@ -106,7 +106,7 @@ Unfortunately, Geany does not natively build and compile C# code. To use Geany a
 
 In the "Set Build Commands" window, erase the entry next to the "Compile" button and paste the file path to the "csc.bat" in qutotation marks. After the file path, create a single space followed by "%f" with the quotaion marks. Confirm the change by clicking OK and now you will be able to compile, build, and execute **standalone** .cs files.
 
-<!-- ![Set Build Commands Example](pic link) -->
+![Set Build Commands Example](img/setBuildCommand)
 
 ### Installing Anything Anywhere
 
