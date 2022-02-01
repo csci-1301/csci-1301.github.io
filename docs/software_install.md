@@ -96,7 +96,7 @@ Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the lin
 In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
 <!-- GEANY DOCUMENTATION IN NEED OF REVIEW -->
-### Installing Geany
+### Installing Geany On Your Own Computer
 
 **Note:** This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects.
 
