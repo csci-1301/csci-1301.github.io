@@ -338,7 +338,7 @@
     ```
 
     - In a `for` loop that iterates over an array, the counter variable is also used as the array index
-    - Since we didn't need to use the counter variable outside the body of the loop, we can declare it in the loop header and limit its scope to the loop's body
+    - Since we did not need to use the counter variable outside the body of the loop, we can declare it in the loop header and limit its scope to the loop's body
 
 - Using a `for` loop to access array elements makes it easy to process "the whole array" when the size of the array is user-provided:
 
@@ -353,7 +353,7 @@
     }
     ```
 
-- You can use the `Length` property of an array to write a loop condition, even if you didn't store the size of the array in a variable. For example, this code doesn't need the variable `numGrades`:
+- You can use the `Length` property of an array to write a loop condition, even if you did not store the size of the array in a variable. For example, this code doesn't need the variable `numGrades`:
 
     ```
     int sum = 0;

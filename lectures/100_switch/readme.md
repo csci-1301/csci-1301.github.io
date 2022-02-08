@@ -164,7 +164,7 @@
 
 - The values in each `case` statement must be `int` literals, since `month` is an `int`
 
-- The `default` statement has the same effect as the final `else` in the `if-else-if` statement: it contains code that will be executed if `month` didn't match any of the values
+- The `default` statement has the same effect as the final `else` in the `if-else-if` statement: it contains code that will be executed if `month` did not match any of the values
 
 #### `switch` with multiple statements
 

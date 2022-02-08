@@ -197,7 +197,7 @@ Features of this program:
         HelloWorld!
         ```
 
-    - Note that there is no space between "Hello" and "World!" because we didn't type one in the argument to `Console.Write`
+    - Note that there is no space between "Hello" and "World!" because we did not type one in the argument to `Console.Write`
 - Combining `Write` and `WriteLine`
 
     - We can use both `WriteLine` and `Write` in the same program
