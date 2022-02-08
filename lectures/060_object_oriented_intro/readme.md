@@ -53,11 +53,11 @@ Let's look at each part of this code in order.
     - Syntax of a method declaration: `[access modifier] [return type] [method name]([parameters])`
     - This method has one **parameter**, named `lengthParameter`, whose type is `int`. This means the method must be called with one **argument** that is `int` type.
         - Similar to how `Console.WriteLine` must be called with one argument that is `string` type -- the `Console.WriteLine` declaration has one parameter that is `string` type.
-        - Note that it's declared just like a variable, with a type and a name
+        - Note that it is declared just like a variable, with a type and a name
     - A parameter works like a variable: it has a type and a value, and you can use it in expressions and assignment
     - When you call a method with a particular argument, like 15, the parameter is assigned this value, so within the method's code you can assume the parameter value is "the argument to this method"
     - The body of the `SetLength` method has one statement, which assigns the instance variable `length` to the value contained in the parameter `lengthParameter`. In other words, whatever argument `SetLength` is called with will get assigned to `length`
-    - This is why it's called a "setter": `SetLength(15)` will set `length` to 15.
+    - This is why it is called a "setter": `SetLength(15)` will set `length` to 15.
 - GetLength method, an example of a "getter" method
     - This method will allow code outside the `Rectangle` class to read the current value of a `Rectangle` object's "length" attribute
     - The **return type** of this method is `int`, which means that the value it returns to the calling code is an `int` value
@@ -76,7 +76,7 @@ Let's look at each part of this code in order.
 - The ComputeArea method
     - This is *not* a getter or setter: its goal is not to read or write a single instance variable
     - The goal of this method is to compute and return the rectangle's area
-    - Since the area of the rectangle will be an `int` (it's the product of two `int`s), we declare the return type of the method to be `int`
+    - Since the area of the rectangle will be an `int` (it is the product of two `int`s), we declare the return type of the method to be `int`
     - This method has no parameters, because it doesn't need any arguments. Its only "input" is the instance variables, and it will always do the same thing every time you call it.
     - The body of the method has a `return` statement with an expression, rather than a single variable
     - When you write `return [expression]`, the expression will be evaluated first, then the resulting value will be used by the `return` command
@@ -99,7 +99,7 @@ Let's look at each part of this code in order.
     - The left side of the `=` sign is a variable declaration -- it declares a variable of type `Rectangle`
         - Classes we write become new data types in C#
     - The right side of the `=` sign assigns this variable a value: a `Rectangle` object
-    - We **instantiate** an object by writing the keyword `new` followed by the name of the class (syntax: `new [class name]()`). The empty parentheses are required, but we'll explain why later.
+    - We **instantiate** an object by writing the keyword `new` followed by the name of the class (syntax: `new [class name]()`). The empty parentheses are required, but we will explain why later.
     - This statement is really an initialization statement: It declares and assigns a variable in one line
     - The value of the `myRectangle` variable is the `Rectangle` object that was created by `new Rectangle()`
 - Calling setters on the object
@@ -223,7 +223,7 @@ Let's look at each part of this code in order.
 
 - Using a variable in an expression means *reading* its value
 
-- A variable only changes when it's on the left side of an assignment statement; this is *writing* to the variable
+- A variable only changes when it is on the left side of an assignment statement; this is *writing* to the variable
 
 - A method that uses instance variables in an expression, but doesn't assign to them, will not modify the object
 
@@ -284,7 +284,7 @@ Let's look at each part of this code in order.
 
 - When writing a method that returns a value, the value in the `return` statement **must** be the same type as the method's return type
 
-    - If the value returned by `LengthProduct` is not an `int`, we'll get a compile error
+    - If the value returned by `LengthProduct` is not an `int`, we will get a compile error
 
     - This won't work:
 
@@ -422,7 +422,7 @@ Let's look at each part of this code in order.
     - Instance variables are declared in the class's code block (they are inside `class Rectangle`'s body, but not inside anything else), so their scope extends to the entire class
     - Code blocks nest: A method's code block is inside the class's code block, so instance variables are also in scope within each method's code block
     - Local variables are declared inside a method's code block, so their scope is limited to that single method
-- The scope of a parameter (which is a variable) is the method's code block - it's the same as a local variable for that method
+- The scope of a parameter (which is a variable) is the method's code block - it is the same as a local variable for that method
 - Scope example:
 
     ```

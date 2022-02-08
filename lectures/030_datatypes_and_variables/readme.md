@@ -23,7 +23,7 @@
         - `uint`: An *unsigned* integer, in other words, a natural number (positive integers only)
         - `float`: A "floating-point" number, which is a real number with a fractional part, such as 3.85
         - `double`: A floating-point number with "double precision" -- also a real number, but capable of storing more significant figures
-        - `decimal`: An "exact decimal" number -- also a real number, but has fewer rounding errors than `float` and `double` (we'll explore the difference later)
+        - `decimal`: An "exact decimal" number -- also a real number, but has fewer rounding errors than `float` and `double` (we will explore the difference later)
 
 ## Literals and Variables
 
@@ -83,7 +83,7 @@
 
 #### Initialization (Declaration + Assignment)
 
-- Initialization statement combines declaration and assignment in one line (it's just a shortcut, not a new operation)
+- Initialization statement combines declaration and assignment in one line (it is just a shortcut, not a new operation)
 - Creates a new variable and also gives it an initial value
 - Syntax: `type variable_name = value;`
 - Example: `string myName = "Edward";`
@@ -91,7 +91,7 @@
 
 #### Assignment Details
 
-- Assignment replaces the "old" value of the variable with a "new" one; it's how variables *vary*
+- Assignment replaces the "old" value of the variable with a "new" one; it is how variables *vary*
     - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now store the value 30
 - You can assign a variable to another variable: just write a variable name on both sides of the `=` operator
 

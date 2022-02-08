@@ -200,7 +200,7 @@ Console.WriteLine("Goodbye");
 
 - Sometimes your program needs to test multiple conditions at once, and take different actions depending on which one is true
 - Example: We want to write a program that tells the user which floor a `ClassRoom` object is on, based on its room number
-    - If the room number is between 100 and 200 it's on the first floor; if it's between 200 and 300 it's on the second floor; if it's greater than 300 it's on the third floor
+    - If the room number is between 100 and 200 it is on the first floor; if it is between 200 and 300 it is on the second floor; if it is greater than 300 it is on the third floor
 - There are 3 ranges of numbers to test, and 3 possible results, so we can't do it with a single if-else statement
 
 #### If-else-if syntax
@@ -352,7 +352,7 @@ Console.WriteLine("Goodbye");
 
 - Note that the `else` from the inner if statement becomes `else if(usCitizen == true && age < 18)` because we combined the outer if condition (`usCitizen == true`) with the opposite of the inner if condition (`age >= 18`).
 
-- Not all nested `if` statements can be rewritten this way. If there is additional code in a block, other than the nested `if` statement, it's harder to convert it to an if-else-if
+- Not all nested `if` statements can be rewritten this way. If there is additional code in a block, other than the nested `if` statement, it is harder to convert it to an if-else-if
 
 - For example, in this nested `if` statement:
 

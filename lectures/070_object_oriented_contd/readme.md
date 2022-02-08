@@ -40,7 +40,7 @@
 
 - Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You can't do anything with a reference variable containing `null`.
 
-#### A class we'll use for subsequent examples
+#### A class we will use for subsequent examples
 
 - ClassRoom: Represents a room in a building on campus
 
@@ -218,7 +218,7 @@
 
         The first statement calls the two-parameter constructor we wrote, since it has a `string` argument and an `int` argument (in that order), and those match the parameters `(string buildingParam, int numberParam)`. The second statement calls the zero-parameter constructor since it has no arguments.
 
-    - If the arguments don't match any constructor, it's still an error:
+    - If the arguments don't match any constructor, it is still an error:
 
         ```
         ClassRoom csci = new ClassRoom(356, "Allgood East");
@@ -431,7 +431,7 @@
     - Similar syntax to a method: `[+/-] <<constructor>> [name]([parameter name]: [parameter type])`
     - Note that the name will always match the class name
     - No return type, ever
-    - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it's a constructor
+    - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it is a constructor
 - Example for ClassRoom:
 
     |                                   **ClassRoom**                              |
@@ -542,7 +542,7 @@
 - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
     - No need to write both the property `Width` and the instance variable `width`
 - Syntax: `[+/-] <<property>> [name]: [type]`
-- Note that the access modifier (+ or -) is for the property, not the instance variable, so it's + if the property is `public` (which it usually is)
+- Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
     |             **Rectangle**            |

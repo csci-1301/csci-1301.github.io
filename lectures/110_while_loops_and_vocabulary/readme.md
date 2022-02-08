@@ -290,7 +290,7 @@ Console.WriteLine("Done");
 
 - Depending on the purpose of your program, each variable might have a limited range of values that are "valid" or "good," even if the data type can hold more
 
-- For example, a `decimal` variable that holds a price (in dollars) should have a positive value, even though it's legal to store negative numbers in a `decimal`
+- For example, a `decimal` variable that holds a price (in dollars) should have a positive value, even though it is legal to store negative numbers in a `decimal`
 
 - Consider the `Item` class, which represents an item sold in a store. It has a `price` attribute that should only store positive values:
 
@@ -428,7 +428,7 @@ Console.WriteLine("Done");
 
     - If the user entered some other string, `success` will be `false`, and the program will display a message indicating that it was not an integer
 
-    - Either way, `intVar` will be assigned a value, so it's safe to write `Console.WriteLine(intVar)`. This  will display the user's input if the user entered an integer, or "0" if the user did not enter an integer.
+    - Either way, `intVar` will be assigned a value, so it is safe to write `Console.WriteLine(intVar)`. This  will display the user's input if the user entered an integer, or "0" if the user did not enter an integer.
 
 - Just like with `Parse`, you can use `Console.ReadLine()` itself as the first argument rather than a `string` variable. Also, you can declare the output variable within the out parameter, instead of on a previous line. So we can read user input, declare an `int` variable, and attempt to parse the user's input all on one line:
 

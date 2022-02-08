@@ -291,7 +291,7 @@
 
 - There's no ambiguity when accessing a static variable: you don't need to know which object's variable to access, because there is only one copy of the static variable shared by all objects
 
-- This means you can write a "getter" or "setter" for a static variable, as long as it's a static method. For example, we could improve our `NumRectangles` counter by ensuring that the Main method can only read it through a getter method, like this:
+- This means you can write a "getter" or "setter" for a static variable, as long as it is a static method. For example, we could improve our `NumRectangles` counter by ensuring that the Main method can only read it through a getter method, like this:
 
     ```
     class Rectangle

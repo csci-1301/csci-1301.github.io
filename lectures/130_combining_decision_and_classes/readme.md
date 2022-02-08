@@ -21,7 +21,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     !include code/item.cs
     ```
 
-- Right now, it's possible to set the price to any value, including a negative number, but a negative price doesn't make sense. If we add an `if` statement to SetPrice, we can check that the new value is a valid price before changing the instance variable:
+- Right now, it is possible to set the price to any value, including a negative number, but a negative price doesn't make sense. If we add an `if` statement to SetPrice, we can check that the new value is a valid price before changing the instance variable:
 
     ```
     public void SetPrice(decimal p)
@@ -141,7 +141,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
 #### Constructors with Input Validation
 
-- A constructor's job is to initialize the object's instance variables, so it's very similar to a "setter" for all the instance variables at once
+- A constructor's job is to initialize the object's instance variables, so it is very similar to a "setter" for all the instance variables at once
 
 - If the constructor uses parameters to initialize the instance variables, it can use `if` statements to ensure the instance variables are not initialized to "bad" values
 
@@ -155,7 +155,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
   }
   ```
 
-  With both this constructor and the `SetPrice` method we wrote earlier, we can now guarantee that it's impossible for an Item object to have a negative price. This will make it easier to write a large program that uses many Item objects without introducing bugs: the program can't accidentally reduce an item's price below 0, and it can add up the prices of all the items and be sure to get the correct answer.
+  With both this constructor and the `SetPrice` method we wrote earlier, we can now guarantee that it is impossible for an Item object to have a negative price. This will make it easier to write a large program that uses many Item objects without introducing bugs: the program can't accidentally reduce an item's price below 0, and it can add up the prices of all the items and be sure to get the correct answer.
 
 - Recall the `ClassRoom` class from an earlier lecture, which has a room number as one of its attributes. If we know that no classroom building has more than 3 floors, then the room number must be between 100 and 399. The constructor for `ClassRoom` could check that the room number is valid using an if-else-if statement, as follows:
 
@@ -230,7 +230,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     ```
 
     - First, we initialize `hours` using `hourParam`, unless `hourParam` is negative. There's no upper limit on the value of `hours`
-    - If `minuteParam` is 60 or greater, we perform an integer division by 60 and add the result to `hours`, while using the remainder after dividing by 60 to initialize `minutes`. This separates the value into a whole number of hours and a remaining, valid, number of minutes. Since `hours` has already been initialized, it's important to use `+=` (to add to the existing value).
+    - If `minuteParam` is 60 or greater, we perform an integer division by 60 and add the result to `hours`, while using the remainder after dividing by 60 to initialize `minutes`. This separates the value into a whole number of hours and a remaining, valid, number of minutes. Since `hours` has already been initialized, it is important to use `+=` (to add to the existing value).
     - Similarly, if `secondParam` is 60 or greater, we divide it into a whole number of minutes and a remaining number of seconds, and add the number of minutes to `minutes`
     - With all three parameters, any negative value is replaced with 0
 
@@ -483,7 +483,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     | + IsTaxable() : `bool`                                                     |
 
     - Note that the "getter" for a Boolean variable is conventionally named with a word like "Is" or "Has" rather than "Get"
-    - We will add a constant named SALES_TAX to the Item class to store the sales tax rate that should be applied if the item is taxable. The sales tax rate is not likely to change during the program's execution, but it's better to store it in a named variable instead of writing the same literal value (e.g. `0.08m`) every time we want to compute a total price with tax.
+    - We will add a constant named SALES_TAX to the Item class to store the sales tax rate that should be applied if the item is taxable. The sales tax rate is not likely to change during the program's execution, but it is better to store it in a named variable instead of writing the same literal value (e.g. `0.08m`) every time we want to compute a total price with tax.
 
 - The instance variables and constructor for `Item` now look like this:
 

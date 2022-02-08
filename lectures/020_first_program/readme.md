@@ -74,7 +74,7 @@ Features of this program:
     - A collection of instructions with a name
     - Can be used by typing its name
     - A method is similar to a paragraph, in that it can contain multiple statements, and a class is similar to a chapter, in that it can have multiple methods within its body.
-    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we'll get to those later, but they're required)
+    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they're required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
 - A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
     - This is the part of the program that actually "does something": It prints a line of text to the console

@@ -134,7 +134,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
 - Program interfaces
     - **GUI** or Graphical User Interface: Input is from clicking mouse in visual elements on screen (buttons, menus, etc.), output is by drawing onto the screen
     - **CLI** or Command Line Interface: Input is from text typed into "command prompt" or "terminal window," output is text printed at same terminal window
-    - This class will use CLI because it's simple, portable, easy to work with -- no need to learn how to draw images, just read and write text
+    - This class will use CLI because it is simple, portable, easy to work with -- no need to learn how to draw images, just read and write text
 
 
 ## Programming Concepts

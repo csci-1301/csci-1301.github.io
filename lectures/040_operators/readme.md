@@ -103,7 +103,7 @@ When the computer executes the second line of this code, it reads the variable `
 
 - In general, a data type can only be implicitly converted to one with a *larger range* of possible values
 
-- Since an `int` can store any integer between $-2^{31}$ and $2^{31}-1$, but a `float` can store any integer between $-3.4 \times 10^{38}$ and $3.4 \times 10^{38}$ (as well as fractional values), it's always safe to store an `int` value in a `float`
+- Since an `int` can store any integer between $-2^{31}$ and $2^{31}-1$, but a `float` can store any integer between $-3.4 \times 10^{38}$ and $3.4 \times 10^{38}$ (as well as fractional values), it is always safe to store an `int` value in a `float`
 
 - You *cannot* implicitly convert a `float` to an `int` because an `int` stores fewer values than a `float` -- it can't store fractions -- so converting a `float` to an `int` will **lose data**
 
@@ -127,7 +127,7 @@ When the computer executes the second line of this code, it reads the variable `
 
 - Explicit conversions are often used when you (the programmer) know the conversion is actually "safe" -- data won't actually be lost
 
-    - For example, in this code, we know that 2.886 is within the range of a `float`, so it's safe to convert it to a `float`:
+    - For example, in this code, we know that 2.886 is within the range of a `float`, so it is safe to convert it to a `float`:
 
         ```
         float radius = (float) 2.886;

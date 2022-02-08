@@ -77,7 +77,7 @@
 
 - When you declare a counter variable in the `for` statement, its scope is limited to *inside* the loop
 
-- Just like method parameters, it's as if the variable declaration happened just inside the opening `{`, so it can only be accessed inside that code block
+- Just like method parameters, it is as if the variable declaration happened just inside the opening `{`, so it can only be accessed inside that code block
 
 - This means you can't use a counter variable after the end of the loop. This code will produce a compile error:
 
@@ -112,7 +112,7 @@
 
 - If you want your counter variable to still be in scope after the end of the loop, you can't also declare it in the `for` loop. This is why we had to write `for(count = 0...` instead of `for(int count = 0...` in the previous example: the name `count` was already being used.
 
-- Since counter variables often use short, common names (like `i` or `count`), it's more likely that you'll accidentally re-use one that's already in scope
+- Since counter variables often use short, common names (like `i` or `count`), it is more likely that you'll accidentally re-use one that's already in scope
 
 - For example, you might have a program with many `for` loops, and in one of them you decide to declare the counter variable outside the loop because you need to use it after the end of the loop. This can cause an error in a different `for` loop much later in the program:
 
@@ -135,7 +135,7 @@
 
     The compiler will produce an error on the second `for` loop, because the name "i" is already being used.
 
-- On the other hand, if all of your `for` loops declare their variables inside the `for` statement, it's perfectly fine to reuse the same variable name. This code does not produce any errors:
+- On the other hand, if all of your `for` loops declare their variables inside the `for` statement, it is perfectly fine to reuse the same variable name. This code does not produce any errors:
 
     ```
     int total = 0;
