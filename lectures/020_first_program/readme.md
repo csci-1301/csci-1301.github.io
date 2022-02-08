@@ -71,19 +71,24 @@ Features of this program:
            [body of the class]
      }
      ```
-    - All code between opening `{` and closing `}` is part of the class named by the `class [name of class]` statement
+    - All code between opening `{` and closing `}` is the _body_ of the class named by the `class [name of class]` statement
 - A method declaration
     - A collection of instructions with a name
     - Can be used by typing its name
     - A method is similar to a paragraph, in that it can contain multiple statements, and a class is similar to a chapter, in that it can have multiple methods within its body.
-    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they are required)
+    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they're required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
-- A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
-    - This is the part of the program that actually "does something": It prints a line of text to the console
+- A statement inside the body of the method: 
+    ```
+    Console.WriteLine("Hello, world!"); // I'm an in-line comment.
+    ```
+    - This is the part of the program that actually "does something": It displays a line of text to the console:
+    
+        ![](img/hello_world_console.png)
     - This statement contains a class name (`Console`), followed by a method name (`WriteLine`). It calls the `WriteLine` method in the `Console` class.
     - The **argument** to the `WriteLine` method is the text "Hello, world!", which is in parentheses after the name of the method. This is the text that gets printed in the console: The `WriteLine` method (which is in the standard library) takes an argument and prints it to the console.
     - Note that the argument to `WriteLine` is inside double-quotes. This means it is a **string**, i.e. textual data, not a piece of C# code. The quotes are required in order to distinguish between text and code.
-    - A statement *must* end in a semicolon (the class header and method header aren't statements)
+    - A statement *must* end in a semicolon (the class header and method header are not statements)
 - An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by the C# compiler.
 
 ## Rules of C# Syntax
@@ -95,11 +100,12 @@ Features of this program:
     - A method named `writeline` is not the same as one named `WriteLine`
 - Braces and parentheses must always be matched
     - Once you start a class or method definition with `{`, you must end it with `}`
-- Whitespace -- spaces, tabs, and newlines -- has almost no meaning
+- Whitespace has _almost_ no meaning
+    - "Whitespaces" refer to spaces (sometimes denoted " ", "␣" or "⌴"), [tabs](https://en.wikipedia.org/wiki/Tab_key#Tab_characters) (which consists in 4 spaces), and newlines (sometimes denoted "↵", "↩" or "⏎")
     - There must be at least 1 space between words
-    - Spaces are counted exactly if they are inside string data, e.g. `"Hello      world!"`
-    - Otherwise, entire program could be written on one line; it would have the same meaning
-    - Spaces and new lines are just to help humans read the code
+    - Other than that, spaces and new lines are just to help humans read the code 
+    - Spaces are counted exactly if they are inside string data, e.g. `"Hello      world!"` is different from `"Hello world!"`
+    - Otherwise, entire program could be written on one line^[Well, if there are no in-line comments in it. Can you figure out why?]; it would have the same meaning
 - All C# applications must have a `Main` method
     - Name must match exactly, otherwise .NET runtime will get confused
     - This is the first code to run when the application starts -- any other code (in methods) will only run when its method is called
@@ -118,11 +124,13 @@ Features of this program:
     - C# code is stored in files that end with the extension ".cs"
     - Each ".cs" file contains exactly one class
     - The name of the file is the same as the name of the class (Program.cs contains `class Program`)
+    
+Note that some of those conventions are actually rules in different programming languages (typically, the last two regarding code files are mandatory rules in java).
 
 ## Reserved Words and Identifiers
 
 - Reserved words: Keywords in the C# language
-    - Note they have a distinct color in the code sample and in Visual Studio
+    - Note they have a distinct color in the code sample and in your IDE
     - Built-in commands/features of the language
     - Can only be used for one specific purpose; meaning cannot be changed
     - Examples:
@@ -138,19 +146,20 @@ Features of this program:
         - `while`
         - `do`
         - `return`
+    - There is no need to memorize [the whole list of keywords](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/), as we will only introduce the ones we need on a "per need" basis.
 - Identifiers: Human-chosen names
     - Names for classes (`Rectangle`, `ClassRoom`, etc.), variables (`age`, `name`, etc.), methods (`ComputeArea`, `GetLength`, etc), namespaces, etc.
-    - Some have already been chosen for the standard library (e.g. `Console`, `WriteLine`), but they are still identifiers, not keywords
+    - Some have already been chosen for the standard library (e.g. `system`, `Console`, `WriteLine`, `Main`), but they are still identifiers, not keywords
     - Rules for identifiers:
         - Must not be a reserved word
-        - Must contain only letters (`a` → `Z`), numbers (`0` → `9`), and underscore (`_`)-- no spaces
+        - Must contain only letters (lower case, from `a` to `z`, or upper case, from `A` to `Z`), numbers (made of digits from `0` to `9`), and underscore (`_`)-- no spaces
         - Must not begin with a number
         - Are case sensitive
         - Must be unique (you cannot re-use the same identifier twice in the same scope -- a concept we will discuss later)
     - Conventions for identifiers
         - Should be descriptive, e.g. "`AudioFile`" or "`userInput`" not "`a`" or "`x`"
         - Should be easy for humans to read and type
-        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) (or its variation [Pascal case](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/)) to distinguish words
+        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) (or its variation [Pascal case](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/)) to distinguish words, e.g. `myHeightInMeters` or `distanceFromEarthToMoon`.
         - Class and method names should start with capitals, e.g. "`class AudioFile`"
         - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 
@@ -259,7 +268,7 @@ Features of this program:
             !include code/escape_quotes.cs
             ```
 
-    - Note that all escape sequences begin with a backslash character (`\`)
+    - Note that all escape sequences begin with a backslash character (`\`), called the "escape character"
     - General format is `\[key letter]` -- the letter after the backslash is like a "keyword" indicating which special character to display
     - If you want to put an actual backslash in your string, you need the escape sequence `\\`, which prints a single backslash
         - This will result in a compile error because `\U` is not a valid escape sequence:

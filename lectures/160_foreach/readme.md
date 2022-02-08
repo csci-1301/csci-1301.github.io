@@ -9,7 +9,7 @@
     }
     ```
 
-- In some cases, this code has unnecessary repetition: If you aren't using the counter `i` for anything other than an array index, you still need to declare it, increment it, and write the condition with `myArray.Length`
+- In some cases, this code has unnecessary repetition: If you are not using the counter `i` for anything other than an array index, you still need to declare it, increment it, and write the condition with `myArray.Length`
 
 - The **foreach loop** is a shortcut that allows you to get rid of the counter variable and the loop condition. It has this syntax:
 
