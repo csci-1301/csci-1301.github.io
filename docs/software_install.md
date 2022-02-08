@@ -95,18 +95,41 @@ Note that, as a student, you can [obtain a licence for free](https://www.jetbrai
 Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
 In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
-<!-- GEANY DOCUMENTATION IN NEED OF REVIEW -->
 ### Installing Geany On Your Own Computer
 
-**Note:** This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects.
+Note:
+~ _This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects, and could start by reading [this exchange](https://stackoverflow.com/q/54041013) (which is about projects in Linux, but applies equally well to projects in C#) or [this one](https://stackoverflow.com/q/8264323)._
 
 You can download Geany [from their website](https://www.geany.org/), for any operating system.
+Unfortunately, Geany does not natively build and compile C# code. To use Geany as a text editor for C#, we must download the Mono C# compiler [from their website](https://www.mono-project.com/download/stable/). Make sure to download the most recent version to assure your compiler has the most up-to-date version of ".NET".
 
-Unfortunately, Geany does not natively build and compile C# code. To use Geany as a text editor for C#, we must download the Mono C# compiler [from their website](https://www.mono-project.com/download/stable/). Make sure to download the most recent version to assure your compiler has the most up-to-date version of ".NET". Once you download Mono, locate the "csc.bat" file in Mono's "bin" folder and copy the file path. Now open a .cs file using Geany. Click the arrow next to the "Build" Button and click "Set Build Commands" from the dropdown menu. 
+Once you installed Mono, locate the "csc.bat", "csc.exe" or "csc" file in Mono's "bin" folder and copy the file path.
+This path can be of the form
+```
+C:\Program Files (x86)\Mono\bin\csc.bat
+```
+on windows, or 
+```
+/usr/bin/csc
+```
+on Unix systems.
 
-In the "Set Build Commands" window, erase the entry next to the "Compile" button and paste the file path to the "csc.bat" in qutotation marks. After the file path, create a single space followed by "%f" with the quotaion marks. Confirm the change by clicking OK and now you will be able to compile, build, and execute **standalone** .cs files.
+Now open a .cs file using Geany. Click the arrow next to the "Build" Button and click "Set Build Commands" from the dropdown menu. 
 
-![Set Build Commands Example](img/setBuildCommand)
+![Accessing the menu to set build commands](img/setBuildCommand_1.png)
+
+
+In the "Set Build Commands" window, erase the entry next to the "Compile" button and paste the file path to the "csc.bat" in quotation marks.
+After the file path, create a single space followed by "%f" with the quotaion marks.
+All in all, you should have something of the form
+```
+"C:\Program Files (x86)\Mono\bin\csc.bat" "%f"
+```
+in the "Command" field of the "Compile" line.
+
+Confirm the change by clicking OK and now you will be able to compile, build, and execute **standalone** .cs files.
+
+![Setting the build commands](img/setBuildCommand_2.png)
 
 ### Installing Anything Anywhere
 
