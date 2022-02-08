@@ -95,6 +95,19 @@ Note that, as a student, you can [obtain a licence for free](https://www.jetbrai
 Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
 In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
+<!-- GEANY DOCUMENTATION IN NEED OF REVIEW -->
+### Installing Geany On Your Own Computer
+
+**Note:** This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects.
+
+You can download Geany [from their website](https://www.geany.org/), for any operating system.
+
+Unfortunately, Geany does not natively build and compile C# code. To use Geany as a text editor for C#, we must download the Mono C# compiler [from their website](https://www.mono-project.com/download/stable/). Make sure to download the most recent version to assure your compiler has the most up-to-date version of ".NET". Once you download Mono, locate the "csc.bat" file in Mono's "bin" folder and copy the file path. Now open a .cs file using Geany. Click the arrow next to the "Build" Button and click "Set Build Commands" from the dropdown menu. 
+
+In the "Set Build Commands" window, erase the entry next to the "Compile" button and paste the file path to the "csc.bat" in qutotation marks. After the file path, create a single space followed by "%f" with the quotaion marks. Confirm the change by clicking OK and now you will be able to compile, build, and execute **standalone** .cs files.
+
+![Set Build Commands Example](img/setBuildCommand)
+
 ### Installing Anything Anywhere
 
 If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution or a Windows image on top of your operating system.
