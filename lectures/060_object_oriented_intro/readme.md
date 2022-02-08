@@ -175,7 +175,7 @@ Let's look at each part of this code in order.
 
 - Now that we know about the member access operator, we can explain how method calls work a little better
 
-- When we write `rect1.SetLength(12)`, the `SetLength` method is executed with `rect1` as the calling object -- we're accessing the `SetLength` member of `rect1` in particular (even though every Rectangle has the same `SetLength` method)
+- When we write `rect1.SetLength(12)`, the `SetLength` method is executed with `rect1` as the calling object -- we are accessing the `SetLength` member of `rect1` in particular (even though every Rectangle has the same `SetLength` method)
 
 - This means that when the code in `SetLength` uses an instance variable, i.e. `length`, it will automatically access `rect1`'s copy of the instance variable
 
