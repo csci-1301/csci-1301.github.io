@@ -98,7 +98,7 @@ We will be studying and writing programs in _high-level languages_, but understa
         - Compiler is specific to both the source language and the target computer
     - Compile high-level instructions into machine code then run since computers can only execute machine code
 
-!["A Visual Representation of the Relationships Between Languages"](img/overview_languages_1)
+![A Visual Representation of the Relationships Between Languages](img/overview_languages_1)
 
 A more subtle difference exists between high-level languages.
 Some (like C) are _compiled_ (as we discussed above), some (like Python) are _interpreted_, and some (like C#) are in an in-between called _managed_.
@@ -122,7 +122,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
         - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
     - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
 
-!["A Visual Representation of the Differences Between High-Level Languages"](img/overview_languages_2)
+![A Visual Representation of the Differences Between High-Level Languages](img/overview_languages_2){#fig:flowchart2}
 
 
 ## Software Concepts
@@ -139,7 +139,14 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
 
 ## Programming Concepts
 
-- Programming workflow (see flowchart)
+### Programming workflow
+
+![Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs.](img/flowchart){#fig:flowchart1}
+
+The workflow of the programmer will differ a bit depending on if the program is written in a compiled or an intprepreted programming language.
+From the distance, both looks like what is pictured in the [the flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs](#fig:flowchart1), but some differences remain:
+
+- Compiled language workflow
     - Writing down specifications
     - Creating the source code
     - Running the compiler
@@ -147,7 +154,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
     - Fixing compile errors, if necessary
     - Running and testing the program
     - Debugging the program, if necessary
-- Interpreted language workflow (see flowchart)
+- Interpreted language workflow
     - Writing down specifications
     - Creating the source code
     - Running the program in the interpreter
@@ -155,22 +162,32 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
     - Editing the program to fix syntax errors
     - Testing the program (once it can run with no errors)
     - Debugging the program, if necessary
-    - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
-    - **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
+    
+Interperted languages have
 
+- **Advantages**: Fewer steps between writing and executing, can be a faster cycle
+- **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
 
-#### Programming workflow
+### (Integrated) Development Environment
 
-<!-- TODO: title this figure -->
+Programers can either use a collection of tools to write, compile, debug and execute a program, or use an "all-in-one" solution called an Integrated Development Environment (IDE).
 
-!["Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs."](img/flowchart)
+- The ["Unix philosophy"](https://en.wikipedia.org/wiki/Unix_philosophy) states that a program should do only one task, and do it properly. For programmers, this means that
+    - One program will be needed to edit the source code, a text editor (it can be Geany, notepad, kwrite, emacs, sublime text, vi, etc.),
+    - One program will be needed to compile the source code, a compiler (for C#, it will be either [mono](https://en.wikipedia.org/wiki/Mono_(software)) or [Roslyn](https://en.wikipedia.org/wiki/Roslyn_(compiler)),
+    - Other programs may be needed to debug, execute, or organize larger projects, such as makefile or [MKBundle](https://www.mono-project.com/docs/tools+libraries/tools/mkbundle/).
 
+IDE "bundle" all of those functionality into a single interface, to ease the workflow of the programmer.
+This means sometimes that programmers have fewer control over their tools, but that it is easier to get started.
+    
 - Integrated Development Environment (IDE)
     - Combines a text editor, compiler, file browser, debugger, and other tools
     - Helps you organize a programming project
     - Helps you write, compile, and test code in one place
-    - Visual Studio terms:
-        - Solution: An entire software project, including source code, metadata, input data files, etc.
-        - "Build solution": Compile all of your code
-        - "Start without debugging": Run the compiled code
-        - Solution location: The folder (on your computer's file system) that contains the solution, meaning all your code and the information needed to compile and run it
+
+In particular, Visual Studio is an IDE, and it uses its own vocabulary:
+
+- Solution: An entire software project, including source code, metadata, input data files, etc.
+- "Build solution": Compile all of your code
+- "Start without debugging": Run the compiled code
+- Solution location: The folder (on your computer's file system) that contains the solution, meaning all your code and the information needed to compile and run it
