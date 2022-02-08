@@ -239,7 +239,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
 
     - The `case` statement only defines where code execution *starts* when the variable matches a value (like an open `{`). The `break` statement defines where it *ends* (like a close `}`).
 
-- However, there's one exception: A `case` statement with *no body* (code block) after it does not need a matching `break`
+- However, there is one exception: A `case` statement with *no body* (code block) after it does not need a matching `break`
 
 - If there is more than one value that should have the same behavior, you can write `case` statements for both values above a single block of code, with no `break` between them. If *either one* matches, the computer will execute that block of code, and then stop at the `break` statement.
 
@@ -398,7 +398,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
 
 #### Assignment with the conditional operator
 
-- If the only thing an `if` statement does is assign a value to a variable, there's a much shorter way to write it
+- If the only thing an `if` statement does is assign a value to a variable, there is a much shorter way to write it
 
 - The **conditional operator** `?:` tests a condition, and then outputs one of two values based on the result
 

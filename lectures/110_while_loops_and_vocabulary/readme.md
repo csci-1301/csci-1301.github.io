@@ -460,7 +460,7 @@ Console.WriteLine("Done");
 
 - `while` and `if` are very similar: Both test a condition, execute a block of code if the condition is true, and skip the block of code if the condition is false
 
-- There's only a difference if the condition is true: `if` statements only execute the block of code once if the condition is true, but `while` statements may execute the block of code multiple times if the condition is true
+- There is only a difference if the condition is true: `if` statements only execute the block of code once if the condition is true, but `while` statements may execute the block of code multiple times if the condition is true
 
 - Compare these snippets of code:
 

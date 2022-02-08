@@ -229,7 +229,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     }
     ```
 
-    - First, we initialize `hours` using `hourParam`, unless `hourParam` is negative. There's no upper limit on the value of `hours`
+    - First, we initialize `hours` using `hourParam`, unless `hourParam` is negative. There is no upper limit on the value of `hours`
     - If `minuteParam` is 60 or greater, we perform an integer division by 60 and add the result to `hours`, while using the remainder after dividing by 60 to initialize `minutes`. This separates the value into a whole number of hours and a remaining, valid, number of minutes. Since `hours` has already been initialized, it is important to use `+=` (to add to the existing value).
     - Similarly, if `secondParam` is 60 or greater, we divide it into a whole number of minutes and a remaining number of seconds, and add the number of minutes to `minutes`
     - With all three parameters, any negative value is replaced with 0

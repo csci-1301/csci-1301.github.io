@@ -572,7 +572,7 @@ Let's look at each part of this code in order.
 - Reference types can also appear in method parameters
     - When you call a method, you provide an argument (a value) for each parameter in the method's declaration
     - Since the parameter is really a variable, the computer will then assign the argument to the parameter, just like variable assignment
-        - For example, when you write `rect1.SetLength(8)`, there's an implicit assignment `lengthParameter = 8` that gets executed before executing the body of the `SetLength` method
+        - For example, when you write `rect1.SetLength(8)`, there is an implicit assignment `lengthParameter = 8` that gets executed before executing the body of the `SetLength` method
     - This means if the parameter is a reference type (like an object), the parameter will get a copy of the reference, not a copy of the object
     - When you use the parameter to modify the object, you will modify the same object that the caller provided as an argument
     - This means objects can change other objects!
