@@ -386,7 +386,7 @@ Let's look at each part of this code in order.
 
 - Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
 
-- Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the Main method (they're local to the Main method!).
+- Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the Main method (they are local to the Main method!).
 
 - Example: In class Rectangle, we have these two methods:
 
@@ -487,7 +487,7 @@ Let's look at each part of this code in order.
 
     Since `this` means "the calling object", `this.width` means "access the `width` member of the calling object." This can only mean the instance variable `width`, not the local variable with the same name
 
-- Incidentally, you can also use `this` to give your parameters the same name as the instance variables they're modifying:
+- Incidentally, you can also use `this` to give your parameters the same name as the instance variables they are modifying:
 
     ```
     class Rectangle

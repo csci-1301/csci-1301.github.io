@@ -48,7 +48,7 @@ It is a simple way of seeing a first, simple example of the basic structure of a
 Here's a simple "hello world" program in the C# language:
 
 
-#### Hello World
+### Hello World
 
 <!-- TODO: title this code block -->
 
@@ -63,20 +63,20 @@ Features of this program:
     - In C#, code is organized into **namespaces**, which group related classes together
     - If you want to use code from a different namespace, you need a `using` statement to "import" that namespace
     - All the standard library code is in different namespaces from the code you will be writing, so you'll need `using` statements to access it
-- A class declaration
+- A class declaration^[We use the notation `[…]` to denote what "should" be there, but this is just a place holder: you are not supposed to _actually_ have the braces in the code.]
     - Syntax:
-      <pre>
-      class [name of class]
-      {
-           body of the class
-      }
-      </pre>
-    - All code between opening `{` and closing `}` is part of the class named by the `class [name]` statement
+    ```
+     class [name of class]
+     {
+           [body of the class]
+     }
+     ```
+    - All code between opening `{` and closing `}` is part of the class named by the `class [name of class]` statement
 - A method declaration
     - A collection of instructions with a name
     - Can be used by typing its name
     - A method is similar to a paragraph, in that it can contain multiple statements, and a class is similar to a chapter, in that it can have multiple methods within its body.
-    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they're required)
+    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they are required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
 - A statement inside the body of the method: `Console.WriteLine("Hello, world!"); // I'm an in-line comment.`
     - This is the part of the program that actually "does something": It prints a line of text to the console
