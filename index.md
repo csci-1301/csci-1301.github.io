@@ -32,6 +32,7 @@ Available formats:
 ### Programming and Computer Usage
 
 - [Installing Software](software_install.html) - guide on how to install various IDE / software
+- [How to (Un)Zip Archives](zip_guide.html) - a short guide on how to zip (compress) or unzip (extract) .zip archives
 - [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of shortcuts you will likely use often
 - [Datatypes in C#](datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
 

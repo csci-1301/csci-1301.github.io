@@ -12,11 +12,7 @@ In this lab you will first edit an existing program then create a new program "f
 
 #. Download [InitialSolution.zip](InitialSolution.zip) and save it on your computer.
 
-#. Unzip the program file^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unziped!]
-
-    - on Windows: right click and choose "Extract all"
-    - on macOS: double-click the `.zip` file
-    - on Linux: [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.com/Unzip-Files-in-Linux)
+#. Unzip the program file: you can refer to [our small guide on manipulating archives](/zip_guide.html). *Be careful*: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unziped!
 
 ### Renaming
 
@@ -119,6 +115,11 @@ We will first create a new C\# project using the template for a "Console App".
 #. Look for "Console Application" option and check that the associated language is C\#. 
 
     - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core) and can choose either, it does not make a difference for this class.
+    - On Visual Studio, you would see something like:
+    
+    ![](../../img/create_project.png)
+    
+    Pick the _first_ item, which is for C\#.
 
 #. Enter `MyFirstProject` as the name of the project.
 #. Enter `MyFirstSolution` as the name of the solution. 
