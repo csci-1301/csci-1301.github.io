@@ -60,8 +60,8 @@ instantiate an object of the class and ensure it works as described.
 
 In this next exercise you will practice drawing your own diagram, on paper.
 
-#. Draw the UML class diagram of a `PreciseRectangle` class.
-#. It should have two attributes: `width` and `length` of type `double`
+#. Draw the UML class diagram of a `Rectangle` class.
+#. It should have two attributes: `width` and `length` of type `int`
 #. It should have eight methods:
     - two setters, two getters (i.e., one for each attribute) 
     - `ComputeArea` method to compute the area of a precise rectangle
@@ -70,6 +70,8 @@ In this next exercise you will practice drawing your own diagram, on paper.
     - `Multiply` method to multiply the length *and* width of a precise rectangle by an ratio given in argument as an integer (`int`)
 
 # Pushing Further (Optional)
+
+Do the same thing you did for the `Rectangle` class for a `PreciseRectangle` class.
 
 The following is an independent task, to widen your understanding of UML modelling concepts:
 
