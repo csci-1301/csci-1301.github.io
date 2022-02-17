@@ -6,16 +6,16 @@ title: Constructors and ToString
 
 As a warm-up, you will practice writing constructors and ToString methods by adding them to a class you have already written.
 
-## A Constructor for PreciseRectangle
+## A Constructor for Rectangle
 
-#. Open the "PreciseRectangle" project you created in the "PreciseRectangle and Circle" lab.
-#. In "PreciseRectangle.cs", add a constructor to `PreciseRectangle` that takes two arguments, a length and a width, and uses them to initialize the `length` and `width` attributes.
-#. Within your `Main` method, you will notice that your `new PreciseRectangle()` instantiation statements are now highlighted as errors, because `PreciseRectangle` no longer has a zero-argument constructor. Change each instantiation statement to call your new two-argument constructor, using the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
-#. Compile and run your program and make sure your PreciseRectangles still behave as expected.
+#. Open the "Rectangle" project you created in the "Rectangle Class" lab.
+#. In "Rectangle.cs", add a constructor to `Rectangle` that takes two arguments, a length and a width, and uses them to initialize the `length` and `width` attributes.
+#. Within your `Main` method, you will notice that your `new Rectangle()` instantiation statements are now highlighted as errors, because `Rectangle` no longer has a zero-argument constructor. Change each instantiation statement to call your new two-argument constructor, using the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
+#. Compile and run your program and make sure your Rectangles still behave as expected.
 
 ## A ToString Method
 
-In the `Main` method of your program, you should have one or more statements that display the length and width of a PreciseRectangle, e.g. to test the result of your `Swap` method, like this:
+In the `Main` method of your program, you should have one or more statements that display the length and width of a Rectangle, e.g. to test the result of your `Swap` method, like this:
 
 ```
 Console.WriteLine($"My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}");
@@ -23,9 +23,9 @@ myRectangle.Swap();
 Console.WriteLine($"My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}");
 ```
 
-We will add a `ToString` method to `PreciseRectangle` to make it easier to write these statements.
+We will add a `ToString` method to `Rectangle` to make it easier to write these statements.
 
-#. In "PreciseRectangle.cs", add the following method to `PreciseRectangle`:
+#. In "Rectangle.cs", add the following method to `Rectangle`:
 
    ```
    public override string ToString()
@@ -34,7 +34,7 @@ We will add a `ToString` method to `PreciseRectangle` to make it easier to write
    }
    ```
 
-#. Within your `Main` method, find a `WriteLine` statement that displays the length and width of a `PreciseRectangle`, and replace the calls to `GetLength` and `GetWidth` with a single call to `ToString`. For example, you can replace the statement
+#. Within your `Main` method, find a `WriteLine` statement that displays the length and width of a `Rectangle`, and replace the calls to `GetLength` and `GetWidth` with a single call to `ToString`. For example, you can replace the statement
 
    ```
    Console.WriteLine($"My rectangle has length {myRectangle.GetLength()} and width {myRectangle.GetWidth()}");
