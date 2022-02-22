@@ -128,9 +128,7 @@ compiled, and executed.
 #. Write a statement that assigns the value $23$ to a variable `myAge` of type `int`. You don't need to re-declare that variable.
     <details><summary>Solution</summary>`myAge = 23;`</details>
 
-#. Cross out the wrong answer in the following sentences, 
-
-    > \[ ~~like this (incorrect)~~  \|  like this (correct) \]:
+#. Cross out the wrong answer in the following sentences, \[ ~~like this (incorrect)~~  \|  like this (correct) \]:
 
     - "If the code does not obey the \[  rules  \|  conventions \] of C#, then the compiler will complain." 
     - "Every statement needs to end with \[  a forward slash `/`  \|  a semi-colon `;`  \]." 
@@ -139,17 +137,17 @@ compiled, and executed.
     - "An identifier can contain \[  only lower-case letters  \|  letters and digits  \]."
     
     <details><summary>Solution</summary>
-    - If the code does not obey the rules of C#, then the compiler will complain.
-    - Every statement needs to end with a semi-colon `;`.
-    - C# is an object-oriented programming language.
-    - A class is made up of a body and a header. 
-    - An identifier can contain letters and digits. 
+    - If the code does not obey the **rules** of C#, then the compiler will complain.
+    - Every statement needs to end with a **semi-colon `;`**.
+    - C# is an **object-oriented** programming language.
+    - A class is made up of **a body and a header**. 
+    - An identifier can contain **letters and digits**. 
     </details>
     
 
 # Part II -- Problems
 
-#. There are $4$ errors in the following code that will prevent it from compiling. Can you spot them all?
+#. There are 4 errors in the following code that will prevent it from compiling. Can you spot them all?
 
     ```
     // My first attempt.
@@ -232,22 +230,22 @@ value of `b` after the second statement is executed.
             decimal a = 2.5M;
             int b = a / 2;
     ```
-    <details><summary>Solution</summary>The result of the expression 'a / 2' is of type `decimal`, so it cannot be stored in an int. This can be fixed by adding an `(int)` cast to the variable `a` before dividing it by 2, so that the expression's result type is `int`, like this: 'int b = (int)a / 2;'</details>
+    <details><summary>Solution</summary>The result of the expression `a / 2` is of type `decimal`, so it cannot be stored in an int. This can be fixed by adding an `(int)` cast to the variable `a` before dividing it by 2, so that the expression's result type is `int`, like this: `int b = (int)a / 2;`</details>
 
 #. If one of the operator's operand is of type `float` and the other is of type `int`, what will be the type of the result of the operation?
     <details><summary>Solution</summary>`float`</details>
 
-#.  What is the return type of the operation '12.4 \* 3'?
+#.  What is the return type of the operation `12.4 \* 3`?
     <details><summary>Solution</summary>`double`</details>
 
-#. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You don't need to re-declare those variables. Assuming `myDoubleVar'`s value is $5.89$, what value would be stored in `myIntVar`?
-    <details><summary>Solution</summary>'myIntVar = (int)myDoubleVar;' $5$</details>
+#. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You don't need to re-declare those variables. Assuming `myDoubleVar`'s value is 5.89, what value would be stored in `myIntVar`?
+    <details><summary>Solution</summary>`myIntVar = (int)myDoubleVar;`,  the value stored in `myIntVar` would be 5.</details>
 
 #. Write a statement that performs an implicit conversion between two different numeric datatypes.
-    <details><summary>Solution</summary>'float m = 3;'</details>
+    <details><summary>Solution</summary>`float m = 3;`</details>
 
-#. Assuming that `myLastName` and `myFirstName` are two `string` variables that have been initialized, write a statement that *concatenates* them with a space and a comma in-between, and assign the resulting `string` to a variable named `fullName`. For instance, if the value of `myLastName` is '\"Holbertonand\"\`, and the value of `myFirstName` is '\"Betty\"\`, then the value of `fullName` after your operation should be '\"Holbertonand, Betty\"\`.
-    <details><summary>Solution</summary>'string fullName = myLastName + \", \" + myFirstName;'</details>
+#. Assuming that `myLastName` and `myFirstName` are two `string` variables that have been initialized, write a statement that *concatenates* them with a space and a comma in-between, and assign the resulting `string` to a variable named `fullName`. For instance, if the value of `myLastName` is `"Holbertonand"`, and the value of `myFirstName` is `"Betty"`, then the value of `fullName` after your operation should be `"Holbertonand, Betty"`.
+    <details><summary>Solution</summary>`string fullName = myLastName + ", " + myFirstName;`</details>
 
 #.  In C#, what is the name of the method used to read input from the user?
     <details><summary>Solution</summary>`ReadLine()`.</details>
@@ -286,11 +284,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
     --------------------------- ------------------------- -------------------------------------- ----------------------
             **Operation**         **Arithmetic Operator**         **Algebraic Expression**            **Expression**
-            Addition                      $+$                           $x + 7$                  `myVar + 7`
-            Substraction                    $-$                           $x - 7$                  `myVar - 7`
-            Multiplication                   $*$                         $x \times 7$               `myVar * 7`
-            Division                      $/$             $x / 7$, $\frac{x}{7}$ or $x \div 7$   `myVar / 7`
-    Remainder (a.k.a. modulo)            $\%$                         $x \bmod 7$                `myVar % 7`
+            Addition                      `+`                           $x + 7$                     `myVar + 7`
+            Substraction                  `-`                           $x - 7$                    `myVar - 7`
+            Multiplication                `*`                         $x \times 7$                  `myVar * 7`
+            Division                      `/`                      $x / 7$, or $x \div 7$           `myVar / 7`
+    Remainder (a.k.a. modulo)             `%`                         $x \bmod 7$                   `myVar % 7`
     --------------------------- ------------------------- -------------------------------------- ----------------------
 
 
@@ -312,15 +310,23 @@ Make sure you feel ready before starting them, try to do them with limited time 
     7 / 2 - 4 * 8 % 3
     ```
 
-    be read as $$\begin{aligned}
-            (7 \div 2) - ((4 \times 8) \bmod 3) &= 3.5 - (32 \bmod 3)\\
-            &= 3.5 - 2\\
-            &= 1.5
-        \end{aligned}$$ or as $$\begin{aligned}
-            (7 \div (2 - 4)) \times (8 \bmod 3) &= (7 \div (-2)) \times 2\\
-            &= (-3.5) \times 2\\
-            &= -7
-        \end{aligned}$$ ? Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
+    be read as
+    
+    ||
+    --- | ---
+    $(7 \div 2) - ((4 \times 8) \bmod 3)$ | $= 3.5 - (32 \bmod 3)$
+    || $= 3.5 - 2$
+    || $= 1.5$
+ 
+    or as
+    
+    ||
+    --- | --- 
+    $(7 \div (2 - 4)) \times (8 \bmod 3)$ | $= (7 \div (-2)) \times 2$
+    || $= (-3.5) \times 2$
+    || $= -7$
+
+    ? Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
 
     Actually, C# uses the following three rules:
     
@@ -335,13 +341,13 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  If there are multiple operations of the same type, they are evaluated from left to right. For instance,
 
         ```
-                        4 / 2 * 8
+        4 / 2 * 8
         ```
 
         will be evaluated as $(4 \div 2) \times 8 = 16$ and
 
         ```
-                        4 - 2 + 8
+        4 - 2 + 8
         ```
 
         will be evaluated as $(4 - 2) + 8 = 10$.
@@ -421,7 +427,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>"Parameters" are called "formal parameters" and are used when defining the method, while "arguments" are called "actual parameters" and are used when calling the method. A method has parameters and takes arguments.</details>
 
 #.  Write a statement that creates a new object from the `Rectangle` class.
-    <details><summary>Solution</summary>'Rectangle myRec = new Rectangle();'</details>
+    <details><summary>Solution</summary>`Rectangle myRec = new Rectangle();`</details>
 
 #.  What is the purpose of the keyword `new`?
     <details><summary>Solution</summary>To create objects, to instantiate classes.</details>
@@ -471,10 +477,10 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
-    <details><summary>Solution</summary>'public string GetMyName()return myName;'</details>
+    <details><summary>Solution</summary>`public string GetMyName()return myName;`</details>
 
 #.  Write a setter for an attribute of type `int` named `myAge`.
-    <details><summary>Solution</summary>'public void SetMyAge(int paramMyAge)myAge = paramMyAge;'</details>
+    <details><summary>Solution</summary>`public void SetMyAge(int paramMyAge)myAge = paramMyAge;`</details>
 
 #. Assuming `name` is a `string` instance variable, there is problem with the following setter. Fix it.
 
@@ -505,7 +511,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #. Draw the UML diagram of a class named "Student" with a single attribute, "name", of type `string`, and two methods, `SetName` and `GetName`.
-    <details><summary>Solution</summary>  Student
+    <details><summary>Solution</summary>
+    Student
     -------------------------
     \- name: string
     \+ SetName(arg: string)
@@ -610,49 +617,43 @@ Make sure you feel ready before starting them, try to do them with limited time 
     What is the problem with the following statement?
 
     ```
-    Pet myPet = new Pet('M', \"Bob\");
+    Pet myPet = new Pet('M', "Bob");
     ```
-    <details><summary>Solution</summary>To be written</details>
+    <details><summary>Solution</summary>The method has for parameters a `string` and a `char`, but the problematic statement calls it with a `char` and a `string`: the order of the arguments is wrong, it should be `Pet myPet = new Pet("Bob", 'M');`. </details>
 
 #. Why would one want to define a constructor for a class?
     <details><summary>Solution</summary>To be able to set the instance variables directly when creating the objects.</details>
 
 # Part II -- Problems
 
-There is only one problem this time, and it is harder than what you'll
-be asked to do during the exam. Being able to solve it is an excellent
-sign that you are ready.
+There is only one problem this time, and it is harder than what you'll be asked to do during the exam. Being able to solve it is an excellent sign that you are ready.
 
-    #. 
-    You are going to design a class named `Triangle`. A triangle has three
-    angles, but knowing the value of only two angles is sufficient to
-    determine the value of the third, since they always add up to
-    $180^{\circ}$. Hence, it is sufficient to have only two `double`
-    attributes, `angle1` and `angle2`. We want to define several methods:
+#. You are going to design a class named `Triangle`. A triangle has three angles, but knowing the value of only two angles is sufficient to determine the value of the third, since they always add up to  $180^{\circ}$. Hence, it is sufficient to have only two `double` attributes, `angle1` and `angle2`. We want to define several methods:
 
-    -   a no-arg constructor that sets the value of `angle1` to $60.0$ and
-        the value of `angle2` to $60.0$,
-
-    -   another constructor, that takes two arguments, and assigns to
-        `angle1` the value of the first argument, and assigns to `angle2`
-        the value of the second argument,
-
+    -   a no-arg constructor that sets the value of `angle1` to $60.0$ and  the value of `angle2` to $60.0$,
+    -   another constructor, that takes two arguments, and assigns to  `angle1` the value of the first argument, and assigns to `angle2` the value of the second argument,
     -   getters for `angle1` and `angle2`,
-
-    -   a method that computes and returns the value of the third angle,
-        that we name `ComputeAngle3`,
-
-    -   a method that rotate the triangle: the value of the first angle
-        should be replaced with the value of the second angle, and the value
-        of the second angle should be replaced with the value of the third
-        angle.
+    -   a method that computes and returns the value of the third angle, that we name `ComputeAngle3`,
+    -   a method that rotate the triangle: the value of the first angle should be replaced with the value of the second angle, and the value of the second angle should be replaced with the value of the third angle.
 
     #.  Write the UML diagram for the `Triangle` class.
 
     #.   Write the full, compilable implementation of the `Triangle` class.
 
 
-    ::: answer
+    <details><summary>Solution</summary>
+    
+    Triangle
+    -------------------------
+    - angle1: double
+    - angle2: double
+    + Triangle()
+    + Triangle(angle1P: double, angle2P : double)
+    + GetAngle1(): double
+    + GetAngle2(): double
+    + ComputeAngle3(): double
+    + Rotate(): void
+    
     ```
     class Triangle
     {
@@ -688,150 +689,123 @@ sign that you are ready.
         }
     }
     ```
-    :::
+    </details>
 
 # Part I --- Questions
 
 #. What is sequential processing?
-<details><summary>Solution</summary>When the code is executed sequentially, without any branching. It implies that the code is processed in the order in which it is presented in the source code: the statement at line $n$ will always be executed after the statement at line $n-1$ and before the statement at line $n+1$.
-</details>
+    <details><summary>Solution</summary>When the code is executed sequentially, without any branching. It implies that the code is processed in the order in which it is presented in the source code: the statement at line $n$ will always be executed after the statement at line $n-1$ and before the statement at line $n+1$. </details>
 
 #. What is a decision structure?
-<details><summary>Solution</summary>A decision structure is a test and one or multiple statement blocks that
-may or may not be executed based on the outcome of the test. Selection
-and iteration are two examples of decision structures: in the first one,
-a statement block can be "skipped over" if the test evaluates to false,
-in the second one, a statement block can be repeated multiple times, as
-long as the test evaluates to true. A decision structure makes it
-possible to have portions of the code executed conditionally.
-:::
+    <details><summary>Solution</summary>A decision structure is a test and one or multiple statement blocks that may or may not be executed based on the outcome of the test. Selection and iteration are two examples of decision structures: in the first one, a statement block can be "skipped over" if the test evaluates to false, in the second one, a statement block can be repeated multiple times, as long as the test evaluates to true. A decision structure makes it possible to have portions of the code executed conditionally.</details>
 
-#. Decide if the following boolean expressions will evaluate to `true` or
-`false`:
+#. Decide if the following boolean expressions will evaluate to `true` or `false`:
 
-    -   '3 > 2.0 && false'
-    -   '(4 != 3) ||  false'
-    -   'A' == 'b' && ! false'
-    -   '(! false) == (true ||  4 == 3)'
+    -   `3 > 2.0 && false`
+    -   `(4 != 3) ||  false`
+    -   `'A' == 'b' && ! false`
+    -   `(! false) == (true ||  4 == 3)`
 
 #. Decide if the following Boolean expressions will evaluate to `true` or `false`:
 
-    -   '3 > 2.0 || true'
-    -   '(4 != 3) && false'
-    -   'A' == 'b' && ! false'
-    -   '(! true) == (true ||  4 != 3)'
-    <details><summary>Solution</summary>#.  'false'
-    #.  'true'
-    #.  'false'
-    #.  'true'
-    </details>
+    -   `3 > 2.0 || true`
+    -   `(4 != 3) && false`
+    -   `'A' == 'b' && ! false`
+    -   `(! true) == (true ||  4 != 3)`
+    <details><summary>Solution</summary>
+        #.  `false`
+        #.  `true`
+        #.  `false`
+        #.  `true`
+        </details>
 
-#. For each of the following Boolean expressions, decide if it will
-evaluate to 'true' or 'false':
-    #.  '('y' == 'Y') && true'
-    #.  '6 + 2 \< 8 ||  3 > 4'
-    #.  '(true && 4 == 3) == false'
-    #.  '4 > 4 && !false'
-    
-    <details><summary>Solution</summary>#.  'false'
-    #.  'false'
-    #.  'true'
-    #.  `false`
-    </details>
+#. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
+    #.  `('y' == 'Y') && true`
+    #.  `6 + 2 \< 8 ||  3 > 4`
+    #.  `(true && 4 == 3) == false`
+    #.  `4 > 4 && !false`
+    <details><summary>Solution</summary>
+        #.  `false`
+        #.  `false`
+        #.  `true`
+        #.  `false`
+        </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' != 'Y') && true`
-    #.  '6 + 2 \< 12 ||  3 > 4'
-    #.  '(true && 4 >= 3) == false'
-    #.  '13 \<= 4 \* 3 ||  !false'
-<details><summary>Solution</summary>#.  `true`,
-#.  `true`,
-#.  `false`,
-#.  `true`
-</details>
+    #.  `6 + 2 \< 12 ||  3 > 4`
+    #.  `(true && 4 >= 3) == false`
+    #.  `13 \<= 4 \* 3 ||  !false`
+    <details><summary>Solution</summary>
+        #.  `true`,
+        #.  `true`,
+        #.  `false`,
+        #.  `true`
+        </details>
 
-#.  What is the relational operator used to determine whenever two values are different?
-<details><summary>Solution</summary>`!=`</details>
+#. What is the relational operator used to determine whenever two values are different?
+    <details><summary>Solution</summary>`!=`</details>
 
 #. How do you store the result of a Boolean expression?
-<details><summary>Solution</summary>In a variable of type `bool`. Its two possible values are `true` and
-`false`.
-:::
+    <details><summary>Solution</summary>In a variable of type `bool`. Its two possible values are `true` and `false`.</details>
 
 #.  Give three relational operators, and then two logical operators.
-<details><summary>Solution</summary>`\<=`, `==`, `>`, and `!`, `&&`</details>
+    <details><summary>Solution</summary>`\<=`, `==`, `>`, and `!`, `&&`</details>
 
 #. What would be displayed on the screen by the following code?
 
-```
-    if (false)
+    ```
+        if (false)
+        {
+            Console.WriteLine("Hello!");
+        }
+        Console.WriteLine("Hi!");
+    ```
+    <details><summary>Solution</summary>"Hi!"</details>
+
+#. Is there a simpler way to write the expression `over21 == true`, assuming that `over21` is a Boolean variable?
+    <details><summary>Solution</summary>We can simply write `over21`, which will always evaluate to the same value as `over21 == true`.</details>
+    
+#. Assume that `x` and `y` are two `int` variables that have already been initialized (i.e., declared and assigned), write an `if` statement that assigns $10$ to `x` if `y` is (strictly) greater than $5$.
+    <details><summary>Solution</summary>`if (y \> 5) x = 10;`</details>
+
+#. In C#, is there a difference between `=` and `==`? Write a statement that uses `=`.
+    <details><summary>Solution</summary>Yes, one equal sign serves to write assignment operator, and two equal signs serve to compare. An example of statement that uses comparison first and assignment second could be: `if (x == 9)x = 12;` </details>
+
+#. Assuming a `name` string was declared and initialized with a value given by the user, write an `if` statement that displays "I have the same name!" if `name` contains your first name.
+    <details><summary>Solution</summary>`if(name=="Clément") Console.WriteLine("I have the same name!");`</details>
+
+#. Is the following statement correct, i.e., would it compile, assuming `myFlag` is a `bool` variable, and `myAge` is an initialized `int` variable?
+
+    ```
+    if ( myAge > 20 )
     {
-        Console.WriteLine("Hello!");
-    }
-    Console.WriteLine("Hi!");
-```
-<details><summary>Solution</summary>"Hi!"</details>
+        myFlag = true
+    };
+    ```
+    <details><summary>Solution</summary>No, the semi-colon should come before the closing brace.</details>
 
-#. Is there a simpler way to write the expression "'over21 == true'", assuming that `over21` is a Boolean variable?
-<details><summary>Solution</summary>We can simply write `over21`, which will always evaluate to the same
-value as 'over21 == true'.
-</details>
-#. Assume that `x` and `y` are two `int` variables that have already been
-initialized (i.e., declared and assigned), write an `if` statement that
-assigns $10$ to `x` if `y` is (strictly) greater than $5$.
-:::
-<details><summary>Solution</summary>'if (y \> 5) x = 10;'</details>
+#. If we write a statement that begins with `if(false)`, then the IDE returns a warning, "Unreachable code detected". What does it mean? 
+    <details><summary>Solution</summary>The IDE is warning us that the statements in the block will never be executed.</details>
 
-#. In C#, is there a difference between `=` and `==`? Write a statement
-that uses `=`.
-<details><summary>Solution</summary>Yes, one equal sign serves to write assignment operator, and two equal
-signs serve to compare. An example of statement that uses comparison
-first and assignment second could be: 'if (x == 9)x = 12;'
-:::
+#. Write an `if` statement that prints "Bonjour !" if the value of the `char` variable `lang` is `'f'`.
+    <details><summary>Solution</summary>`if (lang == 'f') Console.WriteLine("Bonjour !");`</details>
 
-#. Assuming a `name` string was declared and initialized with a value given
-by the user, write an `if` statement that displays "I have the same
-name!" if `name` contains your first name.
-:::
-<details><summary>Solution</summary>C#iif(name==\"Clément) Console.WriteLine(\"I have the same name!\");</details>
-
-#. Is the following statement correct, i.e., would it compile, assuming
-`myFlag` is a `bool` variable, and `myAge` is an initialized `int`
-variable?
-
-```
-if ( myAge > 20 )
-{
-    myFlag = true
-};
-```
-<details><summary>Solution</summary>No, the semi-colon should come before the closing brace.</details>
-
-#. If we write a statement that begins with `if(false)`, then the IDE returns a
-warning, "Unreachable code detected". What does it mean?
-<details><summary>Solution</summary>the IDE is warning us that the statements in the block will never be
-executed.
-:::
-
-#. Write an `if` statement that prints "Bonjour !" if the value of the `char` variable `lang` is '`f'`.
-    <details><summary>Solution</summary>'if (lang == 'f') Console.WriteLine(\"Bonjour !\"); '</details>
-
-#. For each of the following boolean expressions, decide if it will evaluate to `true` or `false` when the boolean variables `x`, `y` and
-`z` are all set to `true`:
+#. For each of the following boolean expressions, decide if it will evaluate to `true` or `false` when the boolean variables `x`, `y` and `z` are all set to `true`:
 
     -   `x ||  y && z`
     -   `!x ||  y && z`
     -   `!(x ||  y) && (z && y)`
     -   `(!x && x) ||  (!x ||  x)`
 
-    Do the same when they are all set to 'false'.
+    Do the same when they are all set to `false`.
     <details><summary>Solution</summary>For each expression, we give first the value if all the variables are
-    set to 'true', then the value if all the variables are set to 'false'.
+    set to `true`, then the value if all the variables are set to `false`.
 
-    -   'true', 'false'
-    -   'true', 'true'
-    -   'false', 'false'
-    -   'true', 'true'
+    -   `true`, `false`
+    -   `true`, `true`
+    -   `false`, `false`
+    -   `true`, `true`
 
     You can check the answer using for instance the following code.
 
@@ -859,391 +833,342 @@ executed.
     ```
     </details>
 
-#. Write a 'boolean' expression that evaluates to 'true' if a variable 'x'
-is between $3$ (excluded) and $5$ (included).
-:::
-<details><summary>Solution</summary>'x>3 && 5>=x'</details>
+#. Write a `boolean` expression that evaluates to `true` if a variable `x` is between 3 (excluded) and 5 (included).
+    <details><summary>Solution</summary>`x>3 && 5>=x`</details>
 
-#. Write an 'if-else' statement that assigns $0.1$ to 'z' if 'y' is greater
-or equal than $0$, and that assigns $-0.1$ to 'z' otherwise.
-:::
-<details><summary>Solution</summary>'if (y \>= 0)z = 0.1;' else z = -0.1;</details>
+#. Write an `if-else` statement that assigns $0.1$ to `z` if `y` is greater or equal than $0$, and that assigns $-0.1$ to `z` otherwise.
+    <details><summary>Solution</summary>`if (y >= 0) z = 0.1; else z = -0.1;</details>
 
-#. Write an 'if-else' statement that assigns '\"Minor\"\` to an already
-declared 'string' variable 'legalStatus' if 'age' is strictly less than
-$18$, and that assigns '\"Major\"\` to 'legalStatus' otherwise.
-:::
-<details><summary>Solution</summary>'if (age \< 18) legalStatus = \"Minor\"; ' else legalStatus = \"Major\";</details>
+#. Write an `if-else` statement that assigns `"Minor"\` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
+    <details><summary>Solution</summary>`if (age < 18) legalStatus = "Minor"; else legalStatus = "Major";`</details>
 
-#. Write an 'if-else' statement that displays "It's free for you!" if an
-`int` variable 'age' is between $0$ and $18$, and "It's \$5.00."
-otherwise.
-<details><summary>Solution</summary>```
-if (age <= 18 && age >= 0) {
-    Console.WriteLine("It's free for you!");
-}
-else {
-    Console.WriteLine($"It's {5M:C}.");
-}
-```
-:::
-
-#. Assume we initialized an `int` variable called 'courseNumber' and a
-'string' variable called 'courseCode'. Write a series of statements that
-will display: (1) "I'm taking this class!" if 'courseNumber' is '1301'
-and 'courseCode' is 'CSCI'; (2) "That's my major!" if 'courseCode' is
-'CSCI'; (3) "Is that an elective?" if 'courseNumber' is greater than
-3000; or (4) "Is it a good class?" otherwise. Your program should
-display exactly one message.
-<details><summary>Solution</summary>```
-if(courseNumber == 1301 && courseCode == "CSCI")
-{
-    Console.WriteLine("I'm taking this class!");
-}
-else if(courseCode == "CSCI")
-{
-    Console.WriteLine("That's my major!");
-}
-else if(courseNumber > 3000)
-{
-    Console.WriteLine("Is that an elective?");
-}
-else
-{
-    Console.WriteLine("Is it a good class?");
-}
-```
-:::
-
-#. Assume we previously initialized an `int` variable called
-'graduationYear' and a 'string' variable called 'graduationSemester'.
-Write a series of statements that will display: (1) "I will graduate at
-the same time!" if 'graduationYear' is '2023' and 'graduationSemester'
-is 'Fall'; (2) "I love this season." if 'graduationSemester' is
-'Spring'; (3) "That's in a long time!" if 'graduationYear' is greater
-than 2025; or (4) "I hope you'll have an in-person ceremony!" otherwise.
-Your program should display exactly one message.
-<details><summary>Solution</summary>```
-if(graduationYear == 2023 && graduationSemester == "Fall")
-{
-    Console.WriteLine("I will graduate at the same time!");
-}
-else if(graduationSemester == "Spring")
-{
-    Console.WriteLine("I love this season.");
-}
-else if(graduationSemester > 2025)
-{
-    Console.WriteLine("That's in a long time!");
-}
-else
-{
-    Console.WriteLine("I hope you'll have an in-person ceremony!");
-}
-```
-:::
-
-#. What will be displayed on the screen by the following program?
-
-```
-int x = 3, y = 2, z = 4;
-if (x > y) {z += y;}
-if (x > z) {y -= 4;}
-Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
-```
-:::
-<details><summary>Solution</summary>"x is 3, y is 2, and z is 6."</details>
-
-#. What will be displayed on the screen by the following program?
-
-```
-int x = 3, y = 2, z = 4;
-if (x >= z) {z += y;} else if (x != y) {z *= y;}
-y -= 4;
-Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
-```
-:::
-<details><summary>Solution</summary>"x is 3, y is -2, and z is 8."</details>
-
-#. (*We'll use the 24-hour clock, sometimes called "military time".*)
-Assuming that an `int` variable 'hour' has been initialized, write part
-of a program that would display on the screen "Good morning" if 'hours'
-is less than or equal to $12$, and "Hello" otherwise.
-<details><summary>Solution</summary>```
-if (hours <= 12) {
-    Console.WriteLine("Good morning!");
-}
-else {
-    Console.WriteLine(("Hello");
-}
-```
-:::
-
-#. Assuming that 'myString' is a string variable, write a statement that
-prints "Hello, Melody!" if the value of 'myString' is equal to 'Melody',
-and nothing otherwise.
-<details><summary>Solution</summary>```
-if (myString == "Melody") {
-    Console.WriteLine("Hello, Melody!");
-}
-```
-:::
-
-#. What will be displayed on the screen by the following program?
-
-```
-int x = 3, y = 2, z = 4;
-if (y >= z) {z += y;}
-else if (x != y) { if (false) {z -= 3;} else {z += x;}}
-Console.WriteLinef($"x is {x}, y is {y}, and z is {z}.");
-```
-:::
-<details><summary>Solution</summary>x is 3, y is 2, and z is 7.</details>
-
-#. Rewrite, if possible, the three following 'if-else-if' statements as
-'switch' statements:
-
-```
-if (myLang == 'f')
-{
-    Console.WriteLine("Vous parlez Français ?");
-}
-else if (myLang == 'e')
-{
-    Console.WriteLine("Do you speak English?");
-}
-else if (myLang == 'd')
-{
-    Console.WriteLine("Sprechen Sie Deutsch?");
-}
-else
-{
-    Console.WriteLine("I don't know your language!");
-}
-```
-
-```
-if (myCity == "Augusta")
-{
-    Console.WriteLine("I also live here!");
-}
-else if (myCity == "Ithaca" || myCity == "Providence")
-{
-    Console.WriteLine("I used to live there!");
+#. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
+    <details><summary>Solution</summary>```
+    if (age <= 18 && age >= 0) {
+        Console.WriteLine("It's free for you!");
     }
-else
-{
-    Console.WriteLine("I never lived there.");
-}
-```
+    else {
+        Console.WriteLine($"It's {5M:C}.");
+    }
+    ```
+    </details>
 
-```
-if (temp == 100.0)
-{
-    Console.WriteLine("It's ready!");
-}
-else if (temp >= 90.0)
-{
-    Console.WriteLine("Almost ready!");
-}
-else
-{
-    Console.WriteLine("You have to wait.");
-}
-```
+#. Assume we initialized an `int` variable called `courseNumber` and a `string` variable called `courseCode`. Write a series of statements that will display:
+    #. "I'm taking this class!" if `courseNumber` is `1301` and `courseCode` is `CSCI`; 
+    #. "That's my major!" if `courseCode` is `CSCI`; 
+    #. "Is that an elective?" if `courseNumber` is greater than 3000; or
+    #. "Is it a good class?" otherwise.
+    
+    Your program should display exactly one message.
+    <details><summary>Solution</summary>
+    ```
+    if(courseNumber == 1301 && courseCode == "CSCI")
+    {
+        Console.WriteLine("I'm taking this class!");
+    }
+    else if(courseCode == "CSCI")
+    {
+        Console.WriteLine("That's my major!");
+    }
+    else if(courseNumber > 3000)
+    {
+        Console.WriteLine("Is that an elective?");
+    }
+    else
+    {
+        Console.WriteLine("Is it a good class?");
+    }
+    ```
+    </details>
 
-If you think it is not possible or not feasible, explain why.
-<details><summary>Solution</summary>```
-switch (myLang)
-{
-    case 'f':
+#. Assume we previously initialized an `int` variable called `graduationYear` and a `string` variable called `graduationSemester`. Write a series of statements that will display:
+    #. "I will graduate at the same time!" if `graduationYear` is `2023` and `graduationSemester` is `Fall`; 
+    #. "I love this season." if `graduationSemester` is `Spring`; 
+    #. "That is in a long time!" if `graduationYear` is greater than 2025; or 
+    #. "I hope you'll have an in-person ceremony!" otherwise.
+    
+    Your program should display exactly one message.
+    <details><summary>Solution</summary>
+    ```
+    if(graduationYear == 2023 && graduationSemester == "Fall")
+    {
+        Console.WriteLine("I will graduate at the same time!");
+    }
+    else if(graduationSemester == "Spring")
+    {
+        Console.WriteLine("I love this season.");
+    }
+    else if(graduationSemester > 2025)
+    {
+        Console.WriteLine("That's in a long time!");
+    }
+    else
+    {
+        Console.WriteLine("I hope you'll have an in-person ceremony!");
+    }
+    ```
+    </details>
+
+#. What will be displayed on the screen by the following program?
+
+    ```
+    int x = 3, y = 2, z = 4;
+    if (x > y) {z += y;}
+    if (x > z) {y -= 4;}
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
+    ```
+    <details><summary>Solution</summary>"x is 3, y is 2, and z is 6."</details>
+
+#. What will be displayed on the screen by the following program?
+
+    ```
+    int x = 3, y = 2, z = 4;
+    if (x >= z) {z += y;} else if (x != y) {z *= y;}
+    y -= 4;
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
+    ```
+
+    <details><summary>Solution</summary>"x is 3, y is -2, and z is 8."</details>
+
+#. (*We'll use the 24-hour clock, sometimes called "military time".*) Assuming that an `int` variable `hour` has been initialized, write part of a program that would display on the screen "Good morning" if `hours` is less than or equal to 12, and "Hello" otherwise. 
+    <details><summary>Solution</summary>
+    ```
+    if (hours <= 12) {
+        Console.WriteLine("Good morning!");
+    }
+    else {
+        Console.WriteLine(("Hello");
+    }
+    ```
+    </details>
+
+#. Assuming that `myString` is a string variable, write a statement that prints "Hello, Melody!" if the value of `myString` is equal to `Melody`, and nothing otherwise.
+    <details><summary>Solution</summary>```
+    if (myString == "Melody") {
+        Console.WriteLine("Hello, Melody!");
+    }
+    ```
+    </details>
+
+#. What will be displayed on the screen by the following program?
+
+    ```
+    int x = 3, y = 2, z = 4;
+    if (y >= z) {z += y;}
+    else if (x != y) { if (false) {z -= 3;} else {z += x;}}
+    Console.WriteLinef($"x is {x}, y is {y}, and z is {z}.");
+    ```
+
+    <details><summary>Solution</summary>x is 3, y is 2, and z is 7.</details>
+
+#. Rewrite, if possible, the three following `if-else-if` statements as `switch` statements:
+
+    ```
+    if (myLang == 'f')
+    {
         Console.WriteLine("Vous parlez Français ?");
-    break;
-    case 'e':
+    }
+    else if (myLang == 'e')
+    {
         Console.WriteLine("Do you speak English?");
-    break;
-    case 'd':
+    }
+    else if (myLang == 'd')
+    {
         Console.WriteLine("Sprechen Sie Deutsch?");
-    break;
-    default:
+    }
+    else
+    {
         Console.WriteLine("I don't know your language!");
-    break;
-}
-```
-
-```
-switch (myCity)
-{
-    case "Augusta":
+    }
+    ```
+        
+    ```
+    if (myCity == "Augusta")
+    {
         Console.WriteLine("I also live here!");
-    break;
-    case "Ithaca":
-    case "Providence":
+    }
+    else if (myCity == "Ithaca" || myCity == "Providence")
+    {
         Console.WriteLine("I used to live there!");
-    break;
-    default:
+        }
+    else
+    {
         Console.WriteLine("I never lived there.");
-    break;
-}
-```
+    }
+    ```
 
-Impossible: can't write 'switch' comparing all the possible 'float'
-values!
-:::
+    ```
+    if (temp == 100.0)
+    {
+        Console.WriteLine("It's ready!");
+    }
+    else if (temp >= 90.0)
+    {
+        Console.WriteLine("Almost ready!");
+    }
+    else
+    {
+        Console.WriteLine("You have to wait.");
+    }
+    ```
 
-#. Give an example of an 'if' statement that could not be rewritten as a
-'switch'.
-:::
+    If you think it is not possible or not feasible, explain why.
+    <details><summary>Solution</summary>
+    ```
+    switch (myLang)
+    {
+        case 'f':
+            Console.WriteLine("Vous parlez Français ?");
+        break;
+        case 'e':
+            Console.WriteLine("Do you speak English?");
+        break;
+        case 'd':
+            Console.WriteLine("Sprechen Sie Deutsch?");
+        break;
+        default:
+            Console.WriteLine("I don't know your language!");
+        break;
+    }
+    ```
 
-#. Write a 'switch' statement that sets a 'double' 'discount' variable to
-'0.5' if a string 'day' variable contains "Monday" or "Wednesday",
-'0.25' if 'day' contains "Saturday", and '0.5' otherwise.
-<details><summary>Solution</summary>```
-switch (day)
-{
-    case "Saturday":
-        discount = 0.25;
-    break;
-    default:
-        discount = 0.5;
-    break;
-}
-```
-:::
+    ```
+    switch (myCity)
+    {
+        case "Augusta":
+            Console.WriteLine("I also live here!");
+        break;
+        case "Ithaca":
+        case "Providence":
+            Console.WriteLine("I used to live there!");
+        break;
+        default:
+            Console.WriteLine("I never lived there.");
+        break;
+    }
+    ```
+
+    The last one is impossible, since we cannot write 'switch' statements comparing all the possible `float` values!
+    </details>
+
+
+#. Give an example of an `if` statement that could not be rewritten as a `switch`.
+    <details><summary>Solution</summary>Any condition not making a simple comparison is a good attempt. For instance, trying to convert `if(age % 2 == 0){Console.WriteLine("Your age is even.");`. into a `switch` would require to list all the even values, which is not realistic.
+
+
+#. Write a `switch` statement that sets a `double` `discount` variable to `0.5` if a string `day` variable contains `"Monday"` or `"Wednesday"`, `0.25` if `day` contains `"Saturday"`, and `0.5` otherwise.
+    <details><summary>Solution</summary>
+    ```
+    switch (day)
+    {
+        case "Saturday":
+            discount = 0.25;
+        break;
+        default:
+            discount = 0.5;
+        break;
+    }
+    ```
+    </details>
 
 # Part II -- Problems
 
-This time, the two exercises **do not** require a computer, and are here
-to craft on your problem-solving skills. Make sure you feel ready before
-starting them, try to do them with a limited amount of time and without
-notes, and check your answer using your IDE.
+This time, the two exercises **do not** require a computer, and are here to craft on your problem-solving skills. Make sure you feel ready before starting them, try to do them with a limited amount of time and without notes, and check your answer using your IDE.
 
-::: problem
-Write a program that asks the user to write a country name and stores
-the user's input into a string variable. Then, compare that string with
-'\"france\"\`: if it is equal, then print "Bienvenue en France !". Then,
-compare that string with '\"usa\"\`: if it is equal, then print "Welcome
-to the US!". If the string is different from both '\"france\"\` and
-'\"usa\"\`, then print "Welcome to" followed by the name of the country
-the user typed in. Can you think of two ways to implement this program,
-one using 'if-else-if' statements, the other using 'switch'?
-:::
+#. Write a program that asks the user to write a country name and stores the user's input into a string variable. Then, compare that string with `"france"`: if it is equal, then display at the screen  `"Bienvenue en France !"`. Then, compare that string with `"usa"`: if it is equal, then display at the screen  `"Welcome to the US!"`. If the string is different from both `"france"` and `"usa"`, then display at the screen  `"Welcome to"` followed by the name of the country the user typed in. Can you think of two ways to implement this program, one using `if-else-if` statements, the other using `switch`?
 
-::: answer
-```
-Console.WriteLine("Country?");
-string c = Console.ReadLine();
-switch (c)
-{
-    case "usa":
-        Console.WriteLine("Welcome to the US!");
-    break;
-    case "fr":
-        Console.Write("Bienvenue en France!");
-    break;
-    default:
-        Console.WriteLine($"Welcome to {c}");
-    break;
-}
-```
-:::
-
-::: problem
-[\[pb:printing\]]{#pb:printing label="pb:printing"} You want to write a
-small program for an on-line printing company. Your program should ask
-the user to chose a format ($10 \times 15$ centimeters, or $8 \times 11$
-inches), ask if it is the first time the customer order through your
-company, and a number of copies. Then, calculate the total cost of
-printing those pictures, knowing that
-
--   Printing a $10 \times 15$ centimeters picture costs $\$0.20$,
-    printing a $8 \times 11$ inches picture costs $\$0.25$,
-
--   A new customer gets a $\$3$ coupon if the order is more than $\$5$,
-
--   A $10\%$ discount is given if more than $50$ copies were ordered,
-
--   The two previous offers can be cumulated.
-
-Display on the screen a message starting by "Welcome!", then a new line,
-then "We cherish our new customers" if it is the first time the user
-uses your company, ", so we're giving you a \$3 discount!" if the user
-is allowed to get the coupon, then print the total and "You had a $10\%$
-discount!" if the user ordered more than $50$ copies. See
-Listings [\[figex1\]](#figex1){reference-type="ref" reference="figex1"}
-and [\[figex2\]](#figex2){reference-type="ref" reference="figex2"} for
-examples of execution, where the user input is underlined, and hitting
-carriage return is represented by ↵.
-:::
-
-::: answer
-```
-Console.WriteLine("Enter 'c' for 10x15cm, anything else for 8x11in");
-char sizeChoice = char.Parse(Console.ReadLine());
-Console.WriteLine("Is this your first time here? Type 'y' for 'yes'.");
-char firstTime = char.Parse(Console.ReadLine());
-Console.WriteLine("Enter a number of copies");
-int copies = int.Parse(Console.ReadLine());
-decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;
-if(firstTime == 'y')
-{
-    Console.WriteLine("Welcome!");
-    string message = "We cherish our new customers";
-    if(totalCost > 5m)
+    <details><summary>Solution</summary>
+    ```
+    Console.WriteLine("Country?");
+    string c = Console.ReadLine();
+    switch (c)
     {
-        totalCost -= 3m;
-        message += ", so we're giving you a $3 discount!";
+        case "usa":
+            Console.WriteLine("Welcome to the US!");
+        break;
+        case "fr":
+            Console.Write("Bienvenue en France!");
+        break;
+        default:
+            Console.WriteLine($"Welcome to {c}");
+        break;
     }
-    Console.WriteLine(message);
-}
-if(copies > 50)
-{
-    totalCost -= totalCost * 0.1m;
-    Console.WriteLine($"Your total is {totalCost:C}. You had a 10% discount!");
-}
-else
-{
-    Console.WriteLine($"Your total is {totalCost:C}.");
-}
-```
-:::
+    ```
+    </details>
 
-::: listing
-``` text
-Enter 'c' for 10x15cm, anything else for 8x11in.
-c̲ ↵
-Is this your first time here? Type 'y' for 'yes'.
-y̲ ↵
-Enter a number of copies.
-9̲0̲ ↵
-Welcome!
-We cherish our new customers, so we are giving you a $3 discount!
-Your total is $13.50. You had a 10% discount!
-```
-:::
+#. You want to write a small program for an on-line printing company. Your program should ask the user to chose a format ($10 \times 15$ centimeters, or $8 \times 11$ inches), ask if it is the first time the customer order through your company, and a number of copies. Then, calculate the total cost of printing those pictures, knowing that
 
-::: listing
-``` text
-Enter 'c' for 10x15cm, anything else for 8x11in.
-p̲ ↵
-Is this your first time here? Type 'y' for 'yes'.
-N̲o̲t̲ ̲a̲t̲ ̲a̲l̲l̲↵
-Enter a number of copies.
-1̲2̲0̲ ↵
-Your total is $27.00. You had a 10% discount!
-```
-:::
+    -   Printing a $10 \times 15$ centimeters picture costs $\$0.20$, printing a $8 \times 11$ inches picture costs $\$0.25$,
+    -   A new customer gets a $\$3$ coupon if the order is more than $\$5$, 
+    -   A $10\%$ discount is given if more than $50$ copies were ordered,
+    -   The two previous offers can be cumulated.
+
+    Display on the screen a message starting by "Welcome!", then a new line, then "We cherish our new customers" if it is the first time the user uses your company, ", so we're giving you a \$3 discount!" if the user is allowed to get the coupon, then print the total and "You had a $10\%$ discount!" if the user ordered more than $50$ copies. See below for examples of execution, where the user input is underlined, and hitting carriage return is represented by ↵.
+
+    ``` text
+    Enter 'c' for 10x15cm, anything else for 8x11in.
+    c̲ ↵
+    Is this your first time here? Type 'y' for 'yes'.
+    y̲ ↵
+    Enter a number of copies.
+    9̲0̲ ↵
+    Welcome!
+    We cherish our new customers, so we are giving you a $3 discount!
+    Your total is $13.50. You had a 10% discount!
+    ```
+
+    ``` text
+    Enter 'c' for 10x15cm, anything else for 8x11in.
+    p̲ ↵
+    Is this your first time here? Type 'y' for 'yes'.
+    N̲o̲t̲ ̲a̲t̲ ̲a̲l̲l̲↵
+    Enter a number of copies.
+    1̲2̲0̲ ↵
+    Your total is $27.00. You had a 10% discount!
+    ```
+
+    <details><summary>Solution</summary>
+    ```
+    Console.WriteLine("Enter 'c' for 10x15cm, anything else for 8x11in");
+    char sizeChoice = char.Parse(Console.ReadLine());
+    Console.WriteLine("Is this your first time here? Type 'y' for 'yes'.");
+    char firstTime = char.Parse(Console.ReadLine());
+    Console.WriteLine("Enter a number of copies");
+    int copies = int.Parse(Console.ReadLine());
+    decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;
+    if(firstTime == 'y')
+    {
+        Console.WriteLine("Welcome!");
+        string message = "We cherish our new customers";
+        if(totalCost > 5m)
+        {
+            totalCost -= 3m;
+            message += ", so we're giving you a $3 discount!";
+        }
+        Console.WriteLine(message);
+    }
+    if(copies > 50)
+    {
+        totalCost -= totalCost * 0.1m;
+        Console.WriteLine($"Your total is {totalCost:C}. You had a 10% discount!");
+    }
+    else
+    {
+        Console.WriteLine($"Your total is {totalCost:C}.");
+    }
+    ```
+    </details>
 
 # Part I --- Questions
 
-#. Assume you are given an un-assigned 'string' variable 'letterGrade', and
-an already assigned 'float' variable 'numberGrade'. Write a small
-program that assigns "A" to 'letterGrade' if 'numberGrade' is between
-$100$ and $90$ (both included), "B" to 'letterGrade' if 'numberGrade' is
+#. Assume you are given an un-assigned `string` variable `letterGrade`, and
+an already assigned `float` variable `numberGrade`. Write a small
+program that assigns "A" to `letterGrade` if `numberGrade` is between
+$100$ and $90$ (both included), "B" to `letterGrade` if `numberGrade` is
 between $90$ (excluded) and $80$ (included), etc., and "Invalid data" if
-'numberGrade' is strictly lower than $0$ or strictly greater than $100$.
-Should you use a 'switch' statement or a 'if' ...'else if' ...'else'?
-<details><summary>Solution</summary>An 'if' ...'else if' ...'else' is the right structure for this task:
+`numberGrade` is strictly lower than $0$ or strictly greater than $100$.
+Should you use a `switch` statement or a `if` ...`else if` ...`else`?
+<details><summary>Solution</summary>An `if` ...`else if` ...`else` is the right structure for this task:
 
 ```
 float numberGrade;
@@ -1279,7 +1204,7 @@ Console.WriteLine(numberGrade + " corresponds to " + letterGrade);
 ```
 :::
 
-#. Given an `int` variable 'counter', write three statements to decrement
+#. Given an `int` variable `counter`, write three statements to decrement
 its value by $1$.
 <details><summary>Solution</summary>We actually know four ways to do that:
 
@@ -1365,7 +1290,7 @@ counter--;
 
 #. What is input validation? Name a control structure that can be used to
 perform it. Why is it important?
-<details><summary>Solution</summary>Making sure the user's input is valid. The 'while' loop. Because we
+<details><summary>Solution</summary>Making sure the user's input is valid. The `while` loop. Because we
 can't trust the user.
 :::
 
@@ -1410,7 +1335,7 @@ else{
 ```
 :::
 
-#. Write a program containing a 'while' loop that would display the numbers
+#. Write a program containing a `while` loop that would display the numbers
 between $-100$ and $100$ (both included) with a space between them when
 executed.
 <details><summary>Solution</summary>```
@@ -1421,12 +1346,12 @@ while(counter <= 100){
 ```
 :::
 
-#. Assume you are given an initialized 'string' variable 'name', and a
-'string' variable 'field'. Write a small program that assigns to 'field'
+#. Assume you are given an initialized `string` variable `name`, and a
+`string` variable `field`. Write a small program that assigns to `field`
 
--   "CS" if 'name' is "Turing" or "Liskov",
+-   "CS" if `name` is "Turing" or "Liskov",
 
--   "Math." if 'name' is "Aryabhata" or "Noether",
+-   "Math." if `name` is "Aryabhata" or "Noether",
 
 -   "Unknown" otherwise.
 <details><summary>Solution</summary>```
@@ -1464,194 +1389,174 @@ do{
 
 # Part II -- Problems
 
-::: problem
-Write a 'switch' statement that calculates the number of days in a
-particular month. You should assume that you are given already assigned
-'month' and 'year' `int` variables, and that your program should set an
-already declared `int` 'numberOfDays' variable to $28$, $29$, $30$ or
-$31$ depending on the month / year combination. Your program should
-start with a 'switch' matching 'month' against certain values, and, if
-'month' is $2$, uses an 'if' statement to decide whenever the number of
-days is $28$ or $29$. You can use something like
+#. Write a `switch` statement that calculates the number of days in a particular month. You should assume that you are given already assigned `month` and `year` `int` variables, and that your program should set an already declared `int` `numberOfDays` variable to $28$, $29$, $30$ or $31$ depending on the month / year combination. Your program should start with a `switch` matching `month` against certain values, and, if `month` is $2$, uses an `if` statement to decide whenever the number of days is $28$ or $29$. You can use something like
 
-```
-switch (month) {
-    …
-    case (2):
-        if …
+    ```
+    switch (month) {
         …
-        break;
-    …
-}
-```
-:::
+        case (2):
+            if …
+            …
+            break;
+        …
+    }
+    ```
 
-::: answer
-```
-int month = 2;
-int year = 2000;
-int numDays = 0;
-switch (month) {
-    case 1: case 3: case 5:
-    case 7: case 8: case 10:
-    case 12:
-        numDays = 31;
-    break;
-    case 4: case 6:
-    case 9: case 11:
-        numDays = 30;
-    break;
-    case 2:
-        if (((year % 4 == 0) && !(year % 100 == 0))
-            || (year % 400 == 0))
-            numDays = 29;
-        else
-            numDays = 28;
-    break;
-    default:
-        Console.WriteLine("Invalid month.");
-    break;
-}
-Console.WriteLine("Number of Days = " + numDays);
-```
-:::
+
+    <details><summary>Solution</summary>
+    ```
+    int month = 2;
+    int year = 2000;
+    int numDays = 0;
+    switch (month) {
+        case 1: case 3: case 5:
+        case 7: case 8: case 10:
+        case 12:
+            numDays = 31;
+        break;
+        case 4: case 6:
+        case 9: case 11:
+            numDays = 30;
+        break;
+        case 2:
+            if (((year % 4 == 0) && !(year % 100 == 0))
+                || (year % 400 == 0))
+                numDays = 29;
+            else
+                numDays = 28;
+        break;
+        default:
+            Console.WriteLine("Invalid month.");
+        break;
+    }
+    Console.WriteLine("Number of Days = " + numDays);
+    ```
+    </details>
 
 # Part I --- Questions
 
-#. Write a statement that creates a 10-element `int` array named 'numbers'.
-<details><summary>Solution</summary>```
-int[] numbers = new int[10];
-```
-:::
+#. Write a statement that creates a 10-element `int` array named `numbers`.
+    <details><summary>Solution</summary>
+    ```
+    int[] numbers = new int[10];
+    ```
+    <details>
 
-#. In the following, what is the value of the size declarator? What is the
-value of the index?
+#. In the following, what is the value of the size declarator? What is the value of the index?
 
-```
-int[] numbers;
-numbers = new int[8];
-numbers[4] = 9;
-```
-:::
-<details><summary>Solution</summary>The size declarator is $8$, the subscript, or index, is $4$.</details>
+    ```
+    int[] numbers;
+    numbers = new int[8];
+    numbers[4] = 9;
+    ```
+    <details><summary>Solution</summary>The size declarator is 8, the subscript, or index, is 4.</details>
 
 #. What is wrong with the following array declaration?
 
-```
-int[] books = new int[-1];
-```
-:::
-<details><summary>Solution</summary>The size declarator cannot be negative.</details>
+    ```
+    int[] books = new int[-1];
+    ```
 
-#. Draw the content of the `scores` array once those statements have been
-executed.
+    <details><summary>Solution</summary>The size declarator cannot be negative.</details>
 
-```
-int[] scores = new int[3];
-scores[0] = 13;
-scores[2] = 25;
-```
-:::
-<details><summary>Solution</summary>To be written</details>
+#. Draw the content of the `scores` array once those statements have been executed.
+
+    ```
+    int[] scores = new int[3];
+    scores[0] = 13;
+    scores[2] = 25;
+    ```
+    <details><summary>Solution</summary>
+    | index | 0 | 1 | 2 |
+    | --- | --- | --- | --- | 
+    | value | 13 | 0 | 25 |
+    </details>
 
 #. What will be displayed on the screen by the following program?
 
-```
-for (int num = 3 ; num <= 5 ; num++)
-    Console.Write(num + " ");
-```
-<details><summary>Solution</summary>``` bash
-3 4 5
-```
-:::
+    ```
+    for (int num = 3 ; num <= 5 ; num++)
+        Console.Write(num + " ");
+    ```
+    <details><summary>Solution</summary>
+    ``` bash
+    3 4 5
+    ```
+    </details>
 
-#. [\[ex:loop\]]{#ex:loop label="ex:loop"} Write a 'for' loop that displays
-on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  ".
-<details><summary>Solution</summary>```
-for (int x = 1 ; x <= 10 ; x ++)
-    Console.Write(x + ", ");
-```
-:::
+#. Write a 'for' loop that displays on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  ". 
+    <details><summary>Solution</summary>
+    ```
+    for (int x = 1 ; x <= 10 ; x ++)
+        Console.Write(x + ", ");
+    ```
+    </details>
 
-#. Adapt the code from
-Exercise [\[ex:loop\]](#ex:loop){reference-type="ref"
-reference="ex:loop"} so that the same sequence will be displayed on the
-screen, but *without the last comma*.
-<details><summary>Solution</summary>```
-for (int x = 1 ; x <= 10 ; x ++)
-{
-    Console.Write(x);
-    if (x < 10) Console.Write(" ,");
-}
-```
-:::
+#. Write a 'for' loop that displays on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10 ", (note that there is no comma after 10). 
+    <details><summary>Solution</summary>```
+    for (int x = 1 ; x <= 10 ; x ++)
+    {
+        Console.Write(x);
+        if (x < 10) Console.Write(" ,");
+    }
+    ```
+    </details>
 
-#. Write a 'for' loop that displays on the screen the sequence
-"1 3 5 7 9 ".
-<details><summary>Solution</summary>```
-for (int x = 1 ; x <= 10 ; x+= 2)
-    Console.Write(x + " ");
-```
-:::
+#. Write a 'for' loop that displays on the screen the sequence "1 3 5 7 9 ". 
+    <details><summary>Solution</summary>
+    ```
+    for (int x = 1 ; x <= 10 ; x+= 2)
+        Console.Write(x + " ");
+    ```
+    </details>
 
-#. Given an `int` variable 'myVar' initialized with a positive value, write
-a loop that sums the integers between $0$ and 'myVar' (i.e.,
-$0 + 1 + \cdots + (\text{`myVar`} - 1) + \text{`myVar`}$).
-<details><summary>Solution</summary>```
-int sum = 0;
-for (int x = 1 ; x <= myVar ; x++)
-    sum += x;
-```
-:::
+#. Given an `int` variable `myVar` initialized with a positive value, write a loop that sums the integers between 0 and `myVar` (i.e., $0 + 1 + \cdots + (\text{myVar} - 1) + \text{myVar}$). 
+    <details><summary>Solution</summary>
+    ```
+    int sum = 0;
+    for (int x = 1 ; x <= myVar ; x++)
+        sum += x;
+    ```
+    </details>
 
 #. Consider the following code:
 
-```
-for (int y = 1; y <= 3; y++)
-{
-    for (int z = 1; z < 5; z++)
-        Console.Write("Scene " + y + ", take " + z + ". " );
-    Console.WriteLine();
-}
-```
+    ```
+    for (int y = 1; y <= 3; y++)
+    {
+        for (int z = 1; z < 5; z++)
+            Console.Write("Scene " + y + ", take " + z + ". " );
+        Console.WriteLine();
+    }
+    ```
 
-How many times does the outer loop iterate (i.e., how many scenes are
-shot)? How many times does the inner loop iterate (i.e., how many takes
-for each scene)? Finally, what is the total number of iterations of the
-nested loops (i.e., how many takes are made, total)?
-:::
-<details><summary>Solution</summary>$3$, $4$, $12$.</details>
+    How many times does the outer loop iterate (i.e., how many scenes are shot)? How many times does the inner loop iterate (i.e., how many takes for each scene)? Finally, what is the total number of iterations of the nested loops (i.e., how many takes are made, total)?
+    <details><summary>Solution</summary>3, 4, 12.</details>
 
-#. Circle the pretest loops:
-
-::: center
-'do while' 'switch' 'while' 'for' 'if-else-if'
-:::
-:::
-<details><summary>Solution</summary>'for' and 'while' are pretest loops.</details>
+#. Which of the following are pre-test loops?  `do while`, `switch`, `while`, `for` and `if-else-if`.
+    <details><summary>Solution</summary>`for` and `while` are pretest loops.</details>
 
 #. What will be displayed on the screen by the following code?
 
-```
-int[] values = new int[6];
-for (int i = 0 ; i < 6 ; i++)
-    values[i] = (i*2);
-foreach (int j in values)
-    Console.WriteLine(j);
-```
-<details><summary>Solution</summary>```
-    0
-    2
-    4
-    6
-    8
-    10
-```
-:::
+    ```
+    int[] values = new int[6];
+    for (int i = 0 ; i < 6 ; i++)
+        values[i] = (i*2);
+    foreach (int j in values)
+        Console.WriteLine(j);
+    ```
+    <details><summary>Solution</summary>
+    ```
+        0
+        2
+        4
+        6
+        8
+        10
+    ```
+    </details>
 
-#. Suppose we are given an `int` array 'dailyPushUp' with $7$ elements.
-Write a piece of code that display the value of the elements stored in
-the array 'dailyPushUp'.
+#. Suppose we are given an `int` array `dailyPushUp` with 7 elements. Write a piece of code that display the value of the elements stored in the array `dailyPushUp`.
 <details><summary>Solution</summary>```
 for (int j = 0 ; j < 7 ; j++)
     Console.WriteLine(dailyPushUp[j]);
