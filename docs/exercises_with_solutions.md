@@ -100,9 +100,11 @@ compiled, and executed.
     </details>
 
 #. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
+    
     ```
     Console.WriteLine($"Here is my variable: {myVariable}");
     ```
+    
     <details><summary>Solution</summary>Here is my variable: My message</details>
 
 #. Assume we have a variable whose name is `level`, whose type is `string`, and whose value is `"Easy"`. What would be displayed at the screen by the following statement?
@@ -113,22 +115,35 @@ compiled, and executed.
 
     <details><summary>Solution</summary>You set the difficulty to Easy.</details>
 
-#. Which of the following are correct identifier names? `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement ` Is the name `myVariable` the same as `myvariable`? If not, why?
+#. Which of the following are correct identifier names? 
+
+    `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement `
+    
+    Is the name `myVariable` the same as `myvariable`? If not, why?
     <details><summary>Solution</summary>`$myHome3` is correct, but not recommended, `ANewHope`, `_ThisIsAVariable`, `statement` are also correct (but, of course, this  latter is weird). The names `myVariable` and `myvariable` are treated differently by C#, because it is case-sensitive.</details>
 
-#. Circle the correct identifier names: `myClass _Exo_1 Lab3-Exo1 My.Lab.Variable using Lab3_Part1`
+#. Which of the following are correct identifier names?
+
+    `myClass _Exo_1 Lab3-Exo1 My.Lab.Variable using Lab3_Part1`
+
     <details><summary>Solution</summary>Identifiers: `myClass`, `Lab3_Part1`</details>
 
-#. Circle the keywords: `myClass static Lab3-Exo1 “Hello World” using Lab3_Part1`
+#. Which of the following are keywords?
+
+    `myClass static Lab3-Exo1 “Hello World” using Lab3_Part1`
     <details><summary>Solution</summary>Keywords: `static`, `using`</details>
 
-#. Circle the correct identifier names: `12_Dec_2019 Lab3-Exo1 MyClass2 My.Lab.Variable string My_Var`
+#. Which of the following are correct identifier names?
+
+    `12_Dec_2019 Lab3-Exo1 MyClass2 My.Lab.Variable string My_Var`
     <details><summary>Solution</summary>OK: MyClass2, My_Var Not OK: 12_Dec_2019, Lab3-Exo1, My.Lab.Variable, string</details>
 
-#. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)? `5 => variable;` `x=5;` `apples= 23` `x <= 23;` `variable =1,890;`
+#. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)?
+
+    `5 => variable;` `x=5;` `apples= 23` `x <= 23;` `variable =1,890;`
     <details><summary>Solution</summary>Only `x=5;` is correct.</details>
 
-#. Write a statement that assigns the value 23 to a variable `myAge` of type `int`. You don't need to re-declare that variable.
+#. Write a statement that assigns the value 23 to a variable `myAge` of type `int`. You do not need to re-declare that variable.
     <details><summary>Solution</summary>`myAge = 23;`</details>
 
 #. Cross out the wrong answer in the following sentences, \[ ~~like this (incorrect)~~  \|  like this (correct) \]:
@@ -243,7 +258,7 @@ value of `b` after the second statement is executed.
 #.  What is the return type of the operation `12.4 \* 3`?
     <details><summary>Solution</summary>`double`</details>
 
-#. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You don't need to re-declare those variables. Assuming `myDoubleVar`'s value is 5.89, what value would be stored in `myIntVar`?
+#. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You do not need to re-declare those variables. Assuming `myDoubleVar`'s value is 5.89, what value would be stored in `myIntVar`?
     <details><summary>Solution</summary>`myIntVar = (int)myDoubleVar;`,  the value stored in `myIntVar` would be 5.</details>
 
 #. Write a statement that performs an implicit conversion between two different numeric datatypes.
@@ -985,7 +1000,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     }
     else
     {
-        Console.WriteLine("I don't know your language!");
+        Console.WriteLine("I do not know your language!");
     }
     ```
         
@@ -1034,7 +1049,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
             Console.WriteLine("Sprechen Sie Deutsch?");
         break;
         default:
-            Console.WriteLine("I don't know your language!");
+            Console.WriteLine("I do not know your language!");
         break;
     }
     ```
