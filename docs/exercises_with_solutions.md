@@ -110,7 +110,7 @@ compiled, and executed.
     ```
         Console.WriteLine($"You set the difficulty to {level}.");
     ```
-    
+
     <details><summary>Solution</summary>You set the difficulty to Easy.</details>
 
 #. Which of the following are correct identifier names? `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement ` Is the name `myVariable` the same as `myvariable`? If not, why?

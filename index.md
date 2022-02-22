@@ -27,6 +27,16 @@ Available formats:
 
 - [List of labs](labs/)
 
+### Exercises
+
+Without Solution | With solution
+--- | --- 
+[HTML](exercises.html) | [HTML](exercises_with_solutions.html)
+[PDF](exercises.pdf)   | [PDF](exercises_with_solutions.pdf)
+[ODT](exercises.odt)   | [ODT](exercises_with_solutions.odt)
+[DOCX](exercises.docx) | [DOCX](exercises_with_solutions.docx) 
+
+
 ## Other Documents
 
 ### Programming and Computer Usage
