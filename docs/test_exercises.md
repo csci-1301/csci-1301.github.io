@@ -1,7 +1,10 @@
 ---
 title: Test Exercises
 --- 
-# Part I --- Questions
+
+# Homework #1
+
+## Part I --- Questions
 
 #. List five pieces of software, and three hardware components of a computer.
     <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer.</details>
@@ -24,7 +27,7 @@ title: Test Exercises
 #. Give a specific characteristic of C# compared to other programming languages.
     <details><summary>Solution</summary>To be written.</details>
 
-#. What happens when the source code you're giving to the compiler has a syntax error?
+#. What happens when the source code you are giving to the compiler has a syntax error?
     <details><summary>Solution</summary>The compiler returns an error and fails to compile your code.</details>
 
 #. Is the C# compiler case-sensitive?
@@ -125,7 +128,7 @@ compiled, and executed.
 #. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)? `5 => variable;` `x=5;` `apples= 23` `x <= 23;` `variable =1,890;`
     <details><summary>Solution</summary>Only `x=5;` is correct.</details>
 
-#. Write a statement that assigns the value $23$ to a variable `myAge` of type `int`. You don't need to re-declare that variable.
+#. Write a statement that assigns the value 23 to a variable `myAge` of type `int`. You don't need to re-declare that variable.
     <details><summary>Solution</summary>`myAge = 23;`</details>
 
 #. Cross out the wrong answer in the following sentences, \[ ~~like this (incorrect)~~  \|  like this (correct) \]:
@@ -145,7 +148,7 @@ compiled, and executed.
     </details>
     
 
-# Part II -- Problems
+## Part II -- Problems
 
 #. There are 4 errors in the following code that will prevent it from compiling. Can you spot them all?
 
@@ -166,7 +169,9 @@ compiled, and executed.
     #.  missing closing `}` for `class Wel`
     </details> 
 
-# Part I --- Questions
+# Homework #2
+
+## Part I --- Questions
 
 #. In C#, what is the "escape character"? Why is it useful?
     <details><summary>Solution</summary>`\`, to print "special characters", like new line, tabulation, quotations mark, etc.</details>
@@ -213,7 +218,7 @@ compiled, and executed.
             float a = 3.7f;
             int b = (int)a;
     ```
-    <details><summary>Solution</summary>$3$</details>
+    <details><summary>Solution</summary>3</details>
 
 #. Is there an error in the following code? Explain the error or give the
 value of `b` after the second statement is executed.
@@ -272,7 +277,7 @@ value of `b` after the second statement is executed.
 #. Write a series of statements that: a) Declare an `string` variable named `favoriteColor`; b) Display on the screen a message asking the user to enter his or her favorite color; c) Read the value entered by the user and store it in the `favoriteColor` variable. You can combine some of the statement(s) if you want, but do not display at the screen any information that was not explicitely asked.
 
 
-# Part II -- Problems
+## Part II -- Problems
 
 The following three exercises **do not** require a computer. 
 Make sure you feel ready before starting them, try to do them with limited time and without notes, and, if you want, check your answer using your IDE.
@@ -280,7 +285,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 #. 
     This problem restates differently the content the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes, and ask you to answer various problems.
 
-    There are $5$ different arithmetic operations available in C#:
+    There are 5 different arithmetic operations available in C#:
 
     --------------------------- ------------------------- -------------------------------------- ----------------------
             **Operation**         **Arithmetic Operator**         **Algebraic Expression**            **Expression**
@@ -381,7 +386,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 
 #. 
-    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value $3$, and a `double` variable named `literPerBottlle` with the value $1.5$.
+    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value 3, and a `double` variable named `literPerBottlle` with the value 1.5.
     What should be the type of the `literPerPerson` variable to be able to be assigned the number of liters every person is going to get, if split equitably? 
     Write the correct initialization of that variable and a statement that displays its value.
 
@@ -397,7 +402,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Declares an `int` variable named `number`.
     #.  Displays on the screen "Please enter your number:".
     #.  Reads an `int` value from the keyboard and assigns the value to the `number` variable.
-    #.  Declares a `string` variable named `id` and initializes it with the string referenced by the `userName` variable, followed by the number entered by the user (you can concatenate a string and an int using the $+$ sign).
+    #.  Declares a `string` variable named `id` and initializes it with the string referenced by the `userName` variable, followed by the number entered by the user (you can concatenate a string and an int using the + sign).
     #.  Displays on the screen, "Your id is" and the content of the `id` variable.
 
     Here is an example of execution, where the user input is underlined, and hitting "enter" is represented by ↵:
@@ -411,7 +416,9 @@ Make sure you feel ready before starting them, try to do them with limited time 
     Press any key to continue . . .
     ```
 
-# Part I -- Questions
+# Homework #3
+
+## Part I -- Questions
 
 #.  What is "an instance of a class"?
     <details><summary>Solution</summary>An object.</details>
@@ -448,7 +455,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     ```
 
     Write a statement that create a `Circle` object, and one
-    statement that sets its radius to $3.5$.
+    statement that sets its radius to 3.5.
     <details><summary>Solution</summary>
     ```
     Circle theCircle = new Circle();
@@ -568,7 +575,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
     #.  Write a statement that would create a `Book` object.
     #.  Write a "getter" and a "setter" for the `title` attribute.
-    #.  Write a constructor for the `Book` class taking at least one argument (you're free to decide which one(s)).
+    #.  Write a constructor for the `Book` class taking at least one argument (you are free to decide which one(s)).
 
 
 #. Consider the following partial class definition:
@@ -624,11 +631,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
 #. Why would one want to define a constructor for a class?
     <details><summary>Solution</summary>To be able to set the instance variables directly when creating the objects.</details>
 
-# Part II -- Problems
+## Part II -- Problems
 
 There is only one problem this time, and it is harder than what you'll be asked to do during the exam. Being able to solve it is an excellent sign that you are ready.
 
-#. You are going to design a class named `Triangle`. A triangle has three angles, but knowing the value of only two angles is sufficient to determine the value of the third, since they always add up to  $180^{\circ}$. Hence, it is sufficient to have only two `double` attributes, `angle1` and `angle2`. We want to define several methods:
+#. You are going to design a class named `Triangle`. A triangle has three angles, but knowing the value of only two angles is sufficient to determine the value of the third, since they always add up to  180°. Hence, it is sufficient to have only two `double` attributes, `angle1` and `angle2`. We want to define several methods:
 
     -   a no-arg constructor that sets the value of `angle1` to $60.0$ and  the value of `angle2` to $60.0$,
     -   another constructor, that takes two arguments, and assigns to  `angle1` the value of the first argument, and assigns to `angle2` the value of the second argument,
@@ -637,9 +644,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     -   a method that rotate the triangle: the value of the first angle should be replaced with the value of the second angle, and the value of the second angle should be replaced with the value of the third angle.
 
     #.  Write the UML diagram for the `Triangle` class.
-
     #.   Write the full, compilable implementation of the `Triangle` class.
-
 
     <details><summary>Solution</summary>
     
@@ -691,7 +696,9 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
-# Part I --- Questions
+# Homework #4
+
+## Part I --- Questions
 
 #. What is sequential processing?
     <details><summary>Solution</summary>When the code is executed sequentially, without any branching. It implies that the code is processed in the order in which it is presented in the source code: the statement at line $n$ will always be executed after the statement at line $n-1$ and before the statement at line $n+1$. </details>
@@ -1071,7 +1078,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
-# Part II -- Problems
+## Part II -- Problems
 
 This time, the two exercises **do not** require a computer, and are here to craft on your problem-solving skills. Make sure you feel ready before starting them, try to do them with a limited amount of time and without notes, and check your answer using your IDE.
 
@@ -1159,237 +1166,216 @@ This time, the two exercises **do not** require a computer, and are here to craf
     ```
     </details>
 
-# Part I --- Questions
+# Homework #5
 
-#. Assume you are given an un-assigned `string` variable `letterGrade`, and
-an already assigned `float` variable `numberGrade`. Write a small
-program that assigns "A" to `letterGrade` if `numberGrade` is between
-$100$ and $90$ (both included), "B" to `letterGrade` if `numberGrade` is
-between $90$ (excluded) and $80$ (included), etc., and "Invalid data" if
-`numberGrade` is strictly lower than $0$ or strictly greater than $100$.
-Should you use a `switch` statement or a `if` ...`else if` ...`else`?
-<details><summary>Solution</summary>An `if` ...`else if` ...`else` is the right structure for this task:
+## Part I --- Questions
 
-```
-float numberGrade;
-string letterGrade;
-numberGrade = -60; // This is just an example, feel free to change it.
-if(numberGrade > 100 || numberGrade < 0)
-{
-// It's actually easier to get rid of the "invalid" cases first.
-    letterGrade = "Invalid Data";
-}
-else if (numberGrade >= 90)
-{
-    letterGrade = "A";
-}
-else if(numberGrade >= 80)
-{
-    letterGrade = "B";
-}
-else if(numberGrade >= 70)
-{
-    letterGrade = "C";
-}
-else if(numberGrade >= 60)
-{
-    letterGrade = "D";
-}
-else
-{
-// We know the value is greater than 0 but strictly lower than 60.
-    letterGrade = "F";
-}
-Console.WriteLine(numberGrade + " corresponds to " + letterGrade);
-```
-:::
+#. Assume you are given an un-assigned `string` variable `letterGrade`, and an already assigned `float` variable `numberGrade`. Write a small program that assigns `"A"` to `letterGrade` if `numberGrade` is between 100 and 90 (both included), `"B"` to `letterGrade` if `numberGrade` is between 90 (excluded) and 80 (included), etc., and `"Invalid data"` if `numberGrade` is strictly lower than 0 or strictly greater than 100. Should you use a `switch` statement or a `if` ...`else if` ...`else`?
+    <details><summary>Solution</summary>
+    An `if` ...`else if` ...`else` is the right structure for this task:
 
-#. Given an `int` variable `counter`, write three statements to decrement
-its value by $1$.
-<details><summary>Solution</summary>We actually know four ways to do that:
+    ```
+    float numberGrade;
+    string letterGrade;
+    numberGrade = -60; // This is just an example, feel free to change it.
+    if(numberGrade > 100 || numberGrade < 0)
+    {
+    // It's actually easier to get rid of the "invalid" cases first.
+        letterGrade = "Invalid Data";
+    }
+    else if (numberGrade >= 90)
+    {
+        letterGrade = "A";
+    }
+    else if(numberGrade >= 80)
+    {
+        letterGrade = "B";
+    }
+    else if(numberGrade >= 70)
+    {
+        letterGrade = "C";
+    }
+    else if(numberGrade >= 60)
+    {
+        letterGrade = "D";
+    }
+    else
+    {
+    // We know the value is greater than 0 but strictly lower than 60.
+        letterGrade = "F";
+    }
+    Console.WriteLine(numberGrade + " corresponds to " + letterGrade);
+    ```
+    </details>
 
-```
-counter = counter - 1;
-counter -= 1;
-counter--;
---counter;
-```
-:::
+#. Given an `int` variable `counter`, write three statements to decrement its value by 1.
+    <details><summary>Solution</summary>We actually know four ways to do that:
+
+    ```
+    counter = counter - 1;
+    counter -= 1;
+    counter--;
+    --counter;
+    ```
+    </details>
 
 #. What will be displayed on the screen?
 
-```
-int x = 3, y = 7;
-Console.WriteLine (x++ +" and "+ --y);
-```
-:::
-<details><summary>Solution</summary>"$3$ and $6$"</details>
+    ```
+    int x = 3, y = 7;
+    Console.WriteLine (x++ +" and "+ --y);
+    ```
+    <details><summary>Solution</summary>"3 and 6"</details>
 
 #. What will be displayed on the screen by the following program?
 
-```
-int counter = 2;
-while (counter != 5)
-{
-    Console.Write(counter + "\n");
-    counter++;
-}
-```
-<details><summary>Solution</summary>``` bash
-2
-3
-4
-```
-:::
-
-#. What will be displayed on the screen by the following program? Write the
-spaces and new line explicitly.
-
-```
-int counter = 10;
-while (counter > 5)
-{
-    counter--;
-    Console.Write(counter + "\n");
-    if (counter == 7) {
-        Console.WriteLine("Bingo");
+    ```
+    int counter = 2;
+    while (counter != 5)
+    {
+        Console.Write(counter + "\n");
+        counter++;
     }
-}
-```
-<details><summary>Solution</summary>``` text
-9
-8
-7
-Bingo
-6
-5
-```
-:::
+    ```
+    <details><summary>Solution</summary>
+    ```bash
+    2
+    3
+    4
+    ```
+    </details>
+
+#. What will be displayed on the screen by the following program? Write the spaces and new line explicitly.
+
+    ```
+    int counter = 10;
+    while (counter > 5)
+    {
+        counter--;
+        Console.Write(counter + "\n");
+        if (counter == 7) {
+            Console.WriteLine("Bingo");
+        }
+    }
+    ```
+    <details><summary>Solution</summary>
+    ```text
+    9
+    8
+    7
+    Bingo
+    6
+    5
+    ```
+    </details>
 
 #. What will be displayed on the screen by the following program?
 
-```
-int counter = 10;
-while (counter != 5) ;
-Console.Write(counter + "\n");
-counter--;
-```
-:::
-<details><summary>Solution</summary>Nothing, and it will loop forever.</details>
-
-#. What will be displayed on the screen by the following program?
-
-```
-int counter = 7;
-while (counter != 2)
+    ```
+    int counter = 10;
+    while (counter != 5) ;
     Console.Write(counter + "\n");
-counter--;
-```
-:::
-<details><summary>Solution</summary>$7$ infinitely many times.</details>
+    counter--;
+    ```
+    <details><summary>Solution</summary>Nothing, and it will loop forever.</details>
 
-#. What is input validation? Name a control structure that can be used to
-perform it. Why is it important?
-<details><summary>Solution</summary>Making sure the user's input is valid. The `while` loop. Because we
-can't trust the user.
-:::
+#. What will be displayed on the screen by the following program?
 
-#. What do we name a variable that is increased by some value at every
-iteration of a loop, i.e., that keeps the running total?
-:::
-<details><summary>Solution</summary>An accumulator.</details>
+    ```
+    int counter = 7;
+    while (counter != 2)
+        Console.Write(counter + "\n");
+    counter--;
+    ```
+    <details><summary>Solution</summary>$7$ infinitely many times.</details>
+
+#. What is input validation? Name a control structure that can be used to perform it. Why is it important?
+    <details><summary>Solution</summary>Making sure the user's input is valid. The `while` loop. Because we cannot  trust the user.</details>
+
+#. What do we name a variable that is increased by some value at every iteration of a loop, i.e., that keeps the running total?
+    <details><summary>Solution</summary>An accumulator.</details>
 
 #. What is a sentinel value?
-<details><summary>Solution</summary>It's a value that will trigger an exit from a loop. It is a value that
-was agreed on, and that signifies "I now want to exit the loop.".
-:::
+    <details><summary>Solution</summary>It's a value that will trigger an exit from a loop. It is a value that was agreed on, and that signifies "I now want to exit the loop.".</details>
 
-#. Write a program that asks the user to enter a value between $0$ and
-$10$, and asks again as long as the user enters integers outside that
-range.
-<details><summary>Solution</summary>```
-int answer;
-do{
-    Console.WriteLine("Enter a value between 0 and 10 (both included).");
-    answer = int.Parse(Console.ReadLine());
-}while(answer > 10 || answer < 0);
-```
-:::
+#. Write a program that asks the user to enter a value between $0$ and $10$, and asks again as long as the user enters integers outside that range.
+    <details><summary>Solution</summary>
+    ```
+    int answer;
+    do{
+        Console.WriteLine("Enter a value between 0 and 10 (both included).");
+        answer = int.Parse(Console.ReadLine());
+    }while(answer > 10 || answer < 0);
+    ```
+    </details>
 
-#. Write a small program that asks the user for an integer, and displays
-"It is positive" if the number entered is positive, "It is negative" if
-the number entered is negative, and "Not a number" if the user entered a
-string that is not an integer.
-<details><summary>Solution</summary>```
-int answer;
-Console.WriteLine("Enter an integer");
-if(!int.TryParse(Console.ReadLine(), out answer)){
-    Console.WriteLine("Not a number");
-}
-else if (answer > 0){
-    Console.WriteLine("Positive");
-}
-else{
-    Console.WriteLine("Negative");
-}
-```
-:::
+#. Write a small program that asks the user for an integer, and displays "It is positive" if the number entered is positive, "It is negative" if the number entered is negative, and "Not a number" if the user entered a string that is not an integer.
+    <details><summary>Solution</summary>
+    ```
+    int answer;
+    Console.WriteLine("Enter an integer");
+    if(!int.TryParse(Console.ReadLine(), out answer)){
+        Console.WriteLine("Not a number");
+    }
+    else if (answer > 0){
+        Console.WriteLine("Positive");
+    }
+    else{
+        Console.WriteLine("Negative");
+    }
+    ```
+    </details>
 
-#. Write a program containing a `while` loop that would display the numbers
-between $-100$ and $100$ (both included) with a space between them when
-executed.
-<details><summary>Solution</summary>```
-int counter = -100;
-while(counter <= 100){
-    Console.Write(counter++ + " ");
-}
-```
-:::
+#. Write a program containing a `while` loop that would display the numbers between -100 and 100 (both included) with a space between them when executed.
+    <details><summary>Solution</summary>```
+    int counter = -100;
+    while(counter <= 100){
+        Console.Write(counter++ + " ");
+    }
+    ```
+    </details>
 
-#. Assume you are given an initialized `string` variable `name`, and a
-`string` variable `field`. Write a small program that assigns to `field`
+#. Assume you are given an initialized `string` variable `name`, and a `string` variable `field`. Write a small program that assigns to `field`
 
--   "CS" if `name` is "Turing" or "Liskov",
+    -   "CS" if `name` is "Turing" or "Liskov",
+    -   "Math." if `name` is "Aryabhata" or "Noether",
+    -   "Unknown" otherwise.
+    <details><summary>Solution</summary>
+    ```
+    string name;
+    name = "Turing"; // Value given as an example, change it to test.
+    string field;
+    switch(name){
+        case("Turing"):
+        case("Liskov"):
+            field = "CS";
+            break;
+        case("Aryabhata"):
+        case("Noether"):
+            field = "Math.";
+            break;
+        default:
+            field = "Unknown";
+            break;
+    }
+    Console.WriteLine(name + " worked in " + field + ".");
+    ```
+    </details>
 
--   "Math." if `name` is "Aryabhata" or "Noether",
+#. Write a program that asks the user to enter a value between 1900 and 1999 (both included), and asks again as long as the user enters integers outside that range.
+    <details><summary>Solution</summary>
+    ```
+    int answer;
+    do{
+        Console.WriteLine("Enter a value between 1900 and 1999 (both included).");
+        answer = int.Parse(Console.ReadLine());
+    }while(answer < 1900 || answer > 1999);
+    ```
+    </details>
 
--   "Unknown" otherwise.
-<details><summary>Solution</summary>```
-string name;
-name = "Turing"; // Value given as an example, change it to test.
-string field;
-switch(name){
-    case("Turing"):
-    case("Liskov"):
-        field = "CS";
-        break;
-    case("Aryabhata"):
-    case("Noether"):
-        field = "Math.";
-        break;
-    default:
-        field = "Unknown";
-        break;
-}
-Console.WriteLine(name + " worked in " + field + ".");
-```
-:::
+## Part II -- Problems
 
-#. Write a program that asks the user to enter a value between $1900$ and
-$1999$ (both included), and asks again as long as the user enters
-integers outside that range.
-<details><summary>Solution</summary>```
-int answer;
-do{
-    Console.WriteLine("Enter a value between 1900 and 1999 (both included).");
-    answer = int.Parse(Console.ReadLine());
-}while(answer < 1900 || answer > 1999);
-```
-:::
-
-# Part II -- Problems
-
-#. Write a `switch` statement that calculates the number of days in a particular month. You should assume that you are given already assigned `month` and `year` `int` variables, and that your program should set an already declared `int` `numberOfDays` variable to $28$, $29$, $30$ or $31$ depending on the month / year combination. Your program should start with a `switch` matching `month` against certain values, and, if `month` is $2$, uses an `if` statement to decide whenever the number of days is $28$ or $29$. You can use something like
+#. Write a `switch` statement that calculates the number of days in a particular month. You should assume that you are given already assigned `month` and `year` `int` variables, and that your program should set an already declared `int` `numberOfDays` variable to 28, 29, 30 or 31 depending on the month / year combination. Your program should start with a `switch` matching `month` against certain values, and, if `month` is 2, uses an `if` statement to decide whenever the number of days is 28 or 29. You can use something like
 
     ```
     switch (month) {
@@ -1433,7 +1419,9 @@ do{
     ```
     </details>
 
-# Part I --- Questions
+# Homework #6
+
+## Part I --- Questions
 
 #. Write a statement that creates a 10-element `int` array named `numbers`.
     <details><summary>Solution</summary>
@@ -1557,16 +1545,14 @@ do{
     </details>
 
 #. Suppose we are given an `int` array `dailyPushUp` with 7 elements. Write a piece of code that display the value of the elements stored in the array `dailyPushUp`.
-<details><summary>Solution</summary>```
-for (int j = 0 ; j < 7 ; j++)
-    Console.WriteLine(dailyPushUp[j]);
-```
-:::
+    <details><summary>Solution</summary>```
+    for (int j = 0 ; j < 7 ; j++)
+        Console.WriteLine(dailyPushUp[j]);
+    ```
+    </details>
 
 #. What is "array bounds checking"? When does it happen?
-<details><summary>Solution</summary>C# making sure that you're not using a subscript outside the allowed
-range. It happens at run time.
-:::
+    <details><summary>Solution</summary>It is C# making sure that you are not using a subscript outside the allowed range. It happens at run time.</detais>
 
 #. Is there an error with the following code? If you think there is one, explain it, otherwise draw the content of the `myIncomes` array once those statements have been executed.
 
@@ -1579,14 +1565,14 @@ range. It happens at run time.
     myIncomes[5] = 1.5;
     ```
 
-    <details><summary>Solution</summary>The subscripts are off, they should go from $0$ to $4$.</details>
+    <details><summary>Solution</summary>The subscripts are off, they should go from 0 to 4: `myIncomes[5] = 1.5;` will casue an error.</details>
 
 #. What would be the size of the `test` array after the following statement has been executed?
 
     ```
     int[] test = {3, 5, 7, 0, 9};
     ```
-    <details><summary>Solution</summary>$5$</details>
+    <details><summary>Solution</summary>5</details>
 
 #. What is the difference, if any, between the following two statements?
 
@@ -1595,8 +1581,8 @@ range. It happens at run time.
         int num[], scores;
     ```
     <details><summary>Solution</summary>In the second one, only `num` is a reference to an `int` array, and `scores` is just an `int`.</details>
-    
-#. Write a statement that creates and initializes a `double` array with the values $12.5$, $89.0$ and $3.24$.
+
+#. Write a statement that creates and initializes a `double` array with the values 12.5, 89.0 and 3.24.
     <details><summary>Solution</summary>```
     double[] question = {12.5, 89.0, 3.24};
     ```
@@ -1610,7 +1596,7 @@ range. It happens at run time.
     number[count--] = 8;
     number[count]--;
     ```
-    <details><summary>Solution</summary>count is $1$. numbers is $3, 4, 8$.</details>
+    <details><summary>Solution</summary>count is 1. numbers is 3, 4, 8.</details>
 
 #. Suppose we have an array named `temp` that has been declared and initialized. How can we get the number of elements in this array?
     <details><summary>Solution</summary>By using the `Length` field: `temp.Length`.</details>
@@ -1623,7 +1609,7 @@ range. It happens at run time.
     foreach (int i in record)
         accumulator += i;
     ```
-    <details><summary>Solution</summary>Declare and initialize an `int` array with the values $3$, $8$ and $11$, and then sum those values in an accumulator variable.</details>
+    <details><summary>Solution</summary>Declare and initialize an `int` array with the values 3, 8 and 11, and then sum those values in an accumulator variable.</details>
 
 #. Assuming we have two `int` arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
     <details><summary>Solution</summary>```
@@ -1631,15 +1617,15 @@ range. It happens at run time.
         secondA[k] = firstA[k];
     ```
     </details>
-    
-#. Assuming we are given an `int` array named `arrayF`, write a program that adds one to each of its elements. That is, if `arrayF` contains $3, 5, 7$ and $-2$ before your program is executed, it should then contain $4, 6, 8$ and $-1$ after your program was executed.
+
+#. Assuming we are given an `int` array named `arrayF`, write a program that adds one to each of its elements. That is, if `arrayF` contains 3, 5, 7 and -2 before your program is executed, it should then contain 4, 6, 8 and -1 after your program was executed.
     <details><summary>Solution</summary>```
     for (int k = 0 ; k < arrayF.Length ; k++)
         arrayF[k] += 1;
     ```
     </details>
 
-#. Assuming we are given an `int` array named `arrayF`, write a program that displays the product of its elements. That is, if `arrayF` contains $2, 3$ and $-1$, then your program should display $-6$.
+#. Assuming we are given an `int` array named `arrayF`, write a program that displays the product of its elements. That is, if `arrayF` contains 2, 3 and -1, then your program should display -6.
     <details><summary>Solution</summary>```
     int prod = 1;
     for (int k = 0 ; k < arrayF.Length ; k++)
@@ -1656,7 +1642,7 @@ range. It happens at run time.
     ```
     </details>
 
-#. Write a static method (header included) that takes as argument an `int` array, and stores the value $10$ in each element of that array.
+#. Write a static method (header included) that takes as argument an `int` array, and stores the value 10 in each element of that array.
     <details><summary>Solution</summary>```
     public static void z(int[] a){
         for (int j = 0 ; j < a.length ; j++) a[j]=10;
