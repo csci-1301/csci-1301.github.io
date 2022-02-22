@@ -459,7 +459,6 @@ Make sure you feel ready before starting them, try to do them with limited time 
     
 #. Write the complete implementation of a class that contains two attributes (with different data types), a setter for one attribute, a getter for the other attribute, a custom constructor, and a `ToString` method. You can re-use an example from a lecture or a lab, as long as it satisfies those conditions, or you can invent one. No need to write an application program.
 
-
 #. What does the keyword `return` do?
     <details><summary>Solution</summary>It is used by a method to return a value to the environment that called it.</details>
 
@@ -486,190 +485,127 @@ Make sure you feel ready before starting them, try to do them with limited time 
     ```
     <details><summary>Solution</summary>It has the wrong return type, because it does not (and should not) return a value, i.e., replace `int` with `void`.</details>
 
-#. Assume we have an instance of the `Rectangle` class named `myRect` and
-an instance of the `Circle` class named `myCircle`. Write statement(s)
-that will make the radius of `myCircle` equal to the width of `myRect`.
-:::
-<details><summary>Solution</summary>`myCircle.SetRadius(myRect.GetWidth());`</details>
+#. Assume we have an instance of the `Rectangle` class named `myRect` and an instance of the `Circle` class named `myCircle`. Write statement(s) that will make the radius of `myCircle` equal to the width of `myRect`.
+    <details><summary>Solution</summary>`myCircle.SetRadius(myRect.GetWidth());`</details>
 
-#. Briefly describe what a format specifier is. Write a statement that uses
-one.
-<details><summary>Solution</summary>An indication to format a numerical value in a special way in a string.
-For example,
-'Console.WriteLine($"{65536:N`");} will display \enquote{65,536.00} on the screen after applying the `:N` format specifier to the value 65536.
-\end{solution}
-\begin{exercise}
-    Write a statement that uses a format specifier.
-\end{exercise}
-\begin{solution}
-`Console.WriteLine($\"myInt:C'\");
-:::
+#. Briefly describe what a format specifier is. Write a statement that uses one.
+    <details><summary>Solution</summary>An indication to format a numerical value in a special way in a string. For example, `Console.WriteLine($"{65536:N");}` will display "65,536.00" on the screen after applying the `:N` format specifier to the value 65536. </details>
 
-#. Write a method for the `Rectangle` class that divides the length and
-width of the calling object by a factor given as a parameter.
-<details><summary>Solution</summary>```
-public void DivideBy(int factor)
-{
-    length /= factor;
-    width /= factor;
-}
-```
-:::
+#.  Write a statement that uses a format specifier.
+    <details><summary>Solution</summary>`Console.WriteLine($"myInt:C");</details>
 
-#. Draw the UML diagram of a class named "Student" with a single attribute,
-"name", of type `string`, and two methods, `SetName`
-and `GetName`.
-<details><summary>Solution</summary>  Student
-  -------------------------
-  \- name: string
-  \+ SetName(arg: string)
-  \+ GetName(): string
-:::
+#. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
+    <details><summary>Solution</summary>```
+    public void DivideBy(int factor)
+    {
+        length /= factor;
+        width /= factor;
+    }
+    ```
+    </details>
 
-#. Write a `ToString` method for a `Account` class with two attributes, a
-`string` attribute called `name` and a `decimal` attribute called
-`amount`.
-:::
+#. Draw the UML diagram of a class named "Student" with a single attribute, "name", of type `string`, and two methods, `SetName` and `GetName`.
+    <details><summary>Solution</summary>  Student
+    -------------------------
+    \- name: string
+    \+ SetName(arg: string)
+    \+ GetName(): string
+    </details>
+
+#. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
 
 #. Consider the following UML diagram:
 
-::: center
-  Circle
-  ------------------------------------------
-  \- radius : float
-  \+ setRadius(radiusParam : float) : void
-  \+ getRadius(): float
-  \+ getArea(): float
-:::
+    Circle
+    ------------------------------------------
+    \- radius : float
+    \+ setRadius(radiusParam : float) : void
+    \+ getRadius(): float
+    \+ getArea(): float
 
-What is the name of the class, what are the methods and attributes of
-the class?
-<details><summary>Solution</summary>The class is named Circle, it has a single attribute (radius) and three
-methods (setRadius, getRadius and getArea).
-:::
+    What is the name of the class, what are the methods and attributes of the class?
+    <details><summary>Solution</summary>The class is named Circle, it has a single attribute (radius) and three methods (setRadius, getRadius and getArea).</details>
 
-#. What does it mean to say that instance variables have a default initial
-value? How is that different from the variables we have been
-manipulating in the `Main` method?
-<details><summary>Solution</summary>When we create an object, the instance variable get a default value.
-When we declare a variable, it is unassigned.
-:::
+#. What does it mean to say that instance variables have a default initial value? How is that different from the variables we have been manipulating in the `Main` method? 
+    <details><summary>Solution</summary>When we create an object, the instance variable get a default value. When we declare a variable, it is unassigned. </details>
 
 #. Is it possible to have more than one constructor defined for a class? If yes, how can C# know which one is called?
-<details><summary>Solution</summary>Yes, by looking at the signature.</details>
+    <details><summary>Solution</summary>Yes, by looking at the signature.</details>
 
-#. What is the name of a constructor method? What is the return type of a
-constructor?
-:::
-<details><summary>Solution</summary>The name of the class. It does not have a return type, not even `void`.</details>
+#. What is the name of a constructor method? What is the return type of a constructor?
+    <details><summary>Solution</summary>The name of the class. It does not have a return type, not even `void`.</details>
 
-#. Write a constructor for a `Soda` class with one `string` attribute
-called `name`.
-:::
-<details><summary>Solution</summary>'public Soda()name = \"Generic\";'</details>
+#. Write a constructor for a `Soda` class with one `string` attribute called `name`.
+    <details><summary>Solution</summary>`public Soda(){name = "Generic";}`</details>
 
-#. Assume we have a `Polygon` class, that have only one attribute, an `int`
-called `numberOfSides`. Write a constructor for that class.
-<details><summary>Solution</summary>'public Polygon(int numberOfSidesParam)numberOfSides =
-numberOfSidesParam;'
-:::
+#. Assume we have a `Polygon` class, that have only one attribute, an `int` called `numberOfSides`. Write a constructor for that class. 
+    <details><summary>Solution</summary>?public Polygon(int numberOfSidesParam)numberOfSides = numberOfSidesParam;`</details>
 
-#. What is the "default" constructor? Do we always have the possibility of
-using it?
-<details><summary>Solution</summary>The constructor provided with the class by default, that set all the
-attributes to their default values. If we define our own constructor,
-this one disappears
-:::
+#. What is the "default" constructor? Do we always have the possibility of using it?
+    <details><summary>Solution</summary>The constructor provided with the class by default, that set all the attributes to their default values. If we define our own constructor, this one disappears. </details>
 
-#. What is the return type of a `ToString` method? How many arguments does
-it usually take?
-:::
-<details><summary>Solution</summary>`string`, $0$.</details>
+#. What is the return type of a `ToString` method? How many arguments does it usually take?
+    <details><summary>Solution</summary>`string`, 0.</details>
 
 #. Consider the following partial class definition:
 
-```
-public class Book
-{
-    private string title;
-    private string author;
-    private string publisher;
-    private int copiesSold;
-}
-```
+    ```
+    public class Book
+    {
+        private string title;
+        private string author;
+        private string publisher;
+        private int copiesSold;
+    }
+    ```
 
-#.  Write a statement that would create a `Book` object.
+    #.  Write a statement that would create a `Book` object.
+    #.  Write a "getter" and a "setter" for the `title` attribute.
+    #.  Write a constructor for the `Book` class taking at least one argument (you're free to decide which one(s)).
 
-#.  Write a "getter" and a "setter" for the `title` attribute.
-
-#.  Write a constructor for the `Book` class taking at least one
-    argument (you're free to decide which one(s)).
-:::
 
 #. Consider the following partial class definition:
 
-```
-class DVD
-{
-    private string title;
-    private decimal price;
-}
-```
+    ```
+    class DVD
+    {
+        private string title;
+        private decimal price;
+    }
+    ```
 
-#.  Write a "setter" for the `title` attribute.
-
-#.  Write a constructor for the `DVD` class that takes two arguments.
-
-#.  Write a method called `Discount` that decreases the `price`
-    attribute by $20.55\%$
-
-#.  Write a (good, informative) `ToString` method for the class.
-
-#.  Write statements that ask the user to enter a price and then create
-    a `DVD` object with a `price` attribute equal to the price the user
-    entered. (The object's `title` attribute can be anything you
-    choose).
-
-#.  Draw (on the back) the UML class diagram for the class you obtained
-    by adding the above four methods to our original class definition.
-:::
+    #.  Write a "setter" for the `title` attribute.
+    #.  Write a constructor for the `DVD` class that takes two arguments.
+    #.  Write a method called `Discount` that decreases the `price` attribute by 20.55%.
+    #.  Write a (good, informative) `ToString` method for the class.
+    #.  Write statements that ask the user to enter a price and then create  a `DVD` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
+    #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
 
 #. Consider the following partial class definition:
 
-```
-class Book
-{
-    private string title;
-    private decimal price;
-}
-```
+    ```
+    class Book
+    {
+        private string title;
+        private decimal price;
+    }
+    ```
 
-#.  Write a "getter" for the `title` attribute.
-
-#.  Write a constructor for the `Book` class that takes two arguments.
-
-#.  Write a method called `AddTaxes` that increases the `price`
-    attribute by $6.35\%$
-
-#.  Write a (good, informative) `ToString` method for that class.
-
-#.  Write statements that ask the user to enter a price and then create
-    a `Book` object with a `price` attribute equal to the price the user
-    entered. (The object's `title` attribute can be anything you
-    choose).
-
-#.  Draw (on the back) the UML class diagram for the class you obtained
-    by adding the above four methods to our original class definition.
-:::
+    #.  Write a "getter" for the `title` attribute.
+    #.  Write a constructor for the `Book` class that takes two arguments.
+    #.  Write a method called `AddTaxes` that increases the `price` attribute by 6.35%.
+    #.  Write a (good, informative) `ToString` method for that class.
+    #.  Write statements that ask the user to enter a price and then create  a `Book` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
+    #.  Draw  the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
 
 #. Assume that my `Pet` class contains one custom constructor:
 
-```
-        public Pet(string nameP, char genderP){
-            name = nameP;
-            gender = genderP;
-        }
-```
+    ```
+            public Pet(string nameP, char genderP){
+                name = nameP;
+                gender = genderP;
+            }
+    ```
 
     What is the problem with the following statement?
 
@@ -687,82 +623,78 @@ There is only one problem this time, and it is harder than what you'll
 be asked to do during the exam. Being able to solve it is an excellent
 sign that you are ready.
 
-::: problem
-You are going to design a class named `Triangle`. A triangle has three
-angles, but knowing the value of only two angles is sufficient to
-determine the value of the third, since they always add up to
-$180^{\circ}$. Hence, it is sufficient to have only two `double`
-attributes, `angle1` and `angle2`. We want to define several methods:
+    #. 
+    You are going to design a class named `Triangle`. A triangle has three
+    angles, but knowing the value of only two angles is sufficient to
+    determine the value of the third, since they always add up to
+    $180^{\circ}$. Hence, it is sufficient to have only two `double`
+    attributes, `angle1` and `angle2`. We want to define several methods:
 
--   a no-arg constructor that sets the value of `angle1` to $60.0$ and
-    the value of `angle2` to $60.0$,
+    -   a no-arg constructor that sets the value of `angle1` to $60.0$ and
+        the value of `angle2` to $60.0$,
 
--   another constructor, that takes two arguments, and assigns to
-    `angle1` the value of the first argument, and assigns to `angle2`
-    the value of the second argument,
+    -   another constructor, that takes two arguments, and assigns to
+        `angle1` the value of the first argument, and assigns to `angle2`
+        the value of the second argument,
 
--   getters for `angle1` and `angle2`,
+    -   getters for `angle1` and `angle2`,
 
--   a method that computes and returns the value of the third angle,
-    that we name `ComputeAngle3`,
+    -   a method that computes and returns the value of the third angle,
+        that we name `ComputeAngle3`,
 
--   a method that rotate the triangle: the value of the first angle
-    should be replaced with the value of the second angle, and the value
-    of the second angle should be replaced with the value of the third
-    angle.
+    -   a method that rotate the triangle: the value of the first angle
+        should be replaced with the value of the second angle, and the value
+        of the second angle should be replaced with the value of the third
+        angle.
 
-#.  Write the UML diagram for the `Triangle` class.
+    #.  Write the UML diagram for the `Triangle` class.
 
-#.   Write the full, compilable implementation of the `Triangle` class.
+    #.   Write the full, compilable implementation of the `Triangle` class.
 
 
-::: answer
-```
-class Triangle
-{
-    private double angle1;
-    private double angle2;
-    public Triangle()
+    ::: answer
+    ```
+    class Triangle
     {
-        angle1 = 60;
-        angle2 = 60;
+        private double angle1;
+        private double angle2;
+        public Triangle()
+        {
+            angle1 = 60;
+            angle2 = 60;
+        }
+        public Triangle(double angle1Param, double angle2Param)
+        {
+            angle1 = angle1Param;
+            angle2 = angle2Param;
+        }
+        public double GetAngle1()
+        {
+            return angle1;
+        }
+        public double GetAngle2()
+        {
+            return angle2;
+        }
+        public double ComputeAngle3()
+        {
+            return 180 - angle1 - angle2;
+        }
+        public void Rotate()
+        {
+            double oldAngle3 = ComputeAngle3();
+            angle1 = angle2;
+            angle2 = oldAngle3;
+        }
     }
-    public Triangle(double angle1Param, double angle2Param)
-    {
-        angle1 = angle1Param;
-        angle2 = angle2Param;
-    }
-    public double GetAngle1()
-    {
-        return angle1;
-    }
-    public double GetAngle2()
-    {
-        return angle2;
-    }
-    public double ComputeAngle3()
-    {
-        return 180 - angle1 - angle2;
-    }
-    public void Rotate()
-    {
-        double oldAngle3 = ComputeAngle3();
-        angle1 = angle2;
-        angle2 = oldAngle3;
-    }
-}
-```
-:::
+    ```
+    :::
 
 # Part I --- Questions
 
 #. What is sequential processing?
-<details><summary>Solution</summary>When the code is executed sequentially, without any branching. It
-implies that the code is processed in the order in which it is presented
-in the source code: the statement at line $n$ will always be executed
-after the statement at line $n-1$ and before the statement at line
-$n+1$.
-:::
+<details><summary>Solution</summary>When the code is executed sequentially, without any branching. It implies that the code is processed in the order in which it is presented in the source code: the statement at line $n$ will always be executed after the statement at line $n-1$ and before the statement at line $n+1$.
+</details>
 
 #. What is a decision structure?
 <details><summary>Solution</summary>A decision structure is a test and one or multiple statement blocks that
