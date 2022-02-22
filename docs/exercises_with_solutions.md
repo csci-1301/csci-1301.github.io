@@ -711,7 +711,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
-# Homework #4
+# Homework #3
 
 ## Part I --- Questions
 
@@ -1181,7 +1181,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     ```
     </details>
 
-# Homework #5
+# Homework #4
 
 ## Part I --- Questions
 
@@ -1434,7 +1434,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     ```
     </details>
 
-# Homework #6
+# Homework #5
 
 ## Part I --- Questions
 
