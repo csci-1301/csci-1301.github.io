@@ -8,7 +8,7 @@ This website contains all the resources used in the delivery of [CSCI 1301 - Pri
 
 # Authors
 
-The authors of this material are:
+The initial authors of this material are:
 
 - [Clément Aubert](http://spots.augusta.edu/caubert/)
 - [Michael Dowell](https://spots.augusta.edu/mdowell/)
@@ -16,6 +16,8 @@ The authors of this material are:
 - [Reza Rahaeimehr](https://www.augusta.edu/faculty/directory/view.php?id=RRAHAEIMEHR)
 - [Neea Rusch](https://nkrusch.github.io/)
 - [Edward Tremel](https://edwardtremel.com/)
+
+Additional contributions, by [undergraduate course assistants](https://csci-1301.github.io/uca.html) or other colleagues, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
 
 This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
 Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s  [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Markus Bacha and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
