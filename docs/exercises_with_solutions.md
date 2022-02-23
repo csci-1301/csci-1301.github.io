@@ -10,7 +10,7 @@ title: Exercises with solutions
     <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer.</details>
 
 #. List four programming languages. 
-    <details><summary>Solution</summary>If there are markup languages, like `HTML`, make a note saying that it's not entirely true.</details>
+    <details><summary>Solution</summary>C, C++, C#, Java, JavaScript, Python, Haskell, Swift, RWBY, etc (Note: HTML is a "Markup Language" and SQL is a "Query Language", which would technically be incorrect)</details>
 
 #.  What is a GUI?
     <details><summary>Solution</summary>Graphical User Interface.</details>
@@ -25,13 +25,13 @@ title: Exercises with solutions
     <details><summary>Solution</summary>Binary numbers.</details>
 
 #. Give a specific characteristic of C# compared to other programming languages.
-    <details><summary>Solution</summary>To be written.</details>
+    <details><summary>Solution</summary>It's a compiled language, it has automatic garbage collection, it's object-oriented, it enforces .NET common language specification, etc.</details>
 
 #. What happens when the source code you are giving to the compiler has a syntax error?
     <details><summary>Solution</summary>The compiler returns an error and fails to compile your code.</details>
 
 #. Is the C# compiler case-sensitive?
-    <details><summary>Solution</summary>Yes, the C# compiler is case-sensitive.</details>
+    <details><summary>Solution</summary>Yes, the C# compiler is case-sensitive (meaning that the IDE differentiates between capital and lowercase letters).</details>
 
 #. Suppose I replace every white space in your source code with two white spaces. Will your program still compile? Why, or why not?
     <details><summary>Solution</summary>Yes, because compilers do not care about white spaces.</details>
@@ -44,14 +44,14 @@ title: Exercises with solutions
 
 #. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
     <details><summary>Solution</summary>    ```
-        Console.WriteLine("Hi Mom!");
+    Console.WriteLine("Hi Mom!");
     ```
     </details>
 
 #. Write a statement that would display, "Hello!" (without the quotes) followed by a new line on the screen, once inserted in a proper method,
 compiled, and executed. 
     <details><summary>Solution</summary>    ```
-        Console.WriteLine("Hello!");
+    Console.WriteLine("Hello!");
     ```
     </details>
 
@@ -89,43 +89,39 @@ compiled, and executed.
     <details><summary>Solution</summary>The `Write` method does not advance the cursor to the next line after the message is displayed at the screen.</details>
 
 #. Write a statement that would display the following on the screen:
-
     ```
     Hi Mom!↵
     How are you doing?
     ```
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     Console.Write("Hi Mom!\nHow are you doing?");
     ```
     </details>
-
-#. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
     
+#. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
     ```
     Console.WriteLine($"Here is my variable: {myVariable}");
     ```
-    
     <details><summary>Solution</summary>Here is my variable: My message</details>
-
+    
 #. Assume we have a variable whose name is `level`, whose type is `string`, and whose value is `"Easy"`. What would be displayed at the screen by the following statement?
-
     ```
-        Console.WriteLine($"You set the difficulty to {level}.");
+    Console.WriteLine($"You set the difficulty to {level}.");
     ```
-
     <details><summary>Solution</summary>You set the difficulty to Easy.</details>
 
 #. Which of the following are correct identifier names? 
-
+    ```
     `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement `
-    
+    ```
     Is the name `myVariable` the same as `myvariable`? If not, why?
     <details><summary>Solution</summary>`$myHome3` is correct, but not recommended, `ANewHope`, `_ThisIsAVariable`, `statement` are also correct (but, of course, this  latter is weird). The names `myVariable` and `myvariable` are treated differently by C#, because it is case-sensitive.</details>
 
 #. Which of the following are correct identifier names?
-
+    ```
     `myClass _Exo_1 Lab3-Exo1 My.Lab.Variable using Lab3_Part1`
-
+    ```
     <details><summary>Solution</summary>Identifiers: `myClass`, `Lab3_Part1`</details>
 
 #. Which of the following are keywords?
