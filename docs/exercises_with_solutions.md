@@ -291,29 +291,29 @@ value of `b` after the second statement is executed.
     Console.WriteLine("Please enter your age:");
     myAge = int.Parse(Console.ReadLine());
     ```
-<details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value.</details>
+    <details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value.</details>
 
 #. Write a series of statements that: a) Declare an `int` variable named `userAge`, b) Display on the screen a message asking the user to enter his or her age, c) Read the value entered by the user and store it in the `userAge` variable. You can add statement(s) performing intermediate steps if you want.
 
-<details><summary>Solution</summary>
+    <details><summary>Solution</summary>
     ```
     int userAge;
     Console.WriteLine("Please enter your age.");
     userAge = int.Parse(Console.ReadLine());
     ```
     Note: This is not the only solution, but the most optimal.
-</details>
+    </details>
 
 #. Write a series of statements that: a) Declare an `string` variable named `favoriteColor`; b) Display on the screen a message asking the user to enter his or her favorite color; c) Read the value entered by the user and store it in the `favoriteColor` variable. You can combine some of the statement(s) if you want, but do not display at the screen any information that was not explicitely asked.
 
-<details><summary>Solution</summary>
+    <details><summary>Solution</summary>
     ```
     string favoriteColor;
     Console.WriteLine("Please enter your favorite color.");
     favoriteColor = Console.ReadLine();
     ```
     Note: This is not the only solution, but the most optimal.
-</details>
+    </details>
 
 ## Part II -- Problems
 
