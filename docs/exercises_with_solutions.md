@@ -493,7 +493,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     ```
     public int GetTotal(){
          return total;
-    s}
+    }
     ```
     </details>
 
@@ -744,7 +744,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' == 'Y') && true`
-    #.  `6 + 2 \< 8 ||  3 > 4`
+    #.  `6 + 2 < 8 ||  3 > 4`
     #.  `(true && 4 == 3) == false`
     #.  `4 > 4 && !false`
     <details><summary>Solution</summary>
@@ -756,15 +756,15 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' != 'Y') && true`
-    #.  `6 + 2 \< 12 ||  3 > 4`
+    #.  `6 + 2 < 12 ||  3 > 4`
     #.  `(true && 4 >= 3) == false`
-    #.  `13 \<= 4 \* 3 ||  !false`
+    #.  `13 <= 4 \* 3 ||  !false`
     <details><summary>Solution</summary>
         #.  `true`,
         #.  `true`,
         #.  `false`,
         #.  `true`
-        </details>
+    </details>
 
 #. What is the relational operator used to determine whenever two values are different?
     <details><summary>Solution</summary>`!=`</details>
@@ -773,16 +773,16 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>In a variable of type `bool`. Its two possible values are `true` and `false`.</details>
 
 #.  Give three relational operators, and then two logical operators.
-    <details><summary>Solution</summary>`\<=`, `==`, `>`, and `!`, `&&`</details>
+    <details><summary>Solution</summary>`<=`, `==`, `>`, and `!`, `&&`</details>
 
 #. What would be displayed on the screen by the following code?
 
     ```
-        if (false)
-        {
-            Console.WriteLine("Hello!");
-        }
-        Console.WriteLine("Hi!");
+    if (false)
+    {
+        Console.WriteLine("Hello!");
+    }
+    Console.WriteLine("Hi!");
     ```
     <details><summary>Solution</summary>"Hi!"</details>
 
@@ -1256,7 +1256,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     }
     ```
     <details><summary>Solution</summary>
-    ```bash
+    ```text
     2
     3
     4
@@ -1356,9 +1356,9 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Assume you are given an initialized `string` variable `name`, and a `string` variable `field`. Write a small program that assigns to `field`
 
-    -   "CS" if `name` is "Turing" or "Liskov",
-    -   "Math." if `name` is "Aryabhata" or "Noether",
-    -   "Unknown" otherwise.
+    - "CS" if `name` is "Turing" or "Liskov",
+    - "Math." if `name` is "Aryabhata" or "Noether",
+    - "Unknown" otherwise.
     <details><summary>Solution</summary>
     ```
     string name;
@@ -1486,7 +1486,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
         Console.Write(num + " ");
     ```
     <details><summary>Solution</summary>
-    ``` bash
+    ``` text
     3 4 5
     ```
     </details>
@@ -1554,13 +1554,13 @@ This time, the two exercises **do not** require a computer, and are here to craf
         Console.WriteLine(j);
     ```
     <details><summary>Solution</summary>
-    ```
-        0
-        2
-        4
-        6
-        8
-        10
+    ```text
+    0
+    2
+    4
+    6
+    8
+    10
     ```
     </details>
 
@@ -1598,8 +1598,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
 #. What is the difference, if any, between the following two statements?
 
     ```
-        int[] num, scores;
-        int num[], scores;
+    int[] num, scores;
+    int num[], scores;
     ```
     <details><summary>Solution</summary>In the second one, only `num` is a reference to an `int` array, and `scores` is just an `int`.</details>
 
