@@ -369,7 +369,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     || $= (-3.5) \times 2$
     || $= -7$
 
-    ? Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
+    Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
 
     Actually, C# uses the following three rules:
     
@@ -509,6 +509,35 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.   `2 + 2 * 1 - 4`
     
 #. Write the complete implementation of a class that contains two attributes (with different data types), a setter for one attribute, a getter for the other attribute, a custom constructor, and a `ToString` method. You can re-use an example from a lecture or a lab, as long as it satisfies those conditions, or you can invent one. No need to write an application program.
+    <details><summary>Solution</summary>
+    Note: In this solution, I made a Rectangle class like the lab, but any class fulfilling the requirements will work.
+    ```
+    class Rectangle
+    {
+        private int length;
+        private int width;
+
+        public Rectangle(int lengthP, int widthP)
+        {
+            length = lengthP;
+            width = widthP;
+        }
+        public void SetLength(int lengthParameter)
+        {
+            length = lengthParameter;
+        }
+        public int GetWidth()
+        {
+            return width;
+        }
+        public override string ToString()
+        {
+            return "Length: " + length + ", Width: " + width;
+        }
+    }
+    ```
+    </details>
+
 
 #. What does the keyword `return` do?
     <details><summary>Solution</summary>It is used by a method to return a value to the environment that called it.</details>
@@ -516,17 +545,15 @@ Make sure you feel ready before starting them, try to do them with limited time 
 #. Write a get method for an instance variable named `total` of type `int`.
     <details><summary>Solution</summary>
     ```
-    public int GetTotal(){
-         return total;
-    }
+    public int GetTotal(){ return total; }
     ```
     </details>
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
-    <details><summary>Solution</summary>`public string GetMyName()return myName;`</details>
+    <details><summary>Solution</summary>`public string GetMyName() { return myName; }`</details>
 
 #.  Write a setter for an attribute of type `int` named `myAge`.
-    <details><summary>Solution</summary>`public void SetMyAge(int paramMyAge)myAge = paramMyAge;`</details>
+    <details><summary>Solution</summary>`public void SetMyAge(int paramMyAge) { myAge = paramMyAge; }`</details>
 
 #. Assuming `name` is a `string` instance variable, there is problem with the following setter. Fix it.
 
@@ -544,19 +571,14 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>An indication to format a numerical value in a special way in a string. For example, `Console.WriteLine($"{65536:N");}` will display "65,536.00" on the screen after applying the `:N` format specifier to the value 65536. </details>
 
 #.  Write a statement that uses a format specifier.
-    <details><summary>Solution</summary>`Console.WriteLine($"myInt:C");</details>
+    <details><summary>Solution</summary>`Console.WriteLine($"myInt:C");`</details>
 
 #. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
     <details><summary>Solution</summary>
     ```
-    public void DivideBy(int factor)
-    {
-        length /= factor;
-        width /= factor;
-    }
+    public void DivideBy(int factor) { length /= factor; width /= factor; }
     ```
     </details>
-
 #. Draw the UML diagram of a class named "Student" with a single attribute, "name", of type `string`, and two methods, `SetName` and `GetName`.
     <details><summary>Solution</summary>
     Student
@@ -567,6 +589,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
+    <details><summary>Solution</summary>
+    ```
+    public override string ToString() { return "Account Name: " + name + "\nAccount Balance: " + amount;
+    ```
+    </details>
 
 #. Consider the following UML diagram:
 
@@ -590,16 +617,16 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>The name of the class. It does not have a return type, not even `void`.</details>
 
 #. Write a constructor for a `Soda` class with one `string` attribute called `name`.
-    <details><summary>Solution</summary>`public Soda(){name = "Generic";}`</details>
+    <details><summary>Solution</summary>`public Soda() { name = "Generic"; }`</details>
 
 #. Assume we have a `Polygon` class, that have only one attribute, an `int` called `numberOfSides`. Write a constructor for that class. 
-    <details><summary>Solution</summary>?public Polygon(int numberOfSidesParam)numberOfSides = numberOfSidesParam;`</details>
+    <details><summary>Solution</summary>public Polygon (int numberOfSidesParam) { numberOfSides = numberOfSidesParam; }`</details>
 
 #. What is the "default" constructor? Do we always have the possibility of using it?
     <details><summary>Solution</summary>The constructor provided with the class by default, that set all the attributes to their default values. If we define our own constructor, this one disappears. </details>
 
 #. What is the return type of a `ToString` method? How many arguments does it usually take?
-    <details><summary>Solution</summary>`string`, 0.</details>
+    <details><summary>Solution</summary>`string`; 0.</details>
 
 #. Consider the following partial class definition:
 
@@ -617,7 +644,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a "getter" and a "setter" for the `title` attribute.
     #.  Write a constructor for the `Book` class taking at least one argument (you are free to decide which one(s)).
 
-
+    <details><summary>Solution</summary>
+    #. `Book myBook = new Book();
+    #. `public string GetTitle() { return title; } ↵ public void SetTitle(string titleP) { title = titleP; }`
+    #. `public Book (string titleP, string authorP, string pubP, int copiesP) { title = titleP; author = authorP; publisher = pubP; copiesSold = copiesP }`
+    </details>
 #. Consider the following partial class definition:
 
     ```
