@@ -43,14 +43,16 @@ title: Exercises with solutions
     <details><summary>Solution</summary>Examples: C, C++, Java, Python, JavaScript</details>
 
 #. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
-    <details><summary>Solution</summary>    ```
+    <details><summary>Solution</summary>
+    ```
     Console.WriteLine("Hi Mom!");
     ```
     </details>
 
 #. Write a statement that would display, "Hello!" (without the quotes) followed by a new line on the screen, once inserted in a proper method,
 compiled, and executed. 
-    <details><summary>Solution</summary>    ```
+    <details><summary>Solution</summary>
+    ```
     Console.WriteLine("Hello!");
     ```
     </details>
@@ -195,10 +197,10 @@ compiled, and executed.
 #. Give the values of `a` and `b` after the following four instructions have been executed.
 
     ```
-            int a, b;
-            a = 2;
-            b = a * 2 + 1;
-            a -= 1;
+    int a, b;
+    a = 2;
+    b = a * 2 + 1;
+    a -= 1;
     ```
     
     <details><summary>Solution</summary>`a` is `1`, `b` is `5`.</details>
@@ -206,28 +208,28 @@ compiled, and executed.
 #. Give the values of `a` and `b` after the following four instructions have been executed.
 
     ```
-            int a, b;
-            a = 4;
-            b = a * 3 + 1;
-            a /= 2;
+    int a, b;
+    a = 4;
+    b = a * 3 + 1;
+    a /= 2;
     ```
     <details><summary>Solution</summary>2, 13.</details>
 
 #. Give the values of `c` and `d` after the following four instructions have been executed.
 
     ```
-            int c = 3, d;
-            d = 2 + c;
-            c = d * 2;
-            d += 2;
+    int c = 3, d;
+    d = 2 + c;
+    c = d * 2;
+    d += 2;
     ```
     <details><summary>Solution</summary>22, 46.</details>
 
 #. Is there an error in the following code? Explain the error or give the value of `b` after the second statement is executed.
 
     ```
-            float a = 3.7f;
-            int b = (int)a;
+    float a = 3.7f;
+    int b = (int)a;
     ```
     <details><summary>Solution</summary>3</details>
 
@@ -235,16 +237,16 @@ compiled, and executed.
 value of `b` after the second statement is executed.
 
     ```
-            decimal a = 1.6M;
-            int b = (int)a + a;
+    decimal a = 1.6M;
+    int b = (int)a + a;
     ```
     <details><summary>Solution</summary>Error, the result type of the operation is a decimal, and cannot be stored in an int.</details>
 
 #. There is an error in the following code, at the second line. Explain the error, and how you could fix this second line using a cast operator, without changing the datatype of the `b` variable.
 
     ```
-            decimal a = 2.5M;
-            int b = a / 2;
+    decimal a = 2.5M;
+    int b = a / 2;
     ```
     <details><summary>Solution</summary>The result of the expression `a / 2` is of type `decimal`, so it cannot be stored in an int. This can be fixed by adding an `(int)` cast to the variable `a` before dividing it by 2, so that the expression's result type is `int`, like this: `int b = (int)a / 2;`</details>
 
@@ -269,18 +271,18 @@ value of `b` after the second statement is executed.
 #. What is wrong with the following? Will the error(s) appear at compilation time or at execution time?
 
     ```
-        int age;
-        Console.WriteLine("Please enter your age:");
-        age = Console.ReadLine();
+    int age;
+    Console.WriteLine("Please enter your age:");
+    age = Console.ReadLine();
     ```
     <details><summary>Solution</summary>Conversion of `string` to `int`. At compilation time.</details>
 
 #. Will those statements, if placed in a proper `Main` method, compile? Could this program crash at execution time? Justify your answer.
 
     ```
-        int myAge;
-        Console.WriteLine("Please enter your age:");
-        myAge = int.Parse(Console.ReadLine());
+    int myAge;
+    Console.WriteLine("Please enter your age:");
+    myAge = int.Parse(Console.ReadLine());
     ```
 
 #. Write a series of statements that: a) Declare an `int` variable named `userAge`, b) Display on the screen a message asking the user to enter his or her age, c) Read the value entered by the user and store it in the `userAge` variable. You can add statement(s) performing intermediate steps if you want.
@@ -487,10 +489,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>It is used by a method to return a value to the environment that called it.</details>
 
 #. Write a get method for an instance variable named `total` of type `int`.
-    <details><summary>Solution</summary>```
-            public int GetTotal(){
-                return total;
-            }
+    <details><summary>Solution</summary>
+    ```
+    public int GetTotal(){
+         return total;
+    s}
     ```
     </details>
 
@@ -519,7 +522,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>`Console.WriteLine($"myInt:C");</details>
 
 #. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     public void DivideBy(int factor)
     {
         length /= factor;
@@ -626,10 +630,10 @@ Make sure you feel ready before starting them, try to do them with limited time 
 #. Assume that my `Pet` class contains one custom constructor:
 
     ```
-            public Pet(string nameP, char genderP){
-                name = nameP;
-                gender = genderP;
-            }
+    public Pet(string nameP, char genderP){
+        name = nameP;
+        gender = genderP;
+    }
     ```
 
     What is the problem with the following statement?
@@ -641,6 +645,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 #. Why would one want to define a constructor for a class?
     <details><summary>Solution</summary>To be able to set the instance variables directly when creating the objects.</details>
+
 
 ## Part II -- Problems
 
@@ -861,7 +866,8 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>`if (age < 18) legalStatus = "Minor"; else legalStatus = "Major";`</details>
 
 #. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     if (age <= 18 && age >= 0) {
         Console.WriteLine("It's free for you!");
     }
@@ -961,7 +967,8 @@ There is only one problem this time, and it is harder than what you'll be asked 
     </details>
 
 #. Assuming that `myString` is a string variable, write a statement that prints "Hello, Melody!" if the value of `myString` is equal to `Melody`, and nothing otherwise.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     if (myString == "Melody") {
         Console.WriteLine("Hello, Melody!");
     }
@@ -1338,7 +1345,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. Write a program containing a `while` loop that would display the numbers between -100 and 100 (both included) with a space between them when executed.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     int counter = -100;
     while(counter <= 100){
         Console.Write(counter++ + " ");
@@ -1492,7 +1500,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. Write a 'for' loop that displays on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10 ", (note that there is no comma after 10). 
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     for (int x = 1 ; x <= 10 ; x ++)
     {
         Console.Write(x);
@@ -1556,7 +1565,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. Suppose we are given an `int` array `dailyPushUp` with 7 elements. Write a piece of code that display the value of the elements stored in the array `dailyPushUp`.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     for (int j = 0 ; j < 7 ; j++)
         Console.WriteLine(dailyPushUp[j]);
     ```
@@ -1594,7 +1604,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     <details><summary>Solution</summary>In the second one, only `num` is a reference to an `int` array, and `scores` is just an `int`.</details>
 
 #. Write a statement that creates and initializes a `double` array with the values 12.5, 89.0 and 3.24.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     double[] question = {12.5, 89.0, 3.24};
     ```
     </details>
@@ -1623,21 +1634,24 @@ This time, the two exercises **do not** require a computer, and are here to craf
     <details><summary>Solution</summary>Declare and initialize an `int` array with the values 3, 8 and 11, and then sum those values in an accumulator variable.</details>
 
 #. Assuming we have two `int` arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+     ```
     for (int k = 0 ; k < firstA.Length ; k++)
         secondA[k] = firstA[k];
     ```
     </details>
 
 #. Assuming we are given an `int` array named `arrayF`, write a program that adds one to each of its elements. That is, if `arrayF` contains 3, 5, 7 and -2 before your program is executed, it should then contain 4, 6, 8 and -1 after your program was executed.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     for (int k = 0 ; k < arrayF.Length ; k++)
         arrayF[k] += 1;
     ```
     </details>
 
 #. Assuming we are given an `int` array named `arrayF`, write a program that displays the product of its elements. That is, if `arrayF` contains 2, 3 and -1, then your program should display -6.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     int prod = 1;
     for (int k = 0 ; k < arrayF.Length ; k++)
         prod *= arrayF[k];
@@ -1646,7 +1660,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. Write a static method (header included) that takes as argument an `int` array, and display on the screen the value of each element of that array.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     public static void p(int[] a){
         foreach (int k in a)Console.WriteLine(k);
     }
@@ -1654,7 +1669,8 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. Write a static method (header included) that takes as argument an `int` array, and stores the value 10 in each element of that array.
-    <details><summary>Solution</summary>```
+    <details><summary>Solution</summary>
+    ```
     public static void z(int[] a){
         for (int j = 0 ; j < a.length ; j++) a[j]=10;
     }
