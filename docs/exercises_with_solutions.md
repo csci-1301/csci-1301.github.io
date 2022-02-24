@@ -169,11 +169,12 @@ compiled, and executed.
     // My first attempt.
     using System
     class Wel
-        {
+    {
         static void Main();
         {
             ConsoleWriteLine("Welcome \n to the lab!");
-                    }
+        }
+    }
     ```
     <details><summary>Solution</summary>
     #.  Missing `;` after `using System`
@@ -190,6 +191,12 @@ compiled, and executed.
     <details><summary>Solution</summary>`\`, to print "special characters", like new line, tabulation, quotations mark, etc.</details>
 
 #. Write a statement that *initializes* a variable named `myHeightInMeters` to your height in meters. What should be the datatype of `myHeightInMeters`?
+    <details><summary>Solution</summary>
+    ```
+    float myHeightInMeters = 1.68f
+    ```
+    The datatype should be any floating-point datatype.
+    </details>
 
 #. Suppose you replace every `*` in your program with the `!` symbol. Are you completely sure that your program would still compile? Why or why not?
     <details><summary>Solution</summary>No, because `/*` will be transformed into `/!`.</details>
@@ -213,7 +220,7 @@ compiled, and executed.
     b = a * 3 + 1;
     a /= 2;
     ```
-    <details><summary>Solution</summary>2, 13.</details>
+    <details><summary>Solution</summary>`a` is `2`, `b` is `13`.</details>
 
 #. Give the values of `c` and `d` after the following four instructions have been executed.
 
@@ -223,7 +230,7 @@ compiled, and executed.
     c = d * 2;
     d += 2;
     ```
-    <details><summary>Solution</summary>22, 46.</details>
+    <details><summary>Solution</summary>`c` is `10`, `d` is `7`.</details>
 
 #. Is there an error in the following code? Explain the error or give the value of `b` after the second statement is executed.
 
@@ -231,7 +238,7 @@ compiled, and executed.
     float a = 3.7f;
     int b = (int)a;
     ```
-    <details><summary>Solution</summary>3</details>
+    <details><summary>Solution</summary>No error; 3</details>
 
 #. Is there an error in the following code? Explain the error or give the
 value of `b` after the second statement is executed.
@@ -250,10 +257,10 @@ value of `b` after the second statement is executed.
     ```
     <details><summary>Solution</summary>The result of the expression `a / 2` is of type `decimal`, so it cannot be stored in an int. This can be fixed by adding an `(int)` cast to the variable `a` before dividing it by 2, so that the expression's result type is `int`, like this: `int b = (int)a / 2;`</details>
 
-#. If one of the operator's operand is of type `float` and the other is of type `int`, what will be the type of the result of the operation?
+#. If one of the operator's operands is of type `float` and the other is of type `int`, what will be the type of the result of the operation?
     <details><summary>Solution</summary>`float`</details>
 
-#.  What is the return type of the operation `12.4 \* 3`?
+#.  What is the return type of the operation `12.4 * 3`? <!--Was initially "\*", not sure if that's an error or not-->
     <details><summary>Solution</summary>`double`</details>
 
 #. Write an explicit conversion from a `double` variable `myDoubleVar` to an `int` variable called `myIntVar`. You do not need to re-declare those variables. Assuming `myDoubleVar`'s value is 5.89, what value would be stored in `myIntVar`?
@@ -284,11 +291,29 @@ value of `b` after the second statement is executed.
     Console.WriteLine("Please enter your age:");
     myAge = int.Parse(Console.ReadLine());
     ```
+<details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value.</details>
 
 #. Write a series of statements that: a) Declare an `int` variable named `userAge`, b) Display on the screen a message asking the user to enter his or her age, c) Read the value entered by the user and store it in the `userAge` variable. You can add statement(s) performing intermediate steps if you want.
 
+<details><summary>Solution</summary>
+    ```
+    int userAge;
+    Console.WriteLine("Please enter your age.");
+    userAge = int.Parse(Console.ReadLine());
+    ```
+    Note: This is not the only solution, but the most optimal.
+</details>
+
 #. Write a series of statements that: a) Declare an `string` variable named `favoriteColor`; b) Display on the screen a message asking the user to enter his or her favorite color; c) Read the value entered by the user and store it in the `favoriteColor` variable. You can combine some of the statement(s) if you want, but do not display at the screen any information that was not explicitely asked.
 
+<details><summary>Solution</summary>
+    ```
+    string favoriteColor;
+    Console.WriteLine("Please enter your favorite color.");
+    favoriteColor = Console.ReadLine();
+    ```
+    Note: This is not the only solution, but the most optimal.
+</details>
 
 ## Part II -- Problems
 
