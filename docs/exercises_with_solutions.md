@@ -646,9 +646,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
     <details><summary>Solution</summary>
     #. `Book myBook = new Book();
-    #. `public string GetTitle() { return title; } ↵ public void SetTitle(string titleP) { title = titleP; }`
+    #. `public string GetTitle() { return title; }
+    public void SetTitle(string titleP) { title = titleP; }`
     #. `public Book (string titleP, string authorP, string pubP, int copiesP) { title = titleP; author = authorP; publisher = pubP; copiesSold = copiesP }`
     </details>
+    
 #. Consider the following partial class definition:
 
     ```
@@ -682,6 +684,48 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a (good, informative) `ToString` method for that class.
     #.  Write statements that ask the user to enter a price and then create  a `Book` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
     #.  Draw  the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
+    
+    <details><summary>Solution</summary>
+    ```
+    class Book
+    {
+        private string title;
+        private decimal price;
+        
+        public string GetTitle() { return title; }
+        
+        public Book(string titleP, decimal priceP)
+        {
+            title = titleP;
+            price = priceP;
+        }
+        
+        public void AddTaxes()
+        {
+            price *= 1.0635m;
+        }
+        
+        public override string ToString()
+        {
+            return $"Book Title: {title}, Price: {price}.";
+        }
+    }
+    
+    //program.cs
+    Console.WriteLine("What should the price be for the book "Ender's Game?");
+    Book myBook = new Book("Ender's Game", decimal.Parse(Console.ReadLine()));
+    ```
+    Book
+    ------------------------------------------
+    \- title : string
+    \- price : decimal
+    \+ GetTitle() : string
+    \+ <<constructor>> Book(titleP : string, priceP : double
+    \+ AddTaxes() : void
+    \+ ToString() : string
+    
+    Note: This is not the only answer, but is the most optimal.
+    </details>
 
 #. Assume that my `Pet` class contains one custom constructor:
 
@@ -780,22 +824,28 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. Decide if the following boolean expressions will evaluate to `true` or `false`:
 
-    -   `3 > 2.0 && false`
-    -   `(4 != 3) ||  false`
-    -   `'A' == 'b' && ! false`
-    -   `(! false) == (true ||  4 == 3)`
-
-#. Decide if the following Boolean expressions will evaluate to `true` or `false`:
-
-    -   `3 > 2.0 || true`
-    -   `(4 != 3) && false`
-    -   `'A' == 'b' && ! false`
-    -   `(! true) == (true ||  4 != 3)`
+        #. `3 > 2.0 && false`
+        #. `(4 != 3) ||  false`
+        #. `'A' == 'b' && ! false`
+        #. `(! false) == (true ||  4 == 3)`
     <details><summary>Solution</summary>
         #.  `false`
         #.  `true`
         #.  `false`
         #.  `true`
+        </details>
+
+#. Decide if the following Boolean expressions will evaluate to `true` or `false`:
+
+        #. `3 > 2.0 || true`
+        #. `(4 != 3) && false`
+        #. `'A' == 'b' || ! false`          <!--Same as question in last problem, so I switched && for ||-->
+        #. `(! true) == (true ||  4 != 3)`
+    <details><summary>Solution</summary>
+        #.  `true`
+        #.  `false`
+        #.  `true`
+        #.  `false`
         </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
@@ -814,13 +864,13 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #.  `('y' != 'Y') && true`
     #.  `6 + 2 < 12 ||  3 > 4`
     #.  `(true && 4 >= 3) == false`
-    #.  `13 <= 4 \* 3 ||  !false`
+    #.  `13 <= 4 * 3 ||  !false`
     <details><summary>Solution</summary>
-        #.  `true`,
-        #.  `true`,
-        #.  `false`,
         #.  `true`
-    </details>
+        #.  `true`
+        #.  `false`
+        #.  `true`
+        </details>
 
 #. What is the relational operator used to determine whenever two values are different?
     <details><summary>Solution</summary>`!=`</details>
@@ -829,7 +879,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>In a variable of type `bool`. Its two possible values are `true` and `false`.</details>
 
 #.  Give three relational operators, and then two logical operators.
-    <details><summary>Solution</summary>`<=`, `==`, `>`, and `!`, `&&`</details>
+    <details><summary>Solution</summary>Possible answers: `<=`, `>=`, `==`, `!=`, `>`, `<` and `!`, `&&`, `||`</details>
 
 #. What would be displayed on the screen by the following code?
 
@@ -846,7 +896,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>We can simply write `over21`, which will always evaluate to the same value as `over21 == true`.</details>
     
 #. Assume that `x` and `y` are two `int` variables that have already been initialized (i.e., declared and assigned), write an `if` statement that assigns $10$ to `x` if `y` is (strictly) greater than $5$.
-    <details><summary>Solution</summary>`if (y \> 5) x = 10;`</details>
+    <details><summary>Solution</summary>`if (y > 5) x = 10;`</details>
 
 #. In C#, is there a difference between `=` and `==`? Write a statement that uses `=`.
     <details><summary>Solution</summary>Yes, one equal sign serves to write assignment operator, and two equal signs serve to compare. An example of statement that uses comparison first and assignment second could be: `if (x == 9)x = 12;` </details>
@@ -916,18 +966,20 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>`x>3 && 5>=x`</details>
 
 #. Write an `if-else` statement that assigns $0.1$ to `z` if `y` is greater or equal than $0$, and that assigns $-0.1$ to `z` otherwise.
-    <details><summary>Solution</summary>`if (y >= 0) z = 0.1; else z = -0.1;</details>
+    <details><summary>Solution</summary>`if (y >= 0) z = 0.1; else z = -0.1;`</details>
 
-#. Write an `if-else` statement that assigns `"Minor"\` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
+#. Write an `if-else` statement that assigns `"Minor"` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
     <details><summary>Solution</summary>`if (age < 18) legalStatus = "Minor"; else legalStatus = "Major";`</details>
 
 #. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
     <details><summary>Solution</summary>
     ```
-    if (age <= 18 && age >= 0) {
+    if (age <= 18 && age >= 0) 
+    {
         Console.WriteLine("It's free for you!");
     }
-    else {
+    else 
+    {
         Console.WriteLine($"It's {5M:C}.");
     }
     ```
@@ -1013,10 +1065,12 @@ There is only one problem this time, and it is harder than what you'll be asked 
 #. (*We'll use the 24-hour clock, sometimes called "military time".*) Assuming that an `int` variable `hour` has been initialized, write part of a program that would display on the screen "Good morning" if `hours` is less than or equal to 12, and "Hello" otherwise. 
     <details><summary>Solution</summary>
     ```
-    if (hours <= 12) {
+    if (hours <= 12) 
+    {
         Console.WriteLine("Good morning!");
     }
-    else {
+    else 
+    {
         Console.WriteLine(("Hello");
     }
     ```
@@ -1025,7 +1079,8 @@ There is only one problem this time, and it is harder than what you'll be asked 
 #. Assuming that `myString` is a string variable, write a statement that prints "Hello, Melody!" if the value of `myString` is equal to `Melody`, and nothing otherwise.
     <details><summary>Solution</summary>
     ```
-    if (myString == "Melody") {
+    if (myString == "Melody") 
+    {
         Console.WriteLine("Hello, Melody!");
     }
     ```
@@ -1037,7 +1092,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     int x = 3, y = 2, z = 4;
     if (y >= z) {z += y;}
     else if (x != y) { if (false) {z -= 3;} else {z += x;}}
-    Console.WriteLinef($"x is {x}, y is {y}, and z is {z}.");
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
     ```
 
     <details><summary>Solution</summary>x is 3, y is 2, and z is 7.</details>
@@ -1143,11 +1198,15 @@ There is only one problem this time, and it is harder than what you'll be asked 
     switch (day)
     {
         case "Saturday":
+        {
             discount = 0.25;
-        break;
+            break;
+        }
         default:
+        {
             discount = 0.5;
-        break;
+            break;
+        }
     }
     ```
     </details>
