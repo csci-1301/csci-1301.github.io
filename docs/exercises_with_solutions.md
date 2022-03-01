@@ -966,20 +966,39 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>`x>3 && 5>=x`</details>
 
 #. Write an `if-else` statement that assigns $0.1$ to `z` if `y` is greater or equal than $0$, and that assigns $-0.1$ to `z` otherwise.
-    <details><summary>Solution</summary>`if (y >= 0) z = 0.1; else z = -0.1;`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    if(y >= 0){
+        z = 0.1;
+    }
+    else{
+        z = -0.1;
+    }
+    ```
+    </details>
 
 #. Write an `if-else` statement that assigns `"Minor"` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
-    <details><summary>Solution</summary>`if (age < 18) legalStatus = "Minor"; else legalStatus = "Major";`</details>
-
+    <details><summary>Solution</summary>
+    
+    ```
+    if(age < 18){
+        legalStatus = "Minor";
+    }
+    else{
+        legalStatus = "Major";
+    }
+    ```
+    </details>
+    
 #. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
     <details><summary>Solution</summary>
+    
     ```
-    if (age <= 18 && age >= 0) 
-    {
+    if(age <= 18 && age >= 0){
         Console.WriteLine("It's free for you!");
     }
-    else 
-    {
+    else{
         Console.WriteLine($"It's {5M:C}.");
     }
     ```
