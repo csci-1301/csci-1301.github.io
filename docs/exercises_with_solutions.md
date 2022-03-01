@@ -510,7 +510,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
     
 #. Write the complete implementation of a class that contains two attributes (with different data types), a setter for one attribute, a getter for the other attribute, a custom constructor, and a `ToString` method. You can re-use an example from a lecture or a lab, as long as it satisfies those conditions, or you can invent one. No need to write an application program.
     <details><summary>Solution</summary>
-    Note: In this solution, I made a Rectangle class like the lab, but any class fulfilling the requirements will work.
+    Note: In this solution, the Rectangle class from the lab was used, but any class fulfilling the requirements will work.
+    
     ```
     class Rectangle
     {
@@ -536,6 +537,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
         }
     }
     ```
+    
     </details>
 
 
@@ -550,10 +552,22 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
-    <details><summary>Solution</summary>`public string GetMyName() { return myName; }`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    public string GetMyName() { return myName; }
+    ```
+    
+    </details>
 
 #.  Write a setter for an attribute of type `int` named `myAge`.
-    <details><summary>Solution</summary>`public void SetMyAge(int paramMyAge) { myAge = paramMyAge; }`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    public void SetMyAge(int paramMyAge) { myAge = paramMyAge; }
+    ```
+
+    </details>
 
 #. Assuming `name` is a `string` instance variable, there is problem with the following setter. Fix it.
 
@@ -565,20 +579,39 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>It has the wrong return type, because it does not (and should not) return a value, i.e., replace `int` with `void`.</details>
 
 #. Assume we have an instance of the `Rectangle` class named `myRect` and an instance of the `Circle` class named `myCircle`. Write statement(s) that will make the radius of `myCircle` equal to the width of `myRect`.
-    <details><summary>Solution</summary>`myCircle.SetRadius(myRect.GetWidth());`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    myCircle.SetRadius(myRect.GetWidth());
+    ```
+
+    </details>
 
 #. Briefly describe what a format specifier is. Write a statement that uses one.
     <details><summary>Solution</summary>An indication to format a numerical value in a special way in a string. For example, `Console.WriteLine($"{65536:N");}` will display "65,536.00" on the screen after applying the `:N` format specifier to the value 65536. </details>
 
 #.  Write a statement that uses a format specifier.
-    <details><summary>Solution</summary>`Console.WriteLine($"myInt:C");`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    Console.WriteLine($"myInt:C");
+    ```
+
+    </details>
 
 #. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
     <details><summary>Solution</summary>
+    
     ```
-    public void DivideBy(int factor) { length /= factor; width /= factor; }
+    public void DivideBy(int factor) 
+    {
+        length /= factor; 
+        width /= factor;
+    }
     ```
+    
     </details>
+    
 #. Draw the UML diagram of a class named "Student" with a single attribute, "name", of type `string`, and two methods, `SetName` and `GetName`.
     <details><summary>Solution</summary>
     Student
@@ -590,9 +623,14 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 #. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
     <details><summary>Solution</summary>
+    
     ```
-    public override string ToString() { return "Account Name: " + name + "\nAccount Balance: " + amount;
+    public override string ToString() 
+    { 
+        return $"Account Name: {name}\nAccount Balance: {amount}";
+    }
     ```
+    
     </details>
 
 #. Consider the following UML diagram:
@@ -617,10 +655,25 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>The name of the class. It does not have a return type, not even `void`.</details>
 
 #. Write a constructor for a `Soda` class with one `string` attribute called `name`.
-    <details><summary>Solution</summary>`public Soda() { name = "Generic"; }`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    public Soda() { name = "Generic"; }
+    ```
+
+    </details>
 
 #. Assume we have a `Polygon` class, that have only one attribute, an `int` called `numberOfSides`. Write a constructor for that class. 
-    <details><summary>Solution</summary>public Polygon (int numberOfSidesParam) { numberOfSides = numberOfSidesParam; }`</details>
+    <details><summary>Solution</summary>
+    
+    ```
+    public Polygon (int numberOfSidesParam)
+    {
+        numberOfSides = numberOfSidesParam; 
+    }
+    ```
+
+    </details>
 
 #. What is the "default" constructor? Do we always have the possibility of using it?
     <details><summary>Solution</summary>The constructor provided with the class by default, that set all the attributes to their default values. If we define our own constructor, this one disappears. </details>
@@ -645,10 +698,20 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a constructor for the `Book` class taking at least one argument (you are free to decide which one(s)).
 
     <details><summary>Solution</summary>
-    #. `Book myBook = new Book();
+    #. `Book myBook = new Book();`
     #. `public string GetTitle() { return title; }
     public void SetTitle(string titleP) { title = titleP; }`
-    #. `public Book (string titleP, string authorP, string pubP, int copiesP) { title = titleP; author = authorP; publisher = pubP; copiesSold = copiesP }`
+    #. 
+    ```
+    public Book (string titleP, string authorP, string pubP, int copiesP) 
+    { 
+        title = titleP; 
+        author = authorP; 
+        publisher = pubP; 
+        copiesSold = copiesP 
+    }
+    ```
+    
     </details>
     
 #. Consider the following partial class definition:
@@ -667,7 +730,53 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a (good, informative) `ToString` method for the class.
     #.  Write statements that ask the user to enter a price and then create  a `DVD` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
     #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
-
+    <details><summary>Solution</summary>
+    
+    ```
+    class DVD
+    {
+        private string title;
+        private decimal price;
+        
+        public void SetTitle(string titleP)
+        {
+            title = titleP;
+        }
+        
+        public DVD(string titleP, decimal priceP)
+        {
+            title = titleP;
+            price = priceP;
+        }
+        
+        public void Discount()
+        {
+            price -= price * 0.2055
+        }
+        
+        public override string ToString()
+        {
+            return $"DVD Title: {title}\nDVD Price: {price}"
+        }
+    }
+    
+    //program.cs
+    Console.WriteLine("What should the price be for the movie "Ender's Game?");
+    DVD myDVD = new DVD("Ender's Game", decimal.Parse(Console.ReadLine()));
+    ```
+    DVD
+    ------------------------------------------
+    \- title : string
+    \- price : decimal
+    \+ SetTitle(titleP : string) : void
+    \+ <<constructor>> DVD(titleP : string, priceP : double)
+    \+ Discount() : void
+    \+ ToString() : string
+    
+    Note: This is not the only answer, but is the most optimal.
+    
+    </details>
+    
 #. Consider the following partial class definition:
 
     ```
@@ -686,6 +795,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Draw  the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
     
     <details><summary>Solution</summary>
+    
     ```
     class Book
     {
@@ -725,6 +835,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     \+ ToString() : string
     
     Note: This is not the only answer, but is the most optimal.
+    
     </details>
 
 #. Assume that my `Pet` class contains one custom constructor:
@@ -823,11 +934,10 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>A decision structure is a test and one or multiple statement blocks that may or may not be executed based on the outcome of the test. Selection and iteration are two examples of decision structures: in the first one, a statement block can be "skipped over" if the test evaluates to false, in the second one, a statement block can be repeated multiple times, as long as the test evaluates to true. A decision structure makes it possible to have portions of the code executed conditionally.</details>
 
 #. Decide if the following boolean expressions will evaluate to `true` or `false`:
-
-        #. `3 > 2.0 && false`
-        #. `(4 != 3) ||  false`
-        #. `'A' == 'b' && ! false`
-        #. `(! false) == (true ||  4 == 3)`
+    #. `3 > 2.0 && false`
+    #. `(4 != 3) ||  false`
+    #. `'A' == 'b' && ! false`
+    #. `(! false) == (true ||  4 == 3)`
     <details><summary>Solution</summary>
         #.  `false`
         #.  `true`
@@ -836,11 +946,10 @@ There is only one problem this time, and it is harder than what you'll be asked 
         </details>
 
 #. Decide if the following Boolean expressions will evaluate to `true` or `false`:
-
-        #. `3 > 2.0 || true`
-        #. `(4 != 3) && false`
-        #. `'A' == 'b' || ! false`          <!--Same as question in last problem, so I switched && for ||-->
-        #. `(! true) == (true ||  4 != 3)`
+    #. `3 > 2.0 || true`
+    #. `(4 != 3) && false`
+    #. `'A' == 'b' || ! false`          <!--Same as question in last problem, so I switched && for ||-->
+    #. `(! true) == (true ||  4 != 3)`
     <details><summary>Solution</summary>
         #.  `true`
         #.  `false`
@@ -858,7 +967,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
         #.  `false`
         #.  `true`
         #.  `false`
-        </details>
+    </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' != 'Y') && true`
@@ -902,7 +1011,13 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>Yes, one equal sign serves to write assignment operator, and two equal signs serve to compare. An example of statement that uses comparison first and assignment second could be: `if (x == 9)x = 12;` </details>
 
 #. Assuming a `name` string was declared and initialized with a value given by the user, write an `if` statement that displays "I have the same name!" if `name` contains your first name.
-    <details><summary>Solution</summary>`if(name=="Clément") Console.WriteLine("I have the same name!");`</details>
+    <details><summary>Solution</summary>
+        
+    ```
+    if(name=="Clément") 
+        Console.WriteLine("I have the same name!");
+    ```
+    </details>
 
 #. Is the following statement correct, i.e., would it compile, assuming `myFlag` is a `bool` variable, and `myAge` is an initialized `int` variable?
 
@@ -918,7 +1033,13 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>The IDE is warning us that the statements in the block will never be executed.</details>
 
 #. Write an `if` statement that prints "Bonjour !" if the value of the `char` variable `lang` is `'f'`.
-    <details><summary>Solution</summary>`if (lang == 'f') Console.WriteLine("Bonjour !");`</details>
+    <details><summary>Solution</summary>
+        
+    ```
+    if (lang == 'f') 
+        Console.WriteLine("Bonjour !");
+    ```
+    </details>
 
 #. For each of the following boolean expressions, decide if it will evaluate to `true` or `false` when the boolean variables `x`, `y` and `z` are all set to `true`:
 
@@ -1060,6 +1181,36 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
+#. Assume we previously initialized a `char` variable called `myChar`. Write a series of statements that will display if the character is...
+    #. Uppercase
+    #. Lowercase
+    #. A number
+    #. or none of those.
+        
+    Your program should display exactly one message.
+    Bonus: Make your message also display the ASCII value of the character.
+    <details><summary>Solution</summary>
+        
+    ```
+    if ((myChar >= 'a') && (myChar <= 'z')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is lower-case!");
+    }
+    else if ((myChar >= 'A') && (myChar <= 'Z')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is upper-case!");
+    }
+    else if ((myChar >= '0') && (myChar <= '9')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is a number!");
+    }
+    else
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is not a letter or number!");
+    }
+    ```
+    </details>
+        
 #. What will be displayed on the screen by the following program?
 
     ```
@@ -1083,6 +1234,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. (*We'll use the 24-hour clock, sometimes called "military time".*) Assuming that an `int` variable `hour` has been initialized, write part of a program that would display on the screen "Good morning" if `hours` is less than or equal to 12, and "Hello" otherwise. 
     <details><summary>Solution</summary>
+        
     ```
     if (hours <= 12) 
     {
@@ -1097,6 +1249,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. Assuming that `myString` is a string variable, write a statement that prints "Hello, Melody!" if the value of `myString` is equal to `Melody`, and nothing otherwise.
     <details><summary>Solution</summary>
+        
     ```
     if (myString == "Melody") 
     {
@@ -1169,6 +1322,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
     If you think it is not possible or not feasible, explain why.
     <details><summary>Solution</summary>
+        
     ```
     switch (myLang)
     {
@@ -1213,6 +1367,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. Write a `switch` statement that sets a `double` `discount` variable to `0.5` if a string `day` variable contains `"Monday"` or `"Wednesday"`, `0.25` if `day` contains `"Saturday"`, and `0.5` otherwise.
     <details><summary>Solution</summary>
+        
     ```
     switch (day)
     {
@@ -1237,6 +1392,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 #. Write a program that asks the user to write a country name and stores the user's input into a string variable. Then, compare that string with `"france"`: if it is equal, then display at the screen  `"Bienvenue en France !"`. Then, compare that string with `"usa"`: if it is equal, then display at the screen  `"Welcome to the US!"`. If the string is different from both `"france"` and `"usa"`, then display at the screen  `"Welcome to"` followed by the name of the country the user typed in. Can you think of two ways to implement this program, one using `if-else-if` statements, the other using `switch`?
 
     <details><summary>Solution</summary>
+        
     ```
     Console.WriteLine("Country?");
     string c = Console.ReadLine();
@@ -1452,6 +1608,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a program that asks the user to enter a value between $0$ and $10$, and asks again as long as the user enters integers outside that range.
     <details><summary>Solution</summary>
+        
     ```
     int answer;
     do{
@@ -1463,6 +1620,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a small program that asks the user for an integer, and displays "It is positive" if the number entered is positive, "It is negative" if the number entered is negative, and "Not a number" if the user entered a string that is not an integer.
     <details><summary>Solution</summary>
+        
     ```
     int answer;
     Console.WriteLine("Enter an integer");
@@ -1480,6 +1638,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a program containing a `while` loop that would display the numbers between -100 and 100 (both included) with a space between them when executed.
     <details><summary>Solution</summary>
+        
     ```
     int counter = -100;
     while(counter <= 100){
@@ -1494,6 +1653,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     - "Math." if `name` is "Aryabhata" or "Noether",
     - "Unknown" otherwise.
     <details><summary>Solution</summary>
+        
     ```
     string name;
     name = "Turing"; // Value given as an example, change it to test.
@@ -1517,6 +1677,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a program that asks the user to enter a value between 1900 and 1999 (both included), and asks again as long as the user enters integers outside that range.
     <details><summary>Solution</summary>
+        
     ```
     int answer;
     do{
@@ -1581,7 +1742,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     ```
     int[] numbers = new int[10];
     ```
-    <details>
+    </details>
 
 #. In the following, what is the value of the size declarator? What is the value of the index?
 
@@ -1627,6 +1788,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a 'for' loop that displays on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10,  ". 
     <details><summary>Solution</summary>
+        
     ```
     for (int x = 1 ; x <= 10 ; x ++)
         Console.Write(x + ", ");
@@ -1635,6 +1797,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a 'for' loop that displays on the screen the sequence "1,  2,  3,  4,  5,  6,  7,  8,  9,  10 ", (note that there is no comma after 10). 
     <details><summary>Solution</summary>
+        
     ```
     for (int x = 1 ; x <= 10 ; x ++)
     {
@@ -1646,6 +1809,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a 'for' loop that displays on the screen the sequence "1 3 5 7 9 ". 
     <details><summary>Solution</summary>
+        
     ```
     for (int x = 1 ; x <= 10 ; x+= 2)
         Console.Write(x + " ");
@@ -1654,6 +1818,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Given an `int` variable `myVar` initialized with a positive value, write a loop that sums the integers between 0 and `myVar` (i.e., $0 + 1 + \cdots + (\text{myVar} - 1) + \text{myVar}$). 
     <details><summary>Solution</summary>
+        
     ```
     int sum = 0;
     for (int x = 1 ; x <= myVar ; x++)
@@ -1700,6 +1865,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Suppose we are given an `int` array `dailyPushUp` with 7 elements. Write a piece of code that display the value of the elements stored in the array `dailyPushUp`.
     <details><summary>Solution</summary>
+        
     ```
     for (int j = 0 ; j < 7 ; j++)
         Console.WriteLine(dailyPushUp[j]);
@@ -1739,6 +1905,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a statement that creates and initializes a `double` array with the values 12.5, 89.0 and 3.24.
     <details><summary>Solution</summary>
+        
     ```
     double[] question = {12.5, 89.0, 3.24};
     ```
@@ -1769,6 +1936,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Assuming we have two `int` arrays of the same size, `firstA` and `secondA`, write a program that copies the content of `firstA` into `secondA`.
     <details><summary>Solution</summary>
+        
      ```
     for (int k = 0 ; k < firstA.Length ; k++)
         secondA[k] = firstA[k];
@@ -1777,6 +1945,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Assuming we are given an `int` array named `arrayF`, write a program that adds one to each of its elements. That is, if `arrayF` contains 3, 5, 7 and -2 before your program is executed, it should then contain 4, 6, 8 and -1 after your program was executed.
     <details><summary>Solution</summary>
+        
     ```
     for (int k = 0 ; k < arrayF.Length ; k++)
         arrayF[k] += 1;
@@ -1785,6 +1954,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Assuming we are given an `int` array named `arrayF`, write a program that displays the product of its elements. That is, if `arrayF` contains 2, 3 and -1, then your program should display -6.
     <details><summary>Solution</summary>
+        
     ```
     int prod = 1;
     for (int k = 0 ; k < arrayF.Length ; k++)
@@ -1795,6 +1965,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a static method (header included) that takes as argument an `int` array, and display on the screen the value of each element of that array.
     <details><summary>Solution</summary>
+        
     ```
     public static void p(int[] a){
         foreach (int k in a)Console.WriteLine(k);
@@ -1804,6 +1975,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a static method (header included) that takes as argument an `int` array, and stores the value 10 in each element of that array.
     <details><summary>Solution</summary>
+        
     ```
     public static void z(int[] a){
         for (int j = 0 ; j < a.length ; j++) a[j]=10;
