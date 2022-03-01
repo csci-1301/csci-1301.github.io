@@ -1181,6 +1181,36 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
+#. Assume we previously initialized a `char` variable called `myChar`. Write a series of statements that will display if the character is...
+    #. Uppercase
+    #. Lowercase
+    #. A number
+    #. or none of those.
+        
+    Your program should display exactly one message.
+    Bonus: Make your message also display the ASCII value of the character.
+    <details><summary>Solution</summary>
+        
+    ```
+    if ((myChar >= 'a') && (myChar <= 'z')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is lower-case!");
+    }
+    else if ((myChar >= 'A') && (myChar <= 'Z')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is upper-case!");
+    }
+    else if ((myChar >= '0') && (myChar <= '9')) 
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is a number!");
+    }
+    else
+    {
+        Console.WriteLine($"Your character ({(int)myChar}) is not a letter or number!");
+    }
+    ```
+    </details>
+        
 #. What will be displayed on the screen by the following program?
 
     ```
