@@ -38,23 +38,25 @@ title: Exercises with solutions
 
 #. Give three keywords.
     <details><summary>Solution</summary>You can consult the "official" list of keywords as <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/>. Are valid answers: `int`, `using`, `static`, `public`, etc. Note that `main` or `System` are _not_ keywords.</details>
-
-#. Give three programming languages.
-    <details><summary>Solution</summary>Examples: C, C++, Java, Python, JavaScript</details>
+<!--Duplicate question removed-->
 
 #. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
     <details><summary>Solution</summary>
+    
     ```
     Console.WriteLine("Hi Mom!");
     ```
+    
     </details>
 
 #. Write a statement that would display, "Hello!" (without the quotes) followed by a new line on the screen, once inserted in a proper method,
 compiled, and executed. 
     <details><summary>Solution</summary>
+    
     ```
     Console.WriteLine("Hello!");
     ```
+    
     </details>
 
 #. What is the limitation, if any, to the number of methods you can have per class? Why is the method called `Main` special?
@@ -80,9 +82,7 @@ compiled, and executed.
 
 #. What is string interpolation?
     <details><summary>Solution</summary>The action of inserting a variable into a string that is displayed at the screen.</details>
-
-#.  What is the difference, if any, between `3` and `"3"`?
-    <details><summary>Solution</summary>The first one is an integer, the second is a string.</details>
+<!--Duplicate Question Removed-->
 
 #. What is the difference, if any, between `12`, and `"12"`?
     <details><summary>Solution</summary>The first one is an integer, the second is a string.</details>
@@ -96,34 +96,44 @@ compiled, and executed.
     How are you doing?
     ```
     <details><summary>Solution</summary>
+    
     ```
     Console.Write("Hi Mom!\nHow are you doing?");
     ```
+    
     </details>
     
 #. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
     ```
     Console.WriteLine($"Here is my variable: {myVariable}");
     ```
-    <details><summary>Solution</summary>Here is my variable: My message</details>
+    <details><summary>Solution</summary>
+    
+    ```{text}
+    Here is my variable: My message
+    ```
+
+    </details>
     
 #. Assume we have a variable whose name is `level`, whose type is `string`, and whose value is `"Easy"`. What would be displayed at the screen by the following statement?
     ```
     Console.WriteLine($"You set the difficulty to {level}.");
     ```
-    <details><summary>Solution</summary>You set the difficulty to Easy.</details>
+    <details><summary>Solution</summary>
+    
+    ```{text}
+    You set the difficulty to Easy.
+    ```
+
+    </details>
 
 #. Which of the following are correct identifier names? 
-    ```
-    `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement `
-    ```
+    `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement`
     Is the name `myVariable` the same as `myvariable`? If not, why?
     <details><summary>Solution</summary>`$myHome3` is correct, but not recommended, `ANewHope`, `_ThisIsAVariable`, `statement` are also correct (but, of course, this  latter is weird). The names `myVariable` and `myvariable` are treated differently by C#, because it is case-sensitive.</details>
 
 #. Which of the following are correct identifier names?
-    ```
     `myClass _Exo_1 Lab3-Exo1 My.Lab.Variable using Lab3_Part1`
-    ```
     <details><summary>Solution</summary>Identifiers: `myClass`, `Lab3_Part1`</details>
 
 #. Which of the following are keywords?
@@ -134,7 +144,7 @@ compiled, and executed.
 #. Which of the following are correct identifier names?
 
     `12_Dec_2019 Lab3-Exo1 MyClass2 My.Lab.Variable string My_Var`
-    <details><summary>Solution</summary>OK: MyClass2, My_Var Not OK: 12_Dec_2019, Lab3-Exo1, My.Lab.Variable, string</details>
+    <details><summary>Solution</summary>`OK: MyClass2, My_Var Not OK: 12_Dec_2019, Lab3-Exo1, My.Lab.Variable, string`</details>
 
 #. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)?
 
@@ -546,16 +556,24 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 #. Write a get method for an instance variable named `total` of type `int`.
     <details><summary>Solution</summary>
+    
     ```
-    public int GetTotal(){ return total; }
+    public int GetTotal()
+    { 
+        return total;
+    }
     ```
+    
     </details>
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
     <details><summary>Solution</summary>
     
     ```
-    public string GetMyName() { return myName; }
+    public string GetMyName() 
+    { 
+        return myName;
+    }
     ```
     
     </details>
@@ -564,7 +582,10 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>
     
     ```
-    public void SetMyAge(int paramMyAge) { myAge = paramMyAge; }
+    public void SetMyAge(int paramMyAge) 
+    { 
+        myAge = paramMyAge; 
+    }
     ```
 
     </details>
@@ -619,6 +640,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     \- name: string
     \+ SetName(arg: string)
     \+ GetName(): string
+    
     </details>
 
 #. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
@@ -658,7 +680,10 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>
     
     ```
-    public Soda() { name = "Generic"; }
+    public Soda() 
+    { 
+    name = "Generic"; 
+    }
     ```
 
     </details>
@@ -699,10 +724,18 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
     <details><summary>Solution</summary>
     #. `Book myBook = new Book();`
-    #. `public string GetTitle() { return title; }
-    public void SetTitle(string titleP) { title = titleP; }`
-    #. 
+    2 and 3. 
     ```
+    public string GetTitle() 
+    { 
+        return title; 
+    }
+    
+    public void SetTitle(string titleP) 
+    { 
+        title = titleP; 
+    }
+    
     public Book (string titleP, string authorP, string pubP, int copiesP) 
     { 
         title = titleP; 
@@ -729,7 +762,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a method called `Discount` that decreases the `price` attribute by 20.55%.
     #.  Write a (good, informative) `ToString` method for the class.
     #.  Write statements that ask the user to enter a price and then create  a `DVD` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
-    #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
+    #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition. 
+    
     <details><summary>Solution</summary>
     
     ```
@@ -943,7 +977,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
         #.  `true`
         #.  `false`
         #.  `true`
-        </details>
+    </details>
 
 #. Decide if the following Boolean expressions will evaluate to `true` or `false`:
     #. `3 > 2.0 || true`
@@ -955,7 +989,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
         #.  `false`
         #.  `true`
         #.  `false`
-        </details>
+    </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' == 'Y') && true`
@@ -979,7 +1013,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
         #.  `true`
         #.  `false`
         #.  `true`
-        </details>
+    </details>
 
 #. What is the relational operator used to determine whenever two values are different?
     <details><summary>Solution</summary>`!=`</details>
@@ -1739,9 +1773,11 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a statement that creates a 10-element `int` array named `numbers`.
     <details><summary>Solution</summary>
+        
     ```
     int[] numbers = new int[10];
     ```
+        
     </details>
 
 #. In the following, what is the value of the size declarator? What is the value of the index?
