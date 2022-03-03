@@ -38,7 +38,6 @@ title: Exercises with solutions
 
 #. Give three keywords.
     <details><summary>Solution</summary>You can consult the "official" list of keywords as <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/>. Are valid answers: `int`, `using`, `static`, `public`, etc. Note that `main` or `System` are _not_ keywords.</details>
-<!--Duplicate question removed-->
 
 #. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
     <details><summary>Solution</summary>
@@ -82,7 +81,6 @@ compiled, and executed.
 
 #. What is string interpolation?
     <details><summary>Solution</summary>The action of inserting a variable into a string that is displayed at the screen.</details>
-<!--Duplicate Question Removed-->
 
 #. What is the difference, if any, between `12`, and `"12"`?
     <details><summary>Solution</summary>The first one is an integer, the second is a string.</details>
@@ -973,22 +971,26 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #. `'A' == 'b' && ! false`
     #. `(! false) == (true ||  4 == 3)`
     <details><summary>Solution</summary>
+    
         #.  `false`
         #.  `true`
         #.  `false`
         #.  `true`
+    
     </details>
 
 #. Decide if the following Boolean expressions will evaluate to `true` or `false`:
     #. `3 > 2.0 || true`
     #. `(4 != 3) && false`
-    #. `'A' == 'b' || ! false`          <!--Same as question in last problem, so I switched && for ||-->
+    #. `'A' == 'b' || ! false`
     #. `(! true) == (true ||  4 != 3)`
     <details><summary>Solution</summary>
+    
         #.  `true`
         #.  `false`
         #.  `true`
         #.  `false`
+    
     </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
@@ -997,10 +999,12 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #.  `(true && 4 == 3) == false`
     #.  `4 > 4 && !false`
     <details><summary>Solution</summary>
+    
         #.  `false`
         #.  `false`
         #.  `true`
         #.  `false`
+    
     </details>
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
@@ -1009,10 +1013,12 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #.  `(true && 4 >= 3) == false`
     #.  `13 <= 4 * 3 ||  !false`
     <details><summary>Solution</summary>
+    
         #.  `true`
         #.  `true`
         #.  `false`
         #.  `true`
+        
     </details>
 
 #. What is the relational operator used to determine whenever two values are different?
@@ -1215,7 +1221,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     ```
     </details>
 
-#. Assume we previously initialized a `char` variable called `myChar`. Write a series of statements that will display if the character is...
+#. Assume we previously initialized a `char` variable called `myChar`. Write a series of statements that will display if the character is…
     #. Uppercase
     #. Lowercase
     #. A number
@@ -1512,9 +1518,9 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 ## Part I --- Questions
 
-#. Assume you are given an un-assigned `string` variable `letterGrade`, and an already assigned `float` variable `numberGrade`. Write a small program that assigns `"A"` to `letterGrade` if `numberGrade` is between 100 and 90 (both included), `"B"` to `letterGrade` if `numberGrade` is between 90 (excluded) and 80 (included), etc., and `"Invalid data"` if `numberGrade` is strictly lower than 0 or strictly greater than 100. Should you use a `switch` statement or a `if` ...`else if` ...`else`?
+#. Assume you are given an un-assigned `string` variable `letterGrade`, and an already assigned `float` variable `numberGrade`. Write a small program that assigns `"A"` to `letterGrade` if `numberGrade` is between 100 and 90 (both included), `"B"` to `letterGrade` if `numberGrade` is between 90 (excluded) and 80 (included), etc., and `"Invalid data"` if `numberGrade` is strictly lower than 0 or strictly greater than 100. Should you use a `switch` statement or a `if` …`else if` …`else`?
     <details><summary>Solution</summary>
-    An `if` ...`else if` ...`else` is the right structure for this task:
+    An `if` …`else if` …`else` is the right structure for this task:
 
     ```
     float numberGrade;
