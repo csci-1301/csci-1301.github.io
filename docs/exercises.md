@@ -26,8 +26,6 @@ title : Exercises
 
 #. Give three keywords.
 
-#. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
-
 #. Write a statement that would display, "Hello!" (without the quotes) followed by a new line on the screen, once inserted in a proper method,
 compiled, and executed. 
 
@@ -39,19 +37,26 @@ compiled, and executed.
 
 #.  Why are variables called "variables"?
 
-#.  What is the difference, if any, between `3` and `"3"`?
+#. What is the difference, if any, between `12`, and `"12"`?
 
-#. What is the difference, if any, between the `WriteLine` and `Write` methods?
+#. Write a statement that would display the following on the screen:
+    ```
+    Hi Mom!↵
+    How are you doing?
+    ```
     
 #. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
     ```
     Console.WriteLine($"Here is my variable: {myVariable}");
     ```
+    
+#. Assume we have a variable whose name is `level`, whose type is `string`, and whose value is `"Easy"`. What would be displayed at the screen by the following statement?
+    ```
+    Console.WriteLine($"You set the difficulty to {level}.");
+    ```
 
 #. Which of the following are correct identifier names? 
-    ```
-    `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement `
-    ```
+    `$myHome3 class my%variable ANewHope _train _ThisIsAVariable statement`
     Is the name `myVariable` the same as `myvariable`? If not, why?
 
 #. Which of the following are keywords?
@@ -190,7 +195,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     || $= (-3.5) \times 2$
     || $= -7$
 
-    ? Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
+    Certainly, the result is not the same and there are other possibile ways this calculation may be performed!
 
     Actually, C# uses the following three rules:
     
@@ -308,9 +313,12 @@ Make sure you feel ready before starting them, try to do them with limited time 
     
 #. Write the complete implementation of a class that contains two attributes (with different data types), a setter for one attribute, a getter for the other attribute, a custom constructor, and a `ToString` method. You can re-use an example from a lecture or a lab, as long as it satisfies those conditions, or you can invent one. No need to write an application program.
 
+
 #. What does the keyword `return` do?
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
+
+#.  Write a setter for an attribute of type `int` named `myAge`.
 
 #. Assuming `name` is a `string` instance variable, there is problem with the following setter. Fix it.
 
@@ -323,7 +331,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 #. Briefly describe what a format specifier is. Write a statement that uses one.
 
 #. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
-
+    
 #. Draw the UML diagram of a class named "Student" with a single attribute, "name", of type `string`, and two methods, `SetName` and `GetName`.
 
 #. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
@@ -343,6 +351,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 #. Write a constructor for a `Soda` class with one `string` attribute called `name`.
 
+#. Assume we have a `Polygon` class, that have only one attribute, an `int` called `numberOfSides`. Write a constructor for that class. 
+
 #. What is the "default" constructor? Do we always have the possibility of using it?
 
 #. Consider the following partial class definition:
@@ -361,7 +371,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a "getter" and a "setter" for the `title` attribute.
     #.  Write a constructor for the `Book` class taking at least one argument (you are free to decide which one(s)).
 
-
+    
 #. Consider the following partial class definition:
 
     ```
@@ -377,8 +387,9 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a method called `Discount` that decreases the `price` attribute by 20.55%.
     #.  Write a (good, informative) `ToString` method for the class.
     #.  Write statements that ask the user to enter a price and then create  a `DVD` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
-    #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
-
+    #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition. 
+    
+    
 #. Consider the following partial class definition:
 
     ```
@@ -395,6 +406,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write a (good, informative) `ToString` method for that class.
     #.  Write statements that ask the user to enter a price and then create  a `Book` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
     #.  Draw  the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
+    
 
 #. Assume that my `Pet` class contains one custom constructor:
 
@@ -435,18 +447,16 @@ There is only one problem this time, and it is harder than what you'll be asked 
 #. What is sequential processing?
 
 #. Decide if the following boolean expressions will evaluate to `true` or `false`:
-
-    -   `3 > 2.0 && false`
-    -   `(4 != 3) ||  false`
-    -   `'A' == 'b' && ! false`
-    -   `(! false) == (true ||  4 == 3)`
+    #. `3 > 2.0 && false`
+    #. `(4 != 3) ||  false`
+    #. `'A' == 'b' && ! false`
+    #. `(! false) == (true ||  4 == 3)`
 
 #. Decide if the following Boolean expressions will evaluate to `true` or `false`:
-
-    -   `3 > 2.0 || true`
-    -   `(4 != 3) && false`
-    -   `'A' == 'b' && ! false`
-    -   `(! true) == (true ||  4 != 3)`
+    #. `3 > 2.0 || true`
+    #. `(4 != 3) && false`
+    #. `'A' == 'b' || ! false`
+    #. `(! true) == (true ||  4 != 3)`
 
 #. For each of the following Boolean expressions, decide if it will evaluate to `true` or `false`:
     #.  `('y' == 'Y') && true`
@@ -458,7 +468,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #.  `('y' != 'Y') && true`
     #.  `6 + 2 < 12 ||  3 > 4`
     #.  `(true && 4 >= 3) == false`
-    #.  `13 <= 4 \* 3 ||  !false`
+    #.  `13 <= 4 * 3 ||  !false`
 
 #. What is the relational operator used to determine whenever two values are different?
 
@@ -479,9 +489,20 @@ There is only one problem this time, and it is harder than what you'll be asked 
 
 #. Write an `if` statement that prints "Bonjour !" if the value of the `char` variable `lang` is `'f'`.
 
+#. For each of the following boolean expressions, decide if it will evaluate to `true` or `false` when the boolean variables `x`, `y` and `z` are all set to `true`:
+
+    -   `x ||  y && z`
+    -   `!x ||  y && z`
+    -   `!(x ||  y) && (z && y)`
+    -   `(!x && x) ||  (!x ||  x)`
+
+    Do the same when they are all set to `false`.
+
 #. Write a `boolean` expression that evaluates to `true` if a variable `x` is between 3 (excluded) and 5 (included).
 
-#. Write an `if-else` statement that assigns `"Minor"\` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
+#. Write an `if-else` statement that assigns `"Minor"` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
+    
+#. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
 
 #. Assume we initialized an `int` variable called `courseNumber` and a `string` variable called `courseCode`. Write a series of statements that will display:
     #. "I'm taking this class!" if `courseNumber` is `1301` and `courseCode` is `CSCI`; 
@@ -499,6 +520,15 @@ There is only one problem this time, and it is harder than what you'll be asked 
     
     Your program should display exactly one message.
 
+#. Assume we previously initialized a `char` variable called `myChar`. Write a series of statements that will display if the character is…
+    #. Uppercase
+    #. Lowercase
+    #. A number
+    #. or none of those.
+        
+    Your program should display exactly one message.
+    Bonus: Make your message also display the ASCII value of the character.
+        
 #. What will be displayed on the screen by the following program?
 
     ```
@@ -518,7 +548,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     int x = 3, y = 2, z = 4;
     if (y >= z) {z += y;}
     else if (x != y) { if (false) {z -= 3;} else {z += x;}}
-    Console.WriteLinef($"x is {x}, y is {y}, and z is {z}.");
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
     ```
 
 
@@ -568,7 +598,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 ## Part I --- Questions
 
-#. Assume you are given an un-assigned `string` variable `letterGrade`, and an already assigned `float` variable `numberGrade`. Write a small program that assigns `"A"` to `letterGrade` if `numberGrade` is between 100 and 90 (both included), `"B"` to `letterGrade` if `numberGrade` is between 90 (excluded) and 80 (included), etc., and `"Invalid data"` if `numberGrade` is strictly lower than 0 or strictly greater than 100. Should you use a `switch` statement or a `if` ...`else if` ...`else`?
+#. Assume you are given an un-assigned `string` variable `letterGrade`, and an already assigned `float` variable `numberGrade`. Write a small program that assigns `"A"` to `letterGrade` if `numberGrade` is between 100 and 90 (both included), `"B"` to `letterGrade` if `numberGrade` is between 90 (excluded) and 80 (included), etc., and `"Invalid data"` if `numberGrade` is strictly lower than 0 or strictly greater than 100. Should you use a `switch` statement or a `if` …`else if` …`else`?
 
 #. Given an `int` variable `counter`, write three statements to decrement its value by 1.
 
@@ -641,12 +671,21 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 #. Write a statement that creates a 10-element `int` array named `numbers`.
 
-#. What is wrong with the following array declaration?
+#. In the following, what is the value of the size declarator? What is the value of the index?
 
     ```
-    int[] books = new int[-1];
+    int[] numbers;
+    numbers = new int[8];
+    numbers[4] = 9;
     ```
 
+#. Draw the content of the `scores` array once those statements have been executed.
+
+    ```
+    int[] scores = new int[3];
+    scores[0] = 13;
+    scores[2] = 25;
+    ```
 
 #. What will be displayed on the screen by the following program?
 
@@ -723,3 +762,64 @@ This time, the two exercises **do not** require a computer, and are here to craf
 #. Write a static method (header included) that takes as argument an `int` array, and display on the screen the value of each element of that array.
 
 #. Write a static method (header included) that takes as argument an `int` array, and stores the value 10 in each element of that array.
+
+# Quizzes
+
+
+Those quizzes are given as _examples_, to help you practise.
+They were given at week 4 and 7.
+
+## Quiz 1
+
+#. (3 pts) Give three keywords.
+#. (4pts) Circle the correct identifiers:
+
+    - `%Rate`{.text}
+    - `static`{.text}
+    - `my-variable`{.text}
+    - `User.Input`{.text}
+    - `YoUrNaMe21`{.text}
+    - `test_train`{.text}
+    - `_myIdentifier`{.text}
+
+#. (4 pts) For each of the following, indicate if they are a "rule" of C# or a "convention" between programers by ticking the appropriate column. The first answer is given as an example.
+
+    Statement | Rule | Convention
+    -----------| ----- | ----- | 
+    Code should be commented. |               |      ✓        
+    Case matters. | 
+    Variable names should be descriptive. | 
+    Keywords cannot be used as identifiers. | 
+    Each ".cs" file should contain exactly one class. | 
+
+#. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
+#. (5 pts) Write a series of statements that would 
+    #. declare an `int` variable called "myAge",
+    #. assign your age to that variable, 
+    #. display "My age is ", the value of the "myAge" variable, a period, and finally a new line.
+#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+
+## Quiz 2
+
+#. (2 pts) What is the relational operator used to determine whenever two values are equal?
+
+#. (5pts) Write a `boolean` expression that evaluates to `true` if a variable `x` is between -10 (excluded) and 10 (included).
+
+#. (3 pts) What will be displayed on the screen by the following program?
+    
+    ```
+    int x = 5, y = 1, z = 2;
+    if (x != z || y < z ) {x += y;}
+    if (z > y) {if (z % 2 == 0) {z -= 3;} else {z += x;}} else {x = y + z;}
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
+    ```
+    
+
+#. (8 pts) Assume we initialized a `string` variable named `month` and a `double` variable named `temperature`. Write a series of statements that will display *exactly* one of the following messages: "What a nice summer day!" if `month` is "July"  and `temperature` is less than 90 (included); "Better wear a jacket" if `temperature` is between 45 and 60 (both included); "Happy holidays!" if `month` is "December"; or "Have a nice day" otherwise.
+
+#. (Bonus) Give a program that displays "Leap year" if a `year` variable is 
+    #. divisible by 4; and 
+    #. not divisible by 100, unless it is also divisible by 400.
+    
+    Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as *not* leap years.
+
