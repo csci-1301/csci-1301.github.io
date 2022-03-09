@@ -2027,32 +2027,81 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
 # Quizzes
 
+
+Those quizzes are given as _examples_, to help you practise.
+They were given at week 4 and 7.
+
+## Quiz 1
+
+#. (3 pts) Give three keywords.
+#. (4pts) Circle the correct identifiers:
+
+    - `%Rate`{.text}
+    - `static`{.text}
+    - `my-variable`{.text}
+    - `User.Input`{.text}
+    - `YoUrNaMe21`{.text}
+    - `test_train`{.text}
+    - `_myIdentifier`{.text}
+
+#. (4 pts) For each of the following, indicate if they are a "rule" of C# or a "convention" between programers by ticking the appropriate column. The first answer is given as an example.
+
+    Statement | Rule | Convention
+    -----------| ----- | ----- | 
+    Code should be commented. |               |      ✓        
+    Case matters. | 
+    Variable names should be descriptive. | 
+    Keywords cannot be used as identifiers. | 
+    Each ".cs" file should contain exactly one class. | 
+
+#. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
+#. (5 pts) Write a series of statements that would 
+    #. declare an `int` variable called "myAge",
+    #. assign your age to that variable, 
+    #. display "My age is ", the value of the "myAge" variable, a period, and finally a new line.
+#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+
 ## Quiz 2
 
-#. What is the relational operator used to determine whenever two values are equal?
-    <details><summary>Solution</summary>`==`</details>
+#. (2 pts) What is the relational operator used to determine whenever two values are equal?
+    <details><summary>Solution</summary>The operator is two equal signs, `==`, not to be confused with a single equal sign, `=`, used for assignment.</details>
 
-#. Write a `boolean` expression that evaluates to `true` if a variable `yourName` is different from "Marc" and "Mark".
-    <details><summary>Solution</summary> `yourName != "Marc" && yourName != "Mark"` </details>
+#. (2 pts) Write a `boolean` expression that evaluates to `true` if a variable `yourName` is different from `"Marc"` and `"Mark"`. 
+    <details><summary>Solution</summary>A possible solution is: `yourName != "Marc" && yourName != "Mark"`.  Note that there was no need to write an `if` statement or a complete statement: only the expression was required.</details>
 
-#. Write a `boolean` expression that evaluates to `true` if a variable `x` is between -10 (excluded) and 10 (included).
+#. (5pts) Write a `boolean` expression that evaluates to `true` if a variable `x` is between -10 (excluded) and 10 (included).
     <details><summary>Solution</summary> 
+    A possible solution is:
     ```
     x > -10 && x < 10
-    ```			 
+    ``` 
+    
+    Note that there was no need to write an `if` statement or a complete statement: onyl the expression was required.
     </details>
 
-#. What will be displayed on the screen by the following program?
+#. (3 pts) What will be displayed on the screen by the following program?
+    
+    ```
+    int x = 5, y = 1, z = 2;
+    if (x != z || y < z ) {x += y;}
+    if (z > y) {if (z % 2 == 0) {z -= 3;} else {z += x;}} else {x = y + z;}
+    Console.WriteLine($"x is {x}, y is {y}, and z is {z}.");
+    ```
+    
     <details><summary>Solution</summary>
+    This program would display:
+    
     ```{text}
     x is 6, y is 1, and z is -1.
     
     Press any key to continue...
     ```
+    
     </details>
 
-#. Assume we initialize a `string` variable named `month` and `double` variable named `temperature`. Write a series of statements that will display *exactly* one of the following messages: "What a nice summer day!" if `month` is "July" and `temperature` is less than 90 (included); "Better wear a jacket" if `temperature` is between 45 and 60 (both included); "Happy holidays!" if `month` is "December"; or "Have a nice day" otherwise.
+#. (8 pts) Assume we initialized a `string` variable named `month` and a `double` variable named `temperature`. Write a series of statements that will display *exactly* one of the following messages: "What a nice summer day!" if `month` is "July"  and `temperature` is less than 90 (included); "Better wear a jacket" if `temperature` is between 45 and 60 (both included); "Happy holidays!" if `month` is "December"; or "Have a nice day" otherwise.
     <details><summary>Solution</summary>
+    
     ```
     if(month=="July" && temperature<=90)
 	    Console.WriteLine("What a nice summer day!");
@@ -2063,9 +2112,14 @@ This time, the two exercises **do not** require a computer, and are here to craf
     else
 	    Console.WriteLine("Have a nice day!")
     ```
+    
     </details>
 
-#. Give a program that displays "Leap year" if a `year` variable is a) divisuble by 4; and b) not divisible by 100, unless it's also divisible by 400. Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as *not* leap years.
+#. (Bonus) Give a program that displays "Leap year" if a `year` variable is 
+    #. divisible by 4; and 
+    #. not divisible by 100, unless it is also divisible by 400.
+    
+    Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as *not* leap years.
 
     <details><summary>Solution</summary>
     ```
