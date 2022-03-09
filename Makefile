@@ -265,16 +265,16 @@ $(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
 ### Whole directories
 # Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
 #### HTML
-docs-html:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.html
+docs-html:$(SOURCE_DOC_FILES) $(DOCS_DIR)exercises.md
 	make $(TARGET_DOC_FILES_HTML)
 #### PDF
-docs-pdf:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.pdf
+docs-pdf:$(SOURCE_DOC_FILES) $(DOCS_DIR)exercises.md
 	make $(TARGET_DOC_FILES_PDF)
 #### ODT
-docs-odt:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.odt
+docs-odt:$(SOURCE_DOC_FILES) $(DOCS_DIR)exercises.md
 	make $(TARGET_DOC_FILES_ODT)
 #### DOCX
-docs-docx:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.docx
+docs-docx:$(SOURCE_DOC_FILES) $(DOCS_DIR)exercises.md
 	make $(TARGET_DOC_FILES_DOCX)
 	
 ### Whole doc, in all formats.
