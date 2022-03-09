@@ -2024,3 +2024,58 @@ This time, the two exercises **do not** require a computer, and are here to craf
     }
     ```
     </details>
+
+# Quizzes
+
+## Quiz 2
+
+#. What is the relational operator used to determine whenever two values are equal?
+    <details><summary>Solution</summary>`==`</details>
+
+#. Write a `boolean` expression that evaluates to `true` if a variable `yourName` is different from "Marc" and "Mark".
+    <details><summary>Solution</summary> `yourName != "Marc" && yourName != "Mark"` </details>
+
+#. Write a `boolean` expression that evaluates to `true` if a variable `x` is between -10 (excluded) and 10 (included).
+    <details><summary>Solution</summary> 
+    ```
+    x > -10 && x < 10
+    ```			 
+    </details>
+
+#. What will be displayed on the screen by the following program?
+    <details><summary>Solution</summary>
+    ```{text}
+    x is 6, y is 1, and z is -1.
+    
+    Press any key to continue...
+    ```
+    </details>
+
+#. Assume we initialize a `string` variable named `month` and `double` variable named `temperature`. Write a series of statements that will display *exactly* one of the following messages: "What a nice summer day!" if `month` is "July" and `temperature` is less than 90 (included); "Better wear a jacket" if `temperature` is between 45 and 60 (both included); "Happy holidays!" if `month` is "December"; or "Have a nice day" otherwise.
+    <details><summary>Solution</summary>
+    ```
+    if(month=="July" && temperature<=90)
+	    Console.WriteLine("What a nice summer day!");
+    else if (temperature >= 45 && temperature <= 60)
+	    Console.WriteLine("Better wear a jacket!");
+    else if (month == "December")
+	    Console.WriteLine("Happy Holidays!");
+    else
+	    Console.WriteLine("Have a nice day!")
+    ```
+    </details>
+
+#. Give a program that displays "Leap year" if a `year` variable is a) divisuble by 4; and b) not divisible by 100, unless it's also divisible by 400. Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as *not* leap years.
+
+    <details><summary>Solution</summary>
+    ```
+    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0))
+	    {
+		    Console.WriteLine("The year " + year + " is a leap year.");
+	    }
+    else
+	    {
+		    Console.WriteLine("The year " + year + " is not a leap year.");
+	    }
+    ```
+    </details>
