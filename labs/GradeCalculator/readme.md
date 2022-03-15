@@ -76,7 +76,14 @@ Try to implement one or the other, without worrying about the computation at thi
 
 # A Possible Solution
 
-You can find a possible solution to this problem [GradeCalculator.zip](https://github.com/jweeks2023/csci-1301.github.io/files/8249198/GradeCalculator.zip)
-.
-Note that our solution _does not_ use arrays, but that using arrays would make this program overall simpler.
+## Without arrays
+
+You can find a possible solution to this problem in [GradeCalculator.zip](Grade_Calculator.zip).
+
+Note that our solution _does not_ use arrays.
 However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.
+
+## With arrays
+
+Another solution to this problem is in [Grade_Calculator_with_Arrays](Grade_Calculator_with_Arrays.zip).
+This solution is much more flexible, uses fewer variable, but it may also be more difficult to understand, because it uses arrays in a subtle way.
