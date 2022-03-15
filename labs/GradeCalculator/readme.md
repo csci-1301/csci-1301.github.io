@@ -76,6 +76,7 @@ Try to implement one or the other, without worrying about the computation at thi
 
 # A Possible Solution
 
-You can find a possible solution to this problem [in this archive](Grade_Calculator.zip).
+You can find a possible solution to this problem [GradeCalculator.zip](https://github.com/jweeks2023/csci-1301.github.io/files/8249198/GradeCalculator.zip)
+.
 Note that our solution _does not_ use arrays, but that using arrays would make this program overall simpler.
 However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.
