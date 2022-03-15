@@ -36,7 +36,7 @@ class Program
         double[] averagePoints = new double[] { 0, 0, 0, 0 }; // The average for quizzes, projects, tests and the final.
         // No need to compute the average for the exam: there is only one exam, but we still include a averagePoints[3] variable for consistency in our program.
 
-        double tot = 1.0;
+        double tot = 0.0;
         // tot is for the percent of possible points.
 
         int read;
