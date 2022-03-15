@@ -4,7 +4,7 @@ title: Grade Calculator
 
 # Presentation 
 
-This project will help you in designing and implementing a "grade calculator" for (a variation) of this class.
+This project will help you design and implement a "grade calculator" for (a variation) of this class.
 
 We will assume that your grade for this class will be computed as follows:
 
@@ -15,12 +15,11 @@ We will assume that your grade for this class will be computed as follows:
     In-class Tests    2       100       40%
         Final Exam    1       200       40%
 
-Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their average *so far*.
+Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their *current* class average.
 
 Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to "stop".
-Note that if the quiz number n, for n < 5, was not taken yet, then you should not ask the grade for quiz n+1, and similarly for projects and in-class tests.
-It is fine to assume that the user will only enter "correct" numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a
-variable or a couple of values.
+This means if they say that they've taken only 2 quizzes (or put the sentinal value for quiz 3), then the program shouldn't ask for the later quiz grades (this is also true for the projects and exams).
+It is fine to assume that the user will only enter "correct" numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.
 
 An example of execution could be:
 
@@ -56,7 +55,7 @@ Press any key to continue . . .
 
 # How to Get Started?
 
-This problem involves a bit of Mathematics that can be tricky to get correctly, and involve cleverly getting the information from the user.
+This problem involves some tricky arithmetic, as well as cleverly getting the information from the user. Below are some hints to help push you in the right direction. 
 
 ### Hint 1 - Do The Math!
 
@@ -77,6 +76,7 @@ Try to implement one or the other, without worrying about the computation at thi
 
 # A Possible Solution
 
-You can find a possible solution to this problem [in this archive](Grade_Calculator.zip).
+You can find a possible solution to this problem [GradeCalculator.zip](https://github.com/jweeks2023/csci-1301.github.io/files/8249198/GradeCalculator.zip)
+.
 Note that our solution _does not_ use arrays, but that using arrays would make this program overall simpler.
 However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.
