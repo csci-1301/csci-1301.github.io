@@ -113,6 +113,7 @@ Resources to assess accessibility:
     ```</pre>
 
 - only include code in text form such that it can be copy-pasted for reuse
+- make sure to include blank lines before and after code blocks, since the absence of these can cause the code block to display incorrectly.
 
 ## Creating new lectures
 
