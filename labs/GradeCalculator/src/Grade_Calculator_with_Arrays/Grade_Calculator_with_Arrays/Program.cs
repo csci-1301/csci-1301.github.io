@@ -21,11 +21,14 @@ using System;
 
 class Program
 {
-    public static readonly int[] CONSTVARS = new int[] { 20, 20, 100, 200, 4, 2, 2, 1 };
-    //0-3: Max points for quizzes, projects, tests and final, respectively.
-    //4-7: Number of scheduled quizzes, projects, tests and final, respectively.
     static void Main(string[] args)
     {
+        int[] CONSTVARS = { 20, 20, 100, 200, 4, 2, 2, 1 };
+        //0-3: Max points for quizzes, projects, tests and final, respectively.
+        //4-7: Number of scheduled quizzes, projects, tests and final, respectively.
+
+        //Note: The array above is being used as if it contains constant integers, but it's missing the "const" designation. This is because you cannot make an array of constants. For a solution to this, see here: https://stackoverflow.com/a/5142378     
+        
         int[] accumAssignments = new int[] { 0, 0, 0 }; //Number of quizzes, projects, and tests completed
 
         int[] pointsEarned = new int[] { 0, 0, 0 }; //Total points earned for each category
@@ -33,7 +36,7 @@ class Program
         double[] averagePoints = new double[] { 0, 0, 0, 0 }; // The average for quizzes, projects, tests and the final.
         // No need to compute the average for the exam: there is only one exam, but we still include a averagePoints[3] variable for consistency in our program.
 
-        double tot = 1.0;
+        double tot = 0.0;
         // tot is for the percent of possible points.
 
         int read;
