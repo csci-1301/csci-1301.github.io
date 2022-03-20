@@ -2033,77 +2033,6 @@ They were given at week 4 and 7.
 
 ## Quiz 1
 
-#. (3 pts) List three keywords.
-
-<details><summary>Solution</summary>Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include ```int, string, if, while, void, else, bool``` etc.</details>
-
-#. (4pts) Circle the correct identifiers:
-
-    - `%Rate`{.text}
-    - `static`{.text}
-    - `my-variable`{.text}
-    - `User.Input`{.text}
-    - `YoUrNaMe21`{.text}
-    - `test_train`{.text}
-    - `_myIdentifier`{.text}
-
-<details><summary>Solution</summary>
-	Valid identifiers can not include reserved words, can not start with a number, and must contain only numbers, letters, and/or the underscore character. The identifiers below follow these rules.
-	```
-	my-variable
-	YoUrNaMe21
-	test_train
-	_myIdentifier
-	```
-</details>
-
-#. (4 pts) For each of the following, indicate if they are a "rule" of C# or a "convention" between programers by ticking the appropriate column. The first answer is given as an example.
-
-    Statement | Rule | Convention
-    -----------| ----- | ----- | 
-    Code should be commented. |               |      ✓        
-    Case matters. | 
-    Variable names should be descriptive. | 
-    Keywords cannot be used as identifiers. | 
-    Each ".cs" file should contain exactly one class. | 
-
-<details><summary>Solution</summary>
-	    Statement | Rule | Convention
-    -----------| ----- | ----- |  
-    Case matters. |			✓			|					
-    Variable names should be descriptive. | 				|			✓		
-    Keywords cannot be used as identifiers. | 			✓			|			
-    Each ".cs" file should contain exactly one class. |					|			✓
-
-</details>
-	    
-#. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
-
-<details><summary>Solution</summary>```Console.WriteLine("\"Hi Mom!\"\n")```</details>
-
-#. (5 pts) Write a series of statements that would 
-    #. declare an `int` variable called "myAge",
-    #. assign your age to that variable, 
-    #. display "My age is ", the value of the "myAge" variable, a period, and finally a new line.
-	
-	<details><summary>Solution</summary>
-	```
-	int myAge;
-	myAge = 21;
-	Console.WriteLine("My age is " + myAge + ".\n");
-	```
-	</details>
-	
-#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
-
-<details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. 'static void Main()' and 'int days = 7'). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
-```
-// My comment
-int x;
-x = 10;
-```
-If you remove the first newline, the program would not compile.</details>
-
 ## Quiz 2
 
 #. (2 pts) What is the relational operator used to determine whenever two values are equal?
@@ -2200,7 +2129,7 @@ If you remove the first newline, the program would not compile.</details>
 
 	</details>
 #. (2 pts) Write a statement that applies the increment operator in prefix position to a variable `test`.
-	<details><summary>Solution</summary>`--test;`</details>
+	<details><summary>Solution</summary>The increment operator (`++`) in _pre_fix position (that is, applied _before_ anything else) applied to the variable `test` gives: `++test;`.</details>
 	
 #. (3 pts) What will be displayed on the screen by the following program?
 
@@ -2212,29 +2141,64 @@ If you remove the first newline, the program would not compile.</details>
     }
     ```
 
-	<details><summary>Solution</summary>`9` repeating forever</details>
+	<details><summary>Solution</summary>This could would display `9` (without new line or space) forever.</details>
 	
 #. (8 pts) Write a `while` loop that displays "1 2 3 4 5 6 7 8 9 10 11 12 13 " (spaces included!) at the screen.
 	<details><summary>Solution</summary>
 	
-	```
-	int num = 1;
-	while(num <= 13)
-		Console.Write($"{num++} ");
-	```
-
-	</details>
-
-#. (+3+2 pt, bonus) Give (on the back of this sheet) a program that displays every multiple of 3 between 0 and 10,000 (that is, "0 3 6 9 12 … 9999"). Bonus (again!): display how many such numbers there are in total.
-	<details><summary>Solution</summary>
+	There are numerous different ways of writing such a program.
+	A compact one could be:
 	
 	```
-	int threeCtr = 0, multipleCtr = 0;
+	int num = 1;
+	while(num <= 13)Console.Write($"{num++} ");
+	```
+	
+	while a more verbose could be:
+	
+	```
+	int num = 1;
+	while(num <= 13){
+        Console.Write($"{num} ");
+        num++;
+    }
+	```
+	
+	</details>
+
+#. (+3+2 pt, bonus) Give a program that displays every multiple of 3 between 0 and 10,000 (that is, "0 3 6 9 12 … 9999"). Bonus (again!): display how many such numbers there are in total.
+	<details><summary>Solution</summary>
+	
+    We can either 
+    
+    #. Display the counter only if it is a multiple of three:
+    
+        ```
+        int counter = 0;
+        while(counter <= 1000){
+            if (counter % 3 == 0){Console.Write(counter + " ");}
+            counter++;
+        }
+        ```
+    #. Increment the counter 3 by 3:
+    
+        ```
+        int counter = 0;
+        while(counter <= 1000){
+            Console.Write(counter + " ");
+            counter+=3;
+        }
+        ```    
+	To answer the "bonus within the bonus", we need two counters:
+	
+	```
+	int threeCtr = 0; // Counter for the multiple of 3.
+	int multipleCtr = 0; // Counter that sum the number of values displayed
 	while(threeCtr < 10000)
 	{
 		Console.Write($"{threeCtr} ");
-		threeCtr += 3;
-		multipleCtr++;
+		threeCtr += 3; // We move to the next multiple of 3.
+		multipleCtr++; // We increment the number of values displayed.
 	}
 	
 	Console.WriteLine($"\nThere are {multipleCtr} multiples of 3 from 0 to 10,000.");
