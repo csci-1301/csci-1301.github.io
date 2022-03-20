@@ -2068,7 +2068,7 @@ They were given at week 4 and 7.
     Each ".cs" file should contain exactly one class. | 
 
     <details><summary>Solution</summary>
-	    Statement | Rule | Convention
+    Statement | Rule | Convention
     -----------| ----- | ----- |  
     Case matters. |			✓			|					
     Variable names should be descriptive. | 				|			✓		
