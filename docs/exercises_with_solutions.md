@@ -2078,7 +2078,7 @@ They were given at week 4 and 7.
 	    
 #. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
 
-    <details><summary>Solution</summary>```Console.WriteLine("\"Hi Mom!\"\n")```</details>
+    <details><summary>Solution</summary>The key is to escpae the `"` character: ```Console.WriteLine("\"Hi Mom!\"\n")```</details>
 
 #. (5 pts) Write a series of statements that would 
     #. declare an `int` variable called "myAge",
@@ -2095,12 +2095,14 @@ They were given at week 4 and 7.
 	
 #. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
 
-    <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. 'static void Main()' and 'int days = 7'). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
+    <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. `static void Main()` and `int days = 7;`). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
+    
     ```
     // My comment
     int x;
     x = 10;
     ```
+    
     If you remove the first newline, the program would not compile.</details>
 
 ## Quiz 2
@@ -2199,7 +2201,7 @@ They were given at week 4 and 7.
 
 	</details>
 #. (2 pts) Write a statement that applies the increment operator in prefix position to a variable `test`.
-	<details><summary>Solution</summary>The increment operator (`++`) in _pre_fix position (that is, applied _before_ anything else) applied to the variable `test` gives: `++test;`.</details>
+	<details><summary>Solution</summary>The increment operator (`++`) in **pre**fix position (that is, applied _before_ anything else) applied to the variable `test` gives: `++test;`.</details>
 	
 #. (3 pts) What will be displayed on the screen by the following program?
 
