@@ -18,6 +18,7 @@ The first few lines are given as examples, your task is to complete the rest of 
 | Input	| returns |	value	| returns |	value |
 | `"9432.0"`	| `false` |	`0`	| `true` |	`9432.0` |
 | `"160519"`	| `true`  |	`160519` | `true` |	`160519` |
+| `"nope"` | `false` | `0` | `false` | `0` |
 | `"12,804"` | | | | |
 | `"+5102"` |||||
 | `"2+2"` |||||
