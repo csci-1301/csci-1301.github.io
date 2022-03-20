@@ -2033,6 +2033,76 @@ They were given at week 4 and 7.
 
 ## Quiz 1
 
+#. (3 pts) List three keywords.
+
+    <details><summary>Solution</summary>Keywords are words that have special meanings and cannot be used as identifiers in your program. Examples of C# Keywords include ```int, string, if, while, void, else, bool``` etc.</details>
+
+#. (4pts) Circle the correct identifiers:
+
+    - `%Rate`{.text}
+    - `static`{.text}
+    - `my-variable`{.text}
+    - `User.Input`{.text}
+    - `YoUrNaMe21`{.text}
+    - `test_train`{.text}
+    - `_myIdentifier`{.text}
+
+    <details><summary>Solution</summary>
+	Valid identifiers can not include reserved words, can not start with a number, and must contain only numbers, letters, and/or the underscore character. The identifiers below follow these rules.
+	```
+	my-variable
+	YoUrNaMe21
+	test_train
+	_myIdentifier
+	```
+    </details>
+
+#. (4 pts) For each of the following, indicate if they are a "rule" of C# or a "convention" between programers by ticking the appropriate column. The first answer is given as an example.
+
+    Statement | Rule | Convention
+    -----------| ----- | ----- | 
+    Code should be commented. |               |      ✓        
+    Case matters. | 
+    Variable names should be descriptive. | 
+    Keywords cannot be used as identifiers. | 
+    Each ".cs" file should contain exactly one class. | 
+
+    <details><summary>Solution</summary>
+	    Statement | Rule | Convention
+    -----------| ----- | ----- |  
+    Case matters. |			✓			|					
+    Variable names should be descriptive. | 				|			✓		
+    Keywords cannot be used as identifiers. | 			✓			|			
+    Each ".cs" file should contain exactly one class. |					|			✓
+    </details>
+	    
+#. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
+
+    <details><summary>Solution</summary>```Console.WriteLine("\"Hi Mom!\"\n")```</details>
+
+#. (5 pts) Write a series of statements that would 
+    #. declare an `int` variable called "myAge",
+    #. assign your age to that variable, 
+    #. display "My age is ", the value of the "myAge" variable, a period, and finally a new line.
+	
+	<details><summary>Solution</summary>
+	```
+	int myAge;
+	myAge = 21;
+	Console.WriteLine("My age is " + myAge + ".\n");
+	```
+	</details>
+	
+#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+
+    <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. 'static void Main()' and 'int days = 7'). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
+    ```
+    // My comment
+    int x;
+    x = 10;
+    ```
+    If you remove the first newline, the program would not compile.</details>
+
 ## Quiz 2
 
 #. (2 pts) What is the relational operator used to determine whenever two values are equal?
