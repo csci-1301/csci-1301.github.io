@@ -2176,3 +2176,68 @@ If you remove the first newline, the program would not compile.</details>
 	    }
     ```
     </details>
+	   
+## Quiz 3
+
+#. (7 pts) Write a `switch` statement that sets a `decimal` `price` variable to 1.50 if a string variable `iceCreamFlavor` contains `"vanilla"`, 1.75 if it contains `"chocolate"` or `"mint"`, and -1 otherwise.
+	<details><summary>Solution</summary>
+
+	```
+	switch(iceCreamFlavor)
+	{
+		case "vanilla":
+			price = 1.50m;
+			break;
+		case "chocolate":
+		case "mint":
+			price = 1.75m;
+			break;
+		default:
+			price = -1;
+			break;
+	}
+	```
+
+	</details>
+#. (2 pts) Write a statement that applies the increment operator in prefix position to a variable `test`.
+	<details><summary>Solution</summary>`--test;`</details>
+	
+#. (3 pts) What will be displayed on the screen by the following program?
+
+    ```
+    int x = 10;
+    x--;
+    while(x > 0){
+        Console.Write(x);
+    }
+    ```
+
+	<details><summary>Solution</summary>`9` repeating forever</details>
+	
+#. (8 pts) Write a `while` loop that displays "1 2 3 4 5 6 7 8 9 10 11 12 13 " (spaces included!) at the screen.
+	<details><summary>Solution</summary>
+	
+	```
+	int num = 1;
+	while(num <= 13)
+		Console.Write($"{num++} ");
+	```
+
+	</details>
+
+#. (+3+2 pt, bonus) Give (on the back of this sheet) a program that displays every multiple of 3 between 0 and 10,000 (that is, "0 3 6 9 12 … 9999"). Bonus (again!): display how many such numbers there are in total.
+	<details><summary>Solution</summary>
+	
+	```
+	int threeCtr = 0, multipleCtr = 0;
+	while(threeCtr < 10000)
+	{
+		Console.Write($"{threeCtr} ");
+		threeCtr += 3;
+		multipleCtr++;
+	}
+	
+	Console.WriteLine($"\nThere are {multipleCtr} multiples of 3 from 0 to 10,000.");
+	```
+
+	</details>
