@@ -732,7 +732,7 @@ There are several ways that `while` loops are useful when working with classes a
 
 # The Loan Class
 
-This class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code.
+This class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can downlead the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
 
 ```
 using System;
