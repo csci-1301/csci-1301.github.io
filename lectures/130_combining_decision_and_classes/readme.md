@@ -730,9 +730,37 @@ There are several ways that `while` loops are useful when working with classes a
     - Note that there are `while` loops to validate each number the user inputs for hours, minutes, and seconds, as well as an outer `while` loop that validates the Time object as a whole.
     - The outer loop will continue until the user enters values that make `userTime.ComesBefore(maximumTime)` return `true`.
 
-# The Loan Class
+## Examples
 
-This class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can downlead the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
+
+### The Room Class
+
+The class and its associated Main method presented [in this archive](/labs/ValidatingInput/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
+It also exemplifies how a method can take _an object_ as a parameter with `InSameBuilding`.
+
+The corresponding UML diagram is:
+
+
+|          **Room**                        |
+|------------------------------------------|
+|-building: `string`                       |
+|-number: `int`                            |
+|-computer: `bool`                         |
+|------------------------------------------|
+|+GetComputer():`bool`                     |
+|+SetComputer(compP:`bool`): `void`        |
+|+Room(bP: `string`, nP: `int`, cP:`bool`) |
+|+GetCode(): `string`                      |
+|+ToString(): `string`                     |
+|+InSameBuilding(roomP:`Room`):`bool`      |
+|+RoomRoute(): `string`                    |
+
+
+
+
+### The Loan Class
+
+Similarly, this class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can download the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
 
 ```
 using System;
