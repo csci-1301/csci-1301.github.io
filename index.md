@@ -14,10 +14,10 @@ Welcome to course resources website for CSCI 1301 at Augusta University.
 
 Available formats:
 
- - [HTML](book.html) -- to read from your browser, convenient for phones as well.
- - [PDF](book.pdf)  -- to print and archive.
- - [ODT](book.odt) -- to edit (using e.g. [libreoffice](https://www.libreoffice.org/)) and archive.
- - [DOCX](book.docx)  -- to edit (using e.g. Microsoft Office) and archive.
+ - [HTML](book.html) - to read from your browser, convenient for phones as well.
+ - [PDF](book.pdf) - to print and archive.
+ - [ODT](book.odt) - to edit (using e.g. [libreoffice](https://www.libreoffice.org/)) and archive.
+ - [DOCX](book.docx) - to edit (using e.g. Microsoft Office) and archive.
  
 ### Slides
 
@@ -29,7 +29,7 @@ Available formats:
 
 ### Exercises
 
-Without Solution | With solution
+Without Solution | With Solution
 --- | --- 
 [HTML](exercises.html) | [HTML](exercises_with_solutions.html)
 [PDF](exercises.pdf)   | [PDF](exercises_with_solutions.pdf)
@@ -59,7 +59,7 @@ Without Solution | With solution
 
 ### About this Resource
 
-- [About](about.html) - brief explanation of the purpose and presentation of the authors and licence
+- [About](about.html) - brief explanation of the purpose and presentation of the authors and license
 - [Contributing Guidelines](contributing.html) - help improve this resource
 - [User Guide](user_guide.html) - details about this resource
 
