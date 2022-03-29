@@ -2213,7 +2213,7 @@ They were given at week 4 and 7.
     }
     ```
 
-	<details><summary>Solution</summary>This could would display `9` (without new line or space) forever.</details>
+	<details><summary>Solution</summary>This would display `9` (without new line or space) forever.</details>
 	
 #. (8 pts) Write a `while` loop that displays "1 2 3 4 5 6 7 8 9 10 11 12 13 " (spaces included!) at the screen.
 	<details><summary>Solution</summary>
