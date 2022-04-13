@@ -7,7 +7,7 @@ description: Course resources website for CSCI 1301 at Augusta University.
 basic index page for pages website, this page makes some assumptions about paths
 based on what is defined in the makefile, just be aware of that while editing -->
 
-Welcome to course resources website for CSCI 1301 at Augusta University.
+Welcome to the course resources website for CSCI 1301 at Augusta University.
 
 
 ### Book
