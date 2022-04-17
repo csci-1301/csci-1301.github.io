@@ -221,7 +221,7 @@ would return, at compile time,
 Compilation error (line 8, col 3): Property or indexer 'System.Array.Length' cannot be assigned to --it is read only.
 ```
 
-Resizing will be discussed in the section: **Changing the Size**.
+We receive this error because the array attribute, 'Length,' can not be changed once the array is already created. Resizing arrays will be discussed in the section: [Changing the Size](#changing-the-size).
 
 
 ### Loops with Arrays of Objects
