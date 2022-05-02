@@ -283,7 +283,7 @@ value of `b` after the second statement is executed.
 #.  In C#, what is the name of the method used to read input from the user?
     <details><summary>Solution</summary>`ReadLine()`.</details>
 
-#. What is wrong with the following? Will the error(s) appear at compilation time or at execution time?
+#. What is wrong with the following code? Will the error(s) appear at compilation time or at execution time?
 
     ```
     int age;
@@ -329,14 +329,14 @@ The following three exercises **do not** require a computer.
 Make sure you feel ready before starting them, try to do them with limited time and without notes, and, if you want, check your answer using your IDE.
 
 #. 
-    This problem restates differently the content the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes, and ask you to answer various problems.
+    This problem restates the content of the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes and ask you to answer various problems.
 
     There are 5 different arithmetic operations available in C#:
 
     --------------------------- ------------------------- -------------------------------------- ----------------------
             **Operation**         **Arithmetic Operator**         **Algebraic Expression**            **Expression**
             Addition                      `+`                           $x + 7$                     `myVar + 7`
-            Substraction                  `-`                           $x - 7$                    `myVar - 7`
+            Subtraction                  `-`                           $x - 7$                     `myVar - 7`
             Multiplication                `*`                         $x \times 7$                  `myVar * 7`
             Division                      `/`                      $x / 7$, or $x \div 7$           `myVar / 7`
     Remainder (a.k.a. modulo)             `%`                         $x \bmod 7$                   `myVar % 7`
@@ -355,7 +355,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     --------------------------------- ---------------
 
 
-    But things get complicated when multiple operators are used, but no parenthesis are indicated. For instance, should
+    But things can get complicated when multiple operators are used, but no parenthesis are indicated. For instance, should
 
     ```
     7 / 2 - 4 * 8 % 3
@@ -1021,7 +1021,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
         
     </details>
 
-#. What is the relational operator used to determine whenever two values are different?
+#. What relational operator is used to determine whenever two values are different?
     <details><summary>Solution</summary>`!=`</details>
 
 #. How do you store the result of a Boolean expression?
@@ -2213,7 +2213,7 @@ They were given at week 4 and 7.
     }
     ```
 
-	<details><summary>Solution</summary>This could would display `9` (without new line or space) forever.</details>
+	<details><summary>Solution</summary>This would display `9` (without new line or space) forever.</details>
 	
 #. (8 pts) Write a `while` loop that displays "1 2 3 4 5 6 7 8 9 10 11 12 13 " (spaces included!) at the screen.
 	<details><summary>Solution</summary>

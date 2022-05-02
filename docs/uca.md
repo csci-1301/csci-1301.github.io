@@ -65,3 +65,18 @@ Your contribution may range from spell-checking to pointing inconsistencies, fro
 Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
 
 Please, follow the instructions in our ["Contributing Guidelines"](contributing.html#if-you-are-a-uca) to obtain editing permission, then review [Editing instructions for UCAs](uca_guide.html) and start editing! 
+
+# What Is the Difference With a URA?
+
+Undegraduate _Research_ Assistants (or "URAs") share many similarities with UCAs:
+
+- They both are students employed by the University,
+- They both have a maximum of 25 hours/week,
+- Their pay rates are the same,
+- They both work under the direction of a [Faculty member](https://www.augusta.edu/ccs/faculty.php).
+
+However, their focus is on working on [_research_](https://www.augusta.edu/ccs/research.php) instead of being focused on teaching. 
+The difference is sometimes tenuous, but URAs positions are generally given in priority to "advanced" students (that is, close to graduation), to use their gained knowledge to push further the limits of human knowledge!
+
+It is not possible to cumulate an URA _and_ an UCA position, but obtaining an UCA position is in general an excellent stepping stone to obtain a URA position, if you wish to do so: by proving that you are reliable, serious, agreeable to work with, you will maximize your chances of having a Faculty member notice you and offer you to work on their research with them.
+

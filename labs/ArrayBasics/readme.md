@@ -77,7 +77,7 @@ For this part, create a new array:
 
 - declare a `char` array of length $6$, name it `letters`
 - initialize the first 4 indices of `letters` with the following values: `'a', 'b', 'c', 'd'`
-- initialize index 5 of `letters` with the value `'f'`
+- initialize *index 5* of `letters` with the value `'f'`
 
 Now, write the following statements:
 

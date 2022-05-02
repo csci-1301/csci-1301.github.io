@@ -27,13 +27,14 @@ Operators:
 ~  symbols used to perform operations
 
 Modulo:
-~  the % used to divide two numbers and return the remainder
+~  the `%` used to divide two numbers and return the remainder
 
 escape sequence:
 ~  used to represent a non-printable character
 
-reference types (objects and strings) - a variable of a class object
-    holds a reference to the address of the object on the managed heap.
+reference types (objects and strings):
+~ a variable of a class object
+  holds a reference to the address of the object on the managed heap.
 
 value types (all other reserved words)
 
@@ -42,7 +43,7 @@ numeric types
 Booleans:
 ~  a binary datatype that can only be true or false
 
-decision structures (if/else/switch)
+decision structures (`if`/`else`/`switch`)
 
 control structures (loops)
 
@@ -92,7 +93,8 @@ Attribute:
 ~  the variables declared within a class to act as the
     characteristics of any of its instantiated object
 
-Method - a code block that contains a series of statements
+Method:
+~ a code block that contains a series of statements
 
 class member (attributes and methods) - anything defined within a
     class that can be access within and outside of the class
@@ -100,13 +102,16 @@ class member (attributes and methods) - anything defined within a
 Scope:
 ~  Time and place in program where the variable exists
 
-Iterator - an object that traverses an array or list
+Iterator:
+~ an object that traverses an array or list
 
-sentinel value - a special value in the context of an algorithm
+sentinel value:
+~ a special value in the context of an algorithm
     which uses its presence as a condition of termination, typically in
     a loop or recursive algorithm.
 
-guard condition - boolean expressions (predicates) found at the top
+guard condition:
+~ boolean expressions (predicates) found at the top
     of a method or function that determine whether the function should
     continue to run.
 
@@ -117,7 +122,8 @@ Counter:
 ~  a variable used to count the number of times a certain
     condition is met
 
-complex condition
+complex condition:
+~ 
 
 method signature:
 ~  the way a computer reads a method by its name

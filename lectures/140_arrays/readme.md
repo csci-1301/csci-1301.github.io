@@ -208,6 +208,22 @@ while (counter2 < customArray.Length)
 
 Observe that this code doesn't need the variable `size`.
 
+Note: You *cannot* use the length property to change the size of the array, that is, entering
+
+```
+int[] test = new int[10];
+test.Length = 9;
+```
+
+would return, at compile time,
+
+```
+Compilation error (line 8, col 3): Property or indexer 'System.Array.Length' cannot be assigned to --it is read only.
+```
+
+When a field is marked as 'read only,' it means the attribute can only be initialized during the declaration or in the constructor of a class. We receive this error because the array attribute, 'Length,' can not be changed once the array is already declared. Resizing arrays will be discussed in the section: [Changing the Size](#changing-the-size).
+
+
 ### Loops with Arrays of Objects
 
 In the following example, we will ask the user how many `Item` objects they want to create, then fill an array with `Item` objects initialized from user input:
