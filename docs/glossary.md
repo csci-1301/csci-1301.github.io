@@ -7,8 +7,7 @@ title: Glossary
     used for one thing
 
 [Datatypes](https://csci-1301.github.io/book.html#datatypes-and-variables):
-~  categories in C# used to define types of values, such
-    as strings
+~  categories in C# used to define types of values, such as strings
 
 [Variable](https://csci-1301.github.io/book.html#datatypes-and-variables):
 ~  values that be changed
@@ -17,8 +16,7 @@ title: Glossary
 ~  values that can not be changed
 
 [Identifier](https://csci-1301.github.io/book.html#reserved-words-and-identifiers):
-~  words defined by the programmer to refer to an object
-    or variable.
+~  words defined by the programmer to refer to an object or variable.
 
 Operations:
 ~ 
@@ -66,8 +64,7 @@ Operations:
 ~  the act of giving a value to an identifier
 
 [Implicit Conversion](https://csci-1301.github.io/book.html#implicit-and-explicit-conversions-between-datatypes):
-~  the act of automatically storing the value of
-    one identifier into another identifier that differs from its own
+~  the act of automatically storing the value of one identifier into another identifier that differs from its own
 
 [Explicit Conversion (casting)](https://csci-1301.github.io/book.html#implicit-and-explicit-conversions-between-datatypes):
 ~ the act of storing the value of one
