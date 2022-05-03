@@ -50,6 +50,8 @@ Without Solution | With Solution
 
 - [Student Learning Outcomes](learning_outcomes.html) - expected student learning outcomes
 - [List of Topics](topics_list.html) - list of required topics
+- [Glossary](glossary.html) - glossary
+
 
 ### Academic Life
 
