@@ -11,44 +11,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Cancel previous runs
+    - name: Cancel previous runs ⏹️
       uses: styfle/cancel-workflow-action@0.9.1
       with:
         access_token: ${{ github.token }}
-    - name: cache
-      uses: actions/cache@v2 
+    - name: Cache  💾
+      uses: actions/cache@v2
       with:
         path: |
           ~/.cache
           pandoc-2.14.2-1-amd64.deb
         key: ${{ runner.os }}-pip-
-        restore-keys: |
-          ${{ runner.os }}-pip-
-    - name: Set up Python 3.9
+        restore-keys: ${{ runner.os }}-pip-
+    - name: Setup Python 🐍
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
-    - name: Install dependencies
+        python-version: "3.10"
+    - name: Setup pandoc ⚙️
       run: |
         sudo apt-get update
         test -f pandoc-2.14.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/2.14.2/pandoc-2.14.2-1-amd64.deb
         sudo dpkg -i pandoc-2.14.2-1-amd64.deb
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
         pip install Pygments pandoc-include
-    - name: build
-      run: |
-        make all
-    - name: deploy website 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.3
+    - name: Build 🏗️
+      run: make all
+    - name: Deploy website 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
         branch: gh-pages 
-        folder: build 
-    - name: create package
-      uses: "marvinpinto/action-automatic-releases@latest"
+        folder: build
+        clean: true
+        single-commit: true
+    - name: Create package 🎁
+      uses: marvinpinto/action-automatic-releases@latest
       with:
         automatic_release_tag: "latest"
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
         prerelease: true
         draft: false
-        files: |
-          build/release.zip
+        files: build/release.zip
