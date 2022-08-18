@@ -319,7 +319,7 @@ The steps for migrating feedback target repository are as follows:
 #. Choose "utterances" > "configure"
 #. Under "Repository access" > "Only select repositories"
    - select the repository created in step 1. 
-   - remove the previous semester feeback repository
+   - remove the previous semester feedback repository
 #. Save
 #. In `csci-1301.github.io` repository open `/templates/web/template.html`
 #. Update utteranc.es widget code to point to the new feedback repository created in step 1.
