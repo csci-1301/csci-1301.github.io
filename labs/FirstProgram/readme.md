@@ -117,7 +117,9 @@ We will first create a new C\# project using the template for a "Console App".
     - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core) and can choose either, it does not make a difference for this class.
     - On Visual Studio, you would see something like:
     
+    ![](img/create_project.png)
     ![](../../img/create_project.png)
+<!-- TODO: two links included to please html and pdf, this is not correct, but a quick fix. -->
     
     Pick the _first_ item, which is for C\#.
 

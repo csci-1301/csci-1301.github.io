@@ -15,15 +15,17 @@ Working through these labs you should have formed some habits. You should know h
 
 You have probably already started to read "compile and execute" as:
 
-Windows/Linux
+Windows/Linux:
+~ 
 
-- Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
-- Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+    - Compile (build solution): <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
+    - Execute: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
 
-MacOS
+MacOS:
+~ 
 
-- Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
-- Execute: <kbd>F5</kbd> &nbsp; -or- &nbsp; <kbd>Command</kbd> + <kbd>return</kbd>
+    - Compile (build solution): <kbd>Command</kbd> + <kbd>B</kbd>
+    - Execute: <kbd>F5</kbd> &nbsp; -or- &nbsp; <kbd>Command</kbd> + <kbd>return</kbd>
 
 From now on, read "Create a new project" as
 
@@ -35,7 +37,7 @@ From now on, read "Create a new project" as
 
 And, _even if it is not explicitly asked_, you should save your work once you are done, then re-open it at the beginning of the next session to make sure you saved it properly.
 
-If you want a tutor or your instructor to check your answer to a previous lab, just ask!
+If you want a UCA or your instructor to check your answer to a previous lab, just ask!
 
 
 ## First Variables Manipulation
@@ -82,7 +84,7 @@ Compute in your head the result of the following operation: `1000000.0 + 1.2 - 1
 
 Now, implement it
 
-> read "implement it" as:  Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#
+> (Read "implement it" as:  Create a new project and write in the `Main` method the code below to display on the screen the result of this computation, as computed by C#.)
 
 using the `float`, `double`, and `decimal` datatypes:
 
