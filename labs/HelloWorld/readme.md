@@ -11,12 +11,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
 ## Opening Your First Program
 
 #. Download [HelloWorld_Solution.zip](HelloWorld_Solution.zip) and save it on your computer.
-#. Unzip the program file^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!] .
-
-    - on Windows: right click and choose "Extract all"
-    - on macOS: double-click the `.zip` file
-    - on Linux: [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.com/Unzip-Files-in-Linux)
-
+#. [Unzip the program file](../../zip_guide.html#unzipping-files)^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!].
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld_Solution.sln` file
 #. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
@@ -45,15 +40,19 @@ Question:
 
 #. You will **extensively** compile and run programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
 
-    Windows/Linux
-    - Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
-    - Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
-    - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
+    Windows/Linux:
+    ~ 
+        
+        - Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>
+        - Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+        - Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd>
 
-    MacOS
-    - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
-    - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> &nbsp; -or- &nbsp; <kbd>F5</kbd>
-    - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
+    MacOS:
+    ~ 
+
+        - Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd>
+        - Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd> &nbsp; -or- &nbsp; <kbd>F5</kbd>
+        - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
 That makes 3 shortcuts already!
 
@@ -140,8 +139,14 @@ In this exercise, you are asked to do the following:
 #. Make sure you understand the meaning of the error message.
 #. Undo your change by pressing
 
-    - Windows, Linux: <kbd>Ctrl</kbd> + <kbd>z</kbd>
-    - MacOS: <kbd>Cmd</kbd> + <kbd>z</kbd>
+    Windows/Linux:
+    ~ 
+        <kbd>Ctrl</kbd> + <kbd>z</kbd>
+
+    MacOS:
+    ~ 
+    
+        <kbd>Cmd</kbd> + <kbd>z</kbd>
 
 #. Make sure you can build the solution without a new error message.
 
