@@ -312,7 +312,7 @@ To manage user feedback over time, a semester-specific repository is created for
 
 The steps for migrating feedback target repository are as follows:
 
-#. Create a new **public** repository under `csci-1301` github organization. Follow the established naming convention.
+#. Create a new **public** repository under `csci-1301` github organization. Follow the established naming convention, and leave all the options except for visibility (which needs to be set to public) by default.
 #. Go to repository Issues (make sure issues is enabled in repository settings)
 #. Create a new label whose _label name_ is `comment` (to match [widget configuration](https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94))
 #. Go to [`Organization Settings > Installed GitHub Apps`](https://github.com/organizations/csci-1301/settings/installations) 

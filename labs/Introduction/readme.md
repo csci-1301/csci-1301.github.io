@@ -31,7 +31,7 @@ Question:
 
 Action:
 ~ On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
-Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them both.
+Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them all.
 You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which doesn't have them!]
 
 You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links in the footer: the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights and tools used to construct this website.
@@ -39,7 +39,7 @@ Even if you do not need to understand the source code and details of the impleme
 
 # What to Read First
 
-Your instructor will be your primary guide when it comes to the order in which you need to read the material hosted here.
+Your instructor(s) will be your primary guide when it comes to the order in which you need to read the material hosted here.
 However, you should feel free to explore our [other useful documents](https://csci-1301.github.io/#other-documents) that contain information you may be interested in fairly early in the semester (like…today!).
 Typically, the [Installing Software](../../software_install.html) page should probably be one of the first documents you read: it explains in detail how to set-up your computer to be able to execute, compile and study the code we will be discussing in class and lab, and how to access and use the computer labs.
 
@@ -64,7 +64,7 @@ Question:
 # How to Get Help
 
 This may be the most important aspect of this lab: understanding when to get help, and how to obtain it, is critical in succeeding in your studies (be it in this class or other classes!).
-Your instructor should be your first point of contact for any question regarding the content of this class, but many other resources are available, through the University, for this class, or through clubs.
+Your instructor(s) should be your first point of contact for any question regarding the content of this class, but many other resources are available, through the University, for this class, or through clubs.
 Also, understanding _how_ to ask is extremely important, and we will briefly discuss it.
 
 
@@ -74,17 +74,17 @@ Some resources are available free of charge for all students:
 
 - If you are food insecure, [you are not alone](https://www.wjbf.com/csra-news/nearly-36-percent-of-college-students-are-hungry/), and the [Open Paws Food Pantry](https://www.augusta.edu/student-affairs/open-paws.php) will help you.
 - For tutoring resources, consult the [Academic Success Center](https://www.augusta.edu/academicsuccess/) (or "ASC"). It can help you, among other things, in the areas of time management, test preparation and study strategies.
-- The [Testing & Disability Services](https://www.augusta.edu/tds/) (or "TDS") can help you--and your instructor!--ensure you have the right accommodations for this class.
+- The [Testing & Disability Services](https://www.augusta.edu/tds/) (or "TDS") can help you--and your instructor(s)!--ensure you have the right accommodations for this class.
 - The [Student Counseling & Psychological Services](https://www.augusta.edu/counseling/) (or "SCAPS") is here to assist students with a variety of personal, developmental, and mental health concerns.
 - The [Writing Center](https://www.augusta.edu/pamplin/writingcenter/) can help you with any written, oral, or multimedia project.
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent Sienna Sewell, whose contact information can be found [on the Continuity webpage](https://www.augusta.edu/continuity/).
 
 ## For this Class
 
-Again, your instructor should be your first point of contact.
+Again, your instructor(s) should be your first point of contact.
 Make sure you have their email address, and understand their preferred means of communication: is it through [LMS](https://lms.augusta.edu/) (formerly D2L), [Teams](https://www.augusta.edu/its/microsoftteams.php), their office hours?
 
-Secondly, if your class has an Undergraduate Course Assistant (UCA), this may be the right person to ask all kind of questions: they went through CSCI 1301 and have been selected based on their capacities, grades, interest and skills, so they will be able at the same time to relate to your struggle and describe the program better than anyone else!
+Secondly, if your class has Undergraduate Course Assistant(s) (UCA), they may be the right person(s) to ask all kind of questions: they went through CSCI 1301 and have been selected based on their capacities, grades, interest and skills, so they will be able at the same time to relate to your struggle and describe the program better than anyone else!
 
 There is also a way of reaching _all the instructors of CSCI 1301_ at once, and it is by commenting on this site's pages, as we explain below.
 
@@ -116,7 +116,7 @@ It may seems silly, but asking a question "the right way" may not always be easy
 #. Think about how you can describe your issue, what is the shortest route to reproduce it.
 #. If you are still facing difficulties, be detailed and clear about what you think went wrong: if the question is related to computers, specify which operating system, what you have tried, the exact nature of the error message, etc. Screenshots are not always the right way to convey your question: try to be descriptive, and explain what you tried. If you want to refer to a particular lab or lecture, open the corresponding page, look for the closest title, hover over it, and you should see a "§" symbol appears: click on it, you can now [share that link](https://www.wikihow.com/Copy-and-Paste-a-Link) so that your interlocutor knows precisely what you are talking about!
 
-And, remember: your instructor knows that you are a student and here to learn, so you should _never_ feel intimidated or assume that _everyone knows better than you_: many students struggle in this class at times, and you could actually do them all a favor by asking your instructor to go over a particular dimension that they may have overlooked or explained poorly!
+And, remember: your instructor(s) knows that you are a student and here to learn, so you should _never_ feel intimidated or assume that _everyone knows better than you_: many students struggle in this class at times, and you could actually do them all a favor by asking your instructor(s) to go over a particular dimension that they may have overlooked or explained poorly!
 
 Action:
 ~ You may have noticed that multiple links point to <https://www.wikihow.com/>. Can you check if _the content_ and _the software platform_ of wikihow are free (as in coffee or speech)?
