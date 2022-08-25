@@ -10,7 +10,7 @@ title: User Input
 #. If you are using Visual Studio on Mac or Monodevelop, you may have to perform an additional step for this program to run as expected.
     
     - For Visual Studio on Mac, follow the instructions at <https://stackoverflow.com/a/49056993/> to have your project "Run on external console".
-    - For Monodevelop, follow the instructions at <https://stackoverflow.com/a/67185469/> to similarly have your projeect "Run on external console".
+    - For Monodevelop, follow the instructions at <https://stackoverflow.com/a/67185469/> to similarly have your project "Run on external console"[^noteonUbuntu].
 
     You may have to perform this operation for every solution where the user is supposed to enter values.
 
@@ -25,7 +25,7 @@ title: User Input
     You just witnessed an interaction between a program and the user!
 
 #. Read the source code carefully and make sure you understand all of it.
-#. Change the code so that the program would also ask for the user's last name and print both their first and last names.
+#. Change the code so that the program would also, in addition, ask for the user's last name and print both their first and last names.
 
 # Parsing Numeric Types
 
@@ -76,3 +76,12 @@ What happened?
     Later in the course you will learn how to handle untrustworthy user input
 #. Can you think of a change you can make to the code to accept ages of type `float` instead of `int`?  Try making that change!
 #. If you were to ask a user to enter an age without specifying its type, what `.Parse` should you use?
+
+
+[^noteonUbuntu]: If you are using Ubuntu and, after performing this step, you receive an error message
+
+    ```{text}
+    ApplicationName='/usr/lib/gnome-terminal/gnome-terminal-server', CommandLine='--app-id mono.develop.id14c27428bd5345f99daadebf684a2876', CurrentDirectory='', Native error= Cannot find the specified file
+    ```
+
+    then follow the instructions at <https://stackoverflow.com/a/65331098>.
