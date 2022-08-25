@@ -10,7 +10,7 @@ You are encouraged to open those links, if you have not already, to have a look 
 
 ## Literals and Variables
 
-This part should be first carried out without using an IDE, but with pen and paper.
+_This part should be first carried out without using an IDE, but with pen and paper._
 
 Assume we have the following statements:
 
@@ -30,9 +30,7 @@ Answer the following:
 
 ## Operations
 
-
-- Consider the following expressions, which use the variables we have declared above. For each of them, tell if they are legal and if so, give the result and its corresponding datatype.  The first two are given as examples:
-
+Consider the following expressions, which use the variables we have declared above. For each of them, tell if they are legal and if so, give the result and its corresponding datatype.  The first two are given as examples:
 
 Operation | Legal? | Result | Datatype
 --- | --- | --- | ---
@@ -46,7 +44,7 @@ Operation | Legal? | Result | Datatype
 `f / m` |   |  |  |
 `d * m` |   |  |  |
 
-
+<!--
 You can check your answers using an IDE: create a new project, copy the variable declarations and assignments, and  write your own statements to perform the calculations in the `Main` method.
 For instance, if you want to check that the result of `a + d` is of type `double`, write something like:
 
@@ -56,7 +54,6 @@ Console.WriteLine($"The value of d+f is {tempVariable1}");
 int tempVariable2 = a + d; // This line should give you an error.
 ```
 
-<!--
 There has to be a better way!
 https://stackoverflow.com/questions/11634079/how-can-i-get-the-data-type-of-a-variable-in-c
 Check the actual type!
@@ -84,7 +81,13 @@ Create a new project, and then do the following.
     Can you explain it?
 
 #. Your IDE is suggesting that we use a "cast" to "force" C# to store the value of the variable `floatVar` into the variable `intVar`.
-To do so, replace the previous statement with the following:
+To do so, replace the statement
+
+    ```
+    int intVar = floatVar; // This statement will give you an error
+    ```
+
+    with the following:
 
     ```
     int intVar = (int)floatVar; // This statement will compile
