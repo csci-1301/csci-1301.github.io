@@ -114,7 +114,7 @@ We will first create a new C\# project using the template for a "Console App".
 
 #. Look for "Console Application" option and check that the associated language is C\#. 
 
-    - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core) and can choose either, it does not make a difference for this class.
+    - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core) and can choose either, it does not make a difference for this class. **However**, you should make sure that you pick a .NET version strictly less than 6 (for instance, NET 5.0).
     - On Visual Studio, you would see something like:
     
     ![](img/create_project.png)
