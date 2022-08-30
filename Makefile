@@ -190,7 +190,6 @@ build/img: $(SOURCE_IMAGES_FILES)
 	mkdir -p $(BUILD_DIR)img/
 	make $(TARGET_IMAGES_FILES)
 
-
 # Individual videos:
 $(BUILD_DIR)vid/%: vid/%
 	rsync -av $< $@
@@ -391,7 +390,7 @@ labs-instructions: labs-html labs-pdf labs-odt labs-docx
 # We create the .csproj file.
 # New lines are escaped as \n
 # Single quotes are escaped as '\''
-# $ are escaped as $$ (if they are *not* to be interepreted, i.e escape $(MSBuildToolsVersion) but not $(notdir $*)
+# $ are escaped as $$ (if they are *not* to be interpreted, i.e escape $(MSBuildToolsVersion) but not $(notdir $*)
 # and \ are escaped as \\
 # The additional difficulty is that we want the csproj to include all the .cs files in the <Solution> folder
 # (so, not only the Program.cs, but also possible (multiple) <Class>.cs).
@@ -401,7 +400,7 @@ labs-instructions: labs-html labs-pdf labs-odt labs-docx
 #     3. We continue with the standard template of the file,
 #     4. Then, we append "<Compile Include="<name of the cs file>" />" for each cs file in the <Solution> folder,
 #     5. Finally, we append the required closing to the file.
-# Apparently, another way would be to use wilcards (cf. https://stackoverflow.com/a/9438419)
+# Apparently, another way would be to use wildcards (cf. https://stackoverflow.com/a/9438419)
 
 	(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n\t<StartAction>Project</StartAction>\n\t<ExternalConsole>true</ExternalConsole>\n\t<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n\t<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n\t<ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n\t<OutputType>Exe</OutputType>\n\t<AppDesignerFolder>Properties</AppDesignerFolder>\n\t<RootNamespace>$(notdir $*)</RootNamespace>\n\t<AssemblyName>$(notdir $*)</AssemblyName>\n\t<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n\t<FileAlignment>512</FileAlignment>\n\t<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugSymbols>true</DebugSymbols>\n\t<DebugType>full</DebugType>\n\t<Optimize>false</Optimize>\n\t<OutputPath>bin\Debug\</OutputPath>\n\t<DefineConstants>DEBUG;TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugType>pdbonly</DebugType>\n\t<Optimize>true</Optimize>\n\t<OutputPath>bin\Release\</OutputPath>\n\t<DefineConstants>TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup>\n\t<StartupObject>\n\t\t') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj; \
 	(cat $< | grep -oP '^\s*(public |private )?class \K.*') >> $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj \
@@ -422,7 +421,7 @@ labs-instructions: labs-html labs-pdf labs-odt labs-docx
 # Finaly, we can zip the folder:
 	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a ../$(notdir $@) $(notdir $*)*  -xr\!.vs -xr\!.directory
 # We compress the folder containing the sln and the folder containing the csproj and the code
-# But we excluse the .vs folder and .directory file
+# But we exclude the .vs folder and .directory file
 	
 
 $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
