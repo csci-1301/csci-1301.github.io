@@ -244,9 +244,10 @@ $(DOCS_DIR)exercises.md:$(DOCS_DIR)exercises_with_solutions.md
 
 ### Individual files
 # Can be used to compile doc files individually e.g.
-# make build/about.html
+# make build/docs/about.html
 #### Individual HTML files.
 $(BUILD_DIR)$(DOCS_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the original md source code.
@@ -254,14 +255,17 @@ $(BUILD_DIR)$(DOCS_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 
 #### Individual PDF files
 $(BUILD_DIR)$(DOCS_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	mkdir -p $(dir $@)
 	pandoc $(PANDOC_PDF) $< -o $@
 
 #### Individual ODT files
 $(BUILD_DIR)$(DOCS_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) $< -o $@
 
 #### Individual DOCX files
 $(BUILD_DIR)$(DOCS_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
+	mkdir -p $(dir $@)
 	pandoc $(PANDOC_DOCX) $< -o $@
 	
 ### Whole directories

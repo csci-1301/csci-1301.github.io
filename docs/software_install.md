@@ -69,7 +69,6 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
     If possible, check the box next to "Workload" → "Windows" → ".NET-Desktop Development", or to "Workload" → "Other Toolsets" → ".NET Core cross-platform development":
 
-
    ![](./../../img/install_option.jpeg){ width=80% }
 
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
