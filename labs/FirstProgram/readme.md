@@ -117,8 +117,7 @@ We will first create a new C\# project using the template for a "Console App".
     - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core) and can choose either, it does not make a difference for this class. **However**, you should make sure that you pick a .NET version strictly less than 6 (for instance, NET 5.0).
     - On Visual Studio, you would see something like:
     
-    ![](img/create_project.png)
-    ![](../../img/create_project.png)
+    ![](./../../img/create_project.png)
 <!-- TODO: two links included to please html and pdf, this is not correct, but a quick fix. -->
     
     Pick the _first_ item, which is for C\#.
@@ -126,8 +125,10 @@ We will first create a new C\# project using the template for a "Console App".
 #. Enter `MyFirstProject` as the name of the project.
 #. Enter `MyFirstSolution` as the name of the solution. 
 #. For location or solution directory: choose a good place to save your solution. The best pick would be a folder you created for this lab. 
-#. When selecting the framework, make sure you are using .NET 5.0 or lower. (Note: On VS for Mac, choose ".NET 3.1 Core")
-    ![](../../img/select_net.png)
+#. When selecting the framework, make sure you are using .NET 5.0 or lower. (Note: On VS for Mac, choose ".NET 3.1 Core"):
+
+    ![](./../../img/select_net.png)
+
 #. Click `Create.`
 #. Now answer the following:
  

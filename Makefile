@@ -145,7 +145,8 @@ MAKEFLAGS:= -j
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
 	-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
-        --metadata-file=$(METADATA_FILE)  --email-obfuscation=references
+        --metadata-file=$(METADATA_FILE)  --email-obfuscation=references \
+        -f markdown+rebase_relative_paths
 	
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -304,7 +305,7 @@ $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 	
-	# $(foreach var,$(apps),$(info In the loop running with make: $(var)))
+# $(foreach var,$(apps),$(info In the loop running with make: $(var)))
 # This last variable is a custom one, used in the template to add download links
 # to the pdf and odt versions.
 
