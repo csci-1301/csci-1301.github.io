@@ -97,7 +97,6 @@ We will now change (edit) our `EditedSolution` solution.
 Make a back up of what you just did: upload `EditedSolution` to your remote backup or copy it on your thumb drive. After saving the backup, close your IDE and make sure you can still open the solution.
 Re-downloading and re-opening solutions is a good way of making sure that your backup is correct.
 
-
 ## Creating Your First New Project
 
 This time you will not be given a project to load or to copy. You will start from scratch. If your IDE is currently open, exit your IDE application. Next create a new folder for this lab in your backup directory. 

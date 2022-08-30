@@ -146,8 +146,7 @@ MAKEFLAGS:= -j
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 	--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
 	-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
-        --metadata-file=$(METADATA_FILE)  --email-obfuscation=references \
-        -f markdown+rebase_relative_paths
+        --metadata-file=$(METADATA_FILE)  --email-obfuscation=references
 	
 # HTML build options
 # Path to HTML templates to use with pandoc
@@ -161,7 +160,8 @@ WEB_INDEX = index.md
 PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --standalone --template=$(WEBPATH)template.html
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex 
+PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex -f markdown+rebase_relative_paths
+
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
