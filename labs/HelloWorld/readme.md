@@ -70,7 +70,7 @@ You can save your project:
 
 Having _two_ backups is generally recommended.
 
-If you chose the "remote" option (i.e., using a server) and you are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/services/browse/official), etc.) on the lab computer: it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
+If you chose the "remote" option (i.e., using a server) and you are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/app-center?category=63), etc.) on the lab computer: it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
 Make sure to always upload your files before logging out of the computer.
 
 ## Making Sure You Have the Right Files
