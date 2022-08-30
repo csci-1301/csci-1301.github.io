@@ -126,7 +126,9 @@ We will first create a new C\# project using the template for a "Console App".
 #. Enter `MyFirstProject` as the name of the project.
 #. Enter `MyFirstSolution` as the name of the solution. 
 #. For location or solution directory: choose a good place to save your solution. The best pick would be a folder you created for this lab. 
-#. Leave the rest as is and click on "Create" or "Ok".
+#. When selecting the framework, make sure you are using .NET 5.0 or lower. (Note: On VS for Mac, choose ".NET 3.1 Core")
+    ![](../../img/select_net.png)
+#. Click `Create.`
 #. Now answer the following:
  
     #. A source code file appeared in the main window of your IDE. Compare this code with the code you studied previously: How are they different? How are they the same?
