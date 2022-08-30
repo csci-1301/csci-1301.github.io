@@ -51,7 +51,7 @@ SOURCE_DOC_FILES := $(shell find $(DOCS_DIR) -name '*.md')
 # List all the .md files in DOCS_DIR
 # Courtesy of https://stackoverflow.com/a/3774731
 
-TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .html, $(basename $(notdir $(SOURCE_DOC_FILES))))))
+TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix .html, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # 1. Look at the SOURCE_DOC_FILES, (e.g. "docs/about.md")
 # 2. Extract the name file using notdir (e.g. "about.md"),
 # 3. Extract the name of the file without the extension using basename (e.g. "about"),
@@ -61,13 +61,13 @@ TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(ad
 # This allows to automatically build the list of targets (the build/html files)
 # from the list of md files in docs.
 
-TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES))))))
+TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # Similar to TARGET_DOC_FILES_HTML, but with pdf.
 
-TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES))))))
+TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # Similar to TARGET_DOC_FILES_HTML, but with odt.
 
-TARGET_DOC_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_DOC_FILES))))))
+TARGET_DOC_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_DOC_FILES)))))
 # Similar to TARGET_DOC_FILES_HTML, but with docx.
 
 
@@ -160,8 +160,7 @@ WEB_INDEX = index.md
 PANDOC_HTML_PAGES = $(PANDOC_OPTIONS) -B $(WEBPATH)header.html -A $(WEBPATH)footer.html --default-image-extension=svg --standalone --template=$(WEBPATH)template.html
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex -f markdown+rebase_relative_paths
-
+PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex
 
 # ODT build options
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg 
@@ -246,7 +245,7 @@ $(DOCS_DIR)exercises.md:$(DOCS_DIR)exercises_with_solutions.md
 # Can be used to compile doc files individually e.g.
 # make build/docs/about.html
 #### Individual HTML files.
-$(BUILD_DIR)$(DOCS_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
@@ -254,17 +253,17 @@ $(BUILD_DIR)$(DOCS_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 # cf. https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html for an explanation of (@F).
 
 #### Individual PDF files
-$(BUILD_DIR)$(DOCS_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_PDF) $< -o $@
 
 #### Individual ODT files
-$(BUILD_DIR)$(DOCS_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) $< -o $@
 
 #### Individual DOCX files
-$(BUILD_DIR)$(DOCS_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	mkdir -p $(dir $@)
 	pandoc $(PANDOC_DOCX) $< -o $@
 	
@@ -317,17 +316,19 @@ $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 ##### Individual PDF files.
 $(BUILD_DIR)$(LABS_DIR)%/index.pdf: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_PDF) $< -o $@ 
+	pandoc $(PANDOC_PDF) -f markdown+rebase_relative_paths $< -o $@ 
+# The "-f markdown+rebase_relative_paths" option is needed to have the links
+# to images behave nicely.
 	
 ##### Individual ODT files.
 $(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_ODT) $< -o $@ 
+	pandoc $(PANDOC_ODT) -f markdown+rebase_relative_paths $< -o $@ 
 
 ##### Individual DOCX files.
 $(BUILD_DIR)$(LABS_DIR)%/index.docx: $(LABS_DIR)%/readme.md
 	mkdir -p $(dir $@)
-	pandoc $(PANDOC_DOCX) $< -o $@ 
+	pandoc $(PANDOC_DOCX) -f markdown+rebase_relative_paths $< -o $@ 
 
 #### Whole directories
 # Compile all the labs in a specific format, by calling the previous corresponding rule for each file.

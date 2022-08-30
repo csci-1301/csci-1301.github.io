@@ -15,7 +15,7 @@ _Students should understand the meaning and importance of the following notions.
     - Object-oriented paradigm and  data hiding
 - The difference between roles (user, tester, programmer)
 - How complex piece of software _reuse_ previous pieces.
-- The importance of security 🛡️
+- The importance of security 🛡
     - Types of attack (malware, phishing, social engineering, zero-day) 
     - Types of loss (loss of integrity / availability / confidentiality)
 
@@ -29,7 +29,7 @@ _Students should understand the meaning and importance of the following notions.
     - Reading the compiler's output, warning and error messages
     - Looking for documentation and help on-line and off-line
     - Testing
-    - Making sure the program is secure 🛡️
+    - Making sure the program is secure 🛡
     - Editing
     - Reusing
 - Using an IDE to
@@ -42,7 +42,7 @@ _The IDE used can be [MonoDevelop](https://www.monodevelop.com/) or [Visual Stud
 
 ## Computer Usage
 
-- How to download and install an IDE in a secure way 🛡️
+- How to download and install an IDE in a secure way 🛡
 - How to share and zip a project
 - How to use shortcuts ❓
 - How to look for on-line documentation
@@ -85,7 +85,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - Integers (`int`, `long`) – range and size, signature (`uint`)
 - Floating Point (`float`, `double`, and `decimal`)  – range, size and precision, 
 - Type casting (e.g. from `int` to `double`, and legal operations between different datatypes) and casting operator (e.g. `(int)`).
-- Overflow and underflow 🛡️
+- Overflow and underflow 🛡
 
 ## Booleans
 
@@ -186,10 +186,10 @@ and defining the term "accumulator"
 
 ## Class Conception
 
-- Need and interest of specification 🛡️
+- Need and interest of specification 🛡
 - UML Class diagram: interest, usage, and simple case (single class with attributes, methods and constructor).
 - Access modifier (private, public)
-- Principle of least privilege (private variables and methods where possible) 🛡️
+- Principle of least privilege (private variables and methods where possible) 🛡
 
 ## Class Implementation
 
@@ -220,7 +220,7 @@ and defining the term "accumulator"
 - Generating integers between ranges,
 - Generating double,
 - Generating a random word ❓
-- Potential problems with deterministic generators 🛡️
+- Potential problems with deterministic generators 🛡
 
 # Testing and Debugging
 
@@ -230,7 +230,7 @@ and defining the term "accumulator"
 
 # Interacting with Users
 
-- Input validation  🛡️
+- Input validation  🛡
 - `TryParse` in the `int` and `decimal` classes.
 - Reading a single character from the user ❓
 
@@ -257,7 +257,7 @@ Only one-dimensional arrays should be discussed.
 - `Length` property
 - `Resize` method ❓
 - Different syntaxes for initializing and declaring arrays ❓
-- Buffer overflow 🛡️
+- Buffer overflow 🛡
 
 # Exceptions 🔜
 

@@ -191,7 +191,7 @@ Use emoji shortcodes to label following course resources
 
 | Description | Shortcode | Icon |
 | :--- | --- | --- |
-| Security related aspects will be labelled as "security" | `:shield:` | 🛡️ |
+| Security related aspects will be labelled as "security" | `:shield:` | 🛡 |
 | Optional parts will be labelled as "optional" | `:question:` | ❓ |
 | Examples of common pitfalls | `:warning:` | ⚠️ |
 

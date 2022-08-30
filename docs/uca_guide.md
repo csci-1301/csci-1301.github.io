@@ -24,7 +24,7 @@ On this page, you will see the document in strange formatting (the formatting is
 
 - For a quick syntax guide in Markdown, I recommend this website: https://www.markdownguide.org/basic-syntax/
 
-!["Committing"](../img/uca_guide6.jpg) 
+!["Committing"](img/uca_guide6.jpg) 
 
 Once you have made the edits you wanted, you need to "commit" them; just like how you may write a paper, you need to submit it to the professor for them to see it. At the bottom of the page, there is a header box and a description box for you to describe what you did so others will know the changes you did (you don't need to go into *every* detail; just describe it generally, like "I fixed grammatical issues" or "Fixed code error"). There is also two buttons: **Commit directly to `main` branch** and **Create a new branch for this commit and start a pull request**. 
 
