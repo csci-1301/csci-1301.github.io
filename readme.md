@@ -22,6 +22,7 @@ View this resource on the web:
 
 Other directories are used for building and maintenance of this resources.
 
+<!--
 ## Cloning
 
 Please, be aware that the history of this project is quite long, and contains many binary files (mainly `pdf`): the repository with its full history weights about 3GiB.
@@ -30,6 +31,7 @@ Cloning the repository with limited depth in the history, using
 git clone --depth 1 git@github.com:csci-1301/csci-1301.github.io.git
 ```
 reduces the size to about 100MiB.
+-->
 
 ## Contributing to this resource
 
