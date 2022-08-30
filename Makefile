@@ -218,19 +218,19 @@ $(TARGET_BOOK_FILE).html: $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DI
 # to the pdf and odt versions, as well as a link to the directory with the source code.
 
 $(TARGET_BOOK_FILE).pdf:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $(TARGET_BOOK_FILE).pdf -M title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_PDF) -o $@ -M title="CSCI 1301 Book"
 	
 $(TARGET_BOOK_FILE).odt:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $(TARGET_BOOK_FILE).odt -M title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_ODT) -o $@ -M title="CSCI 1301 Book"
 
 $(TARGET_BOOK_FILE).docx:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $(TARGET_BOOK_FILE).docx -M title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $@ -M title="CSCI 1301 Book"
 
 $(TARGET_BOOK_FILE).epub:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_DIR)
-	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $(TARGET_BOOK_FILE).epub -M title="CSCI 1301 Book"
+	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $@ -M title="CSCI 1301 Book"
 
 # Whole book, in all formats.
-book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $(TARGET_BOOK_FILE).docx
+book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $(TARGET_BOOK_FILE).docx $(TARGET_BOOK_FILE).epub
 
 # -------------------------------
 ## Documentation Files
