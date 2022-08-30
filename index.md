@@ -41,27 +41,27 @@ Without Solution | With Solution
 
 ### Programming and Computer Usage
 
-- [Installing Software](software_install.html) - guide on how to install various IDE / software
-- [How to (Un)Zip Archives](zip_guide.html) - a short guide on how to zip (compress) or unzip (extract) .zip archives
-- [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of shortcuts you will likely use often
-- [Datatypes in C#](datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
+- [Installing Software](docs/software_install.html) - guide on how to install various IDE / software
+- [How to (Un)Zip Archives](docs/zip_guide.html) - a short guide on how to zip (compress) or unzip (extract) .zip archives
+- [Keyboard Shortcuts Cheat Sheet](docs/shortcuts.html) - list of shortcuts you will likely use often
+- [Datatypes in C#](docs/datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
 
 ### Useful Documentation
 
-- [Student Learning Outcomes](learning_outcomes.html) - expected student learning outcomes
-- [List of Topics](topics_list.html) - list of required topics
-- [Glossary](glossary.html) - glossary
+- [Student Learning Outcomes](docs/learning_outcomes.html) - expected student learning outcomes
+- [List of Topics](docs/topics_list.html) - list of required topics
+- [Glossary](docs/glossary.html) - glossary
 
 
 ### Academic Life
 
-- [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
-- [Survey and Statistical Analysis](survey.html) - a brief explanation of the purpose and benefits of surveying our students
-- [Undergraduate Course Assistant](uca.html) - Undergraduate Course Assistants  - What are they and how do I become one?
+- [Choosing Your Major](docs/choosing_major.html) - guide on how to pick your major       
+- [Survey and Statistical Analysis](docs/survey.html) - a brief explanation of the purpose and benefits of surveying our students
+- [Undergraduate Course Assistant](docs/uca.html) - Undergraduate Course Assistants  - What are they and how do I become one?
 
 ### About this Resource
 
-- [About](about.html) - brief explanation of the purpose and presentation of the authors and license
-- [Contributing Guidelines](contributing.html) - help improve this resource
-- [User Guide](user_guide.html) - details about this resource
+- [About](docs/about.html) - brief explanation of the purpose and presentation of the authors and license
+- [Contributing Guidelines](docs/contributing.html) - help improve this resource
+- [User Guide](docs/user_guide.html) - details about this resource
 

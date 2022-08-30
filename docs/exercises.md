@@ -147,14 +147,14 @@ The following three exercises **do not** require a computer.
 Make sure you feel ready before starting them, try to do them with limited time and without notes, and, if you want, check your answer using your IDE.
 
 #. 
-    This problem restates differently the content the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes, and ask you to answer various problems.
+    This problem restates the content of the [Order of Operations](https://csci-1301.github.io/book.html#order-of-operations) section of the lecture notes and ask you to answer various problems.
 
     There are 5 different arithmetic operations available in C#:
 
     --------------------------- ------------------------- -------------------------------------- ----------------------
             **Operation**         **Arithmetic Operator**         **Algebraic Expression**            **Expression**
             Addition                      `+`                           $x + 7$                     `myVar + 7`
-            Substraction                  `-`                           $x - 7$                    `myVar - 7`
+            Subtraction                  `-`                           $x - 7$                     `myVar - 7`
             Multiplication                `*`                         $x \times 7$                  `myVar * 7`
             Division                      `/`                      $x / 7$, or $x \div 7$           `myVar / 7`
     Remainder (a.k.a. modulo)             `%`                         $x \bmod 7$                   `myVar % 7`
@@ -173,7 +173,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     --------------------------------- ---------------
 
 
-    But things get complicated when multiple operators are used, but no parenthesis are indicated. For instance, should
+    But things can get complicated when multiple operators are used, but no parenthesis are indicated. For instance, should
 
     ```
     7 / 2 - 4 * 8 % 3
@@ -470,7 +470,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     #.  `(true && 4 >= 3) == false`
     #.  `13 <= 4 * 3 ||  !false`
 
-#. What is the relational operator used to determine whenever two values are different?
+#. What relational operator is used to determine whenever two values are different?
 
 #.  Give three relational operators, and then two logical operators.
 
@@ -771,16 +771,8 @@ They were given at week 4 and 7.
 
 ## Quiz 1
 
-#. (3 pts) Give three keywords.
-#. (4pts) Circle the correct identifiers:
+#. (3 pts) List three keywords.
 
-    - `%Rate`{.text}
-    - `static`{.text}
-    - `my-variable`{.text}
-    - `User.Input`{.text}
-    - `YoUrNaMe21`{.text}
-    - `test_train`{.text}
-    - `_myIdentifier`{.text}
 
 #. (4 pts) For each of the following, indicate if they are a "rule" of C# or a "convention" between programers by ticking the appropriate column. The first answer is given as an example.
 
@@ -792,12 +784,12 @@ They were given at week 4 and 7.
     Keywords cannot be used as identifiers. | 
     Each ".cs" file should contain exactly one class. | 
 
+	    
 #. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
-#. (5 pts) Write a series of statements that would 
-    #. declare an `int` variable called "myAge",
-    #. assign your age to that variable, 
-    #. display "My age is ", the value of the "myAge" variable, a period, and finally a new line.
+
+	
 #. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+
 
 ## Quiz 2
 
@@ -823,3 +815,12 @@ They were given at week 4 and 7.
     
     Your program should correctly identify 2000 and 2400 as leap years, and 1800, 1900, 2100, 2200, 2300, or 2500 as *not* leap years.
 
+	   
+## Quiz 3
+
+#. (7 pts) Write a `switch` statement that sets a `decimal` `price` variable to 1.50 if a string variable `iceCreamFlavor` contains `"vanilla"`, 1.75 if it contains `"chocolate"` or `"mint"`, and -1 otherwise.
+#. (2 pts) Write a statement that applies the increment operator in prefix position to a variable `test`.
+	
+#. (8 pts) Write a `while` loop that displays "1 2 3 4 5 6 7 8 9 10 11 12 13 " (spaces included!) at the screen.
+
+#. (+3+2 pt, bonus) Give a program that displays every multiple of 3 between 0 and 10,000 (that is, "0 3 6 9 12 … 9999"). Bonus (again!): display how many such numbers there are in total.

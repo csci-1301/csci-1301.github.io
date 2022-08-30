@@ -26,7 +26,7 @@ Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/
 
 The authors are supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/about/r19_grantees) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)).
 
-[![](img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
+[![](../../img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
 
 This project could not have been without the support of the [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and of the [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
 

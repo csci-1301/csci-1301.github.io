@@ -51,22 +51,23 @@ SOURCE_DOC_FILES := $(shell find $(DOCS_DIR) -name '*.md')
 # List all the .md files in DOCS_DIR
 # Courtesy of https://stackoverflow.com/a/3774731
 
-TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix .html, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .html, $(basename $(notdir $(SOURCE_DOC_FILES))))))
 # 1. Look at the SOURCE_DOC_FILES, (e.g. "docs/about.md")
 # 2. Extract the name file using notdir (e.g. "about.md"),
 # 3. Extract the name of the file without the extension using basename (e.g. "about"),
 # 4. Add the suffix ".html" (e.g. "about.html"),
-# 5. Add the prefix "build" (e.g. "build/about.html").
+# 5. Add the prefix "docs" (e.g. "docs/about.html").
+# 6. Add the prefix "build" (e.g. "build/docs/about.html").
 # This allows to automatically build the list of targets (the build/html files)
 # from the list of md files in docs.
 
-TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES))))))
 # Similar to TARGET_DOC_FILES_HTML, but with pdf.
 
-TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+TARGET_DOC_FILES_ODT := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .odt, $(basename $(notdir $(SOURCE_DOC_FILES))))))
 # Similar to TARGET_DOC_FILES_HTML, but with odt.
 
-TARGET_DOC_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_DOC_FILES)))))
+TARGET_DOC_FILES_DOCX := $(addprefix $(BUILD_DIR), $(addprefix $(DOCS_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_DOC_FILES))))))
 # Similar to TARGET_DOC_FILES_HTML, but with docx.
 
 
@@ -139,7 +140,7 @@ MAKEFLAGS:= -j
 # The flags are explained at https://pandoc.org/MANUAL.html
 # The only "custom" parts are:
 # - the lua filter and the -M option that follows, that allows to have all code displayed as C# by default,
-# - the -M date parameter, that sets the timezone and language to avoid inconsistencies accross systems,
+# - the -M date parameter, that sets the timezone and language to avoid inconsistencies across systems,
 
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
@@ -245,22 +246,22 @@ $(DOCS_DIR)exercises.md:$(DOCS_DIR)exercises_with_solutions.md
 # Can be used to compile doc files individually e.g.
 # make build/about.html
 #### Individual HTML files.
-$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)$(DOCS_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the original md source code.
 # cf. https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html for an explanation of (@F).
 
 #### Individual PDF files
-$(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)$(DOCS_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_PDF) $< -o $@
 
 #### Individual ODT files
-$(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)$(DOCS_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_ODT) $< -o $@
 
 #### Individual DOCX files
-$(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)$(DOCS_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	pandoc $(PANDOC_DOCX) $< -o $@
 	
 ### Whole directories
@@ -439,4 +440,4 @@ all: build
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$var is [${TARGET_IMAGES_FILES}])
+$(info $$var is [${TARGET_DOC_FILES_HTML}])

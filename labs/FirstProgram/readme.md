@@ -118,7 +118,6 @@ We will first create a new C\# project using the template for a "Console App".
     - On Visual Studio, you would see something like:
     
     ![](./../../img/create_project.png)
-<!-- TODO: two links included to please html and pdf, this is not correct, but a quick fix. -->
     
     Pick the _first_ item, which is for C\#.
 
