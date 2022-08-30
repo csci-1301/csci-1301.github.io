@@ -272,9 +272,6 @@ Only one-dimensional arrays should be discussed.
 - Manipulating binary and text files
 - `File` class ❓
 
-
-
-
 <!--     
     File I/O
     Struct

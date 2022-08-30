@@ -276,7 +276,7 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 ### Installing required dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/pull.yaml#L27-L30), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L34-L35), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 

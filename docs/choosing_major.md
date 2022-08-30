@@ -27,7 +27,7 @@ The following links detail these three degrees and explain the benefits of each:
 - [Computer Science vs Information Systems/Technology](https://www.geteducated.com/careers/521-computer-information-systems-vs-computer-science)
 - [Degrees that Pay You Back (from Wall Street Journal)](http://online.wsj.com/public/resources/documents/info-Degrees_that_Pay_you_Back-sort.html)
 
-Additionally, Augusta University has a ["Planning Your Academic Life"](https://www.augusta.edu/advising/planning.php) page that you may find useful.
+Additionally, Augusta University has [more information on its adivising page](https://www.augusta.edu/advising/).
 
 # Summary
 

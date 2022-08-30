@@ -19,7 +19,7 @@ This is an excellent practice that can also be performed "by hand", as explained
 As you progress in this class, you will be asked more and more to download and execute code hosted [in our repository](https://github.com/csci-1301/csci-1301.github.io/).
 How can you tell that you can trust this code?
 
-We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using [two-factor authentication](https://docs.github.com/en/github/authenticating-to-github/about-two-factor-authentication) where every action is tracked using [versioning](https://en.wikipedia.org/wiki/Software_versioning).
+We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using [two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) where every action is tracked using [versioning](https://en.wikipedia.org/wiki/Software_versioning).
 Concretely, this means that only somebody who manages to steal your instructor's credentials and their phone, and thwart all the other instructors' vigilance, would be able to host malicious code on our platform: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.
 
 As often, security is not absolute, but aims at providing reasonable confidence.
@@ -91,7 +91,7 @@ Unfortunately, MonoDevelop offers pre-packaged release only for linux distributi
 You can download Rider [from their website](https://www.jetbrains.com/rider/download/), for any operating system.
 Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill out this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
 
-Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2021.1.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
+Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
 In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
 ### Installing Geany On Your Own Computer
