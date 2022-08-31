@@ -2,11 +2,12 @@
 
 [![Build](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml/badge.svg)](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml)
 
-This is source code repository for CSCI 1301 course resources.
+This is source code repository for [Augusta University's CSCI 1301 course](http://catalog.augusta.edu/preview_course_nopop.php?catoid=43&coid=192998) resources.
 
 View this resource on the web:
 
 - [csci-1301.github.io](https://csci-1301.github.io)
+- [mirror on manifold](https://alg.manifoldapp.org/read/csci-1301-book/)
 - [mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)
 - [mirror on box.com](https://augustauniversity.box.com/s/omis1adqth97bouvwxfwmlhwyiv6gwo1)
 
