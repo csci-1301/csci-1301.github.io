@@ -142,6 +142,7 @@ We will first create a new C\# project using the template for a "Console App".
 
 Now you will start writing your own code. We'll start by writing a very familiar instruction to display a message on the screen.
 
+#. Before editing your code, make sure you can actually compile it first![^noteonMonod].
 #. Place the cursor inside the `Main` method, after `static void Main(string[] args)` and the opening brace (i.e.`{`). 
 #. Create a new line.
 #. Type `Console` then pause 
@@ -198,3 +199,12 @@ The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>
 #. Hit "Replace All" and note the modifications in your program.
 #. As you can see, this is a really useful feature of your IDE, but also a really dangerous one.
 If you were to replace all the `*` characters with `!` in all the programs we wrote so far, what could possibly go wrong?
+
+
+[^noteonMonod]: If you are using Monodevelop and are prompted with the message
+
+    ```text
+    Your project does not reference ".NETFramework,Version=v4.7" in the "TargetFrameworks" property of your project file and then re-run NuGet restore.
+    ```
+    
+    Then, do the following: in the project in monodevelop, right click on the project, go to options, go to general, and change the target framework to the appropriate framework version described in the error. Clean the solution then go to the project's folder. Delete both the bin and obj folders. Build solution and run it.
