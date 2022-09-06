@@ -1,6 +1,8 @@
 ---
-title: Precise Rectangle and Circle Class
+title: Precise Rectangle
 ---
+
+In this lab you will first edit an existing program then create a new program "from scratch". You will also explore C\# documentation and learn new useful IDE features.
 
 # Writing Your Own PreciseRectangle Class
 
@@ -11,7 +13,7 @@ This should be a fairly straightforward exercise, that mostly re-enforce what yo
 ## Implementation
 
 To implement your class in your IDE, you are given two methods below: you can edit the pre-existing project, or start "fresh".
-It is recommended to pick the one you feel the most comfortable with (you will get an opportunity to start "fresh" in the next problem in any case).
+It is recommended to pick the one you feel the most comfortable with, and then to try the other technique: you should know both how to edit existing projects and to start from scratch.
 
 ### Edit the Pre-Existing Project
 
@@ -42,8 +44,9 @@ Then, select "Class" in the dialog box, write "PreciseRectangle.cs" as the name 
         - one method `Swap` to swap the length and the width of a precise rectangle,
         - one method `MultiplyRectangle` to multiply the length and width of a precise rectangle by a factor given in the argument as an integer.
 
-#. Declare and manipulate rectangles with floating-point (i.e. `double`) values for the width and the length in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
+#. Declare and manipulate rectangles with floating-point (i.e., `double`) values for the width and the length in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
 
+<!--
 # Writing A Circle Class
 
 This time, you will have to start your project "from scratch" and shouldn't try to edit a previous program.
@@ -72,12 +75,13 @@ It should be $3.14159265358979$.
 #. Use the format specifier `N` to round the circumference.
 
 You can find a possible solution to this problem [in this archive](Circle_Solution.zip).
+-->
 
 # Pushing Further (Optional)
 
 The following is an independent task, to widen your understanding of this class, and to prepare you for the next labs.
+Now that you know more about naming conventions, have a look at [Microsoft's naming guideline](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines), and particularly at
 
-#. Now that you know more about naming conventions, have a look at [Microsoft's naming guideline](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines), and particularly at
 - [the documentation on general naming conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions),
 - and [the documentation on capitalization conventions](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions).
 
