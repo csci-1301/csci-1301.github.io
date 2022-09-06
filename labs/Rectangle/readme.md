@@ -4,23 +4,26 @@ title: Introduction to Classes -- Rectangle Class
 
 # Using a Pre-Defined Class
 
-This lab will guide you in your first manipulation of a programmer-defined class. The last part is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
+This lab will guide you in your first manipulation of a programmer-defined class. [The last part](#enriching-rectangle.cs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
 
 ## Manipulating Two `.cs` Files at a Time
 
 #. Download [the Rectangle project](Rectangle.zip), extract it, and open it with your IDE.
-#. Note that in the "Solution Explorer", there are two `cs` files listed: `Program.cs` and `Rectangle.cs`.
-#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what was presented during the lecture.
+#. Note that in the "Solution Explorer", there are two `cs` files listed: `Program.cs` and `Rectangle.cs`:
+
+    ![](./../../img/solution_explorer_rectangle.png)
+
+#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what was presented during the lecture^[You can also refer to [the lecture notes](https://csci-1301.github.io/book.html#writing-our-first-class).].
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
 #. Compile and execute the code.
 #. Now, do the following:
-  - Introduce a syntactical error in `Program.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Restore the program to its previous state.
-  - Introduce a syntactical error in `Rectangle.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Undo the modification.
+  - Introduce a syntactical error in `Program.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Undo the modification.
+  - Introduce a syntactical error in `Rectangle.cs` (e.g., remove a `;`), and try to build the solution: what do you observe?  Undo the modification.
   - Add `length = 12;` in the main method of `Program.cs` and try to build the solution: what do you observe? Undo the modification.
 
 ## Enriching `Program.cs`
 
-Edit the `Main` method of `Program.cs` by adding at its end statements that perform the following:
+Edit `Program.cs` by adding at the end of its `Main` method statements that perform the following:
 
 #. Create a second `Rectangle` object and set its length and width to 3.
 #. Create a third `Rectangle` object and ask the user to specify its length and width. Display the area of this rectangle on the screen.

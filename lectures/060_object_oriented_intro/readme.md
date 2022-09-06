@@ -334,13 +334,17 @@ Let's look at each part of this code in order.
     - Process: Determine program requirements $\rightarrow$ Make UML diagrams $\rightarrow$ Write code based on UML $\rightarrow$ Test and debug program
 - UML Class Diagram elements
 
-    |                     **ClassName**                  |
-    | -------------------------------------------------- |
-    | - attribute: `type`                                |
-    | -------------------------------------------------- |
-    | + SetAttribute(attributeParameter: `type`): `void` |
-    | + GetAttribute(): `type`                           |
-    | + Method(paramName: `type`): `type`                |
+    ```text
+    |=====================================================|
+    |                    **ClassName**                    |
+    |-----------------------------------------------------|
+    | - attribute : type                                  |
+    |-----------------------------------------------------|
+    | + SetAttribute(attributeParameter: `type`): `void`  |
+    | + GetAttribute(): `type`                            |
+    | + Method(paramName: `type`): `type`                 |
+    |=====================================================|
+    ```
 
     - Top box: Class name, centered
     - Middle box: Attributes (i.e. instance variables)
@@ -355,6 +359,8 @@ Let's look at each part of this code in order.
         - Plus sign at beginning of line indicates "public", which is what we want for methods
 - UML Diagram for the Rectangle class
 
+    ```text
+    |======================================|
     |             **Rectangle**            |
     | ------------------------------------ |
     | - width: `int`                       |
@@ -365,7 +371,9 @@ Let's look at each part of this code in order.
     | + SetWidth(widthParameter: `int`)    |
     | + GetWidth(): `int`                  |
     | + ComputeArea(): `int`               |
-
+    |======================================|
+    ```
+    
     - Note that when the return type of a method is `void`, we can omit it in UML
     - In general, attributes will be private (`-` sign) and methods will be public (`+` sign), so you can expect most of your classes to follow this pattern (`-`s in the upper box, `+`s in the lower box)
     - Note that there is no code or "implementation" described here: it doesn't say that `ComputeArea` will multiply `length` by `width`

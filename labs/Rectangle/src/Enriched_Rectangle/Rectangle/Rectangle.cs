@@ -3,6 +3,22 @@
  * A class: the Rectangle class
  * 
  * Solution File: see lines 56 and up.
+ * UML diagram:
+    |======================================|
+    |             **Rectangle**            |
+    | ------------------------------------ |
+    | - width: `int`                       |
+    | - length: `int`                      |
+    | ------------------------------------ |
+    | + SetLength(lengthParameter: `int`)  |
+    | + GetLength(): `int`                 |
+    | + SetWidth(widthParameter: `int`)    |
+    | + GetWidth(): `int`                  |
+    | + ComputeArea(): `int`               |
+    | + ComputePerimeter(): `int`          |
+    | + DoubleRectangle(): `void`          |
+    | + Swap(): `void`                     |
+    |======================================|
  */
 
 class Rectangle

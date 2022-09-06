@@ -1,6 +1,20 @@
 ﻿/*
  * CSCI 1301
  * A class: the Rectangle class
+ * 
+ * UML diagram:
+    |======================================|
+    |             **Rectangle**            |
+    | ------------------------------------ |
+    | - width: `int`                       |
+    | - length: `int`                      |
+    | ------------------------------------ |
+    | + SetLength(lengthParameter: `int`)  |
+    | + GetLength(): `int`                 |
+    | + SetWidth(widthParameter: `int`)    |
+    | + GetWidth(): `int`                  |
+    | + ComputeArea(): `int`               |
+    |======================================|
  */
 
 class Rectangle

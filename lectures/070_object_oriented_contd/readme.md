@@ -46,6 +46,8 @@
 
 - UML Diagram:
 
+    ```text
+    |=========================================|
     |                **ClassRoom**            |
     | --------------------------------------- |
     | - building: `string`                    |
@@ -55,7 +57,9 @@
     | + GetBuilding(): `string`               |
     | + SetNumber(numberParameter: `int`)     |
     | + GetNumber(): `int`                    |
-
+    |=========================================|
+    ```
+    
     - There are two attributes: the name of the building (a string) and the room number (an `int`)
     - Each attribute will have a "getter" and "setter" method
 
@@ -434,17 +438,21 @@
     - Annotation "\<\<constructor\>\>" is nice, but not necessary: if the method name matches the class name, it is a constructor
 - Example for ClassRoom:
 
-    |                                   **ClassRoom**                              |
-    | ---------------------------------------------------------------------------- |
-    | - building: `string`                                                         |
-    | - number: `int`                                                              |
-    | ---------------------------------------------------------------------------- |
-    | + \<\<constructor\>\> ClassRoom(buildingParam: `string`, numberParam: `int`) |
-    | + SetBuilding(buildingParam : `string`)                                      |
-    | + GetBuilding(): `string`                                                    |
-    | + SetNumber(numberParameter: `int`)                                          |
-    | + GetNumber(): `int`                                                         |
-
+    ```text
+    |==========================================================================|
+    |                                   **ClassRoom**                          |
+    | ------------------------------------------------------------------------ |
+    | - building: `string`                                                     |
+    | - number: `int`                                                          |
+    | ------------------------------------------------------------------------ |
+    | + <<constructor>> ClassRoom(buildingParam: `string`, numberParam: `int`) |
+    | + SetBuilding(buildingParam : `string`)                                  |
+    | + GetBuilding(): `string`                                                |
+    | + SetNumber(numberParameter: `int`)                                      |
+    | + GetNumber(): `int`                                                     |
+    |==========================================================================|
+    ```
+    
 ## Properties
 
 - Attributes are implemented with a standard "template" of code
@@ -545,11 +553,15 @@
 - Note that the access modifier (+ or -) is for the property, not the instance variable, so it is + if the property is `public` (which it usually is)
 - Example for `Rectangle`, assuming we converted both attributes to use properties instead of getters and setters:
 
-    |             **Rectangle**            |
-    | ------------------------------------ |
-    | + \<\<property\>\> Width: `int`      |
-    | + \<\<property\>\> Length: `int`     |
-    | ------------------------------------ |
-    | + ComputeArea(): `int`               |
-
+    ```text
+    |==================================|
+    |             **Rectangle**        |
+    | -------------------------------- |
+    | + <<property>> Width: `int`      |
+    | + <<property>> Length: `int`     |
+    | -------------------------------- |
+    | + ComputeArea(): `int`           |
+    |==================================|
+    ```
+    
 - We no longer need to write all those setter and getter methods, since they are "built in" to the properties
