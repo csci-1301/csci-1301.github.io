@@ -214,7 +214,7 @@ Console.WriteLine("Done");
         Console.WriteLine(number++);
     ```
 
-- If you don't intend your loop to run forever, you must ensure the statements in the loop's body do something to *change a variable* in the loop condition, otherwise the condition will stay true
+- If you do not intend your loop to run forever, you must ensure the statements in the loop's body do something to *change a variable* in the loop condition, otherwise the condition will stay true
 
 - For example, this loop will run forever because the loop condition uses the variable `counter`, but the loop body does not change the value of `counter`:
 

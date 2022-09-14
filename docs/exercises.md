@@ -788,7 +788,7 @@ They were given at week 4 and 7.
 #. (4 pts) Write a statement that would display, "Hi Mom!" (*with* the quotes) followed by a new line on the screen.
 
 	
-#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+#. (Bonus) Give examples of situations where the adage "_Spaces and new lines do not matter in programs_" is actually erroneous.
 
 
 ## Quiz 2

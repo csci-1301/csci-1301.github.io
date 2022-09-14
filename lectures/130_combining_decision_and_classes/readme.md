@@ -15,7 +15,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
 - Recall that getters and setters are used to implement **encapsulation**: an object's attributes (instance variables) can only be changed by code in that object's class
 
-- For example, this Item class (which represents an item for sale in a store) has two attributes, a price and a description. Code outside the Item class (e.g. in the Main method) can only change these attributes by calling `SetPrice` and `SetDescription`
+- For example, this Item class (which represents an item for sale in a store) has two attributes, a price and a description. Code outside the Item class (e.g. in the `Main` method) can only change these attributes by calling `SetPrice` and `SetDescription`
 
     ```
     !include code/item.cs
@@ -735,7 +735,7 @@ There are several ways that `while` loops are useful when working with classes a
 
 ### The Room Class
 
-The class and its associated Main method presented [in this archive](/labs/ValidatingInput/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
+The class and its associated `Main` method presented [in this archive](/labs/ValidatingInput/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
 It also exemplifies how a method can take _an object_ as a parameter with `InSameBuilding`.
 
 The corresponding UML diagram is:
@@ -760,7 +760,7 @@ The corresponding UML diagram is:
 
 ### The Loan Class
 
-Similarly, this class and its associated Main method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can download the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
+Similarly, this class and its associated `Main` method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can download the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
 
 ```
 using System;

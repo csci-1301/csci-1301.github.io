@@ -15,7 +15,7 @@ An array can be:
 Arrays are useful, for instance,
 
 - When you want to store a collection of related values,
-- When you don't know in advance how many variables we need.
+- When you do not know in advance how many variables we need.
 - When you need too many variables of the same type.
 
 ## Single-Dimensional Arrays

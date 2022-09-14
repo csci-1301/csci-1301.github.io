@@ -168,10 +168,10 @@ Console.WriteLine("Goodbye");
     - First, the program tests the condition `usCitizen == true`, and if it is true, the code in the first "if block" is executed
     - Within this if block is another `if` statement that tests the condition `age >= 18`. This represents checking the user's age after determining that he/she is a US citizen - execution only reaches this second `if` statement if the first one evaluated to true. So "You can vote" is printed if both `usCitizen == true` and `age >= 18`
     - If the condition `usCitizen == true` is false, the if block is skipped and the else block is executed instead, so the entire inner `if` statement is never executed -- the user's age doesn't matter if he/she isn't a citizen
-    - Note that the condition `usCitizen == true` could also be expressed by just writing the name of the variable `usCitizen` (i.e. the if statement would be `if(usCitizen)`), because `usCitizen` is a `bool` variable. We don't need the equality comparison operator to test if it is `true`, because an `if` statement already tests whether its condition is `true` (and a `bool` variable by itself is a valid condition)
+    - Note that the condition `usCitizen == true` could also be expressed by just writing the name of the variable `usCitizen` (i.e. the if statement would be `if(usCitizen)`), because `usCitizen` is a `bool` variable. We do not need the equality comparison operator to test if it is `true`, because an `if` statement already tests whether its condition is `true` (and a `bool` variable by itself is a valid condition)
     - Note that indentation helps you match up an `else` block to its corresponding `if` block. The meaning of `else` depends on which `if` statement it goes with: the "outer" `else` will be executed if the condition `usCitizen == true` is false, while the "inner" `else` will be executed if the condition `age >= 18` is false.
 
-- Nested `if` statements don't need to be the *only* code in the if block; you can still write other statements before or after the nested `if`
+- Nested `if` statements do not need to be the *only* code in the if block; you can still write other statements before or after the nested `if`
 - For example, we could change our voting program so that it only asks for the user's age if he/she is a citizen:
 
     ```

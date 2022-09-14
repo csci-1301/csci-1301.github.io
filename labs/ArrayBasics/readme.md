@@ -57,7 +57,7 @@ Console.WriteLine(myArray);
 
 Now answer the following questions.
 
-#. One of these statements is not "incorrect" in the sense that it won't prevent your program from executing, but it is not doing what you would have expected: which one?
+#. One of these statements is not "incorrect" in the sense that it will not prevent your program from executing, but it is not doing what you would have expected: which one?
 #. Can you read and understand the error messages you obtained for the others?
 
 # Second Array Manipulation

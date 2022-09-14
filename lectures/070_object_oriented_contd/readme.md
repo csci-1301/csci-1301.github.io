@@ -17,7 +17,7 @@
 
 - This works because the instance variables `length` and `width` have a default value of 0, even if you never assign them a value
 
-- Local variables, like the ones we write in the Main method, do *not* have default values. You must assign them a value before using them in an expression.
+- Local variables, like the ones we write in the `Main` method, do *not* have default values. You must assign them a value before using them in an expression.
 
     - For example, this code will produce a compile error:
 
@@ -99,7 +99,7 @@
 - Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
 - In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
 - Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
-- If you don't write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
+- If you do not write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
 - The default constructor initializes each instance variable to its default value -- that's where default values come from
 
 #### Writing a constructor
@@ -118,7 +118,7 @@
 - This method has *no return type*, not even `void`. It does not have a `return` statement either
 - For `ClassRoom`, this means the constructor's header starts with `public ClassRoom`
     - You can think of this method as "combining" the return type and name. The name of the method is `ClassRoom`, and its output is of type `ClassRoom`, since the return value of `new ClassRoom()` is always a `ClassRoom` object
-    - You don't actually write a `return` statement, though, because `new` will always return the new object after calling the constructor
+    - You do not actually write a `return` statement, though, because `new` will always return the new object after calling the constructor
 - A custom constructor usually has parameters that correspond to the instance variables: for `ClassRoom`, it has a `string` parameter named `buildingParam`, and an `int` parameter named `numberParam`
     - Note that when we write a method with two parameters, we separate the parameters with a comma
 - The body of a constructor must assign values to **all** instance variables in the object
@@ -177,7 +177,7 @@
 
 #### Writing multiple constructors
 
-- Remember that if you don't write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
+- Remember that if you do not write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
 
 - Once you add a constructor to your class, C# will **not** generate a default constructor
     - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
@@ -222,7 +222,7 @@
 
         The first statement calls the two-parameter constructor we wrote, since it has a `string` argument and an `int` argument (in that order), and those match the parameters `(string buildingParam, int numberParam)`. The second statement calls the zero-parameter constructor since it has no arguments.
 
-    - If the arguments don't match any constructor, it is still an error:
+    - If the arguments do not match any constructor, it is still an error:
 
         ```
         ClassRoom csci = new ClassRoom(356, "Allgood East");
@@ -230,21 +230,21 @@
 
         This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
 
-## Writing ToString Methods
+## Writing `ToString` Methods
 
-- ToString recap
+- `ToString` recap
     - String interpolation automatically calls the `ToString` method on each variable or value
     - `ToString` returns a string "equivalent" to the object; for example, if `num` is an `int` variable containing 42, `num.ToString()` returns "42".
     - C# datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
-- Writing a ToString method
+- Writing a `ToString` method
     - To add a `ToString` method to your class, you must write this header: `public override string ToString()`
     - The access modifier must be `public` (so other code, like string interpolation, can call it)
     - The return type must be `string` (ToString must output a string)
-    - It must have no parameters (the string interpolation code won't know what arguments to supply)
+    - It must have no parameters (the string interpolation code will not know what arguments to supply)
     - The keyword `override` means your class is "overriding," or providing its own version of, a method that is already defined elsewhere -- `ToString` is defined by the base `object` type, which is why string interpolation "knows" it can call `ToString` on any object
         - If you do not use the keyword `override`, then the pre-existing `ToString` method (defined by the base `object` type) will be used instead, which only returns the name of the class
-    - The goal of ToString is to return a "string representation" of the object, so the body of the method should use all of the object's attributes and combine them into a string somehow
-    - Example ToString method for `ClassRoom`:
+    - The goal of `ToString` is to return a "string representation" of the object, so the body of the method should use all of the object's attributes and combine them into a string somehow
+    - Example `ToString` method for `ClassRoom`:
 
         ```
         public override string ToString()
@@ -256,12 +256,12 @@
         - There are two instance variables, `building` and `number`, and we use both of them
         - A natural way to write the name of a classroom is the building name followed by the room number, like "University Hall 124", so we concatenate the variables in that order
         - Note that we add a space between the variables
-        - Note that `building` is already a string, but `number` is an `int`, so string concatenation will implicitly call `number.ToString()` -- ToString methods can call other ToString methods
+        - Note that `building` is already a string, but `number` is an `int`, so string concatenation will implicitly call `number.ToString()` -- `ToString` methods can call other `ToString` methods
         - Another way to write the body would be `return $"{building} {number}";`
-- Using a ToString method
-    - Any time an object is used in string interpolation or concatenation, its ToString method will be called
-    - You can also call ToString by name using the "dot operator," like any other method
-    - This code will call the ToString method we just wrote for `ClassRoom`:
+- Using a `ToString` method
+    - Any time an object is used in string interpolation or concatenation, its `ToString` method will be called
+    - You can also call `ToString` by name using the "dot operator," like any other method
+    - This code will call the `ToString` method we just wrote for `ClassRoom`:
 
         ```
         ClassRoom csci = new ClassRoom("Allgood East", 356);

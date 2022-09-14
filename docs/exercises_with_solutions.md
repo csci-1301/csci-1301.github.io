@@ -2093,7 +2093,7 @@ They were given at week 4 and 7.
 	```
 	</details>
 	
-#. (Bonus) Give examples of situations where the adage "_Spaces and new lines don't matter in programs_" is actually erroneous.
+#. (Bonus) Give examples of situations where the adage "_Spaces and new lines do not matter in programs_" is actually erroneous.
 
     <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. `static void Main()` and `int days = 7;`). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
     

@@ -125,7 +125,7 @@ When the computer executes the second line of this code, it reads the variable `
 
 - Example: `(float) 2.8` or `(int) radius`
 
-- Explicit conversions are often used when you (the programmer) know the conversion is actually "safe" -- data won't actually be lost
+- Explicit conversions are often used when you (the programmer) know the conversion is actually "safe" -- data will not actually be lost
 
     - For example, in this code, we know that 2.886 is within the range of a `float`, so it is safe to convert it to a `float`:
 
@@ -166,7 +166,7 @@ When the computer executes the second line of this code, it reads the variable `
 
     - Casting from a larger integer to a smaller integer: the most significant *bits* are truncated -- remember that numbers are stored in binary format
 
-    - This can cause weird results, since the least-significant *bits* of a number in binary don't correspond to the least significant *digits* of the equivalent base-10 number
+    - This can cause weird results, since the least-significant *bits* of a number in binary do not correspond to the least significant *digits* of the equivalent base-10 number
 
     - Casting from another floating point type to `decimal`: Either value is stored precisely (no rounding), or *program crashes* with `System.OverflowException` if value is larger than `decimal`'s maximum value:
 
@@ -251,7 +251,7 @@ Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatype
 - Cast operator is higher priority than all binary operators
     - Example: `double share = (double) numCookies / numPeople;`
         - Cast operator is evaluated first, converts `numCookies` to a `double`
-        - Division is evaluated next, but operand types don't match
+        - Division is evaluated next, but operand types do not match
         - `numPeople` is implicitly converted to `double` to make operand types match
         - Then division is evaluated, result is 21.0 / 6.0 = 3.5
 - Parentheses always increase priority, even with casts

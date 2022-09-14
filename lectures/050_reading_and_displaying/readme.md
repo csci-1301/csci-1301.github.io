@@ -122,7 +122,7 @@
 #### Converting from numbers to strings
 
 - As we saw in a previous lecture (Datatypes and Variables), the `Console.WriteLine` method needs a `string` as its argument
-- If the variable you want to display is not a `string`, you might think you could cast it to a `string`, but that won't work -- there is no explicit conversion from `string` to numeric types
+- If the variable you want to display is not a `string`, you might think you could cast it to a `string`, but that will not work -- there is no explicit conversion from `string` to numeric types
     - This code:
 
         ```

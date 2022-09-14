@@ -19,7 +19,7 @@ This lab will guide you in your first manipulation of a programmer-defined class
 #. Now, do the following:
   - Introduce a syntactical error in `Program.cs` (e.g., remove a `;`), and try to build the solution: what do you observe? Undo the modification.
   - Introduce a syntactical error in `Rectangle.cs` (e.g., remove a `;`), and try to build the solution: what do you observe?  Undo the modification.
-  - Add `length = 12;` in the main method of `Program.cs` and try to build the solution: what do you observe? Undo the modification.
+  - Add `length = 12;` in the `Main` method of `Program.cs` and try to build the solution: what do you observe? Undo the modification.
 
 ## Enriching `Program.cs`
 

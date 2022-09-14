@@ -58,7 +58,7 @@ _The students should understand all the components of a simple "Hello World" pro
 - blank lines and spacing
 - indentation
 - intro to classes and methods' structures (body / header)
-- status of `main` method 
+- status of `Main` method 
 - intro to Console's `Write` and `WriteLine`
 - string literal
 

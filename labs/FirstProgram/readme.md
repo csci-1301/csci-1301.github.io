@@ -147,9 +147,9 @@ Now you will start writing your own code. We'll start by writing a very familiar
 #. Create a new line.
 #. Type `Console` then pause 
 #. After a short moment, an auto-completion feature that displays suggestions and messages should display. This is a common IDE feature to help the programmer. You'll probably end up using it a lot, but let's not worry about it for now.
-#. Type in `.Wri` after `Console` (don't forget the period!) and notice the good suggestions: you actually want to write `WriteLine`! Either finish writing `WriteLine` or select it from the menu that appears.
+#. Type in `.Wri` after `Console` (do not forget the period!) and notice the good suggestions: you actually want to write `WriteLine`! Either finish writing `WriteLine` or select it from the menu that appears.
 #. Now type an open parenthesis, i.e. `(`, and notice that it is closed for you automatically.
-#. Type a `string` of your choice between those two parenthesis, i.e. something like `"This is my first message"` (and don't forget the quotes).
+#. Type a `string` of your choice between those two parenthesis, i.e. something like `"This is my first message"` (and do not forget the quotes).
 
     At this point, your `Main` method should look like this:
 

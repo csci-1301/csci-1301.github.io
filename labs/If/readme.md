@@ -24,7 +24,7 @@ The information about the age of majority [comes from wikipedia](https://en.wiki
     #. 19
     #. 22
     #. 29339
-#. Copy-and-paste the code in the body of the `main` method and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
+#. Copy-and-paste the code in the body of the `Main` method and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
 #. There is at least one issue with this code, as "You have reached the age of majority in all US states." will never be displayed. Can you understand why?
 #. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter your conditions.
 

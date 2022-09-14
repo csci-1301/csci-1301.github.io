@@ -97,7 +97,7 @@
 
 #### Uses for `static` methods
 
-- Since static methods can't access instance variables, they don't seem very useful
+- Since static methods can't access instance variables, they do not seem very useful
 
 - One reason to use them: when writing a function that doesn't need to "save" any state, and just computes an output (its return value) based on some input (its parameters)
 
@@ -200,7 +200,7 @@
         }
         ```
 
-        In this example, our program needs to read two different numbers from the user, so we put the input-validation loop into the `InputPositiveNumber` method instead of writing it twice in the Main method. It then has two separate "parts" (computing some result with the two user-input numbers, and combining that computed number with a string to display some output), which we write in the two methods `DoPart1` and `DoPart2`. This makes our actual `Main` method only 4 lines long.
+        In this example, our program needs to read two different numbers from the user, so we put the input-validation loop into the `InputPositiveNumber` method instead of writing it twice in the `Main` method. It then has two separate "parts" (computing some result with the two user-input numbers, and combining that computed number with a string to display some output), which we write in the two methods `DoPart1` and `DoPart2`. This makes our actual `Main` method only 4 lines long.
 
 ## Static Variables
 
@@ -289,9 +289,9 @@
 
 - Static methods cannot access instance variables, but they *can* access static variables
 
-- There is no ambiguity when accessing a static variable: you don't need to know which object's variable to access, because there is only one copy of the static variable shared by all objects
+- There is no ambiguity when accessing a static variable: you do not need to know which object's variable to access, because there is only one copy of the static variable shared by all objects
 
-- This means you can write a "getter" or "setter" for a static variable, as long as it is a static method. For example, we could improve our `NumRectangles` counter by ensuring that the Main method can only read it through a getter method, like this:
+- This means you can write a "getter" or "setter" for a static variable, as long as it is a static method. For example, we could improve our `NumRectangles` counter by ensuring that the `Main` method can only read it through a getter method, like this:
 
     ```
     class Rectangle
@@ -312,11 +312,11 @@
     }
     ```
 
-    - The `NumRectangles` variable is now declared `private`, which means only the Rectangle constructor will be able to increment it. Before, it would have been possible for the Main method to execute something liek `Rectangle.NumRectangles = 1;` and throw off the count.
+    - The `NumRectangles` variable is now declared `private`, which means only the Rectangle constructor will be able to increment it. Before, it would have been possible for the `Main` method to execute something liek `Rectangle.NumRectangles = 1;` and throw off the count.
 
     - The `GetNumRectangles` method can't access `length` or `width` because they are instance variables, but it can access `NumRectangles`
 
-    - The static method would be called from the Main method like this:
+    - The static method would be called from the `Main` method like this:
 
         ```
         Rectangle rect1 = new Rectangle(2, 4);

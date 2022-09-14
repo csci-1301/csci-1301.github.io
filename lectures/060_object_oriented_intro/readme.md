@@ -62,7 +62,7 @@ Let's look at each part of this code in order.
     - This method will allow code outside the `Rectangle` class to read the current value of a `Rectangle` object's "length" attribute
     - The **return type** of this method is `int`, which means that the value it returns to the calling code is an `int` value
     - Recall that `Console.ReadLine()` returns a `string` value to the caller, which is why you can write `string userInput = Console.ReadLine()`. The `GetLength` method will do the same thing, only with an `int` instead of a `string`
-    - This method has no parameters, so you don't provide any arguments when calling it. "Getter" methods never have parameters, since their purpose is to "get" (read) a value, not change anything
+    - This method has no parameters, so you do not provide any arguments when calling it. "Getter" methods never have parameters, since their purpose is to "get" (read) a value, not change anything
     - The body of `GetLength` has one statement, which uses a new keyword: `return`. This keyword declares what will be returned by the method, i.e. what particular value will be given to the caller to use in an expression.
     - In a "getter" method, the value we return is the instance variable that corresponds to the attribute named in the method. `GetLength` returns the `length` instance variable.
 - SetWidth method
@@ -147,7 +147,7 @@ Let's look at each part of this code in order.
 - The "dot operator" that we use to call methods is technically the **member access operator**
 - A **member** of an object is either a method or an instance variable
 - When we write `objectName.methodName()`, e.g. `rect1.SetLength(12)`, we are using the dot operator to access the "SetLength" member of `rect1`, which is a method; this means we want to call (execute) the `SetLength` method of `rect1`
-- We can also use the dot operator to access instance variables, although we usually don't do that because of encapsulation
+- We can also use the dot operator to access instance variables, although we usually do not do that because of encapsulation
 - If we wrote the `Rectangle` class like this:
 
     ```
@@ -158,7 +158,7 @@ Let's look at each part of this code in order.
     }
     ```
 
-    Then we could write a Main method that uses the dot operator to access the `length` and `width` instance variables, like this:
+    Then we could write a `Main` method that uses the dot operator to access the `length` and `width` instance variables, like this:
 
     ```
     static void Main(string[] args)
@@ -169,7 +169,7 @@ Let's look at each part of this code in order.
     }
     ```
 
-    But this code violates encapsulation, so we won't do this.
+    But this code violates encapsulation, so we will not do this.
 
 #### Method calls in more detail
 
@@ -286,7 +286,7 @@ Let's look at each part of this code in order.
 
     - If the value returned by `LengthProduct` is not an `int`, we will get a compile error
 
-    - This won't work:
+    - This will not work:
 
         ```
         public int LengthProduct(double factor)
@@ -394,7 +394,7 @@ Let's look at each part of this code in order.
 
 - Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
 
-- Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the Main method (they are local to the Main method!).
+- Local variables: Visible to only one method, not shared. Disappear after method finishes executing. Variables we've created before in the `Main` method (they are local to the `Main` method!).
 
 - Example: In class Rectangle, we have these two methods:
 
@@ -596,7 +596,7 @@ Let's look at each part of this code in order.
 
       It uses the `SetLength` and `SetWidth` methods to modify its parameter, `otherRect`. Specifically, it sets the parameter's length and width to its own length and width.
 
-    - The Main method of a program could do something like this:
+    - The `Main` method of a program could do something like this:
 
         ```
         Rectangle rect1 = new Rectangle();

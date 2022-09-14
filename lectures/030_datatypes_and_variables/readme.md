@@ -118,7 +118,7 @@
     - Displayed: `I am 29 years old`
 - If the argument to `Console.WriteLine` is the name of a variable, it will automatically convert that variable to a `string` before displaying it
 - For example, `Console.WriteLine(myAge);` will display "29" in the console, as if we had written `Console.WriteLine($"{myAge}");`
-- When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation won't magically "know" how to convert `MyClass` variables to `string`s
+- When string interpolation converts a variable to a string, it must call a "string conversion" method supplied with the data type (`int`, `double`, etc.). All built-in C# datatypes come with string conversion methods, but when you write your own data types (classes), you'll need to write your own string conversions -- string interpolation will not magically "know" how to convert `MyClass` variables to `string`s
 
 On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
 It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the "atomic steps" your program should perform.

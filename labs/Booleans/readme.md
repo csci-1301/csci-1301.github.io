@@ -3,7 +3,7 @@ title: Booleans
 ---
 
 
-This lab serves four core goals:
+This lab serves four goals:
 
 - To help you manipulate boolean values,
 - To practice boolean operators,

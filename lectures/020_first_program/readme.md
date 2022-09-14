@@ -250,7 +250,7 @@ Note that some of those conventions are actually rules in different programming 
 
         - Without this, you couldn't write a sentence with quotation marks in a `Console.WriteLine`, because the C# compiler would assume the quotation marks meant the string was ending
 
-        - This program won't compile because `in quotes` is not valid C# code, and the compiler thinks it is not part of the string:
+        - This program will not compile because `in quotes` is not valid C# code, and the compiler thinks it is not part of the string:
 
             ```
             class Welcome

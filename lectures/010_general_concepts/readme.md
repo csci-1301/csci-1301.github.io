@@ -57,7 +57,7 @@
         - Python for scripting, Javascript for web pages
     - Personal preference and popularity
 - This class is about "principles" of computer programming
-    - Common principles behind all languages won't change, even though hardware and languages do
+    - Common principles behind all languages will not change, even though hardware and languages do
     - How to organize and structure data
     - How to express logical conditions and relations
     - How to solve problems with programs

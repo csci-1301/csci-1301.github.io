@@ -235,7 +235,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
 
 #### Intentionally omitting `break`
 
-- Each block of code that starts with a `case` statement must end with a `break` statement; it won't automatically end at the next `case` statement
+- Each block of code that starts with a `case` statement must end with a `break` statement; it will not automatically end at the next `case` statement
 
     - The `case` statement only defines where code execution *starts* when the variable matches a value (like an open `{`). The `break` statement defines where it *ends* (like a close `}`).
 
