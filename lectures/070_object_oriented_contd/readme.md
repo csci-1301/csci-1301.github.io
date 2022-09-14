@@ -26,7 +26,7 @@
         int myVar2 = myVar1 + 5;
         ```
 
-        You can't assume `myVar1` will be 0; it has no value at all until you use an assignment statement.
+        You cannot assume `myVar1` will be 0; it has no value at all until you use an assignment statement.
 
 - When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
 
@@ -38,7 +38,7 @@
     | `bool`        | `false`           |
     | `char`        | `'\0'`            |
 
-- Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You can't do anything with a reference variable containing `null`.
+- Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You cannot do anything with a reference variable containing `null`.
 
 #### A class we will use for subsequent examples
 
@@ -377,7 +377,7 @@
 - The method's return type is not part of the signature
     - So far all the examples have the same return type (`void`), but changing it would not change the signature
     - The signature of `public int Multiply(int factor)`  is `Multiply(int)`, which is the same as `public void Multiply(int factor)`
-    - The signature "begins" with the name of the method; everything "before" that doesn't count (i.e. `public`, `int`)
+    - The signature "begins" with the name of the method; everything "before" that does not count (i.e. `public`, `int`)
 - The order of parameters is part of the signature, as long as the types are different
     - Since parameter name is not part of the signature, only the type can determine the order
 
@@ -409,7 +409,7 @@
         }
         ```
 
-        The signature for both methods is `Multiply(int, int)`, even though we switched the order of the parameters -- the name doesn't count, and they are both `int` type
+        The signature for both methods is `Multiply(int, int)`, even though we switched the order of the parameters -- the name does not count, and they are both `int` type
 
 - Constructors have signatures too
     - The constructor `ClassRoom(string buildingParam, int numberParam)` has the signature `ClassRoom(string, int)`
@@ -425,7 +425,7 @@
 - Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
 - Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
 - The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
-- If no method or constructor matches the signature of the method call, you get a compile error. You still can't write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
+- If no method or constructor matches the signature of the method call, you get a compile error. You still cannot write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
 
 ## Constructors in UML
 

@@ -105,7 +105,7 @@ When the computer executes the second line of this code, it reads the variable `
 
 - Since an `int` can store any integer between $-2^{31}$ and $2^{31}-1$, but a `float` can store any integer between $-3.4 \times 10^{38}$ and $3.4 \times 10^{38}$ (as well as fractional values), it is always safe to store an `int` value in a `float`
 
-- You *cannot* implicitly convert a `float` to an `int` because an `int` stores fewer values than a `float` -- it can't store fractions -- so converting a `float` to an `int` will **lose data**
+- You *cannot* implicitly convert a `float` to an `int` because an `int` stores fewer values than a `float` -- it cannot store fractions -- so converting a `float` to an `int` will **lose data**
 
 - Note that all integer data types can be implicitly converted to `float` or `double`
 
@@ -113,7 +113,7 @@ When the computer executes the second line of this code, it reads the variable `
 
 - Unsigned integer data types can be implicitly converted to a *larger* signed integer type, but not the *same* signed integer type: `uint` $\rightarrow$ `long`, but **not** `uint` $\rightarrow$ `int`
 
-    - This is because of the "sign bit": a `uint` can store larger values than an `int` because it doesn't use a sign bit, so converting a large `uint` to an `int` might lose data
+    - This is because of the "sign bit": a `uint` can store larger values than an `int` because it does not use a sign bit, so converting a large `uint` to an `int` might lose data
 
 #### Explicit conversions
 
@@ -178,7 +178,7 @@ When the computer executes the second line of this code, it reads the variable `
 
         In this code, `fromSmall` will get the value `42.76875m`, but the program will crash when attempting to cast `bigDouble` to a `decimal` because $2.65 \times 10^{35}$ is larger than `decimal`'s maximum value of $7.9 \times 10^{28}$
 
-    - `decimal` is more precise than the other two floating-point types (thus doesn't need to round), but has a smaller range (only $10^{28}$, vs. $10^{308}$)
+    - `decimal` is more precise than the other two floating-point types (thus does not need to round), but has a smaller range (only $10^{28}$, vs. $10^{308}$)
 
 Summary of implicit and explicit conversions for the numeric datatypes:
 
@@ -227,7 +227,7 @@ Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatype
 
     Without the cast, `share` would get the value 3.0 because `numCookies` and `numPeople` are both `int` type (just like the `fraction` example above). With the cast, `numCookies` is converted to the value 21.0 (a `double`), which means the operands are no longer the same type. This will cause `numPeople` to be implicitly converted to `double` in order to make them match, and the `double` version of `/` will get called to evaluate `21.0 / 6.0`. The result is 3.5, so `share` gets assigned 3.5.
 
-- You might also *need* a cast to ensure the operands are the same type, if implicit conversion doesn't work
+- You might also *need* a cast to ensure the operands are the same type, if implicit conversion does not work
 
 - Example:
 
@@ -237,7 +237,7 @@ Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatype
     decimal total = price * (decimal) shares;
     ```
 
-    In this code, `double` can't be implicitly converted to `decimal`, and `decimal` can't be explicitly converted to `double`, so the multiplication `price * shares` would produce a compile error. We need an explicit cast to `decimal` to make both operands the same type (`decimal`).
+    In this code, `double` cannot be implicitly converted to `decimal`, and `decimal` cannot be explicitly converted to `double`, so the multiplication `price * shares` would produce a compile error. We need an explicit cast to `decimal` to make both operands the same type (`decimal`).
 
 ## Order of Operations
 

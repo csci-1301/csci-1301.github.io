@@ -16,8 +16,8 @@
 
       This program first declares a `string` variable named `firstName`. On the second line, it uses `Console.WriteLine` to display a message (instructions for the user). On the third line, it calls the `Console.ReadLine()` method, and assigns its return value (result) to the `firstName` variable. This means the program waits for the user to type some text and press "Enter", and then stores that text in `firstName`. Finally, the program uses string interpolation in `Console.WriteLine` to display a message including the contents of the `firstName` variable.
     - `Console.ReadLine` is the "inverse" of `Console.WriteLine`, and the way you use it is also the "inverse"
-    - While `Console.WriteLine` takes an argument, which is the text you want to display on the screen, `Console.ReadLine()` takes no arguments because it doesn't need any input from your program -- it will always do the same thing
-    - `Console.WriteLine` has no "return value" - it doesn't give any output back to your program, and the only effect of calling it is that text is displayed on the screen
+    - While `Console.WriteLine` takes an argument, which is the text you want to display on the screen, `Console.ReadLine()` takes no arguments because it does not need any input from your program -- it will always do the same thing
+    - `Console.WriteLine` has no "return value" - it does not give any output back to your program, and the only effect of calling it is that text is displayed on the screen
     - `Console.ReadLine()` does have a return value, specifically a `string`. This means you can use the result of this method to assign a `string` variable, just like you can use the result of an arithmetic expression to assign a numeric variable.
     - The `string` that `Console.ReadLine()` returns is **one line of text** typed in the console. When you call it, the computer will wait for the user to type some text and then press "Enter", and everything the user typed before pressing "Enter" gets returned from `Console.ReadLine()`
 
@@ -100,7 +100,7 @@
 
   In this statement, the return value (output) of one method is used as the argument (input) to another method. When the computer executes the statement, it starts by evaluating the `int.Parse(...)` method call, but it cannot actually run the `Parse` method yet because its argument is an expression, not a variable or value. In order to determine what value to send to the `Parse` method as input, it must first evaluate the `Console.ReadLine()` method call. Since this method has no arguments, the computer can immediately start executing it; the `ReadLine` method waits for the user to type a line of text, then returns that text as a `string` value. This return value can now be used as the argument to `int.Parse`, and the computer starts executing `int.Parse` with the user-provided string as input. When the `Parse` method returns an `int` value, this value becomes the value of the entire expression `int.Parse(Console.ReadLine())`, and the computer assigns it to the variable `curYear`.
 
-- Notice that by placing the call to `ReadLine` inside the argument to `Parse`, we have eliminated the variable `userInput` entirely. The `string` returned by `ReadLine` doesn't need to be stored anywhere (i.e. in a variable); it only needs to exist long enough to be sent to the `Parse` method as input.
+- Notice that by placing the call to `ReadLine` inside the argument to `Parse`, we have eliminated the variable `userInput` entirely. The `string` returned by `ReadLine` does not need to be stored anywhere (i.e. in a variable); it only needs to exist long enough to be sent to the `Parse` method as input.
 
 #### Correct input formatting
 
@@ -159,7 +159,7 @@
 
 #### The `ToString()` method
 
-- String interpolation doesn't "magically know" how to convert numbers to strings -- it delegates the task to the numbers themselves
+- String interpolation does not "magically know" how to convert numbers to strings -- it delegates the task to the numbers themselves
 
 - This works because all data types in C# are objects, even the built-in ones like `int` and `double`
     - Since they are objects, they can have methods

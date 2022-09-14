@@ -27,7 +27,7 @@
     - **Attribute**: A piece of data stored in an object.\
     Example: A *House* class has a spot for a color property while an house object has a color (e.g. "Green").
     - **Method**: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.\
-    Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but doesn't change the *House* class or the color on any other house objects.
+    Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but does not change the *House* class or the color on any other house objects.
 
 - Examples:
     - A Car *Class*

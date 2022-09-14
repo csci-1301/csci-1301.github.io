@@ -270,7 +270,7 @@ Console.WriteLine("Done");
         }
         ```
 
-        Since `number` was initialized to 0, `number *= 2` doesn't actually change the value of `number`: $2 \times 0 = 0$. So the loop body will never make the condition `number <= 64` false.
+        Since `number` was initialized to 0, `number *= 2` does not actually change the value of `number`: $2 \times 0 = 0$. So the loop body will never make the condition `number <= 64` false.
 
 #### Principles of writing a `while` loop
 
@@ -298,7 +298,7 @@ Console.WriteLine("Done");
   !include code/item.cs
   ```
 
-- When you write a program that constructs an `Item` from literal values, you (the programmer) can make sure you only use positive prices. However, if you construct an `Item` based on input provided by the user, you can't be certain that the user will follow directions and enter a valid price:
+- When you write a program that constructs an `Item` from literal values, you (the programmer) can make sure you only use positive prices. However, if you construct an `Item` based on input provided by the user, you cannot be certain that the user will follow directions and enter a valid price:
 
     ```
     Console.WriteLine("Enter the item's description");
@@ -308,7 +308,7 @@ Console.WriteLine("Done");
     Item myItem = new Item(desc, price);
     ```
 
-    In this code, if the user enters a negative number, the `myItem` object will have a negative price, even though that doesn't make sense.
+    In this code, if the user enters a negative number, the `myItem` object will have a negative price, even though that does not make sense.
 
 - One way to guard against "bad" user input values is to use an `if` statement or a conditional operator, as we saw in the previous lecture (Switch and Conditional), to provide a default value if the user's input is invalid. In our example with Item, we could add a conditional operator to check whether `price` is negative before providing it to the `Item` constructor:
 
@@ -535,7 +535,7 @@ Console.WriteLine("Done");
     Item myItem = new Item(desc, price);
     ```
 
-    - The keyword `do` starts the code block for the loop body, but it doesn't have a condition, so the computer simply starts executing the body
+    - The keyword `do` starts the code block for the loop body, but it does not have a condition, so the computer simply starts executing the body
 
     - In the loop body, we prompt the user for input, read and parse the input, and store it in `price`
 
@@ -560,7 +560,7 @@ Console.WriteLine("Done");
     } while(<condition>);
     ```
 
-- The `do` keyword does nothing, but it is required to indicate the start of the loop. You can't just write a `{` by itself.
+- The `do` keyword does nothing, but it is required to indicate the start of the loop. You cannot just write a `{` by itself.
 
 - Unlike a `while` loop, a semicolon is required after `while(<condition>)`
 

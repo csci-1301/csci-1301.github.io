@@ -32,7 +32,7 @@ Question:
 Action:
 ~ On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
 Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, then make sure you can open them all.
-You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which doesn't have them!]
+You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]
 
 You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links in the footer: the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights and tools used to construct this website.
 Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an Undergraduate Course Assistant (UCA), are interested in contributing to open-source project, or simply wonder how the magic is done!

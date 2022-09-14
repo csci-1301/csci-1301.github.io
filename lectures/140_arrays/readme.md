@@ -163,7 +163,7 @@ Rectangle[] shapes = {new Rectangle(), new Rectangle(), new Rectangle()};
 One of the benefits of arrays is that they allow you to specify the number of their elements at run-time: the size declarator can be a variable, not just an integer literal. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.
 
 In order to access the elements of whose size is not known until runtime, we will need to use a loop.
-If the size of `myArray` comes from user input, it wouldn't be safe to try to access a specific element like `myArray[5]`, because we can't guarantee that the array will have at least 6 elements. Instead, we can write a loop that uses a counter variable to access the array, and use the loop condition to ensure that the variable does not exceed the size of the array.
+If the size of `myArray` comes from user input, it wouldn't be safe to try to access a specific element like `myArray[5]`, because we cannot guarantee that the array will have at least 6 elements. Instead, we can write a loop that uses a counter variable to access the array, and use the loop condition to ensure that the variable does not exceed the size of the array.
 
 ### Example
 
@@ -206,7 +206,7 @@ while (counter2 < customArray.Length)
 }
 ```
 
-Observe that this code doesn't need the variable `size`.
+Observe that this code does not need the variable `size`.
 
 Note: You *cannot* use the length property to change the size of the array, that is, entering
 
@@ -261,7 +261,7 @@ while(i < items.Length)
 Console.WriteLine($"The lowest-priced item is {lowestItem}");
 ```
 
-Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we can't call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
+Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we cannot call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
 
 ## Changing the Size
 

@@ -105,7 +105,7 @@
 
 - The `default` statement is like the `else` statement: It defines code that gets executed if the variable does not match any of the values in the `case` statements.
 
-- The values in each `case` statement must be **literals**, not variables, and they must be **unique** (you can't write two `case` statements with the same value)
+- The values in each `case` statement must be **literals**, not variables, and they must be **unique** (you cannot write two `case` statements with the same value)
 
 #### Example `switch` statement
 
@@ -194,7 +194,7 @@
 - The computer knows which statements are included in each case because of the `break` keyword. For the "1" case, the block of statements starts after `case 1:` and ends with the `break;` after `monthAbbrev = "Jan";`
 
 <!--
-Commented out because C# doesn't actually support fall-through like every other language with a switch statement.
+Commented out because C# does not actually support fall-through like every other language with a switch statement.
 Still might be useful to discuss as a comparison with other languages like Java.
 
 - The importance of `break` (in languages other than C#)

@@ -21,7 +21,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     !include code/item.cs
     ```
 
-- Right now, it is possible to set the price to any value, including a negative number, but a negative price doesn't make sense. If we add an `if` statement to SetPrice, we can check that the new value is a valid price before changing the instance variable:
+- Right now, it is possible to set the price to any value, including a negative number, but a negative price does not make sense. If we add an `if` statement to SetPrice, we can check that the new value is a valid price before changing the instance variable:
 
     ```
     public void SetPrice(decimal p)
@@ -38,7 +38,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     ```
 
     - If the parameter `p` is less than 0, we do not assign it to `price`; instead we set `price` to the nearest valid value, which is 0.
-    - Since code outside the Item class can't access `price` directly, this means it is now impossible to give an item a negative price: If your code calls `myItem.SetPrice(-90m)`, `myItem`'s price will be 0, not -90.
+    - Since code outside the Item class cannot access `price` directly, this means it is now impossible to give an item a negative price: If your code calls `myItem.SetPrice(-90m)`, `myItem`'s price will be 0, not -90.
 
 - Alternatively, we could write a setter that simply ignores invalid values, instead of changing the instance variable to the "nearest valid" value
 
@@ -155,7 +155,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
   }
   ```
 
-  With both this constructor and the `SetPrice` method we wrote earlier, we can now guarantee that it is impossible for an Item object to have a negative price. This will make it easier to write a large program that uses many Item objects without introducing bugs: the program can't accidentally reduce an item's price below 0, and it can add up the prices of all the items and be sure to get the correct answer.
+  With both this constructor and the `SetPrice` method we wrote earlier, we can now guarantee that it is impossible for an Item object to have a negative price. This will make it easier to write a large program that uses many Item objects without introducing bugs: the program cannot accidentally reduce an item's price below 0, and it can add up the prices of all the items and be sure to get the correct answer.
 
 - Recall the `ClassRoom` class from an earlier lecture, which has a room number as one of its attributes. If we know that no classroom building has more than 3 floors, then the room number must be between 100 and 399. The constructor for `ClassRoom` could check that the room number is valid using an if-else-if statement, as follows:
 
@@ -380,7 +380,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
       public Room(double lengthFeet, double widthFeet)
       ```
 
-    - The problem with this approach is that the feet constructor can't initialize the name of the room; if we gave it a `string` parameter for the room name, it would have the same signature as the meters constructor.
+    - The problem with this approach is that the feet constructor cannot initialize the name of the room; if we gave it a `string` parameter for the room name, it would have the same signature as the meters constructor.
 
     - Using a Boolean parameter, we can write a single constructor that accepts either meters or feet, and is equally capable of initializing the name attribute in both cases:
 
@@ -789,7 +789,7 @@ class Loan
         cscore = cscoreP;
         if (cscore < 300)
         {
-            Console.WriteLine("Sorry, we can't accept your application");
+            Console.WriteLine("Sorry, we cannot accept your application");
             amount = -1;
             rate = -1;
         }

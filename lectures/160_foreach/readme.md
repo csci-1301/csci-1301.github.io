@@ -121,7 +121,7 @@
 
     - The condition `success && userNum >= 0` is true if the user entered a valid number that was not negative
     - In order to write this condition, we needed to declare the extra variable `success` to keep track of the result of `int.TryParse`
-    - We can't use the condition `userNum > 0`, hoping to take advantage of the fact that if `TryParse` fails it assigns its `out` parameter the value 0, because 0 is a valid input the user could give
+    - We cannot use the condition `userNum > 0`, hoping to take advantage of the fact that if `TryParse` fails it assigns its `out` parameter the value 0, because 0 is a valid input the user could give
 
 #### Ending the loop with `break`
 

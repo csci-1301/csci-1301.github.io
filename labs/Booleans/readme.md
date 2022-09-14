@@ -10,33 +10,33 @@ This lab serves four goals:
 - To understand the concept of _precedence_,
 - To practice simple mental calculations.
 
-
 # Truth Tables
 
 #. Copy-and-paste the following code into the `Main` method of a new project:
 
-```
-Console.WriteLine("Conjunction (and, &&) truth table:"
-+ "\n\n && \t||  " + true + "\t| " + false
-+ "\n--------||--------------|--------"
-+ "\n" + true + "\t||  " + (true && true) + "\t| " + (true && false)
-+ "\n" + false + "\t||  " + (false && true) + "\t| " + (false && false)
-+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
+	```
+	Console.WriteLine("Conjunction (and, &&) truth table:"
+	+ "\n\n && \t||  " + true + "\t| " + false
+	+ "\n--------||--------------|--------"
+	+ "\n" + true + "\t||  " + (true && true) + "\t| " + (true && false)
+	+ "\n" + false + "\t||  " + (false && true) + "\t| " + (false && false)
+	+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 
-Console.WriteLine("Negation (not, !) truth table:"
-+ "\n\n value \t||  ! "
-+ "\n--------||----------"
-+ "\n" + true + "\t||  " + false
-+ "\n" + (!true) + "\t||  " + (!false)
-+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
-```
+	Console.WriteLine("Negation (not, !) truth table:"
+	+ "\n\n value \t||  ! "
+	+ "\n--------||----------"
+	+ "\n" + true + "\t||  " + false
+	+ "\n" + (!true) + "\t||  " + (!false)
+	+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
+	```
 
 #. Compile and execute it. This should display to the screen truth tables for conjunction (and, `&&`) and negation (not, `!`).
 #. Make sure you understand both the code and its output.
-#. Add after the truth table for the negation, write code to display truth tables for
+#. After the truth table for the negation, write code to display truth tables for
     #. the binary operators disjunction (or, `||`),
     #. identity (equality, `==`) and
     #. difference (inequality, `!=`).
+    
     Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
 #. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). For inequality, in this case check against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality, but has the same truth table.
 
@@ -50,16 +50,16 @@ Inside each group in parenthesis, operations are evaluated from left to right.
 
 So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
 
-||
---- | --- | --
-**`! true`** `|| false && 3 * 2 == 6` | $$⇒$$ | **`false`** `|| false && 3 * 2 == 6`
-`false || false &&` **`3 * 2`** `== 6` | $⇒$ | `false || false &&` **`6`** `== 6`
-`false || false &&` **`6 == 6`** | $⇒$ | `false || false &&` **`true`**
-`false ||` **`false && true`** | $⇒$ | `false ||` **`false`**
-**`false || false`** | $⇒$ | **`false`**
+Operation | | Result | Op.
+---------------- | - | --------------- | --
+**`! true`** `|| false && 3 * 2 == 6` | ⇒ | **`false`** `|| false && 3 * 2 == 6` | `!`
+`false || false &&` **`3 * 2`** `== 6` | ⇒ | `false || false &&` **`6`** `== 6` | `*`
+`false || false &&` **`6 == 6`** | ⇒ | `false || false &&` **`true`** | `==`
+`false ||` **`false && true`** | ⇒ | `false ||` **`false`** | `&&`
+**`false || false`** | ⇒ | **`false`** | `||`
 
-Note that an expression like `!3 > 2` doesn't make any sense: C# would try to take the negation of `3`, but you can't negate the truth value of an integer!
-Along the same lines, an expression like `false * true` doesn't make any sense: you can not multiply booleans (what would be "true times false"?)!
+Note that an expression like `!3 > 2` does not make any sense: C# would try to take the negation of `3` (since `!` has a higher precedence than `>`), but you cannot negate the truth value of an integer!
+Along the same lines, an expression like `false * true` does not make any sense: you can not multiply booleans (what would be "true times false"?)!
 Similarly, `3 % false` will cause an error: can you see why?  These are all examples of "illegal" expressions.
 
 ## Computing Simple Boolean Expressions

@@ -77,14 +77,14 @@ Let's look at each part of this code in order.
     - This is *not* a getter or setter: its goal is not to read or write a single instance variable
     - The goal of this method is to compute and return the rectangle's area
     - Since the area of the rectangle will be an `int` (it is the product of two `int`s), we declare the return type of the method to be `int`
-    - This method has no parameters, because it doesn't need any arguments. Its only "input" is the instance variables, and it will always do the same thing every time you call it.
+    - This method has no parameters, because it does not need any arguments. Its only "input" is the instance variables, and it will always do the same thing every time you call it.
     - The body of the method has a `return` statement with an expression, rather than a single variable
     - When you write `return [expression]`, the expression will be evaluated first, then the resulting value will be used by the `return` command
     - In this case, the expression `length * width` will be evaluated, which computes the area of the rectangle. Since both `length` and `width` are `int`s, the `int` version of the `*` operator runs, and it produces an `int` result. This resulting `int` is what the method returns.
 
 ## Using Our Class
 
-- We've written a class, but it doesn't do anything yet
+- We've written a class, but it does not do anything yet
     - The class is a blueprint for an object, not an object
     - To make it "do something" (i.e. execute some methods), we need to instantiate an object using this class
     - The code that does this should be in a separate file (e.g. Program.cs), not in Rectangle.cs
@@ -225,7 +225,7 @@ Let's look at each part of this code in order.
 
 - A variable only changes when it is on the left side of an assignment statement; this is *writing* to the variable
 
-- A method that uses instance variables in an expression, but doesn't assign to them, will not modify the object
+- A method that uses instance variables in an expression, but does not assign to them, will not modify the object
 
 - For example, consider the `ComputeArea` method:
 
@@ -376,7 +376,7 @@ Let's look at each part of this code in order.
     
     - Note that when the return type of a method is `void`, we can omit it in UML
     - In general, attributes will be private (`-` sign) and methods will be public (`+` sign), so you can expect most of your classes to follow this pattern (`-`s in the upper box, `+`s in the lower box)
-    - Note that there is no code or "implementation" described here: it doesn't say that `ComputeArea` will multiply `length` by `width`
+    - Note that there is no code or "implementation" described here: it does not say that `ComputeArea` will multiply `length` by `width`
 
 - Writing code based on a UML diagram
 
@@ -412,7 +412,7 @@ Let's look at each part of this code in order.
     ```
 
     - `temp` is a local variable within `SwapDimensions`, while `length` and `width` are instance variables
-    - The `GetLength` method can't use `temp`; it is visible only to `SwapDimensions`
+    - The `GetLength` method cannot use `temp`; it is visible only to `SwapDimensions`
     - When `SwapDimensions` changes `length`, that change is persistent -- it will still be different when `GetLength` executes, and the next call to `GetLength` after `SwapDimensions` will return the new length
     - When `SwapDimensions` assigns a value to `temp`, it only has that value within the current call to `SwapDimensions` -- after `SwapDimensions` finishes, `temp` disappears, and the next call to `SwapDimensions` creates a new `temp`
 
@@ -422,9 +422,9 @@ Let's look at each part of this code in order.
 - Outside those limits, the variable cannot be accessed -- e.g. local variables cannot be accessed outside their method
 - Scope of a variable: The region of the program where it is accessible/visible
     - A variable is "in scope" when it is accessible
-    - A variable is "out of scope" when it doesn't exist or can't be accessed
+    - A variable is "out of scope" when it does not exist or cannot be accessed
 - Time limits to scope: Scope begins *after* the variable has been declared
-    - This is why you can't use a variable before declaring it
+    - This is why you cannot use a variable before declaring it
 - Space limits to scope: Scope is within the same *code block* where the variable is declared
     - Code blocks are defined by curly braces: everything between matching `{` and `}` is in the same code block
     - Instance variables are declared in the class's code block (they are inside `class Rectangle`'s body, but not inside anything else), so their scope extends to the entire class
@@ -453,7 +453,7 @@ Let's look at each part of this code in order.
 
 #### Variables with overlapping scopes
 
-- This code is legal (compiles) but doesn't do what you want:
+- This code is legal (compiles) but does not do what you want:
 
     ```
     class Rectangle
@@ -509,14 +509,14 @@ Let's look at each part of this code in order.
     }
     ```
 
-    Without `this`, the body of the `SetWidth` method would be `width = width;`, which doesn't do anything (it would assign the parameter `width` to itself).
+    Without `this`, the body of the `SetWidth` method would be `width = width;`, which does not do anything (it would assign the parameter `width` to itself).
 
 ## Constants
 
 - Classes can also contain constants
 - Syntax: `[public/private] const [type] [name] = [value];`
 - This is a named value that never changes during program execution
-- Safe to make it `public` because it can't change -- no risk of violating encapsulation
+- Safe to make it `public` because it cannot change -- no risk of violating encapsulation
 - Can only be built-in types (`int`, `double`, etc.), not objects
 - Can make your program more readable by giving names to "magic numbers" that have some significance
 - Convention: constants have names in ALL CAPS

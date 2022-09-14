@@ -72,7 +72,7 @@
 
         When you call the method with `rect.SetLength(12)`, the `length` variable automatically refers to the `length` instance variable stored in `rect`.
 
-- Static methods are not associated with any instance, and thus **can't use instance variables**
+- Static methods are not associated with any instance, and thus **cannot use instance variables**
 
 - For example, we could attempt to declare the `ComputeArea` method of `Rectangle` as a static method, but this would not compile:
 
@@ -97,9 +97,9 @@
 
 #### Uses for `static` methods
 
-- Since static methods can't access instance variables, they do not seem very useful
+- Since static methods cannot access instance variables, they do not seem very useful
 
-- One reason to use them: when writing a function that doesn't need to "save" any state, and just computes an output (its return value) based on some input (its parameters)
+- One reason to use them: when writing a function that does not need to "save" any state, and just computes an output (its return value) based on some input (its parameters)
 
 - Math-related functions are usually written as static methods. The .NET library comes with a class named `Math` that defines several static methods, like these:
 
@@ -282,7 +282,7 @@
 - Static variables are also useful for **constants**
 
     - The `const` keyword, which we learned about earlier, is actually very similar to `static`
-    - A `const` variable is just a `static` variable that can't be modified
+    - A `const` variable is just a `static` variable that cannot be modified
     - Like a `static` variable, it can be accessed using the name of the class where it is defined (e.g. `Math.PI`), and there is only one copy for the entire program
 
 #### Static methods and variables
@@ -314,7 +314,7 @@
 
     - The `NumRectangles` variable is now declared `private`, which means only the Rectangle constructor will be able to increment it. Before, it would have been possible for the `Main` method to execute something liek `Rectangle.NumRectangles = 1;` and throw off the count.
 
-    - The `GetNumRectangles` method can't access `length` or `width` because they are instance variables, but it can access `NumRectangles`
+    - The `GetNumRectangles` method cannot access `length` or `width` because they are instance variables, but it can access `NumRectangles`
 
     - The static method would be called from the `Main` method like this:
 

@@ -144,7 +144,7 @@ It is generally recommended to separate those instructions in different statemen
         19.99 with a discount of 0.25 is 14.9925
         ```
 
-      But this isn't the best way to display prices and discounts. Obviously, the prices should have dollar signs, but also, it doesn't make sense to show a price with fractional cents (14.9925) -- it should be rounded to two decimal places. You might also prefer to display the discount as 25% instead of 0.25, since people usually think of discounts as percentages.
+      But this isn't the best way to display prices and discounts. Obviously, the prices should have dollar signs, but also, it does not make sense to show a price with fractional cents (14.9925) -- it should be rounded to two decimal places. You might also prefer to display the discount as 25% instead of 0.25, since people usually think of discounts as percentages.
 
 - Improving interpolation with format specifiers
     - You can change how numbers are displayed by adding a format specifier to a variable's name in string interpolation
@@ -230,7 +230,7 @@ It is generally recommended to separate those instructions in different statemen
         - The binary number 101.01 represents $4+1+1/4$, or 5.25 in base 10
     - More specifically, they use binary scientific notation: A mantissa (a binary integer), followed by an exponent assumed to be a power of 2, which is applied to the mantissa
         - 10101e-10 means a mantissa of 10101 (i.e. 21 in base 10) with an exponent of -10 (i.e. $2^{-2}$ in base 10), which also produces the value 101.01 or 5.25 in base 10
-    - Binary fractions can't represent all base-10 fractions, because they can only represent fractions that are negative powers of 2. $1/10$ is not a negative power of 2 and can't be represented as a sum of $1/16$, $1/32$, $1/64$, etc.
+    - Binary fractions cannot represent all base-10 fractions, because they can only represent fractions that are negative powers of 2. $1/10$ is not a negative power of 2 and cannot be represented as a sum of $1/16$, $1/32$, $1/64$, etc.
     - This means some base-10 fractions will get "rounded" to the nearest finite binary fraction, and this will cause errors when they are used in arithmetic
     - On the other hand, `decimal` stores data as a base-10 fraction, using base-10 scientific notation
     - This is slower for the computer to calculate with (since computers work only in binary) but has no "rounding errors" with fractions that include 0.1
@@ -276,7 +276,7 @@ Type      | Size     | Range of Values      | Precision
         string word2 = word;
         ```
 
-        Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` doesn't get its own copy.
+        Both `word` and `word2` contain the same memory address, pointing to the same memory location, which contains the string "Hello". There is only one copy of the string "Hello"; `word2` does not get its own copy.
 
 ## Overflow 🛡
 

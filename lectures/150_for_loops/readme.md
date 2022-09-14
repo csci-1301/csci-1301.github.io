@@ -79,7 +79,7 @@
 
 - Just like method parameters, it is as if the variable declaration happened just inside the opening `{`, so it can only be accessed inside that code block
 
-- This means you can't use a counter variable after the end of the loop. This code will produce a compile error:
+- This means you cannot use a counter variable after the end of the loop. This code will produce a compile error:
 
     ```
     int total = 0;
@@ -108,9 +108,9 @@
 
 #### Accidentally re-declaring a variable
 
-- If your `for` loop declares a new variable in its initialization statement, it can't have the same name as a variable already in scope
+- If your `for` loop declares a new variable in its initialization statement, it cannot have the same name as a variable already in scope
 
-- If you want your counter variable to still be in scope after the end of the loop, you can't also declare it in the `for` loop. This is why we had to write `for(count = 0...` instead of `for(int count = 0...` in the previous example: the name `count` was already being used.
+- If you want your counter variable to still be in scope after the end of the loop, you cannot also declare it in the `for` loop. This is why we had to write `for(count = 0...` instead of `for(int count = 0...` in the previous example: the name `count` was already being used.
 
 - Since counter variables often use short, common names (like `i` or `count`), it is more likely that you'll accidentally re-use one that's already in scope
 
@@ -353,7 +353,7 @@
     }
     ```
 
-- You can use the `Length` property of an array to write a loop condition, even if you did not store the size of the array in a variable. For example, this code doesn't need the variable `numGrades`:
+- You can use the `Length` property of an array to write a loop condition, even if you did not store the size of the array in a variable. For example, this code does not need the variable `numGrades`:
 
     ```
     int sum = 0;

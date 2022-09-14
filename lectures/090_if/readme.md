@@ -137,7 +137,7 @@ Console.WriteLine("Goodbye");
 
     !["A flowchart representation of the nested if-else statement"](img/activity_diag_vote_nested_if)
 
-    - First, the program should test whether the user is a citizen. If not, there is no need to check the user's age, since he/she can't vote anyway
+    - First, the program should test whether the user is a citizen. If not, there is no need to check the user's age, since he/she cannot vote anyway
     - If the user is a citizen, the program should then test whether the user is over 18 to determine if he/she is old enough to vote.
 
 #### Using nested if statements
@@ -167,7 +167,7 @@ Console.WriteLine("Goodbye");
 
     - First, the program tests the condition `usCitizen == true`, and if it is true, the code in the first "if block" is executed
     - Within this if block is another `if` statement that tests the condition `age >= 18`. This represents checking the user's age after determining that he/she is a US citizen - execution only reaches this second `if` statement if the first one evaluated to true. So "You can vote" is printed if both `usCitizen == true` and `age >= 18`
-    - If the condition `usCitizen == true` is false, the if block is skipped and the else block is executed instead, so the entire inner `if` statement is never executed -- the user's age doesn't matter if he/she isn't a citizen
+    - If the condition `usCitizen == true` is false, the if block is skipped and the else block is executed instead, so the entire inner `if` statement is never executed -- the user's age does not matter if he/she isn't a citizen
     - Note that the condition `usCitizen == true` could also be expressed by just writing the name of the variable `usCitizen` (i.e. the if statement would be `if(usCitizen)`), because `usCitizen` is a `bool` variable. We do not need the equality comparison operator to test if it is `true`, because an `if` statement already tests whether its condition is `true` (and a `bool` variable by itself is a valid condition)
     - Note that indentation helps you match up an `else` block to its corresponding `if` block. The meaning of `else` depends on which `if` statement it goes with: the "outer" `else` will be executed if the condition `usCitizen == true` is false, while the "inner" `else` will be executed if the condition `age >= 18` is false.
 
@@ -201,7 +201,7 @@ Console.WriteLine("Goodbye");
 - Sometimes your program needs to test multiple conditions at once, and take different actions depending on which one is true
 - Example: We want to write a program that tells the user which floor a `ClassRoom` object is on, based on its room number
     - If the room number is between 100 and 200 it is on the first floor; if it is between 200 and 300 it is on the second floor; if it is greater than 300 it is on the third floor
-- There are 3 ranges of numbers to test, and 3 possible results, so we can't do it with a single if-else statement
+- There are 3 ranges of numbers to test, and 3 possible results, so we cannot do it with a single if-else statement
 
 #### If-else-if syntax
 
@@ -291,7 +291,7 @@ Console.WriteLine("Goodbye");
     }
     ```
 
-- Note that the order of the else-if statements still matters, because they are evaluated top-to-bottom. If `myIntVar` is 15, it doesn't matter what values `myStringVar` or `myBoolVar` have, because the first if block (setting `x` to 10) will get executed.
+- Note that the order of the else-if statements still matters, because they are evaluated top-to-bottom. If `myIntVar` is 15, it does not matter what values `myStringVar` or `myBoolVar` have, because the first if block (setting `x` to 10) will get executed.
 - Example outcomes of running this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
 
     | `myIntVar` | `myStringVar` | `myBoolVar` | `x` |
