@@ -2,29 +2,68 @@
 title: If Statements
 ---
 
-This lab is aimed at having you practice simple conditional statements.
-It may seem repetitive, but you need to practice `if` statements _a lot_ to understand their mechanics and to be able to write them properly.
+This lab serves multiple goals:
+
+- To reinforce your understanding of boolean values,
+- To practice conditional statements,
+- (Optional) To solve implement solutions to simple, concrete problem.
+
+[The second part](#writing-simple-conditional-statements) may seem repetitive, but you need to practice `if` statements _a lot_ to understand their mechanics and to be able to write them properly.
 
 # Basic Conditional Statements
 
 ## Testing and Improving Conditional Statements
 
-Consider the following code:
+Consider the following code^[The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).]:
 
 ```
-!include code/voting_age.cs
+int yourAge; // This variable will contain the user's age.
+Console.WriteLine("Please, enter your age"); // We ask the user.
+yourAge = int.Parse(Console.ReadLine()); // We read from the user and convert their answer into an int.
+
+// The rest of the code test the value of yourAge and
+// displays a message based on its value. You are asked
+// to explain this code next.
+
+if (yourAge < 0)
+{
+    Console.WriteLine(
+        "I believe you made a mistake, an age cannot be negative!");
+}
+else if (yourAge > 2000)
+{
+    Console.WriteLine(
+        "I believe you made a mistake, nobody can live that long!");
+}
+else if (yourAge >= 18)
+{
+    Console.WriteLine(
+        "In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.");
+}
+else if (yourAge >= 19)
+{
+    Console.WriteLine(
+        "In all States but Mississippi and Puerto Rico, you have reached the age of majority.");
+}
+else if (yourAge >= 21)
+{
+    Console.WriteLine(
+        "You have reached the age of majority in all US states.");
+}
 ```
 
-The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).
 
 #. _Without executing it_, write down what you expect to be displayed if the user enters
+    #. 29339
+    #. -15
     #. "That's confidential",
     #. 10
     #. 18
     #. 19
     #. 22
-    #. 29339
-#. Copy-and-paste the code in the body of the `Main` method and execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
+
+#. Download [a solution containing this code as its `Main` method](solution.zip). 
+#. Execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
 #. There is at least one issue with this code, as "You have reached the age of majority in all US states." will never be displayed. Can you understand why?
 #. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter your conditions.
 
