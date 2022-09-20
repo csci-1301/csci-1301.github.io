@@ -19,7 +19,8 @@ Consider the following code^[The information about the age of majority [comes fr
 ```
 int yourAge; // This variable will contain the user's age.
 Console.WriteLine("Please, enter your age"); // We ask the user.
-yourAge = int.Parse(Console.ReadLine()); // We read from the user and convert their answer into an int.
+// We read from the user and convert their answer into an int.
+yourAge = int.Parse(Console.ReadLine()); 
 
 // The rest of the code test the value of yourAge and
 // displays a message based on its value. You are asked
@@ -38,12 +39,14 @@ else if (yourAge > 2000)
 else if (yourAge >= 18)
 {
     Console.WriteLine(
-        "In all States but Alabama, Nebraska, Mississippi and Puerto Rico, you have reached the age of majority.");
+        "In all States but Alabama, Nebraska, Mississippi"
+        + " and Puerto Rico, you have reached the age of majority.");
 }
 else if (yourAge >= 19)
 {
     Console.WriteLine(
-        "In all States but Mississippi and Puerto Rico, you have reached the age of majority.");
+        "In all States but Mississippi and Puerto Rico,"
+        + " you have reached the age of majority.");
 }
 else if (yourAge >= 21)
 {
@@ -62,10 +65,10 @@ else if (yourAge >= 21)
     #. 19
     #. 22
 
-#. Download [a solution containing this code as its `Main` method](solution.zip). 
-#. Execute it, providing the values written below. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
+#. Download [a solution containing this code as its `Main` method](voting_age.zip). 
+#. Execute it, providing the values written above. Was your thinking correct? If not, revise it and make sure you understand the logic of the program.
 #. There is at least one issue with this code, as "You have reached the age of majority in all US states." will never be displayed. Can you understand why?
-#. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter your conditions.
+#. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter the conditions.
 
 ## Writing Simple Conditional Statements
 
@@ -90,20 +93,22 @@ You were asked the following:
 A possible answer is:
 
 ```
-int a;
+// First, we obtain the number from the user:
+int answer;
 Console.WriteLine("Enter an integer");
-a = int.Parse(Console.ReadLine());
+answer = int.Parse(Console.ReadLine());
 
-if (a >= 0 && a % 2 == 0){
+// Then we test and display accordingly:
+if (answer >= 0 && answer % 2 == 0){
 	Console.WriteLine("Positive and even");
 }
-else if (a >= 0 && a % 2 != 0) {
+else if (answer >= 0 && answer % 2 != 0) {
 	Console.WriteLine("Positive and odd");	
 }
-else if (a < 0 && a % 2 == 0){
+else if (answer < 0 && answer % 2 == 0){
 	Console.WriteLine("Negative and even");
 }
-else if (a < 0 && a % 2 != 0){
+else if (answer < 0 && answer % 2 != 0){
 	Console.WriteLine("Negative and odd");
 }
 ```
@@ -111,39 +116,51 @@ else if (a < 0 && a % 2 != 0){
 That is a lot of repetition!
 And, as you know, it is not good practice to copy-and-paste the very same code, as it requires twice the editing every time you make an update!
 
-We could actually "progressively" construct the message we will be displaying:
+An alternative approach is to "progressively" construct the message we will be displaying:
 
 ```
+// First, we obtain the number from the user:
+// (This part is unchanged)
+int answer;
+Console.WriteLine("Enter an integer");
+answer = int.Parse(Console.ReadLine());
+
+// Then, we declare the string that will
+// contain the message we will be displaying:
 string msg;
 
-if (a >= 0)
+// Then, we test the value, constructing 
+// the string to display as we go:
+if (answer >= 0)
 {
     msg = "Positive";
 }
-else
+else // This is the same as "if (answer < 0)".
 {
     msg = "Negative";
 }
-if (a % 2 == 0) 
+if (answer % 2 == 0) 
 {
-    msg += " and even";
+    msg += " and even"; // The "+=" operator adds to the end of the string
 }    
-else // if (a % 2 != 0)
+else // This is the same as "if (answer % 2 != 0)".
 {
     msg += " and odd";
 }
 
+// And *finally* we display the message:
 Console.WriteLine(msg);
 ```
 
-Much better!
-Since the two conditions are actually independent, we can test them in two different `if` statements!
+This is arguably much better, for the following reasons:
 
+- There is fewer repetition (we do not have to repeat `answer >= 0`, for instance),
+- The conditions are simpler (no conjunction),
+- Since the two conditions (being odd / even, and being positive / negative) are actually independent, it seems more logical to test them separately.
 
 # Pushing Further (Optional)
 
-## Computing Entry Price
-
+This part asks you to read and understand a simple problem, and to design, implement and test a solution to it.
 You are asked to write a simple program that computes the total price for a group of people to enter a park.
 
 Your program should:
@@ -159,3 +176,15 @@ Some tips:
 
 - When asking "yes" / "no" questions, treat "y" and "Y" as a "Yes", and any other string as a "No".
 - Note that we will sell the pass even if the user is not gaining money by doing so (for instance, if 6 children want to enter, $\$4 \times 6 = \$24 < \$ 30$, but we would still sell them the pass).
+
+Here is an example of execution, where the user input is underlined, and hitting "enter" is represented by ↵:
+
+```text
+How many adults?
+2͟↵
+How many children?
+4̲↵
+Since you are more than 6, you can buy a group pass for $30. Are you interested (please enter "Y" for "yes", anything else for "no")?
+Y͟↵
+Your total is $30.00 (you saved $0.00).
+```
