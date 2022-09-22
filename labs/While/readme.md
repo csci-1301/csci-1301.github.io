@@ -2,6 +2,11 @@
 title: while Loop
 ---
 
+This lab serves multiple goals:
+
+- To reinforce your understanding of `while` loops,
+- 
+
 # Practicing while Loops
 
 ## Problem 1

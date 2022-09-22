@@ -62,7 +62,7 @@ switch (string_day)
 Console.WriteLine("The number corresponding to " + string_day + " is " + num_day + ".");
 ```
 
-You can download it [as a solution](day_of_the_week.zip).
+You can download it [as a solution](day_of_the_week.zip) (that also contains the solution to the problems asked below. Make sure you open `day_of_the_week` and not `day_of_the_week_solution` first).
 
 Now, do the following:
 
@@ -89,7 +89,7 @@ M͟O͟N͟D͟A͟Y͟↵
 I am sorry, but MONDAY does not seem to be a valid day.
 ```
 
-You can find an example solution in [this solution](day_of_the_week_solution.zip).
+You can find an example solution in [this solution](day_of_the_week_solution.zip) or in the archive you downloaded previously.
 
 
 # Practicing `if` and `switch`
