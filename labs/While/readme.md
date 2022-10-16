@@ -4,14 +4,17 @@ title: while Loop
 
 This lab serves multiple goals:
 
-- To reinforce your understanding of `while` loops,
-- 
+- To reinforce your understanding of the syntax of `while` loops,
+- To stress the importance of conditions, e.g., the difference between `<` and `<=`,
+- To study loops whose counter starts at values different from `0`,
+- To exhibit that loop counters can be incremented or decremented by any value (not just one),
+- To detect and debug infinite loops,
+- To design simple algorithms requiring loops,
+- (Optional) To have loops controlled by sentinel values.
 
-# Practicing while Loops
+# Practicing while Loops -- Warm-Up
 
-## Problem 1
-
-- Create a new project, and replace the content of the `Main` method with the following code:
+Create a new project, and replace the content of the `Main` method with the following code:
 
 ```
 int i = 0;
@@ -23,10 +26,13 @@ while(i < 100)
 ```
 
 #. Execute the code. You should see the numbers 0 to 99 in the console.
-#. Without changing the numbers, modify the code such that it prints 0 to 100 in the console. Note the difference between `<` and `<=` operators.
-#. Modify the code such that it prints the numbers from 100 to 300. Note that the counter can start from any number you wish.
-#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3.
-#. To implement the above problem, you may code one of the following:
+#. Replace `<` with `<=`, and note that it prints the number from 0 to 100, even if you did not change the numbers.
+#. Replace `0` with `100` and `100` with `300`, and note that it prints the numbers from 100 to 300. Observe that the counter can start from and terminate with any number you wish.
+#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3. The solution is given below, but please think about it before reading it.
+
+<details><summary>Solution</summary>
+
+To implement the above problem, you may use the following:
 
 ```
 int i = 0;
@@ -50,9 +56,27 @@ while(i < 100)
 ```
 
 Which one of the above codes is more efficient? Why?
-Note that you do not have to increment the counter only by one each time. You should update the counter wisely and try to use it more efficiently.
+Note that you do not have to increment the counter only by one each time.
+You should update the counter wisely and try to use it more efficiently.
+</details>
 
-## Problem 2
+# Practicing while Loops -- Decrementing Counter
+
+Create a new project and replace the content of the `Main` method with the following code:
+
+```
+int n = 100;
+while (n > 0)
+{
+    Console.WriteLine(n);
+    n--;
+}
+```
+
+Execute the code, and explain what you see in the console. Note that the counter is decremented, not incremented.
+
+
+# Practicing while Loops -- Mystery Program
 
 Create a new project and replace the content of the `Main` method with the following code:
 
@@ -74,37 +98,25 @@ else
 #. What does the code do? Explain the boolean expression of the loop
 #. Replace `...` with a meaningful word.
 
+# Practicing while Loops -- Summing User-Input
 
-## Problem 3
+Write a program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
-Create a new project and replace the content of the `Main` method with the following code:
+Here is an example of the desired execution, where the user input is underlined, and hitting "enter" is represented by ↵:
 
-```
-int n = 100;
-while (n > 0)
-{
-    Console.WriteLine(n);
-    n--;
-}
+```text
+Please enter an integer greater than 1:
+8̲↵
+The sum from 1 to your number is: 36
 ```
 
-Execute the code, and explain what you see in the console. Note that the counter is decremented, not incremented.
-
-## Problem 4
-
-Write a program that gets a number from the console and finds its biggest divisor less than the number itself.
-
-## Problem 5
-
-Write a new program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
-
-## Problem 6
-
-Ask the user to enter integers. Keep track of the smallest value the user enters. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
+And indeed you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
 
 # Infinite Loops
 
-All of the following are examples of infinite loops. Can you spot the problem? How would you change the code to fix it?
+All of the following are examples of infinite loops.
+Can you spot the "problem"?
+For each of them, suggest an edit that would make them terminate.
 
 ```
 int number = 0;
@@ -150,3 +162,44 @@ while (number <= 5)
 }
 number++;
 ```
+
+```
+int number = 0;
+while (number <= 5)
+{
+    Console.WriteLine("Hi!");
+    number--;
+    Console.WriteLine(number);
+    number++;
+}
+```
+
+# Pushing Further (Optional)
+
+Here are two advances challenges with little-to-no clue to help you getting started.
+Try to think "off-keyboard" for a while before coding your solution, and test it extensively.
+
+## Advanced Problem 1
+
+Write a program that gets a number from the user and finds its biggest divisor less than the number itself.
+
+## Advanced Problem 2
+
+Study the following program:
+
+```
+Console.WriteLine("Enter a number to sum, or \"Done\" to stop and print the total.");
+string enter = Console.ReadLine();
+int sum = 0;
+while (enter != "Done")
+{
+    sum += int.Parse(enter);
+    Console.WriteLine("Enter a number to sum, or \"Done\" to stop and print the total.");
+    enter = Console.ReadLine();
+}
+Console.WriteLine($"Your total is {sum}.");
+```
+
+#. Execute it, and make sure you understand its mechanism.
+#. It contains a "sentinel value": can you tell what it is?
+#. Write a program by taking inspiration from this previous program. Your program should ask the user to enter integers. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
