@@ -79,7 +79,7 @@ As funny or interesting those strange behaviour may seem, overflow errors actual
 
 # Underflow
 
-Most of what we wrote about overflow is also true of _under_flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
+Most of what we wrote about overflow is also true of _under_\ flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
 In a nutshell, you can witness it by executing a statement such as
 
 ```
