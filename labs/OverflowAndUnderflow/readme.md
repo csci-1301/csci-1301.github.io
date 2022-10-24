@@ -4,6 +4,7 @@ title: Overflow and Underflow
 
 
 This lab serves multiple goals:
+
 - To introduce you to the concept of _overflow_ and _underflow_,
 - To give an example of the `MaxValue` and `MinValue` constants,
 - To exemplify the care required when performing mathematical calculations with programs,
