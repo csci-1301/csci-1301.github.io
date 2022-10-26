@@ -99,7 +99,8 @@ while (x > 0)
 Console.WriteLine(x);
 ```
 
-
+Note that this loop should _never_ exit: no matter how large `x` is, dividing it by two repeatedly should never make it $0$!
+Can you tell after how many iterations will this loop terminate?
 
 # (Optional) String Formatting
 
