@@ -87,6 +87,19 @@ Console.WriteLine(0.00000000000000001f * 0.00000000000000001f);
 ```
 
 Which should display `1e-34` but actually displays `9.999999E-35`. As you can see, a rounding error took place because C# did not have enough "room" to store all the information.
+Another interesting example is given by the following loop:
+
+```
+float x = int.MaxValue;
+while (x > 0)
+{
+    Console.Write(x + " ");
+    x = x / 2;
+}
+Console.WriteLine(x);
+```
+
+
 
 # (Optional) String Formatting
 
