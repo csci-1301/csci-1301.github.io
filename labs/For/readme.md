@@ -2,10 +2,19 @@
 title: For Loops
 ---
 
+This lab serves multiple goals:
+
+- To reinforce your understanding of `for` loops,
+- To train you to convert between loop formats,
+- To make you practise solving simple problems using `for` loops,
+- (Optional) To introduce the keywords `break` and `continue`,
+- (Optional) To teach you about the "true form" of `for` loops.
+
 
 # From `while` to `for`
 
 Rewrite the following `while` (or `do...while`) loops as `for` loops.
+This should "just" be a matter of re-ordering the code, and you should be able to do it without thinking much about it much.
 
 ```
 int a = 0;
@@ -79,6 +88,7 @@ This exercise is to practice `for` loops.
 
 Write a program that asks the user to enter a positive integer, and then uses a `for` loop to compute the sum of all the integers between $1$ and the integer given by the user.
 For instance, if the user enters $5$, your program should display $15$ on the screen (i.e., $1 + 2 + 3 + 4 + 5 = 15$).
+You are asked to implement user-input validation later on in this exercise, so you can assume for now that users will always provide numbers.
 
 Then, answer the following questions:
 
@@ -96,33 +106,6 @@ Once you are done, modify your original program in these two respects:
 #. Once the result of the computation is displayed on the screen, ask the user if (s)he wants to compute the sum using another integer or quit, and act accordingly.
 #. Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).
 
-
-# Using `continue` and `break`
-
-Programmers can use two keywords in loops, `continue` and `break`, that modify the control flow.
-They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
-Try executing the following code to see what these statements do.
-
-```
-for (int i = 1; i <= 5; i++)
-{
-    if (i == 3) continue;
-    Console.Write(i + " ");
-}
-```
-
-
-```
-for (int i = 1; i <= 5; i++)
-{
-    if (i == 3) break;
-    Console.Write(i + " ");
-}
-```
-
-You can also use `break` and `continue` in `while` loops.
-Try to rewrite the previous two `for` loops as `while` loops. 
-There is a trick to make the `while` loop using `continue` work properly; can you spot it?
 
 # Pushing Further (Optional)
 
@@ -177,3 +160,31 @@ for(int r = 10; r > 0;)
 ```
 
 Try to rewrite the four `for` loops just given as "ordinary" `for` loops with exactly one initialization and one update in the header of the `for` loop.
+
+## Using `continue` and `break`
+
+Programmers can use two keywords in loops, `continue` and `break`, that modify the control flow.
+They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
+Try executing the following code to see what these statements do.
+
+```
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 3) continue;
+    Console.Write(i + " ");
+}
+```
+
+
+```
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 3) break;
+    Console.Write(i + " ");
+}
+```
+
+You can also use `break` and `continue` in `while` loops.
+Try to rewrite the previous two `for` loops as `while` loops. 
+There is a trick to make the `while` loop using `continue` work properly; can you spot it?
+

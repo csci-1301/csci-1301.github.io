@@ -2,63 +2,66 @@
 title: First Arrays Manipulations
 ---
 
-# First Array Manipulation
+This lab serves multiple goals:
 
+- To introduce you to arrays of different datatypes,
+- To introduce you to the different ways of declaring, assigning and initializing arrays,
+- To iterate over arrays,
+- To use the `Length` property of array,
+
+# Declaration, Assignment & Initialization of an Array
 
 ## Warm-up
 
 Write a program that implements the following steps:
 
 #. declares an array `myArray` of `int` of size $5$,
-
-    Question
-    ~ What values are stored in this array after declaring it?
-
 #. initializes `myArray` with the values $1$, $2$, $3$, $4$ and $5$,
-
-    Question
-    ~ There are a few different ways you can declare and initialize array of size $5$ holding values $1$, $2$, $3$, $4$ and $5$.
-     Can you think of two different ways of doing this?
-
 #. displays the content of `myArray` on the screen.
 
+Questions
+~ 
+    - What values are stored in this array after declaring it _but before initializing it_?
+    - There are a few different ways you can declare and initialize an array of size $5$ holding values $1$, $2$, $3$, $4$ and $5$. Can you think of two different ways of doing this?
+    
+<details><summary>Answer</summary>
+- All the values in the array are set to 0,
+- Two possible ways are `int[] myArray = new int[] {1, 2, 3, 4, 5};` and `int[] myArray =  {1, 2, 3, 4, 5};`.
+</detail>
 
 ## Going wrong
 
 Now, let us write *incorrect* statements.
+For each of the programs below, compile them and make sure you understand the error messages that are displayed.
 
-Add the following statement to the program you created in the warm-up part, and observe how C# reacts, that is, try to compile and execute the program after adding this line:
-
-```
-myArray = { 1, 2 ,3, 4, 5};
-```
-
-Remove the previous line. Then add this statement in its place:
+### Trying to set all the values at once after declaring
 
 ```
-Console.WriteLine(myArray[5]);
+int[] myArrayA = new int[5];
+myArrayA = {1, 2, 3, 4, 5};
 ```
-
-try to compile and execute the program.
-
-Then, remove the previous line, and now add this:
+### Out of bound error (read)
 
 ```
-myArray[5] = 12;
+int[] myArrayB = new int[5];
+Console.WriteLine(myArrayB[5]);
 ```
 
-try to compile and execute the program again.
-
-Remove the previous line. Add this line and execute the program:
+### Out of bound error (write)
 
 ```
-Console.WriteLine(myArray);
+int[] myArrayC = new int[5];
+myArrayC[5] = 12;
 ```
 
-Now answer the following questions.
+### Reading the array as a whole (technically not an error)
 
-#. One of these statements is not "incorrect" in the sense that it will not prevent your program from executing, but it is not doing what you would have expected: which one?
-#. Can you read and understand the error messages you obtained for the others?
+```
+int[] myArrayD = new int[5];
+Console.WriteLine(myArrayD);
+```
+
+This last statement is not "incorrect" in the sense that it will not prevent your program from executing, but it is not doing what you could or would have expected.
 
 # Second Array Manipulation
 
@@ -71,13 +74,31 @@ Write a program that
 #. computes the product of the values stored in `myArray` and displays the result.
 
 
-# Exploring arrays
+If you are unsure how to get started, you can use the following code.
+
+<details><summary>Getting started</summary>
+```
+int[] myArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int i = 0;
+int sum = 0;
+int product = 1;
+while(i < myArray.Length){
+    // Fill this!
+    i++;
+}
+Console.WriteLine("The sum of the values in the array is " + sum + ".");
+
+Console.WriteLine("The product of the values in the array is " + product + ".");
+```
+</details>
+
+# Exploring Arrays
 
 For this part, create a new array:
 
-- declare a `char` array of length $6$, name it `letters`
-- initialize the first 4 indices of `letters` with the following values: `'a', 'b', 'c', 'd'`
-- initialize *index 5* of `letters` with the value `'f'`
+#. declare a `char` array of length $6$, name it `letters`
+#. initialize the first 4 indices of `letters` with the following values: `'a', 'b', 'c', 'd'`
+#. initialize *index 5* of `letters` with the value `'f'`
 
 Now, write the following statements:
 
