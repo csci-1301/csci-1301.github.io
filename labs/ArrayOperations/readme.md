@@ -2,46 +2,55 @@
 title: Operations on Arrays
 ---
 
-# Operations on numeric arrays
+This lab serves multiple goals:
 
-Start by creating a new C\# solution.
+- To reinforce your understanding of arrays of different datatypes,
+- To reinforce your understanding of the `Length` property of array,
+- To introduce you to more advanced array manipulations,
+- To introduce you to simple algorithms that search for values in two arrays,
+- (Optional) to introduce you to simple algorithms that merge arrays.
 
-After creating the solution, declare and initialize an `int` array called `numbers`. Initialize the array so that it holds the following values, in the same order:
+# Operations on Numeric Arrays
+
+This first part will ask you to declare and initialize an array, and then to display, sum, count occurrences and retrieve information from this array.
+In a second moment, we will assess whenever your solution is "universal", that is, whether it produces correct results with any array.
+
+Start by declaring and initialize an `int` array called `numbers`:
 
 ```
-4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7
+int[] numbers = {4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7};
 ```
 
-## Displaying values
+## Displaying Values
 
 After declaring and initializing the `numbers` array, write statements to:
 
-#. Display every value in order, left to right
-#. Display every value at an even index (skip odd indices)
-#. Display all values that are greater than 5
+#. Display every value in order, left to right,
+#. Display every value at an even index (skip odd indices),
+#. Display all values that are greater than 5.
 
-## Counting values
+## Counting Values
 
 Next, write statements that do the following:
 
-#. Calculate the sum of all numbers in `numbers`, then display the result. (The expected answer is 102)
-#. Count how many times `7` occurs in `numbers`, then display that count. Check that your program outputs the correct answer, which you can determine by visually observing the array values.
+#. Calculate the sum of all numbers in `numbers`, then display the result. The expected answer is 102.
+#. Count how many times `7` occurs in `numbers`, then display that count. The expected answer is 3.
 
-## Finding values
+## Finding Values
 
-Now implement statements to answer the following questions:
+Next, write statements that do the following:
 
-#. Find the _index_ of the first `7`, then display that index. If the value does not exist, display `-1` to indicate it was not found. Check that your solution is correct by comparing what you obtain from the program with what you know by visually observing the array.
-#. Find the maximum value in `numbers`. Check that the solution you implement obtains the expected value.
+#. Find the _index_ of the first `7`, then display that index.  The expected answer is 4, but your statements should be such that if the value is not found, it would display `-1`.
+#. Find the greater value in `numbers`. The expected answer is 11.
 
-## Evaluate your solution
+## Evaluate Your Solution: Is It Universal?
 
 After implementing these methods, and assuming your program obtained the expected answers, _ideally_ the solution still works even if the values in the `numbers` array change, or even if the array length changes.
 
 To test your program, go back to the beginning where you declared the `numbers` array, then change the initialization so that the new array values are:
 
 ```
-55, 92, 12, 90, 37, 18, 6, 20, 80, 18, 46, 19, 65, 68, 18
+int[] numbers = {55, 92, 12, 90, 37, 18, 6, 20, 80, 18, 46, 19, 65, 68, 18};
 ```
 
 Then re-run the program.
@@ -55,7 +64,7 @@ Check that you obtain the expected values:
 - maximum value is now `92`
 
 
-# Working with two arrays
+# Working With Two Arrays
 
 For this part, declare and initialize the following two `char` arrays:
 
@@ -66,13 +75,13 @@ char[] chars2 = {'?', 'E', 'U', 'a', 'j', 'X', 'L', 'G', '@', 'L', 'l', 'C', 'w'
 
 Next, write statements that answer these two questions:
 
-#. Does the value `'w'` occur in both arrays? Display the answer, true/false.
+#. Does the value `'w'` occur in both arrays?
 #. What is the first value of the array `chars1` that also occurs in the second array `chars2`, searching from left to right? If none is found, display `no match`.
 
 After completing these two problems, make sure the program answers these questions correctly. The expected results are:
 
-- Does `'w'` occur in both arrays -> `false`
-- First value that occurs in both arrays -> `'U'`
+- Does `'w'` occur in both arrays → `false`
+- First value that occurs in both arrays → `'U'`
 
 Again, evaluate your work by changing the array initializations to:
 
@@ -82,28 +91,29 @@ char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 ```
 
 Then run the program again.
-
 Ideally the program does not crash and should still produce correct answers:
 
-- Does `'w'` occur in both arrays -> `true`
-- First value that occurs in both arrays -> `'P'`
+- Does `'w'` occur in both arrays → `true`
+- First value that occurs in both arrays → `'P'`
 
 If the program does not produce these expected answers after changing the array values,
 review your program and try to determine how to write a solution that works for *any* two char arrays.
 
 # Pushing Further (Optional)
 
-Start with two integer arrays with the following values:
+This short exercise will require you to manipulate two arrays at the same time to construct a third one.
+
+Start with two integer arrays:
 
 ```
 int[] left = { 101, 76, 74, 94, 94 };
 int[] right = { 73, 74, 67, 107, 111, 108, 66 };
 ```
 
-Implement statements to merge `left` and `right` by creating a new, larger array that holds both of their values, in this order:
+Then, implement statements to merge those `left` and `right` arrays by creating a new, larger array that holds both of their values, in this order:
 
 ```
 101, 76, 74, 94, 94, 73, 74, 67, 107, 111, 108, 66
 ```
 
-Do not use built-in array methods from the `Array` class.
+Then, change the values in the `left` and `right` arrays, and make sure that your program still create the correct array.
