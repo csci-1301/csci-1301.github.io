@@ -1,10 +1,17 @@
 ---
-title: foreach
+title: foreach Loops
 ---
+
+This lab serves multiple goals:
+
+- To introduce you to `foreach` loops,
+- To introduce you to their use cases,
+- To compare `for` loops and `foreach` loops by converting between them,
+- To illustrate how `foreach` can be useful in conjonction to classes.
 
 # Practicing `foreach` Loops
 
-## Problem 1
+## Warm-up
 
 Create a new project, and replace the content of the `Main` method with the following code:
 
@@ -24,7 +31,24 @@ Next rewrite the code using a **foreach** statement, then answer the following q
 #. Which one is easier to understand?
 #. Which one needs fewer variables?
 
-## Problem 2
+<details><summary>Answers</summary>
+The code simply becomes:
+
+```
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19};
+foreach(int val in primes)
+{
+    Console.WriteLine(val);
+}    
+```
+
+- The differences are: the keyword (obviously!), the fact that `foreach` does not need indices nor to use the `Length` property, the absence of update or condition in the header, …
+- This is a matter of taste, but `foreach` generally seems more intuitive,
+- Both uses one additional variable (`i` in the `for` case, `val` in the `foreach` case).
+</details>
+
+
+## Converting from `for` to `foreach` (1/2)
 
 Can you rewrite the following code with a `foreach` statement? Why?
 
@@ -38,8 +62,7 @@ for(int i = 0; i < numbers.Length; i++)
 }
 ```
 
-## Problem 3
-
+## Converting from `for` to `foreach` (2/2)
 
 Can you rewrite the following code with a `foreach` statement? Why?
 
@@ -52,15 +75,14 @@ for(int i = 0; i < numbers.Length - 1; i++)
 }
 ```
 
-## Problem 4
+## Conversion between `for` and `foreach`
 
 #. Can you think of any loops that can be implemented with _foreach_ but not with _for_? If so, write an example.
 #. Can you think of any loops that can be implemented with _for_ but not with _foreach_? If so, write an example.
 
+# Mixing `foreach` With Classes
 
-## Problem 5
-
-Download [Library project](Library.zip), extract it, and open it with your IDE.
+Download the [Library project](Library.zip), extract it, and open it with your IDE.
 
 Observe the program and its two classes:
 
