@@ -73,11 +73,11 @@ Now, do the following:
 #. Change the code so that [the days of the week start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday), i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.
 #. Finally, change the last message to tell the user if the code encountered an error: use an `if` statement to display a different message if the user input did not match one of the literals in your `switch` statement.
 
-Here is an example of execution, where the user input is underlined, and hitting "enter" is represented by ↵:
+Here is an example of execution, where the user input is u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲, and hitting "enter" is represented by ↵:
 
 ```text
 Please enter the day of the week.
-t͟u͟e͟s͟d͟a͟y͟↵
+t̲u̲e̲s̲d̲a̲y̲↵
 The number corresponding to tuesday is 3.
 ```
 
@@ -85,7 +85,7 @@ Here is a second example:
 
 ```text
 Please enter the day of the week.
-M͟O͟N͟D͟A͟Y͟↵
+M̲O̲N̲D̲A̲Y̲↵
 I am sorry, but MONDAY does not seem to be a valid day.
 ```
 
