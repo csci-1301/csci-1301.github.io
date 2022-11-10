@@ -2,35 +2,7 @@
 title: Advanced Arrays
 ---
 
-# Array Manipulation Practice
-
-Read the following instructions ("set-up" and "your goal") completely and carefully before starting.
-
-## Set-Up
-
-For this exercise:
-
-- Download and extract [ArrayManipulation](ArrayManipulation.zip) project. 
-- It contains two .cs files, `ArrayLib.cs` and `Program.cs`.
-- Compile and execute it.
-- Observe `Program.cs`: this is a _test program_ that you **should not modify**. It will be useful to test the methods that you will be writing in the `ArrayLib.cs` class file. For each method, this program displays the expected value, and what is actually returned. As you can see, only the `Display` method seems to be always correct.    
-- Now, read `ArrayLib.cs`. Every method used by `Program.cs` has a header, but all the bodies are returning "default" values or do nothing, with the exception of `Display`. This method was written for you.
-
-
-## Your goal
-
-- Your goal is to write the body of the methods in the `ArrayLib` class.
-- Do not change any method headers in `ArrayLib` class. 
-- Modify only method bodies, so that they return the "right" values, according to their description (in comments after their headers) and the test given in `Program.cs`.
-- You can change their order within `ArrayLib`, and you can implement them in any order.
-- Some of them are actually easier to write, and they are not the first ones: can you find a method that seems easy enough to start your project?
-
-
-If you have the time and interest, have a look at the challenges offered at the end of the `ArrayLib.cs` file.
-
-You can find a possible solution [in this archive](Solution_ArrayManipulation.zip).
-
-# Pushing Further (Optional)
+# Value and Reference Types
 
 Here, we will explore the difference between value and reference types.
 Since arrays are reference types, it is important for you to understand how reference types work.
