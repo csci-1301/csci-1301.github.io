@@ -97,7 +97,7 @@ This is very similar to the type of questions you may face during exams:
 
 A possible solution is given below.
 
-<details><summary>Solution</summary>
+<details><summary>Solution:</summary>
 
 A possible solution, using `do…while` is:
 

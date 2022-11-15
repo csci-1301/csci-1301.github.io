@@ -31,7 +31,7 @@ Next rewrite the code using a **foreach** statement, then answer the following q
 #. Which one is easier to understand?
 #. Which one needs fewer variables?
 
-<details><summary>Answers</summary>
+<details><summary>Answers:</summary>
 The code simply becomes:
 
 ```

@@ -431,7 +431,12 @@ $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
 # This rule concerns all the zip ARCHIVES, but prefixed by the BUILD_DIR 
 	mkdir -p $(dir $@) 
 	rsync -av $(subst $(BUILD_DIR),,$@) $@
+# Command will be of the form 
+# make build/labs/Static/Student.zip
+# and Program.cs needs to have this case, cf.
+# https://csci-1301.github.io/user_guide#creating-new-labs
 
+	
 labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 
 # -------------------------------

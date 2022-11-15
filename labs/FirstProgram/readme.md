@@ -2,7 +2,15 @@
 title: Your First Own Program
 ---
 
-In this lab you will first edit an existing program then create a new program "from scratch". You will also explore C\# documentation and learn new useful IDE features.
+This lab serves multiple goals:
+
+- To teach you how to edit an existing program,
+- To show you how to create a new program "from scratch",
+- To understand how to display characters, strings and escape sequences on the screen,
+- To read and understand error messages from your IDE,
+- To understand how renaming of projects and solution works,
+- To explain how to explore C\# documentation,
+- To explore new useful IDE features.
 
 # Your First Own Program
 
@@ -171,7 +179,7 @@ The documentation for C# is packed with useful information and efforts are made 
 
 The documentation for C# is at <https://docs.microsoft.com/en-us/dotnet/csharp/>. To get started, have a look at "Introduction" at <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/> and answer the following:
 
-#. What C\# langauge feature is responsible for reclaiming unused memory?
+#. What C\# language feature is responsible for reclaiming unused memory?
 #. What file extension is used by C\# source code files?
 #. Can you list 3 different C\# data types?
 

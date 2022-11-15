@@ -374,6 +374,10 @@
     font-size: 1.2em;
     text-align: center;
   }
+  
+  details summary {
+      font-weight: bold;
+  }
   @media(min-width:678px){
     h1 {
       font-size: 2.2em;

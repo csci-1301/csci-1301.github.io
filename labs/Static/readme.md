@@ -2,7 +2,13 @@
 title: Using static keyword
 ---
 
-# Static classes
+This lab serves multiple goals:
+
+- To teach you how a static class differ from a non-static one,
+- To illustrate the usefulness of static classes,
+- To teach you how a non-static class can manipulate static fields.
+
+# Static Classes -- Warm-Up
 
 One use case for static classes is creating utility classes (or "helper classes")
 that contain related and frequently-used methods; making those methods easily callable
@@ -10,33 +16,24 @@ anywhere in the program. Some examples of static classes in C\# are the `Math` a
 
 Pay attention to how these classes are used:
 
-- A `Console` object is never instantiated before use
-- The `WriteLine` method is called referring to the _name of the class_ (not an object identifier)
+- A `Console` object is never instantiated before use,
+- The `WriteLine` method is called referring to the _name of the class_ (not an object identifier):
 
-```
-using System;
+    ```
+    Console.WriteLine("calling a static method");
+    ```
+Question:
+: 
+    Using your IDE, check what happens if you do the following:
 
-class Program {
-    static void Main() {
-        Console.WriteLine("calling a static method");
-    }
-}
-```
+    ```
+    Console test = new Console();
+    ```
 
-Using your IDE, check what happens if you do the following:
-
-```
-using System;
-
-class Program {
-    static void Main() {
-        Console test = new Console();
-    }
-}
-```
-
+<details><summary>Solution:</summary>
 Indeed, it is _not possible_ to instantiate an object when a class is declared `static`.
 Further, if a class is declared static, all its members (attributes, methods, constructors, etc.) must also be declared `static`.
+</details>
 
 ## Static Calculator
 
@@ -75,67 +72,12 @@ After implementing `Calculator`,
     - If your implementation of `Calculator` class matches the instructions, you will see meaningful output after executing the program.
     - Otherwise review the instructions again and retrace your implementation steps to resolve any issues.
 
-# Static members in a non-static class
+# Static Members in a Non-static Class
 
 A non-static class can contain both static and non-static class members.
 
-Study the following program implementation but \*do not\* execute it.
+Download, extract and study this [project](Student.zip) implementation but *do not* execute it.
 After reading through the implementation, answer the questions below.
-
-Student.cs
-
-```
-using System;
-
-class Student {
-
-    private int id;
-    private string name;
-    private static string universityName = "Augusta University";
-    private static int studentCount;
-
-    public Student(int id, string name){
-        this.id = id;
-        this.name = name;
-        studentCount++;
-    }
-
-    public static void DisplayStudentCount(){
-        // does this work? uncomment to check
-        // Console.WriteLine(name);
-
-        Console.WriteLine($"Number of students: {studentCount}");
-    }
-
-    public override string ToString(){
-        return $"id: {id}\n"+
-               $"name: {name}\n"+
-               $"university: {universityName}";
-    }
-}
-```
-
-Program.cs
-
-```
-using System;
-
-class Program {
-
-    static void Main() {
-
-        Student alice = new Student(1111, "Alice");
-        Console.WriteLine(alice);
-
-        Student.DisplayStudentCount(); // first time
-
-        Student bob = new Student(1112, "Bob");
-        Console.WriteLine(bob);
-
-        Student.DisplayStudentCount(); // second time
-    }
-}
-```
 
 #. How many non-static attributes does the `Student` class have?
 #. How many static attributes does the `Student` class have?
@@ -148,7 +90,7 @@ class Program {
     #. `Console.WriteLine(bob);`
     #. `Student.DisplayStudentCount(); // second time`
 
-#. If the `studentCount` attribute was \*not\* `static`, what would be the output of:
+#. If the `studentCount` attribute was *not* `static`, what would be the output of:
     #. `Student.DisplayStudentCount(); // first time`
     #. `Student.DisplayStudentCount(); // second time`
 
