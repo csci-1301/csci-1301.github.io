@@ -25,7 +25,7 @@ We will assume that your grade for this class will be computed as follows:
 Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their *current* class average.
 
 Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to "stop".
-This means if they say that they have taken only 2 quizzes (or put the sentinel value for quiz 3), then the program shouldn't ask for the later quiz grades (this is also true for the projects and exams).
+This means if they say that they have taken only 2 quizzes (or put the sentinel value for quiz 3), then the program should not ask for the later quiz grades (this is also true for the projects and exams).
 It is fine to assume that the user will only enter "correct" numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.
 
 An example of execution could be:
@@ -37,41 +37,39 @@ For all the questions below, enter
     - "-1" if that evaluation did not happened yet.
 
 What was your grade for quiz 1 (out of 20)?
-16↵
+1̲6̲↵
 What was your grade for quiz 2 (out of 20)?
-14↵
+1̲4̲↵
 What was your grade for quiz 3 (out of 20)?
--1↵
+-̲1̲↵
 Your average for the quiz is 75.00 %.
 What was your grade for project 1 (out of 20)? 
-22↵
+2̲2̲↵
 What was your grade for project 2 (out of 20)? 
--1↵
+-̲1̲↵
 Your average for the project is 110.00 %.
 What was your grade for in-class test 1 (out of 100)? 
-66↵
+6̲6̲↵
 What was your grade for in-class test 2 (out of 100)? 
--1↵
+-̲1̲↵
 Your average for the tests is 66.00 %.
 What was your grade for the final (out of 200)?
--1↵
+-̲1̲↵
 Your average so far is 74.83 %.
-
-Press any key to continue . . .
 ```
 
 # How to Get Started?
 
 This problem involves some tricky arithmetic, as well as cleverly getting the information from the user. Below are some hints to help push you in the right direction. 
 
-### Hint 1 - Do The Math!
+## Hint 1 - Do The Math!
 
 The first thing you need to do for this problem is to understand the equation needed to compute the grade.
 Start by trying to reproduce the example given in the project description on paper.
 Can you get the same result?
 Can you find a way that seems simple and flexible to compute the current grade so far in all generality?
 
-### Hint 2 - Gathering The Data
+## Hint 2 - Gather The Data
 
 Once you have the equation figured out, you need to understand how you can obtain the data from the user.
 You have two possible ways of doing it:
