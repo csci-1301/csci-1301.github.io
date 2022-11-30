@@ -6,7 +6,7 @@ class Program
     {
         // declare an array that holds books
         Book[] books = new Book[10];
-        
+
         // fill array with books
         books[0] = new Book("The Great Gatsby", 1925);
         books[1] = new Book("Don Quixote", 1605);
@@ -18,7 +18,5 @@ class Program
         books[7] = new Book("1984", 1949);
         books[8] = new Book("The Metamorphosis", 1915);
         books[9] = new Book("One Hundred Years of Solitude", 1967);
-        
-
     }
 }

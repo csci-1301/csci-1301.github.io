@@ -17,14 +17,18 @@ class Program
         myRectangle.SetWidth(3); // Accessor to set the Width
 
         /*
-         * Let us use the three other methods to 
+         * Let us use the three other methods to
          *  a. Retrieve the Length (using GetLength())
          *  b. Retrieve the Width (using GetWidth())
          *  c. Compute the Area (using ComputeArea())
          */
 
-        Console.WriteLine($"You rectangle's length is {myRectangle.GetLength()}" + // a.
-            $", its width is {myRectangle.GetWidth()}" + //b.
-            $", so its area is {myRectangle.ComputeArea()}."); //c.
+        Console.WriteLine(
+            $"You rectangle's length is {myRectangle.GetLength()}"
+                + // a.
+                $", its width is {myRectangle.GetWidth()}"
+                + //b.
+                $", so its area is {myRectangle.ComputeArea()}."
+        ); //c.
     }
 }

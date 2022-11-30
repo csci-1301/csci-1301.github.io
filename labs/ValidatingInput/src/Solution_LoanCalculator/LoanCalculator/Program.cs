@@ -5,22 +5,25 @@
  */
 
 using System;
+
 class Program
 {
     static void Main()
     {
-
         Console.WriteLine("What is your name?");
         string name = Console.ReadLine();
         char type; // Variable to store the type of loan.
 
-        do {
-            Console.WriteLine("Do you want a loan for an Auto (A, a), a House (H, h), or for some Other (O, o) reason?");
+        do
+        {
+            Console.WriteLine(
+                "Do you want a loan for an Auto (A, a), a House (H, h), or for some Other (O, o) reason?"
+            );
             type = Console.ReadKey().KeyChar; // This part of the code reads *a char* from the user.
-                                                   // We haven't studied it, but it's pretty straightforward.
+            // We haven't studied it, but it's pretty straightforward.
             type = char.ToLower(type); // We convert the charater type to lower case.
-                                       // Char.ToLower is a static method too!
-                                       // cf. https://docs.microsoft.com/en-us/dotnet/api/system.char.tolower?view=netframework-4.8
+            // Char.ToLower is a static method too!
+            // cf. https://docs.microsoft.com/en-us/dotnet/api/system.char.tolower?view=netframework-4.8
             Console.WriteLine();
         } while (type != 'a' && type != 'h' && type != 'o');
 
@@ -29,7 +32,11 @@ class Program
         bool success;
         do
         {
-            Console.WriteLine($"{name}, you need money for " + Loan.TypeOfLoan(type) + ", great.\nWhat is your current credit score?");
+            Console.WriteLine(
+                $"{name}, you need money for "
+                    + Loan.TypeOfLoan(type)
+                    + ", great.\nWhat is your current credit score?"
+            );
             success = int.TryParse(Console.ReadLine(), out cscore);
         } while (!success || cscore < 300 || cscore > 850);
 
@@ -50,5 +57,4 @@ class Program
         Loan myLoan = new Loan(name, type, cscore, need, down);
         Console.WriteLine(myLoan);
     }
-
 }

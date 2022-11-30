@@ -1,7 +1,7 @@
 ﻿/*
  * CSCI 1301
  * A class: the Rectangle class
- * 
+ *
  * Solution File: see lines 56 and up.
  * UML diagram:
     |======================================|
@@ -38,6 +38,7 @@ class Rectangle
     {
         length = lengthParameter;
     }
+
     // "Getter" (or "accessor") for the Length:
     public int GetLength()
     {
@@ -53,6 +54,7 @@ class Rectangle
     {
         width = widthParameter;
     }
+
     // "Getter" (or "accessor") for the Width:
     public int GetWidth()
     {
@@ -65,7 +67,6 @@ class Rectangle
     public int ComputeArea()
     {
         return length * width;
-
     }
 
     /*

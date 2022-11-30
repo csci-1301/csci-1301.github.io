@@ -1,9 +1,9 @@
-class ChemElem
+﻿class ChemElem
 {
     // Attributes:
-    private int atomicNumber;   // Atomic number of the chemical element
-    private string name;        // Name of the chemical element
-    private decimal melt;       // Melting point (in Kelvin) of the chemical element
+    private int atomicNumber; // Atomic number of the chemical element
+    private string name; // Name of the chemical element
+    private decimal melt; // Melting point (in Kelvin) of the chemical element
 
     // Constructor:
     public ChemElem(int atomicNumberParam, string nameParam, decimal meltParam)
@@ -24,7 +24,7 @@ class ChemElem
     {
         return (kelvinParam - 273.15M);
     }
-    
+
     public decimal MeltingInCelsius()
     {
         return FromKelvinToCelsius(melt);
@@ -32,8 +32,14 @@ class ChemElem
 
     public override string ToString()
     {
-        return name + "'s atomic number is " + atomicNumber + "\n"
-               + "It melts at " + melt + "K (" + MeltingInCelsius() +
-               "°C).\n";
+        return name
+            + "'s atomic number is "
+            + atomicNumber
+            + "\n"
+            + "It melts at "
+            + melt
+            + "K ("
+            + MeltingInCelsius()
+            + "°C).\n";
     }
 }

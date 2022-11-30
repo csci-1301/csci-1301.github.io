@@ -2,8 +2,9 @@ class Book
 {
     private string title;
     private int year;
-    
-    public Book(string titleParam, int yearParam) {
+
+    public Book(string titleParam, int yearParam)
+    {
         title = titleParam;
         year = yearParam;
     }

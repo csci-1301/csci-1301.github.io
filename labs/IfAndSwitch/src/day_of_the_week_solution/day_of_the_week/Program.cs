@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 class Program
 {
@@ -6,8 +6,8 @@ class Program
     {
         // We ask the user to enter the day of the week:
         Console.WriteLine("Please enter the day of the week.");
-        // Note that anything that is not spelled exactly as 
-        // in the switch statement will be treated by the 
+        // Note that anything that is not spelled exactly as
+        // in the switch statement will be treated by the
         // default case.
 
         // We read from the user:
@@ -16,7 +16,7 @@ class Program
         // Variable where the result of our computation will be stored:
         int num_day;
 
-        // Switch statement to map textual description of the day 
+        // Switch statement to map textual description of the day
         // (e.g., "Monday", "Tuesday", …) to its number (2, 3, …).
         switch (string_day)
         {
@@ -54,8 +54,9 @@ class Program
         }
 
         // We display the number corresponding to the day entered:
-        if (num_day < 0) {
-            Console.WriteLine($"I am sorry, but {string_day} does not seem to be a valid day."); 
+        if (num_day < 0)
+        {
+            Console.WriteLine($"I am sorry, but {string_day} does not seem to be a valid day.");
         }
         else
         {

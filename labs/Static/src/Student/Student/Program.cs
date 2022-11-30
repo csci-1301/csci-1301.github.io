@@ -2,8 +2,8 @@ using System;
 
 class Program
 {
-    static void Main() {
-
+    static void Main()
+    {
         Student alice = new Student(1111, "Alice");
         Console.WriteLine(alice);
 
@@ -14,4 +14,4 @@ class Program
 
         Student.DisplayStudentCount(); // second time
     }
-} 
+}

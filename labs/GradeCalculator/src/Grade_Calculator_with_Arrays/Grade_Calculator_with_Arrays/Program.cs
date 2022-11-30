@@ -27,8 +27,8 @@ class Program
         //0-3: Max points for quizzes, projects, tests and final, respectively.
         //4-7: Number of scheduled quizzes, projects, tests and final, respectively.
 
-        //Note: The array above is being used as if it contains constant integers, but it's missing the "const" designation. This is because you cannot make an array of constants. For a solution to this, see here: https://stackoverflow.com/a/5142378     
-        
+        //Note: The array above is being used as if it contains constant integers, but it's missing the "const" designation. This is because you cannot make an array of constants. For a solution to this, see here: https://stackoverflow.com/a/5142378
+
         int[] accumAssignments = new int[] { 0, 0, 0 }; //Number of quizzes, projects, and tests completed
 
         int[] pointsEarned = new int[] { 0, 0, 0 }; //Total points earned for each category
@@ -47,12 +47,19 @@ class Program
 
         // We now display the instructions:
         Console.WriteLine(
-            "For all the questions below, enter, as an integer, \n \t- your grade, or\n\t- \"0\" if you missed the evaluation, or\n\t- \"-1\" if that evaluation did not happened yet.");
+            "For all the questions below, enter, as an integer, \n \t- your grade, or\n\t- \"0\" if you missed the evaluation, or\n\t- \"-1\" if that evaluation did not happened yet."
+        );
 
         // Loop to collect the data for the quizzes, and then we compute the average for the quizzes.
         do
         {
-            Console.WriteLine("What was your grade for quiz " + (accumAssignments[0] + 1) + " (out of " + CONSTVARS[0] + ")?");
+            Console.WriteLine(
+                "What was your grade for quiz "
+                    + (accumAssignments[0] + 1)
+                    + " (out of "
+                    + CONSTVARS[0]
+                    + ")?"
+            );
             read = int.Parse(Console.ReadLine());
             if (read == -1)
             {
@@ -75,12 +82,17 @@ class Program
 
         skip = false; // We reset this counter to its original value.
 
-
         // Loop to collect the data for the projects, and then we compute the average for the projects.
         // It works pretty much as the part on quizzes, except that there are TOTP projects.
         do
         {
-            Console.WriteLine("What was your grade for project " + (accumAssignments[1] + 1) + " (out of " + CONSTVARS[1] + ")? ");
+            Console.WriteLine(
+                "What was your grade for project "
+                    + (accumAssignments[1] + 1)
+                    + " (out of "
+                    + CONSTVARS[1]
+                    + ")? "
+            );
             read = int.Parse(Console.ReadLine());
             if (read == -1)
             {
@@ -106,7 +118,13 @@ class Program
         // It works pretty much as the part on quizzes, except that there are TOTT tests, and that they count for 40% of the grade.
         do
         {
-            Console.WriteLine("What was your grade for in-class test " + (accumAssignments[2] + 1) + " (out of " + CONSTVARS[2] + ")? ");
+            Console.WriteLine(
+                "What was your grade for in-class test "
+                    + (accumAssignments[2] + 1)
+                    + " (out of "
+                    + CONSTVARS[2]
+                    + ")? "
+            );
             read = int.Parse(Console.ReadLine());
             if (read == -1)
             {
@@ -140,7 +158,13 @@ class Program
         // Note that we do not use the nF variable in this program, but still declare and update it, to accomodate possible evolution of our program.
 
         // Finally, we compute the average, based on the coefficients (10%, 10%, 40%, 40%) and on the total possible points:
-        double avg = (averagePoints[0] * 0.1 + averagePoints[1] * 0.1 + averagePoints[2] * 0.4 + averagePoints[3] * 0.4) / tot;
+        double avg =
+            (
+                averagePoints[0] * 0.1
+                + averagePoints[1] * 0.1
+                + averagePoints[2] * 0.4
+                + averagePoints[3] * 0.4
+            ) / tot;
 
         // We then display the average, using the format specifier for percentage:
         Console.WriteLine($"Your average so far is {avg:P}.");

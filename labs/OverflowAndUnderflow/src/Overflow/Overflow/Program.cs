@@ -16,18 +16,33 @@ class Overflow
             int int_max_value_plus_one = int_max_value + 1; // This variable contains the maximum value for integer +1.
 
             Console.Write( // We display information about the maximum value of different datatypes:
-                 "\n|-------|---------------------------------|---------------------------------|\n"
-               + String.Format("|{0,7}|{1,33}|{2,33}|", "Type", "Max value", "Max Value +1")
-               + "\n|=======|=================================|=================================|\n"
-               + String.Format("|{0,7}|{1,33}|{2,33}|", "int", int.MaxValue, int_max_value_plus_one)
-               + "\n|-------|---------------------------------|---------------------------------|\n"
-               + String.Format("|{0,7}|{1,33}|{2,33}|", "float", float.MaxValue, float.MaxValue + 1)
-               + "\n|-------|---------------------------------|---------------------------------|\n"
-               + String.Format("|{0,7}|{1,33}|{2,33}|", "double", double.MaxValue, double.MaxValue + 1)
-               + "\n|-------|---------------------------------|---------------------------------|\n"
-               + String.Format("|{0,7}|{1,33}|{2,33}|", "decimal", decimal.MaxValue, "N/a")
-               + "\n|-------|---------------------------------|---------------------------------|\n"
-                );
+                "\n|-------|---------------------------------|---------------------------------|\n"
+                    + String.Format("|{0,7}|{1,33}|{2,33}|", "Type", "Max value", "Max Value +1")
+                    + "\n|=======|=================================|=================================|\n"
+                    + String.Format(
+                        "|{0,7}|{1,33}|{2,33}|",
+                        "int",
+                        int.MaxValue,
+                        int_max_value_plus_one
+                    )
+                    + "\n|-------|---------------------------------|---------------------------------|\n"
+                    + String.Format(
+                        "|{0,7}|{1,33}|{2,33}|",
+                        "float",
+                        float.MaxValue,
+                        float.MaxValue + 1
+                    )
+                    + "\n|-------|---------------------------------|---------------------------------|\n"
+                    + String.Format(
+                        "|{0,7}|{1,33}|{2,33}|",
+                        "double",
+                        double.MaxValue,
+                        double.MaxValue + 1
+                    )
+                    + "\n|-------|---------------------------------|---------------------------------|\n"
+                    + String.Format("|{0,7}|{1,33}|{2,33}|", "decimal", decimal.MaxValue, "N/a")
+                    + "\n|-------|---------------------------------|---------------------------------|\n"
+            );
 
             // Running some additional tests…
 
@@ -47,14 +62,17 @@ class Overflow
 
             if (float.MaxValue * 2 / 2 == float.MaxValue * 2)
             {
-                Console.WriteLine($"{float.MaxValue} times 2, then divided by 2, is {float.MaxValue * 2 / 2}.");
+                Console.WriteLine(
+                    $"{float.MaxValue} times 2, then divided by 2, is {float.MaxValue * 2 / 2}."
+                );
             }
 
             if (double.MaxValue * 2 / 2 == double.MaxValue * 2)
             {
-                Console.WriteLine($"{double.MaxValue} times 2, then divided by 2, is {double.MaxValue * 2 / 2}.");
+                Console.WriteLine(
+                    $"{double.MaxValue} times 2, then divided by 2, is {double.MaxValue * 2 / 2}."
+                );
             }
-
         } // Unchecked stops here.
     }
 }

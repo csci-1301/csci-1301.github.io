@@ -5,13 +5,14 @@
  * A ToString method is provided.
  */
 using System;
+
 class Loan
 {
-    private string name;    // For the name of the loan holder.
-    private char type;      // For the type ('a'uto, 'h'ouse or 'o'ther) of the loan
-    private int cscore;     // For the credit score.
+    private string name; // For the name of the loan holder.
+    private char type; // For the type ('a'uto, 'h'ouse or 'o'ther) of the loan
+    private int cscore; // For the credit score.
     private decimal amount; // For the amount of money loaned.
-    private decimal rate;   // For the A.P.R., the interest rate.
+    private decimal rate; // For the A.P.R., the interest rate.
 
     /*
      * Our constuctor will compute the amount and the rate
@@ -53,9 +54,9 @@ class Loan
                         rate = .09M;
                     break;
             }
-
         }
     }
+
     public override string ToString()
     {
         string typeName = "";
@@ -71,10 +72,7 @@ class Loan
             case ('o'):
                 typeName = "another reason";
                 break;
-
         }
-        return "Dear " + name + $", you borrowed {amount:C} at {rate:P} for "
-            + typeName + ".";
+        return "Dear " + name + $", you borrowed {amount:C} at {rate:P} for " + typeName + ".";
     }
 }
-

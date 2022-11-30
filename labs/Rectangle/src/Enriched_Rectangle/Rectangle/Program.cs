@@ -1,7 +1,7 @@
 ﻿/*
  * CSCI 1301
  * A simple application program for the Rectangle class
- * 
+ *
  * Solution File: see lines 33 and up.
  */
 
@@ -19,15 +19,19 @@ class Program
         myRectangle.SetWidth(3); // Accessor to set the Width
 
         /*
-         * Let us use the three other methods to 
+         * Let us use the three other methods to
          *  a. Retrieve the Length (using GetLength())
          *  b. Retrieve the Width (using GetWidth())
          *  c. Compute the Area (using ComputeArea())
          */
 
-        Console.WriteLine($"You rectangle's length is {myRectangle.GetLength()}" + // a.
-            $", its width is {myRectangle.GetWidth()}" + //b.
-            $", so its area is {myRectangle.ComputeArea()}."); //c.
+        Console.WriteLine(
+            $"You rectangle's length is {myRectangle.GetLength()}"
+                + // a.
+                $", its width is {myRectangle.GetWidth()}"
+                + //b.
+                $", so its area is {myRectangle.ComputeArea()}."
+        ); //c.
 
         // Create a second `Rectangle` object and set its length to 3 and its width to 3.
         Rectangle mySecondRect = new Rectangle();
@@ -51,18 +55,26 @@ class Program
 
         //Create a fourth `Rectangle` object, do not specify its length or width, and display them on the screen. What do you observe?
         Rectangle myFourthRect = new Rectangle();
-        Console.WriteLine($"This fourth rectangle's length is {myFourthRect.GetLength()}" +
-             $", its width is {myFourthRect.GetWidth()}");
+        Console.WriteLine(
+            $"This fourth rectangle's length is {myFourthRect.GetLength()}"
+                + $", its width is {myFourthRect.GetWidth()}"
+        );
         // Both values are set to 0.
 
         // Trying our new methods:
-        Console.WriteLine($"The rectangle's length is {myRectangle.GetLength()}" +
-            $", its width is {myRectangle.GetWidth()}. Hence, its perimeter is {myRectangle.ComputePerimeter()}.");
+        Console.WriteLine(
+            $"The rectangle's length is {myRectangle.GetLength()}"
+                + $", its width is {myRectangle.GetWidth()}. Hence, its perimeter is {myRectangle.ComputePerimeter()}."
+        );
         myRectangle.DoubleRectangle();
-        Console.WriteLine($"After using the DoubleRectangle method, the rectangle's length is {myRectangle.GetLength()}" +
-            $", its width is {myRectangle.GetWidth()}.");
+        Console.WriteLine(
+            $"After using the DoubleRectangle method, the rectangle's length is {myRectangle.GetLength()}"
+                + $", its width is {myRectangle.GetWidth()}."
+        );
         myRectangle.Swap();
-        Console.WriteLine($"After using the Swap method, the rectangle's length is {myRectangle.GetLength()}" +
-            $", its width is {myRectangle.GetWidth()}.");
+        Console.WriteLine(
+            $"After using the Swap method, the rectangle's length is {myRectangle.GetLength()}"
+                + $", its width is {myRectangle.GetWidth()}."
+        );
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 class Program
 {
@@ -7,9 +7,9 @@ class Program
         // You can use the FromKelvinToCelsius method even if no object exist:
         Console.WriteLine("Enter the value you want to covert from Kelvin to Celsius:");
         decimal valueEntered = Decimal.Parse(Console.ReadLine());
-        
+
         // Note the way the method is called: by the class, not by an object!
-        decimal valueEnteredInCelsius = ChemElem.FromKelvinToCelsius(valueEntered); 
+        decimal valueEnteredInCelsius = ChemElem.FromKelvinToCelsius(valueEntered);
         Console.WriteLine(valueEntered + "K is " + valueEnteredInCelsius + "°C.");
 
         // Of course, we can create objects, using our custom constructor:
