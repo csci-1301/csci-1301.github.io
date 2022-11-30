@@ -450,6 +450,10 @@ build: docs web-index book labs
 all: build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
+# Rule to tidy all C# source code, requires https://csharpier.com/
+tidy:
+	dotnet csharpier .
+
 # Phony rule to display variables
 .PHONY: test
 $(info $$var is [${TARGET_DOC_FILES_HTML}])
