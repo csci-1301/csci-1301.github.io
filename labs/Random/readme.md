@@ -2,18 +2,36 @@
 title: Random class
 ---
 
+
+This lab serves multiple goals:
+
+- To illustrate how programs can generate random numbers,
+- To introduce you to using existing libraries,
+- (Optional) to understand what a cryptographically secure random number generator is and why it matters.
+
+# Generating Random Numbers
+
 The `Random` class from the C# standard library can be used to generate random numbers in any given range.
 In this lab you will practice using `Random` class.
 
-# Generating random numbers
 
-Start by creating a new project, then practice generating different random numbers and display them at the screen:
+Start by reading [the corresponding chapter in the lecture notes](https://csci-1301.github.io/book.html#random), then create a new project and practice generating and displaying at the screen different random numbers:
 
 #. Generate any random integer
 #. Generate a random integer between -10 and 10 including these boundary values
 #. Generate a random double
 
 Note you only need 1 instance of `Random` class to generate these numbers.
+
+<details><summary>Solution:</summary>
+```
+Random rand = new Random(); // Creation of a random number generator.
+Console.WriteLine("A random number:" + rand.Next()); // This is any random (int) number.
+Console.WriteLine("A random number between -10 and 10:" + (rand.Next(21)-10)); // This number will be between 0 and 20, then we subtract 10 from it.       
+Console.WriteLine("A random number between -10 and 10:" + rand.Next(-10, 11)); // Alternate solution
+Console.WriteLine("A random double:" + rand.NextDouble()); // This is any random (double) number.
+```
+</details>
 
 Execute the program a few times to make sure the outputs are different each time.
 
@@ -26,9 +44,9 @@ Once you have successfully generated the 3 random numbers described above, add t
 Execute the program again, a few times, to make sure these values change on each execution.
 
 
-# Manipulating two arrays
+# Manipulating Two Arrays
 
-This problem combines random number generation with arrays.  Using a Random object, write a program that:
+This problem combines random number generation with arrays.  Using a `Random` object, write a program that:
 
 #. declares two arrays of `int` of size `8`,
 #. initializes the values of the first array with random numbers between $0$ and $9$,
@@ -55,27 +73,6 @@ An example execution of this program would display:
 In this example, the first array contains "0 5 3 1 3 9 9 1" and the second contains "8 3 3 2 1 0 0 5".
 
 
-# "Higher or Lower" Game
-
-Write a program that:
-
-#. Starts by having computer choose a random number between 0 and 100. Store that number at a variable.
-#. Asks the user to enter a numerical value between 0 and 100 and stores the user's answer in a variable.
-#. Add an if statement that displays on the screen `"You guessed correctly"` if the number entered by the user matches the number selected by computer.
-#. Add an if statement that displays on the screen `"Too high!"` if the number entered by the user is strictly greater than the number selected by computer.
-#. Add an if statement that displays on the screen `"Too low!"` if the number entered by the user is strictly smaller than the number selected by computer.
-#. Add an if statement that displays on the screen `"You found a multiple !"` if the number entered by the user is a multiple of the number selected by computer, 
-   but different from it.  
-#. When user enters a number that does not match computers selection, the user should be able to enter another number. This continues until user guesses correctly.       
-#. Keep count of how many guesses it takes for the user to arrive to the correct answer. After user guesses correctly, display that count, for example:
-   
-    ```text
-    You guessed correctly.
-    That was 7 guesses!
-    ```    
-   
-You can adjust your program so that e.g. if the user enters a number that is at the same time higher and a multiple of computer's number, only one message is displayed.
-
 # Pushing Further (Optional)
 
 ## Cryptographically secure random numbers
@@ -92,4 +89,4 @@ When an application needs cryptographically secure random numbers, RandomNumberG
 You can learn more about secure random numbers by reading through:
 
 - the technical description of [RandomNumberGenerator class](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator)
-- discussion on [how to choose which Random generator to use](https://stackoverflow.com/questions/1257299/why-use-the-c-sharp-class-system-random-at-all-instead-of-system-security-crypto)
+- discussion on [how to choose which Random generator to use](https://stackoverflow.com/q/1257299)
