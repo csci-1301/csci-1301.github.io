@@ -1,6 +1,12 @@
 ---
-title: Static Class Members
+title: A Class for Chemical Elements
 ---
+
+This lab serves multiple goals:
+
+- To understand how to represent information in a class,
+- To understand the design of a class involving static members,
+- To convert between different representations without changing the stored values in the attributes.
 
 # A Class for Chemical Elements
 
@@ -56,3 +62,43 @@ You may want to comment out part or all of your "Program.cs" file, before starti
 
 You should test all of those modifications in your "Program.cs" file as you implement them.
 Use relevant data, test your program, and make sure the behavior is the expected behavior.
+
+<details><summary>Elements of solution</summary>
+Typically, you need to replace 
+
+```
+public ChemElem(int atomicNumberParam, string nameParam, decimal meltParam)
+```
+
+by 
+
+```
+public ChemElem(int atomicNumberParam, string nameParam, decimal meltParam, decimal boilParam)
+```
+
+and to add 
+
+```
+boil = boilParam;
+```
+
+to your constructor.
+
+More subtle, the `FromKelvinToFahrenheit` method can be defined as follows and then re-used:
+
+```    
+public static decimal FromKelvinToFahrenheit(decimal kelvinParam)
+{
+    return kelvinParam * 9/5 - 459.67M;
+}
+public decimal MeltingInFahrenheit()
+{
+    return FromKelvinToFahrenheit(melt);
+}
+
+public decimal BoilingInFahrenheit()
+{
+    return FromKelvinToFahrenheit(boil);
+}
+```
+</details>
