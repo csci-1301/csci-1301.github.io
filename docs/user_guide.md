@@ -238,6 +238,7 @@ This repository uses following tools and technologies:
 - [Anchor.js](https://www.bryanbraun.com/anchorjs/) - for automatic links.
 - fonts-symbola - to produce the emoji and other symbols in the pdf document.
 - [utteranc.es](https://utteranc.es/) - for feedback through website
+- [csharpier](https://github.com/belav/csharpier) - to tidy the C# source code
 
 ## How build outputs are generated
 
