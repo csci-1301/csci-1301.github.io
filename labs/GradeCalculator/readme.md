@@ -2,6 +2,13 @@
 title: Grade Calculator
 ---
 
+This lab serves multiple goals:
+
+- To have you read a high-level description of a program,
+- To help you in implementing this high-level description,
+- To help you structure your reasoning and mathematical understanding of a simple problem,
+- To exhibit different implementations of this high-level description.
+
 # Presentation 
 
 This project will help you design and implement a "grade calculator" for (a variation) of this class.
@@ -18,7 +25,7 @@ We will assume that your grade for this class will be computed as follows:
 Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their *current* class average.
 
 Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to "stop".
-This means if they say that they've taken only 2 quizzes (or put the sentinal value for quiz 3), then the program shouldn't ask for the later quiz grades (this is also true for the projects and exams).
+This means if they say that they have taken only 2 quizzes (or put the sentinel value for quiz 3), then the program shouldn't ask for the later quiz grades (this is also true for the projects and exams).
 It is fine to assume that the user will only enter "correct" numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.
 
 An example of execution could be:
