@@ -8,8 +8,10 @@ class Program
         myRectangle.SetLength(12);
         myRectangle.SetWidth(3);
         int area = myRectangle.ComputeArea();
-        Console.WriteLine("Your rectangle's length is " +
-        $"{myRectangle.GetLength()}, and its width is " +
-        $"{myRectangle.GetWidth()}, so its area is {area}.");
+        Console.WriteLine(
+            "Your rectangle's length is "
+                + $"{myRectangle.GetLength()}, and its width is "
+                + $"{myRectangle.GetWidth()}, so its area is {area}."
+        );
     }
 }

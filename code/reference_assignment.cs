@@ -1,4 +1,5 @@
 using System;
+
 class Program
 {
     static void Main(string[] args)
@@ -8,9 +9,7 @@ class Program
         rect1.SetWidth(10);
         Rectangle rect2 = rect1;
         rect2.SetLength(4);
-        Console.WriteLine($"Rectangle 1: {rect1.GetLength()} "
-           + $"by {rect1.GetWidth()}");
-        Console.WriteLine($"Rectangle 2: {rect2.GetLength()} "
-           + $"by {rect2.GetWidth()}");
+        Console.WriteLine($"Rectangle 1: {rect1.GetLength()} " + $"by {rect1.GetWidth()}");
+        Console.WriteLine($"Rectangle 2: {rect2.GetLength()} " + $"by {rect2.GetWidth()}");
     }
 }

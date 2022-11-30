@@ -3,9 +3,9 @@
  */
 using System;
 
-class Program 
+class Program
 {
-    static void Main() 
+    static void Main()
     {
         Console.WriteLine("Hello, world!"); // I'm an in-line comment.
     }
