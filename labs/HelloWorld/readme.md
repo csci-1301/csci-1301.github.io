@@ -2,11 +2,18 @@
 title: Hello World
 ---
 
+This lab serves multiple goals:
+
+- To have you download, open, compile and execute your very first program,
+- To understand how to back-up a program,
+- To become familiar with you IDE,
+- To introduce you to reading error messages given by your compiler.
+
+# Your First Program
+
 In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.
 It is customary to start the study of a programming language with a ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program, that simply displays "Hello World".
 Although such a program has no real interest nor purpose, it is used to make sure that your set-up is correctly configured, and to guide you gently in the discovery of programs and their language!
-
-# Your First Program
 
 ## Opening Your First Program
 
