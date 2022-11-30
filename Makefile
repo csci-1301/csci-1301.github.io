@@ -126,6 +126,7 @@ TARGET_VIDEOS_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_VIDEOS_FILES))
 ## Performance & Global Options
 # -------------------------------
 
+.PHONY:MAKEFLAGS
 MAKEFLAGS:= -j
 # Maximize parallel execution whenever possible
 
@@ -230,6 +231,7 @@ $(TARGET_BOOK_FILE).epub:  $(SOURCE_BOOK_FILES) | $(SOURCE_BOOK_FILES) $(BUILD_D
 	pandoc $(SOURCE_BOOK_FILES) $(PANDOC_DOCX) -o $@ -M title="CSCI 1301 Book"
 
 # Whole book, in all formats.
+.PHONY:book
 book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $(TARGET_BOOK_FILE).docx $(TARGET_BOOK_FILE).epub
 
 # -------------------------------
@@ -285,6 +287,7 @@ docs-docx:$(SOURCE_DOC_FILES) $(DOCS_DIR)exercises.md
 	make $(TARGET_DOC_FILES_DOCX)
 	
 ### Whole doc, in all formats.
+.PHONY: docs
 docs: docs-html docs-pdf docs-odt docs-docx
 
 # -------------------------------
@@ -414,14 +417,7 @@ labs-instructions: labs-html labs-pdf labs-odt labs-docx
 	(printf  '\t<Compile Include="Properties\AssemblyInfo.cs" />\n  </ItemGroup>\n  <Import Project="$$(MSBuildToolsPath)\Microsoft.CSharp.targets" />\n</Project>\n') >> $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj \
 # We create the Properties\AssemblyInfo.cs file.
 	(printf 'using System.Reflection;\nusing System.Runtime.InteropServices;\n[assembly: AssemblyTitle("'$$(notdir $*)'=")]\n[assembly: AssemblyCompany("Augusta University")]\n[assembly: AssemblyCopyright("Copyright ©  2018")]\n[assembly: AssemblyVersion("1.0.0.0")]\n[assembly: AssemblyFileVersion("1.0.0.0")]\n') > $(dir $<)Properties/AssemblyInfo.cs
-#
-# TODO
-# There needs to be one
-# <ItemGroup>\n    <Compile Include="Program.cs" />\n  </ItemGroup>\n
-# per .cs file in the project in the .csproj file.
-# We can now only accomodate single-file projects.
-#
-# Finaly, we can zip the folder:
+# Finally, we can zip the folder:
 	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a ../$(notdir $@) $(notdir $*)*  -xr\!.vs -xr\!.directory
 # We compress the folder containing the sln and the folder containing the csproj and the code
 # But we exclude the .vs folder and .directory file
@@ -436,17 +432,20 @@ $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
 # and Program.cs needs to have this case, cf.
 # https://csci-1301.github.io/user_guide#creating-new-labs
 
-	
+.PHONY:labs
 labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 
 # -------------------------------
 ## Other Useful Rules
 # -------------------------------
 
+.PHONY:web
 web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 
+.PHONY:build
 build: docs web-index book labs
 
+.PHONY:all
 all: build
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
