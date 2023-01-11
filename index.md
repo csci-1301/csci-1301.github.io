@@ -55,9 +55,11 @@ Without Solution | With Solution
 
 ### Academic Life
 
+- [Getting Help](getting_help.html) - how to receive help to be best positioned to succeed in your studies
 - [Choosing Your Major](choosing_major.html) - guide on how to pick your major       
 - [Survey and Statistical Analysis](survey.html) - a brief explanation of the purpose and benefits of surveying our students
 - [Undergraduate Course Assistant](uca.html) - Undergraduate Course Assistants  - What are they and how do I become one?
+- [UCA starting guide](uca_guide.html) - the landing page for new UCAs.
 
 ### About this Resource
 
