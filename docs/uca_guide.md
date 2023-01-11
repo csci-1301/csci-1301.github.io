@@ -14,23 +14,26 @@ There are three important rules for you:
     Briefly reviewing the information [listed here](https://www.augusta.edu/hr/university/university_benefits/studenthires.php), and in particular [those slides](https://www.augusta.edu/hr/university/university_benefits/documents/department_guide_studenthireprocess_fy_23.pdf) can help you in making sure that you understand all aspects of your position.
     Do not forget that you are first and foremost a _student_, and that your main goal here is to _graduate_.
     
-#. You are here to help students.
+#. You are here to help students, not to solve their problems.
     ~ Please, review what you should and should not do [on this section](uca.html#what-is-an-undergraduate-course-assistant-1).
     It is difficult to strike the right balance when helping a student, but a good rule of thumb is that _you should not *do* anything yourself, just explain and give hints so that *they* can solve the problem they are facing_. You are here to help students understand how to solve a problem, not to solve it for them.
     
 #. Don't hesitate to ask.
     ~ That's it. You are not alone to deal with difficult situations (cheating, rude behavior, student abusing your time, etc.), and it is normal if you are sometimes unsure of the best course of action. The instructors are happy to train you and help you solve problems that may arise.
 
+<!--
 Once you have done the paperwork (contract, background request form, …) with our Academic Program Coordinator, Wennie Squires, you can start working and clock-in on [augusta.edu/oneusg](https://www.augusta.edu/oneusg/).
 Please, be on the lookout for monthly "Time Reporting Reminders for Student Assistants" emails from Wennie, that contains important information and reminders.
 Any question about human resource, pay, hour caps and the like should be directed to our Academic Program Coordinator.
 
 Once this is done, your first task is to get in touch with your instructor, if they have not already done it, to know what they expect from you. 
 You can discuss topics such as the need for (virtual or physical) office hours, whenever you need to seat in class, how to help students, etc.
+-->
 
-On top of supporting students and helping the instructor, you are also encouraged to work up to 4 hours per week on the improvement of those resources.
+On top of supporting students and helping the instructor, you are also encouraged to work on the improvement of those resources.
 Your contribution may range from spell-checking to pointing inconsistencies, from clarifying statements to re-organizing exercises.
 Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
+We discuss below how you can edit our resources.
 
 # Editing the Resources
 
