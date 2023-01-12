@@ -53,6 +53,7 @@ First Last:
     - (if you feel like it, share your major or something else personal).
 
 -->
+
 Richard Kelley:
 ~ 
     - <RIKELLEY@augusta.edu>.
@@ -61,6 +62,7 @@ Richard Kelley:
     - I typically see discord notifications first, so feel free to ping me [there](http://discordapp.com/users/434479500953124865). Email I will see but not as fast. Teams doesn't like to send me notifications.
     - Office hours are Monday and Wednesday, 4:30-6:30pm.
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
+
 <!-- 
 For example,
 
