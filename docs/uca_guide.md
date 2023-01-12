@@ -17,11 +17,11 @@ There are three important rules for you:
 #. You are here to help students, not to solve their problems.
     ~ Please, review what you should and should not do [on this section](uca.html#what-is-an-undergraduate-course-assistant-1).
     It is difficult to strike the right balance when helping a student, but a good rule of thumb is that you should not do anything yourself, just explain and give hints so that they can solve the problem they are facing. You are here to help students understand how to solve a problem, not to solve it for them. 
-    
-    Additionally, tutors should prioritize giving clear and concise explanations and hints, as to avoid confusion while also helping them better understand the problem-solving process. This means that when you encounter a problem that you are not able to solve, it's important to ask a colleague who is available for help and try to understand their approach. This way, the student can receive assistance more quickly and will be less likely to get confused during the troubleshooting process. By emphasizing the importance of understanding and working through the problem, rather than just providing a solution, tutors can help students develop the skills they need to become more independent problem-solvers.
-    
+     
 #. Don't hesitate to ask.
     ~ That's it. You are not alone to deal with difficult situations (cheating, rude behavior, student abusing your time, etc.), and it is normal if you are sometimes unsure of the best course of action. The instructors are happy to train you and help you solve problems that may arise.
+
+In general, UCAs should prioritize giving clear and concise explanations and hints, as to avoid confusion while also helping them better understand the problem-solving process. This means that when you encounter a problem that you are not able to solve, it's important to ask a colleague who is available for help and try to understand their approach. This way, the student can receive assistance more quickly and will be less likely to get confused during the troubleshooting process. By emphasizing the importance of understanding and working through the problem, rather than just providing a solution, tutors can help students develop the skills they need to become more independent problem-solvers.
 
 <!--
 Once you have done the paperwork (contract, background request form, …) with our Academic Program Coordinator, Wennie Squires, you can start working and clock-in on [augusta.edu/oneusg](https://www.augusta.edu/oneusg/).
