@@ -6,7 +6,7 @@ This lab serves multiple goals:
 
 - To have you download, open, compile and execute your very first program,
 - To understand how to back-up a program,
-- To become familiar with you IDE,
+- To become familiar with your IDE,
 - To introduce you to reading error messages given by your compiler.
 
 # Your First Program
@@ -29,8 +29,27 @@ Although such a program has no real interest nor purpose, it is used to make sur
 Question:
 ~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://en.wikipedia.org/wiki/Domain_name), because we told you to do so, or for some other reasons?
 
+<details><summary>Elements of solution</summary>
+The zip archive we asked you to download is hosted on <https://csci-1301.github.io/>, that is, on [Github pages](https://pages.github.com/).
+The *can be* malware hosted on Github pages, and the fact that this website is secure (it uses http*s*) is in no ways a guarantee of safety.
+So, in short, this archive is safe because we told you so, and because we are careful how it is updated. 
+
+Ultimately, many security decisions rests on trust, and you will have to trust us during this course.
+If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows to run programs you cannot trust in a safe environment.
+</details>
+
+
 Question:
 ~  How is an IDE different from other types of software? Identify 3 differences between an IDE and a web browser. Can you identify 3 similarities?
+
+<details><summary>Elements of solution</summary>
+This is really up to you! Among the similarities, one can remark that an IDE and pretty much every other software you ever used both have:
+
+- A graphical user interface (this is not always the case!),
+- The capacity of connecting to the internet,
+- A manual.
+</details>
+
 
 ## Compiling and Executing Your First Program
 
@@ -62,6 +81,7 @@ Question:
         - Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd>
 
 That makes 3 shortcuts already!
+You can find many more [on this resource page](../../shortcuts.html).
 
 ## Backups
 

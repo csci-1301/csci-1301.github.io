@@ -60,8 +60,30 @@ You should also remember that the internet is (also!) a wonderful place where ma
 For instance, [this guide on open source](https://opensource.guide/) is an excellent place to understand what open source is and why it matters.
 Our resources are supported by Affordable Learning Georgia, which strives to share good, accessible and free (as in "free coffee" _and_ as in "free speech") Open Educational Resources (OER) to students in Georgia: [reading their "About"](https://www.affordablelearninggeorgia.org/about/about_us) page may help you understand the importance and benefits of developing resources here, for you!
 
-Question:
-~ What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"? Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means: is it like coffee (some people say "beer") or like speech? Are the resources presented here free as in coffee, as in speech, or both? And what about your computer's operating system? Your media player? Try to look at the licenses of some of the software you use on a daily basis. You may realize that some important software products are actually open source, and host their code on e.g., github!
+Questions:
+~ Answer the following: 
+
+    - What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"?
+    - Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means: is it like coffee (some people say "beer") or like speech?
+    - Are the resources presented here free as in coffee, as in speech, or both?
+    - And what about your computer's operating system? 
+    - Your media player? 
+    
+    Try to look at the licenses of some of the software you use on a daily basis. You may realize that some important software products are actually open source, and host their code on e.g., github!
+
+<details><summary>Elements of solution</summary>
+- "Free" as in "free coffee" means that you are welcome to use the resource without paying for it. It means "at no monetary cost" (gratis).  
+"Free" as in "free speech" relates to liberty. It means "with little or no restriction" (libre).
+- A free software is free as in speech: per the [FSF](https://www.fsf.org/about/what-is-free-software), 
+
+    >  Free software is software that gives you the user the freedom to share, study and modify it. We call this free software because the user is free. 
+    
+    This means that a free software can comes at a cost (it is not necessarily "gratis"), but that once it is paid for, you can use it in any way you like: edit it, improve it, copy it, and in some cases redistribute it.
+- The resources presented here are free as in coffee _and_ speech.
+- If your computer is running [Windows](https://www.microsoft.com/en-us/licensing/product-licensing/windows) or [macOS](https://www.apple.com/legal/sla/), then it is mostly proprietary (read: not free).
+[Android](https://en.wikipedia.org/wiki/Android_(operating_system)#Licensing) is mostly free, and [Linux](https://en.wikipedia.org/wiki/Linux#Development) distributions are in general completely free.
+- For your media player, you should check yourself! One excellent media player released under a free license is [VLC](http://www.videolan.org/)!
+</details>
 
 # How to Get Help
 
