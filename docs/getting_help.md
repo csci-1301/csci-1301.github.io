@@ -55,7 +55,7 @@ First Last:
 
 -->
 David Diestelhorst
-~ 
+~
     - <ddiestelhorst@augusta.edu>
     - Responsible for Section D's lab.
     - Also present during Section A's and Section B's labs.
@@ -72,29 +72,29 @@ Richard Kelley:
     - Office hours are Monday and Wednesday, 4:30-6:30pm.
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
 
-Ian Yelle:
-~ 
-    - <iyelle@augusta.edu>
-    - Responsible for Section E's lab.
-    - Also present during Section B and F's labs.
-    - Feel free to reach out via email or [discord](http://discordapp.com/users/269217845064368138). I also check Teams every once in a while, but I recommend the first two options.
-    - Office hours are Tuesday and Thursday, 1-3pm.
-    - I'm a computer science major and math minor in my last semester undergrad, before hopefully going on to grad school. I love helping new people learn in this great major, and I love learning new ways to teach students.
-    
+Jason Weeks
+~
+    - <jaweeks@augusta.edu>
+    - Responsible for Section D's lab
+    - May also be present for Section C's lab
+    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
+    - My office hours are as follows:
+        - Tuesday: 1:00pm - 5:00pm
+        - Thursday: 3:00pm - 5:00pm
+        - Friday: 9:00am - 12:00pm
+    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
 <!-- 
 For example,
---> 
 
 Clément Aubert:
 ~ 
     - <caubert@augusta.edu>
     - Responsible for Section B's lab.
     - Also present during Section C and D's labs.
-    - Feel free to reach out via emails or teams, cf. <https://spots.augusta.edu/caubert/#contact>. I don't frequently check discord.
-    - My office hours are 
-        - Monday 1:00pm–2:00pm in my office and on teams.
-        - Tuesday 2:00pm–3:00pm in my office and on teams.
+    - Feel free to reach out via emails or teams. I don't frequently check discord.
+    - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
+-->   
 
 ## Commenting Using a Github Account
 
