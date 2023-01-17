@@ -35,9 +35,10 @@ The Augusta University Game Design Club and Girls Who Code College Loop "will be
 
 # For This Course
 
+## Undegraduate Course Assistants
+
 The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
 Check your syllabus for how to reach out your instructor. For this semester, your UCAs are:
-
 
 <!--
 
@@ -75,3 +76,20 @@ Clément Aubert:
     - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
 -->   
+
+## Commenting Using a Github Account
+
+On this website, if [you look below](#how-is-this-page), you will see a box where you can comment.
+This will require that you create a [Github account](https://github.com/login), which is free and may serve multiple purpose if you intend to study, use, or contribute to open-source projects.
+The comment can use the [markdown syntax](https://commonmark.org/) (exactly like this resource!), which is also used on websites like [stackoverflow](https://stackoverflow.com/editing-help) and extremely popular!
+
+## How to Ask a Question?
+
+It may seems silly, but asking a question "the right way" may not always be easy.
+
+#. Once you've identified your issue, try again from scratch to see if you missed a point.
+#. Go over the instructions, and [look in our resources](https://github.com/csci-1301/csci-1301.github.io/search?q=ask+a+question) for some meaningful keywords.
+#. Think about how you can describe your issue, what is the shortest route to reproduce it.
+#. If you are still facing difficulties, be detailed and clear about what you think went wrong: if the question is related to computers, specify which operating system, what you have tried, the exact nature of the error message, etc. Screenshots are not always the right way to convey your question: try to be descriptive, and explain what you tried. If you want to refer to a particular lab or lecture, open the corresponding page, look for the closest title, hover over it, and you should see a "§" symbol appears: click on it, you can now [share that link](https://www.wikihow.com/Copy-and-Paste-a-Link) so that your interlocutor knows precisely what you are talking about!
+
+And, remember: your instructor(s) knows that you are a student and here to learn, so you should _never_ feel intimidated or assume that _everyone knows better than you_: many students struggle in this class at times, and you could actually do them all a favor by asking your instructor(s) to go over a particular dimension that they may have overlooked or explained poorly!
