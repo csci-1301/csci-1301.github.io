@@ -72,6 +72,15 @@ Richard Kelley:
     - Office hours are Monday and Wednesday, 4:30-6:30pm.
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
 
+Ian Yelle:
+~
+    - <iyelle@augusta.edu>
+    - Responsible for Section E's lab.
+    - Also present during Section B and F's labs.
+    - Feel free to reach out via email or [discord](http://discordapp.com/users/269217845064368138). I also check Teams every once in a while, but I recommend the first two options.
+    - Office hours are Tuesday and Thursday, 1-3pm.
+    - I'm a computer science major and math minor in my last semester undergrad, before hopefully going on to grad school. I love helping new people learn in this great major, and I love learning new ways to teach students.
+    
 <!-- 
 For example,
 
