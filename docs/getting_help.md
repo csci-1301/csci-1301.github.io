@@ -55,7 +55,7 @@ First Last:
 
 -->
 David Diestelhorst
-~
+~ 
     - <ddiestelhorst@augusta.edu>
     - Responsible for Section D's lab.
     - Also present during Section A's and Section B's labs.
@@ -73,7 +73,7 @@ Richard Kelley:
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
 
 Ian Yelle:
-~
+~ 
     - <iyelle@augusta.edu>
     - Responsible for Section E's lab.
     - Also present during Section B and F's labs.
@@ -83,16 +83,18 @@ Ian Yelle:
     
 <!-- 
 For example,
+--> 
 
 Clément Aubert:
 ~ 
     - <caubert@augusta.edu>
     - Responsible for Section B's lab.
     - Also present during Section C and D's labs.
-    - Feel free to reach out via emails or teams. I don't frequently check discord.
-    - My office hours are M. & W. 10--12.
+    - Feel free to reach out via emails or teams, cf. <https://spots.augusta.edu/caubert/#contact>. I don't frequently check discord.
+    - My office hours are 
+        - Monday 1:00pm–2:00pm in my office and on teams.
+        - Tuesday 2:00pm–3:00pm in my office and on teams.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
--->   
 
 ## Commenting Using a Github Account
 
