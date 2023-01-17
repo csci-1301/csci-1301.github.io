@@ -68,7 +68,7 @@ Clément Aubert:
 -->  
 
 David Diestelhorst
-~
+~ 
     - <ddiestelhorst@augusta.edu>
     - Responsible for Section D's lab.
     - Also present during Section A's and Section B's labs.
@@ -86,7 +86,7 @@ Richard Kelley:
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
 
 Jason Weeks
-~
+~ 
     - <jaweeks@augusta.edu>
     - Responsible for Section D's lab
     - May also be present for Section C's lab
@@ -97,7 +97,7 @@ Jason Weeks
         - Friday: 9:00am - 12:00pm
     - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
 
- Clément Aubert:
+Clément Aubert:
  ~ 
      - <caubert@augusta.edu>
      - Responsible for Section B's lab.
