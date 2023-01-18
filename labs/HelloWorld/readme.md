@@ -12,8 +12,8 @@ This lab serves multiple goals:
 # Your First Program
 
 In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.
-It is customary to start the study of a programming language with a ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program, that simply displays "Hello World".
-Although such a program has no real interest nor purpose, it is used to make sure that your set-up is correctly configured, and to guide you gently in the discovery of programs and their language!
+It is customary to start the study of a programming language with a ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program that simply displays "Hello World".
+Although such a program has no real interest nor purpose, it is used to make sure that your setup is correctly configured and to guide you gently in the discovery of programs and their language!
 
 ## Opening Your First Program
 
@@ -31,11 +31,11 @@ Question:
 
 <details><summary>Elements of solution</summary>
 The zip archive we asked you to download is hosted on <https://csci-1301.github.io/>, that is, on [Github pages](https://pages.github.com/).
-The *can be* malware hosted on Github pages, and the fact that this website is secure (it uses http*s*) is in no ways a guarantee of safety.
+There *can be* malware hosted on Github pages, and the fact that this website is secure (it uses http*s*) is in no ways a guarantee of safety.
 So, in short, this archive is safe because we told you so, and because we are careful how it is updated. 
 
-Ultimately, many security decisions rests on trust, and you will have to trust us during this course.
-If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows to run programs you cannot trust in a safe environment.
+Ultimately, many security decisions rest on trust, and you will have to trust us during this course.
+If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows you to run programs you cannot trust in a safe environment.
 </details>
 
 
@@ -43,7 +43,7 @@ Question:
 ~  How is an IDE different from other types of software? Identify 3 differences between an IDE and a web browser. Can you identify 3 similarities?
 
 <details><summary>Elements of solution</summary>
-This is really up to you! Among the similarities, one can remark that an IDE and pretty much every other software you ever used both have:
+This is really up to you! Among the similarities, one can remark that an IDE and pretty much every other software you have ever used both have:
 
 - A graphical user interface (this is not always the case!),
 - The capacity of connecting to the internet,
@@ -85,7 +85,7 @@ You can find many more [on this resource page](../../shortcuts.html).
 
 ## Backups
 
-Now we need to make sure you know how to save your work and access it. This is especially important if you are using the computer lab rooms, as **you can not store files permanently on the lab's computer, you will have to store them either online in your cloud storage or on a USB drive**.
+Now we need to make sure you know how to save your work and access it. This is especially important if you are using the computer lab rooms, as **you can not store files permanently on the lab's computer, and you will have to store them either online in your cloud storage or on a USB drive**.
 
 ### Finding The Right Tool
 
@@ -97,7 +97,7 @@ You can save your project:
 
 Having _two_ backups is generally recommended.
 
-If you chose the "remote" option (i.e., using a server) and you are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/app-center?category=63), etc.) on the lab computer: it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
+If you chose the "remote" option (i.e., using a server) and are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/app-center?category=63), etc.) on the lab computer; it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
 Make sure to always upload your files before logging out of the computer.
 
 ## Making Sure You Have the Right Files
@@ -131,10 +131,10 @@ Once you are done, test that you performed the backup properly.
 If not, go have another look back at the ["Compiling and Executing Your First Program"](#compiling-and-executing-your-first-program) section.
 
 If your backup went wrong (you cannot open the project, it refuses to compile, …), try to understand what happened.
-Then, re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and run the program.
+Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and run the program.
 
 Action:
-~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code): such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control), allowing them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.
+~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.
 
 ## Orientation
 
@@ -151,12 +151,12 @@ IDEs have many features and require practice. Explore your IDE and try to comple
 
 ## Breaking Your Program
 
-If you followed the instructions carefully, your were able to build the solution and start the program without debugging after each step. [As you know, C\# has precise rules](../../book.html#rules-of-c-syntax) and not respecting them can prevent your solution from being built by the IDE.
+If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\# has precise rules](../../book.html#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
 
 In this exercise, you are asked to do the following:
 
 #. Change the program so that it violates one of the syntax rules of `C#`.
-#. Build the solution and note that an error is reported. The IDE will report a build error similar to the following:
+#. Build the solution, and note that an error is reported. The IDE will report a build error similar to the following:
 
        Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped
 
@@ -179,7 +179,7 @@ In this exercise, you are asked to do the following:
 
 #. Break your program three times, in order to identify three different error messages, and three ways of breaking C\#'s rules.
 
-If you have time or need ideas, you can try with the following, and see which one(s) make the building impossible (do not forget to undo your change after):
+If you have time or need ideas, you can try with the following and see which one(s) make the building impossible (do not forget to undo your change after):
 
 - Remove the semicolon after `using System`
 - Replace `class Program` with `class TestOne`
