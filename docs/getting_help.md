@@ -88,7 +88,7 @@ Richard Kelley:
 Jason Weeks:
 ~ 
     - <jaweeks@augusta.edu>
-    - Responsible for Section D's lab
+    - Responsible for Section B's lab
     - May also be present for Section C's lab
     - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
     - My office hours are as follows:
