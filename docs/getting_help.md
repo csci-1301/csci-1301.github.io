@@ -66,7 +66,15 @@ Clément Aubert:
     - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
 -->  
-
+Artis Carter:
+~ 
+    - <artcarter@augusta.edu>.
+    - Present for Section C's lab.
+    - Also present during Section F's lab.
+    - Best way to reach me is via [discord](http://discordapp.com/users/730957085717561364), email, or on Teams.
+    - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 5:00pm-7:00pm and Friday 2:00pm-4:00pm.
+    - I am a senior majoring in computer science and mathematics. You can find me eating Chick-fil-A or helping someone on discord.
+    
 David Diestelhorst:
 ~ 
     - <ddiestelhorst@augusta.edu>
