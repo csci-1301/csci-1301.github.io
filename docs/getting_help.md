@@ -115,7 +115,8 @@ Clément Aubert:
         - Tuesday 2:00pm–3:00pm in my office and on teams.
      - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming. 
      
-And the labs meet as follows:
+All labs take place in Allgood Hall N344, and meet as follows:
+
 
 Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
 -- | ----| ------| -------------| -------------| -------------
