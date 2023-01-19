@@ -114,6 +114,17 @@ Clément Aubert:
         - Monday 1:00pm–2:00pm in my office and on teams.
         - Tuesday 2:00pm–3:00pm in my office and on teams.
      - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming. 
+     
+And the labs meet as follows:
+
+Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
+-- | ----| ------| -------------| -------------| -------------
+29829 | E | Monday 7:00 pm 8:50 pm | Layla | Ian | Richard
+31229 | F | Wednesday 7:00 pm 8:50 pm | Richard | Artis | Ian
+24167 | A | Thursday 10:00 am 11:50 am | Dr. Aubert | David & Samuel | 
+24169 | B | Thursday 1:00 pm 2:50 pm | Jason | David | Ian
+28075 | C | Friday 9:00 am 10:50 am | Samuel | Artis | Jason
+28281 | D | Friday 12:00 pm 1:50 pm | David | Samuel | Layla
 
 ## Commenting Using a Github Account
 
