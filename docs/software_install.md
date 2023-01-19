@@ -2,7 +2,6 @@
 title: Installing Software
 ---
 
-
 # Generalities on Installing Software
 
 You probably already installed software in your life, be it [VLC](http://www.videolan.org/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app), or [Whatsapp](https://www.whatsapp.com/).
@@ -67,7 +66,11 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
 #. Download and install Visual Studio (leave all the options on their default settings).
 
-    If possible, check the box next to "Workload" → "Windows" → ".NET-Desktop Development", or to "Workload" → "Other Toolsets" → ".NET Core cross-platform development":
+    If possible, check one of the box that starts with ".NET". It can be either under:
+    
+     - "Workload" tab → "Windows" rubric → ".NET-Desktop Development", 
+     - "Workload" tab → "Other Toolsets" rubric → ".NET Core cross-platform development",
+     - "Workload" tab → "Desktop & Mobile" rubric → ".NET desktop development"
 
    ![](img/install_option.jpeg){ width=80% }
 
