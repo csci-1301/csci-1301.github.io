@@ -6,7 +6,7 @@
 
 using System;
 
-class Overflow
+class Program
 {
     static void Main()
     {

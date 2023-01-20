@@ -5,7 +5,7 @@
 
 using System;
 
-class PersonalizedWelcomeMessage
+class Program
 {
     static void Main()
     {

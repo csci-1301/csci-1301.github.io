@@ -1,6 +1,6 @@
 using System;
 
-public class IncrementExample
+public class Program
 {
     static void Main()
     {

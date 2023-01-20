@@ -1,6 +1,6 @@
 using System;
 
-public class FirstLoop
+public class Program
 {
     static void Main()
     {
