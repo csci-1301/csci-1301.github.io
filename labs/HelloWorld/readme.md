@@ -53,6 +53,8 @@ This is really up to you! Among the similarities, one can remark that an IDE and
 
 ## Compiling and Executing Your First Program
 
+For this part, everything will take place inside the IDE that was started previously.
+
 #. Within the IDE, first locate `Program.cs`.
 
     This file will be visible in panel called "Solution Explorer" or "Explorer", depending on the IDE. If you do not see such panel right away, explore the IDE menus to find and open it.
