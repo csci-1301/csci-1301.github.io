@@ -113,8 +113,17 @@ Clément Aubert:
     - My office hours are 
         - Monday 1:00pm–2:00pm in my office and on teams.
         - Tuesday 2:00pm–3:00pm in my office and on teams.
-     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming. 
+     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
      
+Samuel Bailey:
+~ 
+    - <sambailey@augusta.edu>
+    - Responsible for Section C's lab.
+    - Also present during Section A and D's labs.
+    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
+    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
+    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
+
 ## Labs Meeting Times
 
 All labs take place in Allgood Hall N344, and meet as follows:
