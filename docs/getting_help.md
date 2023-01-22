@@ -22,6 +22,10 @@ The School has a tutoring center that can be reached:
 
 - On [discord](https://discord.gg/kzKtrjzCyH),
 - During their tutoring hours (hours posted on the door and on discord), in [University Hall](https://map.concept3d.com/?id=824#!m/268018) 129.
+- Official Hours:
+    - Tuesday: 1:00pm - 5:00pm
+    - Thursday: 2:00pm - 5:00pm
+    - Friday: 9:00am - 12:00pm
 
 ## ACM Club
 
