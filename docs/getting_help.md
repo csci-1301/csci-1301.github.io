@@ -85,7 +85,7 @@ David Diestelhorst:
     - Responsible for Section D's lab.
     - Also present during Section A's and Section B's labs.
     - The best ways to reach me are either by [discord](http://discordapp.com/users/399642018822750218), by email, or by teams. 
-    - My office hours are currently undecided; I'm waiting on the ASC's tutoring schedule, which I should have at the end of this week (16 Jan). 
+    - My office hours are Mondays 1400-1600 (online) and Wednesdays 1330-1600 (Tutoring Center). Additionaly, I will be available for tutoring on Thursdays (1500-1700) and Fridays (1015-1145) at the Academic Success Center. 
     - I'm a computer science major, but my other academic interests include anthropology and linguistics. My hobbies include videogames, tabletop RPGs, and reading. 
     
 Richard Kelley:
