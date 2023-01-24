@@ -56,7 +56,7 @@ First Last:
     - Best way to reach me.
     - Office hours.
     - (if you feel like it, share your major or something else personal).
--->
+->
 
 <!-- 
 For example,
