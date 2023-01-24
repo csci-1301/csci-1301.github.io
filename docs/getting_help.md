@@ -129,7 +129,6 @@ Samuel Bailey:
     - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
 
 Brandon Wilburn:
-
 ~ 
     - <bwilburn@augusta.edu>
     - N/A
