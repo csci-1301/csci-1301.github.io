@@ -128,6 +128,18 @@ Samuel Bailey:
     - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
     - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
 
+Brandon Wilburn:
+
+~ 
+    - <bwilburn@augusta.edu>
+    - N/A
+    - N/A
+    - Discord is the easiest way to reach me, but I will also respond to emails.
+    - Available  to tutor on Mondays after 3, Wednesdays after 1, and Fridays for most of the day. If you'd like in-person tutoring, please let me know so I 
+can put it on my schedule.
+    - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
+
+
 ## Labs Meeting Times
 
 All labs take place in Allgood Hall N344, and meet as follows:
