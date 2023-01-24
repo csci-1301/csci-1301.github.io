@@ -73,7 +73,7 @@ Clément Aubert:
 Artis Carter:
 ~ 
     - <artcarter@augusta.edu>.
-    - Present for Section C's lab.
+    - Responsible for Section C's lab.
     - Also present during Section F's lab.
     - Best way to reach me is via [discord](http://discordapp.com/users/730957085717561364), email, or on Teams.
     - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 5:00pm-7:00pm and Friday 2:00pm-4:00pm.
@@ -122,8 +122,8 @@ Clément Aubert:
 Samuel Bailey:
 ~ 
     - <sambailey@augusta.edu>
-    - Responsible for Section C's lab.
-    - Also present during Section A and D's labs.
+    - Responsible for Section A's lab.
+    - Also present during Section C and D's labs.
     - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
     - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
     - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
@@ -147,9 +147,9 @@ Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
 -- | ----| ------| -------------| -------------| -------------
 29829 | E | Monday 7:00 pm 8:50 pm | Layla | Ian | Richard
 31229 | F | Wednesday 7:00 pm 8:50 pm | Richard | Artis | Ian
-24167 | A | Thursday 10:00 am 11:50 am | Dr. Aubert | David & Samuel | 
+24167 | A | Thursday 10:00 am 11:50 am | Samuel | David   | 
 24169 | B | Thursday 1:00 pm 2:50 pm | Jason | David | Ian
-28075 | C | Friday 9:00 am 10:50 am | Samuel | Artis | Jason
+28075 | C | Friday 9:00 am 10:50 am | Artis | Samuel | Jason
 28281 | D | Friday 12:00 pm 1:50 pm | David | Samuel | Layla
 
 ## Commenting Using a Github Account
