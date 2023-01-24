@@ -49,7 +49,7 @@ where `<type>` is a type as before, and `<number of elements>`, called the _size
 
 
 The index of the first element in an array is always _zero_; the index of the second element is one, and the index of the last element is the size of the array minus one.
-As a consequence, if you specify an index greater or equal to the number of elements, a run time error will happen.
+As a consequence, if you specify an index greater or equal to the number of elements, a run-time error will happen.
 
 Indexing starting from 0 may seem surprising and counter-intuitive, but this is a largely respected convention across programing languages and computer scientists. Some insights on the reasons behind this (collective) choice can be found [in this answer on Computer Science Educators](https://cseducators.stackexchange.com/a/5026).
 
@@ -162,7 +162,7 @@ Rectangle[] shapes = {new Rectangle(), new Rectangle(), new Rectangle()};
 
 One of the benefits of arrays is that they allow you to specify the number of their elements at run-time: the size declarator can be a variable, not just an integer literal. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.
 
-In order to access the elements of whose size is not known until runtime, we will need to use a loop.
+In order to access the elements of whose size is not known until run-time, we will need to use a loop.
 If the size of `myArray` comes from user input, it wouldn't be safe to try to access a specific element like `myArray[5]`, because we cannot guarantee that the array will have at least 6 elements. Instead, we can write a loop that uses a counter variable to access the array, and use the loop condition to ensure that the variable does not exceed the size of the array.
 
 ### Example

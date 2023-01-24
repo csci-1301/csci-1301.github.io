@@ -92,7 +92,7 @@ You are asked to implement user-input validation later on in this exercise, so y
 
 Then, answer the following questions:
 
-#. Without running your program, can you tell what will happen if the user enters a negative value?
+#. Without executing your program, can you tell what will happen if the user enters a negative value?
 #. Do you think you could have written the same program using a `while` loop?
 #. How would you change the program to make it compute the product instead of the sum  (i.e., for $5$, $1 × 2 × 3 × 4 × 5 = 120$)?
 #. How would you change the program to make it display on the screen the divisors of the integer entered? Examples:

@@ -35,7 +35,7 @@ There *can be* malware hosted on Github pages, and the fact that this website is
 So, in short, this archive is safe because we told you so, and because we are careful how it is updated. 
 
 Ultimately, many security decisions rest on trust, and you will have to trust us during this course.
-If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows you to run programs you cannot trust in a safe environment.
+If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows you to execute programs you cannot trust in a safe environment.
 </details>
 
 
@@ -63,10 +63,10 @@ For this part, everything will take place inside the IDE that was started previo
 
 #. Let's compile this program. Look for an option to `Build solution` and click on it. What happened?
 
-#. Let's run this program. The exact wording varies between different IDEs, but look for one of the following: `Debug > Start without Debugging` or 
+#. Let's execute this program. The exact wording varies between different IDEs, but look for one of the following: `Debug > Start without Debugging` or 
    `Run > Start without Debugging` or `Run > Run Project` and click on it. What happened?
 
-#. You will **extensively** compile and run programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
+#. You will **extensively** compile and execute programs in this class. Instead of having to click twice, it is recommended that you start memorizing shortcuts. You should study your IDE to see the exact shortcuts for your IDE for compiling and running a program. Here are the *usual* shortcuts for different operating systems:
 
     Windows/Linux:
     ~ 
@@ -133,7 +133,7 @@ Once you are done, test that you performed the backup properly.
 If not, go have another look back at the ["Compiling and Executing Your First Program"](#compiling-and-executing-your-first-program) section.
 
 If your backup went wrong (you cannot open the project, it refuses to compile, …), try to understand what happened.
-Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and run the program.
+Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and execute the program.
 
 Action:
 ~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.

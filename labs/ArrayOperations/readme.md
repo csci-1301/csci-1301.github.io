@@ -53,7 +53,7 @@ To test your program, go back to the beginning where you declared the `numbers` 
 int[] numbers = {55, 92, 12, 90, 37, 18, 6, 20, 80, 18, 46, 19, 65, 68, 18};
 ```
 
-Then re-run the program.
+Then re-execute the program.
 
 Check that you obtain the expected values:
 
@@ -90,7 +90,7 @@ char[] chars1 = {'s', 'p', 'd', 'P', 'y', 'D', 'w', '?'};
 char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 ```
 
-Then run the program again.
+Then execute the program again.
 Ideally the program does not crash and should still produce correct answers:
 
 - Does `'w'` occur in both arrays → `true`

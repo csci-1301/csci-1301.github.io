@@ -5,8 +5,8 @@
 - C# is a managed language (as [discussed previously](#programming-language-concepts-1))
     - Write in a high-level language, compile to intermediate language, run intermediate language in interpreter
     - Intermediate language is called CIL (Common Intermediate Language)
-    - Interpreter is called .NET Runtime
-    - Standard library is called .NET Framework, comes with the compiler and runtime
+    - Interpreter is called .NET run-time
+    - Standard library is called .NET Framework, comes with the compiler and run-time
 - It is widespread and popular
     - It was the first in the list of ["3 Future Programming Languages You Should Learn Between 2022 and 2030"](https://betterprogramming.pub/3-future-programming-languages-you-should-learn-between-2022-and-2030-8a618a15eca6), because of the growing popularity of [Unity](https://unity.com/).
     - [8th most "loved" language on StackOverflow](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
@@ -26,7 +26,7 @@
     Analogy: A *class* is like a floorplan while an  *object* is the house build from the floorplan. Plus, you can make as many houses as you would like from a single floorplan.
     - **Attribute**: A piece of data stored in an object.\
     Example: A *House* class has a spot for a color property while an house object has a color (e.g. "Green").
-    - **Method**: A function that modifies an object. This code is part of the class, but when it runs, it modifies only a specific object and not the class.\
+    - **Method**: A function that modifies an object. This code is part of the class, but when it is executed, it modifies only a specific object and not the class.\
     Example: A *House* class with a method to change the house color. Using this method changes the color a single house object but does not change the *House* class or the color on any other house objects.
 
 - Examples:
@@ -107,8 +107,8 @@ Features of this program:
     - Spaces are counted exactly if they are inside string data, e.g. `"Hello      world!"` is different from `"Hello world!"`
     - Otherwise, entire program could be written on one line^[Well, if there are no in-line comments in it. Can you figure out why?]; it would have the same meaning
 - All C# applications must have a `Main` method
-    - Name must match exactly, otherwise .NET runtime will get confused
-    - This is the first code to run when the application starts -- any other code (in methods) will only run when its method is called
+    - Name must match exactly, otherwise .NET run-time will get confused
+    - This is the first code to execute when the application starts -- any other code (in methods) will only execute when its method is called
 
 ## Conventions of C# Programs
 

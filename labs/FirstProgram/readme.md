@@ -66,28 +66,28 @@ We will now change (edit) our `EditedSolution` solution.
     Console.Write("This is my second message."); 
     ```
 
-#. Build and run the program. Do you notice any change(s)?
+#. Build and execute the program. Do you notice any change(s)?
 #. Insert another new line after the one you just created, and paste the following: 
 
     ```
     Console.Write("This is my third message."); 
     ```
 
-#. Build and run the program. Do you understand the difference between `WriteLine` and `Write`?
+#. Build and execute the program. Do you understand the difference between `WriteLine` and `Write`?
 #. Insert another new line after the one you just created, and paste the following: 
 
     ```
     Console.Write("\t This is my fourth message."); 
     ```
 
-#. Build and run the program. Do you understand what `\t` is doing?
+#. Build and execute the program. Do you understand what `\t` is doing?
 #. Insert another new line after the one you just created and paste the following: 
 
     ```
     Console.Write("\n This \n is \n my fifth message.\n");
     ```
 
-#. Build and run the program. You should see something like this:
+#. Build and execute the program. You should see something like this:
 
     ```text
     This is my first program.

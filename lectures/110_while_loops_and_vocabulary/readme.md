@@ -173,7 +173,7 @@ Console.WriteLine("Done");
 
 - Examining the example in detail
 
-- When our example program runs, it initializes `counter` to 0, then it encounters the loop
+- When our example program executes, it initializes `counter` to 0, then it encounters the loop
 
 - It evaluates the condition `counter <= 0`, which is true, so it executes the loop's body. The program displays "Hello again!" and "0" on the screen.
 
@@ -204,9 +204,9 @@ Console.WriteLine("Done");
 
 #### Ensuring the loop ends
 
-- If the loop condition is always true, the loop will never end, and your program will run "forever" (until you forcibly stop it, or the computer shuts down)
+- If the loop condition is always true, the loop will never end, and your program will execute "forever" (until you forcibly stop it, or the computer shuts down)
 
-- Obviously, if you use the value `true` for the condition, the loop will run forever, like in this example:
+- Obviously, if you use the value `true` for the condition, the loop will execute forever, like in this example:
 
     ```
     int number = 1;
@@ -214,9 +214,9 @@ Console.WriteLine("Done");
         Console.WriteLine(number++);
     ```
 
-- If you do not intend your loop to run forever, you must ensure the statements in the loop's body do something to *change a variable* in the loop condition, otherwise the condition will stay true
+- If you do not intend your loop to execute forever, you must ensure the statements in the loop's body do something to *change a variable* in the loop condition, otherwise the condition will stay true
 
-- For example, this loop will run forever because the loop condition uses the variable `counter`, but the loop body does not change the value of `counter`:
+- For example, this loop will execute forever because the loop condition uses the variable `counter`, but the loop body does not change the value of `counter`:
 
     ```
     int counter = 0;
@@ -228,7 +228,7 @@ Console.WriteLine("Done");
     Console.WriteLine("Done");
     ```
 
-- This loop will also run forever because the loop condition uses the variable `num1`, but the loop body changes the variable `num2`:
+- This loop will also execute forever because the loop condition uses the variable `num1`, but the loop body changes the variable `num2`:
 
     ```
     int num1 = 0, num2 = 0;
@@ -245,7 +245,7 @@ Console.WriteLine("Done");
 
     - For example, if the loop condition is `counter <= 5`, then the loop body must increase the value of `counter` so that it is eventually greater than 5
 
-    - This loop will run forever, even though it changes the right variable, because it changes the value in the wrong "direction":
+    - This loop will execute forever, even though it changes the right variable, because it changes the value in the wrong "direction":
 
         ```
         int number = 10;
@@ -259,7 +259,7 @@ Console.WriteLine("Done");
 
         The loop condition checks to see whether `number` is $\geq$ 0, and `number` starts out at the value 10. But the loop body increments `number`, which only moves it further away from 0 in the positive direction. In order for this loop to work correctly, we need to *decrement* `number` in the loop body, so that eventually it will be less than 0.
 
-    - This loop will run forever, even though it uses the right variable in the loop body, because it multiplies the variable by 0:
+    - This loop will execute forever, even though it uses the right variable in the loop body, because it multiplies the variable by 0:
 
         ```
         int number = 0;
@@ -351,7 +351,7 @@ Console.WriteLine("Done");
     ```
 
     - The condition for the `while` loop is `price < 0`, which is true when the user's input is invalid
-    - If the user enters a valid price the first time, the loop will not run at all -- remember that a `while` loop will skip the code block if the condition is false
+    - If the user enters a valid price the first time, the loop will not execute at all -- remember that a `while` loop will skip the code block if the condition is false
     - Inside the loop's body, we ask the user for input again, and assign the result of `decimal.Parse` to the same `price` variable we use in the loop condition. This is what ensures that the loop will end: the variable in the condition gets changed in the body.
     - If the user still enters a negative price, the loop condition will be true, and the body will execute again (prompting them to try again)
     - If the user enters a valid price, the loop condition will be false, so the program will proceed to the next line and instantiate the Item

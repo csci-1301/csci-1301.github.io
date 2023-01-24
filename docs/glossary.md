@@ -118,7 +118,7 @@ Iterator: <!--Couldn't find the term "iterator" in the textbook; further discuss
 Guard Condition:<!--Couldn't find the term "guard condition" in the textbook; further discussion needed-->
 ~ boolean expressions (predicates) found at the top
     of a method or function that determine whether the function should
-    continue to run.
+    continue to execute.
 
 [Accumulator](https://csci-1301.github.io/book.html#vocabulary-1):
 ~ 

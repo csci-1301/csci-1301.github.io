@@ -139,7 +139,7 @@
     ```
 
     - When your program first starts, no objects exist yet, which means no "normal" methods can be called
-    - The .NET runtime (the interpreter that runs a C# program) must decide what code to execute to make your program start running
+    - The .NET run-time (the interpreter that runs a C# program) must decide what code to execute to make your program start running
     - It can call `Program.Main()` without creating an object, or knowing anything else about your program, because `Main` is a static method
 
 - Static methods can be used to "help" other methods, both static and non-static

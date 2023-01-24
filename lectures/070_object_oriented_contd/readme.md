@@ -2,7 +2,7 @@
 
 ## Default Values and the ClassRoom Class
 
-- In lab, you were asked to run a program like this:
+- In lab, you were asked to execute a program like this:
 
     ```
     !include code/rectangle_initial_values.cs
@@ -418,7 +418,7 @@
 
 #### Calling overloaded methods
 
-- Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to run -- `myRect.GetLength()` would call the `GetLength` method
+- Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to execute -- `myRect.GetLength()` would call the `GetLength` method
 - When a method is overloaded, you must use the entire signature to determine which method gets executed
 - A method call has a "signature" too: the name of the method, and the type and order of the arguments
 - C# will execute the method whose signature matches the signature of the method call

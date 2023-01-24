@@ -20,7 +20,7 @@ Normally, a simple [right click and choose "Extract" or "Open with Ark"](https:/
 
 ### Using the Command-Line
 
-Navigate to your command-line interface and run the following command (as a normal user, as indicated by `$`):
+Navigate to your command-line interface and execute the following command (as a normal user, as indicated by `$`):
 
 ```{.text}
 $ unzip [FileName].zip
@@ -55,7 +55,7 @@ Normally, a simple [right click and choose "Compress"](https://www.wikihow.com/M
 
 ### Using the Command-Line
 
-Navigate to your command-line interface and run the following command (as a normal user, as indicated by `$`):
+Navigate to your command-line interface and execute the following command (as a normal user, as indicated by `$`):
 
 ```{.text}
 $ zip -r [ZipFileName].zip [FileName]

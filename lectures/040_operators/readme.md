@@ -68,7 +68,7 @@ For example, 44 % 7 = 2 because 44/7 = 6 when rounded down, then do 7*6 to get 4
 
     Note that `1.77` is a `double` literal, while `2.3f` is a `float` literal
 
-- If the literal is not the same type as the variable, you will sometimes get an error -- for example, `float radius = 2.3` will result in a compile error -- but sometimes, it appears to work fine: for example `float radius = 2;` compiles and runs without error even though 2 is an `int` value.
+- If the literal is not the same type as the variable, you will sometimes get an error -- for example, `float radius = 2.3` will result in a compile error -- but sometimes, it appears to work fine: for example `float radius = 2;` compiles and executes without error even though 2 is an `int` value.
 
 - In fact, the value being assigned to the variable **must** be the same type as the variable, but some types can be **implicitly converted** to others
 

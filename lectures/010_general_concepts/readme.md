@@ -96,7 +96,7 @@ We will be studying and writing programs in _high-level languages_, but understa
         - Incorporates code libraries – commonly used pieces of code previously written such as Math.Sqrt(9)
         - Optimizes high-level instructions – your code may look very different after it has been optimized
         - Compiler is specific to both the source language and the target computer
-    - Compile high-level instructions into machine code then run since computers can only execute machine code
+    - Compile high-level instructions into machine code then execute since computers can only execute machine code
 
 ![A Visual Representation of the Relationships Between Languages](img/overview_languages_1)
 
@@ -106,21 +106,21 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
 - Compiled vs. Interpreted languages
     - Not all high-level languages use a compiler - some use an interpreter
     - **Interpreter**: Lets a computer "execute" high-level code by translating one statement at a time to machine code
-    - Advantage: Less waiting time before you can run the program (no separate "compile" step)
-    - Disadvantage: Program runs slower since you wait for the high-level statements to be translated then the program is run
+    - Advantage: Less waiting time before you can execute the program (no separate "compile" step)
+    - Disadvantage: Program executes slower since you wait for the high-level statements to be translated then the program is executed
 - Managed high-level languages (like C#)
     - Combine features of compiled and interpreted languages
     - Compiler translates high-level statements to **intermediate language** instructions, not machine code
         - Intermediate language: Looks like assembly language, but not specific to any CPU
-    - **Runtime** executes by *interpreting* the intermediate language instructions - translates one at a time to machine code
-        - Faster since translation is partially done already (by compiler), only a simple "last step" is done when running the program
+    - **run-time** executes by *interpreting* the intermediate language instructions - translates one at a time to machine code
+        - Faster since translation is partially done already (by compiler), only a simple "last step" is done when executing the program
     - Advantages of managed languages:
         - In a "non-managed" language, a compiled program only works on one OS + CPU combination (**platform**) because it is machine code
         - Managed-language programs can be reused on a different platform without recompiling - intermediate language is not machine code and not CPU-specific
         - Still need to write an intermediate language interpreter for each platform (so it produces the right machine code), but, for a non-managed language, you must write a compiler for each platform
         - Writing a compiler is more complicated and more work than writing an interpreter thus an interpreter is a quicker (and cheaper) way to put your language on different platforms
-        - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs run faster than an "interpreted language" like Python
-    - This still runs slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
+        - Intermediate-language interpreter is much faster than a high-level language interpreter, so programs execute faster than an "interpreted language" like Python
+    - This still executes slower than a non-managed language (due to the interpreter), so performance-minded programmers use non-managed compiled languages (e.g. for video games)
 
 ![A Visual Representation of the Differences Between High-Level Languages](img/overview_languages_2){#fig:flowchart2}
 
@@ -152,21 +152,21 @@ From the distance, both looks like what is pictured in the [the flowchart demons
     - Running the compiler
     - Reading the compiler's output, warning and error messages
     - Fixing compile errors, if necessary
-    - Running and testing the program
+    - Executing and testing the program
     - Debugging the program, if necessary
 - Interpreted language workflow
     - Writing down specifications
     - Creating the source code
-    - Running the program in the interpreter
+    - Executing the program in the interpreter
     - Reading the interpreter's output, determining if there is a syntax (language) error or the program finished executing
     - Editing the program to fix syntax errors
-    - Testing the program (once it can run with no errors)
+    - Testing the program (once it can execute with no errors)
     - Debugging the program, if necessary
     
 Interperted languages have
 
 - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
-- **Disadvantages**: All errors happen when you run the program, no distinction between syntax errors (compile errors) and logic errors (bugs in running program)
+- **Disadvantages**: All errors happen when you execute the program, no distinction between syntax errors (compile errors) and logic errors (bugs in executing program)
 
 ### (Integrated) Development Environment
 
@@ -189,5 +189,5 @@ In particular, Visual Studio is an IDE, and it uses its own vocabulary:
 
 - Solution: An entire software project, including source code, metadata, input data files, etc.
 - "Build solution": Compile all of your code
-- "Start without debugging": Run the compiled code
-- Solution location: The folder (on your computer's file system) that contains the solution, meaning all your code and the information needed to compile and run it
+- "Start without debugging": Execute the compiled code
+- Solution location: The folder (on your computer's file system) that contains the solution, meaning all your code and the information needed to compile and execute it

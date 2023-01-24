@@ -71,7 +71,7 @@
     int answer = int.Parse("42");
     ```
 
-  the computer must evaluate the expression on the right side of the `=` operator before it can do the assignment. This means it calls the `int.Parse` method with the string `"42"` as input. The method's code then runs, converting `"42"` to an integer, and it returns a result, the `int` value `42`. This value can now be assigned to the variable `answer`.
+  the computer must evaluate the expression on the right side of the `=` operator before it can do the assignment. This means it calls the `int.Parse` method with the string `"42"` as input. The method's code then executes, converting `"42"` to an integer, and it returns a result, the `int` value `42`. This value can now be assigned to the variable `answer`.
 
 - Since the return value of a `Parse` method is a numeric type, it can be used in arithmetic expressions just like a numeric-type variable or literal. For example, in this statement:
 
@@ -98,7 +98,8 @@
     int curYear = int.Parse(Console.ReadLine());
     ```
 
-  In this statement, the return value (output) of one method is used as the argument (input) to another method. When the computer executes the statement, it starts by evaluating the `int.Parse(...)` method call, but it cannot actually run the `Parse` method yet because its argument is an expression, not a variable or value. In order to determine what value to send to the `Parse` method as input, it must first evaluate the `Console.ReadLine()` method call. Since this method has no arguments, the computer can immediately start executing it; the `ReadLine` method waits for the user to type a line of text, then returns that text as a `string` value. This return value can now be used as the argument to `int.Parse`, and the computer starts executing `int.Parse` with the user-provided string as input. When the `Parse` method returns an `int` value, this value becomes the value of the entire expression `int.Parse(Console.ReadLine())`, and the computer assigns it to the variable `curYear`.
+  In this statement, the return value (output) of one method is used as the argument (input) to another method. When the computer executes the statement, it starts by evaluating the `int.Parse(...)` method call, but it cannot actually execute the `Parse` method yet because its argument is an expression, not a variable or value.
+  In order to determine what value to send to the `Parse` method as input, it must first evaluate the `Console.ReadLine()` method call. Since this method has no arguments, the computer can immediately start executing it; the `ReadLine` method waits for the user to type a line of text, then returns that text as a `string` value. This return value can now be used as the argument to `int.Parse`, and the computer starts executing `int.Parse` with the user-provided string as input. When the `Parse` method returns an `int` value, this value becomes the value of the entire expression `int.Parse(Console.ReadLine())`, and the computer assigns it to the variable `curYear`.
 
 - Notice that by placing the call to `ReadLine` inside the argument to `Parse`, we have eliminated the variable `userInput` entirely. The `string` returned by `ReadLine` does not need to be stored anywhere (i.e. in a variable); it only needs to exist long enough to be sent to the `Parse` method as input.
 

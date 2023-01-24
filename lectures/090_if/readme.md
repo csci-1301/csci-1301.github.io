@@ -292,7 +292,7 @@ Console.WriteLine("Goodbye");
     ```
 
 - Note that the order of the else-if statements still matters, because they are evaluated top-to-bottom. If `myIntVar` is 15, it does not matter what values `myStringVar` or `myBoolVar` have, because the first if block (setting `x` to 10) will get executed.
-- Example outcomes of running this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
+- Example outcomes of executing this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
 
     | `myIntVar` | `myStringVar` | `myBoolVar` | `x` |
     | ---------- | ----------    | ----------  | --- |

@@ -18,7 +18,7 @@ As a warm-up, you will practice writing constructors and `ToString` methods by a
 #. Open the "Rectangle" project you created in the ["Rectangle Class" lab](../Rectangle/). You can use the "enriched" class, [shared previously](https://csci-1301.github.io/labs/Rectangle/Enriched_Rectangle.zip), if you prefer.
 #. In "Rectangle.cs", add a constructor to `Rectangle` that takes two arguments, a length and a width, and uses them to initialize the `length` and `width` attributes.
 #. Within your `Main` method, you will notice that your `new Rectangle()` instantiation statements are now highlighted as errors, because `Rectangle` no longer has a zero-argument constructor. Change each instantiation statement to call your new two-arguments constructor, using the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
-#. Compile and run your program and make sure your Rectangles still behave as expected.
+#. Compile and execute your program and make sure your Rectangles still behave as expected.
 
 ## A `ToString` Method
 
@@ -56,7 +56,7 @@ We will add a `ToString` method to `Rectangle` to make it easier to display this
    Console.WriteLine($"My rectangle: {myRectangle.ToString()}");
    ```
 
-#. Compile and run your program. What do you observe about the new `WriteLine` statements?
+#. Compile and execute your program. What do you observe about the new `WriteLine` statements?
 
 # A Room Class
 
@@ -119,7 +119,7 @@ This final part will guide you in writing your own `ToString` method.
 
     to your `Main` method.
 
-#. Remove `.ToString()` from the previous statement and run your program again. Did something change?
+#. Remove `.ToString()` from the previous statement and execute your program again. Did something change?
 
 #. "Expand" this method by having it return a more meaningful string: the string returned should also contain the name of the room and its dimensions in meters. Use format specifiers to make it look nice!
 

@@ -1915,7 +1915,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     </details>
 
 #. What is "array bounds checking"? When does it happen?
-    <details><summary>Solution</summary>It is C# making sure that you are not using a subscript outside the allowed range. It happens at run time.</detais>
+    <details><summary>Solution</summary>It is C# making sure that you are not using a subscript outside the allowed range. It happens at run-time.</detais>
 
 #. Is there an error with the following code? If you think there is one, explain it, otherwise draw the content of the `myIncomes` array once those statements have been executed.
 

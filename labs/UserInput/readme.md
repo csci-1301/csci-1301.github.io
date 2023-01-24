@@ -69,7 +69,7 @@ What happened?
     
 #. Re-compile and execute your code.  Be sure to enter a whole number for your age.
 #. Are the results what you expect?
-#. Run the code again, this time with a negative number for your age.  Then try again with `0`.  Does the code still work?
+#. Execute the code again, this time with a negative number for your age.  Then try again with `0`.  Does the code still work?
 #. What if you were to enter a floating point number when asked for an integer?  What if you entered the word "twenty"?
 
     Here you are purposely ignoring the prompt, but know that your user may purposely or accidentally give the wrong input type.

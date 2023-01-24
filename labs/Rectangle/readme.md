@@ -40,12 +40,12 @@ Edit `Rectangle.cs`:
 
     You can use IDE's rename feature to perform this operation. If you are having trouble finding or using it, see the rename guide for your IDE: [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/reference/rename?view=vs-2019), [MonoDevelop](https://www.monodevelop.com/documentation/feature-list/refactoring/#rename), [Rider](https://www.jetbrains.com/help/rider/Refactorings__Rename.html)
     
-#. Compile and run your program. What do you observe? What happens if you change one instance to `lengthP` while leaving the other as `lengthParameter`?  Try it out by manually editing one of these instances and compiling the program.  Be sure to change it back after.
+#. Compile and execute your program. What do you observe? What happens if you change one instance to `lengthP` while leaving the other as `lengthParameter`?  Try it out by manually editing one of these instances and compiling the program.  Be sure to change it back after.
 #. Some people use the convention of prefixing instance variables with `_` (the underscore character), `m` (for "member"), or even `m_`.
 You can always find someone furiously advocating for one particular convention, but the truth is that if you're not forced to use one (for example, by the rules of a software company you work for), you should pick whichever suits you best.
-Still, just to use it at least once, rename every instance of `width` into `m_width` and see how it feels. Compile and run your program. What do you observe?
+Still, just to use it at least once, rename every instance of `width` into `m_width` and see how it feels. Compile and execute your program. What do you observe?
 Either undo this modification or rename `length` into `m_length` (you have to be consistent!).
-#. Change the name of one of the accessor methods in `Rectangle.cs` without changing it in `Program.cs`. Compile and run your program. What do you observe? Undo your modification.
+#. Change the name of one of the accessor methods in `Rectangle.cs` without changing it in `Program.cs`. Compile and execute your program. What do you observe? Undo your modification.
 #. What has this section taught you about variable and method names within `.cs` files and across `.cs` files within the same project?  What about naming is important to the compiler, and what is only important to the programmer?
 
 <!--

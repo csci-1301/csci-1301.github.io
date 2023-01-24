@@ -135,7 +135,7 @@ Confirm the change by clicking OK and now you will be able to compile, build, an
 
 ### Installing Anything Anywhere
 
-If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to run a linux-based distribution or a Windows image on top of your operating system.
+If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to execute a linux-based distribution or a Windows image on top of your operating system.
 
 For this, and regardless of your current operating system, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
 
@@ -144,9 +144,9 @@ For this, and regardless of your current operating system, you will need a [Virt
     #. [Virtual Box](https://www.virtualbox.org/) (for Linux and Mac),
     #. [Virtual Machine Manager](https://virt-manager.org/) (for Linux).
 #. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching), or a linux-based distribution (typically, [ubuntu](https://ubuntu.com/appliance/vm) has a good reputation of being accessible and user-friendly).
-#. Install and run your version of Windows or Linux from your virtual machine, and follow the corresponding instructions to install the IDE you are interested in.
+#. Install and execute your version of Windows or Linux from your virtual machine, and follow the corresponding instructions to install the IDE you are interested in.
 
-Note that [it is illegal to run macOS in a virtual environment that is not hosted on a mac computer](https://law.stackexchange.com/q/18282), which drastically reduces the interest for you to consider this option.
+Note that [it is illegal to execute macOS in a virtual environment that is not hosted on a mac computer](https://law.stackexchange.com/q/18282), which drastically reduces the interest for you to consider this option.
 
 ## Accessing One of the Computers in a Computer Lab
 

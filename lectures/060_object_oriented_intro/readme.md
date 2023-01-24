@@ -4,7 +4,7 @@
 
 - Classes vs. Objects
     - A **class** is a specification, blueprint, or template for an object; it is the code that describes what data the object stores and what it can do
-    - An **object** is a single instance of a class, created using its "template." It is running code, with specific values stored in each variable
+    - An **object** is a single instance of a class, created using its "template." It is executing code, with specific values stored in each variable
     - To **instantiate** an object is to create a new object from a class
 - Object design basics
     - Objects have **attributes**: data stored in the object. This data is different in each instance, although the type of data is defined in the class.
@@ -80,7 +80,7 @@ Let's look at each part of this code in order.
     - This method has no parameters, because it does not need any arguments. Its only "input" is the instance variables, and it will always do the same thing every time you call it.
     - The body of the method has a `return` statement with an expression, rather than a single variable
     - When you write `return [expression]`, the expression will be evaluated first, then the resulting value will be used by the `return` command
-    - In this case, the expression `length * width` will be evaluated, which computes the area of the rectangle. Since both `length` and `width` are `int`s, the `int` version of the `*` operator runs, and it produces an `int` result. This resulting `int` is what the method returns.
+    - In this case, the expression `length * width` will be evaluated, which computes the area of the rectangle. Since both `length` and `width` are `int`s, the `int` version of the `*` operator executes, and it produces an `int` result. This resulting `int` is what the method returns.
 
 ## Using Our Class
 
@@ -280,7 +280,7 @@ Let's look at each part of this code in order.
         int result = rect1.LengthProduct(2) + 1;
         ```
 
-        When executing the third line of code, the computer first runs the `LengthProduct` method with argument (input) 2, which computes the product $12 \cdot 2 = 24$. Then it uses the return value of `LengthProduct`, which is 24, to evaluate the expression `rect1.LengthProduct(2) + 1`, producing a result of 25. Finally, it assigns the value 25 to the variable `result`.
+        When executing the third line of code, the computer first executes the `LengthProduct` method with argument (input) 2, which computes the product $12 \cdot 2 = 24$. Then it uses the return value of `LengthProduct`, which is 24, to evaluate the expression `rect1.LengthProduct(2) + 1`, producing a result of 25. Finally, it assigns the value 25 to the variable `result`.
 
 - When writing a method that returns a value, the value in the `return` statement **must** be the same type as the method's return type
 
@@ -572,7 +572,7 @@ Let's look at each part of this code in order.
     - In more detail:
 
         - `Rectangle rect1 = new Rectangle()` creates a new Rectangle object somewhere in memory, then creates a reference variable named `rect1` somewhere else in memory. The variable named `rect1` is initialized with the memory address of the Rectangle object, i.e. a reference to the object
-        - `rect1.SetLength(8)` reads the address of the Rectangle object from the `rect1` variable, finds the object in memory, and runs the `SetLength` method on that object (changing its length to 8)
+        - `rect1.SetLength(8)` reads the address of the Rectangle object from the `rect1` variable, finds the object in memory, and executes the `SetLength` method on that object (changing its length to 8)
         - `rect1.SetWidth(10)` does the same thing, finds the same object, and sets its width to 10
         - `Rectangle rect2 = rect1` creates a reference variable named `rect2` in memory, but does not create a new Rectangle object. Instead, it initializes `rect2` with the same memory address that is stored in `rect1`, referring to the same Rectangle object
         - `rect2.SetLength(4)` reads the address of a Rectangle object from the `rect2` variable, finds that object in memory, and sets its length to 4 -- but this is the exact same Rectangle object that `rect1` refers to

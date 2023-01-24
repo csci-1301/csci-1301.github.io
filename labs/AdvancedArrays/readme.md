@@ -30,7 +30,7 @@ foreach (int i in arrayA)
 Console.WriteLine();
 ```
 
-Try running this program yourself to see what happens.
+Try executing this program yourself to see what happens.
 The problem is that when we wrote the assignment statement `int[] arrayCopyWrong = arrayA`, we copied the _reference_ to the array, but not the array itself.
 We now have two ways of accessing our array, using `arrayA` or `arrayCopyWrong`, but still only one array.
 
@@ -60,7 +60,7 @@ foreach (int i in arrayCopyRight)
 Console.WriteLine();
 ```
 
-Try running this program. Can you see the difference?
+Try executing this program. Can you see the difference?
 
 `Array` is actually a class (documented at <https://msdn.microsoft.com/en-us/library/system.array(v=vs.110).aspx>), and as such provides several methods.
 If you have two arrays, `array1` and `array2` containing the same type of values and of size at least `x`, you can copy the first `x` values of `array1` into `array2` using `Array.Copy(array1, array2, x);`.
