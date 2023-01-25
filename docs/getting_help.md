@@ -138,6 +138,15 @@ Brandon Wilburn:
 can put it on my schedule.
     - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
 
+Layla Erb:
+ ~ 
+    - <lerb@augusta.edu>
+    - Responsible for Section E's lab.
+    - The best ways to reach me are either by email or on [Discord] (https://discordapp.com/users/949428446281465937).
+    - My office hours are 
+        - Monday 3:00pm–5:00pm in UH 129.
+        - Tuesday 3:00pm–5:00pm in UH 129.
+     - I am a third year Computer Science student and this is my first semester as a UCA. I'm looking forward to working with you all this semester!
 
 ## Labs Meeting Times
 
