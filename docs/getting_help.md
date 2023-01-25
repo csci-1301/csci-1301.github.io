@@ -109,16 +109,6 @@ Jason Weeks:
         - Friday: 9:00am - 12:00pm
     - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
 
-Clément Aubert:
- ~ 
-     - <caubert@augusta.edu>
-     - Responsible for Section B's lab.
-    - Feel free to reach out via emails or teams, cf. <https://spots.augusta.edu/caubert/#contact>. I don't frequently check discord.
-    - My office hours are 
-        - Monday 1:00pm–2:00pm in my office and on teams.
-        - Tuesday 2:00pm–3:00pm in my office and on teams.
-     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
-     
 Samuel Bailey:
 ~ 
     - <sambailey@augusta.edu>
