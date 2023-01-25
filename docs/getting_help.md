@@ -70,6 +70,28 @@ Clément Aubert:
     - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
 -->  
+
+Samuel Bailey:
+~ 
+    - <sambailey@augusta.edu>
+    - Responsible for Section A's lab.
+    - Also present during Section C and D's labs.
+    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
+    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
+    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
+
+Jason Weeks:
+~ 
+    - <jaweeks@augusta.edu>
+    - Responsible for Section B's lab
+    - May also be present for Section C's lab
+    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
+    - My office hours are as follows (all are at UH 129):
+        - Tuesday: 1:00pm - 5:00pm
+        - Thursday: 3:00pm - 5:00pm
+        - Friday: 9:00am - 12:00pm
+    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
+    
 Artis Carter:
 ~ 
     - <artcarter@augusta.edu>.
@@ -88,6 +110,16 @@ David Diestelhorst:
     - My office hours are Mondays 1400-1600 (online) and Wednesdays 1330-1600 (Tutoring Center). Additionaly, I will be available for tutoring on Thursdays (1500-1700) and Fridays (1015-1145) at the Academic Success Center. 
     - I'm a computer science major, but my other academic interests include anthropology and linguistics. My hobbies include videogames, tabletop RPGs, and reading. 
     
+Layla Erb:
+ ~ 
+    - <lerb@augusta.edu>
+    - Responsible for Section E's lab.
+    - The best ways to reach me are either by email or on [Discord](https://discordapp.com/users/949428446281465937).
+    - My office hours are 
+        - Monday 3:00pm–5:00pm in UH 129.
+        - Tuesday 3:00pm–5:00pm in UH 129.
+     - I am a third year Computer Science student and this is my first semester as a UCA. I'm looking forward to working with you all this semester!
+
 Richard Kelley:
 ~ 
     - <RIKELLEY@augusta.edu>.
@@ -96,27 +128,6 @@ Richard Kelley:
     - I typically see discord notifications first, so feel free to ping me [there](http://discordapp.com/users/434479500953124865). Email I will see but not as fast. Teams doesn't like to send me notifications.
     - Office hours are Monday and Wednesday, 4:30-6:30pm.
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
-
-Jason Weeks:
-~ 
-    - <jaweeks@augusta.edu>
-    - Responsible for Section B's lab
-    - May also be present for Section C's lab
-    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
-    - My office hours are as follows (all are at UH 129):
-        - Tuesday: 1:00pm - 5:00pm
-        - Thursday: 3:00pm - 5:00pm
-        - Friday: 9:00am - 12:00pm
-    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
-
-Samuel Bailey:
-~ 
-    - <sambailey@augusta.edu>
-    - Responsible for Section A's lab.
-    - Also present during Section C and D's labs.
-    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
-    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
-    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
 
 Brandon Wilburn:
 ~ 
@@ -128,15 +139,6 @@ Brandon Wilburn:
 can put it on my schedule.
     - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
 
-Layla Erb:
- ~ 
-    - <lerb@augusta.edu>
-    - Responsible for Section E's lab.
-    - The best ways to reach me are either by email or on [Discord] (https://discordapp.com/users/949428446281465937).
-    - My office hours are 
-        - Monday 3:00pm–5:00pm in UH 129.
-        - Tuesday 3:00pm–5:00pm in UH 129.
-     - I am a third year Computer Science student and this is my first semester as a UCA. I'm looking forward to working with you all this semester!
 
 ## Labs Meeting Times
 
