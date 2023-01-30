@@ -2,7 +2,13 @@
 title: Variable Manipulation
 ---
 
-In this lab you will declare and initialize variables and learn about arithmetic operators.
+This lab serves multiple goals:
+
+- To help you develop good lab habits,
+- To declare, assign and display variables of different datatypes,
+- To understand how to use arithmetic operators,
+- To experience the differences in numerical datatypes,
+- To use combined assignment operators.
 
 # Variable Manipulation
 
