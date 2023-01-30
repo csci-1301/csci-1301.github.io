@@ -111,40 +111,73 @@ This time you will not be given a project to load or to copy. You will start fro
 
 ### Starting from a Template
 
-We will first create a new C\# project using the template for a "Console App". 
+We will first create a new C\# project using the template for a "Console App" (we give first a general guidance, and then some details that are specific to particular IDE / operating systems combinations):
 
 #. Launch your IDE
-#. After the IDE launches, look for an option to create a new project. The exact wording varies between different IDEs, but look for one of the following: <!-- TODO: please check verbiage -->
+#. After the IDE launches, look for an option to create a new project. The exact wording varies between different IDEs, but look for one of the following: 
 
     - `Create a new project` or `New` or `New Solution` in the launch screen    
     - `File > New > Project` in the IDE menu
+    - `File > New Solution` in the IDE menu
 
-#. Look for the "Console Application" option, and check that the associated language is C\#. 
-
-    - _note to Windows users_: you may see multiple options for a framework (.Net Framework or .NET Core), and you can choose either as it does not make a difference for this class. **However**, you should make sure that you pick a .NET version strictly less than 6 (ex. NET 5.0).
-    - On Visual Studio, you would see something like:
-    
-    ![](./../../img/create_project.png)
-    
-    Pick the _first_ item, which is for C\#.
-
+#. Look for the "Console Application" option, and check that the associated language is C\# (cf. below).
+#. If multiple frameworks are offered, make sure you pick the right one (cf. below).
 #. Enter `MyFirstProject` as the name of the project.
 #. Enter `MyFirstSolution` as the name of the solution. 
 #. For the location or solution directory, choose a good place to save your solution. The best place would be the folder you created for this lab. 
-#. When selecting the framework, make sure you are using .NET 5.0 or lower. (Note: On VS for Mac, choose ".NET 3.1 Core"):
-
-    ![](./../../img/select_net.png)
-
 #. Click `Create.`
-#. Now answer the following:
- 
-    #. A source code file appeared in the main window of your IDE. Compare this code with the code you studied previously. How are they different? How are they the same?
 
-    #. In your file system, navigate to the directory where you stored your project. Open the project directory and compare `MyFirstSolution` to the `EditedSolution` project you worked on earlier. How are they different? How are they the same?
+Make sure you review the information in the following section that are relevant for you, and then answer the question in [the last section](#questions).
 
-    #. Try to compile `MyFirstSolution`. Did the compilation succeed?
+#### Picking the Right Framework and Other Specificities 
+
+Interfaces change, and writing a "universal guide" is not an easy task, so we include some additional indications for specific IDE / operating system below:.
+
+##### For Visual Studio on Windows
+
+You may see multiple options for a framework (.Net Framework or .NET Core), and you can choose either as it does not make a difference for this class. **However**, you should make sure that you pick a .NET version strictly less than 6 (ex. NET 5.0) if possible.
+
+You should see something like:
     
-    #. Execute `MyFirstSolution`. What happened? Compare what happened to what happened when you executed the `EditedSolution` project.
+![](./../../img/create_project.png)
+    
+Pick the _first_ item, which is for C\#.
+When selecting the framework, make sure you are using .NET 5.0 or lower. 
+
+![](./../../img/select_net.png)
+
+##### For Visual Studio on macOS
+
+On macOS, follow this method:
+
+![](./../../img/create_project_on_mac_1.png)
+![](./../../img/create_project_on_mac_2.png)
+It is important that you _do not_ use top-level statements (so, this following box should be _checked_): 
+![](./../../img/create_project_on_mac_3.png)
+Finally, make sure you enter the location, project name and solution name correctly:
+![](./../../img/create_project_on_mac_4.png)
+
+
+##### For Monodevelop
+
+After clicking on `File > New Solution`, you will be prompted with a screen similar to this one:
+
+![](./../../img/create_project_monodevelop.png)
+
+Under ".NET Core", pick the "App" category, and then click on "Console Application" under "General". 
+Make sure you pick the C# programming language.
+
+#### Questions 
+
+Once your project was created, answer the following:
+ 
+#. A source code file appeared in the main window of your IDE. Compare this code with the code you studied previously. How are they different? How are they the same?
+
+#. In your file system, navigate to the directory where you stored your project. Open the project directory and compare `MyFirstSolution` to the `EditedSolution` project you worked on earlier. How are they different? How are they the same?
+
+#. Try to compile `MyFirstSolution`. Did the compilation succeed?
+
+#. Execute `MyFirstSolution`. What happened? Compare what happened to what happened when you executed the `EditedSolution` project.
 
 ### Editing the Template
 
