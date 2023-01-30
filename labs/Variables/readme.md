@@ -35,7 +35,7 @@ MacOS:
 
 From now on, read "Create a new project" as
 
- - Create a new project using the "Console Application" template for C\#.
+ - Create a new project using the "Console Application" template for C\# (remember that this is explained in more details in [the "Your first program" lab](../FirstProgram/#creating-your-first-new-project)).
  - Pick simple and valid names for your project and solution, and save it in a suitable place (ex. a folder with a name that matches the name of the lab).
  - Compile and execute your program frequently (ex. upon completion of every lab task).
  - *Do not hesitate to change your program to answer questions; you're in a lab, you're supposed to conduct experiments!*
