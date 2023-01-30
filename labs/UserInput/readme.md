@@ -2,6 +2,13 @@
 title: User Input
 ---
 
+This lab serves multiple goals:
+
+- To understand how to let the user interact with your program,
+- To understand how to read a `string` from the user,
+- To understand the difference between an `int` and a `string` containing a number,
+- To become able to convert a `string` containing a numerical value into a numerical datatype,
+- To understand how to read a numerical value from the user.
 
 # Reading From the User
 
@@ -25,7 +32,7 @@ title: User Input
     You just witnessed an interaction between a program and the user!
 
 #. Read the source code carefully and make sure you understand all of it.
-#. Change the code so that the program would also, in addition, ask for the user's last name and print both their first and last names.
+#. Change the code so that the program would also, in addition, ask for the user's last name and display both their first and last names.
 
 # Parsing Numeric Types
 
@@ -33,6 +40,12 @@ title: User Input
 
 #. So far, our user input has always returned a specific type.  What type is it?
 #. Without making changes to the code, execute it again but give a number as your first name. Does the type returned change if the user enters only numeric values?
+
+<details><summary>Solution:</summary>
+#. The `Console.ReadLine()` methods returns a `string`: that is, what the user entered is treated as a `string` literal.
+#. The number the user entered is still treated as a `string`: it is important to understand the difference between an `int` (`42`) and a `string` that may happen to contain a number (`"42"`--pay attention to the quotes).
+</details>
+
 
 ## Variable Types: From String to Integer
 
@@ -53,9 +66,42 @@ Comment out the statement you just added (that is, add `//` in front of it, so t
 #. Change the value of  `stringVar` to be `"Train"` and assign it to `intVar` using `int.Parse` as previously shown.
 What happened?
 
+<details><summary>Solution:</summary>
+The program you end up writing looks like this:
+
+```
+int intVar;
+string stringVar;
+
+intVar = 3;
+stringVar = "4";
+
+Console.WriteLine("intVar is \t" + intVar);
+Console.WriteLine("stringVar is \t" + stringVar);
+
+// This statement returns the error message
+// … error CS0029: Cannot implicitly convert type `string' to `int'
+// intVar = stringVar;
+// because we cannot store a string literal ("4") into an integer variable.
+
+intVar = int.Parse(stringVar);
+// This statement "converts" the string contained in stringVar 
+// into the number it contains. It "unwraps" the value contained in stringVar.
+
+// Those statements return an error message that begins with
+// System.FormatException: Input string was not in a correct format.
+// stringVar = "Train";
+// intVar = int.Parse(stringVar);
+// This is because int.Parse cannot convert "Train" into an integer!
+```
+</details>
+
+
 # Reading Numeric Datatypes From the User
 
-#. Looking back at the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), what if you ask the user directly for an integer?  How can you store it in an int variable?
+Looking back at the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), one may wonder how we could ask the user directly for an integer.  How we could store it in an `int` variable.
+This part explains exactly how to read nunmerical value from the user.
+
 #. Add the following to the code:
 
     ```
@@ -64,7 +110,7 @@ What happened?
     string ageInput = Console.ReadLine();
     int age = int.Parse(ageInput);
         
-    Console.WriteLine($"Your age in months is {age*12}");
+    Console.WriteLine($"Your age in months is at least {age*12}.");
     ```
     
 #. Re-compile and execute your code.  Be sure to enter a whole number for your age.
@@ -76,6 +122,23 @@ What happened?
     Later in the course you will learn how to handle untrustworthy user input
 #. Can you think of a change you can make to the code to accept ages of type `float` instead of `int`?  Try making that change!
 #. If you were to ask a user to enter an age without specifying its type, what `.Parse` should you use?
+
+
+<details><summary>Solution:</summary>
+We can convert the program to use `float` easily:
+
+```
+Console.WriteLine("Please enter your age in years as an integer.");
+
+string ageInput = Console.ReadLine();
+// We can parse the user input as a float:
+float age = float.Parse(ageInput);
+
+Console.WriteLine($"Your age in months is at least {age*12}.");
+
+// We should use float by default, in case the user want to specify "5.5" if they are 5 years and a half (it matters to 5 years old kids that they are mid-way to 6!).
+```
+</details>
 
 
 [^noteonUbuntu]: If you are using Ubuntu and, after performing this step, you receive an error message
