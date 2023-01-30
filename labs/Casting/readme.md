@@ -2,6 +2,14 @@
 title: Type Casting
 ---
 
+This lab serves multiple goals:
+
+- To help you develop good lab habits,
+- To declare, assign and display variables of different datatypes,
+- To understand how to use arithmetic operators,
+- To experience the differences in numerical datatypes,
+- To use combined assignment operators.
+
 # Numerical Datatypes
 
 For this part, it is recommended to have the [datatypes cheatsheet](../../datatypes_in_csharp.html) readily available.
@@ -24,9 +32,20 @@ decimal m = 2.5m;
 Answer the following:
 
 - How many variables are declared?
-- What are their datatypes?
-- What are their values?
-- What are their names?
+- For each of those variables, give their name, datatype, and value.
+
+<details><summary>Solution:</summary>
+There are 5 variables.
+
+Name | Datatype | Value 
+--- | --- | --- 
+`a` | `int` | 21
+`b` | `int` | 4
+`f` | `float` | 2.5000000
+`d` | `double` | -1.3
+`m` | `decimal` | 2.5
+</details>
+
 
 ## Operations
 
