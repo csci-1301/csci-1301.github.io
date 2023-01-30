@@ -70,10 +70,32 @@ Clément Aubert:
     - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
 -->  
+
+Samuel Bailey:
+~ 
+    - <sambailey@augusta.edu>
+    - Responsible for Section A's lab.
+    - Also present during Section C and D's labs.
+    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
+    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
+    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
+
+Jason Weeks:
+~ 
+    - <jaweeks@augusta.edu>
+    - Responsible for Section B's lab
+    - May also be present for Section C's lab
+    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
+    - My office hours are as follows (all are at UH 129):
+        - Tuesday: 1:00pm - 5:00pm
+        - Thursday: 3:00pm - 5:00pm
+        - Friday: 9:00am - 12:00pm
+    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
+    
 Artis Carter:
 ~ 
     - <artcarter@augusta.edu>.
-    - Present for Section C's lab.
+    - Responsible for Section C's lab.
     - Also present during Section F's lab.
     - Best way to reach me is via [discord](http://discordapp.com/users/730957085717561364), email, or on Teams.
     - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 5:00pm-7:00pm and Friday 2:00pm-4:00pm.
@@ -88,6 +110,16 @@ David Diestelhorst:
     - My office hours are Mondays 1400-1600 (online) and Wednesdays 1330-1600 (Tutoring Center). Additionaly, I will be available for tutoring on Thursdays (1500-1700) and Fridays (1015-1145) at the Academic Success Center. 
     - I'm a computer science major, but my other academic interests include anthropology and linguistics. My hobbies include videogames, tabletop RPGs, and reading. 
     
+Layla Erb:
+ ~ 
+    - <lerb@augusta.edu>
+    - Responsible for Section E's lab.
+    - The best ways to reach me are either by email or on [Discord](https://discordapp.com/users/949428446281465937).
+    - My office hours are 
+        - Monday 3:00pm–5:00pm in UH 129.
+        - Tuesday 3:00pm–5:00pm in UH 129.
+     - I am a third year Computer Science student and this is my first semester as a UCA. I'm looking forward to working with you all this semester!
+
 Richard Kelley:
 ~ 
     - <RIKELLEY@augusta.edu>.
@@ -97,36 +129,16 @@ Richard Kelley:
     - Office hours are Monday and Wednesday, 4:30-6:30pm.
     - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
 
-Jason Weeks:
+Brandon Wilburn:
 ~ 
-    - <jaweeks@augusta.edu>
-    - Responsible for Section B's lab
-    - May also be present for Section C's lab
-    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
-    - My office hours are as follows (all are at UH 129):
-        - Tuesday: 1:00pm - 5:00pm
-        - Thursday: 3:00pm - 5:00pm
-        - Friday: 9:00am - 12:00pm
-    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
+    - <bwilburn@augusta.edu>
+    - N/A
+    - N/A
+    - Discord is the easiest way to reach me, but I will also respond to emails.
+    - Available  to tutor on Mondays after 3, Wednesdays after 1, and Fridays for most of the day. If you'd like in-person tutoring, please let me know so I 
+can put it on my schedule.
+    - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
 
-Clément Aubert:
- ~ 
-     - <caubert@augusta.edu>
-     - Responsible for Section B's lab.
-    - Feel free to reach out via emails or teams, cf. <https://spots.augusta.edu/caubert/#contact>. I don't frequently check discord.
-    - My office hours are 
-        - Monday 1:00pm–2:00pm in my office and on teams.
-        - Tuesday 2:00pm–3:00pm in my office and on teams.
-     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
-     
-Samuel Bailey:
-~ 
-    - <sambailey@augusta.edu>
-    - Responsible for Section C's lab.
-    - Also present during Section A and D's labs.
-    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
-    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
-    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
 
 ## Labs Meeting Times
 
@@ -136,9 +148,9 @@ Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
 -- | ----| ------| -------------| -------------| -------------
 29829 | E | Monday 7:00 pm 8:50 pm | Layla | Ian | Richard
 31229 | F | Wednesday 7:00 pm 8:50 pm | Richard | Artis | Ian
-24167 | A | Thursday 10:00 am 11:50 am | Dr. Aubert | David & Samuel | 
+24167 | A | Thursday 10:00 am 11:50 am | Samuel | David   | 
 24169 | B | Thursday 1:00 pm 2:50 pm | Jason | David | Ian
-28075 | C | Friday 9:00 am 10:50 am | Samuel | Artis | Jason
+28075 | C | Friday 9:00 am 10:50 am | Artis | Samuel | Jason
 28281 | D | Friday 12:00 pm 1:50 pm | David | Samuel | Layla
 
 ## Commenting Using a Github Account
