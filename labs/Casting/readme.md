@@ -5,7 +5,7 @@ title: Type Casting
 This lab serves multiple goals:
 
 - To help you develop good lab habits,
-- To declare, assign and display variables of different datatypes,
+- To declare, assign and, display variables of different datatypes,
 - To understand how to use arithmetic operators,
 - To experience the differences in numerical datatypes,
 - To learn how to "cast" between numerical datatypes,
@@ -14,12 +14,12 @@ This lab serves multiple goals:
 # Numerical Datatypes
 
 For this part, it is recommended to have the [datatypes cheatsheet](../../datatypes_in_csharp.html) readily available.
-Note that it contains numerous references at its end.
-You are encouraged to open those links, if you have not already, to have a look at the official documentation, which should not scare you.
+Note that there are numerous references at the bottom of the cheatsheat.
+You are encouraged to open those links and have a look at the official documentation, if you have not already done so. Being able to reference the official documentation will help you in your studies. 
 
 ## Literals and Variables
 
-_This part should be first carried out without using an IDE, but with pen and paper._
+_This part should first be attempted using pen and paper before using an IDE._
 
 Assume we have the following statements:
 
@@ -50,7 +50,7 @@ Name | Datatype | Value
 
 ## Operations
 
-Consider the following expressions, which use the variables we have declared above. For each of them, tell if they are legal and if so, give the result and its corresponding datatype.  The first two are given as examples:
+Consider the following expressions, all of which use the variables we declared above. For each of them, decide if they are legal, and if so, determine the result and its corresponding datatype.  The first two are given as examples:
 
 Operation | Legal? | Result | Datatype
 --- | --- | --- | ---
@@ -139,4 +139,4 @@ Conduct further experiments if needed to answer this question.
 - `decimal` to `float`
 - `float` to `decimal`
 
-That last result may have been surprising.  While `decimal` is higher precision than `float` and `double`, it requires an explicit cast from either of those types, as you want to "force" imprecise data into a datatype that is supposedly extremely precise. Think about measuring wood with an inaccurate tape measurer and then cutting it with laser precision: that is what storing a `float` into a `decimal` is!
+That last result may have been surprising.  While `decimal` has higher precision than `float` and `double`, it requires an explicit cast from either of those types, as you would be attempting to "force" imprecise data into a datatype that is supposedly extremely precise. Think about measuring wood with an inaccurate tape measure and then cutting it with laser precision; that is what storing a `float` as a `decimal` is!
