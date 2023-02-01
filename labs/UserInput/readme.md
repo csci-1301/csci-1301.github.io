@@ -55,7 +55,7 @@ This lab serves multiple goals:
 #. Display the values of `intVar` and `stringVar`.
 #. Write a statement that assigns the value of `stringVar` to `intVar`.
 Why is the compiler complaining?
-Comment out the statement you just added (i.e. add `//` in front of it, so that the compiler will not try to execute it).
+Comment out the statement you just added (i.e., add `//` in front of it, so that the compiler will not try to execute it).
 #. Copy the following statement to "convert" the string value of `stringVar` into an integer value and assign it to `intVar`.
     
     ```
