@@ -62,7 +62,9 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
     ![](img/dl_VS.jpg){ width=80% }
 
-    Normally, the following direct link should get you to the right page: <https://portal.azure.com/?Microsoft_Azure_Education_correlationId=8ee63052-dc32-46f7-a109-e26793622dbf#>. Type "Education" in the search bar to get started on the path to the program to download.
+    Normally, the following direct link should get you to the right page: <https://portal.azure.com/?Microsoft_Azure_Education_correlationId=8ee63052-dc32-46f7-a109-e26793622dbf#view/Microsoft_Azure_Education/EducationMenuBlade/~/software>. Type "Visual Studio Enterprise" in the search bar and you should find what you are looking for:
+    
+    ![](img/dl_visual_studio.png){ width=80% }   
 
 #. Download and install Visual Studio (leave all the options on their default settings).
 
