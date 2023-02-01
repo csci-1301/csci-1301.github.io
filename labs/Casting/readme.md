@@ -5,7 +5,7 @@ title: Type Casting
 This lab serves multiple goals:
 
 - To help you develop good lab habits,
-- To declare, assign and, display variables of different datatypes,
+- To declare, assign, and display variables of different datatypes,
 - To understand how to use arithmetic operators,
 - To experience the differences in numerical datatypes,
 - To learn how to "cast" between numerical datatypes,
