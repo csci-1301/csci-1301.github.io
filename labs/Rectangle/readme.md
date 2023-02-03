@@ -2,18 +2,24 @@
 title: Introduction to Classes -- Rectangle Class
 ---
 
-# Using a Pre-Defined Class
+This lab serves multiple goals:
 
-This lab will guide you in your first manipulation of a programmer-defined class. [The last part](#enriching-rectangle.cs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
+- To guide you in your first manipulation of a programmer-defined class,
+- To understand how two `.cs` files can interact in a single solution,
+- To help you understand how to create and manipulate objects,
+- To briefly discuss naming conventions in classes,
+- To encourage you to enrich an existing class with additional methods.
 
-## Manipulating Two `.cs` Files at a Time
+[This last part](#enriching-rectangle.cs) is challenging; therefore, we provide a possible solution at the end of the page, but make sure you try to solve it by yourself beforehand.
+
+# Manipulating Two `.cs` Files at a Time
 
 #. Download [the Rectangle project](Rectangle.zip), extract it, and open it with your IDE.
 #. Note that in the "Solution Explorer", there are two `cs` files listed: `Program.cs` and `Rectangle.cs`:
 
     ![](./../../img/solution_explorer_rectangle.png)
 
-#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what was presented during the lecture^[You can also refer to [the lecture notes](https://csci-1301.github.io/book.html#writing-our-first-class).].
+#. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what is presented during in [the lecture notes](https://csci-1301.github.io/book.html#writing-our-first-class).
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.
 #. Compile and execute the code.
 #. Now, do the following:
@@ -21,7 +27,7 @@ This lab will guide you in your first manipulation of a programmer-defined class
   - Introduce a syntactical error in `Rectangle.cs` (e.g., remove a `;`), and try to build the solution: what do you observe?  Undo the modification.
   - Add `length = 12;` in the `Main` method of `Program.cs` and try to build the solution: what do you observe? Undo the modification.
 
-## Enriching `Program.cs`
+# Enriching `Program.cs`
 
 Edit `Program.cs` by adding at the end of its `Main` method statements that perform the following:
 
@@ -32,7 +38,7 @@ Edit `Program.cs` by adding at the end of its `Main` method statements that perf
 In the last part, you may notice that the length and the width of the newly created object were assigned default values.
 To know more about this, refer to [the documentation on default values of C# types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table).
 
-## Editing `Rectangle.cs`
+# Editing `Rectangle.cs`
 
 Edit `Rectangle.cs`:
 
@@ -54,7 +60,7 @@ https://stackoverflow.com/a/17937309/
 -->
 
 
-## Enriching `Rectangle.cs`
+# Enriching `Rectangle.cs`
 
 Taking inspiration from the `ComputeArea()` method, write three new methods:
 
