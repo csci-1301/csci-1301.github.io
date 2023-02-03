@@ -2,6 +2,15 @@
 title: UML Class Diagram
 ---
 
+This lab serves multiple goals:
+
+- To give you a general understanding of the purpose of UML diagrams,
+- To help you read simple UML class diagrams,
+- To help you match a UML diagram with its implementation,
+- To transform an informal class description into a UML class diagram.
+
+# Introduction
+
 Quoting [wikipedia](https://en.wikipedia.org/wiki/Unified_Modeling_Language),
 
 > The Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system.
@@ -38,6 +47,15 @@ Study the following diagram, then answer follow up questions:
     - based on the name can you interpret the behavior of these methods?
     - can you think of _why_ we might need two such similar methods?
 
+<details><summary>Solution:</summary>
+- The name of the class is "Account",
+- This class has only one attribute, called `balance` and of type `decimal`,
+- This class has 4 methods.
+- The symbol `+` is used to signify that the member (be it a method or an attribute) is public. The symbol `-` is used to indicate a private member. In general, in this course, we will let attributes be private and methods be public.
+- The `GetBalance` method will returns the actual balance, while `DisplayBalance` will simply display the balance (and not return anything, since its return type is `void`).
+We may need two different methods as one will be used to make computations (`GetBalance`) while the other will be used to display nicely the information (`DisplayBalance`).
+</details>
+
 ## Implementing the class
 
 Class diagram provides a concise way to represent attributes and methods, but it does not explain the implementation of the methods.
@@ -62,17 +80,20 @@ instantiate an object of the class and ensure it works as described.
 # Creating your own class diagram 
 
 In this next exercise you will practice drawing your own diagram, on paper.
+Draw the UML diagram of the following class:
 
-#. Draw the UML class diagram of a `Rectangle` class.
-#. It should have two attributes: `width` and `length` of type `int`
-#. It should have eight methods:
+#. The class is named `Rectangle`.
+#. It has two attributes: `width` and `length`, both of type `int`
+#. It has eight methods:
     - two setters, two getters (i.e., one for each attribute) 
-    - `ComputeArea` method to compute the area of a precise rectangle
-    - `ComputePerimeter` method to compute the perimeter of a precise rectangle
-    - `Swap` method to swap the length and the width of a precise rectangle
-    - `Multiply` method to multiply the length *and* width of a precise rectangle by an ratio given in argument as an integer (`int`).
+    - `ComputeArea` method to compute the area of a rectangle
+    - `ComputePerimeter` method to compute the perimeter of a rectangle
+    - `Swap` method to swap the length and the width of a  rectangle
+    - `Multiply` method to multiply the length *and* width of a rectangle by an ratio given in argument as an integer (`int`).
     
+<details><summary>Solution:</summary>
 You can check your answer, by referring back to the `Rectangle.cs` file from the ["Enriched Rectangle" project](../Rectangle/Enriched_Rectangle.zip). The UML diagram for this class is indicated, in comments, at the beginning of the file (but misses the `Multiply` method).
+</details>
 
 # Pushing Further (Optional)
 
