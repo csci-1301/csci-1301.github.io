@@ -17,7 +17,7 @@ As a warm-up, you will practice writing constructors and `ToString` methods by a
 
 #. Open the "Rectangle" project you created in the ["Rectangle Class" lab](../Rectangle/). You can use the "enriched" class, [shared previously](https://csci-1301.github.io/labs/Rectangle/Enriched_Rectangle.zip), if you prefer.
 #. In "Rectangle.cs", add a constructor to `Rectangle` that takes two arguments, a length and a width, and uses them to initialize the `length` and `width` attributes.
-#. Within your `Main` method, you will notice that your `new Rectangle()` instantiation statements are now highlighted as errors, because `Rectangle` no longer has a zero-argument constructor. Change each instantiation statement to call your new two-arguments constructor, using the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
+#. Within your `Main` method, you will notice that your `new Rectangle()` instantiation statements are now highlighted as errors, because `Rectangle` no longer has a zero-argument (or "no-args") constructor. Change each instantiation statement to call your new two-arguments constructor, using the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
 #. Compile and execute your program and make sure your Rectangles still behave as expected.
 
 ## A `ToString` Method
