@@ -2,7 +2,12 @@
 title: Precise Rectangle
 ---
 
-In this lab you will first edit an existing program then create a new program "from scratch". You will also explore C\# documentation and learn new useful IDE features.
+This lab serves multiple goals:
+
+- Learn to edit an existing program containing a class,
+- Implement a change of datatype in the attributes of a class,
+- Re-inforce basic class manipulation,
+- Discover how to add a class to an existing project.
 
 # Writing Your Own PreciseRectangle Class
 
@@ -24,9 +29,9 @@ It is recommended to pick the one you feel the most comfortable with, and then t
 
 #. In the "PreciseRectangle.cs" file, replace `class Rectangle` with `class PreciseRectangle`.
 #. Comment out the body of the `Main` method in "Program.cs".
-#. Your program should compile as it is, but you have to edit `PreciseRectangle.cs` to now store the `width` and the `length` with `double`, and to propagate this change accordingly. What should be the return type of `GetWidth`, for instance?
-#. Declare and manipulate precise rectangles (with non-integer values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
-#. Add the missing methods `ComputePerimeter`, `Swap`, `MultiplyRectangle`, described in the section below.
+#. Your program should compile as it is, but you have to edit `PreciseRectangle.cs` to now store the `width` and the `length` as `double`, and to propagate this change accordingly. What should be the return type of `GetWidth`, for instance?
+#. Declare and manipulate precise rectangles (with `double` values for the width and the length) in the `Main` method, and make sure they behave as expected (can you compute the area, for instance?).
+#. Add the missing methods `ComputePerimeter`, `Swap`, `MultiplyRectangle`, as described in the [Rectangle lab](../Rectangle/#enriching-rectangle.cs) but also below.
 
 ### Starting From Scratch
 
