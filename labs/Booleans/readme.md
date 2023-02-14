@@ -25,19 +25,19 @@ This lab serves multiple goals:
 	Console.WriteLine("Negation (not, !) truth table:"
 	+ "\n\n value \t||  ! "
 	+ "\n--------||----------"
-	+ "\n" + true + "\t||  " + false
+	+ "\n" + true + "\t||  " + !(true)
 	+ "\n" + (!true) + "\t||  " + (!false)
 	+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 	```
 
-#. Compile and execute it. This should display to the screen truth tables for conjunction (and, `&&`) and negation (not, `!`).
+#. Compile and execute it. This should display to the screen the [truth tables](https://en.wikipedia.org/wiki/Truth_table) for conjunction (and, `&&`) and negation (not, `!`).
 #. Make sure you understand both the code and its output.
-#. After the truth table for the negation, write code to display truth tables for
-    #. the binary operators disjunction (or, `||`),
-    #. identity (equality, `==`) and
-    #. difference (inequality, `!=`).
+#. After the truth table for the negation, write code to display the truth tables for three binary operators:
+    #. the disjunction (or, `||`),
+    #. the identity (equality, `==`) and
+    #. the difference (inequality, `!=`).
     
-    Normally, using the find-and-replace feature of your IDE should make this a quick and easy task.
+    Normally, copying the truth table for the conjunction and using the find-and-replace feature of your IDE should make this a quick and easy task.
 #. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). For inequality, in this case check against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality, but has the same truth table.
 
 # Precedence and Order of Evaluation
@@ -45,8 +45,7 @@ This lab serves multiple goals:
 ## Reading and Understanding
 
 If you read the [documentation on operator precedence](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence), you will see that operators are evaluated in a particular order.
-From higher precedence (that is, evaluated first) to lower precedence (that is, evaluated last), this order is: `! (* / %) (+ -) (< > <= >=) (== !=) && ||`.
-Inside each group in parenthesis, operations are evaluated from left to right.
+This order is also given [in our notes](../../book.html#precedence-of-operators-1).
 
 So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
 
