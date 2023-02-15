@@ -98,7 +98,7 @@ Artis Carter:
     - Responsible for Section C's lab.
     - Also present during Section F's lab.
     - Best way to reach me is via [discord](http://discordapp.com/users/730957085717561364), email, or on Teams.
-    - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 5:00pm-7:00pm and Friday 2:00pm-4:00pm.
+    - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 8:00am-10:00am and Friday 4:00pm-6:00pm.
     - I am a senior majoring in computer science and mathematics. You can find me eating Chick-fil-A or helping someone on discord.
     
 David Diestelhorst:
