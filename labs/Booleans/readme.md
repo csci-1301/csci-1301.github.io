@@ -12,7 +12,7 @@ This lab serves multiple goals:
 
 # Truth Tables
 
-#. Copy-and-paste the following code into the `Main` method of a new project:
+#. Copy and paste the following code into the `Main` method of a new project:
 
 	```
 	Console.WriteLine("Conjunction (and, &&) truth table:"
@@ -34,11 +34,11 @@ This lab serves multiple goals:
 #. Make sure you understand both the code and its output.
 #. After the truth table for the negation, write code to display the truth tables for three binary operators:
     #. the disjunction (or, `||`),
-    #. the identity (equality, `==`) and
+    #. the identity (equality, `==`), and
     #. the difference (inequality, `!=`).
     
     Normally, copying the truth table for the conjunction and using the find-and-replace feature of your IDE should make this a quick and easy task.
-#. You can make sure you completed this exercise correctly by checking that your output match the truth tables on wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). For inequality, in this case check against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality, but has the same truth table.
+#. You can make sure you completed this exercise correctly by checking that your output matches the truth tables on Wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). To check the inequality truth table, compare your output against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality but has the same truth table.
 
 # Precedence and Order of Evaluation
 
@@ -47,7 +47,7 @@ This lab serves multiple goals:
 If you read the [documentation on operator precedence](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/#operator-precedence), you will see that operators are evaluated in a particular order.
 This order is also given [in our notes](../../book.html#precedence-of-operators-1).
 
-So that, for instance, `! true || false && 3 * 2 == 6` will be evaluated as
+For instance, `! true || false && 3 * 2 == 6` will be evaluated as
 
 Operation | | Result | Op.
 ---------------- | - | --------------- | --
@@ -57,9 +57,9 @@ Operation | | Result | Op.
 `false ||` **`false && true`** | ⇒ | `false ||` **`false`** | `&&`
 **`false || false`** | ⇒ | **`false`** | `||`
 
-Note that an expression like `!3 > 2` does not make any sense: C# would try to take the negation of `3` (since `!` has a higher precedence than `>`), but you cannot negate the truth value of an integer!
-Along the same lines, an expression like `false * true` does not make any sense: you can not multiply booleans (what would be "true times false"?)!
-Similarly, `3 % false` will cause an error: can you see why?  These are all examples of "illegal" expressions.
+Note that an expression like `!3 > 2` does not make any sense: C# would try to take the negation of `3` (since `!` has higher precedence than `>`), but you cannot negate the truth value of an integer!
+Along the same lines, an expression like `false * true` does not make sense; you can not multiply booleans (what would be "true times false"?)!
+Similarly, `3 % false` will cause an error; can you see why?  These are all examples of "illegal" expressions.
 
 ## Computing Simple Boolean Expressions
 
