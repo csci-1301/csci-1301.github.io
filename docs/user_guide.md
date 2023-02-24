@@ -84,8 +84,10 @@ Resources to assess accessibility:
 **Syntax example.** The quoted text is the alt tag and in parentheses is path to file
 
 ```
-!["image of visual studio IDE"](./img/vs_ide.jpg)
+!["image of visual studio IDE"](./img/vs_ide.jpg){ width=80% }
 ```
+
+The `{ width=80% }` attribute is optional.
 
 ### Source code
 

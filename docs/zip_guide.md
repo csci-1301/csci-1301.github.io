@@ -2,6 +2,15 @@
 title:  Zip File Guide
 ---
 
+This short note explains how to
+
+- Unzip files, 
+- Zip folders,
+- Locate your project
+
+for the three main operating systems (Windows, Linux and macOS).
+
+
 # Unzipping Files
 
 ## Windows
@@ -27,7 +36,6 @@ $ unzip [FileName].zip
 ```
 
 where "[FileName].zip" is the name of the zip file.
-
 
 ## macOS
 
@@ -73,3 +81,30 @@ Navigate to your file explorer and go to where your solution is stored on your s
 
 where "[UserName]" is your Mac username.
 Right-click on the folder that you want to zip up and click on the "Compress the Folder" option.
+
+# But Where Is My Project?
+
+By default, it _should_ be stored in a folder located in 
+
+```{.text}
+C:\Users\[UserName]\source\repos
+```
+
+for Windows users,
+
+
+```{.text}
+[UserName]\source\repos
+```
+
+for macOS users,
+
+```{.text}
+/home/[UserName]/Projects
+````
+
+for Linux users.
+
+When in doubt, open your project in the IDE, right-click on the solution, and look for an option called "Open in File Explorer" or "Open Containing Folder":
+
+![](img/open_containing_folder.png){ width=80% }
