@@ -135,9 +135,16 @@ Brandon Wilburn:
     - N/A
     - N/A
     - Discord is the easiest way to reach me, but I will also respond to emails.
-    - Available  to tutor on Mondays after 3, Wednesdays after 1, and Fridays for most of the day. If you'd like in-person tutoring, please let me know so I 
-can put it on my schedule.
+    - Available  to tutor on Mondays after 3, Wednesdays after 1, and Fridays for most of the day. If you'd like in-person tutoring, please let me know so I can put it on my schedule.
     - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
+ 
+Daelyn Doughty:
+~ 
+    - <daedoughty@augusta.edu>
+    - Best way to reach me is via [email](mailto:daedoughty@augusta.edu)
+    - Alternatively, you can reach me on [discord](http://discordapp.com/users/730957085717561364) or on Teams.
+    - Office hours will be held on discord and teams and they are Tuesday/Thursday 10:00am-11:30am.
+    - I am a junior majoring in computer science. You can find me skating around campus or drinking protein.
 
 
 ## Labs Meeting Times
