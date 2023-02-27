@@ -5,9 +5,9 @@ title: Practicing if and switch
 This lab serves multiple goals:
 
 - To reinforce your understanding of `if` statements,
-- To help you practise `switch` statements,
-- To help you understanding whenever `switch` or `if` should be used for simple problems,
-- (Optional) to help you understanding the conditional operator,
+- To help you practice `switch` statements,
+- To help you understand the instances in which `switch` or `if` should be used,
+- (Optional) to help you understand the conditional operator, and
 - (Optional) to introduce you to the `ToUpper` method.
 
 
@@ -19,7 +19,7 @@ Consider the following code:
 // We ask the user to enter the day of the week:
 Console.WriteLine("Please enter the day of the week.");
 // Note that anything that is not spelled exactly as 
-// in the switch statement will be treated by the 
+// in the switch statement will be treated as the 
 // default case.
 
 // We read from the user:
@@ -29,7 +29,8 @@ string string_day = Console.ReadLine();
 int num_day;
 
 // Switch statement to map textual description of the day 
-// (e.g., "Monday", "Tuesday", …) to its number (1, 2, …).
+// (e.g., "Monday", "Tuesday", etc.) to a number 
+// relative to chronological order (e.g., 1, 2, etc.)
 switch (string_day)
 {
     case ("Monday"):
@@ -67,11 +68,11 @@ You can download it [as a solution](day_of_the_week.zip) (that also contains the
 Now, do the following:
 
 #. Test the program with various values and make sure it behaves as expected.
-#. Comment out the `default:` case along with the two lines below it, and compile your program. Why is the compiler complaining?
+#. Comment out the `default:` case along with the two lines below it and compile your program. Why is the compiler complaining?
 #. Restore the code to its original state.
 #. Change the code so that "monday" would make the value 1 get assigned to `num_day`.
-#. Change the code so that [the days of the week start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday), i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.
-#. Finally, change the last message to tell the user if the code encountered an error: use an `if` statement to display a different message if the user input did not match one of the literals in your `switch` statement.
+#. Change the code so that [the days of the week start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday) (i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.)
+#. Finally, change the last message to tell the user if the code encountered an error; use an `if` statement to display a different message if the user input did not match one of the literals in your `switch` statement.
 
 Here is an example of execution, where the user input is u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲, and hitting "enter" is represented by ↵:
 
@@ -89,24 +90,25 @@ M̲O̲N̲D̲A̲Y̲↵
 I am sorry, but MONDAY does not seem to be a valid day.
 ```
 
-You can find an example solution in [this solution](day_of_the_week_solution.zip) or in the archive you downloaded previously.
+You can find an example solution in [this solution](day_of_the_week_solution.zip) or in the archive that you downloaded previously.
 
 
 # Practicing `if` and `switch`
 
 This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables.
-The main goal is to have you practice "transforming" `if` statements into `switch` statements, and reciprocally.
-This will help you in memorizing both, and in understanding how to choose the most convenient to perform certain tasks.
+The main goal is to have you practice "transforming" `if` statements into `switch` statements and `switch` statements
+into `if` statements. 
+This will help you memorize their syntax and help you choose the more convenient one to perform certain tasks.
 
 Create a new project and do the following in `Main`.
 
-#. Declare and initialize following variables:
+#. Declare and initialize the following variables:
     - a `string` variable named `day`
     - an `int` variable named `myVar`
     - a `char` variable named `initial`, and
     - a `bool` variable named `flag`
 #. Set and change the value of these variables to make good tests as you progress through this problem.
-#. You can also display them on the screen to help you in making sure that your statements behave as they are supposed to.
+#. You can also display them on the screen to make sure that your statements behave as expected.
 
 ## From `switch` to `if-else`
 
@@ -115,30 +117,30 @@ Create a new project and do the following in `Main`.
 
 ## From `if-else` to `switch`
 
-#. Write a `if-else` statement that doubles the value of `myVar` if `myVar` is: `3`, `5` or `7`.
+#. Write an `if-else` statement that doubles the value of `myVar` if `myVar` is: `3`, `5`, or `7`.
 #. Can you rewrite the previous statement as a `switch` statement? If so, do it. If not, explain why not.
 
 ## Deciding Between Condition Types
 
 #. Write a statement that doubles the value of `myVar` and sets `initial` to `'M'` if `day` is equal to `"Sat"`.
 What is the appropriate kind of statement to do this?
-#. Write a statement that displays "Hello" on the screen if the value of `initial` is `'E'` or `'e'`, "Bonjour" if the value of `initial` is `'F'` or `'f'`, "Guten Tag" if the value of `initial` is `'D'` or `'d'`.
+#. Write a statement that displays "Hello" on the screen if the value of `initial` is `'E'` or `'e'`, "Bonjour" if the value of `initial` is `'F'` or `'f'`, and "Guten Tag" if the value of `initial` is `'D'` or `'d'`.
 What is the appropriate kind of statement to do this?
 
-Note that you can achieve those problems both with `if` and with `switch` statements.
+Note that you can solve those problems with either an `if` statement or a `switch` statement.
 
 ## Complex Conditions
 
-#. Write a statement that doubles the value of `myVar` if `day` is `"Sun"`, triples the value of `myVar` if `day` is not `"Sun"` and `initial` is `'a'`, and sets `myVar` to `0` otherwise.
-#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter, and to `1` otherwise. You will need to understand how to use the `IsUpper` method, and the [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0) can help you with that.
+#. Write a statement that doubles the value of `myVar` if `day` is `"Sun"`, triples the value of `myVar` if `day` is not `"Sun"` but `initial` is `'a'`, or sets `myVar` to `0` if neither of the other conditions is satisfied.
+#. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter or to `1` otherwise. You will need to understand how to use the `IsUpper` method, and the [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0) can help you with that.
 
-Note that you can achieve those problems only with `if` statements.
+Note that you can only solve those problems with `if` statements.
 
 # Pushing Further (Optional)
 
 ## Conditional Operator
 
-A *conditional operator* can be used to replace `if-else` statements in particular cases (assignment, call, increment, decrement, and new object expressions). Its structure is:
+A *conditional operator* can be used to replace `if-else` statements in particular cases (i.e., assignment, call, increment, decrement, and new object expressions). Its structure is:
 
 `condition ? first_expression : second_expression;`
 
@@ -152,7 +154,7 @@ Practice using the conditional operator by adding these statements to the progra
 
 ## `ToUpper()` Method
 
-C# contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest is probably to see an example first.
+C# contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest way to understand is probably to see an example first.
 The statement
 
 ```
