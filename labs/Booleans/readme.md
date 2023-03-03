@@ -61,6 +61,11 @@ Note that an expression like `!3 > 2` does not make any sense: C# would try to t
 Along the same lines, an expression like `false * true` does not make sense; you can not multiply booleans (what would be "true times false"?)!
 Similarly, `3 % false` will cause an error; can you see why?  These are all examples of "illegal" expressions.
 
+<details><summary>Solution:</summary>
+`3 % false` would cause an error because the `%` operator (called [the remainder operator](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#remainder-operator-)) expects two numerical datatypes, but `false` is not of a numerical datatype, as it is a Boolean.
+</details>
+
+
 ## Computing Simple Boolean Expressions
 
 Evaluate the following expressions.
@@ -75,6 +80,24 @@ Try to do this "by hand," and write your answers down on paper.
 - `!true || false && (true && !false)`
 - `true != !(false || true)`
 
+<details><summary>Solution:</summary>
+You can actually use your IDE to check your answers!
+Simply copy-and-paste the following in a `Main` method:
+
+```
+Console.WriteLine("The answers are:\n"
+	+ "true && false || true: " + (true && false || true) + "\n"
+	+ "!true && false: " + (!true && false) + "\n"
+	+ "false || true && !false: " + (false || true && !false) + "\n"
+	+ "false == !true || false: " + (false == !true || false) + "\n"
+	+ "!(true || false || true && true): " + (!(true || false || true && true)) + "\n"
+	+ "!(true || false) && (true && !false): " + (!(true || false) && (true && !false) ) + "\n"
+	+ "!true || false && (true && !false): " + (!true || false && (true && !false)) + "\n"
+	+ "true != !(false || true): " + (true != !(false || true)) + "\n"
+);
+```
+</details>
+
 ## Computing Expressions Involving Booleans and Numerical Values
 
 For each of the following expressions, decide if it is "legal" or not.
@@ -86,3 +109,12 @@ If it is, give the result of its evaluation.
 - `3 > false`
 - `true && 3 + 5 * 8 == 43`
 - `3 + true != false`
+
+<details><summary>Solution:</summary>
+- `3 > 2` is legal (comparing numerical values)
+- `2 == 4` is legal (comparing numerical values)
+- `3 >= 2 != false` is legal (we first convert `3 >= 2` to `True`, and then test if `true` is different from `false`)
+- `3 > false` is *not legal* (a boolean value cannot be less than a numerical value)
+- `true && 3 + 5 * 8 == 43` is legal (`+` and `*` are evaluated first, then `==` compares two numerical values, resulting in a boolean value that can be tested for equality against `true`)
+- `3 + true != false` is *not legal* (`+` is evaluated first, but a numerical value and a boolean cannot be summed).
+</details>
