@@ -13,6 +13,7 @@ Many resources are available to help you be a successful student:
 - [Student Counseling & Psychological Services](https://www.augusta.edu/counseling/) (or "SCAPS") is here to assist students with a variety of personal, developmental, and mental health concerns.
 - The [Writing Center](https://www.augusta.edu/pamplin/writingcenter/) can help you with any written, oral, or multimedia project.
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent [Sienna Sewell](https://spots.augusta.edu/sSewell/).
+- The [Department of Multicultural Student Engagement (MSE)](https://www.augusta.edu/multicultural/) aims to provide education, training, and programming to foster awareness of diversity and inclusion among Augusta University students. Their [Multicultural Mentorship Program and African American Male Initiative](https://www.augusta.edu/multicultural/programming.php) are excellent resources to receive additional help.
 
 # For Students of the School of Computer and Cyber Sciences {#school}
 
