@@ -4,12 +4,12 @@
 
 This is source code repository for [Augusta University's CSCI 1301 course](http://catalog.augusta.edu/preview_course_nopop.php?catoid=43&coid=192998) resources.
 
-View this resource on the web:
+View this resource on the web (in decreasing order of update frequency):
 
 - [csci-1301.github.io](https://csci-1301.github.io)
-- [mirror on manifold](https://alg.manifoldapp.org/read/csci-1301-book/)
 - [mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)
 - [mirror on box.com](https://augustauniversity.box.com/s/omis1adqth97bouvwxfwmlhwyiv6gwo1)
+- [mirror on manifold](https://alg.manifoldapp.org/read/csci-1301-book/)
 
 ## Organization of resources
 
