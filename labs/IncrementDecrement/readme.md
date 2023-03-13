@@ -6,7 +6,7 @@ This lab serves multiple goals:
 
 - To introduce increment and decrement operators,
 - To understand the difference between prefix and postfix operators,
-- To help you implementing your first `while` loops,
+- To help you implement your first `while` loops, and
 - (Optional) to write your first complex loops.
 
 # Increment and Decrement Operators
@@ -17,20 +17,20 @@ Start by answering the following, assuming an `int` variable `i` has been initia
 
 #. What does `i++` do to `i`?
 #. What does `i--` do to `i`? 
-#. In your own words, can you explain what is the difference between `++i` and `i++`? 
+#. In your own words, can you explain the difference between `++i` and `i++`? 
 
 <details><summary>Solution:</summary>
-#. `i++` increments the value of `i` by 1, so that if the value of `i` was 5, it would become 6.
-#. `i++` decrements the value of `i` by 1, so that if the value of `i` was 5, it would become 4.
-#. Some explanation can be found [in this post](https://stackoverflow.com/q/24853). In short, `++i` "gives back" the value of `i` _after_ it had been incremented by 1, while `i++` "gives back" the value of `i` _before_ it has been incremented. This makes a difference if `i++` or `++i` is part of a larger statement. The next exercises will illustrate this principle.
+#. `i++` increments the value of `i` by 1; if the value of `i` was 5, it would become 6.
+#. `i++` decrements the value of `i` by 1; if the value of `i` was 5, it would become 4.
+#. An explanation can be found [in this post](https://stackoverflow.com/q/24853). In short, `++i` "gives back" the value of `i` _after_ it had been incremented by 1, while `i++` "gives back" the value of `i` _before_ it has been incremented. This makes a difference if `i++` or `++i` is part of a larger statement. The next exercises will illustrate this principle.
 </details>
 
 ## Observe and Confirm
 
-Download, extract, open in your IDE and read [the following code](IncrementExample.zip).
-Then, compile and execute it, and study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
+Download, extract, open in your IDE, and read [the following code](IncrementExample.zip).
+Then, compile and execute it. Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
 
-Compare your answers from previous section to what you observe in the output. Do your answers match with what you observe in the output?
+Compare your answers from the previous section to what you observe in the output. Do your answers correspond to what you observe in the output?
 
 ## Exercise
 
@@ -67,7 +67,7 @@ int n = x++ + --x;
 ```
 
 <details><summary>Solution:</summary>
-You can download, extract, open in your IDE and execute [the following code](IncrementSolution.zip) to check that the answer is:
+You can download, extract, open in your IDE, and execute [the following code](IncrementSolution.zip) to check that the answers are:
 
 ```
 n is now 5.
@@ -80,15 +80,15 @@ n is now 10.
 
 # First While Loops
 
-The following is asking to write a series of `while` loops performing simple tasks.
-The solution to the first question is [in this archive](FirstLoop.zip), but it is recommended to try on your own first.
+The following asks you to write a series of `while` loops performing simple tasks.
+The solution to the first question is [in this archive](FirstLoop.zip), but it is recommended to try it on your own first.
 
-#. Write a `while` loop that displays the integers between $1$ and $100$ on the screen, with a space between them.
-#. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between them.
+#. Write a `while` loop that displays the integers between $1$ and $100$ on the screen with a space between each number.
+#. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between each number.
 #. Write a `while` loop that displays the `*` (asterisk symbol) character 100 times on the screen.
 #. Modify your previous loop, so that a new line character is displayed on the screen every time 10 asterisk symbols have been displayed on the screen.
 
-That is, your program should display this on the screen (this example has a space after each asterisk symbol for display purposes):
+To clarify, your program should display the following on the screen (this example has a space after each asterisk symbol for display purposes):
 
 ```text
  * * * * * * * * * *
@@ -106,7 +106,7 @@ That is, your program should display this on the screen (this example has a spac
 # Pushing Further (Optional)
 
 Here are additional pattern problems, similar to the last one from the previous section.
-Every time, you are asked to generate those patterns using a `while` loop.
+You are asked to generate these patterns using a `while` loop for each.
 
 #. Triangle:
 
