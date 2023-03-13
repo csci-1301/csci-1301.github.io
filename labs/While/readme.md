@@ -5,11 +5,11 @@ title: while Loop
 This lab serves multiple goals:
 
 - To reinforce your understanding of the syntax of `while` loops,
-- To stress the importance of conditions, e.g., the difference between `<` and `<=`,
+- To stress the importance of conditions (e.g., the difference between `<` and `<=`),
 - To study loops whose counter starts at values different from `0`,
 - To exhibit that loop counters can be incremented or decremented by any value (not just one),
 - To detect and debug infinite loops,
-- To design simple algorithms requiring loops,
+- To design simple algorithms requiring loops, and
 - (Optional) To have loops controlled by sentinel values.
 
 # Practicing while Loops -- Warm-Up
@@ -26,9 +26,9 @@ while(i < 100)
 ```
 
 #. Execute the code. You should see the numbers 0 to 99 in the console.
-#. Replace `<` with `<=`, and note that it prints the number from 0 to 100, even if you did not change the numbers.
+#. Replace `<` with `<=`, and note that it prints the numbers from 0 to 100, even even though you did not change the numbers.
 #. Replace `0` with `100` and `100` with `300`, and note that it prints the numbers from 100 to 300. Observe that the counter can start from and terminate with any number you wish.
-#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3. The solution is given below, but please think about it before reading it.
+#. Modify the code such that it prints all integers between 0 and 100 that are divisible by 3. The solution is given below, but please attempt to do it independently before reading it.
 
 <details><summary>Solution</summary>
 
@@ -100,18 +100,18 @@ else
 #. Replace `...` with a meaningful word.
 
 <details><summary>Solution</summary>
-#. The boolean expression use a counter `i`, whose original value is 2, and then check if:
+#. The boolean expression uses a counter `i`, whose original value is 2, and then checks if:
 
     - the result of the division of `n` by `i` is 0 (stated differently: whether `i` can divide `n`),
     - `i` is less than `n`.
-In other word, it tries to divide `n` by all the numbers between 2 and `n-1`, and exits if there is a number that divides `n`.
+In other words, it tries to divide `n` by all the numbers between 2 and `n-1`, and exits if there is a number that divides `n`.
 
 #. This program computes if the number entered by the user is prime! So, we should replace `...` with "prime"!
 </details>
 
 # Practicing while Loops -- Summing User-Input
 
-Write a program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
+Write a program that asks for an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
 Here is an example of the desired execution, where the user input is underlined, and hitting "enter" is represented by ↵:
 
@@ -121,9 +121,9 @@ Please enter an integer greater than 1:
 The sum from 1 to your number is: 36
 ```
 
-And indeed you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
+And you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
 <details><summary>Solution</summary>
-You can look at the code under "Accumulator" at <https://csci-1301.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 by the value given by the user.
+You can look at the code under "Accumulator" at <https://csci-1301.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 with the value given by the user.
 </details>
 
 # Infinite Loops
@@ -190,7 +190,7 @@ while (number <= 5)
 
 # Pushing Further (Optional)
 
-Here are two advances challenges with little-to-no clue to help you getting started.
+Here are two advanced `while` loop challenges. 
 Try to think "off-keyboard" for a while before coding your solution, and test it extensively.
 
 ## Advanced Problem 1
@@ -212,7 +212,7 @@ Console.WriteLine($"Your total is {sum}.");
 
 #. Execute it, and make sure you understand its mechanism.
 #. It contains a "sentinel value": can you tell what it is?
-#. Write a program by taking inspiration from this previous program. Your program should ask the user to enter integers. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
+#. Write a program by taking inspiration from the previous program. Your program should ask the user to enter integers. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
 
 ## Advanced Problem 2
 
