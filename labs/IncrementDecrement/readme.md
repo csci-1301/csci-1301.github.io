@@ -66,7 +66,17 @@ int x = 5;
 int n = x++ + --x;
 ```
 
-You can test your answers using your IDE.
+<details><summary>Solution:</summary>
+You can download, extract, open in your IDE and execute [the following code](IncrementSolution.zip) to check that the answer is:
+
+```
+n is now 5.
+n is now 6.
+n is now 13.
+n is now 35.
+n is now 10.
+```
+</details>
 
 # First While Loops
 
