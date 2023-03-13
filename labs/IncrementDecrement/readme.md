@@ -19,6 +19,12 @@ Start by answering the following, assuming an `int` variable `i` has been initia
 #. What does `i--` do to `i`? 
 #. In your own words, can you explain what is the difference between `++i` and `i++`? 
 
+<details><summary>Solution:</summary>
+#. `i++` increments the value of `i` by 1, so that if the value of `i` was 5, it would become 6.
+#. `i++` decrements the value of `i` by 1, so that if the value of `i` was 5, it would become 4.
+#. Some explanation can be found [in this post](https://stackoverflow.com/q/24853). In short, `++i` "gives back" the value of `i` _after_ it had been incremented by 1, while `i++` "gives back" the value of `i` _before_ it has been incremented. This makes a difference if `i++` or `++i` is part of a larger statement. The next exercises will illustrate this principle.
+</details>
+
 ## Observe and Confirm
 
 Download, extract, open in your IDE and read [the following code](IncrementExample.zip).
