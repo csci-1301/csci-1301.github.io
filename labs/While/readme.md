@@ -55,7 +55,8 @@ while(i < 100)
 }
 ```
 
-Which one of the above codes is more efficient? Why?
+Which one of the above codes seems more efficient / easier to understand / easier to debug?
+
 Note that you do not have to increment the counter only by one each time.
 You should update the counter wisely and try to use it more efficiently.
 </details>
@@ -98,6 +99,16 @@ else
 #. What does the code do? Explain the boolean expression of the loop
 #. Replace `...` with a meaningful word.
 
+<details><summary>Solution</summary>
+#. The boolean expression use a counter `i`, whose original value is 2, and then check if:
+
+    - the result of the division of `n` by `i` is 0 (stated differently: whether `i` can divide `n`),
+    - `i` is less than `n`.
+In other word, it tries to divide `n` by all the numbers between 2 and `n-1`, and exits if there is a number that divides `n`.
+
+#. This program computes if the number entered by the user is prime! So, we should replace `...` with "prime"!
+</details>
+
 # Practicing while Loops -- Summing User-Input
 
 Write a program that asks an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
@@ -111,6 +122,9 @@ The sum from 1 to your number is: 36
 ```
 
 And indeed you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
+<details><summary>Solution</summary>
+You can look at the code under "Accumulator" at <https://csci-1301.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 by the value given by the user.
+</details>
 
 # Infinite Loops
 
@@ -181,10 +195,6 @@ Try to think "off-keyboard" for a while before coding your solution, and test it
 
 ## Advanced Problem 1
 
-Write a program that gets a number from the user and finds its biggest divisor less than the number itself.
-
-## Advanced Problem 2
-
 Study the following program:
 
 ```
@@ -203,3 +213,7 @@ Console.WriteLine($"Your total is {sum}.");
 #. Execute it, and make sure you understand its mechanism.
 #. It contains a "sentinel value": can you tell what it is?
 #. Write a program by taking inspiration from this previous program. Your program should ask the user to enter integers. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
+
+## Advanced Problem 2
+
+Write a program that gets a number from the user and finds its biggest divisor less than the number itself.
