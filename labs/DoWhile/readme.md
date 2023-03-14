@@ -44,7 +44,7 @@ Here is an example of a possible interaction with the program, where the user in
 ```text
 Enter an integer between 0 and 100:
 N̲O̲↵
-Sorry, that is a valid integer.
+Sorry, that is not a valid integer.
 
 Enter an integer between 0 and 100:
 -̲2̲0̲↵
