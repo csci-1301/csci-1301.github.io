@@ -22,6 +22,7 @@ public class Program
         // Resetting the value of x.
         x = 5;
         n = x++ + x++;
+        Console.WriteLine("n is now " + n + ".");
 
         // 4th question
         // Resetting the value of x.
