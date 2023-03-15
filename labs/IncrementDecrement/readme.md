@@ -34,7 +34,7 @@ Compare your answers from the previous section to what you observe in the output
 
 ## Exercise
 
-For each of the following, determine the final value of _n_.
+For each of the following, determine the final value of `n` and `x`.
 
 ```
 int x = 5;
@@ -48,7 +48,7 @@ int n = ++x;
 
 ```
 int x = 5;
-int n = x++ + x++;
+int n = x + x++;
 ```
 
 ```
@@ -56,27 +56,24 @@ int x = 5;
 int n = ++x + ++x;
 ```
 
-```
-int x = 5, y = 6;
-int n = x++ * ++y;
-```
-
-```
-int x = 5;
-int n = x++ + --x;
-```
 
 <details><summary>Solution:</summary>
 You can download, extract, open in your IDE, and execute [the following code](IncrementSolution.zip) to check that the answers are:
 
 ```
 n is now 5.
+x is now 6.
 n is now 6.
-n is now 11.
-n is now 13.
-n is now 35.
+x is now 6.
 n is now 10.
+x is now 6.
+n is now 13.
+x is now 7.
 ```
+
+If you read the source code, you can see that the order of evaluation is quite difficult to follow. Actually, the way the sum operator `+` and the increment operator `++` interacts is sometimes _undefined_, meaning that the result may vary from one programming language to another (or worst, from one _version_ to another): you can read more about this [here](https://stackoverflow.com/a/3458842) of [there](https://stackoverflow.com/a/4176333) (Disclaimer: those are _very_ technical discussions, much more advanced than [the official documentation](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#increment-operator-) could lead to think).
+
+In short: software developers generally avoid this type of "nested" operations altogether, and use increment or decrement operators more scarsely!
 </details>
 
 # First While Loops
