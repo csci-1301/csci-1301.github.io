@@ -15,7 +15,13 @@ This lab serves multiple goals:
 ## Warm Up
 
 To begin with a general introduction of overflow, please [read the relevant section](https://csci-1301.github.io/book.html#overflow).
-Do execute the code shared in this section, and make sure you have a general understanding of what overflowing means before proceeding.
+Do execute the code shared in this section:
+
+```
+!include code/overflow_example.cs
+```
+    
+and make sure you have a general understanding of what overflowing means before proceeding.
 If you are unsure, reading [about integer overflow on wikipedia](https://en.wikipedia.org/wiki/Integer_overflow) can help.
 
 We will now enter a surprising world where
@@ -24,7 +30,7 @@ We will now enter a surprising world where
 - a number plus one can be _less_ than the number itself,
 - a number multiplied by two and then divided by two is the same as the number multiplied by two.
 
-Now, [download](Overflow.zip) and execute the "Overflow" solution, then answer the following questions:
+Now, [download](Overflow.zip), execute the "Overflow" solution, and answer the following questions:
 
 - What is the maximum value that can be stored in an `int`?
 - What _should_ be the result of adding one to the maximum value that can be stored in an `int`?
@@ -79,7 +85,7 @@ As funny or interesting those strange behaviour may seem, overflow errors actual
 
 # Underflow
 
-Most of what we wrote about overflow is also true of _under_\ flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
+Most of what we wrote about overflow is also true of _under_ flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
 In a nutshell, you can witness it by executing a statement such as
 
 ```
