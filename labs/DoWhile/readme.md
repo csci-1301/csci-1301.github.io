@@ -19,7 +19,7 @@ Before writing code, think through the following problems:
     - using `do…while` is preferable over `while`?
 -->
 
-# Implementing do…while Loops -- Warm-up
+# Implementing `do…while` Loops -- Warm-up
 
 For all the problems in this section, use a `do…while` loop.
 
@@ -31,11 +31,11 @@ For all the problems in this section, use a `do…while` loop.
     1 10 100 1000 10000 100000 1000000
     ```
 
-# User Input Validation using do…while Loops
+# User Input Validation using `do…while` Loops
 
-In the following problem, implement a program combining a `do-while` loop with user input that satisfies the following requirements:
+In the following problem, implement a program combining a `do…while` loop with user input that satisfies the following requirements:
 
-#. Ask the user to enter an integer between (and including) 0 to 100.
+#. Ask the user to enter an integer between (and including) 0 and 100.
 #. If the value provided by the user is not in this range, the program should repeat the question.
 #. After the user provides an integer within the range, display that number.
 
