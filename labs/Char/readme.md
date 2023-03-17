@@ -166,6 +166,57 @@ Also determine what characters the following integers (in decimal system) repres
 | `89` | |
 
 
+<details><summary>Solution:</summary>
+Your code could look like the following:
+
+```
+Console.WriteLine("int value | char value\n" +
+  "--------- | ---------\n" +
+  (int)'w' + "       | w\n" +
+  (int)'A' + "        | A\n" +
+  (int)'5' + "        | 5\n" +
+  (int)'#' + "        | #\n" +
+  "--------- | ---------\n" +
+  "49        | " + (char)49 + "\n" +
+  "104       | " + (char)104 + "\n" +
+  "89        | " + (char)89 + "\n"
+);
+```
+</details>
+
+# Testing for Equality
+
+You can test if a character is equal to an other by using `==`, as for integer values.
+This is particularly useful when we want to ask the user for a "yes" / "no" decision.
+
+Write a program that
+
+- Asks the user for a character.  To read *a single character* (instead of a whole string), use the `ReadKey()` method: `Console.ReadKey().KeyChar` will returns a `char` that you can then store into a variable and manipulate.
+- Displays on the screen "The user said yes" if the user entered `'Y'` or `'y'`,
+- Displays on the screen "The user said no" if the user entered `'N'` or `'n'`,
+- Displays on the screen "The user entered an incorrect value" if the user entered any other character.
+
+<details><summary>Solution:</summary>
+You can get started with this short program:
+
+```
+Console.WriteLine("Enter a character:");
+// We ask the user for a character.
+char input = Console.ReadKey().KeyChar;
+// We read from the user.
+Console.WriteLine();
+// We are sintroducing a new line after the user input
+if (input == 'Y')
+{
+    // The input is the letter Y, uppercase.
+    Console.WriteLine("You entered 'Y'.");
+}
+```
+
+It does not fit the description, though, as many elements are missing. Implement them all!
+
+</details>
+
 # Comparing
 
 Exactly as $65$ is less than $97$, the character associated with $65$, `A`, is less than the character associated with $97$, `a`.
@@ -174,40 +225,58 @@ You can convince yourself by executing the following code:
 
 ```
 if ('A' > 'a')
-Console.Write("A is greater than a");
+{
+    Console.Write("'A' is greater than 'a'.");
+}
 else
-Console.Write("A is less than a");
+{
+    Console.Write("'A' is less than 'a'.");
+}
 ```
 
+that displays "'A' is less than 'a'.".
+
 Implement the following short program to practice this concept.
-Note that to read *a single character* (instead of a whole string), use the `ReadKey()` method: `Console.ReadKey().KeyChar` will returns a `char` that you can then store into a variable and manipulate.
  
-#. Ask user to enter a lowercase character,
+#. Ask user to enter a lowercase character.
 #. Check that the character is within the **a - z** range (it _is_ a lowercase character),
-#. When it is not in this range, display "not a lowercase character",
+#. When it is not in this range, display "The character 'X' is not a lowercase character", where `X` is replace by the character they entered,
 #. Otherwise, perform the following steps:
 
-    - if user enters character `'n'`, display "You entered n"
-    - if the character occurs before `'n'`, display "Before n"
-    - if the character occurs after `'n'`, display "After n"
+    - if user enters character `'n'`, display "You entered 'n'."
+    - if the character occurs before `'n'`, display "The character you entered is a lower case letter before 'n'."
+    - if the character occurs after `'n'`, display "The character you entered is a lower case letter after 'n'."
+    
+<details><summary>Solution:</summary>
+The following short program fits the description:
 
-# Testing for Equality
-
-You can also test if a character is equal to an other by using `==`, as for integer values.
-This is particularly useful when we want to ask the user for a "yes" / "no" decision.
-
-Write a program that
-
-- Asks the user for a character,
-- Displays on the screen "The user said yes" if the user entered `'Y'` or `'y'`,
-- Displays on the screen "The user said no" if the user entered `'N'` or `'n'`,
-- Displays on the screen "The user entered an incorrect value" if the user entered any other character.
+```
+ Console.WriteLine("Enter a character:");
+// We ask the user for a character.
+char input = Console.ReadKey().KeyChar;
+// We read from the user.
+Console.WriteLine();
+// We are sintroducing a new line after the user input
+if (input >= 'a' && input <= 'z')
+{
+   // The input is a lower case letter.
+   if (input == 'n') { Console.WriteLine("You entered 'n'."); }
+   else if (input < 'n') { Console.WriteLine("The character you entered is a lower case letter before 'n'."); }
+   else { Console.WriteLine("The character you entered is a lower case letter after 'n'."); }
+}
+else
+{
+   // The input is not a lower case letter.
+   Console.WriteLine("The character '" + input + "' is not a lowercase character.");
+}
+```
+</details>
 
 # Pushing Further (Optional)
 
 ## String Comparison
 
-Comparing strings cannot be done with `>` and `<` operators.
+Comparing strings cannot be done with `>` and `<` operators (we can use `==`, however).
 To compare them, we have to use the [CompareOrdinal](https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal)
  method of the [String](https://docs.microsoft.com/en-us/dotnet/api/system.string) class.
 
@@ -216,11 +285,11 @@ It works as follow:
 ```
 if (String.CompareOrdinal("A", "a") > 0)
 {
- Console.Write("A is greater than a");
+    Console.Write("\"A\" is greater than \"a\".");
 }
 else
 {
- Console.Write("A is less than a");
+    Console.Write("\"A\" is less than \"a\".");
 }
 ```
 
@@ -233,13 +302,10 @@ Note that `CompareOrdinal` returns an integer, that we then compare with $0$.
 In the previous example, we tested string made of only one character, but we can compare arbitrarily complex strings:
 
 ```
-if (String.CompareOrdinal("Augusta", "August") > 0)
-{
- Console.Write("Augusta is greater than August");
-}
-else
-{
- Console.Write("Augusta is less than August");
+if (String.CompareOrdinal("Augusta", "August") > 0) {
+  Console.Write("\"Augusta\" is greater than \"August\".");
+} else {
+  Console.Write("\"Augusta\" is less than \"August\".");
 }
 ```
 
