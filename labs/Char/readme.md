@@ -7,13 +7,13 @@ This lab serves multiple goals:
 - To introduce you to the `char` datatype,
 - To introduce you to the different representations of characters,
 - To exemplify how to convert between representations of characters,
-- To introduce the order on characters, 
+- To introduce the order of characters, 
 - (Optional) To illustrate the comparison of strings.
 
 
 # Warm Up 
 
-Characters are represented by integers: you can read [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters) a mapping between the glyphs (i.e., space, `A`, `!`, etc.) and decimal values, to be read as "integer code", i.e., 32, 33, 34, etc.
+Characters are represented by integers: you can read [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters) a mapping between the glyphs (e.g., space, `A`, `!`, etc.) and decimal values, to be read as "integer code" (e.g., 32, 33, 34, etc.).
 
 In the referenced table [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters), each character's integer code is given for different [numeral systems](https://en.wikipedia.org/wiki/Radix#In_numeral_systems):
  
@@ -22,7 +22,7 @@ In the referenced table [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Print
 - Dec: decimal, base 10
 - Hex: hexadecimal, base 16
 
-_Decimal system_ is what we use everyday, but computer programs occasionally use other numerical systems.
+The _decimal system_ is what we use every day, but computer programs occasionally use other numerical systems.
 For that system, it gives (no need to memorize this information, this is simply for your general awareness):
 
 Decimal representation | Glyph (character)
@@ -123,7 +123,7 @@ Decimal representation | Glyph (character)
 125| }
 126| ~
 
-Note that the characters are divided in groups, and that there are 95 printable characters.
+Note that the characters are divided into groups and that there are 95 printable characters.
 
 # Converting Between Characters Representations
 
@@ -136,9 +136,7 @@ Console.WriteLine($"'C' is represented as {intVar}");
 Console.WriteLine($"{charVar} corresponds to the value 84"); 
 ```
 
-And note that we can explicitly convert `int` into `char`, and `char` into `int`.
-
-Actually, the conversion from `char` to `int` could be done implicitly by C#; replace the previous first line with:
+And note that we can explicitly convert `int` into `char`, and `char` into `int`, but the conversion from `char` to `int` could be done implicitly by C#; replace the previous first line with:
 
 ```
 int intVar = 'C';
@@ -148,7 +146,7 @@ and note that your program still compiles.
 
 Can you also convert implicitly `int` into `char`?
 
-Next write code to determine the `int` values for the following characters:
+Next, write code to determine the `int` values for the following characters:
 
 | `char` value | `int` value |
 | :---: | :---: | 
@@ -157,7 +155,7 @@ Next write code to determine the `int` values for the following characters:
 | `5` | |
 | `#` | |
 
-Also determine what characters the following integers (in decimal system) represent:
+Also determine what characters the following integers (in the decimal system) represent:
 
 | `int` value | `char` value |
 | :---: | :---: | 
@@ -186,12 +184,12 @@ Console.WriteLine("int value | char value\n" +
 
 # Testing for Equality
 
-You can test if a character is equal to an other by using `==`, as for integer values.
+You can test if a character is equal to another by using `==`, as for integer values.
 This is particularly useful when we want to ask the user for a "yes" / "no" decision.
 
 Write a program that
 
-- Asks the user for a character.  To read *a single character* (instead of a whole string), use the `ReadKey()` method: `Console.ReadKey().KeyChar` will returns a `char` that you can then store into a variable and manipulate.
+- Asks the user for a character.  To read *a single character* (instead of a whole string), use the `ReadKey()` method: `Console.ReadKey().KeyChar` will return a `char` that you can then store into a variable and manipulate.
 - Displays on the screen "The user said yes" if the user entered `'Y'` or `'y'`,
 - Displays on the screen "The user said no" if the user entered `'N'` or `'n'`,
 - Displays on the screen "The user entered an incorrect value" if the user entered any other character.
@@ -205,7 +203,7 @@ Console.WriteLine("Enter a character:");
 char input = Console.ReadKey().KeyChar;
 // We read from the user.
 Console.WriteLine();
-// We are sintroducing a new line after the user input
+// We are introducing a new line after the user input
 if (input == 'Y')
 {
     // The input is the letter Y, uppercase.
@@ -238,14 +236,14 @@ that displays "'A' is less than 'a'.".
 
 Implement the following short program to practice this concept.
  
-#. Ask user to enter a lowercase character.
+#. Ask the user to enter a lowercase character.
 #. Check that the character is within the **a - z** range (it _is_ a lowercase character),
-#. When it is not in this range, display "The character 'X' is not a lowercase character", where `X` is replace by the character they entered,
+#. When it is not in this range, display "The character 'X' is not a lowercase character", where `X` is replaced by the character they entered,
 #. Otherwise, perform the following steps:
 
-    - if user enters character `'n'`, display "You entered 'n'."
-    - if the character occurs before `'n'`, display "The character you entered is a lower case letter before 'n'."
-    - if the character occurs after `'n'`, display "The character you entered is a lower case letter after 'n'."
+    - if the user enters character `'n'`, display "You entered 'n'."
+    - if the character occurs before `'n'`, display "The character you entered is a lowercase letter before 'n'."
+    - if the character occurs after `'n'`, display "The character you entered is a lowercase letter after 'n'."
     
 <details><summary>Solution:</summary>
 The following short program fits the description:
@@ -256,17 +254,17 @@ The following short program fits the description:
 char input = Console.ReadKey().KeyChar;
 // We read from the user.
 Console.WriteLine();
-// We are sintroducing a new line after the user input
+// We are introducing a new line after the user input
 if (input >= 'a' && input <= 'z')
 {
-   // The input is a lower case letter.
+   // The input is a lowercase letter.
    if (input == 'n') { Console.WriteLine("You entered 'n'."); }
    else if (input < 'n') { Console.WriteLine("The character you entered is a lower case letter before 'n'."); }
    else { Console.WriteLine("The character you entered is a lower case letter after 'n'."); }
 }
 else
 {
-   // The input is not a lower case letter.
+   // The input is not a lowercase letter.
    Console.WriteLine("The character '" + input + "' is not a lowercase character.");
 }
 ```
@@ -280,7 +278,7 @@ Comparing strings cannot be done with `>` and `<` operators (we can use `==`, ho
 To compare them, we have to use the [CompareOrdinal](https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal)
  method of the [String](https://docs.microsoft.com/en-us/dotnet/api/system.string) class.
 
-It works as follow:
+It works as follows:
 
 ```
 if (String.CompareOrdinal("A", "a") > 0)
@@ -299,7 +297,7 @@ Note that `CompareOrdinal` returns an integer, that we then compare with $0$.
 - If the value returned is less than $0$, then the first string is less than the second one,
 - If the value returned is greater than $0$, then the first string is greater than the second one.
 
-In the previous example, we tested string made of only one character, but we can compare arbitrarily complex strings:
+In the previous example, we tested a string made of only one character, but we can compare arbitrarily complex strings:
 
 ```
 if (String.CompareOrdinal("Augusta", "August") > 0) {
