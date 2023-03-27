@@ -6,7 +6,7 @@ This lab serves multiple goals:
 
 - To reinforce your understanding of `for` loops,
 - To train you to convert between loop formats,
-- To make you practise solving simple problems using `for` loops,
+- To practice solving simple problems using `for` loops,
 - (Optional) To introduce the keywords `break` and `continue`,
 - (Optional) To teach you about the "true form" of `for` loops.
 
@@ -14,7 +14,7 @@ This lab serves multiple goals:
 # From `while` to `for`
 
 Rewrite the following `while` (or `do...while`) loops as `for` loops.
-This should "just" be a matter of re-ordering the code, and you should be able to do it without thinking much about it much.
+This should "just" be a matter of re-ordering the code, and you should be able to do it without thinking much about it.
 
 ```
 int a = 0;
@@ -103,16 +103,16 @@ Then, answer the following questions:
 You can modify your program to check your answers to the previous questions.
 Once you are done, modify your original program in these two respects:
 
-#. Once the result of the computation is displayed on the screen, ask the user if (s)he wants to compute the sum using another integer or quit, and act accordingly.
-#. Add some input validation: floating-point values, non-numeric strings and negative values should not be allowed (i.e., your program should ask for another value).
+#. Once the result of the computation is displayed on the screen, ask the user if they want to compute the sum using another integer or quit and act accordingly.
+#. Add some input validation: floating-point values, non-numeric strings, and negative values should not be allowed (i.e., your program should ask for another value).
 
 
 # Pushing Further (Optional)
 
 ## Multiple Initializations and Updates
 
-This section is about two modifications of `for` loops that are sometimes considered bad design: used poorly, they can make the code harder to read and to debug, and sometimes make it hard to follow the flow of control of your program.
-They are introduced because you may see them in your future, but, except for rare cases, should be avoided in your own code.
+This section is about two modifications of `for` loops that are sometimes considered bad design; used poorly, they can make the code harder to read and debug, and sometimes make it hard to follow the flow of control of your program.
+They are introduced because you may see them in the future, but except for rare cases, should be avoided in your own code.
 The exact structure of `for` loops is actually more complex than discussed in class.
 It is
 
@@ -123,7 +123,7 @@ for(<initializations>; <condition>; <updates>)
 }
 ```
 
-That is, there can be more than one initialization (but only if the variables all have the same datatype) and more than one update.
+That is, there can be more than one initialization assuming the variables all have the same datatype and more than one update.
 This means there are legal statements like:
 
 ```
@@ -140,7 +140,7 @@ for (int x = 0, y = 12 ; x != y; x++, y--)
     Console.WriteLine($"The difference between {x} and {y} is {x - y}");
 ```
 
-Also, the initialization, as well as the update condition, are actually optional: we could have
+Also, the initialization and update condition are actually optional; we could have
 
 ```
 int w = 0;
@@ -163,8 +163,8 @@ Try to rewrite the four `for` loops just given as "ordinary" `for` loops with ex
 
 ## Using `continue` and `break`
 
-Programmers can use two keywords in loops, `continue` and `break`, that modify the control flow.
-They can make the loop more confusing to read, but can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
+Programmers can use two keywords in loops that modify the control flow; they are  `continue` and `break`.
+They can make the loop more confusing to read, but they can sometimes be useful for reducing the number of nested `if` statements in a complex loop.
 Try executing the following code to see what these statements do.
 
 ```
