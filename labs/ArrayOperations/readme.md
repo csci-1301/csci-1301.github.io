@@ -5,17 +5,17 @@ title: Operations on Arrays
 This lab serves multiple goals:
 
 - To reinforce your understanding of arrays of different datatypes,
-- To reinforce your understanding of the `Length` property of array,
+- To reinforce your understanding of the `Length` property of arrays,
 - To introduce you to more advanced array manipulations,
-- To introduce you to simple algorithms that search for values in two arrays,
+- To introduce you to simple algorithms that search for values in two arrays, and
 - (Optional) to introduce you to simple algorithms that merge arrays.
 
 # Operations on Numeric Arrays
 
-This first part will ask you to declare and initialize an array, and then to display, sum, count occurrences and retrieve information from this array.
-In a second moment, we will assess whenever your solution is "universal", that is, whether it produces correct results with any array.
+This first part will ask you to declare and initialize an array and then to display, sum, count occurrences, and retrieve information from this array.
+In the second part, we will assess whether your solution is "universal", that is, whether it produces correct results with any array.
 
-Start by declaring and initialize an `int` array called `numbers`:
+Start by declaring and initializing an `int` array called `numbers`:
 
 ```
 int[] numbers = {4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7};
@@ -23,10 +23,10 @@ int[] numbers = {4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7}
 
 ## Displaying Values
 
-After declaring and initializing the `numbers` array, write statements to:
+After declaring and initializing the `numbers` array, write statements that do the following:
 
 #. Display every value in order, left to right,
-#. Display every value at an even index (skip odd indices),
+#. Display every value at an even index (skip odd indices), and
 #. Display all values that are greater than 5.
 
 ## Counting Values
@@ -41,7 +41,7 @@ Next, write statements that do the following:
 Next, write statements that do the following:
 
 #. Find the _index_ of the first `7`, then display that index.  The expected answer is 4, but your statements should be such that if the value is not found, it would display `-1`.
-#. Find the greater value in `numbers`. The expected answer is 11.
+#. Find the greatest value in `numbers`. The expected answer is 11.
 
 ## Evaluate Your Solution: Is It Universal?
 
@@ -59,8 +59,8 @@ Check that you obtain the expected values:
 
 - the sum should now be `644`
 - since `7` does not occur in the array anymore,
-    - count should be `0`
-    - first index of `7` should be `-1`
+    - the count should be `0`
+    - the first index of `7` should be `-1`
 - maximum value is now `92`
 
 
@@ -91,7 +91,7 @@ char[] chars2 = {'V', 'D', 'l', 'P', 'w', 'O', 'y', 'k', 'D', 'Z' };
 ```
 
 Then execute the program again.
-Ideally the program does not crash and should still produce correct answers:
+Ideally, the program does not crash and should still produce correct answers:
 
 - Does `'w'` occur in both arrays → `true`
 - First value that occurs in both arrays → `'P'`
@@ -116,4 +116,4 @@ Then, implement statements to merge those `left` and `right` arrays by creating 
 101, 76, 74, 94, 94, 73, 74, 67, 107, 111, 108, 66
 ```
 
-Then, change the values in the `left` and `right` arrays, and make sure that your program still create the correct array.
+Then, change the values in the `left` and `right` arrays, and make sure that your program still creates the correct array.
