@@ -6,8 +6,8 @@ This lab serves multiple goals:
 
 - To introduce you to `foreach` loops,
 - To introduce you to their use cases,
-- To compare `for` loops and `foreach` loops by converting between them,
-- To illustrate how `foreach` can be useful in conjonction to classes.
+- To compare `for` loops and `foreach` loops by converting between them, and
+- To illustrate how `foreach` can be useful in conjunction with classes.
 
 # Practicing `foreach` Loops
 
@@ -42,9 +42,9 @@ foreach(int val in primes)
 }    
 ```
 
-- The differences are: the keyword (obviously!), the fact that `foreach` does not need indices nor to use the `Length` property, the absence of update or condition in the header, …
-- This is a matter of taste, but `foreach` generally seems more intuitive,
-- Both uses one additional variable (`i` in the `for` case, `val` in the `foreach` case).
+- The differences are the keyword (obviously!), the fact that `foreach` does not need indices nor to use the `Length` property, and the absence of an update or condition in the header.
+- This is a matter of taste, but `foreach` generally seems more intuitive.
+- Both use one additional variable (`i` in the `for` case, `val` in the `foreach` case).
 </details>
 
 
@@ -92,7 +92,7 @@ Observe the program and its two classes:
 Next modify the code in `Program.cs` to perform the following steps:
 
 #. Write a `foreach` loop that displays all the books.
-#. Add statements where you ask the user to enter a year, then modify the `foreach` loop to display only books published on or after the year user entered.
+#. Add statements where you ask the user to enter a year, then modify the `foreach` loop to display only books published on or after the year the user entered.
 #. Write a `for` loop implementation that performs the same task of displaying books published on or after the year user entered.
 
 Which one do you prefer to implement the above search? Explain your answer.
