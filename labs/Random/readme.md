@@ -12,16 +12,16 @@ This lab serves multiple goals:
 # Generating Random Numbers
 
 The `Random` class from the C# standard library can be used to generate random numbers in any given range.
-In this lab you will practice using `Random` class.
+In this lab, you will practice using the `Random` class.
 
 
-Start by reading [the corresponding chapter in the lecture notes](https://csci-1301.github.io/book.html#random), then create a new project and practice generating and displaying at the screen different random numbers:
+Start by reading [the corresponding chapter in the lecture notes](https://csci-1301.github.io/book.html#random), then create a new project and practice generating and displaying to the screen different random numbers:
 
 #. Generate any random integer
 #. Generate a random integer between -10 and 10 including these boundary values
 #. Generate a random double
 
-Note you only need 1 instance of `Random` class to generate these numbers.
+Note you only need 1 instance of the `Random` class to generate these numbers.
 
 <details><summary>Solution:</summary>
 ```
@@ -50,8 +50,8 @@ This problem combines random number generation with arrays.  Using a `Random` ob
 
 #. declares two arrays of `int` of size `8`,
 #. initializes the values of the first array with random numbers between $0$ and $9$,
-#. initializes the values of second  array with random numbers between $0$ and $9$,
-#. displays the contents of the two arrays in a table, and, for each index, a letter indicating whether the first array "won" or "lost" a contest with the second array: 
+#. initializes the values of the second array with random numbers between $0$ and $9$,
+#. displays the contents of the two arrays in a table, and for each index, a letter indicating whether the first array "won" or "lost" a contest with the second array: 
 
     - `"W"` if the value in the first array is greater than the value in the second array
     - `"T"` if they are equal, and
@@ -78,7 +78,7 @@ In this example, the first array contains "0 5 3 1 3 9 9 1" and the second conta
 ## Cryptographically secure random numbers
 
 Random number generation is only pseudo-random, meaning these are algorithmically generated numbers that approximate a sequence of truly random numbers.
-Using the default `Random` class is not recommended for applications that need cryptographically secure random numbers, for example, to generate suggested passwords.
+Using the default `Random` class is not recommended for applications that need cryptographically secure random numbers (e.g, to generate suggested passwords).
 
 When an application needs cryptographically secure random numbers, RandomNumberGenerator class should be used instead. It works as follows:
 
