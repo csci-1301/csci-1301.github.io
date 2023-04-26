@@ -5,7 +5,7 @@ title: Grade Calculator
 This lab serves multiple goals:
 
 - To have you read a high-level description of a program,
-- To help you in implementing this high-level description,
+- To help you implement this high-level description,
 - To help you structure your reasoning and mathematical understanding of a simple problem,
 - To exhibit different implementations of this high-level description.
 
@@ -22,11 +22,11 @@ We will assume that your grade for this class will be computed as follows:
     In-class Tests    2       100       40%
         Final Exam    1       200       40%
 
-Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, tests are still to be taken, or that the final did not happened yet) and compute their *current* class average.
+Our goal is to write a program that asks the user for their grades obtained *so far* (it is possible that some quizzes, projects, and tests are still to be taken, or that the final has not happened yet) and computes their *current* class average.
 
-Your program can either ask the user for the number of quizzes, projects, test and exam taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to "stop".
+Your program can either ask the user for the number of quizzes, projects, tests, and exams taken so far, and then ask for the values, or use a sentinel value (as shown in the example below) to know when to "stop".
 This means if they say that they have taken only 2 quizzes (or put the sentinel value for quiz 3), then the program should not ask for the later quiz grades (this is also true for the projects and exams).
-It is fine to assume that the user will only enter "correct" numerical values and not to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require to change only a variable or a couple of values.
+It is fine to assume that the user will only enter "correct" numerical values, and you will not need to perform any user-input validation, but your program should be flexible enough so that changing the number of quizzes, for instance, would require changing only a variable or a couple of values.
 
 An example of execution could be:
 
@@ -34,23 +34,23 @@ An example of execution could be:
 For all the questions below, enter 
     - your grade, or 
     - "0" if you missed the evaluation, or
-    - "-1" if that evaluation did not happened yet.
+    - "-1" if that evaluation has not happened yet.
 
-What was your grade for quiz 1 (out of 20)?
+What was your grade for Quiz 1 (out of 20)?
 1̲6̲↵
-What was your grade for quiz 2 (out of 20)?
+What was your grade for Quiz 2 (out of 20)?
 1̲4̲↵
-What was your grade for quiz 3 (out of 20)?
+What was your grade for Quiz 3 (out of 20)?
 -̲1̲↵
 Your average for the quiz is 75.00 %.
-What was your grade for project 1 (out of 20)? 
+What was your grade for Project 1 (out of 20)? 
 2̲2̲↵
-What was your grade for project 2 (out of 20)? 
+What was your grade for Project 2 (out of 20)? 
 -̲1̲↵
 Your average for the project is 110.00 %.
-What was your grade for in-class test 1 (out of 100)? 
+What was your grade for Test 1 (out of 100)? 
 6̲6̲↵
-What was your grade for in-class test 2 (out of 100)? 
+What was your grade for Test 2 (out of 100)? 
 -̲1̲↵
 Your average for the tests is 66.00 %.
 What was your grade for the final (out of 200)?
@@ -75,7 +75,7 @@ Once you have the equation figured out, you need to understand how you can obtai
 You have two possible ways of doing it:
 
 - Will you ask first for the number of quizzes taken, and then ask for the values, or
-- Will you ask for the values, and take "-1", for instance, as a signal that this quiz did not happened yet.
+- Will you ask for the values, and take "-1", for instance, as a signal that this quiz has not happened yet?
 
 Try to implement one or the other, without worrying about the computation at this point (just add, for instance, the value entered).
 
@@ -91,4 +91,4 @@ However, the solution is flexible enough (and, hopefully, commented enough) so t
 ## With arrays
 
 Another solution to this problem is in [Grade_Calculator_with_Arrays](Grade_Calculator_with_Arrays.zip).
-This solution is much more flexible, uses fewer variable, but it may also be more difficult to understand, because it uses arrays in a subtle way.
+This solution is much more flexible and uses fewer variables, but it may also be more difficult to understand because it uses arrays in a subtle way.
