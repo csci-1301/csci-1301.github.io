@@ -50,8 +50,6 @@ Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topi
 
 >  use gender-neutral terms; avoid ableist language; focus on people not disabilities or circumstances; avoid generalizations about people, regions, cultures and countries; and avoid slang, idioms, metaphors and other words with layers of meaning and a negative history.
 
-Otherwise you'll have [to apologize :-)](https://www.youtube.com/watch?v=NBGOryiqZZI).
-
 ### Structure for accessibility
 
 - All resources are titled
