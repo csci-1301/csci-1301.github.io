@@ -44,6 +44,12 @@ If you are new to this project, first read through [Contributing Guidelines](/co
 
 ## Best practices for all forms of content
 
+### Inclusivity
+
+Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/) from the University of Washington:
+
+>  use gender-neutral terms; avoid ableist language; focus on people not disabilities or circumstances; avoid generalizations about people, regions, cultures and countries; and avoid slang, idioms, metaphors and other words with layers of meaning and a negative history.
+
 ### Structure for accessibility
 
 - All resources are titled
