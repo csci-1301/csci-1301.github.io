@@ -151,7 +151,7 @@ If the lecture does not appear, here are the steps for troubleshooting the issue
 
 Do not include meta section in individual lecture files because these lectures will be concatenated by pandoc into a single larger document. Any meta data in individual files would appear somewhere in the middle of the larger document, and as such will not be treated as front matter.
 
-**Known issues**: When concatenating files pandoc may or may not include whitespace between individual files. This may cause the subsequent lecture title to not appear in the generated book. For this reason, each lecture file should end with a newline.
+**Known issues**: When concatenating files pandoc may or may not include empty spaces between individual files. This may cause the subsequent lecture title to not appear in the generated book. For this reason, each lecture file should end with a newline.
 
 ## Creating new labs
 

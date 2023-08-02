@@ -33,8 +33,8 @@ title: Exercises with solutions
 #. Is the C# compiler case-sensitive?
     <details><summary>Solution</summary>Yes, the C# compiler is case-sensitive (meaning that the IDE differentiates between capital and lowercase letters).</details>
 
-#. Suppose I replace every white space in your source code with two white spaces. Will your program still compile? Why, or why not?
-    <details><summary>Solution</summary>Yes, because compilers do not care about white spaces.</details>
+#. Suppose I replace every empty space in your source code with two empty spaces. Will your program still compile? Why, or why not?
+    <details><summary>Solution</summary>Yes, because compilers do not care about empty spaces.</details>
 
 #. Give three keywords.
     <details><summary>Solution</summary>You can consult the "official" list of keywords as <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/>. Are valid answers: `int`, `using`, `static`, `public`, etc. Note that `main` or `System` are _not_ keywords.</details>
@@ -2095,7 +2095,7 @@ They were given at week 4 and 7.
 	
 #. (Bonus) Give examples of situations where the adage "_Spaces and new lines do not matter in programs_" is actually erroneous.
 
-    <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as whitespace in strings is formatted exactly how it's typed. Whitespace also matters inbetween words: words in C# must have at least one space between them in order to be compiled correctly (e.g. `static void Main()` and `int days = 7;`). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
+    <details><summary>Solution</summary>Spaces and newlines matter when they are used in string data, as blank space in strings is formatted exactly how it's typed. Blank spaces also matters in between words: words in C# must have at least one space between them in order to be compiled correctly (e.g., `static void Main()` and `int days = 7;`). If there were no spaces in either of the examples, neither of them would compile. They also matter for in-line comments.
     
     ```
     // My comment
