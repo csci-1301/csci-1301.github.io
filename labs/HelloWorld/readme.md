@@ -123,7 +123,7 @@ Question:
 
 Once you are done, test that you performed the backup properly.
 
-#. Re-download or transfer the files you just saved (the whole `HelloWorld` folder) on the computer
+#. Re-download or transfer the files you just saved (the whole `HelloWorld` folder) on the computer -- or even better, share it with a classmate and ask them to complete the following steps with you!
 #. Make sure you can still open the project in your IDE
 #. Do you remember...
     #. How to build the solution
