@@ -22,11 +22,15 @@ Many resources are available to help you be a successful student:
 The School has a tutoring center that can be reached:
 
 - On [discord](https://discord.gg/kzKtrjzCyH),
-- During their tutoring hours (hours posted on the door and on discord), in [University Hall](https://map.concept3d.com/?id=824#!m/268018) 129. Their current opening hours are:
+- During their tutoring hours (hours posted on the door and on discord), in [University Hall](https://map.concept3d.com/?id=824#!m/268018) 129. 
+
+<!--
+Their current opening hours are:
 
     Tuesday: 1pm-5pm  
     Thursday: 2pm-5pm  
     Friday: 9am-12pm  
+-->
 
 ## ACM Club
 
@@ -40,10 +44,13 @@ The Augusta University Game Design Club and Girls Who Code College Loop "will be
 
 # For This Course
 
-## Undegraduate Course Assistants
+## Undergraduate Course Assistants
 
 The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
-Check your syllabus for how to reach out your instructor. For this semester, your UCAs are:
+Check your syllabus for how to reach out your instructor. 
+<!--
+For this semester, your UCAs are:
+-->
 
 <!--
 
@@ -71,6 +78,9 @@ Clément Aubert:
     - My office hours are M. & W. 10--12.
     - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
 -->  
+
+<!-- 
+ARCHIVES
 
 Samuel Bailey:
 ~ 
@@ -147,6 +157,11 @@ Daelyn Doughty:
     - Office hours will be held on discord and teams and they are Tuesday/Thursday 10:00am-11:30am.
     - I am a junior majoring in computer science. You can find me skating around campus or drinking protein.
 
+--> 
+
+<!-- 
+
+Not sure this is useful anymore…
 
 ## Labs Meeting Times
 
@@ -160,6 +175,8 @@ Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
 24169 | B | Thursday 1:00 pm 2:50 pm | Jason | David | Ian
 28075 | C | Friday 9:00 am 10:50 am | Artis | Samuel | Jason
 28281 | D | Friday 12:00 pm 1:50 pm | David | Samuel | Layla
+
+-->
 
 ## Commenting Using a Github Account
 
