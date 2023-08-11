@@ -36,7 +36,7 @@ While the last two are accessible on every operating systems, Visual Studio is a
 To access one or the other, you will need either
 
 - a computer with the right to install software on it,
-- to access one of the computers in the [computer lab](https://www.augusta.edu/its/computers-printing.php), or
+- to access one of the computers in the [computer lab](https://my.augusta.edu/it/computers-printing.php), or
 - a computer with internet access.
 
 The third solution is a backup plan, as instead you will access a very minimal version of an IDE to test small snippets of code.
@@ -152,7 +152,7 @@ Note that [it is illegal to execute macOS in a virtual environment that is not h
 
 ## Accessing One of the Computers in a Computer Lab
 
-Please refer to [this page from AU's Information Technology](https://www.augusta.edu/its/computers-printing.php) to know where the computer labs are located.
+Please refer to [this page from AU's Information Technology](https://my.augusta.edu/it/computers-printing.php) to know where the computer labs are located.
 Visual Studio should be pre-installed on every computer.
 
 ## Compiling Code On-Line
