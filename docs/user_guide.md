@@ -108,7 +108,8 @@ The `{ width=80% }` attribute is optional.
     <pre>
     ```
     !include code/sample.cs
-    ```</pre>
+    ```
+    </pre>
 
 - Title each source code block included in markdown, this will create a URL for the code block and enables linking to it.
 - code blocks are by default annotated as `csharp`
@@ -118,7 +119,8 @@ The `{ width=80% }` attribute is optional.
     <pre>
     ```text
     This will be treated as plain text without highlighting
-    ```</pre>
+    ```
+    </pre>
 
 - only include code in text form such that it can be copy-pasted for reuse
 - make sure to include blank lines before and after code blocks, since the absence of these can cause the code block to display incorrectly.
@@ -299,6 +301,12 @@ In general the following dependencies are needed:
 For this later, note that starting [with version 11](http://web.archive.org/web/20181228102842/http://users.teilar.gr/%7Eg1951d/Symbola.pdf), the licence is too restrictive for non-personal use.
 As a consequence, users are asked to make sure they do not use a version greater than v.10.24, which is "free for any use" and [archived on-line](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/Symbola.zip) (curious users can also refer to [the related webpage](http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/)).
 Note that installing this dependency using a unix-like package manager will result in installing a version of the font that [is free to use in any context](https://metadata.ftp-master.debian.org/changelogs//main/t/ttf-ancient-fonts/ttf-ancient-fonts_2.60-1.1_copyright). 
+
+You can make sure you are currently using the latest version of panflute by running
+```
+pip install -U panflute
+```
+This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at least).
 
 ### Running the build
 
