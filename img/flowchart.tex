@@ -4,6 +4,12 @@
 \usepackage[latin1]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+
+\definecolor{implicit}{HTML}{37392E}
+\definecolor{explicit}{HTML}{19648E}
+\definecolor{explicit-round}{HTML}{19647E}
+\definecolor{explicit-truncate}{HTML}{28AFB0}
+
 \begin{document}
 	\pagestyle{empty}
 	
@@ -18,9 +24,10 @@
 	minimum height=2em]
 	
 	\begin{tikzpicture}[node distance = 2cm, auto]
-	\draw [fill=orange!15, draw=none] (2.8,1.2) rectangle node[left=80, above=75] {Programmer}  (-5, -5);
-	\draw [fill=purple!15, draw=none] (-5, -5) rectangle node[left=90, above=65] {\(\beta\)-tester}  (2.8, -10.5);
-	\draw [fill=brown!15, draw=none] (2.8, -10.5) rectangle node[left=100, above=30] {User}  (-5, -13.5);
+	\draw [fill=implicit!20, dash dot] (2.8,1.2) rectangle node[left=80, above=75] {Programmer}  (-5, -5);
+	\draw [fill=explicit!20, dash dot] (-5, -5) rectangle node[left=90, above=65] {\(\beta\)-tester}  (2.8, -10.5);
+	\draw [fill=explicit-round!20, dash dot] (2.8, -10.5) rectangle node[left=100, above=30] {User}  (-5, -13.5);
+	\draw [fill=explicit-truncate!20, dash dot] (2.8, -5) rectangle node[left=45, above=65] {Client}  (7, -10.5);
 	
 	% Place nodes
 	\node [block] (init) {Write / Edit Code};
@@ -40,6 +47,10 @@
 	
 	\path[->,every loop/.style={looseness=5}] (work)
 	edge  [in=30,out=-30,loop] node [right]{Test} (); 
+	
+	\path[->,every loop/.style={looseness=13}] (work)
+	edge  [in=30,out=-30,loop] node [right]{Match specification?} (); 
+	
 	\end{tikzpicture}
 	
 	
