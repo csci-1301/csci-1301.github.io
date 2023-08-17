@@ -45,16 +45,16 @@
 
 ## Principles of Computer Programming
 
-- Computer hardware changes frequently - from room-filling machines with punch cards and tapes to modern laptops and tablets
-- With these changes - the capabilities of computers increase rapidly (storage, speed, graphics, etc.)
+- Computer hardware changes frequently - from room-filling machines with punch cards and tapes to modern laptops and tablets - and will continue doing so.
+- With these changes, the capabilities of computers increase rapidly (storage, speed, graphics, etc.)
 - Computer programming languages also change
     - Better programming language theory leads to new programming techniques
     - Improved programming language implementations
     - New languages are created, old ones updated
-- There are hundreds of programming languages, why?
+- There are [hundreds of programming languages](https://en.wikipedia.org/wiki/List_of_programming_languages), why?
     - Different tools for different jobs
         - Some languages are better suited for certain jobs
-        - Python for scripting, Javascript for web pages
+        - For example, Python is best for scripting, Javascript is best for web pages, MySQL is best for databases, etc.
     - Personal preference and popularity
 - This class is about "principles" of computer programming
     - Common principles behind all languages will not change, even though hardware and languages do
@@ -74,12 +74,16 @@ We will be studying and writing programs in _high-level languages_, but understa
         - Some carry control signals - e.g. do an add or a subtract operation
     - Instructions are settings on these control signals
         - A setting is represented as a 0 or 1
-        - A machine language instruction is a group of settings - For example: 1000100111011000
+        - A machine language instruction is a group of settings - For example: `1000100111011000`
     - Most CPUs use one of two languages: x86 or ARM
 - Assembly language
     - Easier way for humans to write machine-language instructions
     - Instead of 1s and 0s, it uses letters and "words" to represent an instruction.
-        - Example x86 instruction: `MOV BX, AX` which makes a copy of data stored in a component called AX and places it in one called BX
+        - Example x86 instruction: 
+        ```
+        MOV BX, AX
+        ```
+        which makes a copy of data stored in a component called AX and places it in one called BX
     - **Assembler**: Translates assembly language instructions to machine language instructions
         - For example: `MOV BX, AX` translates into `1000100111011000`
         - One assembly instruction = one machine-language instruction

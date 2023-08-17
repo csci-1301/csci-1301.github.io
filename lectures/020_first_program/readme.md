@@ -9,8 +9,8 @@
     - Standard library is called .NET Framework, comes with the compiler and run-time
 - It is widespread and popular
     - It was the first in the list of ["3 Future Programming Languages You Should Learn Between 2022 and 2030"](https://betterprogramming.pub/3-future-programming-languages-you-should-learn-between-2022-and-2030-8a618a15eca6), because of the growing popularity of [Unity](https://unity.com/).
-    - [8th most "loved" language on StackOverflow](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
-    - .NET is the [2nd most used "other" library/framework](https://insights.stackoverflow.com/survey/2020#technology-other-frameworks-libraries-and-tools)
+    - [7th most "desired / admired" language on StackOverflow](https://survey.stackoverflow.co/2023/#programming-scripting-and-markup-languages)
+    - .NET is the [first most used "other" library/framework](https://survey.stackoverflow.co/2023/#most-popular-technologies-misc-tech)
     - More insights on its evolution can be found [in this blog post](https://dottutorials.net/stats-surveys-about-net-core-future-2020/#stackoverflow-surveys).
 
 ## The Object-Oriented Paradigm
