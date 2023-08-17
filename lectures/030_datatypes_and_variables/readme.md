@@ -27,7 +27,7 @@
 
 ## Literals and Variables
 
-#### Literals and their types
+### Literals and their types
 
 - A **literal** is a data value written in the code
 - A form of "input" provided by the programmer rather than the user; its value is fixed throughout the program's execution
@@ -40,7 +40,7 @@
     - `float` literal: just like a `double` literal but with the suffix `f` or `F` (for "float"), e.g. `4.5f`
     - `decimal` literal: just like a `double` literal but with the suffix `m` or `M`(for "deciMal"), e.g. `6.01m`
 
-#### Variables overview
+### Variables overview
 
 - Variables store data that can *vary* (change) during the program's execution
 - They have a type, just like literals, and also a name

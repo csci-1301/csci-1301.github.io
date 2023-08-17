@@ -76,12 +76,14 @@ Features of this program:
     - A collection of instructions with a name
     - Can be used by typing its name
     - A method is similar to a paragraph, in that it can contain multiple statements, and a class is similar to a chapter, in that it can have multiple methods within its body.
-    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they're required)
+    - A C# program requires a method called `Main`, and, in our example, is followed by empty parentheses (we will get to those later, but they are required)
     - Just like the class declaration, the body of the method beings with `{` and ends with `}`
 - A statement inside the body of the method: 
+
     ```
     Console.WriteLine("Hello, world!"); // I'm an in-line comment.
     ```
+
     - This is the part of the program that actually "does something": It displays a line of text to the console:
     
         ![](img/hello_world_console.png)
@@ -253,11 +255,15 @@ Note that some of those conventions are actually rules in different programming 
         - This program will not compile because `in quotes` is not valid C# code, and the compiler thinks it is not part of the string:
 
             ```
+            //  Incorrect Code
             class Welcome
             {
                 static void Main()
                 {
                     Console.WriteLine("This is "in quotes"");
+                    // This is parsed as if the string was "This is "
+                    // followed by in quotes, which is not valid C#,
+                    // followed by the empty string "".
                 }
             }
             ```
@@ -269,7 +275,7 @@ Note that some of those conventions are actually rules in different programming 
             ```
 
     - Note that all escape sequences begin with a backslash character (`\`), called the "escape character"
-    - General format is `\[key letter]` -- the letter after the backslash is like a "keyword" indicating which special character to display
+    - General format is `\[key letter]` -- the letter after the backslash is like a "keyword" indicating which special character to display. You can refer to the [full list on microsoft documentation](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#string-escape-sequences).
     - If you want to put an actual backslash in your string, you need the escape sequence `\\`, which prints a single backslash
         - This will result in a compile error because `\U` is not a valid escape sequence:
 
