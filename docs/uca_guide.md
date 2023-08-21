@@ -54,7 +54,11 @@ For github's interface, please refer to the following guide:
 
 !["Navigating repositories"](img/uca_guide1.jpg) 
 
-GitHub is separated into many "repositories". The **csci-1301.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most), while the **feedback-fall-2021** and similarly named repositories contains feedback submitted by students/users. 
+GitHub is separated into many "repositories":
+
+- The **csci-1301.github.io** contains most of the resources that will be used (so it will be where you will navigate to the most),
+- The **uca-resources-<semester>-YYYY** is a _private_ repository where material useful to UCAs but not accessible to students (such as project solution, listings, etc.) will be shared, 
+- The **feedback-<semester>-YYYY** and similarly named repositories contains feedback submitted by students/users. 
 
 !["Navigating folders"](img/uca_guide2.jpg) 
 
