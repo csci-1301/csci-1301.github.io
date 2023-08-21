@@ -159,24 +159,20 @@ Daelyn Doughty:
 
 --> 
 
-<!-- 
 
-Not sure this is useful anymore…
 
 ## Labs Meeting Times
 
 All labs take place in Allgood Hall N344, and meet as follows:
 
-Code | Section | Hours | UCA (primary) | UCA (second.) | UCA (backup)
--- | ----| ------| -------------| -------------| -------------
-29829 | E | Monday 7:00 pm 8:50 pm | Layla | Ian | Richard
-31229 | F | Wednesday 7:00 pm 8:50 pm | Richard | Artis | Ian
-24167 | A | Thursday 10:00 am 11:50 am | Samuel | David   | 
-24169 | B | Thursday 1:00 pm 2:50 pm | Jason | David | Ian
-28075 | C | Friday 9:00 am 10:50 am | Artis | Samuel | Jason
-28281 | D | Friday 12:00 pm 1:50 pm | David | Samuel | Layla
+| Section | Hours | Room | Instructor / GCA | UCA
+----| ------| -------------| -------------| -------------
+  E | Tuesday 7:00--8:50 pm | AH E126 | Jason Weeks | Kaylee & Elijah
+  A | Thursday 10:00--11:50 am | AH E126 | Jason Weeks | TBA 
+  B | Thursday 1:00--2:50 pm | AH N344 | Dr. DeFrancisco | TBA
+  C | Friday 9:00--10:50 am | AH N344 | Jason Weeks | Daelyn & Anthony
+  D | Friday 12:00--1:50 pm | AH N344 | Jason Weeks & Katrina Visintainer | Xavier & Anthony
 
--->
 
 ## Commenting Using a Github Account
 
