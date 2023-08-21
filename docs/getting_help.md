@@ -44,10 +44,20 @@ The Augusta University Game Design Club and Girls Who Code College Loop "will be
 
 # For This Course
 
+## Instructors
+
+You have three instructors this semester:
+
+- Dr. DeFrancisco (Section A--F), 
+- Dr. Aubert (Section E),
+- Jason Weeks (Labs).
+
+Please, refer to your syllabus for their office hours or how to reach them.
+
 ## Undergraduate Course Assistants
 
 The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
-Check your syllabus for how to reach out your instructor. 
+
 <!--
 For this semester, your UCAs are:
 -->
@@ -158,8 +168,6 @@ Daelyn Doughty:
     - I am a junior majoring in computer science. You can find me skating around campus or drinking protein.
 
 --> 
-
-
 
 ## Labs Meeting Times
 
