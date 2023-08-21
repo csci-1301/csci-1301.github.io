@@ -167,11 +167,11 @@ All labs take place in Allgood Hall N344, and meet as follows:
 
 | Section | Hours | Room | Instructor / GCA | UCA
 ----| ------| -------------| -------------| -------------
-  E | Tuesday 7:00--8:50 pm | AH E126 | Jason Weeks | Kaylee & Elijah
+  E | Tuesday 7:00--8:50 pm | AH E126 | Jason Weeks & Katrina Visintainer | Kaylee & Elijah
   A | Thursday 10:00--11:50 am | AH E126 | Jason Weeks | TBA 
   B | Thursday 1:00--2:50 pm | AH N344 | Dr. DeFrancisco | TBA
   C | Friday 9:00--10:50 am | AH N344 | Jason Weeks | Daelyn & Anthony
-  D | Friday 12:00--1:50 pm | AH N344 | Jason Weeks & Katrina Visintainer | Xavier & Anthony
+  D | Friday 12:00--1:50 pm | AH N344 | Jason Weeks | Xavier & Anthony
 
 
 ## Commenting Using a Github Account
