@@ -363,6 +363,6 @@ Every semester,
 - [The members of the "UCAs" team](https://github.com/orgs/csci-1301/teams/ucas) should be updated,
 - A "uca-resources-SEMESTER-YEAR" repository should be created, possibly by [duplicating the previous one](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository),
 - The new repository should be added to the [list of repositories of the team](https://github.com/orgs/csci-1301/teams/ucas/repositories) (as maintainer),
-- The old repository should be deleted from that same list.
+- The old repository should be deleted from that same list, and then archived.
 
 The GRA should be added / removed from the [instructors list](https://github.com/orgs/csci-1301/teams/instructors), and previous instructors should be removed from that same list.
