@@ -1,5 +1,5 @@
 ---
-title: Undergraduate Course Assistant - What are they and how do I become one?
+title: Course Assistants - What are they and how do I become one?
 ---
 
 # What Is an Undergraduate Course Assistant?
@@ -55,6 +55,10 @@ So, in short: talk to any CSCI 1301 instructor if you feel like becoming a UCA.
 Congratulations!
 You should now read more about your position in the [UCA starting guide](uca_guide.html)!
 
+# What Is the Difference With a GRA?
+
+_Graduate_ Course Assistants (GRA) hold a bachelor and are generally PhD or Master student. Their duties generally overlap with those of the instructors and those of the UCAs, as they are the first point of contact of UCAs, design projects, organize the schedule of the tutoring center and of the labs.
+
 # What Is the Difference With a URA?
 
 Undegraduate _Research_ Assistants (or "URAs") share many similarities with UCAs:
@@ -68,4 +72,3 @@ However, their focus is on working on [_research_](https://www.augusta.edu/ccs/r
 The difference is sometimes tenuous, but URAs positions are generally given in priority to "advanced" students (that is, close to graduation), to use their gained knowledge to push further the limits of human knowledge!
 
 It is not possible to cumulate an URA _and_ an UCA position, but obtaining an UCA position is in general an excellent stepping stone to obtain a URA position, if you wish to do so: by proving that you are reliable, serious, agreeable to work with, you will maximize your chances of having a Faculty member notice you and offer you to work on their research with them.
-
