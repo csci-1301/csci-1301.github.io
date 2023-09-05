@@ -4,6 +4,8 @@ title: List of Labs
 
 <!--
 This directory contains all lab exercises. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution.
+
+Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add a new lab.
 -->
 
 # Suggested Order
