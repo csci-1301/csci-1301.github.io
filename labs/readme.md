@@ -9,7 +9,7 @@ This directory contains all lab exercises. At build time these labs are compiled
 # Suggested Order
 
 |  Week | Lab Topic      | 
-|---   | ----  |----------------|---------------|-------------|
+|  ---  | ---------------|
 |  1    | [Introduction](https://csci-1301.github.io/labs/Introduction/)  | 
 |  2    | [Hello World](https://csci-1301.github.io/labs/HelloWorld/), [First Program](https://csci-1301.github.io/labs/FirstProgram/)  | 
 |  3    | [Variables](https://csci-1301.github.io/labs/Variables/), [Casting](https://csci-1301.github.io/labs/Casting/)  | 
