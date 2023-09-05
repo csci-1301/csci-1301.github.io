@@ -60,19 +60,19 @@
 
 ## Variable Operations
 
-#### Declaration
+### Declaration
 
 - This is when you specify the *name* of a variable and its *type*
-- Syntax: `type_keyword variable_name;`
-- Examples: `int myAge;`, `string myName;`, `double winChance;`
+- The syntax is the type keyword, a space, the name of the variable, then a semi-colon.
+- Examples: `int myAge;`, `string myName;`, `double winChance;`.
 - A variable name is an identifier, so it should follow the rules and conventions
     - Can only contain letters and numbers
     - Must be unique among all variable, method, and class names
     - Should use CamelCase if it contains multiple words
 - Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
-- Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`.
+- Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`
 
-#### Assignment
+### Assignment
 
 - The act of changing the value of a variable
 - Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
@@ -81,18 +81,18 @@
 - Example: `myAge = 29;`
 - Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
 
-#### Initialization (Declaration + Assignment)
+### Initialization (Declaration + Assignment)
 
-- Initialization statement combines declaration and assignment in one line (it is just a shortcut, not a new operation)
+- Initialization statement combines declaration and assignment in one single statement (it is just a shortcut, a.k.a. some ["syntactical sugar"](https://en.wikipedia.org/wiki/Syntactic_sugar), and not something new)
 - Creates a new variable and also gives it an initial value
-- Syntax: `type variable_name = value;`
+- The syntax is the datatype of the variable, the name of the variable, the `=` sign, the value we want to store, and a semi-colon
 - Example: `string myName = "Edward";`
 - Can only be used once per variable, since you can only declare a variable once
 
-#### Assignment Details
+### Assignment Details
 
 - Assignment replaces the "old" value of the variable with a "new" one; it is how variables *vary*
-    - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now store the value 30
+    - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now stores the value 30
 - You can assign a variable to another variable: just write a variable name on both sides of the `=` operator
 
     - This will take a "snapshot" of the current value of the variable on the right side, and store it into the variable on the left side
@@ -107,7 +107,7 @@
 
         the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
 
-#### Displaying
+### Displaying
 
 - Only text (strings) can be displayed in the console
 - When we want to print a mixture of text and variables with `Console.WriteLine`, we need to convert all of them to a string
@@ -186,18 +186,16 @@ It is generally recommended to separate those instructions in different statemen
             double bigNumber = 1537963.666;
             decimal discount = 0.1337m;
             ```
-
-        - `Console.WriteLine($"{bigNumber:N}");` will display `1,537,963.67`
-
-        - `Console.WriteLine($"{bigNumber:N3}");` will display `1,537,963.666`
-
-        - `Console.WriteLine($"{bigNumber:N1}");` will display `1,537,963.7`
-
-        - `Console.WriteLine($"{discount:P1}");` will display `13.4%`
-
-        - `Console.WriteLine($"{discount:P4}");` will display `13.3700%`
-
-
+            
+           | Statement | Display |
+           | ----- | ----- | 
+           | `Console.WriteLine($"{bigNumber:N}");` | `1,537,963.67` | 
+           | `Console.WriteLine($"{bigNumber:N3}");` |  `1,537,963.666` |
+           | `Console.WriteLine($"{bigNumber:N1}");`| `1,537,963.7`
+           | `Console.WriteLine($"{discount:P1}");` | `13.4%` |
+           | `Console.WriteLine($"{discount:P4}");` | `13.3700%` |
+           | `Console.WriteLine($"{bigNumber:E}");` | `1.537964E+006` | 
+           | `Console.WriteLine($"{bigNumber:E2}");` | `1.54E+006` | 
 
 ## Variables in Memory
 
