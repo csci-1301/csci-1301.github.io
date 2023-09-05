@@ -1,41 +1,32 @@
-# Labs
+---
+title: List of Labs
+---
 
+<!--
 This directory contains all lab exercises. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution.
+-->
 
-## How to create new labs
+# Suggested Order
 
-1. Choose a short and unique name that describes the lab then create a directory matching that name
-    - follow the existing convention for naming
-    - do not number labs or make assumptions about numbering because another instructor may not follow the exact same lab order
+|  Week | Lab Topic      | 
+|---   | ----  |----------------|---------------|-------------|
+|  1    | [Introduction](https://csci-1301.github.io/labs/Introduction/)  | 
+|  2    | [Hello World](https://csci-1301.github.io/labs/HelloWorld/), [First Program](https://csci-1301.github.io/labs/FirstProgram/)  | 
+|  3    | [Variables](https://csci-1301.github.io/labs/Variables/), [Casting](https://csci-1301.github.io/labs/Casting/)  | 
+|  4    | [User Input](https://csci-1301.github.io/labs/UserInput/), [Introduction to Classes](https://csci-1301.github.io/labs/Rectangle/)  | 
+|  5    | [Class Diagram](https://csci-1301.github.io/labs/ClassDiagram/), [Constructor and ToString](https://csci-1301.github.io/labs/ConstructorToString/) |  
+|  6    | [Precise Rectangle](https://csci-1301.github.io/labs/PreciseRectangle/)  | 
+|  7    | [Booleans](https://csci-1301.github.io/labs/Booleans/), [If](https://csci-1301.github.io/labs/If/), [If and Switch](https://csci-1301.github.io/labs/IfAndSwitch/)  |  
+|  8    | [Increment Decrement](https://csci-1301.github.io/labs/If/), [While](https://csci-1301.github.io/labs/While/) | 10/05: Quiz #3 |
+|  9    | [Validating Input](https://csci-1301.github.io/labs/ValidatingInput/)  | 
+|  10   | [Do While](https://csci-1301.github.io/labs/DoWhile/)   | 
+|  11   | [Overflow and Underflow](https://csci-1301.github.io/labs/OverflowAndUnderflow/)  | 
+|  12   | [Char and Int Conversion](https://csci-1301.github.io/labs/Char/)    | 
+|  13   | [First Arrays Manipulations](https://csci-1301.github.io/labs/ArrayBasics/), [For Loops](https://csci-1301.github.io/labs/For/)  | 
+|  14   | [Using static keyword](https://csci-1301.github.io/labs/Static/)  | 
+|  15   | [Chemical Elements](https://csci-1301.github.io/labs/ChemicalElements/), [GradeCalculator](https://csci-1301.github.io/labs/GradeCalculator/), [Random](https://csci-1301.github.io/labs/Random/)
 
-2. Under the lab directory create:
-
-    1. `readme.md` (case sensitive)
-        - write lab instructions in this file. You should include meta data, at minimum a title
-        - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
-        - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
-        - do not make assumptions about student using Visual Studio, refer to IDE instead
-
-    2. (optional) if you want to include starter code with the lab,
-        - create a subdirectory called `src`
-        - create a subdirectory with the name of the solution you would like to use,
-        - create a subdirectory with the name of the project you would like to use,
-        - create a file called `Program.cs` in `src/<solution>/<project>/Program.cs`
-
-        Write your code in this file, add a class file if you want in the same folder, but only include program files (not solution or project): they will be created automatically using the project and solution's name you specified, and hosted in the lab's folder as `solution.zip`.
-
-        Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
-
-    3. Create an entry for the new lab in the table below. List all prerequisite labs and related lectures.
-
-If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
-
-1. `readme.md` will be converted to lab instructions file called `index` (html, pdf, odt)
-2. contents of `src` will be converted to a standalone C# solution as a zip file.
-
-Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs. Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
-
-## Prerequisites and related lectures
+# Prerequisites and related lectures
 
 <!-- Add a short description of what each lab contains. Also list prerequisite labs and add a link to related lecture notes. -->
 
@@ -68,3 +59,10 @@ Using this established build system generates labs that are cross-platform (Wind
 | [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
 | [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison |
 | [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class |
+
+# Alphabetically
+
+<!-- the remainder of this document will be generated dynamically. Do not edit below this line! -->
+
+| Lab title | Instructions | Program |
+| :-- | --- | --- |
