@@ -64,7 +64,10 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 
 # Alphabetically
 
-<!-- the remainder of this document will be generated dynamically. Do not edit below this line! -->
+<!-- 
+The remainder of this document will be generated dynamically. Do not edit below this line!
+Refer to the makefile for edits.
+-->
 
 | Lab title | Instructions | Program |
 | :-- | --- | --- |
