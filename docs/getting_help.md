@@ -21,7 +21,7 @@ Many resources are available to help you be a successful student:
 
 The School has a tutoring center that can be reached:
 
-- On [discord](https://discord.gg/kzKtrjzCyH),
+- On [discord](https://discord.gg/AYSw3UNKEh),
 - During their tutoring hours (hours posted on the door and on discord), in [University Hall](https://map.concept3d.com/?id=824#!m/268018) 129. 
 
 <!--
