@@ -20,7 +20,7 @@ The initial authors of this material are:
 Additional contributions, by [undergraduate course assistants](https://csci-1301.github.io/uca.html) or other colleagues, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
 
 This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
-Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s  [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Markus Bacha and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
+Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
 
 # Supports
 
@@ -58,6 +58,4 @@ Concretely, this means that you are free to:
 
 as long as you give proper credit and keep the same licence.
 
-
 Please refer to [our licence file](https://github.com/csci-1301/csci-1301.github.io/blob/main/LICENSE.md) for the detail of this licence.
-

@@ -403,7 +403,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
         will be evaluated as $(4 - 2) + 8 = 10$.
 
-    #.  Parenthesis can be used to force a particular order of evaluation, so that `2 * (3 + 4)` will be evaluated as $2 \times (3 + 4) = 2 \times 7 = 14$, not as $(2 * 3) + 4 = 6 + 4 = 10$ as it would without the parenthesis.
+    #.  Parenthesis can be used to force a particular order of evaluation, so that `2 * (3 + 4)` will be evaluated as $2 \times (3 + 4) = 2 \times 7 = 14$, not as $(2 \times 3) + 4 = 6 + 4 = 10$ as it would without the parenthesis.
 
     Answer the following:
 

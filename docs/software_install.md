@@ -160,6 +160,7 @@ Visual Studio should be pre-installed on every computer.
 _As a backup or only to test snippets of code_, you can compile C# code online.
 Multiple online platforms exist, such as:
 
+- <https://www.browxy.com/>
 - <https://www.tutorialspoint.com/compile_csharp_online.php>
 - <https://www.onlinegdb.com/online_csharp_compiler>
 - <https://www.jdoodle.com/compile-c-sharp-online/>
