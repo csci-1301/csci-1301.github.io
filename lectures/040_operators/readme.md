@@ -237,7 +237,7 @@ Refer to [the "Result Type of Operations" chart from the cheatsheet](../datatype
     decimal total = price * (decimal) shares;
     ```
 
-    In this code, `double` cannot be implicitly converted to `decimal`, and `decimal` cannot be explicitly converted to `double`, so the multiplication `price * shares` would produce a compile error. We need an explicit cast to `decimal` to make both operands the same type (`decimal`).
+    In this code, `double` cannot be implicitly converted to `decimal`, and `decimal` cannot be implicitly converted to `double`, so the multiplication `price * shares` would produce a compile error. We need an explicit cast to `decimal` to make both operands the same type (`decimal`).
 
 ## Order of Operations
 
