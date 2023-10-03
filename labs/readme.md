@@ -19,7 +19,7 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 |  5    | [Class Diagram](https://csci-1301.github.io/labs/ClassDiagram/), [Constructor and ToString](https://csci-1301.github.io/labs/ConstructorToString/) |  
 |  6    | [Precise Rectangle](https://csci-1301.github.io/labs/PreciseRectangle/)  | 
 |  7    | [Booleans](https://csci-1301.github.io/labs/Booleans/), [If](https://csci-1301.github.io/labs/If/), [If and Switch](https://csci-1301.github.io/labs/IfAndSwitch/)  |  
-|  8    | [Increment Decrement](https://csci-1301.github.io/labs/If/), [While](https://csci-1301.github.io/labs/While/) | 10/05: Quiz #3 |
+|  8    | [Increment Decrement](https://csci-1301.github.io/labs/IncrementDecrement/), [While](https://csci-1301.github.io/labs/While/) | 10/05: Quiz #3 |
 |  9    | [Validating Input](https://csci-1301.github.io/labs/ValidatingInput/)  | 
 |  10   | [Do While](https://csci-1301.github.io/labs/DoWhile/)   | 
 |  11   | [Overflow and Underflow](https://csci-1301.github.io/labs/OverflowAndUnderflow/)  | 
