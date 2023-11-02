@@ -58,7 +58,7 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 #. Visit [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching).
 #. Log in using your Augusta University credentials.
 #. Select "Download software".
-#. Look for Visual Studio. The path is Education → Software → Visual Studio Enterprise 2019. You can search "Services" for the "Education" group and then click "Software" if the education group is not immediately displayed. It should look like the following:
+#. Look for Visual Studio. The path is Education → Software → Visual Studio Enterprise 2019/2022. You can search "Services" for the "Education" group and then click "Software" if the education group is not immediately displayed. It should look like the following:
 
     ![](img/dl_VS.jpg){ width=80% }
 
@@ -68,13 +68,11 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
 #. Download and install Visual Studio (leave all the options on their default settings).
 
-    If possible, check one of the box that starts with ".NET". It can be either under:
-    
-     - "Workload" tab → "Windows" rubric → ".NET-Desktop Development", 
-     - "Workload" tab → "Other Toolsets" rubric → ".NET Core cross-platform development",
-     - "Workload" tab → "Desktop & Mobile" rubric → ".NET desktop development"
+    Before clicking install, make sure to check ".NET Desktop Development"
 
-   ![](img/install_option.jpeg){ width=80% }
+    **If you are installing Visual Studio 2019, click the dropdown for .NET Desktop Development and check ".NET SDK (out of support)".** You do not have to do this for Visual Studio 2022
+
+   ![](img/installing_software_packages.png){ width=80% }
 
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".
