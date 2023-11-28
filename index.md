@@ -36,6 +36,14 @@ Without Solution | With Solution
 [ODT](exercises.odt)   | [ODT](exercises_with_solutions.odt)
 [DOCX](exercises.docx) | [DOCX](exercises_with_solutions.docx) 
 
+### Practise Final
+
+Without Solution | With Solution
+--- | --- 
+[HTML](practice_final.html) | [HTML](practice_final_with_solutions.html)
+[PDF](practice_final.pdf)   | [PDF](practice_final_with_solutions.pdf)
+[ODT](practice_final.odt)   | [ODT](practice_final_with_solutions.odt)
+[DOCX](practice_final.docx) | [DOCX](practice_final_with_solutions.docx) 
 
 ## Other Documents
 
