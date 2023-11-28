@@ -69,7 +69,7 @@ title: "Multiple Choice Questions (with solutions)"
     
     - [ ] Nothing: an error will prevent from compiling it successfully.
     - [ ] "Each guest gets 2.4 pie(s)."
-    - [ ] "Each guest gets 0.41666666666666666666666..." (it will never ends, displaying 6 forever).z
+    - [ ] "Each guest gets 0.41666666666666666666666..." (it will never ends, displaying 6 forever).
     - [ ] "Each guest gets 0.416666666666667 pie(s)."
     - [x] "Each guest gets 0 pie(s)."
 
@@ -230,8 +230,9 @@ title: "Multiple Choice Questions (with solutions)"
     Console.WriteLine("Enter something");
     answer = int.Parse(Console.ReadLine());
     while (answer > 10 && answer < 100){
-    Console.WriteLine("Enter something");
-    answer = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter something");
+        answer = int.Parse(Console.ReadLine());
+    }
     ```
     
     What can the user enters to _exit_ this loop?
