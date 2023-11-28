@@ -91,8 +91,7 @@ class VirtualPet{
   </details>
 
 #. Draw the UML diagram for the `VirtualPet` class, including the methods you just added.
-    <details><summary>Solution</summary>
-        ```text
+    <details><summary>Solution</summary>```text
     |=====================================================|
     |                    **VirtualPet**                   |
     |-----------------------------------------------------|
@@ -104,7 +103,9 @@ class VirtualPet{
     | + GetName() : string                                |
     | + SetHunger(level : decimal)                        |
     |=====================================================|
+
     ```
+    </details>
 
 #. Write a constructor that takes 3 arguments (`string`, `decimal`, `decimal`) for the `VirtualPet` class. Your constructor should be such that if one of the decimal arguments is not between 0 and 1 (both included), then 0 gets assigned to both decimal attributes.
   <details><summary>Solution</summary>```
@@ -243,31 +244,30 @@ This question will have you partially design, implement and use class to represe
   <details><summary>Solution</summary>Easier version of `ToString` from Problem 1. Remember to use keyword override.</details>
 
 #. Write a statement/statements that:
+
   - Displays the result of passing 12.84 to Promotion.
   - Instantiates a Burger object named OldBeefy with the values "Old Beefy", 1.99, true, and "beef".
   - Changes the price of OldBeefy to 2.29.
   - Displays the name (and only the name) of OldBeefy.
   - Store the value returned by calling the ToString method with OldBeefy in a variable.
+    <details><summary>Solution</summary>```
+    // Displays the result of passing 12.84 to Promotion.
+    Console.WriteLine(Burger.Promotion (12.84m));
+    // The answer is 9.63m
 
-   <details><summary>Solution</summary>```
-   // Displays the result of passing 12.84 to Promotion.
-   Console.WriteLine(Burger.Promotion (12.84m));
-   // The answer is 9.63m
-   
-   // Instantiates a Burger object named OldBeefy with the values "Old Beefy", 1.99, true, and "beef".
-   Burger OldBeefy = new Burger("Old Beefy", 1.99m, true, "beef");
-   
-   // Changes the price of OldBeefy to 2.29.
-   OldBeefy.SetPrice(2.29m);
-   
-   // Displays the name (and only the name) of OldBeefy.
-   Console.WriteLine(OldBeefy.GetName());
-   
-   // Store the value returned by calling the ToString method with OldBeefy in a variable.
-   string holder = OldBeefy.ToString();
-  ``` 
-  </details>
+    // Instantiates a Burger object named OldBeefy with the values "Old Beefy", 1.99, true, and "beef".
+    Burger OldBeefy = new Burger("Old Beefy", 1.99m, true, "beef");
 
+    // Changes the price of OldBeefy to 2.29.
+    OldBeefy.SetPrice(2.29m);
+
+    // Displays the name (and only the name) of OldBeefy.
+    Console.WriteLine(OldBeefy.GetName());
+
+    // Store the value returned by calling the ToString method with OldBeefy in a variable.
+    string holder = OldBeefy.ToString();
+    ``` 
+    </details>
 
 # Problem 3
 
