@@ -1,5 +1,5 @@
 ---
-title: Exercises with solutions
+title: Exercises (with solutions)
 --- 
 
 # Homework #1

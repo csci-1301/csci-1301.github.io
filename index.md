@@ -4,11 +4,11 @@ description: Course resources website for CSCI 1301 at Augusta University.
 ---
 
 <!--
-basic index page for pages website, this page makes some assumptions about paths
-based on what is defined in the makefile, just be aware of that while editing -->
+Basic index page for pages website, this page makes some assumptions about paths
+based on what is defined in the makefile, just be aware of that while editing
+-->
 
 Welcome to the course resources website for CSCI 1301 at Augusta University.
-
 
 ### Book
 
@@ -43,7 +43,17 @@ Without Solution | With Solution
 [HTML](practice_final.html) | [HTML](practice_final_with_solutions.html)
 [PDF](practice_final.pdf)   | [PDF](practice_final_with_solutions.pdf)
 [ODT](practice_final.odt)   | [ODT](practice_final_with_solutions.odt)
-[DOCX](practice_final.docx) | [DOCX](practice_final_with_solutions.docx) 
+[DOCX](practice_final.docx) | [DOCX](practice_final_with_solutions.docx)
+
+### Multiple Choice Questions
+
+Without Solution | With Solution
+--- | --- 
+[HTML](mcq_final.html) | [HTML](mcq_final_with_solutions.html)
+[PDF](mcq_final.pdf)   | [PDF](mcq_final_with_solutions.pdf)
+[ODT](mcq_final.odt)   | [ODT](mcq_final_with_solutions.odt)
+[DOCX](mcq_final.docx) | [DOCX](mcq_final_with_solutions.docx)
+
 
 ## Other Documents
 
