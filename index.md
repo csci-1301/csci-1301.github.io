@@ -49,10 +49,10 @@ Without Solution | With Solution
 
 Without Solution | With Solution
 --- | --- 
-[HTML](mcq_final.html) | [HTML](mcq_final_with_solutions.html)
-[PDF](mcq_final.pdf)   | [PDF](mcq_final_with_solutions.pdf)
-[ODT](mcq_final.odt)   | [ODT](mcq_final_with_solutions.odt)
-[DOCX](mcq_final.docx) | [DOCX](mcq_final_with_solutions.docx)
+[HTML](mcq.html) | [HTML](mcq_with_solutions.html)
+[PDF](mcq.pdf)   | [PDF](mcq_with_solutions.pdf)
+[ODT](mcq.odt)   | [ODT](mcq_with_solutions.odt)
+[DOCX](mcq.docx) | [DOCX](mcq_with_solutions.docx)
 
 
 ## Other Documents
