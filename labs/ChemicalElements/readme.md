@@ -62,7 +62,7 @@ You may want to comment out part or all of your "Program.cs" file before startin
 
 You should test all of those modifications in your "Program.cs" file as you implement them.
 Use relevant data, test your program, and make sure the behavior is the expected behavior.
-
+<!--
 <details><summary>Elements of solution</summary>
 Typically, you need to replace 
 
@@ -102,3 +102,4 @@ public decimal BoilingInFahrenheit()
 }
 ```
 </details>
+-->
