@@ -4,6 +4,8 @@ title: List of Topics
 
 <!-- remainder is directly from initial-matrix/list.md -->
 
+_For an explanation of the shortcodes labelling, please refer [to our user guide](user_guide#labelling-with-shortcodes-1)._
+
 ## General Concepts
 
 _Students should understand the meaning and importance of the following notions. This statement should be read as "understand the first sentence or paragraph on a wikipedia article", taking [high-level programming language](https://en.wikipedia.org/wiki/High-level_programming_language) as an example._
