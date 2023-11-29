@@ -40,22 +40,16 @@ title: Exercises (with solutions)
     <details><summary>Solution</summary>You can consult the "official" list of keywords as <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/>. Are valid answers: `int`, `using`, `static`, `public`, etc. Note that `main` or `System` are _not_ keywords.</details>
 
 #. Write a statement that would display, "Hi Mom!" (without the quotes) followed by a new line on the screen, once inserted in a proper method, compiled, and executed.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     Console.WriteLine("Hi Mom!");
     ```
-    
     </details>
 
 #. Write a statement that would display, "Hello!" (without the quotes) followed by a new line on the screen, once inserted in a proper method,
 compiled, and executed. 
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     Console.WriteLine("Hello!");
     ```
-    
     </details>
 
 #. What is the limitation, if any, to the number of methods you can have per class? Why is the method called `Main` special?
@@ -65,7 +59,7 @@ compiled, and executed.
     <details><summary>Solution</summary> A rule is required by the programming language and enforced by the compiler. A convention is only a recommendation to make your program easier for other humans to read; you can break it and your code will still work. </details> 
 
 #.  What is a namespace?
-<details><summary>Solution</summary>A named collection of related library code.</details>
+    <details><summary>Solution</summary>A named collection of related library code.</details>
 
 #. In a C# program, can comments start with `\\` (double backslash) or with `//` (double (forward) slash)? Do they have to end with a `;` (semicolon)?
     <details><summary>Solution</summary>With `//`, no.</details>
@@ -93,36 +87,27 @@ compiled, and executed.
     Hi Mom!↵
     How are you doing?
     ```
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     Console.Write("Hi Mom!\nHow are you doing?");
     ```
-    
     </details>
     
 #. Assume we have a variable whose name is `myVariable`, type is `string`, and value is `"My message"`. What would be displayed on the screen by the following statement?
     ```
     Console.WriteLine($"Here is my variable: {myVariable}");
     ```
-    <details><summary>Solution</summary>
-    
-    ```{text}
+    <details><summary>Solution</summary>```{text}
     Here is my variable: My message
     ```
-
     </details>
     
 #. Assume we have a variable whose name is `level`, whose type is `string`, and whose value is `"Easy"`. What would be displayed at the screen by the following statement?
     ```
     Console.WriteLine($"You set the difficulty to {level}.");
     ```
-    <details><summary>Solution</summary>
-    
-    ```{text}
+    <details><summary>Solution</summary>```{text}
     You set the difficulty to Easy.
     ```
-
     </details>
 
 #. Which of the following are correct identifier names? 
@@ -135,17 +120,14 @@ compiled, and executed.
     <details><summary>Solution</summary>Identifiers: `myClass`, `Lab3_Part1`</details>
 
 #. Which of the following are keywords?
-
     `myClass static Lab3-Exo1 “Hello World” using Lab3_Part1`
     <details><summary>Solution</summary>Keywords: `static`, `using`</details>
 
 #. Which of the following are correct identifier names?
-
     `12_Dec_2019 Lab3-Exo1 MyClass2 My.Lab.Variable string My_Var`
     <details><summary>Solution</summary>`OK: MyClass2, My_Var Not OK: 12_Dec_2019, Lab3-Exo1, My.Lab.Variable, string`</details>
 
 #. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)?
-
     `5 => variable;` `x=5;` `apples= 23` `x <= 23;` `variable =1,890;`
     <details><summary>Solution</summary>Only `x=5;` is correct.</details>
 
@@ -153,7 +135,6 @@ compiled, and executed.
     <details><summary>Solution</summary>`myAge = 23;`</details>
 
 #. Cross out the wrong answer in the following sentences, \[ ~~like this (incorrect)~~  \|  like this (correct) \]:
-
     - "If the code does not obey the \[  rules  \|  conventions \] of C#, then the compiler will complain." 
     - "Every statement needs to end with \[  a forward slash `/`  \|  a semi-colon `;`  \]." 
     - "C# is a \[  object-oriented  \|  functional \] programming language." 
@@ -184,6 +165,7 @@ compiled, and executed.
         }
     }
     ```
+    
     <details><summary>Solution</summary>
     #.  Missing `;` after `using System`
     #.  superfluous `;` after `static void Main()`
@@ -210,18 +192,16 @@ compiled, and executed.
     <details><summary>Solution</summary>No, because `/*` will be transformed into `/!`.</details>
 
 #. Give the values of `a` and `b` after the following four instructions have been executed.
-
     ```
     int a, b;
     a = 2;
     b = a * 2 + 1;
     a -= 1;
     ```
-    
+
     <details><summary>Solution</summary>`a` is `1`, `b` is `5`.</details>
 
 #. Give the values of `a` and `b` after the following four instructions have been executed.
-
     ```
     int a, b;
     a = 4;
@@ -231,7 +211,6 @@ compiled, and executed.
     <details><summary>Solution</summary>`a` is `2`, `b` is `13`.</details>
 
 #. Give the values of `c` and `d` after the following four instructions have been executed.
-
     ```
     int c = 3, d;
     d = 2 + c;
@@ -241,7 +220,6 @@ compiled, and executed.
     <details><summary>Solution</summary>`c` is `10`, `d` is `7`.</details>
 
 #. Is there an error in the following code? Explain the error or give the value of `b` after the second statement is executed.
-
     ```
     float a = 3.7f;
     int b = (int)a;
@@ -250,7 +228,6 @@ compiled, and executed.
 
 #. Is there an error in the following code? Explain the error or give the
 value of `b` after the second statement is executed.
-
     ```
     decimal a = 1.6M;
     int b = (int)a + a;
@@ -258,7 +235,6 @@ value of `b` after the second statement is executed.
     <details><summary>Solution</summary>Error, the result type of the operation is a decimal, and cannot be stored in an int.</details>
 
 #. There is an error in the following code, at the second line. Explain the error, and how you could fix this second line using a cast operator, without changing the datatype of the `b` variable.
-
     ```
     decimal a = 2.5M;
     int b = a / 2;
@@ -284,7 +260,6 @@ value of `b` after the second statement is executed.
     <details><summary>Solution</summary>`ReadLine()`.</details>
 
 #. What is wrong with the following code? Will the error(s) appear at compilation time or at execution time?
-
     ```
     int age;
     Console.WriteLine("Please enter your age:");
@@ -293,7 +268,6 @@ value of `b` after the second statement is executed.
     <details><summary>Solution</summary>Conversion of `string` to `int`. At compilation time.</details>
 
 #. Will those statements, if placed in a proper `Main` method, compile? Could this program crash at execution time? Justify your answer.
-
     ```
     int myAge;
     Console.WriteLine("Please enter your age:");
@@ -302,7 +276,6 @@ value of `b` after the second statement is executed.
     <details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value.</details>
 
 #. Write a series of statements that: a) Declare an `int` variable named `userAge`, b) Display on the screen a message asking the user to enter his or her age, c) Read the value entered by the user and store it in the `userAge` variable. You can add statement(s) performing intermediate steps if you want.
-
     <details><summary>Solution</summary>
     ```
     int userAge;
@@ -313,7 +286,6 @@ value of `b` after the second statement is executed.
     </details>
 
 #. Write a series of statements that: a) Declare an `string` variable named `favoriteColor`; b) Display on the screen a message asking the user to enter his or her favorite color; c) Read the value entered by the user and store it in the `favoriteColor` variable. You can combine some of the statement(s) if you want, but do not display at the screen any information that was not explicitely asked.
-
     <details><summary>Solution</summary>
     ```
     string favoriteColor;
@@ -553,9 +525,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>It is used by a method to return a value to the environment that called it.</details>
 
 #. Write a get method for an instance variable named `total` of type `int`.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public int GetTotal()
     { 
         return total;
@@ -565,9 +535,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #.  Write a getter for an attribute of type `string` named `myName`. 
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public string GetMyName() 
     { 
         return myName;
@@ -577,9 +545,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #.  Write a setter for an attribute of type `int` named `myAge`.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public void SetMyAge(int paramMyAge) 
     { 
         myAge = paramMyAge; 
@@ -598,9 +564,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>It has the wrong return type, because it does not (and should not) return a value, i.e., replace `int` with `void`.</details>
 
 #. Assume we have an instance of the `Rectangle` class named `myRect` and an instance of the `Circle` class named `myCircle`. Write statement(s) that will make the radius of `myCircle` equal to the width of `myRect`.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     myCircle.SetRadius(myRect.GetWidth());
     ```
 
@@ -610,18 +574,14 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>An indication to format a numerical value in a special way in a string. For example, `Console.WriteLine($"{65536:N");}` will display "65,536.00" on the screen after applying the `:N` format specifier to the value 65536. </details>
 
 #.  Write a statement that uses a format specifier.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     Console.WriteLine($"myInt:C");
     ```
 
     </details>
 
 #. Write a method for the `Rectangle` class that divides the length and width of the calling object by a factor given as a parameter.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public void DivideBy(int factor) 
     {
         length /= factor; 
@@ -642,9 +602,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #. Write a `ToString` method for a `Account` class with two attributes, a `string` attribute called `name` and a `decimal` attribute called `amount`.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public override string ToString() 
     { 
         return $"Account Name: {name}\nAccount Balance: {amount}";
@@ -675,9 +633,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     <details><summary>Solution</summary>The name of the class. It does not have a return type, not even `void`.</details>
 
 #. Write a constructor for a `Soda` class with one `string` attribute called `name`.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public Soda() 
     { 
     name = "Generic"; 
@@ -687,9 +643,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     </details>
 
 #. Assume we have a `Polygon` class, that have only one attribute, an `int` called `numberOfSides`. Write a constructor for that class. 
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     public Polygon (int numberOfSidesParam)
     {
         numberOfSides = numberOfSidesParam; 
@@ -762,9 +716,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write statements that ask the user to enter a price and then create  a `DVD` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
     #.  Draw the UML class diagram for the class you obtained by adding the above four methods to our original class definition. 
     
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     class DVD
     {
         private string title;
@@ -826,9 +778,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
     #.  Write statements that ask the user to enter a price and then create  a `Book` object with a `price` attribute equal to the price the user entered. (The object's `title` attribute can be anything you choose).
     #.  Draw  the UML class diagram for the class you obtained by adding the above four methods to our original class definition.
     
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     class Book
     {
         private string title;
@@ -1127,9 +1077,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     <details><summary>Solution</summary>`x>3 && 5>=x`</details>
 
 #. Write an `if-else` statement that assigns $0.1$ to `z` if `y` is greater or equal than $0$, and that assigns $-0.1$ to `z` otherwise.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     if(y >= 0){
         z = 0.1;
     }
@@ -1140,9 +1088,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     </details>
 
 #. Write an `if-else` statement that assigns `"Minor"` to an already declared `string` variable `legalStatus` if `age` is strictly less than 18, and that assigns `"Major"` to `legalStatus` otherwise.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     if(age < 18){
         legalStatus = "Minor";
     }
@@ -1153,9 +1099,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     </details>
     
 #. Write an `if-else` statement that displays "It's free for you!" if an `int` variable `age` is between 0 and 18, and "It's \$5.00." otherwise.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     if(age <= 18 && age >= 0){
         Console.WriteLine("It's free for you!");
     }
@@ -2144,9 +2088,7 @@ They were given at week 4 and 7.
     </details>
 
 #. (8 pts) Assume we initialized a `string` variable named `month` and a `double` variable named `temperature`. Write a series of statements that will display *exactly* one of the following messages: "What a nice summer day!" if `month` is "July"  and `temperature` is less than 90 (included); "Better wear a jacket" if `temperature` is between 45 and 60 (both included); "Happy holidays!" if `month` is "December"; or "Have a nice day" otherwise.
-    <details><summary>Solution</summary>
-    
-    ```
+    <details><summary>Solution</summary>```
     if(month=="July" && temperature<=90)
 	    Console.WriteLine("What a nice summer day!");
     else if (temperature >= 45 && temperature <= 60)

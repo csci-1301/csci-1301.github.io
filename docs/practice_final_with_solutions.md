@@ -71,7 +71,11 @@ class VirtualPet{
 ```
 
 #. Write a statement to instantiate a `VirtualPet` object called `firstPet`.
-    <details><summary>Solution</summary>Review classes and objects if you cannot do this. It should be straightforward.</details>
+    <details><summary>Solution</summary>```
+    VirtualPet firstPet = new VirtualPet();
+    ```  
+    Review classes and objects if you cannot do this. It should be straightforward.
+    </details>
 
 #. Write a getter for the name attribute.
   <details><summary>Solution</summary>Review classes and objects if you cannot do this. It should be straightforward.</details>
