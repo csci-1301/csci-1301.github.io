@@ -7,11 +7,10 @@ Exam questions will be similar in type to those found here, but
 fewer in number. While this practice exam is a good study guide, we
 highly recommend being familiar with _all the material_ (including but not limited to your previous exams, labs, projects, quizzes and homework) as well.
 
-
 # Problem 0 (Warm-up)
 
 #. What is the escape sequence for a new line?
-<details><summary>Solution</summary>`\n`</detais>
+<details><summary>Solution</summary>`\n`</details>
 #. What type is the result of `8 * 12M`?
 <details><summary>Solution</summary>`decimal`</details>
 #. What is the return type of a constructor?
