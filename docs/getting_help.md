@@ -54,7 +54,7 @@ You have three instructors this semester:
 
 Please, refer to your syllabus for their office hours or how to reach them.
 
-## Graduate Assistant
+## Graduate Course Assistant
 
 Jason Weeks:
 ~ 
@@ -65,12 +65,13 @@ Jason Weeks:
 
 ## Undergraduate Course Assistants
 
-The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
+To be determined.
 
 <!--
+The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
+
 For this semester, your UCAs are:
 -->
-
 <!--
 
 Please, copy the following template, paste it outside this comment (that is, after the ">" character below, and fill it with relevant information.
@@ -184,13 +185,13 @@ All labs take place in University Hall 124, and meet as follows:
 
 | Section | Day | Hours | Room | Instructor / GCA | UCA
 ---- | ----- |  ------ | ----------| -------------| -------------
-E | Tuesday  | 7:00--8:50 pm | UH 124 | TBA | TBA
-F | Tuesday  | 7:00--8:50 pm | UH 124 | TBA | TBA
-D | Thursday | 8:00--9:50 am | UH 124 | TBA | TBA
-B | Thursday | 1:00--2:50 pm | AH N344 | TBA | TBA
-A | Friday   | 9:00--10:50 am | AH N344 | TBA | TBA
-C | Friday   | 12:00--1:50 pm | AH N344 | TBA | TBA
-  
+E  | Tuesday  | 7:00--8:50 pm  | UH 124 | TBA | TBA
+F  | Tuesday  | 7:00--8:50 pm  | UH 124 | TBA | TBA
+FG | Tuesday  | 7:00--8:50 pm  | UH 124 | TBA | TBA
+D  | Thursday | 8:00--9:50 am  | UH 124 | TBA | TBA
+B  | Thursday | 1:00--2:50 pm  | UH 124 | TBA | TBA
+A  | Friday   | 9:00--10:50 am | UH 124 | TBA | TBA
+C  | Friday   | 12:00--1:50 pm | UH 124 | TBA | TBA
 
 ## Commenting Using a Github Account
 
