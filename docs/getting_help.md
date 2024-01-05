@@ -48,8 +48,8 @@ The Augusta University Game Design Club and Girls Who Code College Loop "will be
 
 You have three instructors this semester:
 
-- Dr. DeFrancisco (Section A--F), 
-- Dr. Aubert (Section E),
+- Dr. DeFrancisco (Section A--D), 
+- Dr. Aubert (Section E and F),
 - Jason Weeks (Labs).
 
 Please, refer to your syllabus for their office hours or how to reach them.
@@ -180,16 +180,17 @@ Daelyn Doughty:
 
 ## Labs Meeting Times
 
-All labs take place in Allgood Hall N344, and meet as follows:
+All labs take place in University Hall 124, and meet as follows:
 
-| Section | Hours | Room | Instructor / GCA | UCA
-----| ------| -------------| -------------| -------------
-  E | Tuesday 7:00--8:50 pm | AH E126 | Jason Weeks & Katrina Visintainer | Kaylee Osteen & Elijah Gibson
-  A | Thursday 10:00--11:50 am | AH E126 | Jason Weeks | Samuel Bailey & TBA 
-  B | Thursday 1:00--2:50 pm | AH N344 | Dr. DeFrancisco | TBA
-  C | Friday 9:00--10:50 am | AH N344 | Jason Weeks | Daelyn Doughty & Anthony Gibson
-  D | Friday 12:00--1:50 pm | AH N344 | Jason Weeks | Xavier Mitchell & Anthony Gibson
-
+| Section | Day | Hours | Room | Instructor / GCA | UCA
+---- | ----- |  ------ | ----------| -------------| -------------
+E | Tuesday  | 7:00--8:50 pm | UH 124 | TBA | TBA
+F | Tuesday  | 7:00--8:50 pm | UH 124 | TBA | TBA
+D | Thursday | 8:00--9:50 am | UH 124 | TBA | TBA
+B | Thursday | 1:00--2:50 pm | AH N344 | TBA | TBA
+A | Friday   | 9:00--10:50 am | AH N344 | TBA | TBA
+C | Friday   | 12:00--1:50 pm | AH N344 | TBA | TBA
+  
 
 ## Commenting Using a Github Account
 
