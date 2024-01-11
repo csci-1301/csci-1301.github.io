@@ -185,13 +185,13 @@ All labs take place in University Hall 124, and meet as follows:
 
 | Section | Day | Hours | Room | Instructor / GCA | UCA
 ---- | ----- |  ------ | ----------| -------------| -------------
-E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony G., Jason G. and Cole C.
-FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal N. and Ashlyn S.
-D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Nate S. and Xavier M.
-B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn D. and Ally P.
-F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal N. and Ashlyn S.
-A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Xavier M. and Hiren P.
-C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | JoVi D. and Thomas F.
+E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony Gibson, Jason Gorlich and Cole Castranova
+FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen and Ashlyn Snyder
+D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Nate Schwartz and Xavier Mitchell
+B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn Doughty and Ally Price
+F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen and Ashlyn Snyder
+A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Xavier Mitchell and Hiren Patel
+C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | JoVi Douglas and Thomas Folger
 
 ## Commenting Using a Github Account
 
