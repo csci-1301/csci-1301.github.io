@@ -63,9 +63,11 @@ Jason Weeks:
     - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
     - I'm a first year Master's student, graduating with a Bachelor's in CS and a minor in Math, and I was UCA for over two years. I can't wait to help out another semester of 1301 students learn to code!
 
+<!--
 ## Undergraduate Course Assistants
 
 To be determined.
+-->
 
 <!--
 The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
@@ -181,7 +183,7 @@ Daelyn Doughty:
 
 ## Labs Meeting Times
 
-All labs take place in University Hall 124, and meet as follows:
+Labs meet as follows:
 
 | Section | Day | Hours | Room | Instructor / GCA | UCA
 ---- | ----- |  ------ | ----------| -------------| -------------
