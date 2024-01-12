@@ -188,10 +188,10 @@ All labs take place in University Hall 124, and meet as follows:
 E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony Gibson, Jason Gorlich and Cole Castranova
 FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen and Ashlyn Snyder
 D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Nate Schwartz and Xavier Mitchell
-B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn Doughty and Ally Price
-F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen and Ashlyn Snyder
+B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn Doughty, Thomas Folger and Ally Price
+F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen, Ashlyn Snyder and Austin C.
 A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Xavier Mitchell and Hiren Patel
-C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | JoVi Douglas and Thomas Folger
+C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | JoVi Douglas and William B.
 
 ## Commenting Using a Github Account
 
