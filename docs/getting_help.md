@@ -193,7 +193,7 @@ D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Nate Schwartz and Xavie
 B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn Doughty, Thomas Folger and Ally Price
 F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen, Ashlyn Snyder and Austin Coleman
 A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Xavier Mitchell and Hiren Patel
-C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | JoVi Douglas and William Burnley
+C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | Elijah Gibson, JoVi Douglas and William Burnley
 
 ## Commenting Using a Github Account
 
