@@ -154,7 +154,7 @@ Note that some of those conventions are actually rules in different programming 
     - Some have already been chosen for the standard library (e.g. `system`, `Console`, `WriteLine`, `Main`), but they are still identifiers, not keywords
     - Rules for identifiers:
         - Must not be a reserved word
-        - Must contain only letters (lower case, from `a` to `z`, or upper case, from `A` to `Z`), numbers (made of digits from `0` to `9`), and underscore (`_`)-- no spaces
+        - Must contain only letters (lower case, from `a` to `z`, or upper case, from `A` to `Z`), numbers (made of digits from `0` to `9`), and underscore (`_`). But they cannot contain spaces.
         - Must not begin with a number
         - Are case sensitive
         - Must be unique (you cannot re-use the same identifier twice in the same scope -- a concept we will discuss later)

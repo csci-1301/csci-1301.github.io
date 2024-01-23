@@ -163,7 +163,6 @@ compiled, and executed.
         {
             ConsoleWriteLine("Welcome \n to the lab!");
         }
-    }
     ```
     
     <details><summary>Solution</summary>
