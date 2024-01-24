@@ -7,7 +7,7 @@ title: Exercises (with solutions)
 ## Part I --- Questions
 
 #. List five pieces of software, and three hardware components of a computer.
-    <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer.</details>
+    <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer. Examples of hardware components are random access memory (RAM), central processing unit (CPU), keyboard, mouse, graphical processing unit (GPU). A comprehensive list can be found at <https://en.wikipedia.org/wiki/Computer_hardware>.</details>
 
 #. List four programming languages. 
     <details><summary>Solution</summary>C, C++, C#, Java, JavaScript, Python, Haskell, Swift, RWBY, etc (Note: HTML is a "Markup Language" and SQL is a "Query Language", which would technically be incorrect)</details>
@@ -129,7 +129,7 @@ compiled, and executed.
 
 #. Which one(s) of the following, if any, is a correct assignment (assuming that `variable`, `x` and `apples` have been declared as `int` variables)?
     `5 => variable;` `x=5;` `apples= 23` `x <= 23;` `variable =1,890;`
-    <details><summary>Solution</summary>Only `x=5;` is correct.</details>
+    <details><summary>Solution</summary>Only `x=5;` is correct. For instance, `apples= 23` is not correct because a `;` is missing: since an assignment is a statement, it must ends with a `;` </details>
 
 #. Write a statement that assigns the value 23 to a variable `myAge` of type `int`. You do not need to re-declare that variable.
     <details><summary>Solution</summary>`myAge = 23;`</details>
