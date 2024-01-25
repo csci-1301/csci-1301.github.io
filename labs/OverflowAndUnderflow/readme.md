@@ -22,7 +22,7 @@ Do execute the code shared in this section:
 ```
     
 Make sure you have a general understanding of what overflowing means before proceeding.
-If you are unsure, reading [about integer overflow on wikipedia](https://en.wikipedia.org/wiki/Integer_overflow) can help.
+If you are unsure, reading [about integer overflow on wikipedia](https://www.wikiwand.com/en/Integer_overflow) can help.
 
 We will now enter a surprising world where
 

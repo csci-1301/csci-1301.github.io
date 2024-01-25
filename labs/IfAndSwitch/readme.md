@@ -71,7 +71,7 @@ Now, do the following:
 #. Comment out the `default:` case along with the two lines below it and compile your program. Why is the compiler complaining?
 #. Restore the code to its original state.
 #. Change the code so that "monday" would make the value 1 get assigned to `num_day`.
-#. Change the code so that [the days of the week start on Sunday](https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week#Days_numbered_from_Sunday) (i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.)
+#. Change the code so that [the days of the week start on Sunday](https://www.wikiwand.com/en/Names_of_the_days_of_the_week#Days_numbered_from_Sunday) (i.e., "Sunday" causes the value 1 to get assigned to `num_day`, "Monday" causes the value 2 to be assigned to `num_day`, etc.)
 #. Finally, change the last message to tell the user if the code encountered an error; use an `if` statement to display a different message if the user input did not match one of the literals in your `switch` statement.
 
 Here is an example of execution, where the user input is u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲, and hitting "enter" is represented by ↵:

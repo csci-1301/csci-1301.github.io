@@ -83,7 +83,7 @@
 
 ### Initialization (Declaration + Assignment)
 
-- Initialization statement combines declaration and assignment in one single statement (it is just a shortcut, a.k.a. some ["syntactical sugar"](https://en.wikipedia.org/wiki/Syntactic_sugar), and not something new)
+- Initialization statement combines declaration and assignment in one single statement (it is just a shortcut, a.k.a. some ["syntactical sugar"](https://www.wikiwand.com/en/Syntactic_sugar), and not something new)
 - Creates a new variable and also gives it an initial value
 - The syntax is the datatype of the variable, the name of the variable, the `=` sign, the value we want to store, and a semi-colon
 - Example: `string myName = "Edward";`

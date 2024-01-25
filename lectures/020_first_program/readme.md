@@ -43,7 +43,7 @@
 
 ## First Program
 
-It is customary to start the study of a programming language with a ["Hello World" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program), that simply displays "Hello World". 
+It is customary to start the study of a programming language with a ["Hello World" program](https://www.wikiwand.com/en/%22Hello,_World!%22_program), that simply displays "Hello World". 
 It is a simple way of seeing a first, simple example of the basic structure of a program.
 Here's a simple "hello world" program in the C# language:
 
@@ -103,7 +103,7 @@ Features of this program:
 - Braces and parentheses must always be matched
     - Once you start a class or method definition with `{`, you must end it with `}`
 - Whitespace has _almost_ no meaning
-    - "Whitespaces" refer to spaces (sometimes denoted " ", "␣" or "⌴"), [tabs](https://en.wikipedia.org/wiki/Tab_key#Tab_characters) (which consists in 4 spaces), and newlines (sometimes denoted "↵", "↩" or "⏎")
+    - "Whitespaces" refer to spaces (sometimes denoted " ", "␣" or "⌴"), [tabs](https://www.wikiwand.com/en/Tab_key#Tab_characters) (which consists in 4 spaces), and newlines (sometimes denoted "↵", "↩" or "⏎")
     - There must be at least 1 space between words
     - Other than that, spaces and new lines are just to help humans read the code 
     - Spaces are counted exactly if they are inside string data, e.g. `"Hello      world!"` is different from `"Hello world!"`
@@ -161,7 +161,7 @@ Note that some of those conventions are actually rules in different programming 
     - Conventions for identifiers
         - Should be descriptive, e.g. "`AudioFile`" or "`userInput`" not "`a`" or "`x`"
         - Should be easy for humans to read and type
-        - If name is multiple words, use [CamelCase](https://en.wikipedia.org/wiki/Camel_case) (or its variation [Pascal case](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/)) to distinguish words, e.g. `myHeightInMeters` or `distanceFromEarthToMoon`.
+        - If name is multiple words, use [CamelCase](https://www.wikiwand.com/en/Camel_case) (or its variation [Pascal case](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/)) to distinguish words, e.g. `myHeightInMeters` or `distanceFromEarthToMoon`.
         - Class and method names should start with capitals, e.g. "`class AudioFile`"
         - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 

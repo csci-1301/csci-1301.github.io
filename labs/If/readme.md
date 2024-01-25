@@ -14,7 +14,7 @@ This lab serves multiple goals:
 
 ## Testing and Improving Conditional Statements
 
-Consider the following code^[The information about the age of majority [comes from wikipedia](https://en.wikipedia.org/wiki/Age_of_majority).]:
+Consider the following code^[The information about the age of majority [comes from wikipedia](https://www.wikiwand.com/en/Age_of_majority).]:
 
 ```
 int yourAge; // This variable will contain the user's age.

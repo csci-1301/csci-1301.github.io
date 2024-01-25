@@ -12,7 +12,7 @@ This lab serves multiple goals:
 # Your First Program
 
 In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.
-It is customary to start the study of a programming language with a ["Hello World"](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) program that simply displays "Hello World".
+It is customary to start the study of a programming language with a ["Hello World"](https://www.wikiwand.com/en/%22Hello,_World!%22_program) program that simply displays "Hello World".
 Although such a program has no real interest nor purpose, it is used to make sure that your setup is correctly configured and to guide you gently in the discovery of programs and their language!
 
 ## Opening Your First Program
@@ -27,7 +27,7 @@ Although such a program has no real interest nor purpose, it is used to make sur
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
 
 Question:
-~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://en.wikipedia.org/wiki/Domain_name), because we told you to do so, or for some other reasons?
+~ Have you actually checked where the HelloWorld (zip) archive was hosted? Was it on a trustworthy website? If yes, is it trustworthy because of the [domain name](https://www.wikiwand.com/en/Domain_name), because we told you to do so, or for some other reasons?
 
 <details><summary>Elements of solution</summary>
 The zip archive we asked you to download is hosted on <https://csci-1301.github.io/>, that is, on [Github pages](https://pages.github.com/).
@@ -35,7 +35,7 @@ There *can be* malware hosted on Github pages, and the fact that this website is
 So, in short, this archive is safe because we told you so, and because we are careful how it is updated. 
 
 Ultimately, many security decisions rest on trust, and you will have to trust us during this course.
-If you continue your study in our School, you will learn about [virtualization](https://en.wikipedia.org/wiki/Virtualization), that allows you to execute programs you cannot trust in a safe environment.
+If you continue your study in our School, you will learn about [virtualization](https://www.wikiwand.com/en/Virtualization), that allows you to execute programs you cannot trust in a safe environment.
 </details>
 
 
@@ -136,7 +136,7 @@ If your backup went wrong (you cannot open the project, it refuses to compile, â
 Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can build the solution and execute the program.
 
 Action:
-~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://en.wikipedia.org/wiki/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://en.wikipedia.org/wiki/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://en.wikipedia.org/wiki/Distributed_version_control) and try to understand its importance.
+~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://www.wikiwand.com/en/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://www.wikiwand.com/en/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://www.wikiwand.com/en/Distributed_version_control) and try to understand its importance.
 
 ## Orientation
 

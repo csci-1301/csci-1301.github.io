@@ -30,7 +30,7 @@ This lab serves multiple goals:
 	+ "\n\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 	```
 
-#. Compile and execute it. This should display to the screen the [truth tables](https://en.wikipedia.org/wiki/Truth_table) for conjunction (and, `&&`) and negation (not, `!`).
+#. Compile and execute it. This should display to the screen the [truth tables](https://www.wikiwand.com/en/Truth_table) for conjunction (and, `&&`) and negation (not, `!`).
 #. Make sure you understand both the code and its output.
 #. After the truth table for the negation, write code to display the truth tables for three binary operators:
     #. the disjunction (or, `||`),
@@ -38,7 +38,7 @@ This lab serves multiple goals:
     #. the difference (inequality, `!=`).
     
     Normally, copying the truth table for the conjunction and using the find-and-replace feature of your IDE should make this a quick and easy task.
-#. You can make sure you completed this exercise correctly by checking that your output matches the truth tables on Wikipedia for [disjunction](https://en.wikipedia.org/wiki/Truth_table#Logical_disjunction_(OR)) and [equality](https://en.wikipedia.org/wiki/Truth_table#Logical_equality). To check the inequality truth table, compare your output against the table for [exclusive disjunction](https://en.wikipedia.org/wiki/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality but has the same truth table.
+#. You can make sure you completed this exercise correctly by checking that your output matches the truth tables on Wikipedia for [disjunction](https://www.wikiwand.com/en/Truth_table#Logical_disjunction_(OR)) and [equality](https://www.wikiwand.com/en/Truth_table#Logical_equality). To check the inequality truth table, compare your output against the table for [exclusive disjunction](https://www.wikiwand.com/en/Truth_table#Exclusive_disjunction). Exclusive disjunction (XOR) is conceptually different than inequality but has the same truth table.
 
 # Precedence and Order of Evaluation
 

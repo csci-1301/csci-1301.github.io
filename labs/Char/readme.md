@@ -13,9 +13,9 @@ This lab serves multiple goals:
 
 # Warm Up 
 
-Characters are represented by integers: you can read [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters) a mapping between the glyphs (e.g., space, `A`, `!`, etc.) and decimal values, to be read as "integer code" (e.g., 32, 33, 34, etc.).
+Characters are represented by integers: you can read [on wikipedia](https://www.wikiwand.com/en/ASCII#Printable_characters) a mapping between the glyphs (e.g., space, `A`, `!`, etc.) and decimal values, to be read as "integer code" (e.g., 32, 33, 34, etc.).
 
-In the referenced table [on wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters), each character's integer code is given for different [numeral systems](https://en.wikipedia.org/wiki/Radix#In_numeral_systems):
+In the referenced table [on wikipedia](https://www.wikiwand.com/en/ASCII#Printable_characters), each character's integer code is given for different [numeral systems](https://www.wikiwand.com/en/Radix#In_numeral_systems):
  
 - Binary: base 2
 - Oct: octal, base 8

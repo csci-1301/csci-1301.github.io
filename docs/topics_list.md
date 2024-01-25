@@ -8,7 +8,7 @@ _For an explanation of the shortcodes labelling, please refer [to our user guide
 
 ## General Concepts
 
-_Students should understand the meaning and importance of the following notions. This statement should be read as "understand the first sentence or paragraph on a wikipedia article", taking [high-level programming language](https://en.wikipedia.org/wiki/High-level_programming_language) as an example._
+_Students should understand the meaning and importance of the following notions. This statement should be read as "understand the first sentence or paragraph on a wikipedia article", taking [high-level programming language](https://www.wikiwand.com/en/High-level_programming_language) as an example._
 
 - Programming languages types and paradigms
     - Machine language instructions
@@ -124,7 +124,7 @@ _The students should understand all the components of a simple "Hello World" pro
 
 ## Characters
 
-- Possible values and the existence of binary, oct, dec and hex representation (cf. for instance [wikipedia](https://en.wikipedia.org/wiki/ASCII#Printable_characters))
+- Possible values and the existence of binary, oct, dec and hex representation (cf. for instance [wikipedia](https://www.wikiwand.com/en/ASCII#Printable_characters))
 - Escape character and sequences: `\n`, `\t`, `\\`
 - Conversion between glyph and decimal value.
 - Various methods: `ToLower`, `ToUpper` ❓ 
@@ -200,7 +200,7 @@ and defining the term "accumulator"
 - Properties ❓
 - Method signature
 - Overloading
-- [Variable shadowing](https://en.wikipedia.org/wiki/Variable_shadowing) ❓
+- [Variable shadowing](https://www.wikiwand.com/en/Variable_shadowing) ❓
 - Constructors: default constructor and "custom" constructor
 
 ## Class Usage

@@ -7,18 +7,18 @@ title: Installing Software
 You probably already installed software in your life, be it [VLC](http://www.videolan.org/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app), or [Whatsapp](https://www.whatsapp.com/).
 However, depending on whether you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.
 
-Between the [Play store](https://en.wikipedia.org/wiki/Google_Play#Play_Store_on_Android), the [command-line interface](https://en.wikipedia.org/wiki/Command-line_interface), [homebrew](http://brew.sh/) and the act of downloading software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
+Between the [Play store](https://www.wikiwand.com/en/Google_Play#Play_Store_on_Android), the [command-line interface](https://www.wikiwand.com/en/Command-line_interface), [homebrew](http://brew.sh/) and the act of downloading software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
 In addition to making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g. your private life.
 
-As data can be lost or corrupted upon downloading, many platforms now use [checksums](https://en.wikipedia.org/wiki/Checksum) to verify the integrity of the software you downloaded before installing it.
-This is an excellent practice that can also be performed "by hand", as explained for instance for [the database manager MySQL](https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html): the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the [attack surface](https://en.wikipedia.org/wiki/Attack_surface).
+As data can be lost or corrupted upon downloading, many platforms now use [checksums](https://www.wikiwand.com/en/Checksum) to verify the integrity of the software you downloaded before installing it.
+This is an excellent practice that can also be performed "by hand", as explained for instance for [the database manager MySQL](https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html): the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the [attack surface](https://www.wikiwand.com/en/Attack_surface).
 
 # Executing Code Found on-line
 
 As you progress in this class, you will be asked more and more to download and execute code hosted [in our repository](https://github.com/csci-1301/csci-1301.github.io/).
 How can you tell that you can trust this code?
 
-We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using [two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) where every action is tracked using [versioning](https://en.wikipedia.org/wiki/Software_versioning).
+We have not implemented checksum-matching (yet!), but you can trust this code as it was coded by your instructors, and hosted on a platform using [two-factor authentication](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication) where every action is tracked using [versioning](https://www.wikiwand.com/en/Software_versioning).
 Concretely, this means that only somebody who manages to steal your instructor's credentials and their phone, and thwart all the other instructors' vigilance, would be able to host malicious code on our platform: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.
 
 As often, security is not absolute, but aims at providing reasonable confidence.
@@ -26,10 +26,10 @@ Executing "blindly" code found on-line, on the other hand, gives you a good chan
 
 # Accessing an IDE
 
-An [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment), for "Integrated development environment", is the software or service you will be using to write, compile, execute and debug your code.
+An [IDE](https://www.wikiwand.com/en/Integrated_development_environment), for "Integrated development environment", is the software or service you will be using to write, compile, execute and debug your code.
 There are many available IDEs, and some can accommodate multiple different programming languages.
 
-For C#, [there are many different possibilities](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments#C%23): some are cross-platforms (meaning you can use them on macOS, Windows or Linux), some are provided free of charge, some have not been updated in a long time.
+For C#, [there are many different possibilities](https://www.wikiwand.com/en/Comparison_of_integrated_development_environments#C%23): some are cross-platforms (meaning you can use them on macOS, Windows or Linux), some are provided free of charge, some have not been updated in a long time.
 Three natural choices are [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/).
 While the last two are accessible on every operating systems, Visual Studio is available only for Windows, and in a slightly different version for macOS.
 
@@ -135,9 +135,9 @@ Confirm the change by clicking OK and now you will be able to compile, build, an
 
 ### Installing Anything Anywhere
 
-If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager to execute a linux-based distribution or a Windows image on top of your operating system.
+If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://www.wikiwand.com/en/Virtual_machine) manager to execute a linux-based distribution or a Windows image on top of your operating system.
 
-For this, and regardless of your current operating system, you will need a [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) manager.
+For this, and regardless of your current operating system, you will need a [Virtual Machine](https://www.wikiwand.com/en/Virtual_machine) manager.
 
 #. You can use
     #. "VMware Fusion 11.x Pro" (only for MacOS, available on [OnTheHub](https://e5.onthehub.com/WebStore/OfferingDetails.aspx?o=cff1cf98-42ce-e811-810b-000d3af41938&pmv=00000000-0000-0000-0000-000000000000&ws=2020165a-723a-de11-b696-0030485a8df0&vsro=8)),

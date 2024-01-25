@@ -51,7 +51,7 @@
     - Better programming language theory leads to new programming techniques
     - Improved programming language implementations
     - New languages are created, old ones updated
-- There are [hundreds of programming languages](https://en.wikipedia.org/wiki/List_of_programming_languages), why?
+- There are [hundreds of programming languages](https://www.wikiwand.com/en/List_of_programming_languages), why?
     - Different tools for different jobs
         - Some languages are better suited for certain jobs
         - For example, Python is best for scripting, Javascript is best for web pages, MySQL is best for databases, etc.
@@ -176,9 +176,9 @@ Interperted languages have
 
 Programers can either use a collection of tools to write, compile, debug and execute a program, or use an "all-in-one" solution called an Integrated Development Environment (IDE).
 
-- The ["Unix philosophy"](https://en.wikipedia.org/wiki/Unix_philosophy) states that a program should do only one task, and do it properly. For programmers, this means that
+- The ["Unix philosophy"](https://www.wikiwand.com/en/Unix_philosophy) states that a program should do only one task, and do it properly. For programmers, this means that
     - One program will be needed to edit the source code, a text editor (it can be Geany, notepad, kwrite, emacs, sublime text, vi, etc.),
-    - One program will be needed to compile the source code, a compiler (for C#, it will be either [mono](https://en.wikipedia.org/wiki/Mono_(software)) or [Roslyn](https://en.wikipedia.org/wiki/Roslyn_(compiler)),
+    - One program will be needed to compile the source code, a compiler (for C#, it will be either [mono](https://www.wikiwand.com/en/Mono_(software)) or [Roslyn](https://www.wikiwand.com/en/Roslyn_(compiler)),
     - Other programs may be needed to debug, execute, or organize larger projects, such as makefile or [MKBundle](https://www.mono-project.com/docs/tools+libraries/tools/mkbundle/).
 
 IDE "bundle" all of those functionality into a single interface, to ease the workflow of the programmer.

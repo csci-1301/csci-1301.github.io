@@ -7,7 +7,7 @@ title: Exercises (with solutions)
 ## Part I --- Questions
 
 #. List five pieces of software, and three hardware components of a computer.
-    <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer. Examples of hardware components are random access memory (RAM), central processing unit (CPU), keyboard, mouse, graphical processing unit (GPU). A comprehensive list can be found at <https://en.wikipedia.org/wiki/Computer_hardware>.</details>
+    <details><summary>Solution</summary>Accept operating system as a software, cellphone is not a component of a computer. Examples of hardware components are random access memory (RAM), central processing unit (CPU), keyboard, mouse, graphical processing unit (GPU). A comprehensive list can be found at <https://www.wikiwand.com/en/Computer_hardware>.</details>
 
 #. List four programming languages. 
     <details><summary>Solution</summary>C, C++, C#, Java, JavaScript, Python, Haskell, Swift, RWBY, etc (Note: HTML is a "Markup Language" and SQL is a "Query Language", which would technically be incorrect)</details>

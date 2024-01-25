@@ -29,7 +29,7 @@ The main purpose of this first lab is to help you navigate those resources.
 We want this reading to be proactive, so we will include questions and actions like the ones below every now and then to help you be engaged with the material.
 
 Question:
-~  We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://en.wikipedia.org/wiki/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started!
+~  We used five different file formats in the text above you may not be familiar with. Along with _markdown_ (`md`), that's six; can you make sure you know them all and know their purposes? Looking them up [on wikipedia](https://www.wikiwand.com/en/List_of_file_formats) and reading the first paragraph of each of their pages can be a good way of getting started!
 
 Action:
 ~ On the `html` version of our documents (so, on the website), you will always find [in the footer](#footer) links to the `pdf`, `odt`, and `docx` versions of the document you are currently reading.
@@ -37,7 +37,7 @@ Download them by clicking on the "↓ pdf", "↓ odt", and "↓ docx" links, the
 You should realize that their content is identical to the page you are currently reading!^[Even this sentence will be displayed, even if it makes no sense to discuss the links in the footer of a `pdf` file, which does not have them!]
 
 You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links in the footer; the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights, and tools used to construct this website.
-Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate Course Assistant (UCA)](https://csci-1301.github.io/uca.html), are interested in contributing to open-source projects, or simply wonder how the magic is done!
+Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](https://csci-1301.github.io/ca.html), are interested in contributing to open-source projects, or simply wonder how the magic is done!
 
 # What to Read First
 
@@ -64,7 +64,7 @@ Questions:
 ~ Answer the following: 
 
     - What exactly is implied by "free" as in "free coffee" _and_ as in "free speech"?
-    - Try to understand what "[free software](https://en.wikipedia.org/wiki/Free_software)" means; is it like coffee (some people say "beer") or like speech?
+    - Try to understand what "[free software](https://www.wikiwand.com/en/Free_software)" means; is it like coffee (some people say "beer") or like speech?
     - Are the resources presented here free as in coffee, as in speech, or both?
     - And what about your computer's operating system? 
     - Your media player? 
@@ -81,7 +81,7 @@ Questions:
     This means that a free software can come at a cost (it is not necessarily "gratis"), but once it is paid for, you can use it in any way you like: edit it, improve it, copy it, and in some cases redistribute it.
 - The resources presented here are free as in coffee _and_ speech.
 - If your computer is running [Windows](https://www.microsoft.com/en-us/licensing/product-licensing/windows) or [macOS](https://www.apple.com/legal/sla/), then it is mostly proprietary (read: not free).
-[Android](https://en.wikipedia.org/wiki/Android_(operating_system)#Licensing) is mostly free, and [Linux](https://en.wikipedia.org/wiki/Linux#Development) distributions are in general completely free.
+[Android](https://www.wikiwand.com/en/Android_(operating_system)#Licensing) is mostly free, and [Linux](https://www.wikiwand.com/en/Linux#Development) distributions are in general completely free.
 - For your media player, you should check yourself! One excellent media player released under a free license is [VLC](http://www.videolan.org/)!
 </details>
 

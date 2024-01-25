@@ -11,7 +11,7 @@ This lab serves multiple goals:
 
 # Introduction
 
-Quoting [wikipedia](https://en.wikipedia.org/wiki/Unified_Modeling_Language),
+Quoting [wikipedia](https://www.wikiwand.com/en/Unified_Modeling_Language),
 
 > The Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system.
 
@@ -98,6 +98,6 @@ You can check your answer by referring back to the `Rectangle.cs` file from the 
 
 The following are independent tasks that you can perform to broaden your understanding of UML modeling concepts:
 
-#. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
-#. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://en.wikipedia.org/wiki/Class_diagram> for more examples of class diagrams and their uses.
-#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://en.wikipedia.org/wiki/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".s
+#. Class diagrams are one of many kinds of UML diagrams. Have a look at <https://www.wikiwand.com/en/Unified_Modeling_Language#Diagrams>. In which category are class diagrams: behavior or structure?
+#. Besides modeling attributes and methods, class diagrams can also represent relationships between classes. Have a look at <https://www.wikiwand.com/en/Class_diagram> for more examples of class diagrams and their uses.
+#. An Activity Diagram is another type of UML diagram for representing program actions. You will occasionally see activity diagrams in the lecture notes. Have a look at <https://www.wikiwand.com/en/Activity_diagram> and try to understand the example: "Activity diagram for a guided brainstorming process".s

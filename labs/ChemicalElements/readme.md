@@ -10,8 +10,8 @@ This lab serves multiple goals:
 
 # A Class for Chemical Elements
 
-In this lab, you will study and modify a class for [chemical elements](https://en.wikipedia.org/wiki/Chemical_element).
-Consult <https://en.wikipedia.org/wiki/List_of_chemical_elements#List> for a complete list of all elements.
+In this lab, you will study and modify a class for [chemical elements](https://www.wikiwand.com/en/Chemical_element).
+Consult <https://www.wikiwand.com/en/List_of_chemical_elements#List> for a complete list of all elements.
 
 ## Reading
 
