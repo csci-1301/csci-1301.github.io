@@ -153,7 +153,7 @@ compiled, and executed.
 ## Part II -- Problems
 
 #. There are 4 errors in the following code that will prevent it from compiling. Can you spot them all?
-
+    
     ```
     // My first attempt.
     using System
@@ -164,7 +164,6 @@ compiled, and executed.
             ConsoleWriteLine("Welcome \n to the lab!");
         }
     ```
-    
     <details><summary>Solution</summary>
     #.  Missing `;` after `using System`
     #.  superfluous `;` after `static void Main()`
@@ -180,11 +179,9 @@ compiled, and executed.
     <details><summary>Solution</summary>`\`, to print "special characters", like new line, tabulation, quotations mark, etc.</details>
 
 #. Write a statement that *initializes* a variable named `myHeightInMeters` to your height in meters. What should be the datatype of `myHeightInMeters`?
-    <details><summary>Solution</summary>
-    ```
+    <details><summary>Solution</summary>```
     float myHeightInMeters = 1.68f
-    ```
-    The datatype should be any floating-point datatype.
+    ``` The datatype should be any floating-point datatype.
     </details>
 
 #. Suppose you replace every `*` in your program with the `!` symbol. Are you completely sure that your program would still compile? Why or why not?
@@ -197,7 +194,6 @@ compiled, and executed.
     b = a * 2 + 1;
     a -= 1;
     ```
-
     <details><summary>Solution</summary>`a` is `1`, `b` is `5`.</details>
 
 #. Give the values of `a` and `b` after the following four instructions have been executed.
@@ -264,7 +260,7 @@ value of `b` after the second statement is executed.
     Console.WriteLine("Please enter your age:");
     age = Console.ReadLine();
     ```
-    <details><summary>Solution</summary>Conversion of `string` to `int`. At compilation time.</details>
+    <details><summary>Solution</summary>The problem is that we are trying to store a `string` value (what the `Console.ReadLine()` will return) into an `int` variable. This will trigger an error at compilation time.</details>
 
 #. Will those statements, if placed in a proper `Main` method, compile? Could this program crash at execution time? Justify your answer.
     ```
@@ -272,7 +268,7 @@ value of `b` after the second statement is executed.
     Console.WriteLine("Please enter your age:");
     myAge = int.Parse(Console.ReadLine());
     ```
-    <details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value.</details>
+    <details><summary>Solution</summary>The code will compile, but can crash at execution time if the end user inputs a non-integer value (for instance, "This is a test").</details>
 
 #. Write a series of statements that: a) Declare an `int` variable named `userAge`, b) Display on the screen a message asking the user to enter his or her age, c) Read the value entered by the user and store it in the `userAge` variable. You can add statement(s) performing intermediate steps if you want.
     <details><summary>Solution</summary>
@@ -400,6 +396,11 @@ Make sure you feel ready before starting them, try to do them with limited time 
         ```
         Console.WriteLine($"8 - 39 * 1 / 12 + 5 is {8 - 39 * 1 / 12 + 5}");
         ```
+        
+    <details><summary>Solution</summary>
+    No solution is offered for this problem: please, try to process the information and to figure out the answers on your own.
+    As suggested, using your IDE will be an excellent way of making sure that your calculations were correct.
+    </details>
 
 
 #. 
@@ -408,6 +409,26 @@ Make sure you feel ready before starting them, try to do them with limited time 
     Write the correct initialization of that variable and a statement that displays its value.
 
     Place a delimited comment with a your name and the time at which you wrote the program at the top of the program.
+    
+    <details><summary>Solution</summary>```
+    /* This is my code, by Clément Aubert, 31st of January 2024, around 13:15.*/
+    using System;
+
+    public class Program
+    {
+    public static void Main(string[] args)
+    {
+
+        int persons = 5;
+        int bottles = 3;
+        double literPerPerson = persons / (double)bottles;
+        Console.WriteLine(bottles +" bottles split equitably between "
+                        + persons +" persons gives " 
+                        + literPerPerson + " liter / person.");
+        }
+    }
+    ```
+    </details>    
 
 
 #. 
