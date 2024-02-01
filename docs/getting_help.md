@@ -61,7 +61,7 @@ Jason Weeks:
     - <jaweeks@augusta.edu>
     - Instructor for CSCI 1301 Labs
     - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
-    - I'm a first year Master's student, graduating with a Bachelor's in CS and a minor in Math, and I was UCA for over two years. I can't wait to help out another semester of 1301 students learn to code!
+    - I'm a first year Master's student, holding a Bachelor's in CS and a minor in Math, and I've been working as a course assistant for over three years. I can't wait to help out another semester of 1301 students learn to code!
 
 <!--
 ## Undergraduate Course Assistants
@@ -187,12 +187,12 @@ Labs meet as follows:
 
 | Section | Day | Hours | Room | Instructor / GCA | UCA
 ---- | ----- |  ------ | ----------| -------------| -------------
-E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony Gibson, Jason Gorlich and Cole Castranova
-FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen and Ashlyn Snyder
-D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Nate Schwartz and Xavier Mitchell
+E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony Gibson, Jason Gorlich and Austin Coleman
+FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Ashlyn Snyder and Krystal Nguyen
+D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Xavier Mitchell, Nate Schwartz, Marshall Bray
 B  | Thursday | 1:00--2:50 pm  | UH 124  | Jason Weeks | Daelyn Doughty, Thomas Folger and Ally Price
-F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Krystal Nguyen, Ashlyn Snyder and Austin Coleman
-A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Xavier Mitchell and Hiren Patel
+F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Ashlyn Snyder and Krystal Nguyen
+A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Hiren Patel, Xavier Mitchell, and Cody Bradley
 C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | Elijah Gibson, JoVi Douglas and William Burnley
 
 ## Commenting Using a Github Account
