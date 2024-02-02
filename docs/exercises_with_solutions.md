@@ -404,7 +404,7 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 
 #. 
-    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value 3, and a `double` variable named `literPerBottlle` with the value 1.5.
+    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value 3, and a `double` variable named `literPerBottle` with the value 1.5.
     What should be the type of the `literPerPerson` variable to be able to be assigned the number of liters every person is going to get, if split equitably? 
     Write the correct initialization of that variable and a statement that displays its value.
 
@@ -421,8 +421,10 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
         int persons = 5;
         int bottles = 3;
-        double literPerPerson = persons / (double)bottles;
-        Console.WriteLine(bottles +" bottles split equitably between "
+        double literPerBottle = 1.5;
+        double literPerPerson = (bottles * literPerBottle) / persons;
+        // Note that since literPerBottle is a double, we are using double product and division.
+        Console.WriteLine(bottles +" bottles of " + literPerBottle + " liter,  split equitably between "
                         + persons +" persons gives " 
                         + literPerPerson + " liter / person.");
         }
