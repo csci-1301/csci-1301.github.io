@@ -8,6 +8,7 @@ This directory contains all lab exercises. At build time these labs are compiled
 Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add a new lab.
 -->
 
+<!-- This table ends up causing more confusion than it's worth. Recommend to make internal for instructors' eyes only
 # Suggested Order
 
 |  Week | Lab Topic      | 
@@ -27,6 +28,7 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 |  13   | [First Arrays Manipulations](https://csci-1301.github.io/labs/ArrayBasics/), [For Loops](https://csci-1301.github.io/labs/For/)  | 
 |  14   | [Using static keyword](https://csci-1301.github.io/labs/Static/)  | 
 |  15   | [Chemical Elements](https://csci-1301.github.io/labs/ChemicalElements/), [GradeCalculator](https://csci-1301.github.io/labs/GradeCalculator/), [Random](https://csci-1301.github.io/labs/Random/)
+-->
 
 # Prerequisites and related lectures
 
