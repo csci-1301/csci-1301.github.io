@@ -86,4 +86,16 @@ More advanced shortcuts may be available to your particular IDE:
 | MacOS | <kbd>⌘</kbd> + <kbd>z</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
  
- 
+## Comment Code Selection
+| OS | Keys |
+| :--- | :--- |
+| Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
+
+## Uncomment Code Selection
+| OS | Keys |
+| :--- | :--- |
+| Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
+| MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
+| Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
