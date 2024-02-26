@@ -1248,7 +1248,7 @@ There is only one problem this time, and it is harder than what you'll be asked 
     }
     else 
     {
-        Console.WriteLine(("Hello");
+        Console.WriteLine("Hello");
     }
     ```
     </details>
