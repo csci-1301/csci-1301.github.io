@@ -4,7 +4,7 @@
 
 - In lab, you were asked to execute a program like this:
 
-    ```
+    ``` 
     !include code/rectangleInitialValues.cs
     ```
 

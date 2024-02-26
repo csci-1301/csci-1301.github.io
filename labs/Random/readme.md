@@ -83,7 +83,7 @@ Using the default `Random` class is not recommended for applications that need c
 When an application needs cryptographically secure random numbers, RandomNumberGenerator class should be used instead. It works as follows:
 
 ```
-!include code/secure_random.cs
+!include "code/secure_random.cs"
 ```
 
 You can learn more about secure random numbers by reading through:
