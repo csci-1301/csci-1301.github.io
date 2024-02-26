@@ -54,7 +54,7 @@ Here's a simple "hello world" program in the C# language:
 <!-- TODO: title this code block -->
 
 ```
-!include code/hello_world.cs
+!include code/helloWorld.cs
 ```
 
 Features of this program:
@@ -177,7 +177,7 @@ Note that some of those conventions are actually rules in different programming 
     - This means a second `Console.WriteLine` will display its text on the next line of the terminal. For example, this program:
 
         ```
-        !include code/writeline_two_lines.cs
+        !include code/writelineTwoLines.cs
         ```
 
       will display the following output in the terminal:
@@ -202,7 +202,7 @@ Note that some of those conventions are actually rules in different programming 
     - Even though two `Console.Write` calls are two statements, and appear on two lines, they will result in the text being printed on just one line. For example, this program:
 
         ```
-        !include code/write_two_lines.cs
+        !include code/writeTwoLines.cs
         ```
 
       will display the following output in the terminal:
@@ -221,7 +221,7 @@ Note that some of those conventions are actually rules in different programming 
     - This program:
 
         ```
-        !include code/write_and_writeline.cs
+        !include code/writeAndWriteline.cs
         ```
 
       will display the following output in the terminal:
@@ -242,7 +242,7 @@ Note that some of those conventions are actually rules in different programming 
     - This program will produce the same output as our two-line "Hello World" example, with each word on its own line:
 
         ```
-        !include code/write_with_newline.cs
+        !include code/writeWithNewline.cs
         ```
 
 - Escape sequences in detail
@@ -272,7 +272,7 @@ Note that some of those conventions are actually rules in different programming 
         - This program will display the sentence including the quotation marks:
 
             ```
-            !include code/escape_quotes.cs
+            !include code/escapeQuotes.cs
             ```
 
     - Note that all escape sequences begin with a backslash character (`\`), called the "escape character"

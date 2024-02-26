@@ -91,7 +91,7 @@ Let's look at each part of this code in order.
 - Here is a program that uses our `Rectangle` class:
 
 ```
-!include code/rectangle_main.cs
+!include code/rectangleMain.cs
 ```
 
 - Instantiating an object
@@ -123,7 +123,7 @@ Let's look at each part of this code in order.
 - Consider what happens when you have multiple objects in the same program, like this:
 
     ```
-    !include code/multiple_rectangles.cs
+    !include code/multipleRectangles.cs
     ```
 
     - First, we declare a variable of type `Rectangle`
@@ -555,7 +555,8 @@ Let's look at each part of this code in order.
     - Consider this code:
 
         ```
-        !include code/reference_assignment.cs
+        !include code/referenceAssignment.cs
+
         ```
 
     - The output is:

@@ -11,7 +11,7 @@
     - Example usage:
 
         ```
-        !include code/personalized_welcome.cs
+        !include code/personalizedWelcome.cs
         ```
 
       This program first declares a `string` variable named `firstName`. On the second line, it uses `Console.WriteLine` to display a message (instructions for the user). On the third line, it calls the `Console.ReadLine()` method, and assigns its return value (result) to the `firstName` variable. This means the program waits for the user to type some text and press "Enter", and then stores that text in `firstName`. Finally, the program uses string interpolation in `Console.WriteLine` to display a message including the contents of the `firstName` variable.
