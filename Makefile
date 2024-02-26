@@ -209,6 +209,14 @@ $(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img build/vid
 # to ensure that the build directory has been created before creating files in it.
 # It also copy the favicon and css files to the right place.
 
+$(BUILD_DIR)style.css : $(WEBPATH)style.css
+	rsync -av $(WEBPATH)style.css $(BUILD_DIR)
+
+$(BUILD_DIR)fonts/ :
+	mkdir -p $(BUILD_DIR)fonts
+	rsync -av templates/fonts/ $(BUILD_DIR)fonts
+
+
 # -------------------------------
 ## Book
 # -------------------------------

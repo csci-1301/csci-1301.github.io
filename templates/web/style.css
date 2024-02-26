@@ -50,6 +50,77 @@
   }
 }
 
+/* Fonts */
+/* URWGothic */
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-BookDemi.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-BookOblique.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-DemiOblique.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+/* Hack */
+/*!
+ *  Hack typeface https://github.com/source-foundry/Hack
+ *  License: https://github.com/source-foundry/Hack/blob/master/LICENSE.md
+ */
+/* FONT PATHS
+ * -------------------------- */
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-regular-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-regular-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-bold-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-bold-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-italic-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-italic-webfont.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-bolditalic-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-bolditalic-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
+
  html {
     font-size: 100%;
     overflow-y: scroll;
@@ -60,7 +131,7 @@
   
   body {
     color: var(--color-text);
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    font-family: 'URWGothic', sans-serif;
     font-size:  1em;
     line-height: 1.7;
     padding: 1em;
@@ -72,7 +143,7 @@
   }
   pre, pre > code, samp,
   kbd, *:not(pre) > code{
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo, monospace, monospace;
+    font-family: Hack, SFMono-Regular,Consolas,Liberation Mono,Menlo, monospace, monospace;
   }
 
   .page-header{

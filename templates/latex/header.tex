@@ -47,3 +47,24 @@
 % https://github.com/jgm/pandoc/issues/4302#issuecomment-360669013
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Fonts                                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\usepackage{fontspec} 
+\setmainfont{URWGothic}[
+	Path = templates/fonts/urw_gothic/ ,
+	UprightFont = *-Book,
+	BoldFont = *-Demi , % Or *-Bold A matter of taste, probably
+	ItalicFont = *-BookOblique ,
+	BoldItalicFont = *-DemiOblique % Or *-BoldItalic A matter of taste, probably
+]
+\setmonofont{Hack}[
+	Path = templates/fonts/hack/,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic
+]
+% https://fontesk.com/gothic-typeface/
+% https://dejavu-fonts.github.io/

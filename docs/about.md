@@ -44,6 +44,11 @@ This website uses different technologies.
 
 More details on the tools we use can be found in [our user guide](user_guide.html#repository-maintenance).
 
+## Fonts
+
+We use the [URW Gothic](https://fontesk.com/gothic-typeface/) and [Hack](https://sourcefoundry.org/hack/) (inspired by the [DejaVu](https://sourcefoundry.org/hack/) font) fonts.
+Those fonts have been specially selected for their legibility and [lower impact on environment](https://en.wikipedia.org/wiki/Century_Gothic#Printer_ink_usage).
+
 ## Services
 
 - The source code and the website are graciously hosted and built by [github](https://github.com/).

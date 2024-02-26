@@ -107,7 +107,7 @@ compiled, and executed.
 ## Part II -- Problems
 
 #. There are 4 errors in the following code that will prevent it from compiling. Can you spot them all?
-
+    
     ```
     // My first attempt.
     using System
@@ -118,7 +118,6 @@ compiled, and executed.
             ConsoleWriteLine("Welcome \n to the lab!");
         }
     ```
-    
 
 # Homework #2
 
@@ -137,7 +136,6 @@ compiled, and executed.
     b = a * 2 + 1;
     a -= 1;
     ```
-
 
 #. Give the values of `a` and `b` after the following four instructions have been executed.
     ```
@@ -310,14 +308,16 @@ Make sure you feel ready before starting them, try to do them with limited time 
         ```
         Console.WriteLine($"8 - 39 * 1 / 12 + 5 is {8 - 39 * 1 / 12 + 5}");
         ```
+        
 
 
 #. 
-    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value 3, and a `double` variable named `literPerBottlle` with the value 1.5.
+    Write down, on a piece of paper, a fully compilable program that initializes an `int` variable named `persons` with the value 5, an `int` variable named `bottles` with the value 3, and a `double` variable named `literPerBottle` with the value 1.5.
     What should be the type of the `literPerPerson` variable to be able to be assigned the number of liters every person is going to get, if split equitably? 
     Write the correct initialization of that variable and a statement that displays its value.
 
     Place a delimited comment with a your name and the time at which you wrote the program at the top of the program.
+    
 
 
 #. 
