@@ -1398,11 +1398,13 @@ This time, the two exercises **do not** require a computer, and are here to craf
 #. Write a program that asks the user to write a country name and stores the user's input into a string variable. Then, compare that string with `"france"`: if it is equal, then display at the screen  `"Bienvenue en France !"`. Then, compare that string with `"usa"`: if it is equal, then display at the screen  `"Welcome to the US!"`. If the string is different from both `"france"` and `"usa"`, then display at the screen  `"Welcome to"` followed by the name of the country the user typed in. Can you think of two ways to implement this program, one using `if-else-if` statements, the other using `switch`?
 
     <details><summary>Solution</summary>
-        
+
+    A possible solution using `switch` is:
+    
     ```
-    Console.WriteLine("Country?");
-    string c = Console.ReadLine();
-    switch (c)
+    Console.WriteLine("Please, enter a country name?");
+    string country_answered = Console.ReadLine();
+    switch (country_answered)
     {
         case "usa":
             Console.WriteLine("Welcome to the US!");
@@ -1411,7 +1413,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
             Console.Write("Bienvenue en France!");
         break;
         default:
-            Console.WriteLine($"Welcome to {c}");
+            Console.WriteLine($"Welcome to {country_answered}");
         break;
     }
     ```
@@ -1456,6 +1458,7 @@ This time, the two exercises **do not** require a computer, and are here to craf
     char firstTime = char.Parse(Console.ReadLine());
     Console.WriteLine("Enter a number of copies");
     int copies = int.Parse(Console.ReadLine());
+    // The following statement is explained below.
     decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;
     if(firstTime == 'y')
     {
@@ -1476,6 +1479,19 @@ This time, the two exercises **do not** require a computer, and are here to craf
     else
     {
         Console.WriteLine($"Your total is {totalCost:C}.");
+    }
+    ```
+    
+    The `decimal totalCost = sizeChoice == 'c' ? copies * 0.2m : copies * 0.25m;` statement uses [the conditional operator](https://csci-1301.github.io/book.html#the-conditional-operator).
+    This particular statement is a shorter way of writing
+    
+    ```
+    decimal totalCost;
+    if(sizeChoice == 'c'){
+        totalCost = copies  * 0.2m;
+    }
+    else{
+        totalCost = copies * 0.25m;
     }
     ```
     </details>
