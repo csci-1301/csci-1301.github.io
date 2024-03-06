@@ -15,7 +15,7 @@ Second hand and custom built are fine, but you will in all likelihood needs a po
 Desktop, Laptop, or something else?:
 ~ 
     A laptop is generally recommended (to take notes in class, make presentations, work on projects at School, …) but technically possessing only a desktop _should_ be ok (and will be more comfortable to use, in all likeliness).
-    Tablets and other "small" handled devices (such as [Netbooks](https://en.wikipedia.org/wiki/Netbook), [Chromebooks](https://en.wikipedia.org/wiki/Chromebook) or [Mini PCs](https://en.wikipedia.org/wiki/Mini_PC)) are **not** recommended.
+    Tablets and other "small" handled devices (such as [Netbooks](https://en.wikipedia.org/wiki/Netbook), [Chromebooks](https://en.wikipedia.org/wiki/Chromebook) or [Mini PCs](https://en.wikipedia.org/wiki/Mini_PC)) are **not** recommended and will in all likelihood prove challenging to use for some classes.
 
 Specifications:
 ~ 
@@ -65,16 +65,19 @@ Expanded:
 ## Virtual Machines
 
 Virtual machines allow you to simulate (almost) any operating system using (almost) any operating system: this means that, for instance, you can load the Windows 11 operating system from your computer running Debian 12.5, or the Debian 12.5 operating system from macOS 14.
-**Note that CSCI 4532 - Hardware and Embedded Systems and CSCI 4531 - Malware Analysis and Reverse Engineering _require_ you to run virtual machines. If you are planning on taking one of those classes, make sure your computer can run virtual machines!**
 
-You can find [on this page](software_install.html#installing-anything-anywhere) some indications on how to run a virtual machine on your computer, and you can check on-line the recommended specifications for [VirtualBox](https://www.virtualbox.org/wiki/End-user_documentation), [kvm](https://www.linux-kvm.org/page/FAQ#What_do_I_need_to_use_KVM?), [vmware](https://www.vmware.com/products/workstation-player.html)
+Note that CSCI 4532 - Hardware and Embedded Systems and CSCI 4531 - Malware Analysis and Reverse Engineering _require_ you to run virtual machines. If you are planning on taking one of those classes, make sure your computer can run virtual machines!
+
+You can find [on this page](software_install.html#installing-anything-anywhere) some indications on how to run a virtual machine on your computer, and you can check on-line the recommended specifications for [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements), [VirtualBox](https://www.virtualbox.org/wiki/End-user_documentation), [kvm](https://www.linux-kvm.org/page/FAQ#What_do_I_need_to_use_KVM?), [vmware](https://www.vmware.com/products/workstation-player.html).
+Note that, as a student, you can obtain [a free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software).
+
 
 # Where to Buy?
 
 That is really up to you, but remember that, as a student (or employee), you are allowed to 
 
 - [Some discounts](https://my.augusta.edu/discounts/electronics.php),
-- [A free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software),
+- [A free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software).
 
 Second-hand computers or even custom-built computers are probably fine, but requires more skills (such as how to factory-reset a computer and / or how to (re)install an operating system) and inspections on your end.
 
