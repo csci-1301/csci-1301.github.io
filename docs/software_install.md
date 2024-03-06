@@ -139,10 +139,10 @@ If the IDE you would like to adopt is not available for your operating system, y
 
 For this, and regardless of your current operating system, you will need a [Virtual Machine](https://www.wikiwand.com/en/Virtual_machine) manager.
 
-#. You can use
-    #. "VMware Fusion 11.x Pro" (only for MacOS, available on [OnTheHub](https://e5.onthehub.com/WebStore/OfferingDetails.aspx?o=cff1cf98-42ce-e811-810b-000d3af41938&pmv=00000000-0000-0000-0000-000000000000&ws=2020165a-723a-de11-b696-0030485a8df0&vsro=8)),
-    #. [Virtual Box](https://www.virtualbox.org/) (for Linux and Mac),
-    #. [Virtual Machine Manager](https://virt-manager.org/) (for Linux).
+#. There are many (free) options to chose from, let us mention
+    #. [Virtual Box](https://www.virtualbox.org/) (for Windows, Linux and Mac),
+    #. [QEMU](https://www.qemu.org) (for Windows, Linux and Mac),
+    #. [Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) (for Windows),
 #. Download a version of "Microsoft Operating Systems" from [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching), or a linux-based distribution (typically, [ubuntu](https://ubuntu.com/appliance/vm) has a good reputation of being accessible and user-friendly).
 #. Install and execute your version of Windows or Linux from your virtual machine, and follow the corresponding instructions to install the IDE you are interested in.
 
