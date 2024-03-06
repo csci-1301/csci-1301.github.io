@@ -59,11 +59,11 @@ Without Solution | With Solution
 
 ### Programming and Computer Usage
 
-- [Computer Requirements](computer_requirements.html) - what are the recommended specifications for your computer
-- [Installing Software](software_install.html) - guide on how to install various IDE / software
-- [How to (Un)Zip Archives](zip_guide.html) - a short guide on how to zip (compress) or unzip (extract) .zip archives
-- [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of shortcuts you will likely use often
-- [Datatypes in C#](datatypes_in_csharp.html) - a brief summary of the datatypes in C# and of their operations
+- [Computer Requirements](computer_requirements.html) - the recommended specifications for your computer
+- [Installing Software](software_install.html) - how to install various IDE / software
+- [How to (Un)Zip Archives](zip_guide.html) - how to zip (compress) or unzip (extract) .zip archives
+- [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of most useful shortcuts
+- [Datatypes in C#](datatypes_in_csharp.html) - summary of the datatypes in C# and their operations
 
 ### Useful Documentation
 
