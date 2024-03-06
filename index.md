@@ -59,6 +59,7 @@ Without Solution | With Solution
 
 ### Programming and Computer Usage
 
+- [Computer Requirements](computer_requirements.html) - what are the recommended specifications for your computer
 - [Installing Software](software_install.html) - guide on how to install various IDE / software
 - [How to (Un)Zip Archives](zip_guide.html) - a short guide on how to zip (compress) or unzip (extract) .zip archives
 - [Keyboard Shortcuts Cheat Sheet](shortcuts.html) - list of shortcuts you will likely use often
