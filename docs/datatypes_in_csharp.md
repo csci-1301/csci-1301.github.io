@@ -65,6 +65,11 @@ Hexadecimal and unicode
 
 # Compatibility
 
+This table is to be read as
+
+> $✓$ means that those values or variables from the datatypes in the row and column can be "operated together" (meaning, you can for instance multiply them),
+> ✘ means that those values or variables from the datatypes in the row and column can*not* be "operated together" (meaning, you can*not* for instance multiply them).
+
 | | **Integer Literal** | **Float Literal** | **Double Literal** | **Decimal Literal** | 
 | ---: | :---: |  :---: |  :---: |  :---: | 
 | **`int`**    | $✓$ | ✘ | ✘ | ✘ |
@@ -84,6 +89,10 @@ Hexadecimal and unicode
 | `int` | `decimal` | `decimal` |
 | `double` | `decimal` | `decimal` |
 -->
+
+This table is to be read as
+
+> Values or variables from the datatypes in the row and column can be "operated together" and will produce the datatype indicated in the cell, or cannot be "operated together" if the value in the cell is "illegal".s
 
 |           | **`int`** | **`float`** | **`double`** | **`decimal`** |
 | ---: |  :---: |  :---: | :---: |  :---: | 
