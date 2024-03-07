@@ -12,7 +12,7 @@ Second hand and custom built are fine, but you will in all likelihood needs a po
 
 # In Terms of Hardware
 
-Desktop, Laptop, or something else?:
+Desktop, Laptop, or something else?
 ~ 
     A laptop is generally recommended (to take notes in class, make presentations, work on projects at School, …) but technically possessing only a desktop _should_ be ok (and will be more comfortable to use, in all likeliness).
     Tablets and other "small" handled devices (such as [Netbooks](https://en.wikipedia.org/wiki/Netbook), [Chromebooks](https://en.wikipedia.org/wiki/Chromebook) or [Mini PCs](https://en.wikipedia.org/wiki/Mini_PC)) are **not** recommended and will in all likelihood prove challenging to use for some classes.
