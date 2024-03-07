@@ -24,7 +24,7 @@ Specifications:
     --- | --- | --- | --- |
     [CPU](https://en.wikipedia.org/wiki/Processor_(computing)) | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz | 6 cores @ 4.4 GHz |
     [RAM](https://en.wikipedia.org/wiki/Random-access_memory) | 8GB | 16GB | 32GB | 
-    [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TO of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
+    [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
     
     [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit) and other special equipment are not required, but recent USB-C connectors will be useful.
 
@@ -48,7 +48,7 @@ We will briefly consider four "families" of operating systems:
 - [Linux operating systems](https://en.wikipedia.org/wiki/Linux) (Ubuntu, Debian, Gentoo, etc.)
 - Operating systems that uses their web browsers as their principal user interface (essentially, [ChromeOS](https://en.wikipedia.org/wiki/ChromeOS)).
 
-Note that we do not discuss [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) or [iOS](https://en.wikipedia.org/wiki/IOS) since those are not available for _computers_.
+Note we do not discuss [Android](https://en.wikipedia.org/wiki/Android_(operating_system)) or [iOS](https://en.wikipedia.org/wiki/IOS) since they are primarily mobile operating systems, and not easily suited for the development workload in our curriculum.
 
 In short: 
 ~ 
