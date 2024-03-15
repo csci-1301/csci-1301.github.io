@@ -33,7 +33,8 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 # Prerequisites and related lectures
 
 <!-- Add a short description of what each lab contains. Also list prerequisite labs and add a link to related lecture notes. -->
-
+<details><summary>Note: This is not a lab schedule, please refer to your syllabus if you are looking for the class schedule.</summary>
+  
 | Lab title | Prerequisites | Related Lectures |  Description / Topics / Required skills |
 | :--- | :--- | :--- | :--- |
 | [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey, install IDE
@@ -63,6 +64,8 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 | [AdvancedArrays](/labs/AdvancedArrays) | [ArrayBasics](/labs/ArrayBasics), [Static](/labs/Static), [Foreach](/labs/Foreach) | [Arrays](/lectures/140_arrays) | (long!) Implementing array methods to find first/last index, min/max, etc. |
 | [Char](/labs/Char) | [Variables](/labs/Variables), [If](/labs/If) | ? | char ⬄ int; comparing characters, string comparison |
 | [Random](/labs/Random) | [ArrayBasics](/labs/ArrayBasics), [While](/labs/While) | [Random](/lectures/180_random) | Working with Random class |
+
+</details>
 
 # Alphabetically
 
