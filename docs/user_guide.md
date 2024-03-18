@@ -239,7 +239,15 @@ Currently templates directory contains the following:
 
 ## Updating docx template
 
+
+First, output the default template file:
+
+```{bash}
 pandoc -o custom-reference.docx --print-default-data-file reference.docx
+```
+
+Then, <!-- Todo -->
+
 
 
 ## Updating odt template
