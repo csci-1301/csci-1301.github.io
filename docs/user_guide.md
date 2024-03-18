@@ -259,6 +259,7 @@ Then, open `reference.odt`, and, following loosely [this tutorial](https://githu
 - Right-click on "Default Paragraph Style", click on "Modify…", and then select the desired font family for the rest of the text.
 - Then, highlight the A next to ¶.
 - Right-click on "Source_Text", click on "Modify…", and then select the desired font family for source code.
+- File -> Properties -> Font tab, click on "Embed fonts in the document".
 - Save and close the document.
 
 
