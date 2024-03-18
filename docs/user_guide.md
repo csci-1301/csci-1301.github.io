@@ -237,6 +237,31 @@ Currently templates directory contains the following:
 - `templates/labs` - templates used for generating lab resources and associated pages
 - `templates/web` - templates for website and HTML format resources.
 
+## Updating docx template
+
+pandoc -o custom-reference.docx --print-default-data-file reference.docx
+
+
+## Updating odt template
+
+First, output the default template file:
+
+```{bash}
+pandoc -o custom-reference.odt --print-default-data-file reference.odt
+```
+
+Then, open `reference.odt`, and, following loosely [this tutorial](https://github.com/jgm/pandoc/wiki/Defining-custom-DOCX-styles-in-LibreOffice-(and-Word)#libreoffice), do:
+
+- View -> Styles
+- Right-click on "Preformatted Text", click on "Modify…", and then select the desired font family for source code.
+- In the dialog or sidebar which opens make sure the button in the top panel marked with ¶ is highlighted (it is very subtle).
+- In the menu at the bottom of the dialog/sidebar choose Applied Styles. Only "Default Paragraph Style" and "Footer" should appear.
+- Right-click on "Default Paragraph Style", click on "Modify…", and then select the desired font family for the rest of the text.
+- Then, highlight the A next to ¶.
+- Right-click on "Source_Text", click on "Modify…", and then select the desired font family for source code.
+- Save and close the document.
+
+
 # Repository Maintenance
 
 This repository uses following tools and technologies:
