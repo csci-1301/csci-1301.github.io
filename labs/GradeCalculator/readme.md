@@ -37,24 +37,24 @@ For all the questions below, enter
     - "-1" if that evaluation has not happened yet.
 
 What was your grade for Quiz 1 (out of 20)?
-1̲6̲↵
+1͟6͟↵
 What was your grade for Quiz 2 (out of 20)?
-1̲4̲↵
+1͟4͟↵
 What was your grade for Quiz 3 (out of 20)?
--̲1̲↵
+-͟1͟↵
 Your average for the quiz is 75.00 %.
 What was your grade for Project 1 (out of 20)? 
-2̲2̲↵
+2͟2͟↵
 What was your grade for Project 2 (out of 20)? 
--̲1̲↵
+-͟1͟↵
 Your average for the project is 110.00 %.
 What was your grade for Test 1 (out of 100)? 
-6̲6̲↵
+6͟6͟↵
 What was your grade for Test 2 (out of 100)? 
--̲1̲↵
+-͟1͟↵
 Your average for the tests is 66.00 %.
 What was your grade for the final (out of 200)?
--̲1̲↵
+-͟1͟↵
 Your average so far is 74.83 %.
 ```
 

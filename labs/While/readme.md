@@ -117,7 +117,7 @@ Here is an example of the desired execution, where the user input is underlined,
 
 ```text
 Please enter an integer greater than 1:
-8̲↵
+8͟↵
 The sum from 1 to your number is: 36
 ```
 

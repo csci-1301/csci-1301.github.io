@@ -181,10 +181,10 @@ Here is an example of execution, where the user input is underlined, and hitting
 
 ```text
 How many adults?
-2̲↵
+2͟↵
 How many children?
-4̲↵
+4͟↵
 Since you are more than 6, you can buy a group pass for $30. Are you interested (please enter "Y" for "yes" or anything else for "no")?
-Y̲↵
+Y͟↵
 Your total is $30.00 (you saved $0.00).
 ```

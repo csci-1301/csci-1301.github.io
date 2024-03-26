@@ -336,9 +336,9 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
     ```{text}
     Please enter your name, followed by enter.
-    J̲a̲y̲l̲a̲h̲↵̲
+    J͟a͟y͟l͟a͟h͟↵͟
     Please enter your area code, followed by enter.
-    4̲9̲3̲9̲1̲↵̲
+    4͟9͟3͟9͟1͟↵͟
     Your id is Jaylah49391
     Press any key to continue . . .
     ```
@@ -349,8 +349,8 @@ Make sure you feel ready before starting them, try to do them with limited time 
 
 #.  What is "an instance of a class"?
 
-#. Fill in the blanks: "A class asserts that every objects created using it should have ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲
-(i.e., "data") and ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ (i.e., "operations")."
+#. Fill in the blanks: "A class asserts that every objects created using it should have ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟
+(i.e., "data") and ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ ͟ (i.e., "operations")."
 
 #.  Give two access modifiers.
 
@@ -744,11 +744,11 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
     ``` text
     Enter 'c' for 10x15cm, anything else for 8x11in.
-    c̲ ↵
+    c͟ ↵
     Is this your first time here? Type 'y' for 'yes'.
-    y̲ ↵
+    y͟ ↵
     Enter a number of copies.
-    9̲0̲ ↵
+    9͟0͟ ↵
     Welcome!
     We cherish our new customers, so we are giving you a $3 discount!
     Your total is $13.50. You had a 10% discount!
@@ -756,11 +756,11 @@ This time, the two exercises **do not** require a computer, and are here to craf
 
     ``` text
     Enter 'c' for 10x15cm, anything else for 8x11in.
-    p̲ ↵
+    p͟ ↵
     Is this your first time here? Type 'y' for 'yes'.
-    N̲o̲t̲ ̲a̲t̲ ̲a̲l̲l̲↵
+    N͟o͟t͟ ͟a͟t͟ ͟a͟l͟l͟↵
     Enter a number of copies.
-    1̲2̲0̲ ↵
+    1͟2͟0͟ ↵
     Your total is $27.00. You had a 10% discount!
     ```
 

@@ -43,15 +43,15 @@ Here is an example of a possible interaction with the program, where the user in
 
 ```text
 Enter an integer between 0 and 100:
-N̲O̲↵
+N͟O͟↵
 Sorry, that is not a valid integer.
 
 Enter an integer between 0 and 100:
--̲2̲0̲↵
+-͟2͟0͟↵
 Sorry, that is not a valid integer.
 
 Enter an integer between 0 and 100:
-4̲2̲↵
+4͟2͟↵
 You entered 42.
 ```
 

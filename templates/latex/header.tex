@@ -42,22 +42,27 @@
 
 % To look for a unicode symbol in the files, we can also use
 % grep -r $'\u035F' *
+% To replace, use 
+% perl -i -C -p -e 's/\x{0332}/\x{035F}/g' exercises.md
+
 
 % To add line wrap for code environment
 % https://github.com/jgm/pandoc/issues/4302#issuecomment-360669013
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 
+% \lstset{mathescape=false}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Fonts                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage{fontspec} 
 \setmainfont{URWGothic}[
-	Path = templates/fonts/urw_gothic/ ,
+	Path = templates/fonts/urw_gothic/,
 	UprightFont = *-Book,
-	BoldFont = *-Demi , % Or *-Bold A matter of taste, probably
+	BoldFont = *-Demi ,
 	ItalicFont = *-BookOblique ,
-	BoldItalicFont = *-DemiOblique % Or *-BoldItalic A matter of taste, probably
+	BoldItalicFont = *-DemiOblique
 ]
 \setmonofont{Hack}[
 	Path = templates/fonts/hack/,
