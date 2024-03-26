@@ -1,5 +1,8 @@
 name: Build
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
@@ -10,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Cancel previous runs ⏹️
       uses: styfle/cancel-workflow-action@0.9.1
       with:
@@ -40,7 +43,7 @@ jobs:
     - name: Build 🏗️
       run: make all
     - name: Deploy website 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages 
         folder: build
