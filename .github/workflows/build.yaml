@@ -48,7 +48,7 @@ jobs:
         clean: true
         single-commit: true
     - name: Create package 🎁
-      uses: marvinpinto/action-automatic-releases@latest
+      uses: crowbarmaster/GH-Automatic-Releases@latest
       with:
         automatic_release_tag: "latest"
         repo_token: ${{ secrets.GITHUB_TOKEN }}
