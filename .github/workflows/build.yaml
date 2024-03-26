@@ -9,19 +9,15 @@ on:
   workflow_dispatch:
     branches: [ main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Cancel previous runs ⏹️
-      uses: styfle/cancel-workflow-action@0.9.1
-# May want to change that, cf. https://github.com/styfle/cancel-workflow-action
-# concurrency:
-#  group: ${{ github.workflow }}-${{ github.ref }}
-#  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
-      with:
-        access_token: ${{ github.token }}
     - name: Cache  💾
       uses: actions/cache@v4
       with:
