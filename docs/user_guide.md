@@ -246,9 +246,16 @@ First, output the default template file:
 pandoc -o custom-reference.docx --print-default-data-file reference.docx
 ```
 
-Then, <!-- Todo -->
+Then, open `reference.docx`, and, following loosely [this tutorial](https://support.microsoft.com/en-us/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563?ui=en-us&rs=en-us&ad=us), do:
 
+- Click pretty much anywhere, and right-click on the highlighted style (displayed if you are under "Home", you may need to scroll down the styles),
+- Change the font for everything but the source code,
+- Click on the "Block code", then right-click on the highlighted style, and select the font for the source code,
+- The font for "Verbatim Char" was also changed, but I am not sure if this has an impact,
+- [Make sure the fonts are embedded](https://support.microsoft.com/en-us/office/benefits-of-embedding-custom-fonts-cb3982aa-ea76-4323-b008-86670f222dbc),
+- Save and close the document.
 
+This was inspired by [this post](https://stackoverflow.com/a/70513063) but does not seem to work properly :-/
 
 ## Updating odt template
 

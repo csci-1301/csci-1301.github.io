@@ -156,6 +156,8 @@ WEBPATH = templates/web/
 PDFPATH = templates/latex/
 # Path to ODT templates to use with pandoc
 ODTPATH = templates/odt/
+# Path to DOCX templates to use with pandoc
+DOCXPATH = templates/docx/
 # generate index page for the website from this file
 WEB_INDEX = index.md
 404_PAGE = 404.md
@@ -169,7 +171,8 @@ PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf -
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg --reference-doc=$(ODTPATH)custom-reference.odt
 
 # DOCX build options
-PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg 
+PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg --reference-doc=$(DOCXPATH)custom-reference.docx
+
 
 # ===============================
 # Rules
