@@ -171,7 +171,8 @@ PANDOC_PDF:= $(PANDOC_OPTIONS) -V links-as-notes --default-image-extension=pdf -
 PANDOC_ODT:= $(PANDOC_OPTIONS) --default-image-extension=svg --reference-doc=$(ODTPATH)custom-reference.odt
 
 # DOCX build options
-PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg --reference-doc=$(DOCXPATH)custom-reference.docx
+PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg 
+# --reference-doc=$(DOCXPATH)custom-reference.docx
 
 
 # ===============================
