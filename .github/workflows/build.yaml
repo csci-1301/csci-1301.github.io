@@ -18,8 +18,6 @@ jobs:
       uses: styfle/cancel-workflow-action@0.9.1
       with:
         access_token: ${{ github.token }}
-        lfs: true
-        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Cache  💾
       uses: actions/cache@v4
       with:
