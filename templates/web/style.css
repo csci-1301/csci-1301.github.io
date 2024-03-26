@@ -194,6 +194,7 @@
   
   a:hover, a:focus {
     color: var(--color-link-hover);
+    text-decoration:underline;
   }
   
   a:active {
