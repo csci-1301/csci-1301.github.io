@@ -211,6 +211,7 @@ $(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img build/vid
 	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	rsync -av img/favicon/* $(BUILD_DIR)
 	make $(BUILD_DIR)style.css
+	make $(BUILD_DIR)fonts/
 	
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
