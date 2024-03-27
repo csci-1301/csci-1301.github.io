@@ -15,7 +15,7 @@ There are three important rules for you:
     Do not forget that you are first and foremost a _student_, and that your main goal here is to _graduate_.
     
 #. You are here to help students, not to solve their problems.
-    ~ Please, review what you should and should not do [on this section](uca.html#what-is-an-undergraduate-course-assistant-1).
+    ~ Please, review what you should and should not do [on this section](ca.html#what-is-an-undergraduate-course-assistant).
     It is difficult to strike the right balance when helping a student, but a good rule of thumb is that you should not do anything yourself, just explain and give hints so that they can solve the problem they are facing. You are here to help students understand how to solve a problem, not to solve it for them. 
      
 #. Don't hesitate to ask.
