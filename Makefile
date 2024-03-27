@@ -489,7 +489,7 @@ web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 build: docs web-index book labs
 
 .PHONY:all
-all: set-up build
+all: build | set-up
 	7z a $(BUILD_DIR)release.zip $(BUILD_DIR)
 
 # Rule to tidy all C# source code, requires https://csharpier.com/
