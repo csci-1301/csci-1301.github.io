@@ -475,6 +475,13 @@ labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 ## Other Useful Rules
 # -------------------------------
 
+# This rules download and extract the latest release,
+# to use it as a starting point.
+.PHONY:set-up
+set-up: 
+	wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip
+	unzip -q release.zip 
+
 .PHONY:web
 web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 
@@ -490,5 +497,5 @@ tidy:
 	dotnet csharpier .
 
 # Phony rule to display variables
-.PHONY: test
-$(info $$var is [${TARGET_DOC_FILES_HTML}])
+# .PHONY: test
+# $(info $$var is [${TARGET_DOC_FILES_HTML}])
