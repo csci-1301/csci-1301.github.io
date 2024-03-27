@@ -114,7 +114,7 @@ _The students should understand all the components of a simple "Hello World" pro
 
 ### Displaying Strings on the Screen
 
-- [Format specifiers](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) for numbers:
+- [Format specifiers]( https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings) for numbers:
     – Currency (`C`), 
     - Fixed-point (`F`) or Number (`N`)
     - Percent (`P`) ❓
@@ -213,7 +213,7 @@ and defining the term "accumulator"
 
 - `ToString` method
 - static class and methods
-- [`Math` Class](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-5.0) (`Abs`, `Sqrt`, `Pow`) ❓
+- [`Math` Class](https://learn.microsoft.com/en-us/dotnet/api/system.math) (`Abs`, `Sqrt`, `Pow`) ❓
 
 # Random Class
 
