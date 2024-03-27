@@ -118,7 +118,7 @@ TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
 
 ### Video files
 
-SOURCE_VIDEOS_FILES := $(shell find vid/ -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v")
+SOURCE_VIDEOS_FILES := $(shell find vid/ -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v" -or -iname "*.mkv")
 
 TARGET_VIDEOS_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_VIDEOS_FILES))
 
