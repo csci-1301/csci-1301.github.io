@@ -210,7 +210,8 @@ $(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img build/vid
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	rsync -av img/favicon/* $(BUILD_DIR)
-	rsync -av $(WEBPATH)style.css $(BUILD_DIR)
+	make $(BUILD_DIR)style.css
+	
 # This rule is added as a dependencies to some of the other rules,
 # to ensure that the build directory has been created before creating files in it.
 # It also copy the favicon and css files to the right place.
@@ -221,6 +222,7 @@ $(BUILD_DIR)style.css : $(WEBPATH)style.css
 $(BUILD_DIR)fonts/ :
 	mkdir -p $(BUILD_DIR)fonts
 	rsync -av templates/fonts/ $(BUILD_DIR)fonts
+	# rsync -zarv  --prune-empty-dirs --include "*/"  --include="*.woff*" --exclude="*" templates/fonts/ $(BUILD_DIR)fonts/
 
 
 # -------------------------------
