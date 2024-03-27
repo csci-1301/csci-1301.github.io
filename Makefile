@@ -486,7 +486,11 @@ set-up:
 web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 
 .PHONY:build
-build: set-up | docs web-index book labs
+build: set-up 
+	make docs
+	make web-index
+	make book
+	make labs
 
 .PHONY:all
 all: build
