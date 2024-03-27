@@ -221,7 +221,7 @@ $(BUILD_DIR)style.css : $(WEBPATH)style.css
 
 $(BUILD_DIR)fonts/ :
 	mkdir -p $(BUILD_DIR)fonts
-	rsync -zarv  --prune-empty-dirs --include "*/"  --include="*.woff*" --exclude="*" templates/fonts/ $(BUILD_DIR)fonts
+	rsync -zarv  --prune-empty-dirs --include "*/"  --include="*.woff*" --exclude="*" templates/fonts/ $(BUILD_DIR)fonts/
 
 # -------------------------------
 ## Book
