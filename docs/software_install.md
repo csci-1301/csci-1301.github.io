@@ -7,8 +7,8 @@ title: Installing Software
 You probably already installed software in your life, be it [VLC](http://www.videolan.org/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app), or [Whatsapp](https://www.whatsapp.com/).
 However, depending on whether you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.
 
-Between the [Play store](https://www.wikiwand.com/en/Google_Play#Play_Store_on_Android), the [command-line interface](https://www.wikiwand.com/en/Command-line_interface), [homebrew](http://brew.sh/) and the act of downloading software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
-In addition to making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g. your private life.
+Between the [Play store](https://www.wikiwand.com/en/Google_Play#Play_Store_on_Android), the [command-line interface](https://www.wikiwand.com/en/Command-line_interface), [homebrew](https://brew.sh/) and the act of downloading software using your browser and then installing it using the navigator, there can be a lot of differences, but in all those circumstances you should keep security in mind.
+In addition to making sure that you are downloading the software from a trusted source, you should also be vigilant about the information the software will be able to access about e.g., your private life.
 
 As data can be lost or corrupted upon downloading, many platforms now use [checksums](https://www.wikiwand.com/en/Checksum) to verify the integrity of the software you downloaded before installing it.
 This is an excellent practice that can also be performed "by hand", as explained for instance for [the database manager MySQL](https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html): the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the [attack surface](https://www.wikiwand.com/en/Attack_surface).
@@ -74,7 +74,7 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 
    ![](img/installing_software_packages.png){ width=80% }
 
-#. Enter the product key you obtained previously, following [the instructions in the documentation](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
+#. Enter the product key you obtained previously, following [the instructions in the documentation](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".
 
 #### For Mac

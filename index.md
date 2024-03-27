@@ -85,4 +85,3 @@ Without Solution | With Solution
 - [About](about.html) - brief explanation of the purpose and presentation of the authors and license
 - [Contributing Guidelines](contributing.html) - help improve this resource
 - [User Guide](user_guide.html) - details about this resource
-

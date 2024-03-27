@@ -25,7 +25,7 @@ If this is not the case, first follow this [install guide](https://www.tecmint.c
 
 ### Using the graphical interface
 
-Normally, a simple [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.com/Unzip-Files-in-Linux) should do it.
+Normally, a simple [right click and choose "Extract" or "Open with Ark"](https://www.wikihow.tech/Unzip-Files-in-Linux) should do it.
 
 ### Using the Command-Line
 

@@ -63,10 +63,10 @@ Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topi
 
 Resources to assess accessibility:
 
-- [Affordable Learning Georgia's guide](https://www.affordablelearninggeorgia.org/open_resources/accessibility)
+- [Affordable Learning Georgia's guide](https://alg.manifoldapp.org/projects/oer-accessibility-series-and-rubric)
 - [Specific Review Standards from the QM Higher Education Rubric](https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMHigherEducationRubric.pdf)
 - [UWG Accessibility Services's guide](https://docs.google.com/document/d/16Ri1XgaXiGx28ooO-zRvYPraV3Aq3F5ZNJYbVDGVnEA/edit?ts=57b4c82d#)
-- [Penn State's recommendations for alternative text and complex images.](http://accessibility.psu.edu/images/)       
+- [Penn State's recommendations for alternative text and complex images.](https://accessibility.psu.edu/images/)       
 - [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [WebAIM (Web Accessibility In Mind)](https://webaim.org/)
  
@@ -332,7 +332,7 @@ For the purposes of editing content, it is sufficient to make edits to markdown 
 
 ### Installing required dependencies
 
-To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L34-L35), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
+To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
 In general the following dependencies are needed:
 
@@ -340,7 +340,7 @@ In general the following dependencies are needed:
 - [texlive](https://www.tug.org/texlive/)
 - make
 - python 3.+
-- packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](http://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
+- packages and filters: [Pygments](https://pygments.org/download/), [pandoc-include](https://github.com/DCsunset/pandoc-include#installation), [texlive-xetex](https://tug.org/xetex/), texlive-latex-extra, lmodern, [librsvg2-bin](https://askubuntu.com/a/31446)
 - symbola font
 
 For this later, note that starting [with version 11](http://web.archive.org/web/20181228102842/http://users.teilar.gr/%7Eg1951d/Symbola.pdf), the licence is too restrictive for non-personal use.
@@ -406,7 +406,7 @@ The steps for migrating feedback target repository are as follows:
 Every semester,
 
 - [The members of the "UCAs" team](https://github.com/orgs/csci-1301/teams/ucas) should be updated,
-- A "uca-resources-<semester>-YYYY" repository should be created, by [forking the template](https://github.com/csci-1301/uca-resources-template),
+- A "uca-resources-<semester>-YYYY" repository should be created, by [forking the template](https://github.com/csci-1301/uca-resources-template) (private repository),
 - The new repository should be added to the [list of repositories of the team](https://github.com/orgs/csci-1301/teams/ucas/repositories) (as maintainer),
 - The old repository should be deleted from that same list, and then archived.
 - GRAs should be added / removed from the [instructors list](https://github.com/orgs/csci-1301/teams/instructors), and previous instructors should be removed from that same list,
