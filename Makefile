@@ -475,22 +475,11 @@ labs: labs-instructions $(addprefix $(BUILD_DIR), $(ARCHIVES))
 ## Other Useful Rules
 # -------------------------------
 
-# This rules download and extract the latest release,
-# to use it as a starting point.
-.PHONY:set-up
-set-up: 
-	wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip
-	unzip -q release.zip 
-
 .PHONY:web
 web: docs-html web-index $(TARGET_BOOK_FILE).html labs-html
 
 .PHONY:build
-build: set-up 
-	make docs
-	make web-index
-	make book
-	make labs
+build: docs web-index book labs
 
 .PHONY:all
 all: build
