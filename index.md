@@ -10,6 +10,12 @@ based on what is defined in the makefile, just be aware of that while editing
 
 Welcome to the course resources website for CSCI 1301 at Augusta University.
 
+| :boom: News (4/5/24)       |
+|:---------------------------|
+| We are proud to announce that this resource has been selected by [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) to receive a [Continuous Improvement Grants](https://www.affordablelearninggeorgia.org/grants/overview/) (M260). | 
+| If you have comments on how this resource should evolve, please [post them in this pad](https://etherpad.wikimedia.org/p/CSCI1301). |
+| If you are interested in being paid to help us improve this resource, please [get in touch](https://spots.augusta.edu/caubert/#contact). |
+
 ### Book
 
 Available formats:
