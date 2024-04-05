@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: chetan/git-restore-mtime-action@v2
     - name: Cache  💾
       uses: actions/cache@v4
       with:
@@ -39,13 +42,6 @@ jobs:
         pip install --upgrade pip
         pip install Pygments pandoc-include
         cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
-        # Trying to restore correct timestamp after cloning
-        # https://stackoverflow.com/a/55609950/2657549
-        git ls-tree -r --name-only HEAD | while read filename; do
-          unixtime=$(git log -1 --format="%at" -- "${filename}")
-          touchtime=$(date -d @$unixtime +'%Y%m%d%H%M.%S')
-          touch -t ${touchtime} "${filename}"
-        done
         wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip 
     - name: Build 🏗️
       run: make all
