@@ -326,6 +326,15 @@ Making a versioned release is done as follows:
 
 Following these steps will generate a new, versioned release. The versioned releases will be manually uploaded to and archived on galileo.
 
+Once this is done, remember to create the next pre-release:
+
+#. Go to [the repository releases](https://github.com/csci-1301/csci-1301.github.io/releases).
+#. Click on "Draft a new release".
+#. Pick the tag "Latest".
+#. Click on "Generate release notes"
+#. Check "This is a pre-release"
+#. Click on "Publish release"
+
 ## Building the resource locally
 
 It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
