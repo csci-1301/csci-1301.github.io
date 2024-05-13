@@ -6,7 +6,7 @@ This is source code repository for [Augusta University's CSCI 1301 course](http:
 
 View this resource on the web (in decreasing order of update frequency):
 
-- [csci-1301.github.io](https://csci-1301.github.io)
+- [csci-1301.github.io](https://csci-1301.github.io) ( ⚠️  This mirror may be perturbed during Summer 2024).
 - [mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/)
 - [mirror on box.com](https://augustauniversity.box.com/s/omis1adqth97bouvwxfwmlhwyiv6gwo1)
 - [mirror on manifold](https://alg.manifoldapp.org/read/csci-1301-book/)
