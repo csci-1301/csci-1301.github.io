@@ -10,6 +10,10 @@ based on what is defined in the makefile, just be aware of that while editing
 
 Welcome to the course resources website for CSCI 1301 at Augusta University.
 
+
+> [!WARNING]
+> [Our website on github](https://csci-1301.github.io/) will most likely be under maintenance during Summer 2024: please, [refer to our mirror on spots](https://spots.augusta.edu/caubert/teaching/csci-1301/) in the meantime. Thanks!
+
 | :boom: News (4/5/24)       |
 |:---------------------------|
 | We are proud to announce that this resource has been selected by [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) to receive a [Continuous Improvement Grants](https://www.affordablelearninggeorgia.org/grants/overview/) (M260). | 
