@@ -321,6 +321,7 @@ Making a versioned release is done as follows:
    (cf. [semantic versioning](https://semver.org/))
 #. Enter release notes to explain what changed since last release
 #. Uncheck "This is a pre-release"
+#. Check "Set as the latest release"
 #. Update release
 
 Following these steps will generate a new, versioned release. The versioned releases will be manually uploaded to and archived on galileo.
