@@ -1,4 +1,4 @@
-help:
+fhelp:
 	@echo "all - build everything"
 	@echo "book - build books only (in all formats)"
 	@echo "labs - build labs only"
@@ -291,7 +291,7 @@ $(DOCS_DIR)mcq.md:$(DOCS_DIR)mcq_with_solutions.md
 # Can be used to compile doc files individually e.g.
 # make build/docs/about.html
 #### Individual HTML files.
-$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR) docs-exercises
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR) $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
@@ -316,16 +316,16 @@ $(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
 ### Whole directories
 # Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
 #### HTML
-docs-html:$(SOURCE_DOC_FILES) | docs-exercises
+docs-html:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
 	@make $(TARGET_DOC_FILES_HTML)
 #### PDF
-docs-pdf:$(SOURCE_DOC_FILES) | docs-exercises
+docs-pdf:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
 	@make $(TARGET_DOC_FILES_PDF)
 #### ODT
-docs-odt:$(SOURCE_DOC_FILES) | docs-exercises
+docs-odt:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
 	@make $(TARGET_DOC_FILES_ODT)
 #### DOCX
-docs-docx:$(SOURCE_DOC_FILES) | docs-exercises
+docs-docx:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
 	@make $(TARGET_DOC_FILES_DOCX)
 	
 ### Whole doc, in all formats.
