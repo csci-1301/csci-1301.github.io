@@ -42,6 +42,7 @@ jobs:
         pip install --upgrade pip
         pip install Pygments pandoc-include
     - name: Fetch previous version ⤵️
+      run: |
         cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
         wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip 
     - name: Build 🏗️
