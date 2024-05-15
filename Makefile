@@ -264,6 +264,12 @@ book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $
 # https://stackoverflow.com/a/70288091
 
 ### Exercises without solution
+
+docs-exercises:$(DOCS_DIR)exercises_with_solutions.md $(DOCS_DIR)practice_final_with_solutions.md $(DOCS_DIR)mcq_with_solutions.md
+	@make $(DOCS_DIR)exercises.md
+	@make $(DOCS_DIR)practice_final.md
+	@make $(DOCS_DIR)mcq.md
+
 $(DOCS_DIR)exercises.md:$(DOCS_DIR)exercises_with_solutions.md
 	sed 's/<details>/&\\\n/g' $< > $@ 
 	sed -i '/<details>/,/<\/details>/d' $@
@@ -285,7 +291,7 @@ $(DOCS_DIR)mcq.md:$(DOCS_DIR)mcq_with_solutions.md
 # Can be used to compile doc files individually e.g.
 # make build/docs/about.html
 #### Individual HTML files.
-$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR) docs-exercises
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
