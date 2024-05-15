@@ -26,7 +26,7 @@ jobs:
       with:
         path: |
           ~/.cache
-          pandoc-2.19.2-1-amd64.deb
+          pandoc-3.2-1-amd64.deb
         key: ${{ runner.os }}-pip-
         restore-keys: ${{ runner.os }}-pip-
     - name: Setup Python 🐍
@@ -36,8 +36,8 @@ jobs:
     - name: Setup pandoc ⚙️
       run: |
         sudo apt-get update
-        test -f pandoc-3.1.12.3-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.1.12.3/pandoc-3.1.12.3-1-amd64.deb
-        sudo dpkg -i pandoc-3.1.12.3-1-amd64.deb
+        test -f pandoc-3.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb
+        sudo dpkg -i pandoc-3.2-1-amd64.deb
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
         pip install --upgrade pip
         pip install Pygments pandoc-include
