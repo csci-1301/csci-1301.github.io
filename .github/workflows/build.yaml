@@ -41,9 +41,6 @@ jobs:
         sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
         pip install --upgrade pip
         pip install Pygments pandoc-include
-    - name: Fetch previous version ⤵️
-        cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
-        wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip 
     - name: Build 🏗️
       run: make all
     - name: Deploy website 🚀
