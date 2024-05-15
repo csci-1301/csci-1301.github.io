@@ -255,13 +255,15 @@ book: $(TARGET_BOOK_FILE).html $(TARGET_BOOK_FILE).pdf $(TARGET_BOOK_FILE).odt $
 ## Documentation Files
 # -------------------------------
 
-
 # The following three rules create the md files "without solutions"
 # for the exercises, practise final, and multiple choice questions.
 # The first sed command is not very elegant in the first two cases,
 # but it is to avoid a very silly problem created by the second command, 
 # cf.
 # https://stackoverflow.com/a/70288091
+
+# Note that those files need to be commited, for a reason that isn't clear.
+# cf. https://github.com/csci-1301/csci-1301.github.io/issues/151
 
 ### Exercises without solution
 
@@ -291,7 +293,7 @@ $(DOCS_DIR)mcq.md:$(DOCS_DIR)mcq_with_solutions.md
 # Can be used to compile doc files individually e.g.
 # make build/docs/about.html
 #### Individual HTML files.
-$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR) $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
+$(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
@@ -316,16 +318,16 @@ $(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
 ### Whole directories
 # Compile all the documentation in a specific format, by calling the previous corresponding rule for each file.
 #### HTML
-docs-html:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
+docs-html:$(SOURCE_DOC_FILES)
 	@make $(TARGET_DOC_FILES_HTML)
 #### PDF
-docs-pdf:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
+docs-pdf:$(SOURCE_DOC_FILES)
 	@make $(TARGET_DOC_FILES_PDF)
 #### ODT
-docs-odt:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
+docs-odt:$(SOURCE_DOC_FILES)
 	@make $(TARGET_DOC_FILES_ODT)
 #### DOCX
-docs-docx:$(SOURCE_DOC_FILES) | $(DOCS_DIR)exercises.md $(DOCS_DIR)exercises.md $(DOCS_DIR)mcq.md
+docs-docx:$(SOURCE_DOC_FILES)
 	@make $(TARGET_DOC_FILES_DOCX)
 	
 ### Whole doc, in all formats.
