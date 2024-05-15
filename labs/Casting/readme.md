@@ -119,7 +119,7 @@ Conduct further experiments if needed to answer this question.
 
 ## Implicit and Explicit Casting
 
-#. Look back at the warning given by the IDE.  It uses the term "implicitly convert" before introducing the cast operator.
+#. Look back at the warning given by the IDE. It uses the term "implicitly convert" before introducing the cast operator.
 #. While you needed a cast to convert a `float` to an `int`, do you need one to convert an `int` to a `float`?  Try the following:
 
     ```

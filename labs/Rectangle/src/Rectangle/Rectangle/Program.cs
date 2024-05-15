@@ -12,15 +12,15 @@ class Program
         Rectangle myRectangle; // Declaration of a Rectangle variable.
         myRectangle = new Rectangle(); // Assignment, we are creating a Rectangle object and assigning it to our Rectangle variable.
 
-        // Now we set the instance variables for this object, using the accessors
-        myRectangle.SetLength(12); // Accessor to set the Length
-        myRectangle.SetWidth(3); // Accessor to set the Width
+        // Now we set the instance variables for this object, using the accessors.
+        myRectangle.SetLength(12); // Accessor to set the Length.
+        myRectangle.SetWidth(3); // Accessor to set the Width.
 
         /*
          * Let us use the three other methods to
-         *  a. Retrieve the Length (using GetLength())
-         *  b. Retrieve the Width (using GetWidth())
-         *  c. Compute the Area (using ComputeArea())
+         *  a. Retrieve the Length (using GetLength()),
+         *  b. Retrieve the Width (using GetWidth()),
+         *  c. Compute the Area (using ComputeArea()).
          */
 
         Console.WriteLine(

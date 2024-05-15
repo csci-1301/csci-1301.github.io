@@ -35,7 +35,7 @@ class Rectangle
         length = lengthParameter;
     }
 
-    // "Getter" (or "accessor") for the Length:
+    // "Getter" (or "accessor") for the Length
     public int GetLength()
     {
         return length;
@@ -51,7 +51,7 @@ class Rectangle
         width = widthParameter;
     }
 
-    // "Getter" (or "accessor") for the Width:
+    // "Getter" (or "accessor") for the Width
     public int GetWidth()
     {
         return width;

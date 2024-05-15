@@ -186,7 +186,7 @@ PANDOC_DOCX:= $(PANDOC_OPTIONS) --default-image-extension=svg
 .PHONY: clean
 clean:
 	@echo "cleaning build artifacts..."
-	rm -rf $(BUILD_DIR)
+	@rm -rf $(BUILD_DIR)
 	
 # Individual images:
 $(BUILD_DIR)img/%: img/%
@@ -286,7 +286,7 @@ $(DOCS_DIR)mcq.md:$(DOCS_DIR)mcq_with_solutions.md
 # make build/docs/about.html
 #### Individual HTML files.
 $(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=$(*F) -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 # Those two last variables are custom ones for pandoc, used in the html template to add download links
 # to the pdf and odt versions, as well as a link to the original md source code.
@@ -294,17 +294,17 @@ $(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 
 #### Individual PDF files
 $(BUILD_DIR)%.pdf: $(DOCS_DIR)%.md | $(BUILD_DIR)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_PDF) $< -o $@
 
 #### Individual ODT files
 $(BUILD_DIR)%.odt: $(DOCS_DIR)%.md | $(BUILD_DIR)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) $< -o $@
 
 #### Individual DOCX files
 $(BUILD_DIR)%.docx: $(DOCS_DIR)%.md | $(BUILD_DIR)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_DOCX) $< -o $@
 	
 ### Whole directories
@@ -330,10 +330,16 @@ docs: docs-html docs-pdf docs-odt docs-docx
 ## Web Files
 # -------------------------------
 
-web-index: | $(BUILD_DIR)
-	pandoc $(WEB_INDEX) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)index.html -A $(WEBPATH)footer.html -M path_to_root=./
-	pandoc $(404_PAGE) $(PANDOC_HTML_PAGES) -o $(BUILD_DIR)404.html -A $(WEBPATH)footer.html -M path_to_root=./
+web-index: $(WEB_INDEX) $(404_PAGE)
+	@make $(BUILD_DIR)index.html
+	@make $(BUILD_DIR)404.html
+	
+$(BUILD_DIR)index.html: $(WEB_INDEX)
+	pandoc $< $(PANDOC_HTML_PAGES) -o $@ -A $(WEBPATH)footer.html -M path_to_root=./
 
+$(BUILD_DIR)404.html: $(404_PAGE)
+	pandoc $< $(PANDOC_HTML_PAGES) -o $@ -A $(WEBPATH)footer.html -M path_to_root=./
+	
 # -------------------------------
 ## Lab Files
 # -------------------------------
@@ -347,7 +353,7 @@ web-index: | $(BUILD_DIR)
 
 ##### Individual HTML files.
 $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_HTML_PAGES) $< -o $@ -M target_name=index -M source_name=$< -M path_to_root=$(subst $() ,,$(foreach v,$(subst /, ,$(subst $(BUILD_DIR),,$(dir $@))),../))
 	
 # $(foreach var,$(apps),$(info In the loop running with make: $(var)))
@@ -356,38 +362,38 @@ $(BUILD_DIR)$(LABS_DIR)%/index.html: $(LABS_DIR)%/readme.md | $(BUILD_DIR)
 
 ##### Individual PDF files.
 $(BUILD_DIR)$(LABS_DIR)%/index.pdf: $(LABS_DIR)%/readme.md
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_PDF) -f markdown+rebase_relative_paths $< -o $@ 
 # The "-f markdown+rebase_relative_paths" option is needed to have the links
 # to images behave nicely.
 	
 ##### Individual ODT files.
 $(BUILD_DIR)$(LABS_DIR)%/index.odt: $(LABS_DIR)%/readme.md
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_ODT) -f markdown+rebase_relative_paths $< -o $@ 
 
 ##### Individual DOCX files.
 $(BUILD_DIR)$(LABS_DIR)%/index.docx: $(LABS_DIR)%/readme.md
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_DOCX) -f markdown+rebase_relative_paths $< -o $@ 
 
 #### Whole directories
 # Compile all the labs in a specific format, by calling the previous corresponding rule for each file.
 ##### HTML
 labs-html:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)$(LABS_DIR)index.html $(BUILD_DIR)
-	make $(TARGET_LAB_INSTRUCTION_FILES_HTML)
+	@make $(TARGET_LAB_INSTRUCTION_FILES_HTML)
 
 ##### PDF
 labs-pdf:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
-	make $(TARGET_LAB_INSTRUCTION_FILES_PDF)
+	@make $(TARGET_LAB_INSTRUCTION_FILES_PDF)
 
 ##### ODT
 labs-odt:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
-	make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
+	@make $(TARGET_LAB_INSTRUCTION_FILES_ODT)
 
 ##### DOCX
 labs-docx:$(SOURCE_LAB_INSTRUCTION_FILES) | $(BUILD_DIR)
-	make $(TARGET_LAB_INSTRUCTION_FILES_DOCX)
+	@make $(TARGET_LAB_INSTRUCTION_FILES_DOCX)
 
 #### Index page for labs
 # I don't think we need odt / pdf for that page.
