@@ -42,7 +42,7 @@ jobs:
         pip install --upgrade pip
         pip install Pygments pandoc-include
         cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
-        wget https://github.com/csci-1301/csci-1301.github.io/archive/refs/tags/latest.zip && unzip -q latest.zip 
+        wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip 
     - name: Build 🏗️
       run: make all
     - name: Deploy website 🚀
