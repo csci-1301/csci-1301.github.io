@@ -35,12 +35,12 @@ jobs:
         python-version: "3.10"
     - name: Setup pandoc ⚙️
       run: |
-        sudo apt-get update
-        test -f pandoc-3.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb
-        sudo dpkg -i pandoc-3.2-1-amd64.deb
-        sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
-        pip install --upgrade pip
-        pip install Pygments pandoc-include
+      sudo apt-get update
+      test -f pandoc-3.2-1-amd64.deb || wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb
+      sudo dpkg -i pandoc-3.2-1-amd64.deb
+      sudo apt-get install -y texlive texlive-xetex texlive-latex-extra lmodern librsvg2-bin fonts-symbola 
+      pip install --upgrade pip
+      pip install Pygments pandoc-include
     - name: Fetch previous version ⤵️
         run: |
         cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
