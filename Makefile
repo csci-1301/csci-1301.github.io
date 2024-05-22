@@ -26,7 +26,7 @@ fhelp:
 # Directory where to output build artifacts
 # if you change this value also change build settings
 
-BUILD_DIR = build/
+BUILD_DIR = content/
 LECTURES_DIR = lectures/
 DOCS_DIR = docs/
 LABS_DIR = labs/
@@ -57,8 +57,8 @@ TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix .html, $(basename
 # 3. Extract the name of the file without the extension using basename (e.g. "about"),
 # 4. Add the suffix ".html" (e.g. "about.html"),
 # 5. Add the prefix "docs" (e.g. "docs/about.html").
-# 6. Add the prefix "build" (e.g. "build/docs/about.html").
-# This allows to automatically build the list of targets (the build/html files)
+# 6. Add the prefix "build" (e.g. "content/docs/about.html").
+# This allows to automatically build the list of targets (the content/html files)
 # from the list of md files in docs.
 
 TARGET_DOC_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix .pdf, $(basename $(notdir $(SOURCE_DOC_FILES)))))
@@ -81,8 +81,8 @@ TARGET_LAB_INSTRUCTION_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix index
 # 1. Look at the SOURCE_LAB_INSTRUCTION_FILES, (e.g. "labs/HelloWorld/readme.md")
 # 2. Extract the directory path using dir (e.g. "labs/HelloWorld/"),
 # 3. Append "index.html" to the end of it (e.g. "labs/HelloWorld/index.html"),
-# 4. Add the prefix "build" (e.g. "build/labs/HelloWorld/index.html").
-# This allows to automatically build the list of targets (the build/labs/*/index.html files)
+# 4. Add the prefix "build" (e.g. "content/labs/HelloWorld/index.html").
+# This allows to automatically build the list of targets (the content/labs/*/index.html files)
 # from the list of md files in the sub-directories in labs/.
 
 TARGET_LAB_INSTRUCTION_FILES_PDF := $(addprefix $(BUILD_DIR), $(addsuffix index.pdf, $(dir $(SOURCE_LAB_INSTRUCTION_FILES))))
@@ -193,7 +193,7 @@ $(BUILD_DIR)img/%: img/%
 	rsync -av $<  $@
 
 # Every images:
-build/img: $(SOURCE_IMAGES_FILES)
+content/img: $(SOURCE_IMAGES_FILES)
 	mkdir -p $(BUILD_DIR)img/
 	make $(TARGET_IMAGES_FILES)
 
@@ -202,11 +202,11 @@ $(BUILD_DIR)vid/%: vid/%
 	rsync -av $< $@
 
 # Every videos:
-build/vid: $(SOURCE_VIDEOS_FILES)
+content/vid: $(SOURCE_VIDEOS_FILES)
 	mkdir -p $(BUILD_DIR)vid/
 	make $(TARGET_VIDEOS_FILES)
 	
-$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | build/img build/vid
+$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | content/img content/vid
 	@echo "starting build..."
 	mkdir -p $(BUILD_DIR)$(LABS_DIR)
 	rsync -av img/favicon/* $(BUILD_DIR)
@@ -291,7 +291,7 @@ $(DOCS_DIR)mcq.md:$(DOCS_DIR)mcq_with_solutions.md
 
 ### Individual files
 # Can be used to compile doc files individually e.g.
-# make build/docs/about.html
+# make content/docs/about.html
 #### Individual HTML files.
 $(BUILD_DIR)%.html: $(DOCS_DIR)%.md | $(BUILD_DIR)
 	@mkdir -p $(dir $@)
@@ -355,7 +355,7 @@ $(BUILD_DIR)404.html: $(404_PAGE)
 ### Instructions
 #### Individual files
 # Can be used to compile lab files individually e.g.
-# make build/labs/HelloWorld/index.html
+# make content/labs/HelloWorld/index.html
 # mkdir -p $(dir $@)
 # insures that the target directory exists.
 
@@ -457,7 +457,7 @@ labs-instructions: labs-html labs-pdf labs-odt labs-docx
 #     4. Then, we append "<Compile Include="<name of the cs file>" />" for each cs file in the <Solution> folder,
 #     5. Finally, we append the required closing to the file.
 # Apparently, another way would be to use wildcards (cf. https://stackoverflow.com/a/9438419)
-	@(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n\t<StartAction>Project</StartAction>\n\t<ExternalConsole>true</ExternalConsole>\n\t<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n\t<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n\t<ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n\t<OutputType>Exe</OutputType>\n\t<AppDesignerFolder>Properties</AppDesignerFolder>\n\t<RootNamespace>$(notdir $*)</RootNamespace>\n\t<AssemblyName>$(notdir $*)</AssemblyName>\n\t<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n\t<FileAlignment>512</FileAlignment>\n\t<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugSymbols>true</DebugSymbols>\n\t<DebugType>full</DebugType>\n\t<Optimize>false</Optimize>\n\t<OutputPath>bin\Debug\</OutputPath>\n\t<DefineConstants>DEBUG;TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugType>pdbonly</DebugType>\n\t<Optimize>true</Optimize>\n\t<OutputPath>bin\Release\</OutputPath>\n\t<DefineConstants>TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup>\n\t<StartupObject>\n\t\t') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj; \
+	@(printf '<?xml version="1.0" encoding="utf-8"?>\n<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/mscontent/2003">\n  <Import Project="$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('\''$$(MSBuildExtensionsPath)\$$(MSBuildToolsVersion)\Microsoft.Common.props'\'')" />\n  <PropertyGroup>\n\t<StartAction>Project</StartAction>\n\t<ExternalConsole>true</ExternalConsole>\n\t<Configuration Condition=" '\''$$(Configuration)'\'' == '\'''\'' ">Debug</Configuration>\n\t<Platform Condition=" '\''$$(Platform)'\'' == '\'''\'' ">AnyCPU</Platform>\n\t<ProjectGuid>{C579075D-4630-47FA-9BE4-0E3E51DDFEA5}</ProjectGuid>\n\t<OutputType>Exe</OutputType>\n\t<AppDesignerFolder>Properties</AppDesignerFolder>\n\t<RootNamespace>$(notdir $*)</RootNamespace>\n\t<AssemblyName>$(notdir $*)</AssemblyName>\n\t<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>\n\t<FileAlignment>512</FileAlignment>\n\t<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Debug|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugSymbols>true</DebugSymbols>\n\t<DebugType>full</DebugType>\n\t<Optimize>false</Optimize>\n\t<OutputPath>bin\Debug\</OutputPath>\n\t<DefineConstants>DEBUG;TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup Condition=" '\''$$(Configuration)|$$(Platform)'\'' == '\''Release|AnyCPU'\'' ">\n\t<PlatformTarget>AnyCPU</PlatformTarget>\n\t<DebugType>pdbonly</DebugType>\n\t<Optimize>true</Optimize>\n\t<OutputPath>bin\Release\</OutputPath>\n\t<DefineConstants>TRACE</DefineConstants>\n\t<ErrorReport>prompt</ErrorReport>\n\t<WarningLevel>4</WarningLevel>\n  </PropertyGroup>\n  <PropertyGroup>\n\t<StartupObject>\n\t\t') > $(dir $<)$(notdir $(patsubst %/,%,$(dir $<))).csproj; \
 # The following grep the name of the class in Program.cs,
 # following the official syntax given at 
 # https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1521-general
@@ -487,7 +487,7 @@ $(addprefix $(BUILD_DIR), $(ARCHIVES)): $(ARCHIVES)
 	mkdir -p $(dir $@) 
 	rsync -av $(subst $(BUILD_DIR),,$@) $@
 # Command will be of the form 
-# make build/labs/Static/Student.zip
+# make content/labs/Static/Student.zip
 # and Program.cs needs to have this case, cf.
 # https://csci-1301.github.io/user_guide#creating-new-labs
 
