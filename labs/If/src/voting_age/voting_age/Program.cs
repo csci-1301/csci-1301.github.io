@@ -5,7 +5,9 @@ class Program
     static void Main()
     {
         int yourAge; // This variable will contain the user's age.
+
         Console.WriteLine("Please, enter your age"); // We ask the user.
+
         // We read from the user and convert their answer into an int.
         yourAge = int.Parse(Console.ReadLine());
 
