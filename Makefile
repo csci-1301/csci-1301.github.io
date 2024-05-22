@@ -57,7 +57,7 @@ TARGET_DOC_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix .html, $(basename
 # 3. Extract the name of the file without the extension using basename (e.g. "about"),
 # 4. Add the suffix ".html" (e.g. "about.html"),
 # 5. Add the prefix "docs" (e.g. "docs/about.html").
-# 6. Add the prefix "build" (e.g. "content/docs/about.html").
+# 6. Add the prefix "content" (e.g. "content/docs/about.html").
 # This allows to automatically build the list of targets (the content/html files)
 # from the list of md files in docs.
 
@@ -81,7 +81,7 @@ TARGET_LAB_INSTRUCTION_FILES_HTML := $(addprefix $(BUILD_DIR), $(addsuffix index
 # 1. Look at the SOURCE_LAB_INSTRUCTION_FILES, (e.g. "labs/HelloWorld/readme.md")
 # 2. Extract the directory path using dir (e.g. "labs/HelloWorld/"),
 # 3. Append "index.html" to the end of it (e.g. "labs/HelloWorld/index.html"),
-# 4. Add the prefix "build" (e.g. "content/labs/HelloWorld/index.html").
+# 4. Add the prefix "content" (e.g. "content/labs/HelloWorld/index.html").
 # This allows to automatically build the list of targets (the content/labs/*/index.html files)
 # from the list of md files in the sub-directories in labs/.
 
