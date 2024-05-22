@@ -44,7 +44,7 @@ jobs:
     - name: Fetch previous version ⤵️
       run: |
         cd /home/runner/work/csci-1301.github.io/csci-1301.github.io/
-        wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd content && rsync -avR labs/*/*.zip ../
+        wget https://github.com/csci-1301/csci-1301.github.io/releases/download/latest/release.zip && unzip -q release.zip && cd build && rsync -avR labs/*/*.zip ../
     - name: Build 🏗️
       run: make all
     - name: Deploy website 🚀
