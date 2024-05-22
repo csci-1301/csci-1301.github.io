@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../../">
+  <meta property="og:image" content="../../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Hello World</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../../index.html'>CSCI 1301</a>
+        <a href='../../index.html#book'>Book</a>
+        <a href='../../labs/'>Labs</a>
+        <a href='../../slides.html'>Slides</a>
+        <a href='../../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Hello World</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:58 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#your-first-program" id="toc-your-first-program">Your First
+Program</a>
+<ul>
+<li><a href="#opening-your-first-program"
+id="toc-opening-your-first-program">Opening Your First Program</a></li>
+<li><a href="#compiling-and-executing-your-first-program"
+id="toc-compiling-and-executing-your-first-program">Compiling and
+Executing Your First Program</a></li>
+<li><a href="#backups" id="toc-backups">Backups</a>
+<ul>
+<li><a href="#finding-the-right-tool"
+id="toc-finding-the-right-tool">Finding The Right Tool</a></li>
+</ul></li>
+<li><a href="#making-sure-you-have-the-right-files"
+id="toc-making-sure-you-have-the-right-files">Making Sure You Have the
+Right Files</a></li>
+<li><a href="#how-was-the-backup" id="toc-how-was-the-backup">How Was
+the Backup?</a></li>
+<li><a href="#orientation" id="toc-orientation">Orientation</a></li>
+<li><a href="#breaking-your-program"
+id="toc-breaking-your-program">Breaking Your Program</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>This lab serves multiple goals:</p>
+<ul>
+<li>To have you download, open, compile and execute your very first
+program,</li>
+<li>To understand how to back-up a program,</li>
+<li>To become familiar with your IDE,</li>
+<li>To introduce you to reading error messages given by your
+compiler.</li>
+</ul>
+<section id="your-first-program" class="level1">
+<h1>Your First Program</h1>
+<p>In this lab, we will guide you in downloading, opening, compiling,
+executing and breaking (!) your very first program. It is customary to
+start the study of a programming language with a <a
+href="https://www.wikiwand.com/en/%22Hello,_World!%22_program">“Hello
+World”</a> program that simply displays “Hello World”. Although such a
+program has no real interest nor purpose, it is used to make sure that
+your setup is correctly configured and to guide you gently in the
+discovery of programs and their language!</p>
+<section id="opening-your-first-program" class="level2">
+<h2>Opening Your First Program</h2>
+<ol>
+<li><p>Download <a
+href="HelloWorld_Solution.zip">HelloWorld_Solution.zip</a> and save it
+on your computer.</p></li>
+<li><p><a href="../../zip_guide.html#unzipping-files">Unzip the program
+file</a><a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p></li>
+<li><p>Go in the HelloWorld folder that was created.</p></li>
+<li><p>Double-click on <code
+class="sourceCode cs">HelloWorld_Solution<span class="op">.</span><span class="fu">sln</span></code>
+file</p></li>
+<li><p>Clicking the <code
+class="sourceCode cs"><span class="op">.</span><span class="fu">sln</span></code>
+file should launch your default C# IDE that <a
+href="../../software_install.html">you installed previously</a> or that
+is pre-loaded on the computer lab you are using.</p>
+<ul>
+<li>If you get prompted for which application to use, choose the IDE you
+installed previously.</li>
+<li>If the IDE does not launch or launches in a different program, right
+click on the <code
+class="sourceCode cs"><span class="op">.</span><span class="fu">sln</span></code>
+file and look for an option to <code
+class="sourceCode cs">open with</code>, then select to open it with the
+IDE you installed previously.</li>
+</ul></li>
+</ol>
+<dl>
+<dt>Question:</dt>
+<dd>
+Have you actually checked where the HelloWorld (zip) archive was hosted?
+Was it on a trustworthy website? If yes, is it trustworthy because of
+the <a href="https://www.wikiwand.com/en/Domain_name">domain name</a>,
+because we told you to do so, or for some other reasons?
+</dd>
+</dl>
+<details>
+<summary>
+Elements of solution
+</summary>
+<p>The zip archive we asked you to download is hosted on <a
+href="https://csci-1301.github.io/"
+class="uri">https://csci-1301.github.io/</a>, that is, on <a
+href="https://pages.github.com/">Github pages</a>. There <em>can be</em>
+malware hosted on Github pages, and the fact that this website is secure
+(it uses http<em>s</em>) is in no ways a guarantee of safety. So, in
+short, this archive is safe because we told you so, and because we are
+careful how it is updated.</p>
+Ultimately, many security decisions rest on trust, and you will have to
+trust us during this course. If you continue your study in our School,
+you will learn about <a
+href="https://www.wikiwand.com/en/Virtualization">virtualization</a>,
+that allows you to execute programs you cannot trust in a safe
+environment.
+</details>
+<dl>
+<dt>Question:</dt>
+<dd>
+How is an IDE different from other types of software? Identify 3
+differences between an IDE and a web browser. Can you identify 3
+similarities?
+</dd>
+</dl>
+<details>
+<summary>
+Elements of solution
+</summary>
+<p>This is really up to you! Among the similarities, one can remark that
+an IDE and pretty much every other software you have ever used both
+have:</p>
+<ul>
+<li>A graphical user interface (this is not always the case!),</li>
+<li>The capacity of connecting to the internet,</li>
+<li>A manual.</li>
+</ul>
+</details>
+</section>
+<section id="compiling-and-executing-your-first-program" class="level2">
+<h2>Compiling and Executing Your First Program</h2>
+<p>For this part, everything will take place inside the IDE that was
+started previously.</p>
+<ol>
+<li><p>Within the IDE, first locate <code
+class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>.</p>
+<p>This file will be visible in panel called “Solution Explorer” or
+“Explorer”, depending on the IDE. If you do not see such panel right
+away, explore the IDE menus to find and open it.</p></li>
+<li><p>After you have located <code
+class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>
+double click on it. This is the <em>source code</em> of the application
+you are actually considering.</p></li>
+<li><p>Let’s compile this program. Look for an option to <code
+class="sourceCode cs">Build solution</code> and click on it. What
+happened?</p></li>
+<li><p>Let’s execute this program. The exact wording varies between
+different IDEs, but look for one of the following: <code
+class="sourceCode cs">Debug <span class="op">&gt;</span> Start without Debugging</code>
+or <code
+class="sourceCode cs">Run <span class="op">&gt;</span> Start without Debugging</code>
+or <code
+class="sourceCode cs">Run <span class="op">&gt;</span> Run Project</code>
+and click on it. What happened?</p></li>
+<li><p>You will <strong>extensively</strong> compile and execute
+programs in this class. Instead of having to click twice, it is
+recommended that you start memorizing shortcuts. You should study your
+IDE to see the exact shortcuts for your IDE for compiling and running a
+program. Here are the <em>usual</em> shortcuts for different operating
+systems:</p>
+<dl>
+<dt>Windows/Linux:</dt>
+<dd>
+<ul>
+<li>Build solution: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+<kbd>B</kbd></li>
+<li>Run / Start Debugging: <kbd>Ctrl</kbd> + <kbd>F5</kbd></li>
+<li>Exit any program: <kbd>Alt</kbd> + <kbd>F4</kbd></li>
+</ul>
+</dd>
+<dt>MacOS:</dt>
+<dd>
+<ul>
+<li>Build solution: <kbd>Cmd</kbd> + <kbd>B</kbd></li>
+<li>Run / Start Debugging: <kbd>Cmd</kbd> + <kbd>return</kbd>   -or-  
+<kbd>F5</kbd></li>
+<li>Exit any program: <kbd>Cmd</kbd> + <kbd>q</kbd></li>
+</ul>
+</dd>
+</dl></li>
+</ol>
+<p>That makes 3 shortcuts already! You can find many more <a
+href="../../shortcuts.html">on this resource page</a>.</p>
+</section>
+<section id="backups" class="level2">
+<h2>Backups</h2>
+<p>Now we need to make sure you know how to save your work and access
+it. This is especially important if you are using the computer lab
+rooms, as <strong>you can not store files permanently on the lab’s
+computer, and you will have to store them either online in your cloud
+storage or on a USB drive</strong>.</p>
+<section id="finding-the-right-tool" class="level3">
+<h3>Finding The Right Tool</h3>
+<p>You can save your project:</p>
+<ul>
+<li>On your hard drive, if you are using your own computer.</li>
+<li>On an external/removable data storage: USB flash drive, external
+hard disk drive, or any kind of USB mass storage device.</li>
+<li>On a server: the University has a <a
+href="https://www.augusta.edu/its/box/">partnership</a> with <a
+href="https://box.com/">box.com</a>, and you can follow <a
+href="https://www.augusta.edu/its/box/quickstart.php">this tutorial</a>
+to get started, but any service (<a
+href="https://www.google.com/drive/">Google Drive</a>, <a
+href="https://www.dropbox.com/">Dropbox</a>, <a
+href="https://onedrive.live.com/">OneDrive</a>, etc.) would do.</li>
+</ul>
+<p>Having <em>two</em> backups is generally recommended.</p>
+<p>If you chose the “remote” option (i.e., using a server) and are in a
+computer lab, <strong>do not</strong> try to install a synchronization
+program (like <a href="https://www.google.com/drive/download/">Google
+Drive and Sync</a>, <a
+href="https://app.box.com/app-center?category=63">Box’s app</a>, etc.)
+on the lab computer; it will likely not work, due to <a
+href="https://augusta.policytech.com/dotNet/documents/?docid=5702">University
+rules</a>. Instead, create the structure/project/files on the computer
+during the lab and upload them (using the web-interface) at the end of
+the lab. Make sure to always upload your files before logging out of the
+computer.</p>
+</section>
+</section>
+<section id="making-sure-you-have-the-right-files" class="level2">
+<h2>Making Sure You Have the Right Files</h2>
+<p>After selecting where you want to store your backup files</p>
+<ol>
+<li><p>Create a folder for this class (<code
+class="sourceCode cs">CSCI1301</code>)</p></li>
+<li><p>Create subfolder for the <code
+class="sourceCode cs">HelloWorld</code> lab. Put all of the files
+related to the “HelloWorld” solution in this folder.</p></li>
+<li><p>Explore your backup. Check that you have multiple folders.
+Specifically check that your backup contains at least the following
+files:</p>
+<ul>
+<li><code
+class="sourceCode cs">HelloWorld_Solution<span class="op">.</span><span class="fu">sln</span></code>
+- this is called a solution file. It tells the IDE how to load your C#
+source code in the IDE.</li>
+<li><code
+class="sourceCode cs">HelloWorld_Project<span class="op">.</span><span class="fu">csproj</span></code>
+- this a project file. Every C# solution contains at least 1 project.
+Dividing code into multiple project is useful for very large programs
+and allows integrating projects written in different languages under the
+same solution.</li>
+<li><code
+class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>
+- this is the actual source code of your program and where you write
+code.</li>
+</ul>
+<p>It is useful to understand the purpose and role of these different
+files (<code
+class="sourceCode cs"><span class="op">.</span><span class="fu">sln</span></code>,
+<code
+class="sourceCode cs"><span class="op">.</span><span class="fu">csproj</span></code>,
+<code
+class="sourceCode cs"><span class="op">.</span><span class="fu">cs</span></code>)
+when you want to backup or share (i.e. turn in) C# programs.</p></li>
+</ol>
+<dl>
+<dt>Question:</dt>
+<dd>
+Now that you understand the basic files that go into a C# program, can
+you identify which files you should always include when you prepare to
+submit your code for evaluation? Can you develop a strategy with a
+friend, a classmate, or a second computer, to always make sure that your
+submission is correctly uploaded and complete?
+</dd>
+</dl>
+</section>
+<section id="how-was-the-backup" class="level2">
+<h2>How Was the Backup?</h2>
+<p>Once you are done, test that you performed the backup properly.</p>
+<ol>
+<li>Re-download or transfer the files you just saved (the whole <code
+class="sourceCode cs">HelloWorld</code> folder) on the computer – or
+even better, share it with a classmate and ask them to complete the
+following steps with you, or do it <em>on a different
+computer</em>,</li>
+<li>Make sure you can still open the project in your IDE</li>
+<li>Do you remember…
+<ol>
+<li>How to build the solution</li>
+<li>How to start the program without debugging?</li>
+<li>Some shortcuts?</li>
+</ol></li>
+</ol>
+<p>If not, go have another look back at the <a
+href="#compiling-and-executing-your-first-program">“Compiling and
+Executing Your First Program”</a> section.</p>
+<p>If your backup went wrong (you cannot open the project, it refuses to
+compile, …), try to understand what happened. Then re-download the <code
+class="sourceCode cs">HelloWorld_Solution<span class="op">.</span><span class="fu">zip</span></code>,
+unzip it, and make sure you can build the solution and execute the
+program.</p>
+<dl>
+<dt>Action:</dt>
+<dd>
+Note that for such a small project, it is easy to re-download it and use
+it locally. Now imagine the program you are studying is the code of an
+operating system, spanning across millions of <a
+href="https://www.wikiwand.com/en/Source_lines_of_code">lines of
+code</a>; such a strategy would not be very efficient, to say the least.
+Yet mistakes happen, and for that very reason, programmers generally use
+<a href="https://www.wikiwand.com/en/Version_control">version
+control</a> which allows them to <em>undo indefinitely</em>! Look up <a
+href="https://www.wikiwand.com/en/Distributed_version_control">Distributed
+version control</a> and try to understand its importance.
+</dd>
+</dl>
+</section>
+<section id="orientation" class="level2">
+<h2>Orientation</h2>
+<!-- generic steps you can do in any editor -->
+<p>IDEs have many features and require practice. Explore your IDE and
+try to complete the following tasks:</p>
+<ol>
+<li>If you currently have a solution open in the IDE, close that
+solution.</li>
+<li>Use the IDE file menu to locate and re-open HelloWorld program.</li>
+<li>Build the program.</li>
+<li>Try to find <code class="sourceCode cs">Clean solution</code>.
+Cleaning is the action of removing all generated files (e.g. the
+compiled program).</li>
+<li>Close <code class="sourceCode cs">Solution Explorer</code> or <code
+class="sourceCode cs">Explorer</code> and make sure you can re-open
+it.</li>
+<li>Try to change the font size of your editor window.</li>
+</ol>
+</section>
+<section id="breaking-your-program" class="level2">
+<h2>Breaking Your Program</h2>
+<p>If you followed the instructions carefully, you were able to build
+the solution and start the program without debugging after each step. <a
+href="../../book.html#rules-of-c-syntax">As you know, C# has precise
+rules</a>, and not respecting them can prevent your solution from being
+built by the IDE.</p>
+<p>In this exercise, you are asked to do the following:</p>
+<ol>
+<li><p>Change the program so that it violates one of the syntax rules of
+<code class="sourceCode cs">C#</code>.</p></li>
+<li><p>Build the solution, and note that an error is reported. The IDE
+will report a build error similar to the following:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Build<span class="op">:</span> <span class="dv">0</span> succeeded<span class="op">,</span> <span class="dv">1</span> failed<span class="op">,</span> <span class="dv">0</span> up<span class="op">-</span>to<span class="op">-</span>date<span class="op">,</span> <span class="dv">0</span> skipped</span></code></pre></div>
+<p>If you do not see an error, look in different tabs. If you still
+cannot see an error, open build output view from the IDE menu. It is
+usually labelled as <code
+class="sourceCode cs">View <span class="op">&gt;</span> Output</code>,
+<code
+class="sourceCode cs">View <span class="op">&gt;</span> Tool Windows <span class="op">&gt;</span> Build</code>,
+or similar. Then retry building the program to see the error.</p></li>
+<li><p>Make sure you understand the meaning of the error
+message.</p></li>
+<li><p>Undo your change by pressing</p>
+<dl>
+<dt>Windows/Linux:</dt>
+<dd>
+<kbd>Ctrl</kbd> + <kbd>z</kbd>
+</dd>
+<dt>MacOS:</dt>
+<dd>
+<p><kbd>Cmd</kbd> + <kbd>z</kbd></p>
+</dd>
+</dl></li>
+<li><p>Make sure you can build the solution without a new error
+message.</p></li>
+<li><p>Break your program three times, in order to identify three
+different error messages, and three ways of breaking C#’s
+rules.</p></li>
+</ol>
+<p>If you have time or need ideas, you can try with the following and
+see which one(s) make the building impossible (do not forget to undo
+your change after):</p>
+<ul>
+<li>Remove the semicolon after <code
+class="sourceCode cs"><span class="kw">using</span> System</code></li>
+<li>Replace <code
+class="sourceCode cs"><span class="kw">class</span> Program</code> with
+<code
+class="sourceCode cs"><span class="kw">class</span> TestOne</code></li>
+<li>Remove the brace (or “curly bracket”, i.e., the <code
+class="sourceCode cs"><span class="op">}</span></code> symbol) at the
+last line.</li>
+<li>Add three new lines at the end of the file</li>
+<li>Replace <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>
+with <code
+class="sourceCode cs">CONSOLE<span class="op">.</span><span class="fu">WriteLine</span></code></li>
+<li>Replace <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>
+with <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WRITELINE</span></code></li>
+<li>Add a new line between <code
+class="sourceCode cs">Console<span class="op">.</span></code> and <code
+class="sourceCode cs">WriteLine</code></li>
+<li>Add a new line between <code class="sourceCode cs">WriteLine</code>
+and <code class="sourceCode cs"><span class="op">(</span></code></li>
+<li>Add a new line between <code class="sourceCode cs">Write</code> and
+<code class="sourceCode cs">Line</code></li>
+<li>Replace <code
+class="sourceCode cs"><span class="fu">Main</span><span class="op">()</span></code>
+with <code
+class="sourceCode cs"><span class="fu">Method</span><span class="op">()</span></code></li>
+<li>Remove the indentation (i.e., the space between the beginning of the
+line and the first character of the instruction) on all lines</li>
+</ul>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Be careful: some file explorers will simply
+<em>preview</em> the (zip) archive if you simply double-click on it, but
+most IDE will not accept to open a file if it has not been actually
+extracted / unzipped!<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/labs/HelloWorld/readme.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="../../about.html" title="Learn more about this website.">About</a>
+        <a href="../../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

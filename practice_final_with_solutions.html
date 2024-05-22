@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Practice Final (with solutions)</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='index.html'>CSCI 1301</a>
+        <a href='index.html#book'>Book</a>
+        <a href='labs/'>Labs</a>
+        <a href='slides.html'>Slides</a>
+        <a href='index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Practice Final (with solutions)</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:37 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#problem-0-warm-up" id="toc-problem-0-warm-up">Problem 0
+(Warm-up)</a></li>
+<li><a href="#problem-1" id="toc-problem-1">Problem 1</a></li>
+<li><a href="#problem-2" id="toc-problem-2">Problem 2</a></li>
+<li><a href="#problem-3" id="toc-problem-3">Problem 3</a></li>
+<li><a href="#problem-4" id="toc-problem-4">Problem 4</a></li>
+<li><a href="#problem-5-deceptively-hard"
+id="toc-problem-5-deceptively-hard">Problem 5 (Deceptively
+hard)</a></li>
+<li><a href="#problem-6" id="toc-problem-6">Problem 6</a></li>
+<li><a href="#problem-7" id="toc-problem-7">Problem 7</a></li>
+</ul>
+</nav>
+<p>The final exam will be a closed-book paper exam without a calculator.
+Exam questions will be similar in type to those found here, but fewer in
+number. While this practice exam is a good study guide, we highly
+recommend being familiar with <em>all the material</em> (including but
+not limited to your previous exams, labs, projects, quizzes and
+homework) as well.</p>
+<section id="problem-0-warm-up" class="level1">
+<h1>Problem 0 (Warm-up)</h1>
+<ol>
+<li>What is the escape sequence for a new line?
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs">\n</code>
+</details></li>
+<li>What type is the result of <code
+class="sourceCode cs"><span class="dv">8</span> <span class="op">*</span> <span class="dv">12</span>M</code>?
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs"><span class="dt">decimal</span></code>
+</details></li>
+<li>What is the return type of a constructor?
+<details>
+<summary>
+Solution
+</summary>
+There isn’t one.
+</details></li>
+<li>What operator would you use to see if int a and int b are equal?
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs"><span class="op">==</span></code>
+</details></li>
+<li>List 4 datatypes.
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs"><span class="dt">string</span></code>, <code
+class="sourceCode cs"><span class="dt">int</span></code>, <code
+class="sourceCode cs"><span class="dt">byte</span></code>, <code
+class="sourceCode cs"><span class="dt">decimal</span></code>, <code
+class="sourceCode cs"><span class="dt">double</span></code>, <code
+class="sourceCode cs"><span class="dt">float</span></code>, <code
+class="sourceCode cs"><span class="dt">char</span></code>, <code
+class="sourceCode cs"><span class="dt">bool</span></code>, <code
+class="sourceCode cs"><span class="dt">long</span></code>, any
+user-defined type (class), etc.
+</details></li>
+<li>List 4 reserved words (keywords).
+<details>
+<summary>
+Solution
+</summary>
+<code class="sourceCode cs"><span class="kw">new</span></code>, <code
+class="sourceCode cs"><span class="kw">static</span></code>, <code
+class="sourceCode cs"><span class="kw">if</span></code>, <code
+class="sourceCode cs"><span class="kw">else</span></code>, <code
+class="sourceCode cs"><span class="kw">switch</span></code>, <code
+class="sourceCode cs"><span class="kw">break</span></code>, any datatype
+(other than user-defined), etc. Anything that was dark green on any of
+the slides.
+</details></li>
+<li>What is the difference between a variable and a constant?
+<details>
+<summary>
+Solution
+</summary>
+variables can have their values changed while constants are set exactly
+once.
+</details></li>
+<li>Write a statement that declares a constant of type int named <code
+class="sourceCode cs">DaysInWeek</code> and sets its value to 7.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs"><span class="dt">const</span> <span class="dt">int</span> DaysInWeek <span class="op">=</span><span class="dv">7</span><span class="op">;</span></code>
+</details></li>
+<li>In an exam class, if I want to keep track of the total number of
+exams should the attribute be static or non-static?
+<details>
+<summary>
+Solution
+</summary>
+static
+</details></li>
+<li>What operator is used to find out the remainder from division?
+<details>
+<summary>
+Solution
+</summary>
+modulo (<code class="sourceCode cs"><span class="op">%</span></code>)
+</details></li>
+<li>Write a condition that evaluates to true if an int length is between
+4 and 16, both inclusive.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs"><span class="op">(</span>length<span class="op">&gt;=</span><span class="dv">4</span> <span class="op">&amp;&amp;</span> length<span class="op">&lt;=</span><span class="dv">16</span><span class="op">)</span></code>
+</details></li>
+<li>How many times would a for loop with this header run? <code
+class="sourceCode cs"><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">5</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">12</span><span class="op">;</span> i<span class="op">++)</span></code>
+<details>
+<summary>
+Solution
+</summary>
+7 times.
+</details></li>
+<li>Write a statement or statements that creates an int array of size 50
+with each index containing that index as its value. (i.e. 0 at <code
+class="sourceCode cs"><span class="op">[</span><span class="dv">0</span><span class="op">]</span></code>,
+13 at <code
+class="sourceCode cs"><span class="op">[</span><span class="dv">13</span><span class="op">]</span></code>,
+49 at <code
+class="sourceCode cs"><span class="op">[</span><span class="dv">49</span><span class="op">]</span></code>,
+etc.).
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> numbers <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">50</span><span class="op">];</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i<span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>numbers<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>i<span class="op">++)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  numbers<span class="op">[</span>i<span class="op">]=</span>i<span class="op">;</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</details></li>
+<li>Write a statement or statements to create a random number generator
+called <code class="sourceCode cs">examRand</code> and use it to
+generate a random number between 40 and 57 (inclusive).
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Random examRand <span class="op">=</span> <span class="kw">new</span> <span class="fu">Random</span><span class="op">();</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>examRand<span class="op">.</span><span class="fu">Next</span><span class="op">(</span><span class="dv">40</span><span class="op">,</span><span class="dv">58</span><span class="op">);</span></span></code></pre></div>
+</details></li>
+</ol>
+</section>
+<section id="problem-1" class="level1">
+<h1>Problem 1</h1>
+<p>Consider the code below:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> VirtualPet<span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">string</span> name <span class="op">=</span> <span class="st">&quot;Blank&quot;</span><span class="op">;</span>          <span class="co">// Name of the pet.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> hungerLevel <span class="op">=</span> <span class="dv">1</span>m<span class="op">;</span>       <span class="co">// Level of hunger, with 1 being full, in percent.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">decimal</span> happinessLevel <span class="op">=</span> <span class="dv">1</span>m<span class="op">;</span>    <span class="co">// Level of happiness, in percent</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">SetName</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        name <span class="op">=</span> nameP<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ol>
+<li>Write a statement to instantiate a <code
+class="sourceCode cs">VirtualPet</code> object called <code
+class="sourceCode cs">firstPet</code>.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs">VirtualPet firstPet <span class="op">=</span> <span class="kw">new</span> <span class="fu">VirtualPet</span><span class="op">();</span></code><br />
+Review classes and objects if you cannot do this. It should be
+straightforward.
+</details></li>
+<li>Write a getter for the name attribute.
+<details>
+<summary>
+Solution
+</summary>
+Review classes and objects if you cannot do this. It should be
+straightforward.
+</details></li>
+<li>Write a statement that would display to the screen the name of the
+<code class="sourceCode cs">firstPet</code> object you created
+previously. What would be displayed?
+<details>
+<summary>
+Solution
+</summary>
+Make sure you call the <code class="sourceCode cs">GetName</code>
+method. It should return the default name from our <code
+class="sourceCode cs">VirtualPet</code> class (what is that?).
+</details></li>
+<li>Write a setter for the <code
+class="sourceCode cs">hungerLevel</code> attribute that takes one
+decimal. The argument should be assigned to the <code
+class="sourceCode cs">hungerLevel</code> attribute only if it is between
+0 and 1 (both included), otherwise the attribute should get the value 0.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">SetHunger</span><span class="op">(</span><span class="dt">decimal</span> level<span class="op">)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      hungerLevel<span class="op">=(</span>level<span class="op">&gt;=</span><span class="dv">0</span>m <span class="op">&amp;&amp;</span> level<span class="op">&lt;=</span><span class="dv">1</span>m<span class="op">)?</span>level<span class="op">:</span><span class="dv">0</span>m<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+Note that while we use the conditional operator here, you can replace
+that with an <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>.
+</details></li>
+<li>Draw the UML diagram for the <code
+class="sourceCode cs">VirtualPet</code> class, including the methods you
+just added.
+<details>
+<summary>
+Solution
+</summary>
+<pre class="text"><code> |=====================================================|
+ |                    **VirtualPet**                   |
+ |-----------------------------------------------------|
+ | - name : string                                     |
+ | - hungerLevel : decimal                             |
+ | - happinessLevel : decimal                          |
+ |-----------------------------------------------------|
+ | + SetName(nameP : string) :                         |
+ | + GetName() : string                                |
+ | + SetHunger(level : decimal)                        |
+ |=====================================================|
+</code></pre>
+</details></li>
+<li>Write a constructor that takes 3 arguments (<code
+class="sourceCode cs"><span class="dt">string</span></code>, <code
+class="sourceCode cs"><span class="dt">decimal</span></code>, <code
+class="sourceCode cs"><span class="dt">decimal</span></code>) for the
+<code class="sourceCode cs">VirtualPet</code> class. Your constructor
+should be such that if one of the decimal arguments is not between 0 and
+1 (both included), then 0 gets assigned to both decimal attributes.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="fu">VirtualPet</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">,</span> <span class="dt">decimal</span> hunger<span class="op">,</span> <span class="dt">decimal</span> happy<span class="op">)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> nameP<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>hunger<span class="op">&gt;=</span><span class="dv">0</span>m <span class="op">&amp;&amp;</span> hunger<span class="op">&lt;=</span><span class="dv">1</span>m <span class="op">&amp;&amp;</span> happy<span class="op">&gt;=</span><span class="dv">0</span>m <span class="op">&amp;&amp;</span> happy<span class="op">&lt;=</span><span class="dv">1</span>m<span class="op">){</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      hungerLevel<span class="op">=</span>hunger<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      happinessLevel<span class="op">=</span>happy<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">else</span><span class="op">{</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      hungerLevel<span class="op">=</span><span class="dv">0</span>m<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>      happinessLevel<span class="op">=</span><span class="dv">0</span>m<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
+</details></li>
+<li>Your earlier statement that created the firstPet object will no
+longer compile after you add the constructor. Why is this the case?
+<details>
+<summary>
+Solution
+</summary>
+Because the default constructor was replaced with the new constructor.
+Since you are providing your own constructor, C# doesn’t provide the
+default, no-args constructor anymore.
+</details></li>
+<li>Write a statement that would create a new <code
+class="sourceCode cs">VirtualPet</code> object called <code
+class="sourceCode cs">secondPet</code> using the constructor you just
+added (the argument values are up to you).
+<details>
+<summary>
+Solution
+</summary>
+``` VirtualPet secondPet = new VirtualPet(“Rover”, 0.8m, 0.5m);
+</details></li>
+<li>Write a <code class="sourceCode cs">ToString</code> method for the
+<code class="sourceCode cs">VirtualPet</code> class. It should display
+the name, <code class="sourceCode cs">hungerLevel</code>, and <code
+class="sourceCode cs">happinessLevel</code>. (Bonus) Display <code
+class="sourceCode cs">hungerLevel</code> and <code
+class="sourceCode cs">happinessLevel</code> graphically: for instance,
+if <code class="sourceCode cs">hungerLevel</code> is at 4.5, display
+“Hunger: XXXX”. You may freely use symbols as if they were normal
+letters.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="kw">override</span> <span class="dt">string</span> <span class="fu">ToString</span><span class="op">(){</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">string</span> returnable<span class="op">=</span> <span class="st">&quot;Name: &quot;</span><span class="op">+</span>name<span class="op">+</span> <span class="st">&quot;, Hunger: &quot;</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">10</span><span class="op">;</span> i<span class="op">&gt;</span><span class="dv">0</span><span class="op">;</span> i<span class="op">--){</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      returnable<span class="op">+=(</span>i<span class="op">&gt;(</span>hungerLevel10<span class="op">))?</span> <span class="st">&quot;&quot;</span> <span class="op">:</span> <span class="st">&quot;X&quot;</span><span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    returnable<span class="op">+=</span> <span class="st">&quot;, Happiness: &quot;</span><span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> j<span class="op">=</span><span class="dv">10</span><span class="op">;</span> j<span class="op">&gt;</span><span class="dv">0</span><span class="op">;</span> j<span class="op">--){</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      returnable<span class="op">+=(</span>j<span class="op">&gt;(</span>happinessLevel10<span class="op">))?</span> <span class="st">&quot;&quot;</span> <span class="op">:</span> <span class="st">&quot;X&quot;</span><span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span> returnable<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
+Note that while we use the conditional operator here, you can replace
+that with an <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>.
+</details></li>
+<li>Write a statement that would use the <code
+class="sourceCode cs">ToString</code> method from the <code
+class="sourceCode cs">VirtualPet</code> class you just added to display
+information about the <code class="sourceCode cs">secondPet</code>
+object.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>secondPet<span class="op">);</span></code><br />
+This statement will <em>implicitely</em> calls the <code
+class="sourceCode cs">ToString</code> method. It is actually equivalent
+to <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>secondPet<span class="op">.</span><span class="fu">ToString</span><span class="op">());</span></code>.
+</details></li>
+</ol>
+</section>
+<section id="problem-2" class="level1">
+<h1>Problem 2</h1>
+<p>This question will have you partially design, implement and use class
+to represent hamburgers. A Burger has a name, a price, a Boolean for
+dairy, and a type (typically beef, pork, chicken, veggie).</p>
+<ol>
+<li>Draw the UML diagram for the Burger class, assuming it contains the
+listed attributes, a getter for the name attribute and a setter for the
+price attribute. Do not include any other methods.
+<details>
+<summary>
+Solution
+</summary>
+Assume name is string, price is decimal, and type is string. Otherwise
+look at the UML from question 1 for an example.
+</details></li>
+<li>Write a getter for the name attribute.
+<details>
+<summary>
+Solution
+</summary>
+Review classes and objects if you cannot do this. It should be
+straightforward.
+</details></li>
+<li>Write a setter for the price attribute.
+<details>
+<summary>
+Solution
+</summary>
+Review classes and objects if you cannot do this. It should be
+straightforward.
+</details></li>
+<li>Write a constructor that takes 4 arguments and sets the value of the
+attributes to be the value of the arguments.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs"><span class="kw">public</span> <span class="fu">Burger</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">,</span> <span class="dt">decimal</span> priceP<span class="op">,</span> <span class="dt">bool</span> dairyP<span class="op">;</span> <span class="dt">string</span> typeP<span class="op">)</span>     <span class="op">{</span>       name<span class="op">=</span>nameP<span class="op">;</span>       price<span class="op">=</span>priceP<span class="op">;</span>       dairy<span class="op">=</span>dairyP<span class="op">;</span>       type<span class="op">=</span>typeP<span class="op">;</span>     <span class="op">}</span></code>
+</details></li>
+<li>Write an additional constructor that takes a name, a dairy, and a
+type. The price should then be set according to the following table. If
+the value for type is not in the table, price should be set to -99.99.
+<details>
+<summary>
+Solution
+</summary>
+<code
+class="sourceCode cs"><span class="kw">public</span> <span class="fu">Burger</span><span class="op">(</span><span class="dt">string</span> nameP<span class="op">,</span> <span class="dt">bool</span> dairyP<span class="op">;</span> <span class="dt">string</span> typeP<span class="op">)</span>   <span class="op">{</span>     name<span class="op">=</span>nameP<span class="op">;</span>     dairy<span class="op">=</span>dairyP<span class="op">;</span>     type<span class="op">=</span>typeP<span class="op">;</span>     <span class="kw">if</span><span class="op">(</span>dairy<span class="op">)</span>     <span class="op">{</span>       <span class="kw">switch</span><span class="op">(</span>type<span class="op">){</span>         <span class="kw">case</span> <span class="st">&quot;beef&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">1.99m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;pork&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">2.1m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;chicken&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">1.85m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;veggie&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">2.25m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">default</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">99.99m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>       <span class="op">}</span>     <span class="op">}</span>     <span class="kw">else</span>     <span class="op">{</span>         <span class="kw">switch</span><span class="op">(</span>type<span class="op">){</span>         <span class="kw">case</span> <span class="st">&quot;beef&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">1.79m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;pork&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="dv">2</span>m<span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;chicken&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">1.6m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">case</span> <span class="st">&quot;veggie&quot;</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">2.1m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>         <span class="kw">default</span><span class="op">:</span>           price<span class="op">=</span><span class="fl">99.99m</span><span class="op">;</span>           <span class="kw">break</span><span class="op">;</span>       <span class="op">}</span>     <span class="op">}</span>   <span class="op">}</span></code>
+</details></li>
+<li>Write a static method Promotion that takes as an argument a price
+and returns a value 75% of the argument.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">public</span> <span class="kw">static</span> <span class="dt">decimal</span> <span class="fu">Promotion</span> <span class="op">(</span><span class="dt">decimal</span> value<span class="op">)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">return</span><span class="op">(</span>value0<span class="fl">.75m</span><span class="op">);</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
+</details></li>
+<li>Write a <code class="sourceCode cs">ToString</code> method. The
+string returned should contain the values of all attributes.
+<details>
+<summary>
+Solution
+</summary>
+Easier version of <code class="sourceCode cs">ToString</code> from
+Problem 1. Remember to use keyword override.
+</details></li>
+<li>Write a statement/statements that:</li>
+</ol>
+<ul>
+<li>Displays the result of passing 12.84 to Promotion.</li>
+<li>Instantiates a Burger object named OldBeefy with the values “Old
+Beefy”, 1.99, true, and “beef”.</li>
+<li>Changes the price of OldBeefy to 2.29.</li>
+<li>Displays the name (and only the name) of OldBeefy.</li>
+<li>Store the value returned by calling the ToString method with
+OldBeefy in a variable.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Displays the result of passing 12.84 to Promotion.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>Burger<span class="op">.</span><span class="fu">Promotion</span> <span class="op">(</span><span class="fl">12.84m</span><span class="op">));</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The answer is 9.63m</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Instantiates a Burger object named OldBeefy with the values &quot;Old Beefy&quot;, 1.99, true, and &quot;beef&quot;.</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>Burger OldBeefy <span class="op">=</span> <span class="kw">new</span> <span class="fu">Burger</span><span class="op">(</span><span class="st">&quot;Old Beefy&quot;</span><span class="op">,</span> <span class="fl">1.99m</span><span class="op">,</span> <span class="kw">true</span><span class="op">,</span> <span class="st">&quot;beef&quot;</span><span class="op">);</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Changes the price of OldBeefy to 2.29.</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>OldBeefy<span class="op">.</span><span class="fu">SetPrice</span><span class="op">(</span><span class="fl">2.29m</span><span class="op">);</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Displays the name (and only the name) of OldBeefy.</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>OldBeefy<span class="op">.</span><span class="fu">GetName</span><span class="op">());</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Store the value returned by calling the ToString method with OldBeefy in a variable.</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> holder <span class="op">=</span> OldBeefy<span class="op">.</span><span class="fu">ToString</span><span class="op">();</span></span></code></pre></div>
+</details></li>
+</ul>
+</section>
+<section id="problem-3" class="level1">
+<h1>Problem 3</h1>
+<p>Complete the table based on the code.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">x</th>
+<th style="text-align: left;">y</th>
+<th style="text-align: left;">z</th>
+<th style="text-align: left;">Displays</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘e’</td>
+<td style="text-align: left;">18.2M</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘a’</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">‘c’</td>
+<td style="text-align: left;">4.6M</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘d’</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘b’</td>
+<td style="text-align: left;">115</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘d’</td>
+<td style="text-align: left;">-33.7M</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">‘a’</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘c’</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> y<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> z<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">// x, y, and z are given legal values</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>x<span class="op">&lt;</span><span class="dv">0</span> <span class="op">&amp;&amp;</span> y <span class="op">==</span> <span class="ch">&#39;a&#39;</span><span class="op">){</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;1&quot;</span><span class="op">);</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>z<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span><span class="op">){</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;2&quot;</span><span class="op">);</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>y<span class="op">==</span><span class="ch">&#39;c&#39;</span> <span class="op">||</span> y<span class="op">==</span><span class="ch">&#39;d&#39;</span><span class="op">){</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;3&quot;</span><span class="op">);</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span> <span class="kw">if</span><span class="op">(</span>x<span class="op">!=</span><span class="dv">0</span> <span class="op">&amp;&amp;</span> z<span class="op">!=</span><span class="dv">0</span><span class="op">){</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;4&quot;</span><span class="op">);</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="kw">else</span><span class="op">{</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;5&quot;</span><span class="op">);</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<details>
+<summary>
+Solution
+</summary>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">x</th>
+<th style="text-align: left;">y</th>
+<th style="text-align: left;">z</th>
+<th style="text-align: left;">Displays</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘e’</td>
+<td style="text-align: left;">18.2M</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘a’</td>
+<td style="text-align: left;">-2</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">‘c’</td>
+<td style="text-align: left;">4.6M</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘d’</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">‘b’</td>
+<td style="text-align: left;">115</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘d’</td>
+<td style="text-align: left;">-33.7M</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">‘a’</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">‘c’</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">‘b’</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
+Any set of inputs that produce 5 are fine for the last row. This should
+include 0 for x, anything other than ‘a’, ‘c’, or ‘d’ for y, and
+anything odd or with a decimal portion for z.
+</details>
+</section>
+<section id="problem-4" class="level1">
+<h1>Problem 4</h1>
+<p>Given two int arrays of equal length, write a code segment that
+compares the values at each index to see if they match. Return the total
+number of matches.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">//given int [] A and int [] B of some length</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> matches<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>A<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  matches<span class="op">+=(</span>A<span class="op">[</span>i<span class="op">]==</span>B<span class="op">[</span>i<span class="op">])?</span><span class="dv">1</span><span class="op">:</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>matches<span class="op">);</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">//Note that while I use the conditional operator here, you can replace that with an if-else</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">//if version:</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> matches<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>A<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">if</span> <span class="op">(</span>A<span class="op">[</span>i<span class="op">]==</span>B<span class="op">[</span>i<span class="op">])</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  matches<span class="op">++;</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>matches<span class="op">);</span></span></code></pre></div>
+</details>
+</section>
+<section id="problem-5-deceptively-hard" class="level1">
+<h1>Problem 5 (Deceptively hard)</h1>
+<p>Given two string arrays (array A and array B) of unknown (possibly
+different) lengths, determine if there are any values found in both A
+and B. If they exist, display them to the screen. At the end of the
+program, display the total number of common values between A and B. If
+there are repeating values in either or both arrays, each should only be
+counted once.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span><span class="op">[]</span> C <span class="op">=</span> <span class="kw">new</span> <span class="dt">string</span><span class="op">[</span>A<span class="op">.</span><span class="fu">Length</span><span class="op">];</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> temp<span class="op">=</span><span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> inC<span class="op">=</span><span class="kw">false</span><span class="op">,</span> inD<span class="op">=</span><span class="kw">false</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> firstBlankC<span class="op">=</span><span class="dv">0</span><span class="op">,</span> firstBlankD<span class="op">=</span><span class="dv">0</span><span class="op">,</span> total<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>A<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  inC<span class="op">=</span><span class="kw">false</span><span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>C<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>j<span class="op">++){</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>A<span class="op">[</span>i<span class="op">]==</span>C<span class="op">[</span>j<span class="op">]){</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      inC<span class="op">=</span><span class="kw">true</span><span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="kw">break</span><span class="op">;</span><span class="co">//ends the inner for loop early</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(!</span>inC<span class="op">){</span><span class="co">//same depth as the inner for loop</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      C<span class="op">[</span>firstBlankC<span class="op">]=</span>A<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      firstBlankC<span class="op">++;</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span><span class="co">//close outer for</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co">//Repeat that code, but replace A with B and C with D. That gets rid</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>of the duplicates<span class="op">.</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span>firstBlankC<span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span>firstBlankD<span class="op">;</span>j<span class="op">++){</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>C<span class="op">[</span>i<span class="op">]==</span>D<span class="op">[</span>j<span class="op">]){</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>C<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>      total<span class="op">++;</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Writeline</span><span class="op">(</span>$<span class="st">&quot;Total values in common: {total}.&quot;</span><span class="op">);</span></span></code></pre></div>
+</details>
+<p>(Bonus): How could Lists be used to make this problem easier?</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">//Assuming A and B are lists instead of arrays; you can also just make</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> Lists from the arrays</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">//with the .AddRange() method of the List class</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>A<span class="op">.</span><span class="fu">Count</span><span class="op">&gt;</span><span class="dv">0</span><span class="op">){</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span><span class="op">(</span>B<span class="op">.</span><span class="fu">Contains</span><span class="op">(</span>A<span class="op">[</span><span class="dv">0</span><span class="op">])){</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>A<span class="op">[</span><span class="dv">0</span><span class="op">]);</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>total<span class="op">++;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>B<span class="op">.</span><span class="fu">RemoveAll</span><span class="op">(</span>item <span class="op">=&gt;</span> item<span class="op">==</span>A<span class="op">[</span><span class="dv">0</span><span class="op">]);</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>A<span class="op">.</span><span class="fu">RemoveAll</span><span class="op">(</span>item <span class="op">=&gt;</span> item<span class="op">==</span>A<span class="op">[</span><span class="dv">0</span><span class="op">]);</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The total number of matches is {total}&quot;</span><span class="op">);</span></span></code></pre></div>
+</details>
+</section>
+<section id="problem-6" class="level1">
+<h1>Problem 6</h1>
+<p>Write a program that declares an int variable called “pin” and asks
+the user for their pin. As long as the user enters something that is not
+a number, is negative, or greater than 9999, your program should ask
+again.</p>
+<p>(Bonus): Your code should make sure that the pin has exactly 4
+digits, including leading zeros.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> userInput <span class="op">=</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> pin <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> numDigits <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> valid <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">do</span> <span class="op">{</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter your 4-digit pin.&quot;</span><span class="op">);</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  userInput <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  valid <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>userInput<span class="op">,</span> pin<span class="op">);</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">if</span> <span class="op">(</span>valid<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    valid <span class="op">=</span> <span class="op">(</span>userInput<span class="op">.</span><span class="fu">Length</span> <span class="op">==</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">while</span> <span class="op">(!</span>valid <span class="op">||</span> pin <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">||</span> pin <span class="op">&gt;</span> <span class="dv">9999</span><span class="op">);</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Pin successfully set!&quot;</span><span class="op">);</span></span></code></pre></div>
+</details>
+</section>
+<section id="problem-7" class="level1">
+<h1>Problem 7</h1>
+<ol>
+<li>Write a statement that would create an int array of size 100.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">100</span><span class="op">];</span></span></code></pre></div>
+</details></li>
+<li>Write a series of statements that would ask the user to enter a
+value for each cell in the array (no need to perform user-input
+validation, but you may if you like).
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Enter value {i}.&quot;</span><span class="op">);</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    myArray<span class="op">[</span>i<span class="op">]=</span><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
+</details></li>
+<li>Write a series of statements that would ask the user to enter a
+value, displaying “In your array” if the value is in your array.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter a value to check against your array.&quot;</span><span class="op">);</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> userValue<span class="op">=</span><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">bool</span> inArray<span class="op">=</span><span class="kw">false</span><span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]==</span>userValue<span class="op">){</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      inArray<span class="op">=</span><span class="kw">true</span><span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">if</span><span class="op">(</span>inArray<span class="op">){</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;In your array&quot;</span><span class="op">);</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code></pre></div>
+</details></li>
+<li>Write a series of statements that would display the sum of values in
+the array.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> sum<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  sum<span class="op">+=</span>myArray<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Sum of array values is {sum}&quot;</span><span class="op">);</span></span></code></pre></div>
+</details></li>
+<li>Write a series of statements that would display the product of all
+the non-zero values in the array.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> product<span class="op">=</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++){</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]!=</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      product<span class="op">=</span>myArray<span class="op">[</span>i<span class="op">]</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;Product of non-zero values is {product}&quot;</span><span class="op">);</span></span></code></pre></div>
+</details></li>
+<li>Write a series of statements that would display the smallest index
+of the greatest value in the array.
+<details>
+<summary>
+Solution
+</summary>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> greatest<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  gIndex<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>myArray<span class="op">.</span><span class="fu">Length</span><span class="op">;</span>i<span class="op">++)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span><span class="op">(</span>myArray<span class="op">[</span>i<span class="op">]&gt;</span>greatest<span class="op">){</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      greatest<span class="op">=</span>myArray<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      gIndex<span class="op">=</span>i<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;The smallest index of the greatest value is  {gIndex}&quot;</span><span class="op">);</span></span></code></pre></div>
+</details></li>
+</ol>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="practice_final_with_solutions.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="practice_final_with_solutions.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="practice_final_with_solutions.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/docs/practice_final_with_solutions.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

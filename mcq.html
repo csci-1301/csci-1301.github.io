@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Multiple Choice Questions</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='index.html'>CSCI 1301</a>
+        <a href='index.html#book'>Book</a>
+        <a href='labs/'>Labs</a>
+        <a href='slides.html'>Slides</a>
+        <a href='index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Multiple Choice Questions</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:37 PM)</p>
+</header>
+<!--
+
+ DO NOT EDIT THIS FILE
+
+ Edit docs/mcq_with_solutions.md, and run
+ "make docs/mcq.md"
+ instead.
+ -->
+<ol>
+<li><p>Why are the instructors sharing most of the material in odt,
+docx, pdf, html and md?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />To insure compatibility across
+operating systems (Android, Linux, Windows, MacOs, …).</label></li>
+<li><label><input type="checkbox" />To make it easier to access the
+resources in multiple ways (print, screen, etc.)</label></li>
+<li><label><input type="checkbox" />All of the above.</label></li>
+</ul></li>
+<li><p>What does “free” software means?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />That the software has no
+value.</label></li>
+<li><label><input type="checkbox" />That the users can run the software
+for any purpose and study its source code.</label></li>
+<li><label><input type="checkbox" />That it is not developed by a
+company.</label></li>
+<li><label><input type="checkbox" />That the software can be downloaded
+at no cost.</label></li>
+</ul></li>
+<li><p>In your IDE, the shortcut to compile your program is usually…</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />“Build your solution”, ctrl + shift
++ B or Cmd + B</label></li>
+<li><label><input type="checkbox" />“Save”, ctrl + S or Cmd +
+S</label></li>
+<li><label><input type="checkbox" />“Exit”, alt + F4 or Cmd +
+q</label></li>
+<li><label><input type="checkbox" />“Start without debugging”, Ctrl + F5
+or Cmd + F5</label></li>
+</ul></li>
+<li><p>To share or backup a project, you need to…</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />share the .sln file.</label></li>
+<li><label><input type="checkbox" />share the .cs file.</label></li>
+<li><label><input type="checkbox" />share the .csproj file.</label></li>
+<li><label><input type="checkbox" />zip the folder containing the .sln
+file and another folder with multiple files and folders in
+it.</label></li>
+</ul></li>
+<li><p>If your IDE returns the message</p>
+<pre class="text"><code>Program.cs(21,21): Error CS0117: &#39;Console&#39; does not contain a definition for &#39;WiteLine&#39; (CS0117) (Solution)</code></pre>
+<p>This means that…</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />That you misspelled the word
+“WriteLine”.</label></li>
+<li><label><input type="checkbox" />Your program successfully compiled
+and is ready to be executed.</label></li>
+<li><label><input type="checkbox" />That the “Console” class does not
+exist.</label></li>
+<li><label><input type="checkbox" />Your IDE was not properly installed
+and you should reboot your computer.</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age<span class="op">,</span> defaultChoice <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> averagePrice<span class="op">;</span></span></code></pre></div>
+<p>Which of the following is correct?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />It contains declaration and
+initialization statements.</label></li>
+<li><label><input type="checkbox" />It declares variables of two
+different datatypes.</label></li>
+<li><label><input type="checkbox" />Only the value of <code
+class="sourceCode cs">defaultChoice</code> is set.</label></li>
+<li><label><input type="checkbox" />All of the above.</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> person <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> pie <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> piePerPerson <span class="op">=</span> pie <span class="op">/</span> person<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Each guest gets &quot;</span> <span class="op">+</span> piePerPerson <span class="op">+</span> <span class="st">&quot; pie(s).&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>What will be displayed by it?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Nothing: an error will prevent from
+compiling it successfully.</label></li>
+<li><label><input type="checkbox" />“Each guest gets 2.4
+pie(s).”</label></li>
+<li><label><input type="checkbox" />“Each guest gets
+0.41666666666666666666666…” (it will never ends, displaying 6
+forever).</label></li>
+<li><label><input type="checkbox" />“Each guest gets 0.416666666666667
+pie(s).”</label></li>
+<li><label><input type="checkbox" />“Each guest gets 0
+pie(s).”</label></li>
+</ul></li>
+<li><p>Consider the following statement:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> balance <span class="op">=</span> <span class="fl">2.5M</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> price <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="dt">decimal</span> remainingBalance <span class="op">=</span> balance <span class="op">-</span> price<span class="op">;</span></span></code></pre></div>
+<p>Which of the following is correct?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />This program will not compile
+because the result of <code
+class="sourceCode cs">balance <span class="op">-</span> price</code> is
+not a decimal.</label></li>
+<li><label><input type="checkbox" />This program will not compile
+because a decimal cannot be negative.</label></li>
+<li><label><input type="checkbox" />This program will
+compile.</label></li>
+<li><label><input type="checkbox" />This program will not compile
+because you cannot store an integer value (12) in a
+decimal.</label></li>
+</ul></li>
+<li><p>The method used to read a string from the user is called…</p>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">ReadString</code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">ReadFrom</code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">ReadLine</code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">ReadInput</code></label></li>
+</ul></li>
+<li><p>Consider the following program:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter your age.&quot;</span><span class="op">);</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> fromUser <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> age <span class="op">=</span> <span class="fu">_______</span> <span class="op">(</span>fromUser<span class="op">);</span></span></code></pre></div>
+<p>To correctly be able to store the string in <code
+class="sourceCode cs">fromUser</code> into age, you should replace <code
+class="sourceCode cs">_______</code> with…</p>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="op">(</span><span class="dt">int</span><span class="op">)</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span></code></label></li>
+<li><label><input type="checkbox" />Nothing: as long as the user enters
+an integer value, we can store it into age just fine.</label></li>
+<li><label><input type="checkbox" />None of the above.</label></li>
+</ul></li>
+<li><p>What are, respectively, the return types of a constructor and of
+a <code class="sourceCode cs">ToString</code> method?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Constructors do not have a return
+type, and a <code class="sourceCode cs">ToString</code> method returns a
+<code
+class="sourceCode cs"><span class="dt">string</span></code>.</label></li>
+<li><label><input type="checkbox" />Constructors and <code
+class="sourceCode cs">ToString</code> methods both return <code
+class="sourceCode cs"><span class="dt">string</span></code>s.</label></li>
+<li><label><input type="checkbox" />Constructors returns a <code
+class="sourceCode cs"><span class="dt">string</span></code>, and a <code
+class="sourceCode cs">ToString</code> method does not return anything
+(it simply displays a text).</label></li>
+<li><label><input type="checkbox" />It is impossible to know ahead of
+time, as this depends of the class they are implemented in.</label></li>
+</ul></li>
+<li><p>What is the name of a constructor method?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Nothing: an error will prevent from
+compiling it successfully.</label></li>
+<li><label><input type="checkbox" />Whatever the name of the class
+is.</label></li>
+<li><label><input type="checkbox" />It does not have any.</label></li>
+<li><label><input type="checkbox" />The name of the instance it
+creates.</label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">Constructor</code></label></li>
+</ul></li>
+<li><p>What are the three logical connectives in C# (that we
+studied)?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />And (<code
+class="sourceCode cs"><span class="op">&amp;&amp;</span></code>), or
+(<code class="sourceCode cs"><span class="op">||</span></code>) and
+negation (<code
+class="sourceCode cs"><span class="op">!</span></code>).</label></li>
+<li><label><input type="checkbox" />Equality (<code
+class="sourceCode cs"><span class="op">==</span></code>), greater than
+(<code class="sourceCode cs"><span class="op">&gt;</span></code>) and
+less than (<code
+class="sourceCode cs"><span class="op">&lt;</span></code>).</label></li>
+<li><label><input type="checkbox" />And (<code
+class="sourceCode cs">and</code>), or (<code
+class="sourceCode cs">or</code>) and negation (<code
+class="sourceCode cs">not</code>).</label></li>
+</ul></li>
+<li><p>Which of the following will evaluate to true?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span> <span class="op">&amp;&amp;</span> <span class="dv">2</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="op">(</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="dv">1</span> <span class="op">!=</span> <span class="dv">0</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="op">!(</span><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span><span class="op">)</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span> <span class="op">||</span> <span class="dv">2</span></code></label></li>
+</ul></li>
+<li><p>Will the following expression evaluates, and if so, what will it
+evaluate to?</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">true</span> <span class="op">==</span> <span class="kw">false</span> <span class="op">||</span> <span class="dv">2</span> <span class="op">/</span> <span class="dv">1</span> <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> <span class="dv">3</span> <span class="op">-</span> <span class="dv">1</span> <span class="op">!=</span> <span class="dv">2</span> <span class="op">*</span> <span class="fl">0.5</span> <span class="op">+</span> <span class="fl">0.5</span></span></code></pre></div>
+<p>evaluates?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />It will evaluate to a
+number.</label></li>
+<li><label><input type="checkbox" />It will evaluate to <code
+class="sourceCode cs"><span class="kw">false</span></code>.</label></li>
+<li><label><input type="checkbox" />It will evaluate to <code
+class="sourceCode cs"><span class="kw">true</span></code>.</label></li>
+<li><label><input type="checkbox" />It will not evaluate.</label></li>
+<li><label><input type="checkbox" />None of the above.</label></li>
+</ul></li>
+<li><p>What will be displayed by the following code?</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> number <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>number <span class="op">&lt;=</span> <span class="dv">15</span><span class="op">)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    number<span class="op">+=</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>number <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">12</span> <span class="dv">14</span> <span class="dv">16</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span> <span class="dv">11</span> <span class="dv">12</span> <span class="dv">13</span> <span class="dv">14</span> <span class="dv">15</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span> <span class="dv">11</span> <span class="dv">12</span> <span class="dv">13</span> <span class="dv">14</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span> <span class="dv">12</span> <span class="dv">16</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span> <span class="dv">12</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span> <span class="dv">12</span> <span class="dv">14</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">12</span><span class="op">+</span><span class="dv">14</span><span class="op">+</span><span class="dv">16</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">10</span><span class="op">+</span><span class="dv">11</span><span class="op">+</span><span class="dv">12</span><span class="op">+</span><span class="dv">13</span><span class="op">+</span><span class="dv">14</span><span class="op">+</span><span class="dv">15</span></code></label></li>
+</ul></li>
+<li><p>What will be displayed by the following code?</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>i<span class="op">);</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">0</span></code> followed by a new
+line, forever.</label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">0</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dv">0</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span></code>
+with a new line between each number</label></li>
+<li><label><input type="checkbox" />Nothing</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter… something!&quot;</span><span class="op">);</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> answer<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> valid <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">TryParse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">(),</span> <span class="kw">out</span> answer<span class="op">);</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>$<span class="st">&quot;returns: {valid}, value:{answer}&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>If the user enters “Train”, then it will display:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />returns: False, value:
+0</label></li>
+<li><label><input type="checkbox" />returns: True, value: 0</label></li>
+<li><label><input type="checkbox" />returns: True, value:
+Train</label></li>
+<li><label><input type="checkbox" />returns: False, value:
+Train</label></li>
+<li><label><input type="checkbox" />Nothing: the program will
+crash.</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> answer<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter something&quot;</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>answer <span class="op">!=</span> <span class="st">&quot;yes&quot;</span> <span class="op">||</span> answer <span class="op">!=</span><span class="st">&quot;Yes&quot;</span><span class="op">){</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter something&quot;</span><span class="op">);</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    answer <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>What can the user enters to <em>exit</em> this loop:</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />There is nothing the user can enter
+to exit this loop</label></li>
+<li><label><input type="checkbox" />Either “Yes” or “yes”</label></li>
+<li><label><input type="checkbox" />Anything that is different from
+“Yes” and “yes”</label></li>
+<li><label><input type="checkbox" />Anything</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> answer<span class="op">;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter something&quot;</span><span class="op">);</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span> <span class="op">(</span>answer <span class="op">&gt;</span> <span class="dv">10</span> <span class="op">&amp;&amp;</span> answer <span class="op">&lt;</span> <span class="dv">100</span><span class="op">){</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Enter something&quot;</span><span class="op">);</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    answer <span class="op">=</span> <span class="dt">int</span><span class="op">.</span><span class="fu">Parse</span><span class="op">(</span>Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">());</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>What can the user enters to <em>exit</em> this loop?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Any number not between 10 and 100
+(both included)</label></li>
+<li><label><input type="checkbox" />Any number between 10 and 100 (both
+included)</label></li>
+<li><label><input type="checkbox" />Any number between 10 and 100 (both
+excluded)</label></li>
+<li><label><input type="checkbox" />Any number not between 10 and 100
+(both excluded)</label></li>
+</ul></li>
+<li><p>What is the correct way of creating an array of <code
+class="sourceCode cs"><span class="dt">int</span></code> of size 5 named
+<code class="sourceCode cs">myArray</code>?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[</span><span class="dv">4</span><span class="op">]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">4</span><span class="op">];</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">(</span><span class="dv">5</span><span class="op">);</span></code></label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs"><span class="dt">int</span><span class="op">[]</span> myArray <span class="op">=</span> <span class="dt">int</span><span class="op">[</span><span class="dv">4</span><span class="op">];</span></code></label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> grades <span class="op">=</span> <span class="op">{</span><span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">15</span><span class="op">};</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>grades<span class="op">[</span><span class="dv">2</span><span class="op">]);</span></span></code></pre></div>
+<p>What will it display?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />5</label></li>
+<li><label><input type="checkbox" />Nothing</label></li>
+<li><label><input type="checkbox" />20</label></li>
+<li><label><input type="checkbox" />15</label></li>
+<li><label><input type="checkbox" />grades</label></li>
+<li><label><input type="checkbox" />grades[2]</label></li>
+<li><label><input type="checkbox" />10</label></li>
+</ul></li>
+<li><p>Consider the following code:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> grades <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;A&#39;</span><span class="op">,</span> <span class="ch">&#39;B&#39;</span><span class="op">,</span> <span class="ch">&#39;C&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;F&#39;</span><span class="op">};</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">while</span><span class="op">(</span>i <span class="op">&lt;</span> grades<span class="op">.</span><span class="fu">Length</span><span class="op">){</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    i<span class="op">++;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>grades<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Something is wrong with it, can you tell what?</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />There will be an “Index was outside
+the bounds of the array.” error.</label></li>
+<li><label><input type="checkbox" />The array is not properly
+initialized.</label></li>
+<li><label><input type="checkbox" />The loop is infinite</label></li>
+<li><label><input type="checkbox" /><code
+class="sourceCode cs">grades<span class="op">.</span><span class="fu">Length</span></code>
+is not declared.</label></li>
+</ul></li>
+<li><p>What will be displayed by the following code?</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> e <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="op">;</span> e <span class="op">&lt;=</span> <span class="dv">20</span><span class="op">;</span> e <span class="op">+=</span> <span class="dv">5</span><span class="op">)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span>e <span class="op">+</span> <span class="st">&quot; &quot;</span><span class="op">);</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<ul class="task-list">
+<li><label><input type="checkbox" />-5 0 5 10 15 20</label></li>
+<li><label><input type="checkbox" />-5 0 5 10 15</label></li>
+<li><label><input type="checkbox" />0 5 10 15</label></li>
+<li><label><input type="checkbox" />-5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9
+10 11 12 13 14 15 16 17 18 19 20</label></li>
+<li><label><input type="checkbox" />Nothing</label></li>
+<li><label><input type="checkbox" />0 5 10 15 20</label></li>
+</ul></li>
+<li><p>What will be displayed by the following code?</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> variable <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> e <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> e <span class="op">&lt;=</span> <span class="dv">5</span><span class="op">;</span> e <span class="op">+=</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    variable <span class="op">+=</span> e<span class="op">;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>    </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span>variable<span class="op">);</span></span></code></pre></div>
+<ul class="task-list">
+<li><label><input type="checkbox" />15</label></li>
+<li><label><input type="checkbox" />0</label></li>
+<li><label><input type="checkbox" />Nothing</label></li>
+<li><label><input type="checkbox" />1 2 3 4 5</label></li>
+</ul></li>
+</ol>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="mcq.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="mcq.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="mcq.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/docs/mcq.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

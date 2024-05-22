@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../">
+  <meta property="og:image" content="../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>List of Labs</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../index.html'>CSCI 1301</a>
+        <a href='../index.html#book'>Book</a>
+        <a href='../labs/'>Labs</a>
+        <a href='../slides.html'>Slides</a>
+        <a href='../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">List of Labs</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:37 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#prerequisites-and-related-lectures"
+id="toc-prerequisites-and-related-lectures">Prerequisites and related
+lectures</a></li>
+<li><a href="#alphabetically"
+id="toc-alphabetically">Alphabetically</a></li>
+</ul>
+</nav>
+<!--
+This directory contains all lab exercises. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution.
+
+Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add a new lab.
+-->
+<!-- This table ends up causing more confusion than it's worth. Recommend to make internal for instructors' eyes only
+# Suggested Order
+
+|  Week | Lab Topic      | 
+|  ---  | ---------------|
+|  1    | [Introduction](https://csci-1301.github.io/labs/Introduction/)  | 
+|  2    | [Hello World](https://csci-1301.github.io/labs/HelloWorld/), [First Program](https://csci-1301.github.io/labs/FirstProgram/)  | 
+|  3    | [Variables](https://csci-1301.github.io/labs/Variables/), [Casting](https://csci-1301.github.io/labs/Casting/)  | 
+|  4    | [User Input](https://csci-1301.github.io/labs/UserInput/), [Introduction to Classes](https://csci-1301.github.io/labs/Rectangle/)  | 
+|  5    | [Class Diagram](https://csci-1301.github.io/labs/ClassDiagram/), [Constructor and ToString](https://csci-1301.github.io/labs/ConstructorToString/) |  
+|  6    | [Precise Rectangle](https://csci-1301.github.io/labs/PreciseRectangle/)  | 
+|  7    | [Booleans](https://csci-1301.github.io/labs/Booleans/), [If](https://csci-1301.github.io/labs/If/), [If and Switch](https://csci-1301.github.io/labs/IfAndSwitch/)  |  
+|  8    | [Increment Decrement](https://csci-1301.github.io/labs/IncrementDecrement/), [While](https://csci-1301.github.io/labs/While/) | 10/05: Quiz #3 |
+|  9    | [Validating Input](https://csci-1301.github.io/labs/ValidatingInput/)  | 
+|  10   | [Do While](https://csci-1301.github.io/labs/DoWhile/)   | 
+|  11   | [Overflow and Underflow](https://csci-1301.github.io/labs/OverflowAndUnderflow/)  | 
+|  12   | [Char and Int Conversion](https://csci-1301.github.io/labs/Char/)    | 
+|  13   | [First Arrays Manipulations](https://csci-1301.github.io/labs/ArrayBasics/), [For Loops](https://csci-1301.github.io/labs/For/)  | 
+|  14   | [Using static keyword](https://csci-1301.github.io/labs/Static/)  | 
+|  15   | [Chemical Elements](https://csci-1301.github.io/labs/ChemicalElements/), [GradeCalculator](https://csci-1301.github.io/labs/GradeCalculator/), [Random](https://csci-1301.github.io/labs/Random/)
+-->
+<section id="prerequisites-and-related-lectures" class="level1">
+<h1>Prerequisites and related lectures</h1>
+<!-- Add a short description of what each lab contains. Also list prerequisite labs and add a link to related lecture notes. -->
+<details>
+<summary>
+Note: This is not a lab schedule, please refer to your syllabus if you
+are looking for the class schedule.
+</summary>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Lab title</th>
+<th style="text-align: left;">Prerequisites</th>
+<th style="text-align: left;">Related Lectures</th>
+<th style="text-align: left;">Description / Topics / Required
+skills</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/Introduction">Introduction</a></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;"><a
+href="/lectures/010_general_concepts">General concepts</a></td>
+<td style="text-align: left;">Overview of course resources, complete
+survey, install IDE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/HelloWorld">HelloWorld</a></td>
+<td style="text-align: left;"><a
+href="/labs/Introduction">Introduction</a></td>
+<td style="text-align: left;"><a
+href="/lectures/020_first_program">First Program</a></td>
+<td style="text-align: left;">- compilation, execution<br/>- basic C#
+syntax<br/>- <code class="sourceCode cs">Write</code>, <code
+class="sourceCode cs">WriteLine</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/FirstProgram">FirstProgram</a></td>
+<td style="text-align: left;"><a
+href="/labs/Introduction">Introduction</a></td>
+<td style="text-align: left;"><a
+href="/lectures/020_first_program">First Program</a></td>
+<td style="text-align: left;">- <code
+class="sourceCode cs">Write</code>, <code
+class="sourceCode cs">WriteLine</code><br/>- escape sequences</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/Variables">Variables</a></td>
+<td style="text-align: left;"><a
+href="/labs/FirstProgram">FirstProgram</a></td>
+<td style="text-align: left;"><a
+href="/lectures/030_datatypes_and_variables">DataTypes and
+Variables</a></td>
+<td style="text-align: left;">- datatypes (<code
+class="sourceCode cs"><span class="dt">string</span></code>,<code
+class="sourceCode cs"><span class="dt">int</span></code>,<code
+class="sourceCode cs"><span class="dt">float</span></code>,<code
+class="sourceCode cs"><span class="dt">double</span></code>,<code
+class="sourceCode cs"><span class="dt">decimal</span></code>)<br/>-
+string interpolation</br>- variable declaration, assignment<br/>-
+operators: <code
+class="sourceCode cs"><span class="op">+</span> <span class="op">-</span> <span class="op">*</span> <span class="op">/</span> <span class="op">%</span></code><br/>-
+compound assignment: <code
+class="sourceCode cs"><span class="op">+=</span> <span class="op">-=</span> <span class="op">*=</span> <span class="op">/=</span> <span class="op">%=</span></code><br/>-
+“read-only” example with explicit cast</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="/labs/Casting">Casting</a></td>
+<td style="text-align: left;"><a
+href="/labs/Variables">Variables</a></td>
+<td style="text-align: left;"><a
+href="/lectures/040_operators">Operators</a></td>
+<td style="text-align: left;">- operators: <code
+class="sourceCode cs"><span class="op">+</span> <span class="op">-</span> <span class="op">*</span> <span class="op">/</span> <span class="op">%</span></code><br/>-
+string interpolation<br/>- implicit and explicit cast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/UserInput">UserInput</a></td>
+<td style="text-align: left;"><a
+href="/labs/Variables">Variables</a></td>
+<td style="text-align: left;"><a
+href="/lectures/050_reading_and_displaying">Reading and
+Displaying</a></td>
+<td style="text-align: left;">Reading input from user<br/>- <code
+class="sourceCode cs">Parse</code> method<br/>- <code
+class="sourceCode cs"><span class="fu">ReadLine</span><span class="op">()</span></code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/Rectangle">Rectangle</a></td>
+<td style="text-align: left;"><a
+href="/labs/Variables">Variables</a></td>
+<td style="text-align: left;"><a
+href="/lectures/060_object_oriented_intro">Introduction to
+Objects</a></td>
+<td style="text-align: left;">Implementing a class with attributes and
+methods<br/>- getters, setters<br/>- implementing other methods</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/PreciseRectangle">PreciseRectangle</a></td>
+<td style="text-align: left;"><a
+href="/labs/Rectangle">Rectangle</a></td>
+<td style="text-align: left;"><a
+href="/lectures/060_object_oriented_intro">Introduction to
+Objects</a></td>
+<td style="text-align: left;">Extending a class, writing a class from
+scratch<br/>- attributes, methods<br/>- constants</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/ClassDiagram">ClassDiagram</a></td>
+<td style="text-align: left;"><a
+href="/labs/Rectangle">Rectangle</a></td>
+<td style="text-align: left;"><a
+href="/lectures/060_object_oriented_intro">Introduction to
+Objects</a></td>
+<td style="text-align: left;">Practice reading and creating a UML class
+diagrams</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/ConstructorToString">ConstructorToString</a></td>
+<td style="text-align: left;"><a
+href="/labs/PreciseRectangle">PreciseRectangle</a></td>
+<td style="text-align: left;"><a
+href="/lectures/070_object_oriented_contd">Advanced Objects</a></td>
+<td style="text-align: left;">Writing a class with custom constructors
+and <code
+class="sourceCode cs"><span class="fu">ToString</span><span class="op">()</span></code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="/labs/Static">Static</a></td>
+<td style="text-align: left;"><a
+href="/labs/Rectangle">Rectangle</a></td>
+<td style="text-align: left;"><a
+href="/lectures/170_static_elements">Static</a></td>
+<td style="text-align: left;">static classes, static class members</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/ChemicalElements">ChemicalElements</a></td>
+<td style="text-align: left;"><a
+href="/labs/Rectangle">Rectangle</a></td>
+<td style="text-align: left;"><a
+href="/lectures/170_static_elements">Static</a></td>
+<td style="text-align: left;">static methods and method calls in
+non-static class</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="/labs/Booleans">Booleans</a></td>
+<td style="text-align: left;"><a
+href="/labs/FirstProgram">FirstProgram</a></td>
+<td style="text-align: left;"><a
+href="/lectures/080_decisions_booleans_and_comparisons">Decisions and
+Decision Structures</a></td>
+<td style="text-align: left;">Evaluating Boolean expressions<br/>- truth
+tables<br/>- operators: <code
+class="sourceCode cs"><span class="op">==</span></code>,<code
+class="sourceCode cs"><span class="op">!=</span></code>,<code
+class="sourceCode cs"><span class="op">&lt;</span></code>,<code
+class="sourceCode cs"><span class="op">&gt;</span></code>,<code
+class="sourceCode cs"><span class="op">&lt;=</span></code>,<code
+class="sourceCode cs"><span class="op">&gt;=</span></code>,<code
+class="sourceCode cs"><span class="op">&amp;&amp;</span></code>,<code
+class="sourceCode cs">\<span class="op">|</span>\<span class="op">|</span></code>,<code
+class="sourceCode cs"><span class="op">!</span></code> <br/>- evaluation
+of expressions<br/>- precedence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="/labs/If">If</a></td>
+<td style="text-align: left;"><a href="/labs/Booleans">Booleans</a></td>
+<td style="text-align: left;"><a href="/lectures/090_if">if, if-else and
+Nested if Statements</a></td>
+<td style="text-align: left;">Reading and writing if statements <br/>-
+<code class="sourceCode cs"><span class="kw">if</span></code>, <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>,
+<code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span><span class="op">-</span><span class="kw">if</span></code><br/>-
+using <code class="sourceCode cs"><span class="op">%</span></code>
+operator to determine parity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/IfAndSwitch">IfAndSwitch</a></td>
+<td style="text-align: left;"><a href="/labs/If">If</a></td>
+<td style="text-align: left;"><a href="/lectures/100_switch">Switch
+Statements</a></td>
+<td style="text-align: left;">Using switch, choosing between if and
+switch<br/>- <code
+class="sourceCode cs"><span class="kw">switch</span></code> syntax<br/>-
+convert: <code class="sourceCode cs"><span class="kw">if</span></code> ⬄
+<code class="sourceCode cs"><span class="kw">switch</span></code><br/>-
+ternary conditional operator (optional)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/IncrementDecrement">IncrementDecrement</a></td>
+<td style="text-align: left;"><a href="/labs/If">If</a></td>
+<td style="text-align: left;"><a
+href="/lectures/110_while_loops_and_vocabulary">Loops</a></td>
+<td style="text-align: left;">- operators: <code
+class="sourceCode cs"><span class="op">++</span></code>, <code
+class="sourceCode cs"><span class="op">--</span></code><br/>- simple
+<code class="sourceCode cs"><span class="kw">while</span></code>
+loop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="/labs/While">While</a></td>
+<td style="text-align: left;"><a
+href="/labs/IncrementDecrement">IncrementDecrement</a></td>
+<td style="text-align: left;"><a
+href="/lectures/110_while_loops_and_vocabulary">Loops</a></td>
+<td style="text-align: left;">- operators: <code
+class="sourceCode cs"><span class="op">++</span></code>, <code
+class="sourceCode cs"><span class="op">--</span></code><br/>- Boolean
+expressions<br/>- string interpolation<br/>- implementing <code
+class="sourceCode cs"><span class="kw">while</span></code> loops<br/>-
+infinite loops<br>- user I/O, <code
+class="sourceCode cs">Parse</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="/labs/DoWhile">DoWhile</a></td>
+<td style="text-align: left;"><a href="/labs/While">While</a></td>
+<td style="text-align: left;"><a
+href="/lectures/110_while_loops_and_vocabulary">Loops</a></td>
+<td style="text-align: left;">- <code
+class="sourceCode cs"><span class="kw">do</span> <span class="kw">while</span></code>
+loops<br/>- <code
+class="sourceCode cs"><span class="kw">while</span></code> loops<br/>-
+<code class="sourceCode cs">TryParse</code>, user I/O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/ValidatingInput">ValidatingInput</a></td>
+<td style="text-align: left;"><a href="/labs/While">While</a></td>
+<td style="text-align: left;"><a
+href="/lectures/110_while_loops_and_vocabulary">Loops</a></td>
+<td style="text-align: left;">using TryParse and validating user
+input<br/>- <code
+class="sourceCode cs"><span class="kw">while</span></code> loop and
+<code class="sourceCode cs">TryParse</code><br/>- <code
+class="sourceCode cs"><span class="kw">if</span></code>, <code
+class="sourceCode cs"><span class="kw">switch</span></code><br/>- <code
+class="sourceCode cs"><span class="fu">ToUpper</span><span class="op">()</span></code>,
+<code
+class="sourceCode cs"><span class="fu">ToLower</span><span class="op">()</span></code><br/>-
+<code class="sourceCode cs"><span class="dt">char</span></code>
+type<br/>- <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">ReadKey</span><span class="op">()</span></code>:
+assumed unknown, introduced in the lab</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="/labs/For">For</a></td>
+<td style="text-align: left;"><a
+href="/labs/ValidatingInput">ValidatingInput</a></td>
+<td style="text-align: left;"><a href="/lectures/150_for_loops">For
+Loops</a></td>
+<td style="text-align: left;">while loops ⬄ for loops; using for loops
+(incl. validation); for with continue, break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/ArrayBasics">ArrayBasics</a></td>
+<td style="text-align: left;"><a
+href="/labs/Variables">Variables</a></td>
+<td style="text-align: left;"><a
+href="/lectures/140_arrays">Arrays</a></td>
+<td style="text-align: left;">- declaring and initializing arrays<br/>-
+get and set array values<br/>- array <code
+class="sourceCode cs">Length</code> property<br/>- (optional) loop over
+an array</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="/labs/Foreach">Foreach</a></td>
+<td style="text-align: left;"><a
+href="/labs/ArrayBasics">ArrayBasics</a></td>
+<td style="text-align: left;"><a
+href="/lectures/160_foreach">Foreach</a></td>
+<td style="text-align: left;">Using foreach loop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/GradeCalculator">GradeCalculator</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Looping and collecting data from
+user.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a
+href="/labs/ArrayOperations">ArrayOperations</a></td>
+<td style="text-align: left;"><a
+href="/labs/ArrayBasics">ArrayBasics</a>, <a
+href="/labs/For">For</a></td>
+<td style="text-align: left;"><a
+href="/lectures/140_arrays">Arrays</a></td>
+<td style="text-align: left;">Displaying, counting, and finding values;
+nested loops and arrays</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a
+href="/labs/AdvancedArrays">AdvancedArrays</a></td>
+<td style="text-align: left;"><a
+href="/labs/ArrayBasics">ArrayBasics</a>, <a
+href="/labs/Static">Static</a>, <a href="/labs/Foreach">Foreach</a></td>
+<td style="text-align: left;"><a
+href="/lectures/140_arrays">Arrays</a></td>
+<td style="text-align: left;">(long!) Implementing array methods to find
+first/last index, min/max, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="/labs/Char">Char</a></td>
+<td style="text-align: left;"><a href="/labs/Variables">Variables</a>,
+<a href="/labs/If">If</a></td>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">char ⬄ int; comparing characters, string
+comparison</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="/labs/Random">Random</a></td>
+<td style="text-align: left;"><a
+href="/labs/ArrayBasics">ArrayBasics</a>, <a
+href="/labs/While">While</a></td>
+<td style="text-align: left;"><a
+href="/lectures/180_random">Random</a></td>
+<td style="text-align: left;">Working with Random class</td>
+</tr>
+</tbody>
+</table>
+</details>
+</section>
+<section id="alphabetically" class="level1">
+<h1>Alphabetically</h1>
+<!-- 
+The remainder of this document will be generated dynamically. Do not edit below this line!
+Refer to the makefile for edits.
+-->
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Lab title</th>
+<th>Instructions</th>
+<th>Program</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="AdvancedArrays/">AdvancedArrays</a></td>
+<td><a href="AdvancedArrays/index.pdf">↓ pdf</a>,
+<a href="AdvancedArrays/index.odt">↓ odt</a>,
+<a href="AdvancedArrays/index.docx">↓ docx</a>,
+<a href="AdvancedArrays/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="ArrayBasics/">ArrayBasics</a></td>
+<td><a href="ArrayBasics/index.pdf">↓ pdf</a>,
+<a href="ArrayBasics/index.odt">↓ odt</a>,
+<a href="ArrayBasics/index.docx">↓ docx</a>,
+<a href="ArrayBasics/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="ArrayOperations/">ArrayOperations</a></td>
+<td><a href="ArrayOperations/index.pdf">↓ pdf</a>,
+<a href="ArrayOperations/index.odt">↓ odt</a>,
+<a href="ArrayOperations/index.docx">↓ docx</a>,
+<a href="ArrayOperations/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Booleans/">Booleans</a></td>
+<td><a href="Booleans/index.pdf">↓ pdf</a>,
+<a href="Booleans/index.odt">↓ odt</a>, <a href="Booleans/index.docx">↓
+docx</a>, <a href="Booleans/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Casting/">Casting</a></td>
+<td><a href="Casting/index.pdf">↓ pdf</a>, <a href="Casting/index.odt">↓
+odt</a>, <a href="Casting/index.docx">↓ docx</a>,
+<a href="Casting/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Char/">Char</a></td>
+<td><a href="Char/index.pdf">↓ pdf</a>, <a href="Char/index.odt">↓
+odt</a>, <a href="Char/index.docx">↓ docx</a>,
+<a href="Char/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="ChemicalElements/">ChemicalElements</a></td>
+<td><a href="ChemicalElements/index.pdf">↓ pdf</a>,
+<a href="ChemicalElements/index.odt">↓ odt</a>,
+<a href="ChemicalElements/index.docx">↓ docx</a>,
+<a href="ChemicalElements/index.html">↓ html</a></td>
+<td><a href="../labs/ChemicalElements/ChemicalElements.zip">↓
+ChemicalElements.zip</a></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="ClassDiagram/">ClassDiagram</a></td>
+<td><a href="ClassDiagram/index.pdf">↓ pdf</a>,
+<a href="ClassDiagram/index.odt">↓ odt</a>,
+<a href="ClassDiagram/index.docx">↓ docx</a>,
+<a href="ClassDiagram/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="ConstructorToString/">ConstructorToString</a></td>
+<td><a href="ConstructorToString/index.pdf">↓ pdf</a>,
+<a href="ConstructorToString/index.odt">↓ odt</a>,
+<a href="ConstructorToString/index.docx">↓ docx</a>,
+<a href="ConstructorToString/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="DoWhile/">DoWhile</a></td>
+<td><a href="DoWhile/index.pdf">↓ pdf</a>, <a href="DoWhile/index.odt">↓
+odt</a>, <a href="DoWhile/index.docx">↓ docx</a>,
+<a href="DoWhile/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="FirstProgram/">FirstProgram</a></td>
+<td><a href="FirstProgram/index.pdf">↓ pdf</a>,
+<a href="FirstProgram/index.odt">↓ odt</a>,
+<a href="FirstProgram/index.docx">↓ docx</a>,
+<a href="FirstProgram/index.html">↓ html</a></td>
+<td><a href="../labs/FirstProgram/InitialSolution.zip">↓
+InitialSolution.zip</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="For/">For</a></td>
+<td><a href="For/index.pdf">↓ pdf</a>, <a href="For/index.odt">↓
+odt</a>, <a href="For/index.docx">↓ docx</a>, <a href="For/index.html">↓
+html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Foreach/">Foreach</a></td>
+<td><a href="Foreach/index.pdf">↓ pdf</a>, <a href="Foreach/index.odt">↓
+odt</a>, <a href="Foreach/index.docx">↓ docx</a>,
+<a href="Foreach/index.html">↓ html</a></td>
+<td><a href="../labs/Foreach/Library.zip">↓ Library.zip</a></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="GradeCalculator/">GradeCalculator</a></td>
+<td><a href="GradeCalculator/index.pdf">↓ pdf</a>,
+<a href="GradeCalculator/index.odt">↓ odt</a>,
+<a href="GradeCalculator/index.docx">↓ docx</a>,
+<a href="GradeCalculator/index.html">↓ html</a></td>
+<td><a href="../labs/GradeCalculator/Grade_Calculator.zip">↓
+Grade_Calculator.zip</a>
+<a href="../labs/GradeCalculator/Grade_Calculator_with_Arrays.zip">↓
+Grade_Calculator_with_Arrays.zip</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="HelloWorld/">HelloWorld</a></td>
+<td><a href="HelloWorld/index.pdf">↓ pdf</a>,
+<a href="HelloWorld/index.odt">↓ odt</a>,
+<a href="HelloWorld/index.docx">↓ docx</a>,
+<a href="HelloWorld/index.html">↓ html</a></td>
+<td><a href="../labs/HelloWorld/HelloWorld_Solution.zip">↓
+HelloWorld_Solution.zip</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="If/">If</a></td>
+<td><a href="If/index.pdf">↓ pdf</a>, <a href="If/index.odt">↓ odt</a>,
+<a href="If/index.docx">↓ docx</a>, <a href="If/index.html">↓
+html</a></td>
+<td><a href="../labs/If/voting_age.zip">↓ voting_age.zip</a></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="IfAndSwitch/">IfAndSwitch</a></td>
+<td><a href="IfAndSwitch/index.pdf">↓ pdf</a>,
+<a href="IfAndSwitch/index.odt">↓ odt</a>,
+<a href="IfAndSwitch/index.docx">↓ docx</a>,
+<a href="IfAndSwitch/index.html">↓ html</a></td>
+<td><a href="../labs/IfAndSwitch/day_of_the_week.zip">↓
+day_of_the_week.zip</a>
+<a href="../labs/IfAndSwitch/day_of_the_week_solution.zip">↓
+day_of_the_week_solution.zip</a></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="IncrementDecrement/">IncrementDecrement</a></td>
+<td><a href="IncrementDecrement/index.pdf">↓ pdf</a>,
+<a href="IncrementDecrement/index.odt">↓ odt</a>,
+<a href="IncrementDecrement/index.docx">↓ docx</a>,
+<a href="IncrementDecrement/index.html">↓ html</a></td>
+<td><a href="../labs/IncrementDecrement/FirstLoop.zip">↓
+FirstLoop.zip</a>
+<a href="../labs/IncrementDecrement/IncrementExample.zip">↓
+IncrementExample.zip</a>
+<a href="../labs/IncrementDecrement/IncrementSolution.zip">↓
+IncrementSolution.zip</a></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="Introduction/">Introduction</a></td>
+<td><a href="Introduction/index.pdf">↓ pdf</a>,
+<a href="Introduction/index.odt">↓ odt</a>,
+<a href="Introduction/index.docx">↓ docx</a>,
+<a href="Introduction/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="OverflowAndUnderflow/">OverflowAndUnderflow</a></td>
+<td><a href="OverflowAndUnderflow/index.pdf">↓ pdf</a>,
+<a href="OverflowAndUnderflow/index.odt">↓ odt</a>,
+<a href="OverflowAndUnderflow/index.docx">↓ docx</a>,
+<a href="OverflowAndUnderflow/index.html">↓ html</a></td>
+<td><a href="../labs/OverflowAndUnderflow/Overflow.zip">↓
+Overflow.zip</a></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><a href="PreciseRectangle/">PreciseRectangle</a></td>
+<td><a href="PreciseRectangle/index.pdf">↓ pdf</a>,
+<a href="PreciseRectangle/index.odt">↓ odt</a>,
+<a href="PreciseRectangle/index.docx">↓ docx</a>,
+<a href="PreciseRectangle/index.html">↓ html</a></td>
+<td><a href="../labs/PreciseRectangle/Circle_Solution.zip">↓
+Circle_Solution.zip</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Random/">Random</a></td>
+<td><a href="Random/index.pdf">↓ pdf</a>, <a href="Random/index.odt">↓
+odt</a>, <a href="Random/index.docx">↓ docx</a>,
+<a href="Random/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Rectangle/">Rectangle</a></td>
+<td><a href="Rectangle/index.pdf">↓ pdf</a>,
+<a href="Rectangle/index.odt">↓ odt</a>,
+<a href="Rectangle/index.docx">↓ docx</a>,
+<a href="Rectangle/index.html">↓ html</a></td>
+<td><a href="../labs/Rectangle/Enriched_Rectangle.zip">↓
+Enriched_Rectangle.zip</a> <a href="../labs/Rectangle/Rectangle.zip">↓
+Rectangle.zip</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="Static/">Static</a></td>
+<td><a href="Static/index.pdf">↓ pdf</a>, <a href="Static/index.odt">↓
+odt</a>, <a href="Static/index.docx">↓ docx</a>,
+<a href="Static/index.html">↓ html</a></td>
+<td><a href="../labs/Static/Student.zip">↓ Student.zip</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="UserInput/">UserInput</a></td>
+<td><a href="UserInput/index.pdf">↓ pdf</a>,
+<a href="UserInput/index.odt">↓ odt</a>,
+<a href="UserInput/index.docx">↓ docx</a>,
+<a href="UserInput/index.html">↓ html</a></td>
+<td><a href="../labs/UserInput/PersonalizedWelcomeMessage_Solution.zip">↓
+PersonalizedWelcomeMessage_Solution.zip</a></td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><a href="ValidatingInput/">ValidatingInput</a></td>
+<td><a href="ValidatingInput/index.pdf">↓ pdf</a>,
+<a href="ValidatingInput/index.odt">↓ odt</a>,
+<a href="ValidatingInput/index.docx">↓ docx</a>,
+<a href="ValidatingInput/index.html">↓ html</a></td>
+<td><a href="../labs/ValidatingInput/LoanCalculator.zip">↓
+LoanCalculator.zip</a> <a href="../labs/ValidatingInput/Room.zip">↓
+Room.zip</a>
+<a href="../labs/ValidatingInput/Solution_LoanCalculator.zip">↓
+Solution_LoanCalculator.zip</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="Variables/">Variables</a></td>
+<td><a href="Variables/index.pdf">↓ pdf</a>,
+<a href="Variables/index.odt">↓ odt</a>,
+<a href="Variables/index.docx">↓ docx</a>,
+<a href="Variables/index.html">↓ html</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="While/">While</a></td>
+<td><a href="While/index.pdf">↓ pdf</a>, <a href="While/index.odt">↓
+odt</a>, <a href="While/index.docx">↓ docx</a>,
+<a href="While/index.html">↓ html</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                            <a href="https://github.com/csci-1301/csci-1301.github.io" title="Access the source code of this website.">Source Code</a>
+                <a href="../about.html" title="Learn more about this website.">About</a>
+        <a href="../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

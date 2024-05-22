@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../../">
+  <meta property="og:image" content="../../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Operations on Arrays</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../../index.html'>CSCI 1301</a>
+        <a href='../../index.html#book'>Book</a>
+        <a href='../../labs/'>Labs</a>
+        <a href='../../slides.html'>Slides</a>
+        <a href='../../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Operations on Arrays</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:56 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#operations-on-numeric-arrays"
+id="toc-operations-on-numeric-arrays">Operations on Numeric Arrays</a>
+<ul>
+<li><a href="#displaying-values" id="toc-displaying-values">Displaying
+Values</a></li>
+<li><a href="#counting-values" id="toc-counting-values">Counting
+Values</a></li>
+<li><a href="#finding-values" id="toc-finding-values">Finding
+Values</a></li>
+<li><a href="#evaluate-your-solution-is-it-universal"
+id="toc-evaluate-your-solution-is-it-universal">Evaluate Your Solution:
+Is It Universal?</a></li>
+</ul></li>
+<li><a href="#working-with-two-arrays"
+id="toc-working-with-two-arrays">Working With Two Arrays</a></li>
+<li><a href="#pushing-further-optional"
+id="toc-pushing-further-optional">Pushing Further (Optional)</a></li>
+</ul>
+</nav>
+<p>This lab serves multiple goals:</p>
+<ul>
+<li>To reinforce your understanding of arrays of different
+datatypes,</li>
+<li>To reinforce your understanding of the <code
+class="sourceCode cs">Length</code> property of arrays,</li>
+<li>To introduce you to more advanced array manipulations,</li>
+<li>To introduce you to simple algorithms that search for values in two
+arrays, and</li>
+<li>(Optional) to introduce you to simple algorithms that merge
+arrays.</li>
+</ul>
+<section id="operations-on-numeric-arrays" class="level1">
+<h1>Operations on Numeric Arrays</h1>
+<p>This first part will ask you to declare and initialize an array and
+then to display, sum, count occurrences, and retrieve information from
+this array. In the second part, we will assess whether your solution is
+“universal”, that is, whether it produces correct results with any
+array.</p>
+<p>Start by declaring and initializing an <code
+class="sourceCode cs"><span class="dt">int</span></code> array called
+<code class="sourceCode cs">numbers</code>:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="dv">4</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">7</span><span class="op">};</span></span></code></pre></div>
+<section id="displaying-values" class="level2">
+<h2>Displaying Values</h2>
+<p>After declaring and initializing the <code
+class="sourceCode cs">numbers</code> array, write statements that do the
+following:</p>
+<ol>
+<li>Display every value in order, left to right,</li>
+<li>Display every value at an even index (skip odd indices), and</li>
+<li>Display all values that are greater than 5.</li>
+</ol>
+</section>
+<section id="counting-values" class="level2">
+<h2>Counting Values</h2>
+<p>Next, write statements that do the following:</p>
+<ol>
+<li>Calculate the sum of all numbers in <code
+class="sourceCode cs">numbers</code>, then display the result. The
+expected answer is 102.</li>
+<li>Count how many times <code
+class="sourceCode cs"><span class="dv">7</span></code> occurs in <code
+class="sourceCode cs">numbers</code>, then display that count. The
+expected answer is 3.</li>
+</ol>
+</section>
+<section id="finding-values" class="level2">
+<h2>Finding Values</h2>
+<p>Next, write statements that do the following:</p>
+<ol>
+<li>Find the <em>index</em> of the first <code
+class="sourceCode cs"><span class="dv">7</span></code>, then display
+that index. The expected answer is 4, but your statements should be such
+that if the value is not found, it would display <code
+class="sourceCode cs"><span class="op">-</span><span class="dv">1</span></code>.</li>
+<li>Find the greatest value in <code
+class="sourceCode cs">numbers</code>. The expected answer is 11.</li>
+</ol>
+</section>
+<section id="evaluate-your-solution-is-it-universal" class="level2">
+<h2>Evaluate Your Solution: Is It Universal?</h2>
+<p>After implementing these methods, and assuming your program obtained
+the expected answers, <em>ideally</em> the solution still works even if
+the values in the <code class="sourceCode cs">numbers</code> array
+change, or even if the array length changes.</p>
+<p>To test your program, go back to the beginning where you declared the
+<code class="sourceCode cs">numbers</code> array, then change the
+initialization so that the new array values are:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> numbers <span class="op">=</span> <span class="op">{</span><span class="dv">55</span><span class="op">,</span> <span class="dv">92</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">90</span><span class="op">,</span> <span class="dv">37</span><span class="op">,</span> <span class="dv">18</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span> <span class="dv">18</span><span class="op">,</span> <span class="dv">46</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">65</span><span class="op">,</span> <span class="dv">68</span><span class="op">,</span> <span class="dv">18</span><span class="op">};</span></span></code></pre></div>
+<p>Then re-execute the program.</p>
+<p>Check that you obtain the expected values:</p>
+<ul>
+<li>the sum should now be <code
+class="sourceCode cs"><span class="dv">644</span></code></li>
+<li>since <code class="sourceCode cs"><span class="dv">7</span></code>
+does not occur in the array anymore,
+<ul>
+<li>the count should be <code
+class="sourceCode cs"><span class="dv">0</span></code></li>
+<li>the first index of <code
+class="sourceCode cs"><span class="dv">7</span></code> should be <code
+class="sourceCode cs"><span class="op">-</span><span class="dv">1</span></code></li>
+</ul></li>
+<li>maximum value is now <code
+class="sourceCode cs"><span class="dv">92</span></code></li>
+</ul>
+</section>
+</section>
+<section id="working-with-two-arrays" class="level1">
+<h1>Working With Two Arrays</h1>
+<p>For this part, declare and initialize the following two <code
+class="sourceCode cs"><span class="dt">char</span></code> arrays:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;Q&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;i&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;K&#39;</span><span class="op">,</span> <span class="ch">&#39;N&#39;</span><span class="op">,</span> <span class="ch">&#39;h&#39;</span><span class="op">,</span> <span class="ch">&#39;t&#39;</span><span class="op">,</span> <span class="ch">&#39;u&#39;</span><span class="op">};</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;?&#39;</span><span class="op">,</span> <span class="ch">&#39;E&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span><span class="op">,</span> <span class="ch">&#39;a&#39;</span><span class="op">,</span> <span class="ch">&#39;j&#39;</span><span class="op">,</span> <span class="ch">&#39;X&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;G&#39;</span><span class="op">,</span> <span class="ch">&#39;@&#39;</span><span class="op">,</span> <span class="ch">&#39;L&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;C&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;J&#39;</span><span class="op">,</span> <span class="ch">&#39;U&#39;</span> <span class="op">};</span></span></code></pre></div>
+<p>Next, write statements that answer these two questions:</p>
+<ol>
+<li>Does the value <code
+class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur
+in both arrays?</li>
+<li>What is the first value of the array <code
+class="sourceCode cs">chars1</code> that also occurs in the second array
+<code class="sourceCode cs">chars2</code>, searching from left to right?
+If none is found, display <code
+class="sourceCode cs">no match</code>.</li>
+</ol>
+<p>After completing these two problems, make sure the program answers
+these questions correctly. The expected results are:</p>
+<ul>
+<li>Does <code
+class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur
+in both arrays → <code
+class="sourceCode cs"><span class="kw">false</span></code></li>
+<li>First value that occurs in both arrays → <code
+class="sourceCode cs"><span class="ch">&#39;U&#39;</span></code></li>
+</ul>
+<p>Again, evaluate your work by changing the array initializations
+to:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars1 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;s&#39;</span><span class="op">,</span> <span class="ch">&#39;p&#39;</span><span class="op">,</span> <span class="ch">&#39;d&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;?&#39;</span><span class="op">};</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span><span class="op">[]</span> chars2 <span class="op">=</span> <span class="op">{</span><span class="ch">&#39;V&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;l&#39;</span><span class="op">,</span> <span class="ch">&#39;P&#39;</span><span class="op">,</span> <span class="ch">&#39;w&#39;</span><span class="op">,</span> <span class="ch">&#39;O&#39;</span><span class="op">,</span> <span class="ch">&#39;y&#39;</span><span class="op">,</span> <span class="ch">&#39;k&#39;</span><span class="op">,</span> <span class="ch">&#39;D&#39;</span><span class="op">,</span> <span class="ch">&#39;Z&#39;</span> <span class="op">};</span></span></code></pre></div>
+<p>Then execute the program again. Ideally, the program does not crash
+and should still produce correct answers:</p>
+<ul>
+<li>Does <code
+class="sourceCode cs"><span class="ch">&#39;w&#39;</span></code> occur
+in both arrays → <code
+class="sourceCode cs"><span class="kw">true</span></code></li>
+<li>First value that occurs in both arrays → <code
+class="sourceCode cs"><span class="ch">&#39;P&#39;</span></code></li>
+</ul>
+<p>If the program does not produce these expected answers after changing
+the array values, review your program and try to determine how to write
+a solution that works for <em>any</em> two char arrays.</p>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<p>This short exercise will require you to manipulate two arrays at the
+same time to construct a third one.</p>
+<p>Start with two integer arrays:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> left <span class="op">=</span> <span class="op">{</span> <span class="dv">101</span><span class="op">,</span> <span class="dv">76</span><span class="op">,</span> <span class="dv">74</span><span class="op">,</span> <span class="dv">94</span><span class="op">,</span> <span class="dv">94</span> <span class="op">};</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> right <span class="op">=</span> <span class="op">{</span> <span class="dv">73</span><span class="op">,</span> <span class="dv">74</span><span class="op">,</span> <span class="dv">67</span><span class="op">,</span> <span class="dv">107</span><span class="op">,</span> <span class="dv">111</span><span class="op">,</span> <span class="dv">108</span><span class="op">,</span> <span class="dv">66</span> <span class="op">};</span></span></code></pre></div>
+<p>Then, implement statements to merge those <code
+class="sourceCode cs">left</code> and <code
+class="sourceCode cs">right</code> arrays by creating a new, larger
+array that holds both of their values, in this order:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">101</span><span class="op">,</span> <span class="dv">76</span><span class="op">,</span> <span class="dv">74</span><span class="op">,</span> <span class="dv">94</span><span class="op">,</span> <span class="dv">94</span><span class="op">,</span> <span class="dv">73</span><span class="op">,</span> <span class="dv">74</span><span class="op">,</span> <span class="dv">67</span><span class="op">,</span> <span class="dv">107</span><span class="op">,</span> <span class="dv">111</span><span class="op">,</span> <span class="dv">108</span><span class="op">,</span> <span class="dv">66</span></span></code></pre></div>
+<p>Then, change the values in the <code
+class="sourceCode cs">left</code> and <code
+class="sourceCode cs">right</code> arrays, and make sure that your
+program still creates the correct array.</p>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/labs/ArrayOperations/readme.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="../../about.html" title="Learn more about this website.">About</a>
+        <a href="../../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

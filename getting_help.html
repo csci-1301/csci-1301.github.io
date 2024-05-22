@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>How to get Help</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='index.html'>CSCI 1301</a>
+        <a href='index.html#book'>Book</a>
+        <a href='labs/'>Labs</a>
+        <a href='slides.html'>Slides</a>
+        <a href='index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">How to get Help</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:37 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#general" id="toc-general">In General</a></li>
+<li><a href="#school" id="toc-school">For Students of the School of
+Computer and Cyber Sciences</a>
+<ul>
+<li><a href="#school-of-computer-and-cyber-sciences-tutoring-center"
+id="toc-school-of-computer-and-cyber-sciences-tutoring-center">School of
+Computer and Cyber Sciences Tutoring Center</a></li>
+<li><a href="#acm-club" id="toc-acm-club">ACM Club</a></li>
+<li><a href="#other-club-activities"
+id="toc-other-club-activities">Other Club Activities</a></li>
+</ul></li>
+<li><a href="#for-this-course" id="toc-for-this-course">For This
+Course</a>
+<ul>
+<li><a href="#instructors" id="toc-instructors">Instructors</a></li>
+<li><a href="#graduate-course-assistant"
+id="toc-graduate-course-assistant">Graduate Course Assistant</a></li>
+<li><a href="#labs-meeting-times" id="toc-labs-meeting-times">Labs
+Meeting Times</a></li>
+<li><a href="#commenting-using-a-github-account"
+id="toc-commenting-using-a-github-account">Commenting Using a Github
+Account</a></li>
+<li><a href="#how-to-ask-a-question" id="toc-how-to-ask-a-question">How
+to Ask a Question?</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>This page lists resources for Augusta University students to receive
+help with their course of studies, <a href="#general">in general</a>,
+for <a href="#school">students of the School of Computer and Cyber
+Sciences</a>, and for <a href="#course">this course in
+particular</a>.</p>
+<section id="general" class="level1">
+<h1>In General</h1>
+<p>Many resources are available to help you be a successful student:</p>
+<ul>
+<li>If you are food insecure, <a
+href="https://www.wjbf.com/csra-news/nearly-36-percent-of-college-students-are-hungry/">you
+are not alone</a>, and the <a
+href="https://www.augusta.edu/student-affairs/open-paws.php">Open Paws
+Food Pantry</a> will help you.</li>
+<li>For tutoring resources, consult the <a
+href="https://www.augusta.edu/academicsuccess/">Academic Success
+Center</a> (or “ASC”). It can help you, among other things, in the areas
+of time management, test preparation and study strategies.</li>
+<li><a href="https://www.augusta.edu/counseling/">Student Counseling
+&amp; Psychological Services</a> (or “SCAPS”) is here to assist students
+with a variety of personal, developmental, and mental health
+concerns.</li>
+<li>The <a href="https://www.augusta.edu/pamplin/writingcenter/">Writing
+Center</a> can help you with any written, oral, or multimedia
+project.</li>
+<li>To get help with technologies, refer to our <a
+href="https://www.augusta.edu/continuity/index.php">Instructional
+Technology Support</a> correspondent <a
+href="https://spots.augusta.edu/sSewell/">Sienna Sewell</a>.</li>
+<li>The <a href="https://www.augusta.edu/multicultural/">Department of
+Multicultural Student Engagement (MSE)</a> aims to provide education,
+training, and programming to foster awareness of diversity and inclusion
+among Augusta University students. Their <a
+href="https://www.augusta.edu/multicultural/programming.php">Multicultural
+Mentorship Program and African American Male Initiative</a> are
+excellent resources to receive additional help.</li>
+</ul>
+</section>
+<section id="school" class="level1">
+<h1>For Students of the School of Computer and Cyber Sciences</h1>
+<section id="school-of-computer-and-cyber-sciences-tutoring-center"
+class="level2">
+<h2>School of Computer and Cyber Sciences Tutoring Center</h2>
+<p>The School has a tutoring center that can be reached:</p>
+<ul>
+<li>On <a href="https://discord.gg/AYSw3UNKEh">discord</a>,</li>
+<li>During their tutoring hours (hours posted on the door and on
+discord), in <a
+href="https://map.concept3d.com/?id=824#!m/268018">University Hall</a>
+129.</li>
+</ul>
+<!--
+Their current opening hours are:
+
+    Tuesday: 1pm-5pm  
+    Thursday: 2pm-5pm  
+    Friday: 9am-12pm  
+-->
+</section>
+<section id="acm-club" class="level2">
+<h2>ACM Club</h2>
+<p>The <a href="https://spots.augusta.edu/cyberdefense">Augusta
+University chapter</a> of the <a href="https://www.acm.org/"
+title="Association for Computing Machinery">A.C.M</a> is one of the
+university’s best resources for Computer Science, Information Technology
+and Cyber Security students. It provides a platform to network with
+other students in similar majors, presenting countless opportunities to
+not only expand the people you know, but also a fantastic place to learn
+and ask questions. To learn more, you can sign up for the newsletter, or
+attend one of the subgroup meetings (meeting times and locations are
+listed <a href="https://spots.augusta.edu/cyberdefense">on the
+website</a>).</p>
+</section>
+<section id="other-club-activities" class="level2">
+<h2>Other Club Activities</h2>
+<p>The Augusta University Game Design Club and Girls Who Code College
+Loop “will be continuing activities in full force this year”.
+Notifications for upcoming activities will be shared in class alongside
+school-wide emails.</p>
+</section>
+</section>
+<section id="for-this-course" class="level1">
+<h1>For This Course</h1>
+<section id="instructors" class="level2">
+<h2>Instructors</h2>
+<p>You have three instructors this semester:</p>
+<ul>
+<li>Dr. DeFrancisco (Section A–D),</li>
+<li>Dr. Aubert (Section E and F),</li>
+<li>Jason Weeks (Labs).</li>
+</ul>
+<p>Please, refer to your syllabus for their office hours or how to reach
+them.</p>
+</section>
+<section id="graduate-course-assistant" class="level2">
+<h2>Graduate Course Assistant</h2>
+<dl>
+<dt>Jason Weeks:</dt>
+<dd>
+<ul>
+<li><a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#106;&#x61;&#x77;&#x65;&#x65;&#x6b;&#x73;&#64;&#x61;&#x75;&#x67;&#x75;&#x73;&#116;&#x61;&#46;&#x65;&#100;&#x75;" class="email">&#106;&#x61;&#x77;&#x65;&#x65;&#x6b;&#x73;&#64;&#x61;&#x75;&#x67;&#x75;&#x73;&#116;&#x61;&#46;&#x65;&#100;&#x75;</a></li>
+<li>Instructor for CSCI 1301 Labs</li>
+<li>The best way to contact me is via email or through <a
+href="http://discordapp.com/users/269850129022976000">Discord</a>. I’m
+fairly active on both, so I should get back to you pretty quickly there.
+I almost never check Teams and it doesn’t send me notifications, so I
+will likely miss any messages there.</li>
+<li>I’m a first year Master’s student, holding a Bachelor’s in CS and a
+minor in Math, and I’ve been working as a course assistant for over
+three years. I can’t wait to help out another semester of 1301 students
+learn to code!</li>
+</ul>
+</dd>
+</dl>
+<!--
+## Undergraduate Course Assistants
+
+To be determined.
+-->
+<!--
+The instructors and UCAs should be your first point of contact for any questions regarding the content of this class.
+
+For this semester, your UCAs are:
+-->
+<!--
+
+Please, copy the following template, paste it outside this comment (that is, after the ">" character below, and fill it with relevant information.
+
+First Last:
+~ 
+    - Email.
+    - Responsible for Section X's lab.
+    - Also present during Section Y's lab.
+    - Best way to reach me.
+    - Office hours.
+    - (if you feel like it, share your major or something else personal).
+-->
+<!-- 
+For example,
+
+Clément Aubert:
+~ 
+    - <caubert@augusta.edu>
+    - Responsible for Section B's lab.
+    - Also present during Section C and D's labs.
+    - Feel free to reach out via emails or teams. I don't frequently check discord.
+    - My office hours are M. & W. 10--12.
+    - I have been teaching this class for many semesters, but I am always excited to meet new students and introduce you all to programming.
+-->
+<!-- 
+ARCHIVES
+
+Samuel Bailey:
+~ 
+    - <sambailey@augusta.edu>
+    - Responsible for Section A's lab.
+    - Also present during Section C and D's labs.
+    - The best way to reach me is through my discord [Discord](http://discordapp.com/users/233045391325528064) and email. I check both very often. I use   Teams sometimes, but the other two are the best way to reach me.
+    - My office hours are currently undecided. I am waiting till I finalize other stuff before I put them in stone.
+    - I am a IT student. I enjoy video games, reading books such as Brandon Sanders Mistborn, and I run the TTPRG Pathfinder 2e in my spare time.     
+
+Jason Weeks:
+~ 
+    - <jaweeks@augusta.edu>
+    - Responsible for Section B's lab
+    - May also be present for Section C's lab
+    - The best way to contact me is via email or through [Discord](http://discordapp.com/users/269850129022976000). I'm fairly active on both, so I should get back to you pretty quickly there. I almost never check Teams and it doesn't send me notifications, so I will likely miss any messages there.
+    - My office hours are as follows (all are at UH 129):
+        - Tuesday: 1:00pm - 5:00pm
+        - Thursday: 3:00pm - 5:00pm
+        - Friday: 9:00am - 12:00pm
+    - I'm a fourth year Computer Science major, Math minor and a UCA for over two years now. I can't wait to help out another semester of 1301 students learn to code!
+    
+Artis Carter:
+~ 
+    - <artcarter@augusta.edu>.
+    - Responsible for Section C's lab.
+    - Also present during Section F's lab.
+    - Best way to reach me is via [discord](http://discordapp.com/users/730957085717561364), email, or on Teams.
+    - Office hours will primarily be held on discord and teams and they are Tuesday/Thursday 8:00am-10:00am and Friday 4:00pm-6:00pm.
+    - I am a senior majoring in computer science and mathematics. You can find me eating Chick-fil-A or helping someone on discord.
+    
+David Diestelhorst:
+~ 
+    - <ddiestelhorst@augusta.edu>
+    - Responsible for Section D's lab.
+    - Also present during Section A's and Section B's labs.
+    - The best ways to reach me are either by [discord](http://discordapp.com/users/399642018822750218), by email, or by teams. 
+    - My office hours are Mondays 1400-1600 (online) and Wednesdays 1330-1600 (Tutoring Center). Additionaly, I will be available for tutoring on Thursdays (1500-1700) and Fridays (1015-1145) at the Academic Success Center. 
+    - I'm a computer science major, but my other academic interests include anthropology and linguistics. My hobbies include videogames, tabletop RPGs, and reading. 
+    
+Layla Erb:
+ ~ 
+    - <lerb@augusta.edu>
+    - Responsible for Section E's lab.
+    - The best ways to reach me are either by email or on [Discord](https://discordapp.com/users/949428446281465937).
+    - My office hours are 
+        - Monday 3:00pm–5:00pm in UH 129.
+        - Tuesday 3:00pm–5:00pm in UH 129.
+     - I am a third year Computer Science student and this is my first semester as a UCA. I'm looking forward to working with you all this semester!
+
+Richard Kelley:
+~ 
+    - <RIKELLEY@augusta.edu>.
+    - Responsible for Section F's lab.
+    - Also present during Section E's lab.
+    - I typically see discord notifications first, so feel free to ping me [there](http://discordapp.com/users/434479500953124865). Email I will see but not as fast. Teams doesn't like to send me notifications.
+    - Office hours are Monday and Wednesday, 4:30-6:30pm.
+    - I'm a computer science major towards the end of my degree, and I'm always happy to see new computer science students and their different approaches to solving problems.
+
+Brandon Wilburn:
+~ 
+    - <bwilburn@augusta.edu>
+    - N/A
+    - N/A
+    - Discord is the easiest way to reach me, but I will also respond to emails.
+    - Available  to tutor on Mondays after 3, Wednesdays after 1, and Fridays for most of the day. If you'd like in-person tutoring, please let me know so I can put it on my schedule.
+    - I'm  a computer science major interested in machine learning and its applications. I'll also be learning to use the Unity game engine over the course of this year. Tutoring is a passion of mine and I like to take unique approaches to teaching to ensure students are getting help tailored to them.
+ 
+Daelyn Doughty:
+~ 
+    - <daedoughty@augusta.edu>
+    - Best way to reach me is via [email](mailto:daedoughty@augusta.edu)
+    - Alternatively, you can reach me on [discord](http://discordapp.com/users/730957085717561364) or on Teams.
+    - Office hours will be held on discord and teams and they are Tuesday/Thursday 10:00am-11:30am.
+    - I am a junior majoring in computer science. You can find me skating around campus or drinking protein.
+
+-->
+</section>
+<section id="labs-meeting-times" class="level2">
+<h2>Labs Meeting Times</h2>
+<p>Labs meet as follows:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 19%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Day</th>
+<th>Hours</th>
+<th>Room</th>
+<th>Instructor / GCA</th>
+<th>UCA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E</td>
+<td>Tuesday</td>
+<td>7:00–8:50 pm</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Anthony Gibson, Jason Gorlich and Austin Coleman</td>
+</tr>
+<tr class="even">
+<td>FG</td>
+<td>Tuesday</td>
+<td>7:00–8:50 pm</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Ashlyn Snyder and Krystal Nguyen</td>
+</tr>
+<tr class="odd">
+<td>D</td>
+<td>Thursday</td>
+<td>8:00–9:50 am</td>
+<td>AH E126</td>
+<td>Jason Weeks</td>
+<td>Xavier Mitchell, Nate Schwartz, Marshall Bray</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Thursday</td>
+<td>1:00–2:50 pm</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Daelyn Doughty, Thomas Folger and Ally Price</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>Thursday</td>
+<td>7:00–8:50 pm</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Ashlyn Snyder and Krystal Nguyen</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>Friday</td>
+<td>9:00–10:50 am</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Hiren Patel, Xavier Mitchell, and Cody Bradley</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>Friday</td>
+<td>12:00–1:50 pm</td>
+<td>UH 124</td>
+<td>Jason Weeks</td>
+<td>Elijah Gibson, JoVi Douglas and William Burnley</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="commenting-using-a-github-account" class="level2">
+<h2>Commenting Using a Github Account</h2>
+<p>On this website, if <a href="#how-is-this-page">you look below</a>,
+you will see a box where you can comment. This will require that you
+create a <a href="https://github.com/login">Github account</a>, which is
+free and may serve multiple purpose if you intend to study, use, or
+contribute to open-source projects. The comment can use the <a
+href="https://commonmark.org/">markdown syntax</a> (exactly like this
+resource!), which is also used on websites like <a
+href="https://stackoverflow.com/editing-help">stackoverflow</a> and
+extremely popular!</p>
+</section>
+<section id="how-to-ask-a-question" class="level2">
+<h2>How to Ask a Question?</h2>
+<p>It may seems silly, but asking a question “the right way” may not
+always be easy.</p>
+<ol>
+<li>Once you’ve identified your issue, try again from scratch to see if
+you missed a point.</li>
+<li>Go over the instructions, and <a
+href="https://github.com/csci-1301/csci-1301.github.io/search?q=ask+a+question">look
+in our resources</a> for some meaningful keywords.</li>
+<li>Think about how you can describe your issue, what is the shortest
+route to reproduce it.</li>
+<li>If you are still facing difficulties, be detailed and clear about
+what you think went wrong: if the question is related to computers,
+specify which operating system, what you have tried, the exact nature of
+the error message, etc. Screenshots are not always the right way to
+convey your question: try to be descriptive, and explain what you tried.
+If you want to refer to a particular lab or lecture, open the
+corresponding page, look for the closest title, hover over it, and you
+should see a “§” symbol appears: click on it, you can now <a
+href="https://www.wikihow.com/Copy-and-Paste-a-Link">share that link</a>
+so that your interlocutor knows precisely what you are talking
+about!</li>
+</ol>
+<p>And, remember: your instructor(s) knows that you are a student and
+here to learn, so you should <em>never</em> feel intimidated or assume
+that <em>everyone knows better than you</em>: many students struggle in
+this class at times, and you could actually do them all a favor by
+asking your instructor(s) to go over a particular dimension that they
+may have overlooked or explained poorly!</p>
+</section>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="getting_help.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="getting_help.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="getting_help.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/docs/getting_help.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>
