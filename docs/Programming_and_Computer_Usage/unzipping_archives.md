@@ -1,5 +1,5 @@
 ---
-title:  Zip File Guide
+title: (Un)Zipping Archives
 ---
 
 This short note explains how to
