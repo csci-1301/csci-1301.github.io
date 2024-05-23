@@ -4,7 +4,7 @@ title: About
 
 # Purpose
 
-This website contains all the resources used in the delivery of [CSCI 1301 - Principles of Computer Programming I](http://catalog.augusta.edu/preview_course_nopop.php?catoid=27&coid=70445) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
+This website contains all the resources used in the delivery of CSCI 1301 - Principles of Computer Programming I and CSCI 1302 - Principles of Computer Programming II in the [Bachelor of Science in Computer Science](https://www.augusta.edu/ccs/bs-cs.php) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
 
 # Authors
 
@@ -24,7 +24,7 @@ Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/
 
 # Supports
 
-The authors were supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)).
+The authors were supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and by a Continuous Improvement Grant (M260).
 
 [![](img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
 
@@ -38,9 +38,10 @@ We strive to prioritize open-source software when possible, and occasionally con
 
 This website uses different technologies.
 
-- The markdown source code is converted to `html`, `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
+- The markdown source code is converted to `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
+- The website is powered by [quartz](https://quartz.jzhao.xyz/).
 
 More details on the tools we use can be found in [our user guide](user_guide.html#repository-maintenance).
 
@@ -51,7 +52,7 @@ Those fonts have been specially selected for their legibility and [lower impact 
 
 ## Services
 
-- The source code and the website are graciously hosted and built by [github](https://github.com/).
+The source code and the website are graciously hosted and built by [github](https://github.com/).
 
 # Licence
 
