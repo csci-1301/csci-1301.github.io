@@ -37,6 +37,9 @@ LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d 
 SOURCE_MD_FILES := $(shell find lectures/ docs/ labs/ -name '*.md')
 TARGET_MD_FILES = $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
 
+METADATA_FILE = templates/meta.yaml
+
+
 # Options for all output formats
 PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
 --lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
@@ -61,7 +64,7 @@ PANDOC_MD_PAGES = $(PANDOC_OPTIONS)
 
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
-	pandoc $(PANDOC_DOCX) $< -o $@
+	pandoc $(PANDOC_MD_PAGES) $< -o $@
 
 all: $(TARGET_MD_FILES)
 

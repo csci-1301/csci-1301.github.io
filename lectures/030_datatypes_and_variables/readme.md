@@ -51,7 +51,6 @@
     ```
     !include code/myFirstVariables.cs
     ```
-
     This program shows three major operations you can do with variables.
 
     - First it **declares** two variables, an `int`-type variable named "myAge" and a `string`-type variable named "myName"
