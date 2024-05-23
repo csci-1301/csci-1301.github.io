@@ -19,3 +19,5 @@ export default ((opts?: Options) => {
     }
     return Comments
 }) satisfies QuartzComponentConstructor 
+// document.documentElement.setAttribute("saved-theme", currentTheme)
+// const theme = document.documentElement.getAttribute('saved-theme') === 'dark' ? 'github-dark' : 'github-light'

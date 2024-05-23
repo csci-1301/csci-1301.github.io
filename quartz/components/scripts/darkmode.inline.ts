@@ -14,6 +14,16 @@ document.addEventListener("themechange", (e) => {
   }
 })
 
+window.addEventListener('load', () => {
+  const theme = document.documentElement.getAttribute('saved-theme') === 'dark' ? 'github-dark' : 'github-light'
+  const message = {
+    type: 'set-theme',
+    theme: theme
+  };
+  const iframe = document.querySelector('.utterances-frame');
+  iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+})
+
 document.documentElement.setAttribute("saved-theme", currentTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {
