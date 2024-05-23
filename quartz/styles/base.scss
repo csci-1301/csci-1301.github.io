@@ -2,6 +2,72 @@
 @use "./syntax.scss";
 @use "./callouts.scss";
 
+/* Fonts */
+/* URWGothic */
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-Demi.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-BookOblique.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'URWGothic';
+  src: url('fonts/urw_gothic/URWGothic-DemiOblique.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* Hack */
+/*!
+ *  Hack typeface https://github.com/source-foundry/Hack
+ *  License: https://github.com/source-foundry/Hack/blob/master/LICENSE.md
+ */
+/* FONT PATHS
+ * -------------------------- */
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-regular-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-regular-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-bold-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-bold-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-italic-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-italic-webfont.woff?sha=3114f1256') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Hack';
+  src: url('fonts/hack/hack-bolditalic-subset.woff2?sha=3114f1256') format('woff2'), url('fonts/hack/hack-bolditalic-subset.woff?sha=3114f1256') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
 html {
   scroll-behavior: smooth;
   text-size-adjust: none;
