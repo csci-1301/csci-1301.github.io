@@ -66,11 +66,19 @@ $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_MD_PAGES) $< -o $@
 
+$(BUILD_DIR)fonts/ : templates/fonts/*/*.woff templates/fonts/*/*.woff2 templates/fonts/*/*.ttf templates/fonts/*/*.otf
+	mkdir -p $(BUILD_DIR)fonts
+	rsync -av templates/fonts/ $(BUILD_DIR)fonts
+	
 all: $(TARGET_MD_FILES)
 
 
 
 # Phony rule to display variables
-.PHONY: test
-$(info $$SOURCE_MD_FILES is [${TARGET_MD_FILES}])
+#.PHONY: test
+#$(info $$SOURCE_MD_FILES is [${TARGET_MD_FILES}])
 
+.PHONY: clean
+clean:
+	@echo "cleaning build artifacts..."
+	@rm -rf $(BUILD_DIR)
