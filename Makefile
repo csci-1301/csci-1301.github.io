@@ -66,17 +66,19 @@ $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_MD_PAGES) $< -o $@
 
-$(BUILD_DIR)fonts/ : templates/fonts/*/*.woff templates/fonts/*/*.woff2 templates/fonts/*/*.ttf templates/fonts/*/*.otf
-	mkdir -p $(BUILD_DIR)fonts
-	rsync -av templates/fonts/ $(BUILD_DIR)fonts
-	
-all: $(TARGET_MD_FILES)
+WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff")
+TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(WOFF_FONT_FILES)))
 
+# Individual woff font files:
+$(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
+	mkdir -p $(dir $@)
+	rsync -av $< $@
 
+all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES)
 
 # Phony rule to display variables
-#.PHONY: test
-#$(info $$SOURCE_MD_FILES is [${TARGET_MD_FILES}])
+.PHONY: test
+$(info $$SOURCE_MD_FILES is [${TARGET_WOFF_FONT_FILES}])
 
 .PHONY: clean
 clean:
