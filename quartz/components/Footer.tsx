@@ -13,11 +13,18 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
+      <h2 id="how-is-this-page">How Is This Page?</h2>
+      <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your github account.</p>
+      <script data-external="1"
+      src="https://utteranc.es/client.js"
+      repo="csci-1301/feedback-spring-2024"
+      issue-term="pathname"
+      label="comment"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+      </script>   
         <hr />
-        <p>
-          {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
-        </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>
@@ -25,6 +32,10 @@ export default ((opts?: Options) => {
             </li>
           ))}
         </ul>
+        <p>
+        {i18n(cfg.locale).components.footer.createdWith}{" "}
+        <a href="/docs/about.html#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
+        </p>
       </footer>
     )
   }
