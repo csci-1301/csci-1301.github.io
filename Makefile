@@ -39,14 +39,6 @@ TARGET_MD_FILES = $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
 
 METADATA_FILE = templates/meta.yaml
 
-
-# Options for all output formats
-PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
---lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
--M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
---metadata-file=$(METADATA_FILE) --strip-comments --email-obfuscation=references
-
-# HTML build options
 # Path to PDF templates to use with pandoc
 PDFPATH = templates/latex/
 # Path to ODT templates to use with pandoc
@@ -59,12 +51,23 @@ WEB_INDEX = index.md
 
 # flags to apply
 
+# Options for all output formats
+PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
+--lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
+-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
+--strip-comments --email-obfuscation=references --metadata-file=$(METADATA_FILE)
+
 # MD build options
-PANDOC_MD_PAGES = $(PANDOC_OPTIONS)
+PANDOC_MD = $(PANDOC_OPTIONS) --standalone
+# -s/--standalone is required to save the metadata block.
+
+# Remember to add
+# 
+# to pandoc's options for pdf, odt, docx.
 
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
-	pandoc $(PANDOC_MD_PAGES) $< -o $@
+	pandoc $(PANDOC_MD) $< -o $@
 
 WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff")
 TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(WOFF_FONT_FILES)))
