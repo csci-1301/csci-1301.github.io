@@ -1,16 +1,14 @@
----
-title: Computer Requirements
----
+#  Computer Requirements
 
 This page contains some recommendations on students wishing to buy a computer to complete their program in [the School of Cyber and Computer Sciences](https://www.augusta.edu/ccs/).
 Note that **possessing a computer [is not required to complete CSCI 1301](https://csci-1301.github.io/software_install.html#accessing-an-ide-1)**, but recommended.
 
-# In Short
+## In Short
 
 Anything less than 5 years old running [Microsoft Windows, macOs or a Linux operating system](#in-terms-of-operating-system) is probably fine.
 Second hand and custom built are fine, but you will in all likelihood needs a portable computer (as opposed to a desktop computer) to present your work and work on projects.
 
-# In Terms of Hardware
+## In Terms of Hardware
 
 Desktop, Laptop, or something else?
 ~ 
@@ -21,7 +19,7 @@ Specifications:
 ~ 
 
     Component | Minimum | Suggested | Comfortable |
-    --- | --- | --- | --- |
+     |  |  |  |
     [CPU](https://en.wikipedia.org/wiki/Processor_(computing)) | 4 cores @ 2.66 GHz | 6 cores @ 3.8 GHz | 6 cores @ 4.4 GHz |
     [RAM](https://en.wikipedia.org/wiki/Random-access_memory) | 8GB | 16GB | 32GB | 
     [Hard Drive](https://en.wikipedia.org/wiki/Hard_disk_drive) | 100GB | 500GB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 1TB of [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) | 
@@ -39,7 +37,7 @@ As an example:
     and of courses wishes that it was a bit more responsive at times, but can conduct otherwise all his professional activities.
 
 
-# In Terms of Operating System
+## In Terms of Operating System
 
 We will briefly consider four "families" of operating systems:
 
@@ -62,7 +60,7 @@ Expanded:
     - [Virtual machines](#virtual-machines) allow you to simulate (almost) any operating system using (almost) any operating system, and is required for some courses. Using virtual machines means, essentially, that your choice of operating system _does not matter at all_.
     - Remember that [multi-boots](https://en.wikipedia.org/wiki/Multi-booting) (that is, installing multiple operating systems side-by-side) is an option.
 
-## Virtual Machines
+### Virtual Machines
 
 Virtual machines allow you to simulate (almost) any operating system using (almost) any operating system: this means that, for instance, you can load the Windows 11 operating system from your computer running Debian 12.5, or the Debian 12.5 operating system from macOS 14.
 
@@ -72,7 +70,7 @@ You can find [on this page](software_install.html#installing-anything-anywhere) 
 Note that, as a student, you can obtain [a free licence for Windows](https://portal.azure.com/?Microsoft_Azure_Education_correlationId=696fbf50-4829-476c-bfc8-09974888f850#view/Microsoft_Azure_Education/EducationMenuBlade/~/software).
 
 
-# Where to Buy?
+## Where to Buy?
 
 That is really up to you, but remember that, as a student (or employee), you are allowed to 
 
@@ -81,7 +79,7 @@ That is really up to you, but remember that, as a student (or employee), you are
 
 Second-hand computers or even custom-built computers are probably fine, but requires more skills (such as how to factory-reset a computer and / or how to (re)install an operating system) and inspections on your end.
 
-# Is There Anything Else I Should Know?
+## Is There Anything Else I Should Know?
 
 - A well taken-care of computer can easily last 5 years, but laptops are harder to upgrade and preserve in good shape than desktops.
 - Ergonomics is important: you will most likely spend _many hours_ on your computer, so make sure [your workstation is well organized](https://www.wikihow.com/Set-Up-an-Ergonomically-Correct-Workstation).

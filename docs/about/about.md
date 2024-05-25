@@ -1,12 +1,10 @@
----
-title: Credits
----
+# Credits
 
-# Purpose
+## Purpose
 
 This website contains all the resources used in the delivery of CSCI 1301 - Principles of Computer Programming I and CSCI 1302 - Principles of Computer Programming II in the [Bachelor of Science in Computer Science](https://www.augusta.edu/ccs/bs-cs.php) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
 
-# Authors
+## Authors
 
 The initial authors of this material are:
 
@@ -22,7 +20,7 @@ Additional contributions, by [undergraduate course assistants](https://csci-1301
 This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
 Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
 
-# Supports
+## Supports
 
 The authors were supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and by a Continuous Improvement Grant (M260).
 
@@ -30,11 +28,11 @@ The authors were supported by an [Affordable Learning Georgia](https://www.affor
 
 This project could not have been without the support of the [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and of the [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
 
-# Tools
+## Tools
 
 We strive to prioritize open-source software when possible, and occasionally contribute to them.
 
-## Software
+### Software
 
 This website uses different technologies.
 
@@ -45,16 +43,16 @@ This website uses different technologies.
 
 More details on the tools we use can be found in [our user guide](user_guide.html#repository-maintenance).
 
-## Fonts
+### Fonts
 
 We use the [URW Gothic](https://fontesk.com/gothic-typeface/) and [Hack](https://sourcefoundry.org/hack/) (inspired by the [DejaVu](https://sourcefoundry.org/hack/) font) fonts.
 Those fonts have been specially selected for their legibility and [lower impact on environment](https://en.wikipedia.org/wiki/Century_Gothic#Printer_ink_usage).
 
-## Services
+### Services
 
 The source code and the website are graciously hosted and built by [github](https://github.com/).
 
-# Licence
+## Licence
 
 This work is under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
 Concretely, this means that you are free to:

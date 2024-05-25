@@ -1,15 +1,13 @@
----
-title: User Guide
----
+#  User Guide
 
 This guide explains how this resource is organized, how it is built, and how to maintain this resource.
 
-# Resources Organization 
+## Resources Organization 
 
 The source code repository is organized as follows
 
 | path | description |
-:--- | :---
+: | :
 | `.github` | github templates and configuration for github actions |
 | `code` | code examples |
 | `docs` | additional helpful documents |
@@ -22,7 +20,7 @@ The source code repository is organized as follows
 
 Additional configuration files are at the root of the source code repository.
 
-## Locating course resources
+### Locating course resources
 
 How to obtain the latest version of this resource:
 
@@ -38,19 +36,19 @@ How to obtain much earlier versions of this resource:
 #. Complete release history is accessible under [releases](https://github.com/csci-1301/csci-1301.github.io/releases) on Github
 #. Earlier versions of this resource will be periodically archived on Galileo.
  
-# Editing Resources
+## Editing Resources
 
 If you are new to this project, first read through [Contributing Guidelines](/contributing) to learn how you can contribute to the improvement of this resource, and if applicable, how to join a contributing team.
 
-## Best practices for all forms of content
+### Best practices for all forms of content
 
-### Inclusivity
+#### Inclusivity
 
 Follow the [IT Inclusive Language Guide](https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/) from the University of Washington:
 
 >  use gender-neutral terms; avoid ableist language; focus on people not disabilities or circumstances; avoid generalizations about people, regions, cultures and countries; and avoid slang, idioms, metaphors and other words with layers of meaning and a negative history.
 
-### Structure for accessibility
+#### Structure for accessibility
 
 - All resources are titled
     - title each markdown document: either in head meta or in markdown syntax, depending on resource type
@@ -70,12 +68,12 @@ Resources to assess accessibility:
 - [WebAim Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [WebAIM (Web Accessibility In Mind)](https://webaim.org/)
  
-### Markdown
+#### Markdown
 
 - text documents are written in readme files using standard markdown syntax
 - we will use a convention of always naming such files `readme.md` (lowercase)
 
-### Images
+#### Images
 
 - Explain the image in written form.
 - Title each image, this will create a URL for the image and enables linking to it.
@@ -95,7 +93,7 @@ Resources to assess accessibility:
 
 The `{ width=80% }` attribute is optional.
 
-### Source code
+#### Source code
 
 - source code programs belong _primarily_ in `code` directory 
     - the code included in this directory should be a complete program
@@ -125,7 +123,7 @@ The `{ width=80% }` attribute is optional.
 - only include code in text form such that it can be copy-pasted for reuse
 - make sure to include blank lines before and after code blocks, since the absence of these can cause the code block to display incorrectly.
 
-## Creating new lectures
+### Creating new lectures
 
 All lecture notes are under `lectures` directory. This directory also contains an index indicating the related labs and prerequisites for each lecture. 
 
@@ -155,7 +153,7 @@ Do not include meta section in individual lecture files because these lectures w
 
 **Known issues**: When concatenating files pandoc may or may not include empty spaces between individual files. This may cause the subsequent lecture title to not appear in the generated book. For this reason, each lecture file should end with a newline.
 
-## Creating new labs
+### Creating new labs
 
 All lab resources are located under `labs` directory. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution. 
 
@@ -188,22 +186,22 @@ All lab resources are located under `labs` directory. At build time these labs a
 If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
 
 #. `readme.md` will be converted to lab instructions file called `index` (html, pdf, odt)
-#. contents of `src` will be converted to a standalone C# solution as a zip file. 
+#. contents of `src` will be converted to a standalone C## solution as a zip file. 
 
 Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs. Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
 
-# Content Labelling
+## Content Labelling
 
 Course resources are labelled with emoji shortcodes or text labels.
 
 Each resource should, at minimum, list its prerequisites and security-related content.
 
-## Labelling with shortcodes
+### Labelling with shortcodes
 
 Use emoji shortcodes to label following course resources
 
 | Description | Shortcode | Icon |
-| :--- | --- | --- |
+| : |  |  |
 | Security related aspects will be labelled as "security" | `:shield:` | 🛡 |
 | Optional parts will be labelled as "optional" | `:question:` | ❓ |
 | Elements to be incorporated in the future as "soon" | `:soon:` | 🔜 | 
@@ -212,7 +210,7 @@ Use emoji shortcodes to label following course resources
 | Examples of common pitfalls | `:warning:` | ⚠️ |
 -->
 
-## Labelling using text labels
+### Labelling using text labels
 
 #. Each resource will be labelled with prerequisites. 
 
@@ -223,7 +221,7 @@ Use emoji shortcodes to label following course resources
     These requirements are expressed in the associated index of lectures and labs (cf. [lectures](https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures)).
 
 
-# Styling and Templating
+## Styling and Templating
 
 Templating files are under `templates` directory.
 
@@ -237,7 +235,7 @@ Currently templates directory contains the following:
 - `templates/labs` - templates used for generating lab resources and associated pages
 - `templates/web` - templates for website and HTML format resources.
 
-## Updating docx template
+### Updating docx template
 
 
 First, output the default template file:
@@ -257,7 +255,7 @@ Then, open `reference.docx`, and, following loosely [this tutorial](https://supp
 
 This was inspired by [this post](https://stackoverflow.com/a/70513063) but does not seem to work properly :-/
 
-## Updating odt template
+### Updating odt template
 
 First, output the default template file:
 
@@ -278,7 +276,7 @@ Then, open `reference.odt`, and, following loosely [this tutorial](https://githu
 - Save and close the document.
 
 
-# Repository Maintenance
+## Repository Maintenance
 
 This repository uses following tools and technologies:
 
@@ -293,13 +291,13 @@ This repository uses following tools and technologies:
 - [Anchor.js](https://www.bryanbraun.com/anchorjs/) - for automatic links.
 - fonts-symbola - to produce the emoji and other symbols in the pdf document.
 - [utteranc.es](https://utteranc.es/) - for feedback through website
-- [csharpier](https://github.com/belav/csharpier) - to tidy the C# source code
+- [csharpier](https://github.com/belav/csharpier) - to tidy the C## source code
 
-## How build outputs are generated
+### How build outputs are generated
 
 The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
 
-## Using Github actions with pandoc
+### Using Github actions with pandoc
 
 This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/csci-1301/csci-1301.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
 
@@ -309,7 +307,7 @@ Currently Github actions offers unlimited free build minutes for public reposito
 
 Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs.
 
-## How to create releases
+### How to create releases
 
 Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action will build the resource and add the generated books as a pre-release under releases and tag them as "latest". If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
 
@@ -335,12 +333,12 @@ Once this is done, remember to create the next pre-release:
 #. Check "This is a pre-release"
 #. Click on "Publish release"
 
-## Building the resource locally
+### Building the resource locally
 
 It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
 For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes. 
 
-### Installing required dependencies
+#### Installing required dependencies
 
 To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 
@@ -363,7 +361,7 @@ pip install -U panflute
 ```
 This is needed if running a recent version of pandoc (as of pandoc 3.1.6.1 at least).
 
-### Running the build
+#### Running the build
 
 After installing all dependencies, from the repository root, run:
 
@@ -377,13 +375,13 @@ To see a list of other alternative build options run
 make help
 ```
 
-## Maintaining repository feedback
+### Maintaining repository feedback
 
 Resource users can submit feedback about the resource through various means, one of which is leaving comments on the website. This feature is enabled by [utteranc.es](https://utteranc.es/). 
 
 To manage user feedback over time, a semester-specific repository is created for issues only. This must be a public repository and located under the same organization as the resources repository. utteranc.es widget is configured to point to this repository. After a semester is over,  this feedback repository will be archived, and a new one created for the next semester. This will simultaneously archive all older issues and reset the feedback across website pages.
 
-### Migrating feedback repository
+#### Migrating feedback repository
 
 The steps for migrating feedback target repository are as follows:
 
@@ -411,7 +409,7 @@ The steps for migrating feedback target repository are as follows:
 #. Make sure the feedback works after migration. If it does not, retrace your steps.
 #. Archive the earlier feedback repository in its settings.
 
-## Maintaining Instructors / G/UCA rights
+### Maintaining Instructors / G/UCA rights
 
 Every semester,
 

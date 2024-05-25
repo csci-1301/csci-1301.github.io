@@ -1,8 +1,6 @@
----
-title: Choosing Your Major
----
+#  Choosing Your Major
 
-# Which degree is best for you?
+## Which degree is best for you?
 
 Most universities offer both a Computer Science degree and an Information Technology degree, and some universities even offer a Management Information Systems degree.
 [Here at Augusta Unversity](https://www.augusta.edu/ccs/programs.php), we have all three options for you: 
@@ -38,7 +36,7 @@ The following links detail these three degrees and explain the benefits of each:
 Additionally, Augusta University has [more information on its advising page](https://www.augusta.edu/advising/).
 To answer the first question ("_Which degree will give me the highest salary?_"), you can use [Georgia Degrees Pay](https://www.usg.edu/georgia-degrees-pay)
 
-# Summary
+## Summary
 
 _Computer scientists_ design and develop computer programs, software, and applications.
 _IT and IS professionals_ then use, configure, and troubleshoot those programs, software, and applications.
@@ -48,7 +46,7 @@ Do you want to be on the front end, designing the software and applications?
 Do you prefer to use and troubleshoot them?
 One of the websites gave the analogy of a home: computer scientists build the home, set up home, install the lighting, plumbing, etc., and then the IT/IS professionals come and live in the home to use it, test it, and troubleshoot it.
 
-## So which degree is "best"?
+### So which degree is "best"?
 
 Perhaps you can now see how this question is not fair or at least not clear.
 If we ask which degree is more difficult, the students will immediately exclaim, "Computer Science is the most challenging!"

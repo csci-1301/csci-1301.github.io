@@ -1,8 +1,6 @@
----
-title: Course Assistants
----
+#  Course Assistants
 
-# What Is an Undergraduate Course Assistant?
+## What Is an Undergraduate Course Assistant?
 
 In this course, an Undergraduate Course Assistant (UCA) is generally present in addition to your instructor.
 A UCA is a student, generally in the School of Cyber and Computer Sciences, who successfully passed CSCI 1301 and that is hired by the School to assist other students.
@@ -27,7 +25,7 @@ Their duties _can not_ include:
 - Helping you with other classes,
 - Helping you becoming a self-regulated learner and work on your schedule^[That's a job really well taken care of by the [Academic Success Center](https://www.augusta.edu/academicsuccess/)!].
 
-# How Do I Become One?
+## How Do I Become One?
 
 A UCA is hired by the School upon recommendation of instructors, after discussion with our Academic Program Coordinator, and possibly our Director of Undergraduate Studies.
 
@@ -49,16 +47,16 @@ A UCA will:
 
 So, in short: talk to any CSCI 1301 instructor if you feel like becoming a UCA.
 
-# I Am a UCA, What Should I Do Now?
+## I Am a UCA, What Should I Do Now?
 
 Congratulations!
 You should now read more about your position in the [UCA starting guide](uca_guide.html)!
 
-# What Is the Difference With a GRA?
+## What Is the Difference With a GRA?
 
 _Graduate_ Course Assistants (GRA) hold a bachelor and are generally PhD or Master student. Their duties generally overlap with those of the instructors and those of the UCAs, as they are the first point of contact of UCAs, design projects, organize the schedule of the tutoring center and of the labs.
 
-# What Is the Difference With a URA?
+## What Is the Difference With a URA?
 
 Undegraduate _Research_ Assistants (or "URAs") share many similarities with UCAs:
 

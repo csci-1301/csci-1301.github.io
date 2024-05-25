@@ -1,8 +1,6 @@
----
-title: Installing Software
----
+#  Installing Software
 
-# Generalities on Installing Software
+## Generalities on Installing Software
 
 You probably already installed software in your life, be it [VLC](http://www.videolan.org/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app), or [Whatsapp](https://www.whatsapp.com/).
 However, depending on whether you installed it on a phone, a tablet, a computer, and depending on the operating systems (Android, Windows 10, iOS, Ubuntu, etc.) your experience may have varied drastically.
@@ -13,7 +11,7 @@ In addition to making sure that you are downloading the software from a trusted 
 As data can be lost or corrupted upon downloading, many platforms now use [checksums](https://www.wikiwand.com/en/Checksum) to verify the integrity of the software you downloaded before installing it.
 This is an excellent practice that can also be performed "by hand", as explained for instance for [the database manager MySQL](https://dev.mysql.com/doc/refman/8.0/en/verifying-package-integrity.html): the main idea is that the probability of the signature matching a tampered-with file is extremely low, and that as long as you are downloading the signature and the software from two different sources, you are considerably reducing the [attack surface](https://www.wikiwand.com/en/Attack_surface).
 
-# Executing Code Found on-line
+## Executing Code Found on-line
 
 As you progress in this class, you will be asked more and more to download and execute code hosted [in our repository](https://github.com/csci-1301/csci-1301.github.io/).
 How can you tell that you can trust this code?
@@ -22,9 +20,9 @@ We have not implemented checksum-matching (yet!), but you can trust this code as
 Concretely, this means that only somebody who manages to steal your instructor's credentials and their phone, and thwart all the other instructors' vigilance, would be able to host malicious code on our platform: while we certainly imagine that this is theoretically possible, we hope that you will agree that the probability is low enough for you to trust the code on this site.
 
 As often, security is not absolute, but aims at providing reasonable confidence.
-Executing "blindly" code found on-line, on the other hand, gives you a good chance of facing unpleasant surprises: while there certainly is a lot of useful, good code on websites like [stackoverflow](https://stackoverflow.com/)---your instructor probably uses such websites, by the way!---, copying-and-pasting it without understanding its purpose or general structure is almost guaranteed to, at best, not execute properly, at worst, make your system unstable or insecure.
+Executing "blindly" code found on-line, on the other hand, gives you a good chance of facing unpleasant surprises: while there certainly is a lot of useful, good code on websites like [stackoverflow](https://stackoverflow.com/)your instructor probably uses such websites, by the way!, copying-and-pasting it without understanding its purpose or general structure is almost guaranteed to, at best, not execute properly, at worst, make your system unstable or insecure.
 
-# Accessing an IDE
+## Accessing an IDE
 
 An [IDE](https://www.wikiwand.com/en/Integrated_development_environment), for "Integrated development environment", is the software or service you will be using to write, compile, execute and debug your code.
 There are many available IDEs, and some can accommodate multiple different programming languages.
@@ -42,18 +40,18 @@ To access one or the other, you will need either
 The third solution is a backup plan, as instead you will access a very minimal version of an IDE to test small snippets of code.
 You should not rely on it for the duration of this course.
 
-## Installing an IDE On Your Own Computer
+### Installing an IDE On Your Own Computer
 
 This part gathers some references for you to install [Visual Studio](https://visualstudio.microsoft.com/), [MonoDevelop](https://www.monodevelop.com/) and [Rider](https://www.jetbrains.com/rider/features/) on your own computer, regardless of your operating system.
 It is strongly encouraged that you do so, especially if you want to continue in a CS/IT/Cyber degree, but is not mandatory^[Unless this class is fully online, of course.].
 
 The instructions are detailed, but there are plenty of ways this can go wrong: make sure you have read and followed those instructions carefully before [asking for help](labs/Introduction/#how-to-ask-a-question)!
 
-### Installing Visual Studio On Your Own Computer
+#### Installing Visual Studio On Your Own Computer
 
 Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Studio".
 
-#### For Windows {#install-win}
+##### For Windows {#install-win}
 
 #. Visit [Azure Dev Tools for Teaching](https://aka.ms/devtoolsforteaching).
 #. Log in using your Augusta University credentials.
@@ -77,11 +75,11 @@ Note that we are *not* installing "Visual Studio *Code*", but simply "Visual Stu
 #. Enter the product key you obtained previously, following [the instructions in the documentation](https://learn.microsoft.com/en-us/visualstudio/ide/how-to-unlock-visual-studio?view=vs-2019).
 Normally, clicking on "View key" on the screen pictured in the fourth step above should give you access to a key, that you simply need to copy-and-paste in the menu you can access on Visual Studio by clicking on "Select File" → "Account Settings" → "License with a Product Key".
 
-#### For Mac
+##### For Mac
 
 Download a version of Visual Studio at <https://visualstudio.microsoft.com/vs/mac/>. It differs a bit from the Windows version, but that should not impact your experience in this class. The only Visual Studio feature we rely on is the ability to create "Console Apps with C#", which is equally available in both the Windows and Mac versions.
 
-### Installing MonoDevelop On Your Own Computer
+#### Installing MonoDevelop On Your Own Computer
 
 Unfortunately, MonoDevelop offers pre-packaged release only for linux distributions
 
@@ -89,7 +87,7 @@ Unfortunately, MonoDevelop offers pre-packaged release only for linux distributi
 - If you are using MacOS, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#macos), but it is very likely that you will find them impossible to understand.
 - If you are using Windows, you can [have a look at the compilation instructions](https://www.monodevelop.com/developers/building-monodevelop/#windows), but it is very likely that you will find them impossible to understand.
 
-### Installing Rider On Your Own Computer
+#### Installing Rider On Your Own Computer
 
 You can download Rider [from their website](https://www.jetbrains.com/rider/download/), for any operating system.
 Note that, as a student, you can [obtain a licence for free](https://www.jetbrains.com/community/education/#students): simply [fill out this form](https://www.jetbrains.com/shop/eform/students), making sure you use your @augusta.edu email account, and you should receive a free licence instantaneously!
@@ -97,13 +95,13 @@ Note that, as a student, you can [obtain a licence for free](https://www.jetbrai
 Note that Jetbrains offers to use a SHA-256 checksum (for instance, [for the linux version](https://download.jetbrains.com/rider/JetBrains.Rider-2022.2.2.tar.gz.sha256)) for you to check that your download has not been tampered with.
 In any case, you can [consult their detailled instructions](https://www.jetbrains.com/help/rider/Installation_guide.html#standalone) to install and execute Rider on any operating system.
 
-### Installing Geany On Your Own Computer
+#### Installing Geany On Your Own Computer
 
 Note:
-~ _This method will only allow you edit and compile individual .cs files, and will not compile C# Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C# Solution Projects, and could start by reading [this exchange](https://stackoverflow.com/q/54041013) (which is about projects in Linux, but applies equally well to projects in C#) or [this one](https://stackoverflow.com/q/8264323)._
+~ _This method will only allow you edit and compile individual .cs files, and will not compile C## Solution Projects (which will be required by the fifth week of lab). We would recommend learning another one of the IDEs listed above. If you still seek to use Geany throughout this course, you will be on your own to find a way to configure Geany to work with C## Solution Projects, and could start by reading [this exchange](https://stackoverflow.com/q/54041013) (which is about projects in Linux, but applies equally well to projects in C#) or [this one](https://stackoverflow.com/q/8264323)._
 
 You can download Geany [from their website](https://www.geany.org/), for any operating system.
-Unfortunately, Geany does not natively build and compile C# code. To use Geany as a text editor for C#, we must download the Mono C# compiler [from their website](https://www.mono-project.com/download/stable/). Make sure to download the most recent version to assure your compiler has the most up-to-date version of ".NET".
+Unfortunately, Geany does not natively build and compile C## code. To use Geany as a text editor for C#, we must download the Mono C## compiler [from their website](https://www.mono-project.com/download/stable/). Make sure to download the most recent version to assure your compiler has the most up-to-date version of ".NET".
 
 Once you installed Mono, locate the "csc.bat", "csc.exe" or "csc" file in Mono's "bin" folder and copy the file path.
 This path can be of the form
@@ -133,7 +131,7 @@ Confirm the change by clicking OK and now you will be able to compile, build, an
 
 ![Setting the build commands](img/setBuildCommand_2.png)
 
-### Installing Anything Anywhere
+#### Installing Anything Anywhere
 
 If the IDE you would like to adopt is not available for your operating system, you can use a [Virtual Machine](https://www.wikiwand.com/en/Virtual_machine) manager to execute a linux-based distribution or a Windows image on top of your operating system.
 
@@ -148,14 +146,14 @@ For this, and regardless of your current operating system, you will need a [Virt
 
 Note that [it is illegal to execute macOS in a virtual environment that is not hosted on a mac computer](https://law.stackexchange.com/q/18282), which drastically reduces the interest for you to consider this option.
 
-## Accessing One of the Computers in a Computer Lab
+### Accessing One of the Computers in a Computer Lab
 
 Please refer to [this page from AU's Information Technology](https://my.augusta.edu/it/computers-printing.php) to know where the computer labs are located.
 Visual Studio should be pre-installed on every computer.
 
-## Compiling Code On-Line
+### Compiling Code On-Line
 
-_As a backup or only to test snippets of code_, you can compile C# code online.
+_As a backup or only to test snippets of code_, you can compile C## code online.
 Multiple online platforms exist, such as:
 
 - <https://www.browxy.com/>

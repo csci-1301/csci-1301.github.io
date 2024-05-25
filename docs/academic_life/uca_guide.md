@@ -1,11 +1,9 @@
----
-title: UCA starting guide
----
+#  UCA starting guide
 
 Congratulations on your new position!
 This page briefly explain what is expected from you as an Undergraduate Course Assistant (UCA).
 
-# The Three Rules
+## The Three Rules
 
 There are three important rules for you:
 
@@ -37,7 +35,7 @@ Your contribution may range from spell-checking to pointing inconsistencies, fro
 Thanks to git and [pull requests](https://github.com/csci-1301/csci-1301.github.io/pulls), you do not need to worry (too much) about introducing mistakes or blunders: the changes you suggest will always be reviewed by instructors before being merged in our master document.
 We discuss below how you can edit our resources.
 
-# Editing the Resources
+## Editing the Resources
 
 You need three things to start editing our resources:
 

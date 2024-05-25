@@ -1,10 +1,8 @@
----
-title: How to get Help
----
+#  How to get Help
 
 This page lists resources for Augusta University students to receive help with their course of studies, [in general](#general), for [students of the School of Computer and Cyber Sciences](#school), and for [this course in particular](#course).
 
-# In General {#general}
+## In General {#general}
 
 Many resources are available to help you be a successful student:
 
@@ -15,9 +13,9 @@ Many resources are available to help you be a successful student:
 - To get help with technologies, refer to our [Instructional Technology Support](https://www.augusta.edu/continuity/index.php) correspondent [Sienna Sewell](https://spots.augusta.edu/sSewell/).
 - The [Department of Multicultural Student Engagement (MSE)](https://www.augusta.edu/multicultural/) aims to provide education, training, and programming to foster awareness of diversity and inclusion among Augusta University students. Their [Multicultural Mentorship Program and African American Male Initiative](https://www.augusta.edu/multicultural/programming.php) are excellent resources to receive additional help.
 
-# For Students of the School of Computer and Cyber Sciences {#school}
+## For Students of the School of Computer and Cyber Sciences {#school}
 
-## School of Computer and Cyber Sciences Tutoring Center
+### School of Computer and Cyber Sciences Tutoring Center
 
 The School has a tutoring center that can be reached:
 
@@ -32,19 +30,19 @@ Their current opening hours are:
     Friday: 9am-12pm  
 -->
 
-## ACM Club
+### ACM Club
 
 The [Augusta University chapter](https://spots.augusta.edu/cyberdefense) of the [A.C.M](https://www.acm.org/ "Association for Computing Machinery") is one of the university's best resources for Computer Science, Information Technology and Cyber Security students.
 It provides a platform to network with other students in similar majors, presenting countless opportunities to not only expand the people you know, but also a fantastic place to learn and ask questions.
 To learn more, you can sign up for the newsletter, or attend one of the subgroup meetings (meeting times and locations are listed [on the website](https://spots.augusta.edu/cyberdefense)).
 
-## Other Club Activities
+### Other Club Activities
 
 The Augusta University Game Design Club and Girls Who Code College Loop "will be continuing activities in full force this year".  Notifications for upcoming activities will be shared in class alongside school-wide emails. 
 
-# For This Course
+## For This Course
 
-## Instructors
+### Instructors
 
 You have three instructors this semester:
 
@@ -54,7 +52,7 @@ You have three instructors this semester:
 
 Please, refer to your syllabus for their office hours or how to reach them.
 
-## Graduate Course Assistant
+### Graduate Course Assistant
 
 Jason Weeks:
 ~ 
@@ -64,7 +62,7 @@ Jason Weeks:
     - I'm a first year Master's student, holding a Bachelor's in CS and a minor in Math, and I've been working as a course assistant for over three years. I can't wait to help out another semester of 1301 students learn to code!
 
 <!--
-## Undergraduate Course Assistants
+### Undergraduate Course Assistants
 
 To be determined.
 -->
@@ -181,12 +179,12 @@ Daelyn Doughty:
 
 --> 
 
-## Labs Meeting Times
+### Labs Meeting Times
 
 Labs meet as follows:
 
 | Section | Day | Hours | Room | Instructor / GCA | UCA
----- | ----- |  ------ | ----------| -------------| -------------
+- | -- |   | -| -| -
 E  | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Anthony Gibson, Jason Gorlich and Austin Coleman
 FG | Tuesday  | 7:00--8:50 pm  | UH 124  | Jason Weeks | Ashlyn Snyder and Krystal Nguyen
 D  | Thursday | 8:00--9:50 am  | AH E126 | Jason Weeks | Xavier Mitchell, Nate Schwartz, Marshall Bray
@@ -195,13 +193,13 @@ F  | Thursday | 7:00--8:50 pm  | UH 124  | Jason Weeks | Ashlyn Snyder and Kryst
 A  | Friday   | 9:00--10:50 am | UH 124  | Jason Weeks | Hiren Patel, Xavier Mitchell, and Cody Bradley
 C  | Friday   | 12:00--1:50 pm | UH 124  | Jason Weeks | Elijah Gibson, JoVi Douglas and William Burnley
 
-## Commenting Using a Github Account
+### Commenting Using a Github Account
 
 On this website, if [you look below](#how-is-this-page), you will see a box where you can comment.
 This will require that you create a [Github account](https://github.com/login), which is free and may serve multiple purpose if you intend to study, use, or contribute to open-source projects.
 The comment can use the [markdown syntax](https://commonmark.org/) (exactly like this resource!), which is also used on websites like [stackoverflow](https://stackoverflow.com/editing-help) and extremely popular!
 
-## How to Ask a Question?
+### How to Ask a Question?
 
 It may seems silly, but asking a question "the right way" may not always be easy.
 

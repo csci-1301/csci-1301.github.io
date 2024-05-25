@@ -1,14 +1,12 @@
----
-title: Keyboard Shortcuts
----
+#  Keyboard Shortcuts
 
-# Foreword
+## Foreword
 
 This document contains useful keyboard shortcuts for different operating systems and IDEs.
 We use the following symbols:
 
 Symbol | Common Name
---- | ---
+ | 
 <kbd>⇧</kbd> | Shift
 <kbd>⌥</kbd>| Option (or Alt)
 <kbd>⌘</kbd> | Command (or Cmd)
@@ -28,74 +26,74 @@ More advanced shortcuts may be available to your particular IDE:
 - For Rider, refer to [the documentation](https://www.jetbrains.com/help/rider/mastering_keyboard_shortcuts.html),
 - For MonoDevelop, you can refer to [this cheatsheet](https://shortcutworld.com/Xamarin-Studio/win/Xamarin-Studio-(MonoDevelop)_Shortcuts) or directly access [the key binding panel](https://mhut.ch/journal/2011/02/05/monodevelop-tips-key-bindings).
 
-# Useful Shortcuts
+## Useful Shortcuts
 
-## Build solution
+### Build solution
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>B</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
 
-## Exit any program*
+### Exit any program*
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Alt</kbd> + <kbd>F4</kbd> or <kbd>Ctrl</kbd> + <kbd>q</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
 
-## Redo*
+### Redo*
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>y</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
 
-## Run/execute program
+### Run/execute program
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>F5</kbd>  |
 | MacOS | <kbd>F5</kbd> -or- <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>↵</kbd>  |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
 
-## Save*
+### Save*
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>s</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
 
-## Save All*
+### Save All*
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 
-## Undo*
+### Undo*
 
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>z</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
  
-## Comment Code Selection
+### Comment Code Selection
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 
-## Uncomment Code Selection
+### Uncomment Code Selection
 | OS | Keys |
-| :--- | :--- |
+| : | : |
 | Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
