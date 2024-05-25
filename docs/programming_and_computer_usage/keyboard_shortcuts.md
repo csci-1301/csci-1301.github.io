@@ -1,5 +1,5 @@
 ---
-title: Keyboard Shortcuts Cheat Sheet
+title: Keyboard Shortcuts
 ---
 
 # Foreword

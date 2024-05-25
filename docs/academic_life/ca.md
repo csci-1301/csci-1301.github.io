@@ -1,9 +1,8 @@
 ---
-title: Course Assistants - What are they and how do I become one?
+title: Course Assistants
 ---
 
 # What Is an Undergraduate Course Assistant?
-
 
 In this course, an Undergraduate Course Assistant (UCA) is generally present in addition to your instructor.
 A UCA is a student, generally in the School of Cyber and Computer Sciences, who successfully passed CSCI 1301 and that is hired by the School to assist other students.
