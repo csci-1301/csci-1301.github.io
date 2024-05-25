@@ -1,5 +1,9 @@
 -- Courtesy of 
 -- https://github.com/jgm/pandoc/issues/2104
+-- This filter add the "default-code-class" variable
+-- (set using e.g. -M default-code-class=csharp)
+-- to all the *block* and *inline* code elements.
+
 local default_code_classes = {}
 
 function add_default_code_class(el)

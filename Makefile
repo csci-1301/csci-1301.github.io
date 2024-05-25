@@ -52,17 +52,22 @@ WEB_INDEX = index.md
 # flags to apply
 
 # Options for all output formats
-PANDOC_OPTIONS = --toc --section-divs --filter pandoc-include -f markdown+emoji \
---lua-filter templates/filters/default-code-class.lua -M default-code-class=csharp \
--M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
+PANDOC_OPTIONS = --section-divs --filter pandoc-include -f markdown+emoji \
+-M default-code-class=csharp \
+-M date="$$(git log -1 --format=%cd --date=short -- $<)" \
 --strip-comments --email-obfuscation=references --metadata-file=$(METADATA_FILE)
 
+# We use the for the date the last time the file was edited according to git.
+# To use the current date / time instead, use:
+#-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
+
+
 # MD build options
-PANDOC_MD = $(PANDOC_OPTIONS) --standalone
+PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua
 # -s/--standalone is required to save the metadata block.
 
 # Remember to add
-# 
+# --toc --lua-filter templates/filters/default-code-class-block-inline.lua
 # to pandoc's options for pdf, odt, docx.
 
 $(BUILD_DIR)%.md: %.md
