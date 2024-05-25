@@ -1,3 +1,3 @@
 ---
-title: Doc.
+title: Docs
 ---
