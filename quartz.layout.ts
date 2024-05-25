@@ -1,11 +1,9 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 // Function to sort entries in explorer.
-import { sortFn} from "./sortFn.ts"
+import { sortFn } from "./sortFn.ts"
 
-Component.Explorer({
-  sortFn: sortFn,
-})
+
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -13,10 +11,10 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      "About" : "/docs/about.html",
-      "Source Code": "https://github.com/csci-1301/csci-1301.github.io",
-      "CC BY 4.0": "/docs/about.html#licence",
-      "Discord Community": "https://discord.gg/AYSw3UNKEh"
+      "About" : "/docs/about/",
+      "Source": "https://github.com/csci-1301/csci-1301.github.io",
+      "CC BY 4.0": "/docs/about/about/#licence",
+      "Discord": "https://discord.gg/AYSw3UNKEh",
     }})
 }
 
@@ -33,7 +31,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({sortFn: sortFn})),
   ],
   right: [
     Component.Graph(),
@@ -50,7 +48,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({sortFn: sortFn})),
   ],
   right: [],
 }
