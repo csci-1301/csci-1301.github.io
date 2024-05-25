@@ -68,7 +68,12 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/defaul
 
 # Remember to add
 # --toc --lua-filter templates/filters/default-code-class-block-inline.lua
-# to pandoc's options for pdf, odt, docx.
+#
+# documentclass: scrartcl  # templating
+# numbersections: true     # templating
+# papersize: letter        # templating
+# geometry: margin=1in     # templating
+# to pandoc's options for pdf, odt, docx (not sure about the use for the last four for docx / odt)
 
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)

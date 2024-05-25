@@ -1,13 +1,8 @@
 author: <https://csci-1301.github.io/about#authors>
 lang: en
-fontsize: 10pt
-documentclass: scrartcl  # templating
-numbersections: true     # templating
-papersize: letter        # templating
-geometry: margin=1in     # templating
 keywords:       
-- Computer Science
-- Problem solving methods
-- Augusta University
-- Bachelor of Science
-- C# Programming language
+    - Computer Science
+    - Problem solving methods
+    - Augusta University
+    - Bachelor of Science
+    - C# Programming language
