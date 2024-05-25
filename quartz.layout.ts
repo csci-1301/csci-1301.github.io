@@ -1,5 +1,11 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+// Function to sort entries in explorer.
+import { sortFn} from "./sortFn.ts"
+
+Component.Explorer({
+  sortFn: sortFn,
+})
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
