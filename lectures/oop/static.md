@@ -1,11 +1,8 @@
----
-title: The `static` Keyword
----
+#  The `static` Keyword
 
+## Static Methods
 
-# Static Methods
-
-## Different ways of calling methods
+### Different ways of calling methods
 
 - Usually you call a method by using the "dot operator" (member access operator) on an object, like this:
 
@@ -33,7 +30,7 @@ title: The `static` Keyword
 
 - Methods that are called using the name of the class rather than an instance of that class are **static methods**
 
-## Declaring `static` methods
+### Declaring `static` methods
 
 - Static methods are declared by adding the `static` keyword to the header, like this:
 
@@ -51,7 +48,7 @@ title: The `static` Keyword
 
 - Thus, you do not need an object (instance of the class) to call a static method; you only need the name of the class
 
-## `static` methods and instances
+### `static` methods and instances
 
 - Normal, non-static methods are always associated with a particular instance (object)
 
@@ -96,7 +93,7 @@ title: The `static` Keyword
     - To call this static method, you would write `Rectangle.ComputeArea();`
     - Since no `Rectangle` object is specified, which object's length and width should be used in the computation?
 
-## Uses for `static` methods
+### Uses for `static` methods
 
 - Since static methods cannot access instance variables, they do not seem very useful
 
@@ -140,7 +137,7 @@ title: The `static` Keyword
     ```
 
     - When your program first starts, no objects exist yet, which means no "normal" methods can be called
-    - The .NET run-time (the interpreter that runs a C# program) must decide what code to execute to make your program start running
+    - The .NET run-time (the interpreter that runs a C## program) must decide what code to execute to make your program start running
     - It can call `Program.Main()` without creating an object, or knowing anything else about your program, because `Main` is a static method
 
 - Static methods can be used to "help" other methods, both static and non-static
@@ -203,9 +200,9 @@ title: The `static` Keyword
 
         In this example, our program needs to read two different numbers from the user, so we put the input-validation loop into the `InputPositiveNumber` method instead of writing it twice in the `Main` method. It then has two separate "parts" (computing some result with the two user-input numbers, and combining that computed number with a string to display some output), which we write in the two methods `DoPart1` and `DoPart2`. This makes our actual `Main` method only 4 lines long.
 
-# Static Variables
+## Static Variables
 
-## Defining `static` variables
+### Defining `static` variables
 
 - The `static` keyword can be used in something that looks like an instance variable declaration:
 
@@ -244,7 +241,7 @@ title: The `static` Keyword
         Rectangle.NumRectangles++;
         ```
 
-## Using `static` variables
+### Using `static` variables
 
 - Since all instances of a class share the same static variables, you can use them to keep track of information about "the class as a whole" or "all the objects of this type"
 
@@ -286,7 +283,7 @@ title: The `static` Keyword
     - A `const` variable is just a `static` variable that cannot be modified
     - Like a `static` variable, it can be accessed using the name of the class where it is defined (e.g. `Math.PI`), and there is only one copy for the entire program
 
-## Static methods and variables
+### Static methods and variables
 
 - Static methods cannot access instance variables, but they *can* access static variables
 
@@ -326,18 +323,18 @@ title: The `static` Keyword
             + " rectangle objects have been created");
         ```
 
-## Summary of `static` access rules
+### Summary of `static` access rules
 
 - Static variables and instance variables are both **fields** of a class; they can also be called "static fields" and "non-static fields"
 
 - This table summarizes how methods are allowed to access them:
 
     |                   | Static Field | Non-static Field |
-    | :---:             | :---:        | :---:            |
+    | ::             | ::        | ::            |
     | Static method     | Yes          | No               |
     | Non-static method | Yes          | Yes              |
 
-# Static Classes
+## Static Classes
 
 - The `static` keyword can also be used in a class declaration
 - If a class is declared `static`, all of its members (fields and methods) must be static

@@ -1,6 +1,4 @@
----
-title: Arrays
----
+# Arrays
 
 Arrays are structures that allow you to store multiple values in memory using a single name and indexes.
 
@@ -20,7 +18,7 @@ Arrays are useful, for instance,
 - When you do not know in advance how many variables will be needed,
 - When you need a large number of variables (say, 10) of the same type.
 
-# Single-Dimensional Arrays
+## Single-Dimensional Arrays
 
 You can define a single-dimensional array as follow:
 
@@ -55,7 +53,7 @@ As a consequence, if you specify an index greater or equal to the number of elem
 
 Indexing starting from 0 may seem surprising and counter-intuitive, but this is a largely respected convention across programing languages and computer scientists. Some insights on the reasons behind this (collective) choice can be found [in this answer on Computer Science Educators](https://cseducators.stackexchange.com/a/5026).
 
-## Example
+### Example
 
 In the following example, we define an array named _myArray_ with three elements of type integer, and assign 10 to the first element, 20 to the second element, and 30 to the last element.
 
@@ -83,7 +81,7 @@ However, when executing this program, _array bounds checking_ would be performed
 Unhandled Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array at Program.Main()
 ```
 
-## Abridged Syntaxes
+### Abridged Syntaxes
 
 If you know the number of elements when you are defining an array, you can combine declaration and assignment on one line as follows:
 
@@ -127,7 +125,7 @@ string[] myArray = { "Bob", "Mom", "Train", "Console" };
 Rectangle[] arrayOfRectangle = new Rectangle[5];  // Assume there is a class called Rectangle
 ```
 
-## Default Values
+### Default Values
 
 If we initialize an array but do not assign any values to its elements, each element will get the default value for that element's data type. (These are the same default values that are assigned to instance variables if we do not write a constructor, as we learned in "More Advanced Object Concepts"). In the following example, each element of `myArray` gets initialized to 0, the default value for `int`:
 
@@ -160,14 +158,14 @@ or use the abridged initialization syntax as follows:
 Rectangle[] shapes = {new Rectangle(), new Rectangle(), new Rectangle()};
 ```
 
-# Custom Size and Loops
+## Custom Size and Loops
 
 One of the benefits of arrays is that they allow you to specify the number of their elements at run-time: the size declarator can be a variable, not just an integer literal. Hence, depending on run-time conditions such as user input, we can have enough space to store and process any number of values.
 
 In order to access the elements of whose size is not known until run-time, we will need to use a loop.
 If the size of `myArray` comes from user input, it wouldn't be safe to try to access a specific element like `myArray[5]`, because we cannot guarantee that the array will have at least 6 elements. Instead, we can write a loop that uses a counter variable to access the array, and use the loop condition to ensure that the variable does not exceed the size of the array.
 
-## Example
+### Example
 
 In the following example, we get the number of elements at run-time from the user, create an array with the appropriate size, and fill the array.
 
@@ -191,13 +189,13 @@ Observe that:
 - The loop condition is `counter < size` because we do *not* want the loop to execute when `counter` is equal to `size`. The last valid index in `customArray` is `size - 1`.
 - We are asking for the `{counter +1}th` value because we prefer not to confuse the user by asking for the "0th" value. Note that a more sophisticated program would replace "th" with "st", "nd" and "rd" for the first three values.
 
-## The Length Property
+### The Length Property
 
 Every single-dimensional array has a property called `Length` that returns the number of the elements in the array (or size of the array).
 
 To process an array whose size is not fixed at compile-time, we can use this property to find out the number of elements in the array.
 
-## Example
+### Example
 
 ```
 int counter2 = 0;
@@ -225,7 +223,7 @@ Compilation error (line 8, col 3): Property or indexer 'System.Array.Length' can
 
 When a field is marked as 'read only,' it means the attribute can only be initialized during the declaration or in the constructor of a class. We receive this error because the array attribute, 'Length,' can not be changed once the array is already declared. Resizing arrays will be discussed in the section: [Changing the Size](#changing-the-size).
 
-## Loops with Arrays of Objects
+### Loops with Arrays of Objects
 
 In the following example, we will ask the user how many `Item` objects they want to create, then fill an array with `Item` objects initialized from user input:
 
@@ -264,11 +262,11 @@ Console.WriteLine($"The lowest-priced item is {lowestItem}");
 
 Note that the `lowestItem` variable needs to be initialized to refer to an `Item` object before we can call the `GetPrice()` method on it; we cannot call `GetPrice()` if `lowestItem` is `null`. We could try to create an `Item` object with the "highest possible" price, but a simpler approach is to initialize `lowestItem` with `items[0]`. As long as the array has at  least one element, `0` is a valid index, and the first item in the array can be our first "guess" at the lowest-priced item.
 
-# Changing the Size
+## Changing the Size
 
 There is a class named `Array` that can be used to resize an array. Upon expanding an array, the additional indices will be filled with the default value of the corresponding type.  Shrinking an array will cause the data in the removed indices (those beyond the new length) to be lost.
 
-## Example
+### Example
 
 ```
 Array.Resize(ref myArray, 4); //myArray[3] now contains 0
@@ -277,7 +275,7 @@ Array.Resize(ref myArray, 2);
 ```
 In the above example, all data starting at index 2 is lost.
 
-# For Loops With Arrays
+## For Loops With Arrays
 
 - Previously, we learned that you can iterate over the elements of an array using a `while` loop. We can also process arrays using `for` loops, and in many cases they are more concise than the equivalent `while` loop.
 

@@ -1,8 +1,6 @@
----
-title: For Loops
----
+#  For Loops
 
-# Counter-controlled loops
+## Counter-controlled loops
 
 - Previously, when we learned about loop vocabulary, we looked at counter-controlled `while` loops
 - Although counter-controlled loops can perform many different kinds of actions in the body of the loop, they all use very similar code for managing the counter variable
@@ -34,7 +32,7 @@ title: For Loops
     - Write a loop condition that will become false when the counter reaches a certain value (`i < 10` or `num <= 25`)
     - Increment the counter variable at the end of each loop iteration, as the last line of the body
 
-# `for` loop example and syntax
+## `for` loop example and syntax
 
 - This `for` loop does the same thing as the first of the two `while` loops above:
 
@@ -73,9 +71,9 @@ title: For Loops
     - This process repeats several more times. On the last iteration, `i` is equal to 9. The computer displays "9" on the screen, then increments `i` to 10 at the end of the loop body.
     - The computer returns to the `for` statement and evaluates the condition, but `i < 10` is false, so it skips the loop body and proceeds to the next line of code. It displays "Done" in the console.
 
-# Limitations and Pitfalls of Using `for` Loops
+## Limitations and Pitfalls of Using `for` Loops
 
-## Scope of the `for` loop's variable
+### Scope of the `for` loop's variable
 
 - When you declare a counter variable in the `for` statement, its scope is limited to *inside* the loop
 
@@ -108,7 +106,7 @@ title: For Loops
     Console.WriteLine($"The average is {(double) total / count}");
     ```
 
-## Accidentally re-declaring a variable
+### Accidentally re-declaring a variable
 
 - If your `for` loop declares a new variable in its initialization statement, it cannot have the same name as a variable already in scope
 
@@ -153,7 +151,7 @@ title: For Loops
     }
     ```
 
-## Accidentally double-incrementing the counter
+### Accidentally double-incrementing the counter
 
 - Now that you know about `for` loops, you may want to convert some of your counter-controlled `while` loops to `for` loops
 
@@ -184,9 +182,9 @@ title: For Loops
 
     it will not work correctly, because `i` will be incremented by both the loop body and the loop's update statement. The loop will seem to "skip" every other value of `i`.
 
-# More Ways to use `for` Loops
+## More Ways to use `for` Loops
 
-## Complex condition statements
+### Complex condition statements
 
 - The condition in a `for` loop can be any expression that results in a `bool` value
 
@@ -212,7 +210,7 @@ title: For Loops
 
     the `GetPrice()` method of `myItem` will be called every time the condition is evaluated.
 
-## Complex update statements
+### Complex update statements
 
 - The update statement can be anything, not just an increment operation
 
@@ -235,7 +233,7 @@ title: For Loops
     Console.WriteLine("Liftoff!");
     ```
 
-## Complex loop bodies
+### Complex loop bodies
 
 - The loop body can contain more complex statements, including other decision structures
 
@@ -277,7 +275,7 @@ title: For Loops
 
     The outer loop prints the rows of the table, while the inner loop prints the columns. On a single iteration of the outer `for` loop (i.e. when `r = 2`), the inner `for` loop executes its body 11 times, using values of `c` from 0 to 10. Then the computer executes the `Console.Write("\n")` to print a newline before the next "row" iteration.
 
-## Combining `for` and `while` loops
+### Combining `for` and `while` loops
 
 - `while` loops are good for sentinel-controlled loops or user-input validation, and `for` loops are good for counter-controlled loops
 

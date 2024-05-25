@@ -1,8 +1,6 @@
----
-title: More Advanced Object Concepts
----
+#  More Advanced Object Concepts
 
-# Default Values and the ClassRoom Class
+## Default Values and the ClassRoom Class
 
 - In lab, you were asked to execute a program like this:
 
@@ -33,7 +31,7 @@ title: More Advanced Object Concepts
 - When you create (instantiate) a new object, its instance variables will be assigned specific default values based on their type:
 
     | **Type**      | **Default Value** |
-    | ------------- | :---------------- |
+    | - | :- |
     | Numeric types | 0                 |
     | `string`      | `null`            |
     | objects       | `null`            |
@@ -42,7 +40,7 @@ title: More Advanced Object Concepts
 
 - Remember, `null` is the value of a reference-type variable that refers to "nothing" - it does not contain the location of any object at all. You cannot do anything with a reference variable containing `null`.
 
-### A class we will use for subsequent examples
+#### A class we will use for subsequent examples
 
 - ClassRoom: Represents a room in a building on campus
 
@@ -51,10 +49,10 @@ title: More Advanced Object Concepts
     ```text
     |=========================================|
     |                **ClassRoom**            |
-    | --------------------------------------- |
+    |  |
     | - building: `string`                    |
     | - number: `int`                         |
-    | --------------------------------------- |
+    |  |
     | + SetBuilding(buildingParam : `string`) |
     | + GetBuilding(): `string`               |
     | + SetNumber(numberParameter: `int`)     |
@@ -90,7 +88,7 @@ title: More Advanced Object Concepts
 
     Remember that the default value of a `string` variable is `null`. When you use string interpolation on `null`, you get an empty string.
 
-# Constructors
+## Constructors
 
 - Instantiation syntax requires you to write parentheses after the name of the class, like this:
 
@@ -101,10 +99,10 @@ title: More Advanced Object Concepts
 - Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
 - In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
 - Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
-- If you do not write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
+- If you do not write a constructor in your class, C## will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
 - The default constructor initializes each instance variable to its default value -- that's where default values come from
 
-### Writing a constructor
+#### Writing a constructor
 
 - Example for ClassRoom:
 
@@ -147,7 +145,7 @@ title: More Advanced Object Concepts
 
 - After executing the instantiation statement, the object referred to by `csci` has its instance variables set to these values, even though we never called `SetBuilding` or `SetNumber`
 
-### Methods with multiple parameters
+#### Methods with multiple parameters
 
 - The constructor we wrote is an example of a method with two parameters
 - The same syntax can be used for ordinary, non-constructor methods, if we need more than one input value
@@ -178,11 +176,11 @@ title: More Advanced Object Concepts
 
 - The type of each argument must match the type of the corresponding parameter. For example, when you call the `ClassRoom` constructor we just wrote, the first argument must be a `string` and the second argument must be an `int`
 
-### Writing multiple constructors
+#### Writing multiple constructors
 
-- Remember that if you do not write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
+- Remember that if you do not write a constructor, C## generates a "default" one with no parameters, so you can write `new ClassRoom()`
 
-- Once you add a constructor to your class, C# will **not** generate a default constructor
+- Once you add a constructor to your class, C## will **not** generate a default constructor
     - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
     - The constructor we wrote has 2 parameters, so now you always need 2 arguments to instantiate a `ClassRoom`
 
@@ -210,7 +208,7 @@ title: More Advanced Object Concepts
 
 - The "no-argument" constructor must still initialize all the instance variables, even though it has no parameters
 
-    - You can pick any "default value" you want, or use the same ones that C# would use (0 for numeric variables, `null` for object variables, etc.)
+    - You can pick any "default value" you want, or use the same ones that C## would use (0 for numeric variables, `null` for object variables, etc.)
 
 - When a class has multiple constructors, the instantiation statement must decide which constructor to call
 
@@ -233,12 +231,12 @@ title: More Advanced Object Concepts
 
         This will produce a compile error, because the instantiation statement has two arguments in the order `int`, `string`, but the only constructor with two parameters needs the first parameter to be a `string`.
 
-# Writing `ToString` Methods
+## Writing `ToString` Methods
 
 - `ToString` recap
     - String interpolation automatically calls the `ToString` method on each variable or value
     - `ToString` returns a string "equivalent" to the object; for example, if `num` is an `int` variable containing 42, `num.ToString()` returns "42".
-    - C# datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
+    - C## datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
 - Writing a `ToString` method
     - To add a `ToString` method to your class, you must write this header: `public override string ToString()`
     - The access modifier must be `public` (so other code, like string interpolation, can call it)
@@ -273,16 +271,16 @@ title: More Advanced Object Concepts
         Console.WriteLine("The classroom is " + csci.ToString());
         ```
 
-# Method Signatures and Overloading
+## Method Signatures and Overloading
 
-### Name uniqueness in C\#
+#### Name uniqueness in C\#
 
 - In general, variables, methods, and classes must have unique names, but there are several exceptions
 - **Variables** can have the same name if they are in *different scopes*
     - Two methods can each have a local variable with the same name
     - A local variable (scope limited to the method) can have the same name as an instance variable (scope includes the whole class), but this will result in **shadowing**
 - **Classes** can have the same name if they are in *different namespaces*
-    - This is one reason C# has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
+    - This is one reason C## has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
     - For example, imagine you were using a "shapes library" that provided a class named `Rectangle`, but you also wanted to write your own class named `Rectangle`
     - The library's code would use its own namespace, like this:
 
@@ -333,7 +331,7 @@ title: More Advanced Object Concepts
         }
         ```
 
-        C# understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
+        C## understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
 
     - We have used overloading already when we wrote multiple constructors -- constructors are methods too. For example, these two constructors have the same name, but different parameters:
 
@@ -350,7 +348,7 @@ title: More Advanced Object Concepts
         }
         ```
 
-### Method signatures
+#### Method signatures
 
 - A method's **signature** has 3 components: its **name**, the **type** of each parameter, and the **order** the parameters appear in
 - Methods are unique if their *signatures* are unique, which is why they can have the same name
@@ -419,18 +417,18 @@ title: More Advanced Object Concepts
     - The constructor `ClassRoom()` has the signature `ClassRoom()`
     - Constructors all have the same name, but they are unique if their signatures (parameters) are different
 
-### Calling overloaded methods
+#### Calling overloaded methods
 
 - Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to execute -- `myRect.GetLength()` would call the `GetLength` method
 - When a method is overloaded, you must use the entire signature to determine which method gets executed
 - A method call has a "signature" too: the name of the method, and the type and order of the arguments
-- C# will execute the method whose signature matches the signature of the method call
-- Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
-- Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
-- The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
+- C## will execute the method whose signature matches the signature of the method call
+- Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C## will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
+- Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C## will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
+- The same process happens when you instantiate a class with multiple constructors: C## calls the constructor whose signature matches the signature of the instantiation
 - If no method or constructor matches the signature of the method call, you get a compile error. You still cannot write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
 
-# Constructors in UML
+## Constructors in UML
 
 - Now that we can write constructors, they should be part of the UML diagram of a class
     - No need to include the default constructor, or one you write yourself that takes no arguments
@@ -444,10 +442,10 @@ title: More Advanced Object Concepts
     ```text
     |==========================================================================|
     |                                   **ClassRoom**                          |
-    | ------------------------------------------------------------------------ |
+    |  |
     | - building: `string`                                                     |
     | - number: `int`                                                          |
-    | ------------------------------------------------------------------------ |
+    |  |
     | + <<constructor>> ClassRoom(buildingParam: `string`, numberParam: `int`) |
     | + SetBuilding(buildingParam : `string`)                                  |
     | + GetBuilding(): `string`                                                |
@@ -456,7 +454,7 @@ title: More Advanced Object Concepts
     |==========================================================================|
     ```
     
-# Properties
+## Properties
 
 - Attributes are implemented with a standard "template" of code
 - Remember, "attribute" is the abstract concept of some data stored in an object; "instance variable" is the way that data is actually stored
@@ -487,7 +485,7 @@ title: More Advanced Object Concepts
     - You need to come up with a name for the setter's parameter, even though it also represents the width (i.e. the new value you want to assign to the width attribute). We usually end up naming it "widthParameter" or "widthParam" or "newWidth" or "newValue."
 - Properties are a "shorthand" way of writing this code: They implement an attribute with less repetition
 
-### Writing properties
+#### Writing properties
 
 - Declare an instance variable for the attribute, like before
 - A **property declaration** has 3 parts:
@@ -515,7 +513,7 @@ title: More Advanced Object Concepts
     ```
 
 - Header syntax: `[public/private] [type] [name]`
-- *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
+- *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C## is case sensitive
 - `get` accessor: Starts with the keyword `get`, then a method body inside a code block (between braces)
     - `get` is like a method header that always has the same name, and its other features are implied by the property's header
     - Access modifier: Same as the property header's, i.e. `public` in this example
@@ -528,7 +526,7 @@ title: More Advanced Object Concepts
     - Parameter: Same type as the property header's type, name is always "value". In this case that means the parameter is `int value`; imagine the method header says `public void set(int value)`
     - Body of `set` section looks just like the body of a setter: Assign the parameter to the instance variable (and the parameter is always named "value"). In this case, that means `width = value`
 
-### Using properties
+#### Using properties
 
 - Properties are members of an object, just like instance variables and methods
 - Access them with the "member access" operator, aka the dot operator
@@ -547,7 +545,7 @@ title: More Advanced Object Concepts
     - For example, `myRectangle.Width = 15;` will call the `set` accessor inside the `Width` property, with `value` equal to 15
     - This is equivalent to `myRectangle.SetWidth(15);` using the "old" Rectangle code
 
-### Properties in UML
+#### Properties in UML
 
 - Since properties represent attributes, they go in the "attributes" box (the second box)
 - If a property will simply "get" and "set" an instance variable of the same name, you do *not* need to write the instance variable in the box
@@ -559,10 +557,10 @@ title: More Advanced Object Concepts
     ```text
     |==================================|
     |             **Rectangle**        |
-    | -------------------------------- |
+    | -- |
     | + <<property>> Width: `int`      |
     | + <<property>> Length: `int`     |
-    | -------------------------------- |
+    | -- |
     | + ComputeArea(): `int`           |
     |==================================|
     ```

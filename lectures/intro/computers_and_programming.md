@@ -1,8 +1,6 @@
---- 
-title : Computers and Programming
----
+# Computers and Programming
 
-# Principles of Computer Programming
+## Principles of Computer Programming
 
 - Computer hardware changes frequently - from room-filling machines with punch cards and tapes to modern laptops and tablets - and will continue doing so.
 - With these changes, the capabilities of computers increase rapidly (storage, speed, graphics, etc.)
@@ -21,7 +19,7 @@ title : Computers and Programming
     - How to express logical conditions and relations
     - How to solve problems with programs
 
-# Programming Language Concepts
+## Programming Language Concepts
 
 We begin by discussing three categories of languages manipulated by computers.
 We will be studying and writing programs in _high-level languages_, but understanding their differences and relationships to other languages^[That will be studied in the course of your study if you continue as a CS major.] is of importance to become familiar with them.
@@ -87,8 +85,7 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
 
 ![A Visual Representation of the Differences Between High-Level Languages](img/overview_languages_2){#fig:flowchart2}
 
-
-# Software Concepts
+## Software Concepts
 
 - Flow of execution in a program
     - Program receives input from some source, e.g. keyboard, mouse, data in files
@@ -99,10 +96,9 @@ Some (like C) are _compiled_ (as we discussed above), some (like Python) are _in
     - **CLI** or Command Line Interface: Input is from text typed into "command prompt" or "terminal window," output is text printed at same terminal window
     - This class will use CLI because it is simple, portable, easy to work with -- no need to learn how to draw images, just read and write text
 
+## Programming Concepts
 
-# Programming Concepts
-
-## Programming workflow
+### Programming workflow
 
 ![Flowchart demonstrating roles and tasks of a programmer, beta tester and user in the creation of programs.](img/flowchart){#fig:flowchart1}
 
@@ -131,7 +127,7 @@ Interperted languages have
 - **Advantages**: Fewer steps between writing and executing, can be a faster cycle
 - **Disadvantages**: All errors happen when you execute the program, no distinction between syntax errors (compile errors) and logic errors (bugs in executing program)
 
-## (Integrated) Development Environment
+### (Integrated) Development Environment
 
 Programers can either use a collection of tools to write, compile, debug and execute a program, or use an "all-in-one" solution called an Integrated Development Environment (IDE).
 

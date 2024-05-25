@@ -1,8 +1,6 @@
----
-title : C# Fundamentals
----
+# C# Fundamentals
 
-# Introduction to the C# Language
+## Introduction to the C# Language
 
 - C# is a managed language (as [discussed previously](#programming-language-concepts-1))
     - Write in a high-level language, compile to intermediate language, run intermediate language in interpreter
@@ -16,7 +14,7 @@ title : C# Fundamentals
     - .NET is the [first most used "other" library/framework](https://survey.stackoverflow.co/2023/#most-popular-technologies-misc-tech)
     - More insights on its evolution can be found [in this blog post](https://dottutorials.net/stats-surveys-about-net-core-future-2020/#stackoverflow-surveys).
 
-# The Object-Oriented Paradigm
+## The Object-Oriented Paradigm
 
 - C# is called an "object-oriented" language
     - Programming languages have different *paradigms*: philosophies for organizing code, expressing ideas
@@ -44,14 +42,14 @@ title : C# Fundamentals
     - An Audio File *Object*\
       Example: A *NeverGonnaGiveYouUp* object that is "rolled wave data", 0:00, speaker01
 
-# First Program
+## First Program
 
 It is customary to start the study of a programming language with a ["Hello World" program](https://www.wikiwand.com/en/%22Hello,_World!%22_program), that simply displays "Hello World". 
 It is a simple way of seeing a first, simple example of the basic structure of a program.
 Here's a simple "hello world" program in the C# language:
 
 
-## Hello World
+### Hello World
 
 <!-- TODO: title this code block -->
 
@@ -96,7 +94,7 @@ Features of this program:
     - A statement *must* end in a semicolon (the class header and method header are not statements)
 - An in-line comment: All the text from the `//` to the end of the line is considered a comment, and is ignored by the C# compiler.
 
-# Rules of C# Syntax
+## Rules of C# Syntax
 
 - Each statement must end in a semicolon (`;`), except for some statements that we will study in the future that contains opening `{` and closing `}`, that do not end in a `;`. 
     - Note that class and method declarations, as well as comments, [are not statements](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/statements) and hence do not need to ends with a `;`. Typically, a method *contains* some statements, but it is not a statement.
@@ -115,7 +113,7 @@ Features of this program:
     - Name must match exactly, otherwise .NET run-time will get confused
     - This is the first code to execute when the application starts -- any other code (in methods) will only execute when its method is called
 
-# Conventions of C# Programs
+## Conventions of C# Programs
 
 - Conventions: Not enforced by the compiler/language, but expected by humans
     - Program will still work if you break them, but other programmers will be confused
@@ -132,7 +130,7 @@ Features of this program:
     
 Note that some of those conventions are actually rules in different programming languages (typically, the last two regarding code files are mandatory rules in java).
 
-# Reserved Words and Identifiers
+## Reserved Words and Identifiers
 
 - Reserved words: Keywords in the C# language
     - Note they have a distinct color in the code sample and in your IDE
@@ -168,7 +166,7 @@ Note that some of those conventions are actually rules in different programming 
         - Class and method names should start with capitals, e.g. "`class AudioFile`"
         - Variable names should start with lowercase letters, then capitalize subsequent words, e.g. "`myFavoriteNumber`"
 
-# Write and WriteLine
+## Write and WriteLine
 
 - The `WriteLine` method
 
@@ -233,7 +231,7 @@ Note that some of those conventions are actually rules in different programming 
         Welcome to CSCI 1301!
         ```
 
-# Escape Sequences
+## Escape Sequences
 
 - Explicitly writing a new line
 

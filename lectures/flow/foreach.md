@@ -1,7 +1,4 @@
----
-title: The foreach Loop
----
-
+#  The foreach Loop
 
 - When writing a `for` loop that accesses each element of an array once, you will end up writing code like this:
 

@@ -63,8 +63,9 @@ PANDOC_OPTIONS = --section-divs --filter pandoc-include -f markdown+emoji \
 
 
 # MD build options
-PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua
+PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua --shift-heading-level-by=-1
 # -s/--standalone is required to save the metadata block.
+ 
 
 # Remember to add
 # --toc --lua-filter templates/filters/default-code-class-block-inline.lua

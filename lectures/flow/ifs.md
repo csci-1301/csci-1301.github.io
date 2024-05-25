@@ -1,16 +1,14 @@
----
-title: if, if-else and if-else-if Statements
---- 
+#  if
 
-# if Statements
+## if Statements
 
-## Introduction
+### Introduction
 
 - Recall from a previous lecture (Booleans and Comparisons) that decision structures change the flow of code execution based on conditions
 - Now that we know how to write conditions in C#, we can write decision structures
 - Our first decision structure is the **if statement**, which executes a block of code *only if a condition is true*
 
-## Example code with an `if` statement
+### Example code with an `if` statement
 
 ```
 Console.WriteLine("Enter your age");
@@ -51,7 +49,7 @@ Console.WriteLine("Goodbye");
 
     When the user enters "17", the value 17 is assigned to the `age` variable, so the condition `age >= 18` is false, and the `if` statement's code block gets skipped.
 
-## Syntax and rules for if statements
+### Syntax and rules for if statements
 
 - Formally, the syntax for an `if` statement is this:
 
@@ -82,7 +80,7 @@ Console.WriteLine("Goodbye");
 
 - Omitting the curly braces is slightly dangerous, though, because it makes it less obvious which line of code is controlled by the `if` statement. It is up to you, the programmer, to remember to indent the line after the `if` statement, and then de-indent the line after that; indentation is just a convention. Curly braces make it easier to see where the `if` statement starts and ends.
 
-# if-else Statements
+## if-else Statements
 
 Example:
 
@@ -108,7 +106,7 @@ Console.WriteLine("Goodbye");
 
     !["A flowchart representation of an if-else statement"](img/activity_diag_vote_if_else)
 
-## Syntax and comparison
+### Syntax and comparison
 - Formally, the syntax for an `if-else` statement is this:
 
     ```
@@ -131,7 +129,7 @@ Console.WriteLine("Goodbye");
     - With an `if-else` statement, the code in the "else block" is executed if the condition is false, so something always happens - one of the two code blocks will get executed
 
 
-# Nested if-else Statements
+## Nested if-else Statements
 
 - If-else statements are used to change program flow based on a condition; they represent making a decision
 - Sometimes decisions are more complex than a single yes/no question: once you know whether a certain condition is true or false, you then need to ask another question (check another condition) based on the outcome
@@ -142,7 +140,7 @@ Console.WriteLine("Goodbye");
     - First, the program should test whether the user is a citizen. If not, there is no need to check the user's age, since he/she cannot vote anyway
     - If the user is a citizen, the program should then test whether the user is over 18 to determine if he/she is old enough to vote.
 
-## Using nested if statements
+### Using nested if statements
 
 - An `if` statement's code block can contain any kind of statements, including another `if` statement
 - Putting an `if` statement inside an if block represents making a sequence of decisions - once execution has reached the inside of an if block, your program "knows" that the `if` condition is true, so it can proceed to make the next decision
@@ -198,14 +196,14 @@ Console.WriteLine("Goodbye");
     ```
 
 
-# if-else-if Statements
+## if-else-if Statements
 
 - Sometimes your program needs to test multiple conditions at once, and take different actions depending on which one is true
 - Example: We want to write a program that tells the user which floor a `ClassRoom` object is on, based on its room number
     - If the room number is between 100 and 200 it is on the first floor; if it is between 200 and 300 it is on the second floor; if it is greater than 300 it is on the third floor
 - There are 3 ranges of numbers to test, and 3 possible results, so we cannot do it with a single if-else statement
 
-## If-else-if syntax
+### If-else-if syntax
 
 - An if-else-if statement looks like this:
 
@@ -238,7 +236,7 @@ Console.WriteLine("Goodbye");
 - Same process repeats for condition 3: If condition 2 is false, condition 3 is evaluated, and statement block 3 is either executed or skipped
 - If *all* the conditions are false, the final else block (statement block 4) is executed
 
-## Using if-else-if to solve the "floors problem"
+### Using if-else-if to solve the "floors problem"
 
 - Assuming `myRoom` is a `ClassRoom` object, this code will display which floor it is on:
 
@@ -268,7 +266,7 @@ Console.WriteLine("Goodbye");
 - Again, the condition `myRoom.GetNumber() >= 100` is only evaluated if the first two conditions have already been tested and turned out false, so we know the room number is less than 300 and less than 200.
 - In the final `else` block, the program prints "Invalid room number" because this block is only executed if the room number is less than 100 (all three conditions were false).
 
-## if-else-if with different conditions
+### if-else-if with different conditions
 
 - We often use if-else-if statements to test the same variable multiple times, but there is no requirement for the conditions to use the same variable
 - An if-else-if statement can use several different variables, and its conditions can be completely unrelated, like this:
@@ -297,13 +295,13 @@ Console.WriteLine("Goodbye");
 - Example outcomes of executing this code (which value `x` is assigned) based on the values of `myIntVar`, `myStringVar`, and `myBoolVar`:
 
     | `myIntVar` | `myStringVar` | `myBoolVar` | `x` |
-    | ---------- | ----------    | ----------  | --- |
+    | - | -    | -  |  |
     | 12         | "Yes"         | `true`      | 20  |
     | 15         | "Yes"         | `false`     | 10  |
     | -15        | "yes"         | `true`      | 30  |
     | 10         | "yes"         | `false`     | 40  |
 
-## if-else-if vs. nested if
+### if-else-if vs. nested if
 
 - Sometimes a nested `if` statement can be rewritten as an `if-else-if` statement
 

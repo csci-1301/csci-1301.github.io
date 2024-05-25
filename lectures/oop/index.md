@@ -1,3 +1,3 @@
 ---
-title: Obj. Ori. Prog.
+title:  Obj. Ori. Prog.
 ---

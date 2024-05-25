@@ -1,8 +1,6 @@
----
-title: Datatypes and Variables
----
+# Datatypes and Variables
 
-# Datatype Basics
+## Datatype Basics
 
 - Recall the basic structure of a program
     - Program receives input from some source, uses input to make decisions, produces output for the outside world to see
@@ -28,9 +26,9 @@ title: Datatypes and Variables
         - `decimal`: An "exact decimal" number -- also a real number, but has fewer rounding errors than `float` and `double` (we will explore the difference later) ^[At this point, you may wonder "why don't we always use the most precise datatype instead of using imprecise ones?". There are three dimensions to consider to answer this question: first, using `decimal` takes more memory, hence more time, than the other numerical datatypes. Second, they are a bit more cumbersome to manipulate, as we will see later on. Last, you generally don't need to be _that_ precise: for example, it would not make sense to use a floating-point number to account for human beings or other indivisible units. Even decimal may be an overkill for floating-point values sometimes: for instance, the [NASA uses `3.141592653589793` as an approximation of pi](https://www.jpl.nasa.gov/edu/news/2016/3/16/how-many-decimals-of-pi-do-we-really-need/) for their calculations. A [`double` can hold such a value](https://learn.microsoft.com/en-us/dotnet/api/system.math.pi?view=net-8.0), so there is no need to be more precise.]
 
 
-# Literals and Variables
+## Literals and Variables
 
-## Literals and their types
+### Literals and their types
 
 - A **literal** is a data value written in the code
 - A form of "input" provided by the programmer rather than the user; its value is fixed throughout the program's execution
@@ -43,7 +41,7 @@ title: Datatypes and Variables
     - `float` literal: just like a `double` literal but with the suffix `f` or `F` (for "float"), e.g. `4.5f`
     - `decimal` literal: just like a `double` literal but with the suffix `m` or `M`(for "deciMal"), e.g. `6.01m`
 
-## Variables overview
+### Variables overview
 
 - Variables store data that can *vary* (change) during the program's execution
 - They have a type, just like literals, and also a name
@@ -60,9 +58,9 @@ title: Datatypes and Variables
     - Finally, it **displays** the current value of each variable by using the `Console.WriteLine` method and **string interpolation**, in which the values of variables are inserted into a string by writing their names with some special syntax (a `$` character at the beginning of the string, and braces around the variable names)
 
 
-# Variable Operations
+## Variable Operations
 
-## Declaration
+### Declaration
 
 - This is when you specify the *name* of a variable and its *type*
 - The syntax is the type keyword, a space, the name of the variable, then a semi-colon.
@@ -74,7 +72,7 @@ title: Datatypes and Variables
 - Note that the variable's type is not part of its name: two variables cannot have the same name *even if* they are different types
 - Multiple variables can be declared in the same statement: `string myFirstName, myLastName;` would declare _two_ strings called respectively `myFirstName` and `myLastName`
 
-## Assignment
+### Assignment
 
 - The act of changing the value of a variable
 - Uses the symbol `=`, which is the *assignment operator*, not a statement of equality -- it does not mean "equals"
@@ -83,7 +81,7 @@ title: Datatypes and Variables
 - Example: `myAge = 29;`
 - Value *must* match the type of the variable. If `myAge` was declared as an `int`-type variable, you cannot write `myAge = "29";` because `"29"` is a `string`
 
-## Initialization (Declaration + Assignment)
+### Initialization (Declaration + Assignment)
 
 - Initialization statement combines declaration and assignment in one single statement (it is just a shortcut, a.k.a. some ["syntactical sugar"](https://www.wikiwand.com/en/Syntactic_sugar), and not something new)
 - Creates a new variable and also gives it an initial value
@@ -91,7 +89,7 @@ title: Datatypes and Variables
 - Example: `string myName = "Edward";`
 - Can only be used once per variable, since you can only declare a variable once
 
-## Assignment Details
+### Assignment Details
 
 - Assignment replaces the "old" value of the variable with a "new" one; it is how variables *vary*
     - If you initialize a variable with `int myAge = 29;` and then write `myAge = 30;`, the variable `myAge` now stores the value 30
@@ -109,7 +107,7 @@ title: Datatypes and Variables
 
         the variable `b` gets the value 12, because that's the value that `a` had when the statement `int b = a` was executed. Even though `a` was then changed to -5 afterward, `b` is still `12`.
 
-## Displaying
+### Displaying
 
 - Only text (strings) can be displayed in the console
 - When we want to print a mixture of text and variables with `Console.WriteLine`, we need to convert all of them to a string
@@ -125,7 +123,7 @@ title: Datatypes and Variables
 On a final note, observe that you can write statements mixing multiple declarations and assignments, as in `int myAge = 10, yourAge, ageDifference;` that declares three variables of type `int` and set the value of the first one.
 It is generally recommended to separate those instructions in different statements as you begin, to ease debugging and have a better understanding of the "atomic steps" your program should perform.
 
-# Format Specifiers
+## Format Specifiers
 
 - Formats for displaying numbers
     - There are lots of possible ways to display a number, especially a fraction (how many decimal places to use?)
@@ -199,7 +197,7 @@ It is generally recommended to separate those instructions in different statemen
            | `Console.WriteLine($"{bigNumber:E}");` | `1.537964E+006` | 
            | `Console.WriteLine($"{bigNumber:E2}");` | `1.54E+006` | 
 
-# Variables in Memory
+## Variables in Memory
 
 - A variable names a memory location
 - Data is stored in memory (RAM), so a variable "stores data" by storing it in memory

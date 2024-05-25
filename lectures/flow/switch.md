@@ -1,10 +1,10 @@
----
-title: Switch Statements and the Conditional Operator
----
 
-# Switch Statements
+##  Switch
 
-## Multiple equality comparisons
+
+## Switch Statements
+
+### Multiple equality comparisons
 
 - In some situations, your program will need to test if a variable is equal to one of several values, and perform a different action based on which value the variable matches
 
@@ -75,7 +75,7 @@ title: Switch Statements and the Conditional Operator
 
 - This code is very repetitive, though: every `else if` statement is almost the same, with only the number changing. The text "`if(month ==`" is copied over and over again.
 
-## Syntax for `switch` statements
+### Syntax for `switch` statements
 
 - A `switch` statement is a simpler, easier way to compare a single variable against multiple possible values
 
@@ -109,7 +109,7 @@ title: Switch Statements and the Conditional Operator
 
 - The values in each `case` statement must be **literals**, not variables, and they must be **unique** (you cannot write two `case` statements with the same value)
 
-## Example `switch` statement
+### Example `switch` statement
 
 - This program has the same behavior as our previous example, but uses a `switch` statement instaed of an `if-else-if` statement:
 
@@ -168,7 +168,7 @@ title: Switch Statements and the Conditional Operator
 
 - The `default` statement has the same effect as the final `else` in the `if-else-if` statement: it contains code that will be executed if `month` did not match any of the values
 
-## `switch` with multiple statements
+### `switch` with multiple statements
 
 - So far, our examples have used only one line of code in each `case`
 
@@ -196,7 +196,7 @@ title: Switch Statements and the Conditional Operator
 - The computer knows which statements are included in each case because of the `break` keyword. For the "1" case, the block of statements starts after `case 1:` and ends with the `break;` after `monthAbbrev = "Jan";`
 
 <!--
-Commented out because C# does not actually support fall-through like every other language with a switch statement.
+Commented out because C## does not actually support fall-through like every other language with a switch statement.
 Still might be useful to discuss as a comparison with other languages like Java.
 
 - The importance of `break` (in languages other than C#)
@@ -235,7 +235,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
       As a result, `monthName` will end up with the value "February" even though `month` was equal to 1.
 -->
 
-## Intentionally omitting `break`
+### Intentionally omitting `break`
 
 - Each block of code that starts with a `case` statement must end with a `break` statement; it will not automatically end at the next `case` statement
 
@@ -326,7 +326,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
     }
     ```
 
-## Scope and `switch`
+### Scope and `switch`
 
 - In C#, the scope of a variable is defined by curly braces (recall that local variables defined in a method have a scope that ends with the `}` at the end of the method)
 
@@ -356,7 +356,7 @@ Still might be useful to discuss as a comparison with other languages like Java.
 
     The line `int nextMonth = 3` would cause a compile error because a variable named `nextMonth` already exists -- the one declared within `case 1`.
 
-## Limitations of `switch`
+### Limitations of `switch`
 
 - Not all `if-else-if` statements can be rewritten as `switch` statements
 

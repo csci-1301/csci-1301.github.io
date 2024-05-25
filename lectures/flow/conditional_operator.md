@@ -1,6 +1,4 @@
----
-title: The Conditional Operator
----
+#  The Conditional Operator
 
 - There are many situations where we need to assign a variable to a different value depending on the result of a condition
 
@@ -20,7 +18,7 @@ else
 }
 ```
 
-# Assignment with the conditional operator
+## Assignment with the conditional operator
 
 - If the only thing an `if` statement does is assign a value to a variable, there is a much shorter way to write it
 
@@ -54,7 +52,7 @@ condition ? true_expression : false_expression;
 
 - When the conditional operator is evaluated, it returns either the value of `true_expression` or the value of `false_expression` (depending on the condition) and this value can then be used in other operations such as assignment
 
-# Conditional operator examples
+## Conditional operator examples
 
 - The `true_expression` and `false_expression` can both be mathematical expressions, and only one of them will get computed. For example:
 

@@ -1,8 +1,6 @@
----
-title: Break and continue
----
+#  Break and continue
 
-# Conditional iteration
+## Conditional iteration
 
 - Sometimes, you want to write a loop that will skip some iterations if a certain condition is met
 
@@ -24,7 +22,7 @@ for(int i = 0; i < myArray.Length; i++)
 
 Since the entire body of the `for` loop is contained within an `if` statement, the iterations where `myArray[i]` is odd will skip the body and do nothing.
 
-# Skipping iterations with `continue`
+## Skipping iterations with `continue`
 
 - The `continue` keyword provides another way to conditionally skip an iteration of a loop
 
@@ -51,7 +49,7 @@ If `myArray[i]` is odd, the computer will execute the `continue` statement and i
 
 - Using a `continue` statement instead of putting the entire body within an `if` statement can reduce the amount of indentation in your code, and it can sometimes make your code's logic clearer.
 
-# Loops with multiple end conditions
+## Loops with multiple end conditions
 
 - More advanced loops may have multiple conditions that affect whether the loop should continue
 
@@ -76,7 +74,7 @@ Console.WriteLine($"The sum of your numbers is {sum}");
 - In order to write this condition, we needed to declare the extra variable `success` to keep track of the result of `int.TryParse`
 - We cannot use the condition `userNum > 0`, hoping to take advantage of the fact that if `TryParse` fails it assigns its `out` parameter the value 0, because 0 is a valid input the user could give
 
-# Ending the loop with `break`
+## Ending the loop with `break`
 
 - The `break` keyword provides another way to write an additional end condition
 

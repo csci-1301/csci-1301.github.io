@@ -1,10 +1,8 @@
----
-title: Combining Classes and Decision Structures
----
+#  Combining Classes and Decision Structures
 
 Now that we have learned about decision structures, we can revisit classes and methods. Decision structures can make our methods more flexible, useful, and functional.
 
-# Using `if` Statements with Methods
+## Using `if` Statements with Methods
 
 There are several ways we can use `if-else` and `if-else-if` statements with methods:
 
@@ -13,7 +11,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 - With Boolean parameters to change a method's behavior
 - Inside a method to evaluate instance variables
 
-## Setters with Input Validation
+### Setters with Input Validation
 
 - Recall that getters and setters are used to implement **encapsulation**: an object's attributes (instance variables) can only be changed by code in that object's class
 
@@ -141,7 +139,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     - If `newMinutes` is less than 0, we set `minutes` to the smallest possible value, which is 0
     - Note that we need an if-else-if statement because there are two different ways that `newMinutes` can be invalid (too large or too small) and we need to distinguish between them. When the condition `newMinutes >= 0 && newMinutes < 60` is false, it could either be because `newMinutes` is less than 0 or because `newMinutes` is greater than 59. The `else if` clause tests which of these possibilities is true.
 
-## Constructors with Input Validation
+### Constructors with Input Validation
 
 - A constructor's job is to initialize the object's instance variables, so it is very similar to a "setter" for all the instance variables at once
 
@@ -314,7 +312,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
       Note that we can also use `AddMinutes` in the first `if` statement, since it will perform the same integer division and remainder operations that we originally wrote for `minuteParam`.
 
-## Boolean Parameters
+### Boolean Parameters
 
 - When writing a method, we might want a single method to take one of two different actions depending on some condition, instead of doing the same thing every time. In this case we can declare the method with a `bool` parameter, whose value represents whether the method should (true) or should not (false) have a certain behavior.
 
@@ -405,7 +403,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
     - If the parameter `meters` is true, this constructor interprets the length and width parameters as meters (acting like the previous "meters constructor"), but if `meters` is false, this constructor interprets the length and width parameters as feet (acting like the previous "feet constructor").
 
-## Ordinary Methods Using `if`
+### Ordinary Methods Using `if`
 
 - Besides enhancing our "setter" methods, we can also use `if` statements to write other methods that change their behavior based on conditions
 
@@ -463,19 +461,19 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
     - No condition is necessary in the `else` clause, because one of the three dimensions must be the smallest. If the first two conditions are false, `depth` must be the smallest dimension.
     - Note that we need to use `<=` in both comparisons, not `<`: if `length` is equal to `width`, but smaller than `depth`, we should still set all dimensions to be equal to `length`
 
-## Boolean Instance Variables
+### Boolean Instance Variables
 
 - A class might need a `bool` instance variable if it has an attribute that can only be in one of two states, e.g. on/off, feet/meters, on sale/not on sale
 
 - For example, we can add an instance variable called "taxable" to the Item class to indicate whether or not the item should have sales tax added to its price at checkout. The UML diagram for Item with this instance variable would look like this:
 
     |                              **Item**                                      |
-    | -------------------------------------------------------------------------- |
+    | -- |
     | - price: `decimal`                                                         |
     | - description: `string`                                                    |
     | - taxable: `bool`                                                          |
     | + SALES_TAX: `decimal`                                                     |
-    | -------------------------------------------------------------------------- |
+    | -- |
     | + Item(initDescription: `string`, initPrice: `decimal`, isTaxable: `bool`) |
     | + SetPrice(priceParameter: `decimal`)                                      |
     | + GetPrice(): `decimal`                                                    |
@@ -533,7 +531,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 
   Now, `myItem.GetPrice()` will return the price with tax if the item is taxable, so our `Main` method can simply use `myItem.GetPrice()` as the total price without needing to check `myItem.isTaxable()`.
 
-# Using `while` Loops with Classes
+## Using `while` Loops with Classes
 
 There are several ways that `while` loops are useful when working with classes and methods:
 
@@ -542,7 +540,7 @@ There are several ways that `while` loops are useful when working with classes a
 - Inside a method, to take repeated action based on the object's attributes
 - To control program behavior based on the return value of a method
 
-## Input Validation with Objects
+### Input Validation with Objects
 
 - As we have seen in a previous section (Loops and Input Validation), `while` loops can be used with the `TryParse` method to repeatedly prompt the user for input until he/she enters a valid value
 
@@ -617,7 +615,7 @@ There are several ways that `while` loops are useful when working with classes a
     - This loop will prompt the user for input again if `TryParse` returns `false`, meaning he/she did not enter a single letter. It will also prompt again if the user's input was not equal to `'f'` or `'m'`.
     - Note that we needed to use parentheses around the expression `!(userChoice == 'f' || userChoice == 'm')` in order to apply the `!` operator to the entire "OR" condition. This represents the statement "it is not true that userChoice is equal to 'f' or 'm'." We could also write this expression as `(userChoice != 'f' && userChoice != 'm')`, which represents the equivalent statement "userChoice is not equal to 'f' and also not equal to 'm'."
 
-## Using Loops Inside Methods
+### Using Loops Inside Methods
 
 - A class's methods can contain `while` loops if they need to execute some code repeatedly. This means that when you call such a method, control will not return to the `Main` program until the loop has stopped.
 
@@ -675,7 +673,7 @@ There are several ways that `while` loops are useful when working with classes a
 
     - This `while` loop prints a number of asterisks equal to the area of the rectangle. Each time it prints `width` of them on the same line, it adds a line break with `WriteLine()`.
 
-## Using Methods to Control Loops
+### Using Methods to Control Loops
 
 - Methods can return Boolean values, as we showed previously in the section on Boolean instance variables
 
@@ -732,10 +730,10 @@ There are several ways that `while` loops are useful when working with classes a
     - Note that there are `while` loops to validate each number the user inputs for hours, minutes, and seconds, as well as an outer `while` loop that validates the Time object as a whole.
     - The outer loop will continue until the user enters values that make `userTime.ComesBefore(maximumTime)` return `true`.
 
-# Examples
+## Examples
 
 
-## The Room Class
+### The Room Class
 
 The class and its associated `Main` method presented [in this archive](/labs/ValidatingInput/Room.zip) show how you can use classes, methods, constructors and decision structures all in the same program.
 It also exemplifies how a method can take _an object_ as a parameter with `InSameBuilding`.
@@ -744,11 +742,11 @@ The corresponding UML diagram is:
 
 
 |          **Room**                        |
-|------------------------------------------|
+||
 |-building: `string`                       |
 |-number: `int`                            |
 |-computer: `bool`                         |
-|------------------------------------------|
+||
 |+GetComputer():`bool`                     |
 |+SetComputer(compP:`bool`): `void`        |
 |+Room(bP: `string`, nP: `int`, cP:`bool`) |
@@ -758,7 +756,7 @@ The corresponding UML diagram is:
 |+RoomRoute(): `string`                    |
 
 
-## The Loan Class
+### The Loan Class
 
 Similarly, this class and its associated `Main` method show how you can use classes, methods, constructors, decision structures, and user input validation all in the same program. [This lab](/labs/ValidatingInput) asks you to add the user input validation code, and you can download the following code [in this archive](/labs/ValidatingInput/LoanCalculator.zip).
 

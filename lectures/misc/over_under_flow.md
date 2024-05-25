@@ -1,8 +1,6 @@
----
-title: Over and Underflow
----
+#  Over and Underflow
 
-# Overflow
+## Overflow
 
 - Assume a car has a 4-digit odometer, and currently, it shows `9999`. What does the odometer show if you drive the car another mile? As you might guess, it shows `0000` while it should show `10000`. The reason is the odometer does not have a counter for the fifth digit. Similarly, in C#, when you do arithmetic operations on integral data, the result may not fit in the corresponding data type. This situation is called an **overflow** error.
 
@@ -24,7 +22,7 @@ title: Over and Underflow
 - Therefore, the sum of these numbers should be `100000000000000000000000000000001`, which needs 33 bits.
 - Nevertheless, there are only 32 bits available for the result, and the extra bits will be dropped, so the result will be `00000000000000000000000000000001`. This is less than 10,000, so the program will conclude that the sum of the loan values is less than 10,000.
 
-# Underflow
+## Underflow
 
 - Sometimes, the result of arithmetic operations over floating-point numbers is smaller than the minimum value that can be stored in the corresponding data type. This problem is known as the **underflow** problem.
 - In C#, in case of an underflow, the result will be zero.

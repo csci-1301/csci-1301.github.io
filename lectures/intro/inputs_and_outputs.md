@@ -1,8 +1,6 @@
----
-title: Inputs and Outputs
----
+# Inputs and Outputs
 
-# Reading Input from the User
+## Reading Input from the User
 
 - Input and output in CLI
     - Our programs use a command-line interface, where input and output come from text printed in a "terminal" or "console"
@@ -62,7 +60,6 @@ title: Inputs and Outputs
     int age = int.Parse(ageString);
     ```
 
-
 ### More detail on the `Parse` methods
 
 - `Console.WriteLine` is a method that takes input from your program, in the form of an argument, but does not return any output. Meanwhile, `Console.ReadLine` is a method that does not have any arguments, but it returns output to your program (the user's string).
@@ -119,8 +116,7 @@ title: Inputs and Outputs
     - `decimal.Parse` will accept strings in the format `([ws])([sign])([digits],)[digits](.[digits])([ws])`. Note that you can optionally include commas between groups of digits, and the decimal point is also optional. This means a string like `"18,999"` is valid for `decimal.Parse` but not for `int.Parse`.
     - `float.Parse` and `double.Parse` will accept strings in the format `([ws])([sign])([digits],)[digits](.[digits])(e[sign][digits])([ws])`. As with `decimal`, you can include commas between groups of digits. In addition, you can write the string in scientific notation with the letter "e" or "E" followed by an exponent, such as `"-9.44e15"`.
 
-
-# Output with Variables
+## Output with Variables
 
 ### Converting from numbers to strings
 
@@ -164,10 +160,10 @@ title: Inputs and Outputs
 
 - String interpolation does not "magically know" how to convert numbers to strings -- it delegates the task to the numbers themselves
 
-- This works because all data types in C# are objects, even the built-in ones like `int` and `double`
+- This works because all data types in C## are objects, even the built-in ones like `int` and `double`
     - Since they are objects, they can have methods
 
-- **All** objects in C# are guaranteed to have a method named `ToString()`, whose return value (result) is a `string`
+- **All** objects in C## are guaranteed to have a method named `ToString()`, whose return value (result) is a `string`
 
 - Meaning of `ToString()` method: "Convert this object to a `string`, and return that `string`"
 
@@ -194,7 +190,7 @@ title: Inputs and Outputs
 
       Putting `num` within the braces is the same as calling `ToString()` on it.
 
-# String Concatenation
+## String Concatenation
 
 - Now that we've seen `ToString()`, we can introduce another operator: the concatenation operator
 - Concatenation basics
@@ -245,7 +241,7 @@ title: Inputs and Outputs
     - If both operands are numbers, the `+` operator does addition
     - If both operands are strings, the `+` operator does concatenation
     - If *one* argument is a string, the other argument will be converted to a string using `ToString()`
-    - Expressions in C# are always evaluated **left-to-right**, just like arithmetic
+    - Expressions in C## are always evaluated **left-to-right**, just like arithmetic
     - Therefore, in this code:
 
         ```

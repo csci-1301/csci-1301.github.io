@@ -1,8 +1,6 @@
----
-title: Introduction
----
+#  Introduction
 
-# Class and Object Basics
+## Class and Object Basics
 
 - Classes vs. Objects
     - A **class** is a specification, blueprint, or template for an object; it is the code that describes what data the object stores and what it can do
@@ -18,7 +16,7 @@ title: Introduction
         - Only the object's own methods can access the instance variables
         - Other code must "ask permission" from the object in order to read or write the variables
 
-# Writing Our First Class
+## Writing Our First Class
 
 - Designing the class
     - Our first class will be used to represent rectangles; each instance (object) will represent one rectangle
@@ -47,7 +45,7 @@ Let's look at each part of this code in order.
     - Syntax: `[access modifier] [type] [variable name]`
     - The access modifier can have several values, the most common of which are `public` and `private`. (There are other access modifiers, such as `protected` and `internal`, but in this class we will only be using `public` and `private`).
     - An access modifier of `private` is what enforces encapsulation: when you use this access modifier, it means the instance variable cannot be accessed by any code outside the `Rectangle` class
-    - The C# compiler will give you an error if you write code that attempts to use a `private` instance variable anywhere other than a method of that variable's class
+    - The C## compiler will give you an error if you write code that attempts to use a `private` instance variable anywhere other than a method of that variable's class
 - SetLength method, an example of a "setter" method
     - This method will allow code outside the `Rectangle` class to modify a `Rectangle` object's "length" attribute
     - Note that the header of this method has an access modifier, just like the instance variable
@@ -84,7 +82,7 @@ Let's look at each part of this code in order.
     - When you write `return [expression]`, the expression will be evaluated first, then the resulting value will be used by the `return` command
     - In this case, the expression `length * width` will be evaluated, which computes the area of the rectangle. Since both `length` and `width` are `int`s, the `int` version of the `*` operator executes, and it produces an `int` result. This resulting `int` is what the method returns.
 
-# Using Our Class
+## Using Our Class
 
 - We've written a class, but it does not do anything yet
     - The class is a blueprint for an object, not an object
@@ -120,7 +118,7 @@ Let's look at each part of this code in order.
     - The other interpolated values are `myRectangle.GetLength()` and `myRectangle.GetWidth()`
     - Looking at the first one: this will call the `GetLength` method, which has a return value that is an `int`. Instead of storing the return value in an `int` variable, we put it in the string interpolation brackets, which means it will be converted to a string using `ToString`. This means the rectangle's length will be inserted into the string and displayed on the screen
 
-# Flow of Control with Objects
+## Flow of Control with Objects
 
 - Consider what happens when you have multiple objects in the same program, like this:
 
@@ -144,7 +142,7 @@ Let's look at each part of this code in order.
         - `SetLength` begins executing with `lengthParameter` equal to 7
         - The instance variable `length` in `length = lengthParameter` refers to `rect2`'s length
 
-### Accessing object members
+#### Accessing object members
 
 - The "dot operator" that we use to call methods is technically the **member access operator**
 - A **member** of an object is either a method or an instance variable
@@ -173,7 +171,7 @@ Let's look at each part of this code in order.
 
     But this code violates encapsulation, so we will not do this.
 
-### Method calls in more detail
+#### Method calls in more detail
 
 - Now that we know about the member access operator, we can explain how method calls work a little better
 
@@ -221,7 +219,7 @@ Let's look at each part of this code in order.
     - When `SetLength` is called with `rect2.SetLength(7)`, `this` becomes equal to `rect2` and `lengthParameter` becomes equal to 7
 
 
-### Methods and instance variables
+#### Methods and instance variables
 
 - Using a variable in an expression means *reading* its value
 
@@ -251,7 +249,7 @@ Let's look at each part of this code in order.
 
     `rect1` has a `length` of 12 and a `width` of 3. The call to `rect1.ComputeArea()` computes $12 \cdot 3 = 36$, and the `area` variable is assigned this return value, but it does not change `rect1`.
 
-### Methods and return values
+#### Methods and return values
 
 - Recall the basic structure of a program: receive input, compute something, produce output
 
@@ -325,7 +323,7 @@ Let's look at each part of this code in order.
         }
         ```
 
-# Introduction to UML
+## Introduction to UML
 
 - UML is a specification language for software
     - UML: Unified Modeling Language
@@ -339,9 +337,9 @@ Let's look at each part of this code in order.
     ```text
     |=====================================================|
     |                    **ClassName**                    |
-    |-----------------------------------------------------|
+    |--|
     | - attribute : type                                  |
-    |-----------------------------------------------------|
+    |--|
     | + SetAttribute(attributeParameter: `type`): `void`  |
     | + GetAttribute(): `type`                            |
     | + Method(paramName: `type`): `type`                 |
@@ -352,22 +350,22 @@ Let's look at each part of this code in order.
     - Middle box: Attributes (i.e. instance variables)
         - On each line, one attribute, with its name and type
         - Syntax: `[+/-] [name]: [type]`
-        - Note this is the opposite order from C# variable declaration: type comes after name
+        - Note this is the opposite order from C## variable declaration: type comes after name
         - Minus sign at beginning of line indicates "private member"
     - Bottom box: Operations (i.e. methods)
         - On each line, one method header, including name, parameters, and return type
         - Syntax: `[+/-] [name]([parameter name]: [parameter type]): [return type]`
-        - Also backwards compared to C# order: parameter types come after parameter names, and return type comes after method name instead of before it
+        - Also backwards compared to C## order: parameter types come after parameter names, and return type comes after method name instead of before it
         - Plus sign at beginning of line indicates "public", which is what we want for methods
 - UML Diagram for the Rectangle class
 
     ```text
     |======================================|
     |             **Rectangle**            |
-    | ------------------------------------ |
+    |  |
     | - width: `int`                       |
     | - length: `int`                      |
-    | ------------------------------------ |
+    |  |
     | + SetLength(lengthParameter: `int`)  |
     | + GetLength(): `int`                 |
     | + SetWidth(widthParameter: `int`)    |
@@ -387,12 +385,12 @@ Let's look at each part of this code in order.
         - See "- width: int", write `private int width;`
         - Remember to reverse the order of name and type
     - For each method in the methods section, write a method header with the matching return type, name, and parameters
-        - Parameter declarations are like the instance variables: in UML they have a name followed by a type, in C# you write the type name first
+        - Parameter declarations are like the instance variables: in UML they have a name followed by a type, in C## you write the type name first
     - Now the method bodies need to be filled in - UML just defined the interface, now you need to write the implementation
 
-# Variable Scope
+## Variable Scope
 
-### Instance variables vs. local variables
+#### Instance variables vs. local variables
 
 - Instance variables: Stored (in memory) with the object, shared by all methods of the object. Changes made within a method persist after method finishes executing.
 
@@ -418,7 +416,7 @@ Let's look at each part of this code in order.
     - When `SwapDimensions` changes `length`, that change is persistent -- it will still be different when `GetLength` executes, and the next call to `GetLength` after `SwapDimensions` will return the new length
     - When `SwapDimensions` assigns a value to `temp`, it only has that value within the current call to `SwapDimensions` -- after `SwapDimensions` finishes, `temp` disappears, and the next call to `SwapDimensions` creates a new `temp`
 
-### Definition of scope
+#### Definition of scope
 
 - Variables exist only in limited **time** and **space** within the program
 - Outside those limits, the variable cannot be accessed -- e.g. local variables cannot be accessed outside their method
@@ -453,7 +451,7 @@ Let's look at each part of this code in order.
     - This is why they can have the same name: variable names must be unique *within the variable's scope*. You can have two variables with the same name if they are in different scopes.
     - The scope of instance variables `length` and `width` is the body of class `Rectangle`, so they are in scope for both of these methods
 
-### Variables with overlapping scopes
+#### Variables with overlapping scopes
 
 - This code is legal (compiles) but does not do what you want:
 
@@ -513,7 +511,7 @@ Let's look at each part of this code in order.
 
     Without `this`, the body of the `SetWidth` method would be `width = width;`, which does not do anything (it would assign the parameter `width` to itself).
 
-# Constants
+## Constants
 
 - Classes can also contain constants
 - Syntax: `[public/private] const [type] [name] = [value];`
@@ -544,9 +542,9 @@ Let's look at each part of this code in order.
     decimal monthlyPrice = yearlyPrice / Calendar.MONTHS;
     ```
 
-# Reference Types: More Details
+## Reference Types: More Details
 
-- Data types in C# are either value types or reference types
+- Data types in C## are either value types or reference types
     - This difference was introduced in an earlier lecture (Datatypes and Variables)
     - For a **value type** variable (`int`, `long`, `float`, `double`, `decimal`, `char`, `bool`) the named memory location stores the exact data value held by the variable
     - For a **reference type** variable, such as `string`, the named memory location stores a *reference to the value*, not the value itself

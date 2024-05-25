@@ -1,6 +1,4 @@
----
-title: Introduction
----
+#  Introduction
 
 Decisions are a constant occurence in daily life.
 For instance consider an instructor teaching CSCI 1301.
