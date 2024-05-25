@@ -12,35 +12,36 @@ export default ((opts?: Options) => {
     //  {fileData.slug === "404" ? "404" : cfg.baseUrl + fileData.slug}
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
+    const linkToSource = "https://github.com/csci-1301/csci-1301.github.io/blob/main/" + fileData.slug + ".md";
     {
       // If this is not the 404 page, we provide a link to the source code:
       //          fileData.slug === "404" ? "" : <li><a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/{fileData.slug}">{fileData.slug}Source</a></li>;
+      //    
+      //     
+      //       <ul><li><a href={linkToSource} title="Markdown">md</a></li></ul>
+      
     }
-//    <li><a href={linkToSource}>Source</a></li>
-    const linkToSource = "https://github.com/csci-1301/csci-1301.github.io/blob/main/" + fileData.slug + ".md";
     return (
       <footer class={`${displayClass ?? ""}`}>
       { 
         // We embed the plug-in to provide feedback through github:
       }
-      <h2 id="other-formats">Other Formats</h2>
-      <ul><li><a href={linkToSource} title="Markdown">md</a></li></ul>
-      <h2 id="how-is-this-page">How Is This Page?</h2>
-      <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your github account.</p>
+      <h2 id="how-is-this-page">Any Comment?</h2>
       <script data-external="1"
-      src="https://utteranc.es/client.js"
-      repo="csci-1301/feedback-spring-2024"
-      issue-term="pathname"
-      label="comment"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
+        src="https://utteranc.es/client.js"
+        repo="csci-1301/feedback-spring-2024"
+        issue-term="pathname"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
       </script>
       {
         // Links About, Source Code, etc.
       }
         <hr />
         <ul>
+          <li><a href={linkToSource}>Source</a></li>
           {Object.entries(links).map(([text, link]) => (
             <li>
               <a href={link}>{text}</a>

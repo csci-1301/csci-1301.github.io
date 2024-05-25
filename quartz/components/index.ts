@@ -19,6 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
+import AlternativeFormats from "./AlternativeFormats"
 
 export {
   ArticleTitle,
@@ -41,5 +42,6 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
-  Breadcrumbs
+  Breadcrumbs,
+  AlternativeFormats,
 }
