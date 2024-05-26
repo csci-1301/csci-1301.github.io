@@ -45,7 +45,7 @@ Let's look at each part of this code in order.
     - Syntax: `[access modifier] [type] [variable name]`
     - The access modifier can have several values, the most common of which are `public` and `private`. (There are other access modifiers, such as `protected` and `internal`, but in this class we will only be using `public` and `private`).
     - An access modifier of `private` is what enforces encapsulation: when you use this access modifier, it means the instance variable cannot be accessed by any code outside the `Rectangle` class
-    - The C## compiler will give you an error if you write code that attempts to use a `private` instance variable anywhere other than a method of that variable's class
+    - The C# compiler will give you an error if you write code that attempts to use a `private` instance variable anywhere other than a method of that variable's class
 - SetLength method, an example of a "setter" method
     - This method will allow code outside the `Rectangle` class to modify a `Rectangle` object's "length" attribute
     - Note that the header of this method has an access modifier, just like the instance variable
@@ -350,12 +350,12 @@ Let's look at each part of this code in order.
     - Middle box: Attributes (i.e. instance variables)
         - On each line, one attribute, with its name and type
         - Syntax: `[+/-] [name]: [type]`
-        - Note this is the opposite order from C## variable declaration: type comes after name
+        - Note this is the opposite order from C# variable declaration: type comes after name
         - Minus sign at beginning of line indicates "private member"
     - Bottom box: Operations (i.e. methods)
         - On each line, one method header, including name, parameters, and return type
         - Syntax: `[+/-] [name]([parameter name]: [parameter type]): [return type]`
-        - Also backwards compared to C## order: parameter types come after parameter names, and return type comes after method name instead of before it
+        - Also backwards compared to C# order: parameter types come after parameter names, and return type comes after method name instead of before it
         - Plus sign at beginning of line indicates "public", which is what we want for methods
 - UML Diagram for the Rectangle class
 
@@ -385,7 +385,7 @@ Let's look at each part of this code in order.
         - See "- width: int", write `private int width;`
         - Remember to reverse the order of name and type
     - For each method in the methods section, write a method header with the matching return type, name, and parameters
-        - Parameter declarations are like the instance variables: in UML they have a name followed by a type, in C## you write the type name first
+        - Parameter declarations are like the instance variables: in UML they have a name followed by a type, in C# you write the type name first
     - Now the method bodies need to be filled in - UML just defined the interface, now you need to write the implementation
 
 ## Variable Scope
@@ -544,7 +544,7 @@ Let's look at each part of this code in order.
 
 ## Reference Types: More Details
 
-- Data types in C## are either value types or reference types
+- Data types in C# are either value types or reference types
     - This difference was introduced in an earlier lecture (Datatypes and Variables)
     - For a **value type** variable (`int`, `long`, `float`, `double`, `decimal`, `char`, `bool`) the named memory location stores the exact data value held by the variable
     - For a **reference type** variable, such as `string`, the named memory location stores a *reference to the value*, not the value itself

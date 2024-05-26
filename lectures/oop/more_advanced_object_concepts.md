@@ -99,7 +99,7 @@
 - Parentheses indicate a method call, like in `Console.ReadLine()` or `english.GetBuilding()`
 - In fact, the instantiation statement `new ClassRoom()` does call a method: the **constructor**
 - Constructor: A special method used to create an object. It "sets up" a new instance by **initializing its instance variables**.
-- If you do not write a constructor in your class, C## will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
+- If you do not write a constructor in your class, C# will generate a "default" constructor for you -- this is what's getting called when we write `new ClassRoom()` here
 - The default constructor initializes each instance variable to its default value -- that's where default values come from
 
 #### Writing a constructor
@@ -178,9 +178,9 @@
 
 #### Writing multiple constructors
 
-- Remember that if you do not write a constructor, C## generates a "default" one with no parameters, so you can write `new ClassRoom()`
+- Remember that if you do not write a constructor, C# generates a "default" one with no parameters, so you can write `new ClassRoom()`
 
-- Once you add a constructor to your class, C## will **not** generate a default constructor
+- Once you add a constructor to your class, C# will **not** generate a default constructor
     - This means once we write the `ClassRoom` constructor (as shown earlier), this statement will produce a compile error: `ClassRoom english = new ClassRoom();`
     - The constructor we wrote has 2 parameters, so now you always need 2 arguments to instantiate a `ClassRoom`
 
@@ -208,7 +208,7 @@
 
 - The "no-argument" constructor must still initialize all the instance variables, even though it has no parameters
 
-    - You can pick any "default value" you want, or use the same ones that C## would use (0 for numeric variables, `null` for object variables, etc.)
+    - You can pick any "default value" you want, or use the same ones that C# would use (0 for numeric variables, `null` for object variables, etc.)
 
 - When a class has multiple constructors, the instantiation statement must decide which constructor to call
 
@@ -236,7 +236,7 @@
 - `ToString` recap
     - String interpolation automatically calls the `ToString` method on each variable or value
     - `ToString` returns a string "equivalent" to the object; for example, if `num` is an `int` variable containing 42, `num.ToString()` returns "42".
-    - C## datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
+    - C# datatypes already have a `ToString` method, but you need to write a `ToString` method for your own classes to use them in string interpolation
 - Writing a `ToString` method
     - To add a `ToString` method to your class, you must write this header: `public override string ToString()`
     - The access modifier must be `public` (so other code, like string interpolation, can call it)
@@ -280,7 +280,7 @@
     - Two methods can each have a local variable with the same name
     - A local variable (scope limited to the method) can have the same name as an instance variable (scope includes the whole class), but this will result in **shadowing**
 - **Classes** can have the same name if they are in *different namespaces*
-    - This is one reason C## has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
+    - This is one reason C# has namespaces: you can name your classes anything you want. Otherwise, if a library (someone else's code) used a class name, you would be prevented from using that name
     - For example, imagine you were using a "shapes library" that provided a class named `Rectangle`, but you also wanted to write your own class named `Rectangle`
     - The library's code would use its own namespace, like this:
 
@@ -331,7 +331,7 @@
         }
         ```
 
-        C## understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
+        C# understands that these are different methods, even though they have the same name, because their parameters are different. If you write `myRect.Multiply(2)` it can only mean the first "Multiply" method, not the second one, because there is only one argument.
 
     - We have used overloading already when we wrote multiple constructors -- constructors are methods too. For example, these two constructors have the same name, but different parameters:
 
@@ -422,10 +422,10 @@
 - Previously, when you used the dot operator and wrote the name of a method, the name was enough to determine which method to execute -- `myRect.GetLength()` would call the `GetLength` method
 - When a method is overloaded, you must use the entire signature to determine which method gets executed
 - A method call has a "signature" too: the name of the method, and the type and order of the arguments
-- C## will execute the method whose signature matches the signature of the method call
-- Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C## will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
-- Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C## will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
-- The same process happens when you instantiate a class with multiple constructors: C## calls the constructor whose signature matches the signature of the instantiation
+- C# will execute the method whose signature matches the signature of the method call
+- Example: `myRect.Multiply(4);` has the signature `Multiply(int)`, so C# will look for a method in the Rectangle class that has the signature `Multiply(int)`. This matches the method `public void Multiply(int factor)`
+- Example: `myRect.Multiply(3, 5);` has the signature `Multiply(int, int)`, so C# will look for a method with that signature in the Rectangle class. This matches the method `public void Multiply(int lengthFactor, int widthFactor)`
+- The same process happens when you instantiate a class with multiple constructors: C# calls the constructor whose signature matches the signature of the instantiation
 - If no method or constructor matches the signature of the method call, you get a compile error. You still cannot write `myRect.Multiply(1.5)` if there is no method whose signature is `Multiply(double)`.
 
 ## Constructors in UML
@@ -513,7 +513,7 @@
     ```
 
 - Header syntax: `[public/private] [type] [name]`
-- *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C## is case sensitive
+- *Convention* (not rule) is to give the property the same name as the instance variable, but capitalized -- C# is case sensitive
 - `get` accessor: Starts with the keyword `get`, then a method body inside a code block (between braces)
     - `get` is like a method header that always has the same name, and its other features are implied by the property's header
     - Access modifier: Same as the property header's, i.e. `public` in this example

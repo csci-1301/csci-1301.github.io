@@ -160,10 +160,10 @@
 
 - String interpolation does not "magically know" how to convert numbers to strings -- it delegates the task to the numbers themselves
 
-- This works because all data types in C## are objects, even the built-in ones like `int` and `double`
+- This works because all data types in C# are objects, even the built-in ones like `int` and `double`
     - Since they are objects, they can have methods
 
-- **All** objects in C## are guaranteed to have a method named `ToString()`, whose return value (result) is a `string`
+- **All** objects in C# are guaranteed to have a method named `ToString()`, whose return value (result) is a `string`
 
 - Meaning of `ToString()` method: "Convert this object to a `string`, and return that `string`"
 
@@ -241,7 +241,7 @@
     - If both operands are numbers, the `+` operator does addition
     - If both operands are strings, the `+` operator does concatenation
     - If *one* argument is a string, the other argument will be converted to a string using `ToString()`
-    - Expressions in C## are always evaluated **left-to-right**, just like arithmetic
+    - Expressions in C# are always evaluated **left-to-right**, just like arithmetic
     - Therefore, in this code:
 
         ```

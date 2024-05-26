@@ -2,21 +2,61 @@
 
 This guide explains how this resource is organized, how it is built, and how to maintain this resource.
 
+| ⚠️ Warning       |
+|:---------------------------|
+| This resource is currently under heavy remodelling. This documentation will be updated but is outdated in places as of this writing. |
+
+::: callout
+::: warning
+This is a `warning`.
+:::
+:::
+
+> ![warning] Title
+> 
+> This resource is currently under heavy remodelling. This documentation
+> will be updated but is outdated in places as of this writing.
+
+Possible improvements:
+
+- Integrate callouts, as <https://quartz.jzhao.xyz/features/callouts>, <https://gist.github.com/jskherman/8e721302e67d308e8a81f3df84f01f20>, <https://www.reddit.com/r/LaTeX/comments/1baudg4/callouts_in_latex/>, <https://tex.stackexchange.com/questions/714908/newcommand-syntax-with-callouts>, <https://forum.obsidian.md/t/rendering-callouts-similarly-in-pandoc/40020/6>, <https://raw.githubusercontent.com/kdheepak/kdheepak.github.io/main/blog/pandoc-lua-filter-for-alerts/index.md>.
+
+- Document [quartz](quartz.jzhao.xyz/), how to run it locally, and explain the edits made in <https://github.com/csci-1301/csci-1301.github.io/tree/quartz-migration>.
+
+- Add logos before code, pdf, odt, docx, md.
+
+- og-image?
+
+- explain how to add lecture (and how to sort it in the menu and get it in the book pdf, but also that it must have only one title element at top level).
+
+- explain that no two files should have the same name considering the sorting we use ^
+
+Notes:
+
+- Undo changes in explorer.tsx (csci-1310/quartz/quartz/components/Explorer.tsx)
+
+```
+useSavedState: false, // TEMPORARY, to debug the explorer.
+```
+
+
+
+
 ## Resources Organization 
 
 The source code repository is organized as follows
 
-| path | description |
-: | :
-| `.github` | github templates and configuration for github actions |
-| `code` | code examples |
-| `docs` | additional helpful documents |
-| `img` | all images |
-| `labs` | lab exercises |
-| `lectures` | lecture notes |
-| `templates` | templates and meta data files used for building this resource |
-| `index.md` | website index page |
-| `404.md` | website 404 page |
+path | description
+--- | ---
+`.github` | github templates and configuration for github actions
+`code` | code examples
+`docs` | additional helpful documents
+`img` | all images
+`labs` | lab exercises
+`lectures` | lecture notes
+`templates` | templates and meta data files used for building this resource 
+`index.md` | website index page
+`404.md` | website 404 page
 
 Additional configuration files are at the root of the source code repository.
 

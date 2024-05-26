@@ -57,15 +57,18 @@ PANDOC_OPTIONS = --section-divs --filter pandoc-include -f markdown+emoji \
 -M date="$$(git log -1 --format=%cd --date=short -- $<)" \
 --strip-comments --email-obfuscation=references --metadata-file=$(METADATA_FILE)
 
+# Potentially, to have some kind of alternate callouts:
+# --lua-filter templates/filters/callouts.lua
+
 # We use the for the date the last time the file was edited according to git.
 # To use the current date / time instead, use:
 #-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
 
 
 # MD build options
-PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua --shift-heading-level-by=-1
+PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua --shift-heading-level-by=-1 --to gfm+pipe_tables
 # -s/--standalone is required to save the metadata block.
- 
+
 
 # Remember to add
 # --toc --lua-filter templates/filters/default-code-class-block-inline.lua
@@ -80,11 +83,16 @@ $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
 	pandoc $(PANDOC_MD) $< -o $@
 
-WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff")
+WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
 TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(WOFF_FONT_FILES)))
 
 # Individual woff font files:
 $(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
+	mkdir -p $(dir $@)
+	rsync -av $< $@
+	
+# Individual woff2 font files:
+$(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
 	mkdir -p $(dir $@)
 	rsync -av $< $@
 
