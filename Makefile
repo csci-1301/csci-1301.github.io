@@ -106,3 +106,28 @@ $(info $$SOURCE_MD_FILES is [${TARGET_WOFF_FONT_FILES}])
 clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
+
+# The following rule is needed to construct the order 
+# in the menu on the website, and the order used to integrate the notes.
+
+# To obtain and update the order file, use something along the lines of 
+# tree -f -P "*.md" --prune | sed 's/.*├──//g' | sed 's/.*│//g' | sed 's/.*└──//g' | sed 's/.*index\.md//g'  | sed -r '/^\s*$/d'
+
+# Order for website
+web-order.ts: order
+# keep the last thing after the last /, and remove the .md
+# Then, output it as 
+# export const nameOrderMap: Record<string, number> = {
+# "docs": 1,
+# "lectures":2,
+# … 
+# }
+
+
+# Order for lecture notes
+ln-order: order
+# Keep the files, remove the folders, make sure the titles are at the right level.
+	
+test:
+	pandoc $(shell cat order) -o test.html 
+
