@@ -18,7 +18,7 @@ Boolean variables have only two possible values (`true` and `false`), but we can
 
 #. "and" (`&&`, conjunction),
 #. "or" (`||`, disjunction),
-#. and "not" (`!`, negation).
+#. "not" (`!`, negation).
 
 Each has the precise meaning described here:
 
