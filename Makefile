@@ -136,7 +136,7 @@ clean:
 # academic_life
 # Note that we keep the *second* capture group.
 web-order.ts: order
-	echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
+	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
 		n=$$((n+1)); \
@@ -144,7 +144,7 @@ web-order.ts: order
 		echo -n "$$line" | sed -E 's-([^/]*/)*((.)*)$$-\2-g' | sed 's-\.md--g' >> $@;\
 		echo -n "\": $$n,\n"  >> $@ ;\
 	done < order
-	echo "}" >> $@
+	@echo "}" >> $@
 
 #test:
 #	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 

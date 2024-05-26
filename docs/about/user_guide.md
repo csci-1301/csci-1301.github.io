@@ -25,8 +25,6 @@ Possible improvements:
 
 - Add logos before code, pdf, odt, docx, md.
 
-- og-image?
-
 - explain how to add lecture (and how to sort it in the menu and get it in the book pdf, but also that it must have only one title element at top level).
 
 - explain that no two files should have the same name considering the sorting we use ^
