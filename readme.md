@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Principles of Computer Programming I
 
 [![Build](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml/badge.svg)](https://github.com/csci-1301/csci-1301.github.io/actions/workflows/build.yaml)

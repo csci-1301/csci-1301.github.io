@@ -31,6 +31,8 @@ Possible improvements:
 
 - explain that no two files should have the same name considering the sorting we use ^
 
+- sort out misc folder
+
 Notes:
 
 - Undo changes in explorer.tsx (csci-1310/quartz/quartz/components/Explorer.tsx)
@@ -39,12 +41,15 @@ Notes:
 useSavedState: false, // TEMPORARY, to debug the explorer.
 ```
 
+## Website
+
+- The favicon are in the quartz branch, at `quartz/static/`, and have been generated using <https://realfavicongenerator.net/>.
 
 
 
 ## Resources Organization 
 
-The source code repository is organized as follows
+The [source code repository](https://github.com/csci-1301/csci-1301.github.io)'s main branch is organized as follows:
 
 path | description
 --- | ---
@@ -54,7 +59,9 @@ path | description
 `img` | all images
 `labs` | lab exercises
 `lectures` | lecture notes
+`slides` | slides
 `templates` | templates and meta data files used for building this resource 
+`vid` | video files
 `index.md` | website index page
 `404.md` | website 404 page
 
@@ -333,11 +340,11 @@ This repository uses following tools and technologies:
 - [utteranc.es](https://utteranc.es/) - for feedback through website
 - [csharpier](https://github.com/belav/csharpier) - to tidy the C## source code
 
-### How build outputs are generated
+### Build outputs
 
 The resource material is organized into specific directories (cf. [resource organization](#resources-organization)). These resources are then compiled into templated documents in various formats using [pandoc](https://pandoc.org/MANUAL.html). Different directories undergo different build steps as defined in the project [Makefile](https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile) and generate various outputs. For example, lecture notes are compiled into a textbook and labs are packaged into individual labs. The makefile explains the exact steps applied to each type of resource.
 
-### Using Github actions with pandoc
+### Github actions
 
 This resource is built automatically every time changes are committed to the main branch of the repository. This is configured to run on [Github actions](https://github.com/features/actions). There are currently two configured [workflows](https://github.com/csci-1301/csci-1301.github.io/actions): one to build the resource and to deploy it, and a second one to check that any opened pull requests can be built successfully. 
 
@@ -347,7 +354,7 @@ Currently Github actions offers unlimited free build minutes for public reposito
 
 Following a successful build, the build script will automatically deploy the generated resources to an accompanying website hosted on [github pages](https://pages.github.com/). In the repository a special branch `gh-pages` represents the contents of the deployed website. It also allows maintainers to observe the generated build outputs.
 
-### How to create releases
+### Creating releases
 
 Currently a github action is setup to do the following: whenever a new commit is made to the main branch, the action will build the resource and add the generated books as a pre-release under releases and tag them as "latest". If a subsequent commit occurs it will overwrite the previous latest files and become the new latest version. This cycle continues until maintainers are ready to make a versioned release (or "package").
 
@@ -373,12 +380,12 @@ Once this is done, remember to create the next pre-release:
 #. Check "This is a pre-release"
 #. Click on "Publish release"
 
-### Building the resource locally
+### Building locally
 
 It is generally not necessary to build this resource locally unless the intent is to preview templating changes or to make changes to build scripts.
 For the purposes of editing content, it is sufficient to make edits to markdown files and commit those changes. 
 
-#### Installing required dependencies
+#### Installing dependencies
 
 To find the current list of dependencies needed to build this resource, refer to the [build script install section](https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L33-L40), which lists all required packages needed to build the resource. The exact installation steps vary depending on your local operating system.
 

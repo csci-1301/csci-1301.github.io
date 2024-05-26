@@ -34,7 +34,7 @@ LAB_TEMPLATES= templates/labs/
 LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d | sort))
 
 
-SOURCE_MD_FILES := $(shell find lectures/ docs/ labs/ -name '*.md')
+SOURCE_MD_FILES := $(shell find lectures/ docs/ labs/ . -name '*.md')
 TARGET_MD_FILES = $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
 
 METADATA_FILE = templates/meta.yaml
@@ -100,12 +100,22 @@ all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES)
 
 # Phony rule to display variables
 .PHONY: test
-$(info $$SOURCE_MD_FILES is [${TARGET_WOFF_FONT_FILES}])
+$(info $$SOURCE_MD_FILES is [${SOURCE_MD_FILES}])
 
 .PHONY: clean
 clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
+
+###############################################
+# Order: this part of the Makefile consider   #
+# the order in the ./order file to            #
+# 1. Construct the "web-order.ts" file, that  #
+#    determine the order used in the menu on  #
+#    the website.                             #
+# 2. Determine in which order pandoc needs    #
+#    
+################
 
 # The following rule is needed to construct the order 
 # in the menu on the website, and the order used to integrate the notes.
@@ -114,20 +124,28 @@ clean:
 # tree -f -P "*.md" --prune | sed 's/.*├──//g' | sed 's/.*│//g' | sed 's/.*└──//g' | sed 's/.*index\.md//g'  | sed -r '/^\s*$/d'
 
 # Order for website
+# The regular expression 
+# 's-([^/]*/)*((.)*)$$-\2-g'
+# goes from e.g.,
+# ./lectures/misc/over_under_flow.md
+# to 
+# over_under_flow
+# and from e.g.,
+# ./docs/academic_life
+# to 
+# academic_life
+# Note that we keep the *second* capture group.
 web-order.ts: order
-# keep the last thing after the last /, and remove the .md
-# Then, output it as 
-# export const nameOrderMap: Record<string, number> = {
-# "docs": 1,
-# "lectures":2,
-# … 
-# }
+	echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
+	@n=0 ;
+	@while read -r line; do \
+		n=$$((n+1)); \
+		echo -n '\t"' >> $@;\
+		echo -n "$$line" | sed -E 's-([^/]*/)*((.)*)$$-\2-g' | sed 's-\.md--g' >> $@;\
+		echo -n "\": $$n,\n"  >> $@ ;\
+	done < order
+	echo "}" >> $@
 
-
-# Order for lecture notes
-ln-order: order
-# Keep the files, remove the folders, make sure the titles are at the right level.
-	
-test:
-	pandoc $(shell cat order) -o test.html 
+#test:
+#	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 
 
