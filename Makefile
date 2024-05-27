@@ -116,6 +116,11 @@ TARGET_PDF_FILES_WITHOUT_INDEX := $(addsuffix .pdf,  $(basename $(TARGET_MD_FILE
 TARGET_ODT_FILES_WITHOUT_INDEX := $(addsuffix .odt,  $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
 TARGET_DOC_FILES_WITHOUT_INDEX := $(addsuffix .docx, $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
 
+## Book source
+# Those are the md files that are integrated in "the book".
+# Note that we use the order file, discussed below (look for "order").
+SOURCE_BOOK := $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md")
+
 # Font files (source and target).
 SOURCE_WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
 TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(SOURCE_WOFF_FONT_FILES)))
@@ -178,6 +183,12 @@ PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc
 # DOCX build options
 PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
 # --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
+
+# Book build options
+PANDOC_BOOK_PDF:= $(PANDOC_PDF)
+PANDOC_BOOK_HTM:= $(PANDOC_OPTIONS_ALT)
+PANDOC_BOOK_DOC:= $(PANDOC_DOC)
+PANDOC_BOOK_ODT:= $(PANDOC_ODT)
 
 # Remember to add ?
 # --metadata-file=$(METADATA_FILE)
@@ -378,26 +389,29 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	# We compress the folder containing the sln and the folder containing the csproj and the code
 	# But we exclude the .vs folder and .directory file
 
-	# -------------------------------
-	## Book
-	# -------------------------------
+# -------------------------------
+# Book files
+# -------------------------------
 
-#test:
-#	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 
+$(BUILD_DIR)book.html: $(SOURCE_BOOK)
+	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_HTM) -o $@
 
+$(BUILD_DIR)book.pdf: $(SOURCE_BOOK)
+	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_PDF) -o $@
 
-###
-# Source / Project
-###
+$(BUILD_DIR)book.odt: $(SOURCE_BOOK)
+	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_ODT) -o $@
 	
-	
+$(BUILD_DIR)book.docx: $(SOURCE_BOOK)
+	pandoc $(SOURCE_BOOK) $(PANDOC_BOOK_DOC) -o $@
 
-#deploy:
-#	git checkout quartz-migration
-#	npx quartz build --serve --concurrency 8	
+# -------------------------------
+# Putting it all together
+# -------------------------------
 
+TARGET_BOOK: $(BUILD_DIR)book.html $(BUILD_DIR)book.pdf $(BUILD_DIR)book.odt $(BUILD_DIR)book.docx
 
-all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) 
+all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) $(TARGET_BOOK)
 
 # Phony rule to display variables
 # Uncomment the following and replace
@@ -405,6 +419,9 @@ all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_F
 # with the variable you want listed.
 #test:
 #	$(info $$PROJECT_DIR is [${PROJECT_DIR}])
-test:	
-	$(info $$TARGET_MD_FILES is [${TARGET_DOC_FILES_WITHOUT_INDEX}])
+
+#deploy:
+#	git checkout quartz-migration
+#	npx quartz build --serve --concurrency 8	
+
 
