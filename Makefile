@@ -6,9 +6,13 @@
 # is built and maintained.                           #
 ######################################################
 
-# ===============================
-# Useful Makefile commands: 
-# ===============================
+# ===================================
+# How to get help / read this file?
+# ==================================
+
+# -------------------------------
+# Useful Makefile commands
+# -------------------------------
 
 # Display help message.
 help:
@@ -31,9 +35,9 @@ clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
 
-# ===============================
+# -------------------------------
 # Useful Makefile doc. 
-# ===============================
+# -------------------------------
 # - https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html
 # - https://gist.github.com/rueycheng/42e355d1480fd7a33ee81c866c7fdf78
 # - https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
@@ -41,87 +45,104 @@ clean:
 # - https://devhints.io/makefile
 
 # ===============================
-# Options
+# Options and variables
 # ===============================
 
-# ALL PATH RELATED SETTINGS
-
 # -------------------------------
-## Directories
+# Directories
 # -------------------------------
 
-# Where to build
+# The folder where to build.
 BUILD_DIR = content/
-# Where the lectures are located
+# The folder where the lectures are located.
 LECTURES_DIR = lectures/
-# Where the documentation is located
+# The folder where the documentation is located.
 DOCS_DIR = docs/
-# Where the labs are located
+# The folder where the labs are located.
 LABS_DIR = labs/
-# Where the .cs code (snippets and projects) is located.
+# The folder where the .cs code snippets and projects are located.
 CODE_DIR = code/
-# Where the .zip archive containing projects is located.
+# The folder where the .zip archives containing projects are located.
 PROJECT_DIR = $(CODE_DIR)projects/
 # The folders where .md files are located.
 MD_DIRS = lectures/ docs/ labs/
+# The folder where the images are located.
+IMG_DIR = img/
+# The folder where the videos are located.
+VID_DIR = vid/
+# The folders where the project are located.
+PROJECTS_DIRS := $(shell find $(PROJECT_DIR) -maxdepth 1 -mindepth 1 -type d)
 
 ## Templates
+TEMPLATES = templates/
 # Path to PDF templates to use with pandoc
-PDFPATH = templates/latex/
+PDF_TEMPLATES = $(TEMPLATES)latex/
 # Path to ODT templates to use with pandoc
-ODTPATH = templates/odt/
+ODT_TEMPLATES = $(TEMPLATES)odt/
 # Path to DOCX templates to use with pandoc
-DOCXPATH = templates/docx/
+DOC_TEMPLATES = $(TEMPLATES)docx/
+# Path to the lua filters to use with pandoc
+FIL_TEMPLATES = $(TEMPLATES)filters/
 
 # -------------------------------
-## Files
+# Files
 # -------------------------------
 
-# File where to get the metadata 
-METADATA_FILE = templates/meta.yaml
-
-# md files (source and target).
+## md files
+# We have essentially two sources,
+# one containing the index.md files,
+# and one that doesn't.
 SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
-# We append the index.md file at root level to SOURCE_MD_FILES
-SOURCE_MD_FILES += index.md
+# md files without the index.md files in a folder.
+# Those files only contain the title of the folder.
+# cf. https://quartz.jzhao.xyz/authoring-content
+SOURCE_MD_FILES_WITHOUT_INDEX = $(filter-out %/index.md,$(SOURCE_MD_FILES))
+# We construct two targets accordingly by prepending
+# the BUILD_DIR folder.
 TARGET_MD_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
+TARGET_MD_FILES_WITHOUT_INDEX := $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES_WITHOUT_INDEX))
 
-test:
-	$(info $$SOURCE_MD_FILES is [${SOURCE_MD_FILES}])
+## "Alternative formats" target files
+# Every recipe is as follows:
+# 1. Look at the TARGET_MD_FILES_WITHOUT_INDEX, (e.g. "lectures/arrays/1d.md")
+# 2. Extract the name of the file without the extension using basename (e.g. "lectures/arrays/1d"),
+# 3. Add the suffix (.odt, .pdf or .docx) (e.g. "lectures/arrays/1d.odt").
+TARGET_PDF_FILES_WITHOUT_INDEX := $(addsuffix .pdf,  $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
+TARGET_ODT_FILES_WITHOUT_INDEX := $(addsuffix .odt,  $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
+TARGET_DOC_FILES_WITHOUT_INDEX := $(addsuffix .docx, $(basename $(TARGET_MD_FILES_WITHOUT_INDEX)))
+
+# Font files (source and target).
+SOURCE_WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
+TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(SOURCE_WOFF_FONT_FILES)))
+
+# Image files (source and target).
+SOURCE_IMAGES_FILES := $(shell find $(IMG_DIR) -mindepth 1  -maxdepth 1 -iname "*.jpg" -or -iname "*.jpeg" -or -iname "*.png" -or -iname "*.pdf" -or -iname "*.svg" -or -iname "*.gif")
+TARGET_IMAGES_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_IMAGES_FILES))
+
+# Video files (source and target).
+SOURCE_VIDEOS_FILES := $(shell find $(VID_DIR) -mindepth 1  -maxdepth 1 -iname "*.mov" -or -iname "*.avi" -or -iname "*.m4v" -or -iname "*.mkv")
+TARGET_VIDEOS_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_VIDEOS_FILES))
+
+# Projects archives (only target).
+TARGET_PROJECTS_FILES := $(addprefix $(BUILD_DIR), $(addsuffix .zip, $(PROJECTS_DIRS)))
+
+# File where to get the metadata
+METADATA_FILE = $(TEMPLATES)meta.yaml
 
 
-# md files without the 
+# ===============================
+# Options and variables
+# ===============================
 
-TARGET_DOCX_FILES := $(addprefix $(BUILD_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_MD_FILES)))))
-
-# 1. Look at the SOURCE_DOC_FILES, (e.g. "docs/about.md")
-# 2. Extract the name file using notdir (e.g. "about.md"),
-# 3. Extract the name of the file without the extension using basename (e.g. "about"),
-# 4. Add the suffix ".html" (e.g. "about.html"),
-# 5. Add the prefix "docs" (e.g. "docs/about.html").
-# 6. Add the prefix "content" (e.g. "content/docs/about.html").
-# This allows to automatically build the list of targets (the content/ pdf files)
-# from the list of md files in docs.
-
-
-## USELESS?
-# The input match pattern for which files to include in "the book"
-# SOURCE_BOOK_FILES =  $(LECTURES_DIR)*/readme.md
-# if you change this value also change all references to it!
-# TARGET_BOOK_FILE = $(BUILD_DIR)book
-# where to find all of the following
-# TARGET_BOOK_MD_FILES = $(BUILD_DIR)$(LECTURES_DIR)*/readme.md
-# generate index page for the website from this file
-# WEB_INDEX = index.md
-# 404_PAGE = 404.md
-
-# flags to apply
+# -------------------------------
+# Pandoc options
+# -------------------------------
 
 # Options for all output formats
-PANDOC_OPTIONS = --section-divs --filter pandoc-include -f markdown+emoji \
+PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
+--strip-comments --email-obfuscation=references \
 -M default-code-class=csharp \
--M date="$$(git log -1 --format=%cd --date=short -- $<)" \
---strip-comments --email-obfuscation=references --metadata-file=$(METADATA_FILE)
+-M date="$$(git log -1 --format=%cd --date=short -- $<)"
 
 # Potentially, to have some kind of alternate callouts:
 # --lua-filter templates/filters/callouts.lua
@@ -132,54 +153,35 @@ PANDOC_OPTIONS = --section-divs --filter pandoc-include -f markdown+emoji \
 
 
 # MD build options
-PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter templates/filters/default-code-class-block.lua --shift-heading-level-by=-1 --to gfm+pipe_tables
+PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
+--shift-heading-level-by=-1 --to gfm+pipe_tables
 # -s/--standalone is required to save the metadata block.
 
 
 # Remember to add
 # --toc --lua-filter templates/filters/default-code-class-block-inline.lua
-#
+# --metadata-file=$(METADATA_FILE)
 # documentclass: scrartcl  # templating
 # numbersections: true     # templating
 # papersize: letter        # templating
 # geometry: margin=1in     # templating
 # to pandoc's options for pdf, odt, docx (not sure about the use for the last four for docx / odt)
 
-$(BUILD_DIR)%.md: %.md
-	@mkdir -p $(dir $@)
-	pandoc $(PANDOC_MD) $< -o $@
+# ===============================
+# Rules
+# ===============================
 
-WOFF_FONT_FILES := $(shell find templates/fonts/ -iname "*.woff*")
-TARGET_WOFF_FONT_FILES := $(addprefix $(BUILD_DIR), $(patsubst templates/%,%,$(WOFF_FONT_FILES)))
+# -------------------------------
+# Order file
+# -------------------------------
 
-# Individual woff font files:
-$(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
-	mkdir -p $(dir $@)
-	rsync -av $< $@
-	
-# Individual woff2 font files:
-$(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
-	mkdir -p $(dir $@)
-	rsync -av $< $@
+# This part of the Makefile consider the order in the ./order file to
+# construct the "web-order.ts" file, that determine the order used
+# in the menu on the website.
 
-
-###############################################
-# Order: this part of the Makefile consider   #
-# the order in the ./order file to            #
-# 1. Construct the "web-order.ts" file, that  #
-#    determine the order used in the menu on  #
-#    the website.                             #
-# 2. Determine in which order pandoc needs    #
-#    
-################
-
-# The following rule is needed to construct the order 
-# in the menu on the website, and the order used to integrate the notes.
-
-# To obtain and update the order file, use something along the lines of 
+# To get a clean list of all the .md files, use something along the lines of
 # tree -f -P "*.md" --prune | sed 's/.*├──//g' | sed 's/.*│//g' | sed 's/.*└──//g' | sed 's/.*index\.md//g'  | sed -r '/^\s*$/d'
 
-# Order for website
 # The regular expression 
 # 's-([^/]*/)*((.)*)$$-\2-g'
 # goes from e.g.,
@@ -195,12 +197,43 @@ web-order.ts: order
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
-		n=$$((n+1)); \
-		echo -n '\t"' >> $@;\
-		echo -n "$$line" | sed -E 's-([^/]*/)*((.)*)$$-\2-g' | sed 's-\.md--g' >> $@;\
-		echo -n "\": $$n,\n"  >> $@ ;\
+	n=$$((n+1)); \
+	echo -n '\t"' >> $@;\
+	echo -n "$$line" | sed -E 's-([^/]*/)*((.)*)$$-\2-g' | sed 's-\.md--g' >> $@;\
+	echo -n "\": $$n,\n"  >> $@ ;\
 	done < order
 	@echo "}" >> $@
+
+
+
+# -------------------------------
+# Files
+# -------------------------------
+
+
+
+
+
+# flags to apply
+
+
+
+
+$(BUILD_DIR)%.md: %.md
+	@mkdir -p $(dir $@)
+	pandoc $(PANDOC_MD) $< -o $@
+
+# Individual woff font files:
+$(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
+	mkdir -p $(dir $@)
+	rsync -av $< $@
+	
+# Individual woff2 font files:
+$(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
+	mkdir -p $(dir $@)
+	rsync -av $< $@
+
+
 
 #test:
 #	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 
@@ -211,10 +244,6 @@ web-order.ts: order
 ###
 
 
-# List of projects (that is, of folders) in PROJECT_DIR
-PROJECTS_LIST := $(shell find $(PROJECT_DIR) -maxdepth 1 -mindepth 1 -type d)
-# We construct the list of projects (as zip files) to construct based on it:
-PROJECTS_TARGETS := $(addprefix $(BUILD_DIR), $(addsuffix .zip, $(PROJECTS_LIST)))
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
@@ -293,7 +322,7 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 #	npx quartz build --serve --concurrency 8	
 
 
-all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(PROJECTS_TARGETS)
+all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS_FILES)
 
 # Phony rule to display variables
 # Uncomment the following and replace

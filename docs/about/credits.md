@@ -2,7 +2,8 @@
 
 ## Purpose
 
-This website contains all the resources used in the delivery of CSCI 1301 - Principles of Computer Programming I and CSCI 1302 - Principles of Computer Programming II in the [Bachelor of Science in Computer Science](https://www.augusta.edu/ccs/bs-cs.php) at [Augusta University](https://www.augusta.edu), as well as practical guides and additional resources for students and instructors.
+This website contains all the resources to learn the principles of computer programming using C#.
+It is used in the delivery of CSCI 1301 - Principles of Computer Programming I and CSCI 1302 - Principles of Computer Programming II in the [Bachelor of Science in Computer Science](https://www.augusta.edu/ccs/bs-cs.php) at [Augusta University](https://www.augusta.edu), and contains practical guides and additional resources for students and instructors.
 
 ## Authors
 
@@ -15,10 +16,10 @@ The initial authors of this material are:
 - [Neea Rusch](https://nkrusch.github.io/)
 - [Edward Tremel](https://edwardtremel.com/)
 
-Additional contributions, by [undergraduate course assistants](https://csci-1301.github.io/uca.html) or other colleagues, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
+Additional contributions, by [(under)graduate course assistants](/docs/academic_life/ca) or other colleagues, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
 
 This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
-Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](index.html#academic-life-1) notes through their suggestions and references.
+Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](/docs/academic_life) notes through their suggestions and references.
 
 ## Supports
 
