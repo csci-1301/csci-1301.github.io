@@ -12,7 +12,6 @@ Symbol | Common Name
 <kbd>⌘</kbd> | Command (or Cmd)
 <kbd>↵</kbd> | (Carriage) Return
 
-
 The sections labeled with the star symbol ("\*") work generally everywhere, beyond your IDE.
 
 <!-- alphabetical list -->
