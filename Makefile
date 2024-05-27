@@ -49,8 +49,6 @@ clean:
 # -------------------------------
 ## Directories
 # -------------------------------
-# Directory where to output build artifacts
-# if you change this value also change build settings
 
 # Where to build
 BUILD_DIR = content/
@@ -64,19 +62,58 @@ LABS_DIR = labs/
 CODE_DIR = code/
 # Where the .zip archive containing projects is located.
 PROJECT_DIR = $(CODE_DIR)projects/
-SOURCE_MD_FILES := $(shell find lectures/ docs/ labs/ . -name '*.md')
-TARGET_MD_FILES = $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
-METADATA_FILE = templates/meta.yaml
+# The folders where .md files are located.
+MD_DIRS = lectures/ docs/ labs/
 
+## Templates
 # Path to PDF templates to use with pandoc
 PDFPATH = templates/latex/
 # Path to ODT templates to use with pandoc
 ODTPATH = templates/odt/
 # Path to DOCX templates to use with pandoc
 DOCXPATH = templates/docx/
+
+# -------------------------------
+## Files
+# -------------------------------
+
+# File where to get the metadata 
+METADATA_FILE = templates/meta.yaml
+
+# md files (source and target).
+SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
+# We append the index.md file at root level to SOURCE_MD_FILES
+SOURCE_MD_FILES += index.md
+TARGET_MD_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
+
+test:
+	$(info $$SOURCE_MD_FILES is [${SOURCE_MD_FILES}])
+
+
+# md files without the 
+
+TARGET_DOCX_FILES := $(addprefix $(BUILD_DIR), $(addsuffix .docx, $(basename $(notdir $(SOURCE_MD_FILES)))))
+
+# 1. Look at the SOURCE_DOC_FILES, (e.g. "docs/about.md")
+# 2. Extract the name file using notdir (e.g. "about.md"),
+# 3. Extract the name of the file without the extension using basename (e.g. "about"),
+# 4. Add the suffix ".html" (e.g. "about.html"),
+# 5. Add the prefix "docs" (e.g. "docs/about.html").
+# 6. Add the prefix "content" (e.g. "content/docs/about.html").
+# This allows to automatically build the list of targets (the content/ pdf files)
+# from the list of md files in docs.
+
+
+## USELESS?
+# The input match pattern for which files to include in "the book"
+# SOURCE_BOOK_FILES =  $(LECTURES_DIR)*/readme.md
+# if you change this value also change all references to it!
+# TARGET_BOOK_FILE = $(BUILD_DIR)book
+# where to find all of the following
+# TARGET_BOOK_MD_FILES = $(BUILD_DIR)$(LECTURES_DIR)*/readme.md
 # generate index page for the website from this file
-WEB_INDEX = index.md
-404_PAGE = 404.md
+# WEB_INDEX = index.md
+# 404_PAGE = 404.md
 
 # flags to apply
 
