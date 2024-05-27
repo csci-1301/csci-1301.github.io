@@ -220,13 +220,17 @@ MAKEFLAGS:= -j
 # to 
 # academic_life
 # Note that we keep the *second* capture group.
+
+# But, actually, we only need to get rid of ./ and .md
+# which is easily done with
+# sed -E 's-\./--g' | sed 's-\.md--g'
 web-order.ts: order
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
 	@while read -r line; do \
 	n=$$((n+1)); \
 	echo -n '\t"' >> $@;\
-	echo -n "$$line" | sed -E 's-([^/]*/)*((.)*)$$-\2-g' | sed 's-\.md--g' >> $@;\
+	echo -n "$$line" | sed -E 's-\./--g' | sed 's-\.md--g' >> $@;\
 	echo -n "\": $$n,\n"  >> $@ ;\
 	done < order
 	@echo "}" >> $@
@@ -370,7 +374,7 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 #	npx quartz build --serve --concurrency 8	
 
 
-all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS_FILES)
+all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS_FILES)
 
 # Phony rule to display variables
 # Uncomment the following and replace

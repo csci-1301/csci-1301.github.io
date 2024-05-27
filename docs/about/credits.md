@@ -7,23 +7,16 @@ It is used in the delivery of CSCI 1301 - Principles of Computer Programming I a
 
 ## Authors
 
-The initial authors of this material are:
+At the time of writing, this resource is actively maintained [Clément Aubert](https://spots.augusta.edu/caubert/#contact). 
+Additional contributions, by [(under)graduate course assistants](/docs/academic_life/ca) and other contributors, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
 
-- [Clément Aubert](http://spots.augusta.edu/caubert/)
-- [Michael Dowell](https://spots.augusta.edu/mdowell/)
-- [Richard DeFrancisco](https://www.augusta.edu/faculty/directory/view.php?id=RDEFRANCISCO)
-- [Reza Rahaeimehr](https://www.augusta.edu/faculty/directory/view.php?id=RRAHAEIMEHR)
-- [Neea Rusch](https://nkrusch.github.io/)
-- [Edward Tremel](https://edwardtremel.com/)
+Some of the material originated from discussion, handouts and contributions by [Clément Aubert](http://spots.augusta.edu/caubert/), [Aubrey Bryant](https://www.linkedin.com/in/aubrey-bryant-61898176), [Michael Dowell](https://spots.augusta.edu/mdowell/), [Richard DeFrancisco](https://www.augusta.edu/faculty/directory/view.php?id=RDEFRANCISCO),  [Onyeka Ezenwoye](https://www.augusta.edu/faculty/directory/view.php?id=oezenwoye), [Leszek Gasieniec](https://cgi.csc.liv.ac.uk/~leszek/),  [Reza Rahaeimehr](https://www.augusta.edu/faculty/directory/view.php?id=RRAHAEIMEHR), [Neea Rusch](https://nkrusch.github.io/), [Edward Tremel](https://edwardtremel.com/) and [Paul York](https://www.augusta.edu/faculty/directory/view.php?id=pyork1).
 
-Additional contributions, by [(under)graduate course assistants](/docs/academic_life/ca) or other colleagues, are [tracked by version control](https://github.com/csci-1301/csci-1301.github.io/graphs/contributors).
-
-This material could not have been without the generous contribution of past CSCI 1301 instructors, among which Aubrey Bryant, Leszek Gasieniec, Onyeka Ezenwoye and Paul York.
 Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/ccs/)'s past and present [academic advisors](https://www.augusta.edu/ccs/faculty.php#Staff), Laura Austin, Denise Coleman, Markus Bacha, and Wennie Squires, and communications & marketing specialist, Haley Bourne, improved the [Academic Life](/docs/academic_life) notes through their suggestions and references.
 
 ## Supports
 
-The first source of supports is the constant stream of feedback we receive from students and users: thank _you_.
+The first source of support is the constant stream of feedback we receive from students and users: thank _you_.
 
 This project has been monetarily supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and a Continuous Improvement Grant (M260).
 
@@ -39,12 +32,12 @@ We strive to prioritize open-source software when possible, and occasionally con
 
 This website uses different technologies.
 
-- The markdown source code is converted to (a slightly different) `md` `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
+- The markdown source code is converted to (a slightly different) `md`, `pdf`, `odt` and `docx` formats thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include) (among other `lua` filters).
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 - The website is powered by [quartz](https://quartz.jzhao.xyz/).
 
-More details on the tools we use can be found in [our user guide](user_guide.html#repository-maintenance).
+More details on the tools we use and how this resource is made can be found in [our user guide](docs/about/user_guide#repository-maintenance).
 
 ### Fonts
 
