@@ -204,36 +204,28 @@ Do not include meta section in individual lecture files because these lectures w
 
 All lab resources are located under `labs` directory. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution. 
 
-#. Choose a short and unique name that describes the lab then create a directory matching that name
+#. Choose a short and unique name that describes the lab (say, `StringMethods`)
     - follow the existing convention for naming
     - do not number labs or make assumptions about numbering because another instructor may not follow the exact same lab order
      
-#. Under the lab directory create:
-
-    #. `readme.md` (case sensitive) 
-        - write lab instructions in this file. You should include meta data, at minimum a title
-        - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
-        - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
-        - do not make assumptions about student using Visual Studio, refer to IDE instead
-        
-    #. (optional) if you want to include starter code with the lab,
-        - create a subdirectory called `src`
-        - create a subdirectory with the name of the solution you would like to use,
-        - create a subdirectory with the name of the project you would like to use,
-        - create a file called `Program.cs` in `src/<solution>/<project>/Program.cs`
-        - if you want to add additional classes, add them in `src/<solution>/<project>/<Class>.cs` files. 
-        
-    Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `<solution>.zip`.
+#. Create a `labs/StringMethods.md` file
+    - write lab instructions in this file. You should include meta data, at minimum a title
+    - make the lab standalone to support alternative ordering (avoid assumptions about what was done "last time")
+    - do not make assumptions about student using specific OS, include instructions for all supported options (Windows, MacOS, Linux)
+    - do not make assumptions about student using Visual Studio, refer to IDE instead
     
+#. (optional) if you want to include starter code with the lab,
+    - go to `code/projets`,
+    - create a subdirectory with the name of the solution you would like to use,
+    - create a subdirectory with the name of the project you would like to use,
+    - create a file called `Program.cs` in `code/projects/<solution>/<project>/Program.cs`
+    - if you want to add additional classes, add them in `code/projects/<solution>/<project>/<Class>.cs` files. 
+    
+    Do **not** add solution (`sln`) or project (`csproj`) files: they will be created automatically using the project and solution's name you specified, if multiple classes are present they will all be linked, and the resulting archive will be hosted in the lab's folder as `code/projects/<solution>.zip`.
+
     Note / known issue: when including multiple solutions, the basename should be different, for example: `SomeLab` and `Solution_SomeLab` (instead of `SomeLabSolution`); to ensure solutions are packaged separately from one another.
-    
-    #. Create an entry for the new lab in the table at `labs/readme.md`. List all prerequisite labs and related lectures.
 
-
-If you follow these instructions the lab will be automatically built into a distributable format when you commit changes. It works as follows:
-
-#. `readme.md` will be converted to lab instructions file called `index` (html, pdf, odt)
-#. contents of `src` will be converted to a standalone C## solution as a zip file. 
+#. (_obsolete?_) Create an entry for the new lab in the table at `labs/readme.md`. List all prerequisite labs and related lectures.
 
 Using this established build system generates labs that are cross-platform (Windows, MacOS, Linux) and work on different IDEs. Do not attempt to create labs locally as that approach does not have the same cross-platform guarantee.
 
