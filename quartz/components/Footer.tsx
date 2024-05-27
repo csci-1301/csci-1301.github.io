@@ -9,18 +9,8 @@ interface Options {
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg, fileData }: QuartzComponentProps) => {
-    //  {fileData.slug === "404" ? "404" : cfg.baseUrl + fileData.slug}
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
-    const linkToSource = "https://github.com/csci-1301/csci-1301.github.io/blob/main/" + fileData.slug + ".md";
-    {
-      // If this is not the 404 page, we provide a link to the source code:
-      //          fileData.slug === "404" ? "" : <li><a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/{fileData.slug}">{fileData.slug}Source</a></li>;
-      //    
-      //     
-      //       <ul><li><a href={linkToSource} title="Markdown">md</a></li></ul>
-      
-    }
     return (
       <footer class={`${displayClass ?? ""}`}>
       { 
@@ -41,7 +31,6 @@ export default ((opts?: Options) => {
       }
         <hr />
         <ul>
-          <li><a href={linkToSource}>Source</a></li>
           {Object.entries(links).map(([text, link]) => (
             <li>
               <a href={link}>{text}</a>
@@ -50,7 +39,7 @@ export default ((opts?: Options) => {
         </ul>
         <p>
         {i18n(cfg.locale).components.footer.createdWith}{" "}
-        <a href="/docs/about.html#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
+        <a href="/docs/about/credits#tools" title="A list of tools used to create this resource.">free software</a> 🅭 🅯 {year}
         </p>
       </footer>
     )

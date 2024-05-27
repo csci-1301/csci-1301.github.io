@@ -11,9 +11,9 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      "About" : "/docs/about/",
+      "Credits" : "/docs/about/credits",
       "Source": "https://github.com/csci-1301/csci-1301.github.io",
-      "CC BY 4.0": "/docs/about/about/#licence",
+      "CC BY 4.0": "/docs/about/credits#licence",
       "Discord": "https://discord.gg/AYSw3UNKEh",
     }})
 }
