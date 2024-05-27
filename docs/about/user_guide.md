@@ -29,6 +29,8 @@ Possible improvements:
 
 - explain that no two files should have the same name considering the sorting we use ^
 
+- give title to code snippets / code blocks
+
 - sort out misc folder
 
 Notes:

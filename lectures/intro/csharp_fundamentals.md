@@ -54,7 +54,7 @@ Here's a simple "hello world" program in the C# language:
 <!-- TODO: title this code block -->
 
 ```
-!include code/helloWorld.cs
+!include code/snippets/helloWorld.cs
 ```
 
 Features of this program:
@@ -177,7 +177,7 @@ Note that some of those conventions are actually rules in different programming 
     - This means a second `Console.WriteLine` will display its text on the next line of the terminal. For example, this program:
 
         ```
-        !include code/writelineTwoLines.cs
+        !include code/snippets/writelineTwoLines.cs
         ```
 
       will display the following output in the terminal:
@@ -202,7 +202,7 @@ Note that some of those conventions are actually rules in different programming 
     - Even though two `Console.Write` calls are two statements, and appear on two lines, they will result in the text being printed on just one line. For example, this program:
 
         ```
-        !include code/writeTwoLines.cs
+        !include code/snippets/writeTwoLines.cs
         ```
 
       will display the following output in the terminal:
@@ -221,7 +221,7 @@ Note that some of those conventions are actually rules in different programming 
     - This program:
 
         ```
-        !include code/writeAndWriteline.cs
+        !include code/snippets/writeAndWriteline.cs
         ```
 
       will display the following output in the terminal:
@@ -242,7 +242,7 @@ Note that some of those conventions are actually rules in different programming 
     - This program will produce the same output as our two-line "Hello World" example, with each word on its own line:
 
         ```
-        !include code/writeWithNewline.cs
+        !include code/snippets/writeWithNewline.cs
         ```
 
 - Escape sequences in detail
@@ -272,7 +272,7 @@ Note that some of those conventions are actually rules in different programming 
         - This program will display the sentence including the quotation marks:
 
             ```
-            !include code/escapeQuotes.cs
+            !include code/snippets/escapeQuotes.cs
             ```
 
     - Note that all escape sequences begin with a backslash character (`\`), called the "escape character"

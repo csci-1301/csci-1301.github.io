@@ -9,7 +9,7 @@
 - Consider the `Item` class, which represents an item sold in a store. It has a `price` attribute that should only store positive values:
 
 ```
-!include code/item.cs
+!include code/snippets/item.cs
 ```
 
 - When you write a program that constructs an `Item` from literal values, you (the programmer) can make sure you only use positive prices. However, if you construct an `Item` based on input provided by the user, you cannot be certain that the user will follow directions and enter a valid price:

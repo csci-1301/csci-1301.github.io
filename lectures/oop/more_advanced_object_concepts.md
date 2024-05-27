@@ -5,7 +5,7 @@
 - In lab, you were asked to execute a program like this:
 
     ``` 
-    !include code/rectangleInitialValues.cs
+    !include code/snippets/rectangleInitialValues.cs
     ```
 
     Note that we create a Rectangle object, but do not use the `SetLength` or `SetWidth` methods to assign values to its instance variables. It displays the following output:
@@ -66,7 +66,7 @@
 - Implementation:
 
     ```
-    !include code/classroom.cs
+    !include code/snippets/classroom.cs
     ```
 
     - Each attribute is implemented by an instance variable with the same name
@@ -76,7 +76,7 @@
 - Creating an object and using its default values:
 
     ```
-    !include code/classroomInitialValues.cs
+    !include code/snippets/classroomInitialValues.cs
     ```
 
     This will print the following output:
@@ -130,7 +130,7 @@
 - Example with the `ClassRoom` constructor:
 
     ```
-    !include code/classroomUsingConstructor.cs
+    !include code/snippets/classroomUsingConstructor.cs
 
     ```
 
@@ -534,7 +534,7 @@
 - A complete example, where the "length" attribute is implemented the "old" way with a getter and setter, and the "width" attribute is implemented with a property:
 
     ```
-    !include code/usingWidthProperty.cs
+    !include code/snippets/usingWidthProperty.cs
     ```
 
 - Properties "act like" variables: you can assign to them and read from them

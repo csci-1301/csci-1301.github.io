@@ -18,7 +18,7 @@ There are several ways we can use `if-else` and `if-else-if` statements with met
 - For example, this Item class (which represents an item for sale in a store) has two attributes, a price and a description. Code outside the Item class (e.g. in the `Main` method) can only change these attributes by calling `SetPrice` and `SetDescription`
 
     ```
-    !include code/item.cs
+    !include code/snippets/item.cs
     ```
 
 - Right now, it is possible to set the price to any value, including a negative number, but a negative price does not make sense. If we add an `if` statement to SetPrice, we can check that the new value is a valid price before changing the instance variable:

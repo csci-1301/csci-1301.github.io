@@ -34,7 +34,7 @@
 The Rectangle class:
 
 ```
-!include code/rectangle.cs
+!include code/snippets/rectangle.cs
 ```
 
 Let's look at each part of this code in order.
@@ -91,7 +91,7 @@ Let's look at each part of this code in order.
 - Here is a program that uses our `Rectangle` class:
 
 ```
-!include code/rectangleMain.cs
+!include code/snippets/rectangleMain.cs
 ```
 
 - Instantiating an object
@@ -123,7 +123,7 @@ Let's look at each part of this code in order.
 - Consider what happens when you have multiple objects in the same program, like this:
 
     ```
-    !include code/multipleRectangles.cs
+    !include code/snippets/multipleRectangles.cs
     ```
 
     - First, we declare a variable of type `Rectangle`
@@ -555,7 +555,7 @@ Let's look at each part of this code in order.
     - Consider this code:
 
         ```
-        !include code/referenceAssignment.cs
+        !include code/snippets/referenceAssignment.cs
 
         ```
 

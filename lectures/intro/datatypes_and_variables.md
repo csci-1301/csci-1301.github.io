@@ -49,7 +49,7 @@
 - Sample program with variables:
 
     ```
-    !include code/myFirstVariables.cs
+    !include code/snippets/myFirstVariables.cs
     ```
     This program shows three major operations you can do with variables.
 
