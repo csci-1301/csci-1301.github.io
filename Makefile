@@ -26,19 +26,20 @@ help:
 # Directory where to output build artifacts
 # if you change this value also change build settings
 
+# Where to build
 BUILD_DIR = content/
+# Where the lectures are located
 LECTURES_DIR = lectures/
+# Where the documentation is located
 DOCS_DIR = docs/
+# Where the labs are located
 LABS_DIR = labs/
+# Where the .cs code (snippets and projects) is located.
 CODE_DIR = code/
+# Where the .zip archive containing projects is located.
 PROJECT_DIR = $(CODE_DIR)projects/
-LAB_TEMPLATES= templates/labs/
-LABS_DIRS:= $(notdir $(shell find $(LABS_DIR) -mindepth 1  -maxdepth 1  -type d | sort))
-
-
 SOURCE_MD_FILES := $(shell find lectures/ docs/ labs/ . -name '*.md')
 TARGET_MD_FILES = $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
-
 METADATA_FILE = templates/meta.yaml
 
 # Path to PDF templates to use with pandoc
@@ -153,14 +154,14 @@ PROJECTS_LIST := $(shell find $(PROJECT_DIR) -maxdepth 1 -mindepth 1 -type d)
 PROJECTS_TARGETS := $(addprefix $(BUILD_DIR), $(addsuffix .zip, $(PROJECTS_LIST)))
 
 # Rule to copy one individual project as a zip file:
-$(BUILD_DIR)code/projects%.zip: code/projects%.zip
+$(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
 	mkdir -p $(dir $@) 
 	rsync -av $(subst $(BUILD_DIR),,$@) $@
 
 # Rule to create one individual project and zip it:
 # The code below is taken from and documented at 
 # https://github.com/csci-1301/C-Sharp-project-maker
-code/projects%.zip: code/projects/%/*/Program.cs | code/projects/%/*/*.cs
+$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	#
 	# The structure of an archive is as follows:
 	# └───<Solution>	 	     $(notdir $*)
@@ -224,9 +225,8 @@ code/projects%.zip: code/projects/%/*/Program.cs | code/projects/%/*/*.cs
 	
 	
 # Phony rule to display variables
-.PHONY: test
-	$(info $$var is [${TARGET_WOFF_FONT_FILES}])
-
+.PHONY: test1
+$(info $$var is [${PROJECT_DIR}])
 
 all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(PROJECTS_TARGETS)
 
