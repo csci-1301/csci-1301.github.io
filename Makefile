@@ -35,6 +35,10 @@ clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
 
+# Rule to tidy all C# source code, requires https://csharpier.com/
+tidy:
+	dotnet csharpier $(CODE_DIR)
+	
 # -------------------------------
 # Useful Makefile doc. 
 # -------------------------------
@@ -163,17 +167,17 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-
 ## Alternative formats options.
 
 # Options common to all alternative format.
-PANDOC_OPTIONS_ALT = --toc --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
+PANDOC_OPTIONS_ALT = --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
 
 # PDF build options
-PANDOC_PDF:= $(PANDOC_OPTIONS_ALT)  -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex
+PANDOC_PDF:= $(PANDOC_OPTIONS_ALT) --toc -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDF_TEMPLATES)header.tex
 
 # ODT build options
-PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc=$(ODTPATH)custom-reference.odt
+PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc=$(ODT_TEMPLATES)custom-reference.odt
 
 # DOCX build options
-PANDOC_DOCX:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
-# --reference-doc=$(DOCXPATH)custom-reference.docx
+PANDOC_DOC:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
+# --reference-doc=$(DOCX_TEMPLATES)custom-reference.docx
 
 # Remember to add ?
 # --metadata-file=$(METADATA_FILE)
@@ -216,19 +220,17 @@ MAKEFLAGS:= -j
 # to 
 # misc
 # and the regular expression
-# 
+# 's-\./(.*)\.md$$-\1-g'
 # goes from e.g.,
 # ./lectures/intro/inputs_and_outputs.md
 # to 
 # lectures/intro/inputs_and_outputs
-# Note that we keep the *second* capture group.
-
-# 's-([^/]*/)*((.)*\.md)$$-\2-g'
-
-
-# But, actually, we only need to get rid of ./ and .md
-# which is easily done with
-# sed -E 's-\./--g' | sed 's-\.md--g'
+# which *seems* to be the way quartz's 
+# explorer routine explained at 
+# https://quartz.jzhao.xyz/features/explorer
+# process.
+# Refer to sortFn.ts and web-order.ts
+# in the quartz branch for more info
 web-order.ts: order
 	@echo -n "// This file was generated automatically by calling make web-order.ts.\n// Refer to the Makefile to read indications on how to generate and edit it.\nexport const nameOrderMap: Record<string, number> = {\n" > $@
 	@n=0 ;
@@ -247,6 +249,22 @@ web-order.ts: order
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
 	@pandoc $(PANDOC_MD) $< -o $@
+	
+# -------------------------------
+# docx files
+# -------------------------------
+
+$(BUILD_DIR)%.docx: %.md
+	@mkdir -p $(dir $@)
+	@pandoc $(PANDOC_DOC) $< -o $@
+
+# -------------------------------
+# pdf files
+# -------------------------------
+
+$(BUILD_DIR)%.pdf: %.md
+	@mkdir -p $(dir $@)
+	@pandoc $(PANDOC_PDF) $< -o $@
 
 # -------------------------------
 # image file
@@ -254,28 +272,18 @@ $(BUILD_DIR)%.md: %.md
 
 # Individual images:
 $(BUILD_DIR)$(IMG_DIR)%: $(IMG_DIR)%
-	rsync -av $<  $@
+	@mkdir -p $(dir $@)
+	@rsync -av $<  $@
 
-# Every images:
-$(BUILD_DIR)$(IMG_DIR): $(SOURCE_IMAGES_FILES)
-	mkdir -p $@
-	make $(TARGET_IMAGES_FILES)
+# -------------------------------
+# video file
+# -------------------------------	
 
 # Individual videos:
 $(BUILD_DIR)$(VID_DIR)%: $(VID_DIR)%
-	rsync -av $< $@
+	@mkdir -p $(dir $@)
+	@rsync -av $< $@
 
-# Every videos:
-$(BUILD_DIR)vid: $(SOURCE_VIDEOS_FILES)
-	mkdir -p $(BUILD_DIR)$(VID_DIR)
-	make $(TARGET_VIDEOS_FILES)
-
-$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | $(BUILD_DIR)$(IMG_DIR) $(BUILD_DIR)$(VID_DIR)
-	@echo "starting build..."
-	mkdir -p $(BUILD_DIR)$(LABS_DIR)
-	rsync -av $(IMG_DIR)favicon/* $(BUILD_DIR)
-	make $(BUILD_DIR)style.css
-	make $(BUILD_DIR)fonts/
 # -------------------------------
 # font files
 # -------------------------------
@@ -290,17 +298,9 @@ $(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
 	@mkdir -p $(dir $@)
 	@rsync -av $< $@
 
-
-
-#test:
-#	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 
-
-
-###
-# Source / Project
-###
-
-
+# -------------------------------
+# project (zip) files
+# -------------------------------
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)$(PROJECT_DIR)%.zip: $(PROJECT_DIR)%.zip
@@ -369,17 +369,27 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	cd $(dir $(patsubst %/,%,$(dir $<)))../ && 7z a $(notdir $@) $(notdir $*)*  -xr\!.vs -xr\!.directory
 	# We compress the folder containing the sln and the folder containing the csproj and the code
 	# But we exclude the .vs folder and .directory file
-	
 
-	
+	# -------------------------------
+	## Book
+	# -------------------------------
 
+#test:
+#	pandoc $(shell cat order | grep -E "./lectures/.*.md|./docs/.*md") -o test.html 
+
+
+###
+# Source / Project
+###
+	
+	
 
 #deploy:
 #	git checkout quartz-migration
 #	npx quartz build --serve --concurrency 8	
 
 
-all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS_FILES)
+all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) 
 
 # Phony rule to display variables
 # Uncomment the following and replace
@@ -388,5 +398,5 @@ all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS
 #test:
 #	$(info $$PROJECT_DIR is [${PROJECT_DIR}])
 test:	
-	$(info $$TARGET_MD_FILES is [${SOURCE_MD_FILES_WITHOUT_INDEX}])
+	$(info $$TARGET_MD_FILES is [${TARGET_DOC_FILES_WITHOUT_INDEX}])
 
