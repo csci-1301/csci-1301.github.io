@@ -12,7 +12,7 @@
     In-class Tests    2       100       40%
         Final Exam    1       200       40%
         
- * But can be relatively easily tweaked to accomodate other grade calculations.
+ * But can be relatively easily tweaked to accommodate other grade calculations.
  *
  * WARNING: The calculation on D2L will be used to compute your final grade.
  * This program is for informative purpose only.

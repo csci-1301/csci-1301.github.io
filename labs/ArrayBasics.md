@@ -1,6 +1,4 @@
----
-title: First Arrays Manipulations
----
+#  First Arrays Manipulations
 
 This lab serves multiple goals:
 
@@ -9,9 +7,9 @@ This lab serves multiple goals:
 - To iterate over arrays,
 - To use the `Length` property of array,
 
-# Declaration, Assignment & Initialization of an Array
+## Declaration, Assignment & Initialization of an Array
 
-## Warm-up
+### Warm-up
 
 Write a program that implements the following steps:
 
@@ -29,32 +27,32 @@ Questions
 - Two possible ways are `int[] myArray = new int[] {1, 2, 3, 4, 5};` and `int[] myArray =  {1, 2, 3, 4, 5};`.
 </detail>
 
-## Going wrong
+### Going wrong
 
 Now, let us write *incorrect* statements.
 For each of the programs below, compile them and make sure you understand the error messages that are displayed.
 
-### Trying to set all the values at once after declaring
+#### Trying to set all the values at once after declaring
 
 ```
 int[] myArrayA = new int[5];
 myArrayA = {1, 2, 3, 4, 5};
 ```
-### Out of bound error (read)
+#### Out of bound error (read)
 
 ```
 int[] myArrayB = new int[5];
 Console.WriteLine(myArrayB[5]);
 ```
 
-### Out of bound error (write)
+#### Out of bound error (write)
 
 ```
 int[] myArrayC = new int[5];
 myArrayC[5] = 12;
 ```
 
-### Reading the array as a whole (technically not an error)
+#### Reading the array as a whole (technically not an error)
 
 ```
 int[] myArrayD = new int[5];
@@ -63,7 +61,7 @@ Console.WriteLine(myArrayD);
 
 This last statement is not "incorrect" in the sense that it will not prevent your program from executing, but it is not doing what you could or would have expected.
 
-# Second Array Manipulation
+## Second Array Manipulation
 
 Write a program that
 
@@ -92,7 +90,7 @@ Console.WriteLine("The product of the values in the array is " + product + ".");
 ```
 </details>
 
-# Exploring Arrays
+## Exploring Arrays
 
 For this part, create a new array:
 

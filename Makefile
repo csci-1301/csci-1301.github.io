@@ -98,12 +98,6 @@ $(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
 	mkdir -p $(dir $@)
 	rsync -av $< $@
 
-all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES)
-
-.PHONY: clean
-clean:
-	@echo "cleaning build artifacts..."
-	@rm -rf $(BUILD_DIR)
 
 ###############################################
 # Order: this part of the Makefile consider   #
@@ -152,10 +146,11 @@ web-order.ts: order
 # Source / Project
 ###
 
+
 # List of projects (that is, of folders) in PROJECT_DIR
 PROJECTS_LIST := $(shell find $(PROJECT_DIR) -maxdepth 1 -mindepth 1 -type d)
 # We construct the list of projects (as zip files) to construct based on it:
-PROJECTS_TARGETS := $(addprefix $(BUILD_DIR), $(addsuffix .zip, $(dir $(PROJECTS_LIST))))
+PROJECTS_TARGETS := $(addprefix $(BUILD_DIR), $(addsuffix .zip, $(PROJECTS_LIST)))
 
 # Rule to copy one individual project as a zip file:
 $(BUILD_DIR)code/projects%.zip: code/projects%.zip
@@ -225,4 +220,18 @@ code/projects%.zip: code/projects/%/*/Program.cs | code/projects/%/*/*.cs
 	# We compress the folder containing the sln and the folder containing the csproj and the code
 	# But we exclude the .vs folder and .directory file
 	
+
+	
+	
+# Phony rule to display variables
+.PHONY: test
+	$(info $$var is [${TARGET_WOFF_FONT_FILES}])
+
+
+all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(PROJECTS_TARGETS)
+
+.PHONY: clean
+clean:
+	@echo "cleaning build artifacts..."
+	@rm -rf $(BUILD_DIR)
 

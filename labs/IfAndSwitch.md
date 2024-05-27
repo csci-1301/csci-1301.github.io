@@ -1,6 +1,4 @@
----
-title: Practicing if and switch
----
+#  Practicing if and switch
 
 This lab serves multiple goals:
 
@@ -11,7 +9,7 @@ This lab serves multiple goals:
 - (Optional) to introduce you to the `ToUpper` method.
 
 
-# Mastering the `switch` statement
+## Mastering the `switch` statement
 
 Consider the following code:
 
@@ -63,7 +61,7 @@ switch (string_day)
 Console.WriteLine("The number corresponding to " + string_day + " is " + num_day + ".");
 ```
 
-You can download it [as a solution](day_of_the_week.zip) (that also contains the solution to the problems asked below. Make sure you open `day_of_the_week` and not `day_of_the_week_solution` first).
+You can download it [as a solution](./code/projects/day_of_the_week.zip) (that also contains the solution to the problems asked below. Make sure you open `day_of_the_week` and not `day_of_the_week_solution` first).
 
 Now, do the following:
 
@@ -90,10 +88,10 @@ M͟O͟N͟D͟A͟Y͟↵
 I am sorry, but MONDAY does not seem to be a valid day.
 ```
 
-You can find an example solution in [this solution](day_of_the_week_solution.zip) or in the archive that you downloaded previously.
+You can find an example solution in [this solution](./code/projects/day_of_the_week_solution.zip) or in the archive that you downloaded previously.
 
 
-# Practicing `if` and `switch`
+## Practicing `if` and `switch`
 
 This exercise will ask you to write a rather abstract program that performs simple manipulations on a few variables.
 The main goal is to have you practice "transforming" `if` statements into `switch` statements and `switch` statements
@@ -110,17 +108,17 @@ Create a new project and do the following in `Main`.
 #. Set and change the value of these variables to make good tests as you progress through this problem.
 #. You can also display them on the screen to make sure that your statements behave as expected.
 
-## From `switch` to `if-else`
+### From `switch` to `if-else`
 
 #. Write a `switch` statement that sets `flag` to `true` if the value of `day` is `"Mon"`, `"Tue"`, `"Wed"`, `"Thu"` or `"Fri"`, and to `false` otherwise.
 #. Rewrite the previous statement as an `if-else` statement.
 
-## From `if-else` to `switch`
+### From `if-else` to `switch`
 
 #. Write an `if-else` statement that doubles the value of `myVar` if `myVar` is: `3`, `5`, or `7`.
 #. Can you rewrite the previous statement as a `switch` statement? If so, do it. If not, explain why not.
 
-## Deciding Between Condition Types
+### Deciding Between Condition Types
 
 #. Write a statement that doubles the value of `myVar` and sets `initial` to `'M'` if `day` is equal to `"Sat"`.
 What is the appropriate kind of statement to do this?
@@ -129,16 +127,16 @@ What is the appropriate kind of statement to do this?
 
 Note that you can solve those problems with either an `if` statement or a `switch` statement.
 
-## Complex Conditions
+### Complex Conditions
 
 #. Write a statement that doubles the value of `myVar` if `day` is `"Sun"`, triples the value of `myVar` if `day` is not `"Sun"` but `initial` is `'a'`, or sets `myVar` to `0` if neither of the other conditions is satisfied.
 #. Write a statement that sets `myVar` to `0` if `initial` is an upper-case letter or to `1` otherwise. You will need to understand how to use the `IsUpper` method, and the [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0) can help you with that.
 
 Note that you can only solve those problems with `if` statements.
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
-## Conditional Operator
+### Conditional Operator
 
 A *conditional operator* can be used to replace `if-else` statements in particular cases (i.e., assignment, call, increment, decrement, and new object expressions). Its structure is:
 
@@ -152,9 +150,9 @@ Practice using the conditional operator by adding these statements to the progra
 #. Write a statement that sets `initial` to `'B'` if `myVar` is greater than 500 and to `'S'` if `myVar` is less than or equal to 500.
 #. Write a statement that doubles the value of `myVar` if `day` is `"Sat"` or `"Sun"` and adds 1 to the value of `myVar` otherwise.
 
-## `ToUpper()` Method
+### `ToUpper()` Method
 
-C# contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest way to understand is probably to see an example first.
+C## contains a method called `ToUpper()` in the `string` class. You can read [its documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0), but the simplest way to understand is probably to see an example first.
 The statement
 
 ```

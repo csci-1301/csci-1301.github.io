@@ -1,6 +1,4 @@
----
-title: Validating Inputs
----
+#  Validating Inputs
 
 This lab serves multiple goals:
 
@@ -12,7 +10,7 @@ This lab serves multiple goals:
 - (Optional) To manipulate user-input validation with classes.
 
 
-# Discovering TryParse's Behaviour
+## Discovering TryParse's Behaviour
 
 In your IDE, copy and paste the following:
 
@@ -32,7 +30,7 @@ The first few lines are given as examples; your task is to complete the rest of 
 You will need to update the program by replacing all the occurrences of `int` with `double` to test if your answers were correct in the second half of the table.
 
 | |	int.TryParse | | double.TryParse | |
-| :--- | :---: | :---: | :---: | :---: |
+| : | :: | :: | :: | :: |
 | Input	| returns |	value	| returns |	value |
 | `"160519"`	| `true`  |	`160519` | `true` |	`160519` |
 | `"9432.0"`	| `false` |	`0`	| `true` |	`9432.0` |
@@ -48,7 +46,7 @@ You will need to update the program by replacing all the occurrences of `int` wi
 Question:
 ~  After completing the table, can you detect a pattern between "returns" and "value"?
 
-# Validating Inputs
+## Validating Inputs
 
 For the following problems, perform this series of steps:
 
@@ -121,13 +119,13 @@ Choose an appropriate sentinel value to enable the user to indicate when they ar
     The average of the numbers you entered is 1.66666666667.
     ```
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 This part is focused on input validation with classes.
 It requires reading a lengthy (but not very complicated) class implementation and then, improving it.
 It is _difficult_ and is designed to offer an interesting challenge. However, you should be able to complete such exercises by the end of the semester without too many difficulties.
 
-Start by downloading the [LoanCalculator](LoanCalculator.zip) solution which mixes classes and decision structures.
+Start by downloading the [LoanCalculator](./code/projects/LoanCalculator.zip) solution which mixes classes and decision structures.
 Spend some time studying the implementation to understand _what_ the program is doing and _how_ it is doing it.
 
 Next edit the `Program.cs` file of the `LoanCalculator` solution to add the following validation features:
@@ -139,5 +137,5 @@ Next edit the `Program.cs` file of the `LoanCalculator` solution to add the foll
 #. (Optional, hard) Write a method for the Loan class that takes a character as an argument, and returns the string describing the type of loan designated by that character. Then, use this method in the `ToString` method and in the application program instead of doing it manually.
 
 <details><summary>Solution (sketch)</summary>
-You can find a possible solution [in this archive](Solution_LoanCalculator.zip).
+You can find a possible solution [in this archive](./code/projects/Solution_LoanCalculator.zip).
 </details>

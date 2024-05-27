@@ -1,6 +1,4 @@
----
-title: Random class
----
+#  Random class
 
 
 This lab serves multiple goals:
@@ -9,9 +7,9 @@ This lab serves multiple goals:
 - To introduce you to using existing libraries,
 - (Optional) to understand what a cryptographically secure random number generator is and why it matters.
 
-# Generating Random Numbers
+## Generating Random Numbers
 
-The `Random` class from the C# standard library can be used to generate random numbers in any given range.
+The `Random` class from the C## standard library can be used to generate random numbers in any given range.
 In this lab, you will practice using the `Random` class.
 
 
@@ -44,7 +42,7 @@ Once you have successfully generated the 3 random numbers described above, add t
 Execute the program again, a few times, to make sure these values change on each execution.
 
 
-# Manipulating Two Arrays
+## Manipulating Two Arrays
 
 This problem combines random number generation with arrays.  Using a `Random` object, write a program that:
 
@@ -73,9 +71,9 @@ An example execution of this program would display:
 In this example, the first array contains "0 5 3 1 3 9 9 1" and the second contains "8 3 3 2 1 0 0 5".
 
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
-## Cryptographically secure random numbers
+### Cryptographically secure random numbers
 
 Random number generation is only pseudo-random, meaning these are algorithmically generated numbers that approximate a sequence of truly random numbers.
 Using the default `Random` class is not recommended for applications that need cryptographically secure random numbers (e.g, to generate suggested passwords).

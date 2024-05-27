@@ -1,6 +1,4 @@
----
-title: For Loops
----
+#  For Loops
 
 This lab serves multiple goals:
 
@@ -11,7 +9,7 @@ This lab serves multiple goals:
 - (Optional) To teach you about the "true form" of `for` loops.
 
 
-# From `while` to `for`
+## From `while` to `for`
 
 Rewrite the following `while` (or `do...while`) loops as `for` loops.
 This should "just" be a matter of re-ordering the code, and you should be able to do it without thinking much about it.
@@ -51,7 +49,7 @@ do
 } while (d <= 100);
 ```
 
-# From `for` to `while`
+## From `for` to `while`
 
 Rewrite the following `for` loops as `while` loops:
 
@@ -82,7 +80,7 @@ for (int h = 0; h > -30; h -= 1)
 }
 ``` 
 
-# Implementing for Loops
+## Implementing for Loops
 
 This exercise is to practice `for` loops.
 
@@ -107,9 +105,9 @@ Once you are done, modify your original program in these two respects:
 #. Add some input validation: floating-point values, non-numeric strings, and negative values should not be allowed (i.e., your program should ask for another value).
 
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
-## Multiple Initializations and Updates
+### Multiple Initializations and Updates
 
 This section is about two modifications of `for` loops that are sometimes considered bad design; used poorly, they can make the code harder to read and debug, and sometimes make it hard to follow the flow of control of your program.
 They are introduced because you may see them in the future, but except for rare cases, should be avoided in your own code.
@@ -161,7 +159,7 @@ for(int r = 10; r > 0;)
 
 Try to rewrite the four `for` loops just given as "ordinary" `for` loops with exactly one initialization and one update in the header of the `for` loop.
 
-## Using `continue` and `break`
+### Using `continue` and `break`
 
 Programmers can use two keywords in loops that modify the control flow; they are  `continue` and `break`.
 They can make the loop more confusing to read, but they can sometimes be useful for reducing the number of nested `if` statements in a complex loop.

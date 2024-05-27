@@ -231,6 +231,8 @@ Using this established build system generates labs that are cross-platform (Wind
 
 ## Content Labelling
 
+(_obsolete?_)
+
 Course resources are labelled with emoji shortcodes or text labels.
 
 Each resource should, at minimum, list its prerequisites and security-related content.
@@ -327,7 +329,6 @@ This repository uses following tools and technologies:
 - github actions - to automatically build the resource
 - github pages - to serve the accompanying website
 - additional packages for specific tasks: texlive, Pygments, pandoc filters, [lua filter](https://github.com/jgm/pandoc/issues/2104), etc.
-- [Anchor.js](https://www.bryanbraun.com/anchorjs/) - for automatic links.
 - fonts-symbola - to produce the emoji and other symbols in the pdf document.
 - [utteranc.es](https://utteranc.es/) - for feedback through website
 - [csharpier](https://github.com/belav/csharpier) - to tidy the C## source code

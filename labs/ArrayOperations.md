@@ -1,6 +1,4 @@
----
-title: Operations on Arrays
----
+#  Operations on Arrays
 
 This lab serves multiple goals:
 
@@ -10,7 +8,7 @@ This lab serves multiple goals:
 - To introduce you to simple algorithms that search for values in two arrays, and
 - (Optional) to introduce you to simple algorithms that merge arrays.
 
-# Operations on Numeric Arrays
+## Operations on Numeric Arrays
 
 This first part will ask you to declare and initialize an array and then to display, sum, count occurrences, and retrieve information from this array.
 In the second part, we will assess whether your solution is "universal", that is, whether it produces correct results with any array.
@@ -21,7 +19,7 @@ Start by declaring and initializing an `int` array called `numbers`:
 int[] numbers = {4, 2, 6, 1, 7, 5, 3, 4, 2, 2, 8, 6, 3, 11, 7, 2, 9, 3, 1, 9, 7};
 ```
 
-## Displaying Values
+### Displaying Values
 
 After declaring and initializing the `numbers` array, write statements that do the following:
 
@@ -29,21 +27,21 @@ After declaring and initializing the `numbers` array, write statements that do t
 #. Display every value at an even index (skip odd indices), and
 #. Display all values that are greater than 5.
 
-## Counting Values
+### Counting Values
 
 Next, write statements that do the following:
 
 #. Calculate the sum of all numbers in `numbers`, then display the result. The expected answer is 102.
 #. Count how many times `7` occurs in `numbers`, then display that count. The expected answer is 3.
 
-## Finding Values
+### Finding Values
 
 Next, write statements that do the following:
 
 #. Find the _index_ of the first `7`, then display that index.  The expected answer is 4, but your statements should be such that if the value is not found, it would display `-1`.
 #. Find the greatest value in `numbers`. The expected answer is 11.
 
-## Evaluate Your Solution: Is It Universal?
+### Evaluate Your Solution: Is It Universal?
 
 After implementing these methods, and assuming your program obtained the expected answers, _ideally_ the solution still works even if the values in the `numbers` array change, or even if the array length changes.
 
@@ -64,7 +62,7 @@ Check that you obtain the expected values:
 - maximum value is now `92`
 
 
-# Working With Two Arrays
+## Working With Two Arrays
 
 For this part, declare and initialize the following two `char` arrays:
 
@@ -99,7 +97,7 @@ Ideally, the program does not crash and should still produce correct answers:
 If the program does not produce these expected answers after changing the array values,
 review your program and try to determine how to write a solution that works for *any* two char arrays.
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 This short exercise will require you to manipulate two arrays at the same time to construct a third one.
 

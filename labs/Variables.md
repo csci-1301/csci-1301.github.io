@@ -1,6 +1,4 @@
----
-title: Variable Manipulation
----
+#  Variable Manipulation
 
 This lab serves multiple goals:
 
@@ -10,9 +8,9 @@ This lab serves multiple goals:
 - To experience the differences in numerical datatypes,
 - To use combined assignment operators.
 
-# Variable Manipulation
+## Variable Manipulation
 
-## Developing good lab habits
+### Developing good lab habits
 
 While working through these labs, you should be putting previously learned material to use and developing good habits. You should know how to:
 
@@ -35,7 +33,7 @@ MacOS:
 
 From now on, read "Create a new project" as
 
- - Create a new project using the "Console Application" template for C\# (remember that this is explained in more details in [the "Your first program" lab](../FirstProgram/#creating-your-first-new-project)).
+ - Create a new project using the "Console Application" template for C\## (remember that this is explained in more details in [the "Your first program" lab](../FirstProgram/#creating-your-first-new-project)).
  - Pick simple and valid names for your project and solution, and save it in a suitable place (ex. a folder with a name that matches the name of the lab).
  - Compile and execute your program frequently (ex. upon completion of every lab task).
  - *Do not hesitate to change your program to answer questions; you're in a lab, you're supposed to conduct experiments!*
@@ -46,7 +44,7 @@ And, _even if it is not explicitly stated_, you should save your work once you a
 If you want a UCA or your instructor to check your answer to a previous lab, just ask!
 
 
-## First Variable Manipulations
+### First Variable Manipulations
 
 #. Create a new project as indicated above.
 #. In the `Main` method, add three statements:
@@ -84,7 +82,7 @@ If you want a UCA or your instructor to check your answer to a previous lab, jus
 
    Notice that the very same statement will now display a different message on the screen!
 
-## Experimenting With Numeric Datatypes
+### Experimenting With Numeric Datatypes
 
 Mentally compute the result of the following operation: `1000000.0 + 1.2 - 1000000.0`.
 
@@ -116,7 +114,7 @@ Console.WriteLine($"With decimal: {decVar} \nWith double: {douVar} \nWith float:
 
 Can you explain the gradual loss of precision?
 
-## Variable Assignments
+### Variable Assignments
 
 For this problem, it is recommended that you attempt to manually compute this with a pen and a sheet of paper for some time before opening your IDE. Consider the following code:
 

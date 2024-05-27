@@ -1,6 +1,4 @@
----
-title: UML Class Diagram
----
+#  UML Class Diagram
 
 This lab serves multiple goals:
 
@@ -9,7 +7,7 @@ This lab serves multiple goals:
 - To help you match a UML diagram with its implementation,
 - To transform an informal class description into a UML class diagram.
 
-# Introduction
+## Introduction
 
 Quoting [wikipedia](https://www.wikiwand.com/en/Unified_Modeling_Language),
 
@@ -19,18 +17,18 @@ Stated differently, it is a tool for visually representing programs and their de
 UML uses many different types of diagrams to represent different aspects of systems and software.
 In this lab, you will practice interpreting and creating one of them: a _class diagram_. 
 
-# Interpreting a UML class diagram
+## Interpreting a UML class diagram
 
-## Reading the diagram
+### Reading the diagram
 
 Study the following diagram, then answer follow-up questions:
 
 ```text
 |===========================================|
 |                 Account                   |
-|-------------------------------------------|
+|-|
 | - balance : decimal                       |
-|-------------------------------------------|
+|-|
 | + GetBalance():decimal                    |
 | + DisplayBalance():void                   |
 | + AddFunds(amount:decimal):void           |
@@ -56,7 +54,7 @@ Study the following diagram, then answer follow-up questions:
 There will be times such as this when we may need two different methods. One would be used to make computations (`GetBalance`), and the other would be used to display the information in a formatted fashion (`DisplayBalance`).
 </details>
 
-## Implementing the class
+### Implementing the class
 
 Class diagrams provide a concise way to represent attributes and methods, but they do not describe the implementation of the methods.
 
@@ -76,7 +74,7 @@ Knowing that:
 
 Implement your version of this class in C\#. After you are done, you should instantiate an object of the class and ensure it works as described.
 
-# Creating your own class diagram 
+## Creating your own class diagram 
 
 In this next exercise, you will draw your own diagram on paper for practice.
 Draw the UML diagram of the following class:
@@ -91,10 +89,10 @@ Draw the UML diagram of the following class:
     - a `Multiply` method to multiply the length *and* width of a rectangle by a ratio given as an argument that is of type`int`.
     
 <details><summary>Solution:</summary>
-You can check your answer by referring back to the `Rectangle.cs` file from the ["Enriched Rectangle" project](../Rectangle/Enriched_Rectangle.zip). The UML diagram for this class is indicated in the comments at the beginning of the file (but without the `Multiply` method).
+You can check your answer by referring back to the `Rectangle.cs` file from the ["Enriched Rectangle" project](./code/projects/Enriched_Rectangle.zip). The UML diagram for this class is indicated in the comments at the beginning of the file (but without the `Multiply` method).
 </details>
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 The following are independent tasks that you can perform to broaden your understanding of UML modeling concepts:
 

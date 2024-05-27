@@ -1,6 +1,4 @@
----
-title: Increment and Decrement Operators, First Loops
----
+#  Increment and Decrement Operators, First Loops
 
 This lab serves multiple goals:
 
@@ -9,9 +7,9 @@ This lab serves multiple goals:
 - To help you implement your first `while` loops, and
 - (Optional) to write your first complex loops.
 
-# Increment and Decrement Operators
+## Increment and Decrement Operators
 
-## Preamble
+### Preamble
 
 Start by answering the following, assuming an `int` variable `i` has been initialized and that its current value is 5.
 
@@ -25,14 +23,14 @@ Start by answering the following, assuming an `int` variable `i` has been initia
 #. An explanation can be found [in this post](https://stackoverflow.com/q/24853). In short, `++i` "gives back" the value of `i` _after_ it had been incremented by 1, while `i++` "gives back" the value of `i` _before_ it has been incremented. This makes a difference if `i++` or `++i` is part of a larger statement. The next exercises will illustrate this principle.
 </details>
 
-## Observe and Confirm
+### Observe and Confirm
 
-Download, extract, open in your IDE, and read [the following code](IncrementExample.zip).
+Download, extract, open in your IDE, and read [the following code](./code/projects/IncrementExample.zip).
 Then, compile and execute it. Study the output carefully to make sure you understand the mechanism of the increment and decrement operators.
 
 Compare your answers from the previous section to what you observe in the output. Do your answers correspond to what you observe in the output?
 
-## Exercise
+### Exercise
 
 For each of the following, determine the final value of `n` and `x`.
 
@@ -58,7 +56,7 @@ int n = ++x + ++x;
 
 
 <details><summary>Solution:</summary>
-You can download, extract, open in your IDE, and execute [the following code](IncrementSolution.zip) to check that the answers are:
+You can download, extract, open in your IDE, and execute [the following code](./code/projects/IncrementSolution.zip) to check that the answers are:
 
 ```text
 n is now 5.
@@ -76,10 +74,10 @@ If you read the source code, you can see that the order of evaluation is quite d
 In short: software developers generally avoid this type of "nested" operations altogether, and use increment or decrement operators more scarsely!
 </details>
 
-# First While Loops
+## First While Loops
 
 The following asks you to write a series of `while` loops performing simple tasks.
-The solution to the first question is [in this archive](FirstLoop.zip), but it is recommended to try it on your own first.
+The solution to the first question is [in this archive](./code/projects/FirstLoop.zip), but it is recommended to try it on your own first.
 
 #. Write a `while` loop that displays the integers between $1$ and $100$ on the screen with a space between each number.
 #. Write a `while` loop that displays the integers between $100$ and $-100$ on the screen, in decreasing order, with a space between each number.
@@ -101,7 +99,7 @@ To clarify, your program should display the following on the screen (this exampl
  * * * * * * * * * *
 ```
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 Here are additional pattern problems, similar to the last one from the previous section.
 You are asked to generate these patterns using a `while` loop for each.

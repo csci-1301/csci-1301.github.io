@@ -1,6 +1,4 @@
----
-title: Constructors and `ToString`
----
+#  Constructors and `ToString`
 
 This lab serves multiple goals:
 
@@ -9,18 +7,18 @@ This lab serves multiple goals:
 - To understand the role played by `ToString` and how to call this method,
 - To understand that the information stored in the attributes and its visualization are two different things.
 
-# Adding Constructors and `ToString` to An Existing Class
+## Adding Constructors and `ToString` to An Existing Class
 
 As a warm-up, you will practice writing constructors and `ToString` methods by adding them to a class you have already implemented and used.
 
-## A Constructor for Rectangle
+### A Constructor for Rectangle
 
-#. Open the "Rectangle" project you created in the ["Rectangle Class" lab](../Rectangle/). You can use the "enriched" class that was [shared previously](https://csci-1301.github.io/labs/Rectangle/Enriched_Rectangle.zip) if you prefer.
+#. Open the "Rectangle" project you created in the ["Rectangle Class" lab](./labs/Rectangle). You can use the "enriched" class that was [shared previously](./code/projects/Enriched_Rectangle.zip) if you prefer.
 #. In "Rectangle.cs", add a constructor to `Rectangle` that takes two arguments, a length and a width, and uses them to initialize the `length` and `width` attributes.
 #. Within your `Main` method, you will notice that your `new Rectangle()` instantiation statements are now highlighted as errors. This is because `Rectangle` no longer has a zero-argument (or "no-args") constructor. Change each instantiation statement to call your new two-arguments constructor. Use the initial length and width values that you previously used in `SetLength()` and `SetWidth()`.
 #. Compile and execute your program and ensure your Rectangles still behave as expected.
 
-## A `ToString` Method
+### A `ToString` Method
 
 In the `Main` method of your program, you should have one or more statements that display the length and width of a Rectangle. For example, you may have used one when testing if your `Swap` method worked as intended; an example is shown below:
 
@@ -58,11 +56,11 @@ We will add a `ToString` method to `Rectangle` to make it easier to display this
 
 #. Compile and execute your program. What do you observe about the new `WriteLine` statements?
 
-# A Room Class
+## A Room Class
 
 Now, we will create a new `Room` class. You will be writing the attributes and methods, including a constructor and a `ToString` method.
 
-## Initial Set-Up
+### Initial Set-Up
 
 Create a `Room` class with three attributes. They will hold:  
 
@@ -79,7 +77,7 @@ Create six methods:
 
 To test your `Room` class, you will need to edit your `Main` method. You will need to create a `Room` object. Set the three attributes by asking the user for the rectangle's name, length, and width. Then display the name of the `Room` object on the screen.
 
-## Adding Methods
+### Adding Methods
 
 Now, add two methods:
 
@@ -88,7 +86,7 @@ Now, add two methods:
 
 Test them before moving on.
 
-## A `ToString` Method
+### A `ToString` Method
 
 This final part will guide you in writing your own `ToString` method.
 
@@ -123,11 +121,11 @@ This final part will guide you in writing your own `ToString` method.
 
 #. "Expand" this method by having it return a more meaningful string. This string should also contain the name of the room and its dimensions in meters. Use format specifiers to make it look nice!
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 This last part is here to help you understand that the data stored in attributes is not necessarily the data displayed by the `ToString` method.
 
-## Internationalization of the Room Class
+### Internationalization of the Room Class
 
 Suppose that we want to accommodate users who are more familiar with feet.
 Note that _we do not want to change the meaning of our width and length attributes, which are still supposed to hold dimensions in meters_, but we want to create methods that perform the conversions for us.

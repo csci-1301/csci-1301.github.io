@@ -1,6 +1,4 @@
----
-title: Char and Int Conversion, Ordering of Characters
----
+#  Char and Int Conversion, Ordering of Characters
 
 This lab serves multiple goals:
 
@@ -11,7 +9,7 @@ This lab serves multiple goals:
 - (Optional) To illustrate the comparison of strings.
 
 
-# Warm Up 
+## Warm Up 
 
 Characters are represented by integers: you can read [on wikipedia](https://www.wikiwand.com/en/ASCII#Printable_characters) a mapping between the glyphs (e.g., space, `A`, `!`, etc.) and decimal values, to be read as "integer code" (e.g., 32, 33, 34, etc.).
 
@@ -26,7 +24,7 @@ The _decimal system_ is what we use every day, but computer programs occasionall
 For that system, it gives (no need to memorize this information, this is simply for your general awareness):
 
 Decimal representation | Glyph (character)
-------- | ------- 
+- | - 
 32| space
 33| !
 34| "
@@ -125,7 +123,7 @@ Decimal representation | Glyph (character)
 
 Note that the characters are divided into groups and that there are 95 printable characters.
 
-# Converting Between Characters Representations
+## Converting Between Characters Representations
 
 Copy the following snippet of code in a `Main` method:
 
@@ -149,7 +147,7 @@ Can you also convert implicitly `int` into `char`?
 Next, write code to determine the `int` values for the following characters:
 
 | `char` value | `int` value |
-| :---: | :---: | 
+| :: | :: | 
 | `w` | 119 |
 | `A` | |
 | `5` | |
@@ -158,7 +156,7 @@ Next, write code to determine the `int` values for the following characters:
 Also determine what characters the following integers (in the decimal system) represent:
 
 | `int` value | `char` value |
-| :---: | :---: | 
+| :: | :: | 
 | `49` | |
 | `104` | |
 | `89` | |
@@ -169,12 +167,12 @@ Your code could look like the following:
 
 ```
 Console.WriteLine("int value | char value\n" +
-  "--------- | ---------\n" +
+  " | \n" +
   (int)'w' + "       | w\n" +
   (int)'A' + "        | A\n" +
   (int)'5' + "        | 5\n" +
   (int)'#' + "        | #\n" +
-  "--------- | ---------\n" +
+  " | \n" +
   "49        | " + (char)49 + "\n" +
   "104       | " + (char)104 + "\n" +
   "89        | " + (char)89 + "\n"
@@ -182,7 +180,7 @@ Console.WriteLine("int value | char value\n" +
 ```
 </details>
 
-# Testing for Equality
+## Testing for Equality
 
 You can test if a character is equal to another by using `==`, as for integer values.
 This is particularly useful when we want to ask the user for a "yes" / "no" decision.
@@ -215,7 +213,7 @@ It does not fit the description, though, as many elements are missing. Implement
 
 </details>
 
-# Comparing
+## Comparing
 
 Exactly as $65$ is less than $97$, the character associated with $65$, `A`, is less than the character associated with $97$, `a`.
 
@@ -270,9 +268,9 @@ else
 ```
 </details>
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
-## String Comparison
+### String Comparison
 
 Comparing strings cannot be done with `>` and `<` operators (we can use `==`, however).
 To compare them, we have to use the [CompareOrdinal](https://docs.microsoft.com/en-us/dotnet/api/system.string.compareordinal)

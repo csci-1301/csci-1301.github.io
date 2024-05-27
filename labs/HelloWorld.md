@@ -1,6 +1,4 @@
----
-title: Hello World
----
+#  Hello World
 
 This lab serves multiple goals:
 
@@ -9,19 +7,19 @@ This lab serves multiple goals:
 - To become familiar with your IDE,
 - To introduce you to reading error messages given by your compiler.
 
-# Your First Program
+## Your First Program
 
 In this lab, we will guide you in downloading, opening, compiling, executing and breaking (!) your very first program.
 It is customary to start the study of a programming language with a ["Hello World"](https://www.wikiwand.com/en/%22Hello,_World!%22_program) program that simply displays "Hello World".
 Although such a program has no real interest nor purpose, it is used to make sure that your setup is correctly configured and to guide you gently in the discovery of programs and their language!
 
-## Opening Your First Program
+### Opening Your First Program
 
-#. Download [HelloWorld_Solution.zip](HelloWorld_Solution.zip) and save it on your computer.
+#. Download [HelloWorld_Solution.zip](./code/projects/HelloWorld_Solution.zip) and save it on your computer.
 #. [Unzip the program file](../../zip_guide.html#unzipping-files)^[Be careful: some file explorers will simply _preview_ the (zip) archive if you simply double-click on it, but most IDE will not accept to open a file if it has not been actually extracted / unzipped!].
 #. Go in the HelloWorld folder that was created.
 #. Double-click on `HelloWorld_Solution.sln` file
-#. Clicking the `.sln` file should launch your default C\# IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
+#. Clicking the `.sln` file should launch your default C\## IDE that [you installed previously](../../software_install.html) or that is pre-loaded on the computer lab you are using.
 
     - If you get prompted for which application to use, choose the IDE you installed previously.
     - If the IDE does not launch or launches in a different program, right click on the `.sln` file and look for an option to `open with`, then select to open it with the IDE you installed previously.
@@ -51,7 +49,7 @@ This is really up to you! Among the similarities, one can remark that an IDE and
 </details>
 
 
-## Compiling and Executing Your First Program
+### Compiling and Executing Your First Program
 
 For this part, everything will take place inside the IDE that was started previously.
 
@@ -85,11 +83,11 @@ For this part, everything will take place inside the IDE that was started previo
 That makes 3 shortcuts already!
 You can find many more [on this resource page](../../shortcuts.html).
 
-## Backups
+### Backups
 
 Now we need to make sure you know how to save your work and access it. This is especially important if you are using the computer lab rooms, as **you can not store files permanently on the lab's computer, and you will have to store them either online in your cloud storage or on a USB drive**.
 
-### Finding The Right Tool
+#### Finding The Right Tool
 
 You can save your project:
 
@@ -102,7 +100,7 @@ Having _two_ backups is generally recommended.
 If you chose the "remote" option (i.e., using a server) and are in a computer lab, **do not** try to install a synchronization program (like [Google Drive and Sync](https://www.google.com/drive/download/), [Box's app](https://app.box.com/app-center?category=63), etc.) on the lab computer; it will likely not work, due to [University rules](https://augusta.policytech.com/dotNet/documents/?docid=5702). Instead, create the structure/project/files on the computer during the lab and upload them (using the web-interface) at the end of the lab.
 Make sure to always upload your files before logging out of the computer.
 
-## Making Sure You Have the Right Files
+### Making Sure You Have the Right Files
 
 After selecting where you want to store your backup files
 
@@ -110,16 +108,16 @@ After selecting where you want to store your backup files
 #. Create subfolder for the `HelloWorld` lab. Put all of the files related to the "HelloWorld" solution in this folder.
 #. Explore your backup. Check that you have multiple folders. Specifically check that your backup contains at least the following files:
 
-    - `HelloWorld_Solution.sln` - this is called a solution file. It tells the IDE how to load your C# source code in the IDE.
-    - `HelloWorld_Project.csproj` - this a project file. Every C# solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
+    - `HelloWorld_Solution.sln` - this is called a solution file. It tells the IDE how to load your C## source code in the IDE.
+    - `HelloWorld_Project.csproj` - this a project file. Every C## solution contains at least 1 project. Dividing code into multiple project is useful for very large programs and allows integrating projects written in different languages under the same solution.
     - `Program.cs` - this is the actual source code of your program and where you write code.
 
-    It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C\# programs.
+    It is useful to understand the purpose and role of these different files (`.sln`, `.csproj`, `.cs`) when you want to backup or share (i.e. turn in) C\## programs.
 
 Question:
-~  Now that you understand the basic files that go into a C\# program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete?
+~  Now that you understand the basic files that go into a C\## program, can you identify which files you should always include when you prepare to submit your code for evaluation? Can you develop a strategy with a friend, a classmate, or a second computer, to always make sure that your submission is correctly uploaded and complete?
 
-## How Was the Backup?
+### How Was the Backup?
 
 Once you are done, test that you performed the backup properly.
 
@@ -138,7 +136,7 @@ Then re-download the `HelloWorld_Solution.zip`, unzip it, and make sure you can 
 Action:
 ~ Note that for such a small project, it is easy to re-download it and use it locally. Now imagine the program you are studying is the code of an operating system, spanning across millions of [lines of code](https://www.wikiwand.com/en/Source_lines_of_code); such a strategy would not be very efficient, to say the least. Yet mistakes happen, and for that very reason, programmers generally use [version control](https://www.wikiwand.com/en/Version_control) which allows them to _undo indefinitely_! Look up [Distributed version control](https://www.wikiwand.com/en/Distributed_version_control) and try to understand its importance.
 
-## Orientation
+### Orientation
 
 <!-- generic steps you can do in any editor -->
 
@@ -151,9 +149,9 @@ IDEs have many features and require practice. Explore your IDE and try to comple
 #. Close `Solution Explorer` or `Explorer` and make sure you can re-open it.
 #. Try to change the font size of your editor window.
 
-## Breaking Your Program
+### Breaking Your Program
 
-If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\# has precise rules](../../book.html#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
+If you followed the instructions carefully, you were able to build the solution and start the program without debugging after each step. [As you know, C\## has precise rules](../../book.html#rules-of-c-syntax), and not respecting them can prevent your solution from being built by the IDE.
 
 In this exercise, you are asked to do the following:
 

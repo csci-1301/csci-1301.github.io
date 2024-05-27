@@ -1,6 +1,4 @@
----
-title: If Statements
----
+#  If Statements
 
 This lab serves multiple goals:
 
@@ -10,9 +8,9 @@ This lab serves multiple goals:
 
 [The second part](#writing-simple-conditional-statements) may seem repetitive, but you need to practice `if` statements _a lot_ to understand their mechanics and to be able to write them properly.
 
-# Basic Conditional Statements
+## Basic Conditional Statements
 
-## Testing and Improving Conditional Statements
+### Testing and Improving Conditional Statements
 
 Consider the following code^[The information about the age of majority [comes from wikipedia](https://www.wikiwand.com/en/Age_of_majority).]:
 
@@ -65,12 +63,12 @@ else if (yourAge >= 21)
     #. 19
     #. 22
 
-#. Download [a solution containing this code as its `Main` method](voting_age.zip). 
+#. Download [a solution containing this code as its `Main` method](./code/projects/voting_age.zip). 
 #. Execute it, providing the values written above. Were your expectations correct? If not, revise it and make sure you understand the logic of the program.
 #. There is at least one issue with this code as "You have reached the age of majority in all US states." will never be displayed. Can you understand why?
 #. Fix the program so that all the messages can be displayed when relevant.  Feel free to reorder statements or to use conjunction, disjunction, etc. to alter the conditions.
 
-## Writing Simple Conditional Statements
+### Writing Simple Conditional Statements
 
 Read all the instructions in this part before starting to type code. Create a new project, and write portions of code that perform the following:
 
@@ -83,7 +81,7 @@ Read all the instructions in this part before starting to type code. Create a ne
 
 For each of those questions, write on paper whenever you should use `if`, `if-else`, `if-else-if`, and what the condition(s) should be. Once you feel confident, write the code in your IDE, and then test it intensively; enter all kinds of values (positive and odd, negative and even, $0$, and remember that $0$ is even, etc.) and make sure that what is displayed on the screen is always correct.
 
-## Observation: How to Construct a Value Progressively
+### Observation: How to Construct a Value Progressively
 
 Please, read this part only once you have solved the last question of the previous exercise.
 You were asked the following:
@@ -158,7 +156,7 @@ This is arguably much better, for the following reasons:
 - The conditions are simpler (e.g., no conjunction), and
 - Since the two conditions (being odd / even, and being positive / negative) are actually independent, it seems more logical to test them separately.
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 This part asks you to read and understand a simple problem and to design, implement, and test a solution to it.
 You are asked to write a simple program that computes the total price for a group of people to enter a park.

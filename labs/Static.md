@@ -1,6 +1,4 @@
----
-title: Using static keyword
----
+#  Using static keyword
 
 This lab serves multiple goals:
 
@@ -8,10 +6,10 @@ This lab serves multiple goals:
 - To illustrate the usefulness of static classes,
 - To teach you how a non-static class can manipulate static fields.
 
-# Static Classes -- Warm-Up
+## Static Classes -- Warm-Up
 
 One use case for static classes is creating utility classes (or "helper classes")
-that contain related and frequently-used methods Using a static class makes those methods easily callable anywhere in the program. Some examples of static classes in C\# are the `Math` and `Console` classes.
+that contain related and frequently-used methods Using a static class makes those methods easily callable anywhere in the program. Some examples of static classes in C\## are the `Math` and `Console` classes.
 
 Pay attention to how these classes are used:
 
@@ -34,7 +32,7 @@ Indeed, it is _not possible_ to instantiate an object when a class is declared `
 Furthermore, if a class is declared static, all its members (e.g., attributes, methods, constructors, etc.) must also be declared `static`.
 </details>
 
-## Static Calculator
+### Static Calculator
 
 In your IDE create a new project. Then add a new class file called Calculator.cs
 
@@ -71,11 +69,11 @@ After implementing `Calculator`,
     - If your implementation of the `Calculator` class matches the instructions, you will see meaningful output after executing the program.
     - Otherwise, review the instructions again and retrace your implementation steps to resolve any issues.
 
-# Static Members in a Non-static Class
+## Static Members in a Non-static Class
 
 A non-static class can contain both static and non-static class members.
 
-Download, extract, and study this [project](Student.zip) implementation, but *do not* execute it.
+Download, extract, and study this [project](./code/projects/Student.zip) implementation, but *do not* execute it.
 After reading through the implementation, answer the questions below.
 
 #. How many non-static attributes does the `Student` class have?

@@ -1,6 +1,4 @@
----
-title: foreach Loops
----
+#  foreach Loops
 
 This lab serves multiple goals:
 
@@ -9,9 +7,9 @@ This lab serves multiple goals:
 - To compare `for` loops and `foreach` loops by converting between them, and
 - To illustrate how `foreach` can be useful in conjunction with classes.
 
-# Practicing `foreach` Loops
+## Practicing `foreach` Loops
 
-## Warm-up
+### Warm-up
 
 Create a new project, and replace the content of the `Main` method with the following code:
 
@@ -48,7 +46,7 @@ foreach(int val in primes)
 </details>
 
 
-## Converting from `for` to `foreach` (1/2)
+### Converting from `for` to `foreach` (1/2)
 
 Can you rewrite the following code with a `foreach` statement? Why?
 
@@ -62,7 +60,7 @@ for(int i = 0; i < numbers.Length; i++)
 }
 ```
 
-## Converting from `for` to `foreach` (2/2)
+### Converting from `for` to `foreach` (2/2)
 
 Can you rewrite the following code with a `foreach` statement? Why?
 
@@ -75,14 +73,14 @@ for(int i = 0; i < numbers.Length - 1; i++)
 }
 ```
 
-## Conversion between `for` and `foreach`
+### Conversion between `for` and `foreach`
 
 #. Can you think of any loops that can be implemented with _foreach_ but not with _for_? If so, write an example.
 #. Can you think of any loops that can be implemented with _for_ but not with _foreach_? If so, write an example.
 
-# Mixing `foreach` With Classes
+## Mixing `foreach` With Classes
 
-Download the [Library project](Library.zip), extract it, and open it with your IDE.
+Download the [Library project](./code/projects/Library.zip), extract it, and open it with your IDE.
 
 Observe the program and its two classes:
 

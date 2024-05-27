@@ -1,6 +1,4 @@
----
-title: while Loop
----
+#  while Loop
 
 This lab serves multiple goals:
 
@@ -12,7 +10,7 @@ This lab serves multiple goals:
 - To design simple algorithms requiring loops, and
 - (Optional) To have loops controlled by sentinel values.
 
-# Practicing while Loops -- Warm-Up
+## Practicing while Loops -- Warm-Up
 
 Create a new project, and replace the content of the `Main` method with the following code:
 
@@ -61,7 +59,7 @@ Note that you do not have to increment the counter only by one each time.
 You should update the counter wisely and try to use it more efficiently.
 </details>
 
-# Practicing while Loops -- Decrementing Counter
+## Practicing while Loops -- Decrementing Counter
 
 Create a new project and replace the content of the `Main` method with the following code:
 
@@ -77,7 +75,7 @@ while (n > 0)
 Execute the code, and explain what you see in the console. Note that the counter is decremented, not incremented.
 
 
-# Practicing while Loops -- Mystery Program
+## Practicing while Loops -- Mystery Program
 
 Create a new project and replace the content of the `Main` method with the following code:
 
@@ -109,7 +107,7 @@ In other words, it tries to divide `n` by all the numbers between 2 and `n-1`, a
 #. This program computes if the number entered by the user is prime! So, we should replace `...` with "prime"!
 </details>
 
-# Practicing while Loops -- Summing User-Input
+## Practicing while Loops -- Summing User-Input
 
 Write a program that asks for an integer value greater than 1 from the user, and computes the result of this series: `1 + 2 + 3 + 4 + ...` up to  `n` where `n` represents the number obtained from the user.
 
@@ -126,7 +124,7 @@ And you can verify for yourself that 1+2+3+4+5+6+7+8 = 36.
 You can look at the code under "Accumulator" at <https://csci-1301.github.io/book.html#vocabulary-1> to get started: essentially, you need to replace the fixed value 10 with the value given by the user.
 </details>
 
-# Infinite Loops
+## Infinite Loops
 
 All of the following are examples of infinite loops.
 Can you spot the "problem"?
@@ -188,12 +186,12 @@ while (number <= 5)
 }
 ```
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 Here are two advanced `while` loop challenges. 
 Try to think "off-keyboard" for a while before coding your solution, and test it extensively.
 
-## Advanced Problem 1
+### Advanced Problem 1
 
 Study the following program:
 
@@ -214,6 +212,6 @@ Console.WriteLine($"Your total is {sum}.");
 #. It contains a "sentinel value": can you tell what it is?
 #. Write a program by taking inspiration from the previous program. Your program should ask the user to enter integers. After the user indicates they are done (by entering a sentinel value like "Done"), display the smallest value the user entered. If the user did not enter any integers, display "You did not enter anything."
 
-## Advanced Problem 2
+### Advanced Problem 2
 
 Write a program that gets a number from the user and finds its biggest divisor less than the number itself.

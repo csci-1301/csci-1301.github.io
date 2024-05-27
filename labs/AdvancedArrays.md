@@ -1,8 +1,6 @@
----
-title: Advanced Arrays
----
+# Advanced Arrays
 
-# Value and Reference Types
+### Value and Reference Types
 
 Here, we will explore the difference between value and reference types.
 Since arrays are reference types, it is important for you to understand how reference types work.

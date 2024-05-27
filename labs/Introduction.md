@@ -1,6 +1,4 @@
----
-title: Introduction -- Welcome to CSCI 1301!
----
+#  Introduction -- Welcome to CSCI 1301!
 
 For this first lab, we would like to discuss three important topics for you to succeed in this class.
 
@@ -15,7 +13,7 @@ Action:
 ~ _Before you get started with this lab_, please complete the short survey we have designed for you on [LMS](https://lms.augusta.edu/) (formerly D2L), on the CSCI 1301 page, under Assessments, then Surveys. This brief series of questions are **anonymous** and **not graded**: they are purely for statistical purposes, and to make sure that this class suits your need. You can read more [about why we survey our students](../../survey.html).
 -->
 
-# Navigating our Resources
+## Navigating our Resources
 
 We strive to provide to our students all the material they will need to succeed in one place, at <https://csci-1301.github.io/>.
 On this website, you will find:
@@ -39,7 +37,7 @@ You should realize that their content is identical to the page you are currently
 You may also have seen the [Source code](https://github.com/csci-1301/csci-1301.github.io) and [About](../../about.html) links in the footer; the first one will give you access to the "frame" we are using to construct all of these resources, and the second contains information about the authors, copyrights, and tools used to construct this website.
 Even if you do not need to understand the source code and details of the implementation of these resources (which uses, as you may have guessed … markdown!), being curious about them may be extremely useful for the sake of learning, if you want to become an [Undergraduate (or Graduate) Course Assistant (UCA)](https://csci-1301.github.io/ca.html), are interested in contributing to open-source projects, or simply wonder how the magic is done!
 
-# What to Read First
+## What to Read First
 
 Your instructor(s) will be your primary guide when it comes to the order in which you need to read the material hosted here.
 However, you should feel free to explore our [other useful documents](https://csci-1301.github.io/#other-documents) that contain information you may be interested in fairly early in the semester (like…today!).
@@ -85,7 +83,7 @@ Questions:
 - For your media player, you should check yourself! One excellent media player released under a free license is [VLC](http://www.videolan.org/)!
 </details>
 
-# How to Get Help
+## How to Get Help
 
 This may be the most important aspect of this lab; understanding when to get help, and how to obtain it, is critical in succeeding in your studies (be it in this class or other classes!).
 Your instructor(s) should be your first point of contact for any question regarding the content of this class, but many other resources are available through the University, through this class, or through clubs.

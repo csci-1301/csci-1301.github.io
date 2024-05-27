@@ -1,6 +1,4 @@
----
-title: User Input
----
+#  User Input
 
 This lab serves multiple goals:
 
@@ -10,9 +8,9 @@ This lab serves multiple goals:
 - To become able to convert a `string` containing a numerical value into a numerical datatype,
 - To understand how to read a numerical value from the user.
 
-# Reading From the User
+## Reading From the User
 
-#. Download the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), extract it, and open it as usual.
+#. Download the [PersonalizedWelcomeMessage solution](./code/projects/PersonalizedWelcomeMessage_Solution.zip), extract it, and open it as usual.
 
 #. If you are using Visual Studio on Mac or Monodevelop, you may have to perform an additional step for this program to run as expected.
     
@@ -34,9 +32,9 @@ This lab serves multiple goals:
 #. Read the source code carefully, and make sure you understand all of it.
 #. Add to the code so that the program would, in addition to asking for the user's first name, ask for the user's last name and display both their first and last names.
 
-# Parsing Numeric Types
+## Parsing Numeric Types
 
-## Warm-Up
+### Warm-Up
 
 #. So far, our user input has always returned a specific type.  What type is it?
 #. Without making changes to the code, execute it again but give a number as your first name. Does the type returned change if the user enters only numeric values?
@@ -47,7 +45,7 @@ This lab serves multiple goals:
 </details>
 
 
-## Variable Types: From String to Integer
+### Variable Types: From String to Integer
 
 #. Create a new project.
 #. Write two statements: one that declares a variable of  type `int` named `intVar` and one that declares a variable of type `string` named `stringVar`.
@@ -97,9 +95,9 @@ intVar = int.Parse(stringVar);
 </details>
 
 
-# Reading Numeric Datatypes From the User
+## Reading Numeric Datatypes From the User
 
-Looking back at the [PersonalizedWelcomeMessage solution](PersonalizedWelcomeMessage_Solution.zip), one may wonder how we could ask the user directly for an integer.  How we could store it in an `int` variable.
+Looking back at the [PersonalizedWelcomeMessage solution](./code/projects/PersonalizedWelcomeMessage_Solution.zip), one may wonder how we could ask the user directly for an integer.  How we could store it in an `int` variable.
 This part explains exactly how to read nunmerical value from the user.
 
 #. Add the following to the code:

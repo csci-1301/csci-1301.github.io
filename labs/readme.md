@@ -1,6 +1,4 @@
----
-title: List of Labs
----
+#  List of Labs
 
 <!--
 This directory contains all lab exercises. At build time these labs are compiled into instructions in various document formats with an optional, accompanying source code solution.
@@ -9,10 +7,10 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 -->
 
 <!-- This table ends up causing more confusion than it's worth. Recommend to make internal for instructors' eyes only
-# Suggested Order
+## Suggested Order
 
 |  Week | Lab Topic      | 
-|  ---  | ---------------|
+|    | |
 |  1    | [Introduction](https://csci-1301.github.io/labs/Introduction/)  | 
 |  2    | [Hello World](https://csci-1301.github.io/labs/HelloWorld/), [First Program](https://csci-1301.github.io/labs/FirstProgram/)  | 
 |  3    | [Variables](https://csci-1301.github.io/labs/Variables/), [Casting](https://csci-1301.github.io/labs/Casting/)  | 
@@ -30,15 +28,15 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 |  15   | [Chemical Elements](https://csci-1301.github.io/labs/ChemicalElements/), [GradeCalculator](https://csci-1301.github.io/labs/GradeCalculator/), [Random](https://csci-1301.github.io/labs/Random/)
 -->
 
-# Prerequisites and related lectures
+## Prerequisites and related lectures
 
 <!-- Add a short description of what each lab contains. Also list prerequisite labs and add a link to related lecture notes. -->
 <details><summary>Note: This is not a lab schedule, please refer to your syllabus if you are looking for the class schedule.</summary>
   
 | Lab title | Prerequisites | Related Lectures |  Description / Topics / Required skills |
-| :--- | :--- | :--- | :--- |
+| : | : | : | : |
 | [Introduction](/labs/Introduction) | None | [General concepts](/lectures/010_general_concepts) | Overview of course resources, complete survey, install IDE
-| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | - compilation, execution<br/>- basic C# syntax<br/>- `Write`, `WriteLine` |
+| [HelloWorld](/labs/HelloWorld) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | - compilation, execution<br/>- basic C## syntax<br/>- `Write`, `WriteLine` |
 | [FirstProgram](/labs/FirstProgram) | [Introduction](/labs/Introduction) | [First Program](/lectures/020_first_program) | - `Write`, `WriteLine`<br/>- escape sequences |
 | [Variables](/labs/Variables) | [FirstProgram](/labs/FirstProgram) | [DataTypes and Variables](/lectures/030_datatypes_and_variables) | - datatypes (`string`,`int`,`float`,`double`,`decimal`)<br/>- string interpolation</br>- variable declaration, assignment<br/>- operators: `+ - * / %`<br/>- compound assignment: `+= -= *= /= %=`<br/>- "read-only" example with explicit cast |
 | [Casting](/labs/Casting) | [Variables](/labs/Variables) | [Operators](/lectures/040_operators) | - operators: `+ - * / %`<br/>- string interpolation<br/>- implicit and explicit cast |
@@ -67,7 +65,7 @@ Cf. https://csci-1301.github.io/user_guide.html#creating-new-labs on how to add 
 
 </details>
 
-# Alphabetically
+## Alphabetically
 
 <!-- 
 The remainder of this document will be generated dynamically. Do not edit below this line!
@@ -75,4 +73,4 @@ Refer to the makefile for edits.
 -->
 
 | Lab title | Instructions | Program |
-| :-- | --- | --- |
+| :-- |  |  |

@@ -1,6 +1,4 @@
----
-title: do…while Loops
----
+#  do…while Loops
 
 This lab serves multiple goals:
 
@@ -9,7 +7,7 @@ This lab serves multiple goals:
 - (Optional) To use a `do…while` loop to solve a simple problem.
 
 <!--
-# do … while Loops
+## do … while Loops
 
 Before writing code, think through the following problems:
 
@@ -19,7 +17,7 @@ Before writing code, think through the following problems:
     - using `do…while` is preferable over `while`?
 -->
 
-# Implementing `do…while` Loops -- Warm-up
+## Implementing `do…while` Loops -- Warm-up
 
 For all the problems in this section, use a `do…while` loop.
 
@@ -31,7 +29,7 @@ For all the problems in this section, use a `do…while` loop.
     1 10 100 1000 10000 100000 1000000
     ```
 
-# User Input Validation using `do…while` Loops
+## User Input Validation using `do…while` Loops
 
 In the following problem, implement a program combining a `do…while` loop with user input that satisfies the following requirements:
 
@@ -55,7 +53,7 @@ Enter an integer between 0 and 100:
 You entered 42.
 ```
 
-# Comparing `while` and `do…while` loops
+## Comparing `while` and `do…while` loops
 
 Consider the program given below that has been implemented using a `while` loop:
 
@@ -86,7 +84,7 @@ Console.WriteLine($"The number you entered is {n}");
 #. Compare the `while` and `do…while` implementations: which one is better, in your opinion, and why?
 
 
-# Pushing Further (Optional)
+## Pushing Further (Optional)
 
 This time, you are given a simple task without much guidance. 
 This is very similar to the type of questions you may face during exams:

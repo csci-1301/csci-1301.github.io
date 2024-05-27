@@ -1,6 +1,4 @@
----
-title: Grade Calculator
----
+#  Grade Calculator
 
 This lab serves multiple goals:
 
@@ -9,14 +7,14 @@ This lab serves multiple goals:
 - To help you structure your reasoning and mathematical understanding of a simple problem,
 - To exhibit different implementations of this high-level description.
 
-# Presentation 
+## Presentation 
 
 This project will help you design and implement a "grade calculator" for (a variation) of this class.
 
 We will assume that your grade for this class will be computed as follows:
 
         Evaluation  Number   Points   Percents
-  ---------------- -------- -------- ----------
+  - -- -- -
            Quizzes    4        20       10%
           Projects    2        20       10%
     In-class Tests    2       100       40%
@@ -58,18 +56,18 @@ What was your grade for the final (out of 200)?
 Your average so far is 74.83 %.
 ```
 
-# How to Get Started?
+## How to Get Started?
 
 This problem involves some tricky arithmetic, as well as cleverly getting the information from the user. Below are some hints to help push you in the right direction. 
 
-## Hint 1 - Do The Math!
+### Hint 1 - Do The Math!
 
 The first thing you need to do for this problem is to understand the equation needed to compute the grade.
 Start by trying to reproduce the example given in the project description on paper.
 Can you get the same result?
 Can you find a way that seems simple and flexible to compute the current grade so far in all generality?
 
-## Hint 2 - Gather The Data
+### Hint 2 - Gather The Data
 
 Once you have the equation figured out, you need to understand how you can obtain the data from the user.
 You have two possible ways of doing it:
@@ -79,16 +77,16 @@ You have two possible ways of doing it:
 
 Try to implement one or the other, without worrying about the computation at this point (just add, for instance, the value entered).
 
-# A Possible Solution
+## A Possible Solution
 
-## Without arrays
+### Without arrays
 
-You can find a possible solution to this problem in [GradeCalculator.zip](Grade_Calculator.zip).
+You can find a possible solution to this problem in [GradeCalculator.zip](./code/projects/Grade_Calculator.zip).
 
 Note that our solution _does not_ use arrays.
 However, the solution is flexible enough (and, hopefully, commented enough) so that you can easily fine-tune it to your particular needs.
 
-## With arrays
+### With arrays
 
-Another solution to this problem is in [Grade_Calculator_with_Arrays](Grade_Calculator_with_Arrays.zip).
+Another solution to this problem is in [Grade_Calculator_with_Arrays](./code/projects/Grade_Calculator_with_Arrays.zip).
 This solution is much more flexible and uses fewer variables, but it may also be more difficult to understand because it uses arrays in a subtle way.

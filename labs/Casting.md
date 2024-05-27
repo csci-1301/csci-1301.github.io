@@ -1,6 +1,4 @@
----
-title: Type Casting
----
+#  Type Casting
 
 This lab serves multiple goals:
 
@@ -11,13 +9,13 @@ This lab serves multiple goals:
 - To learn how to "cast" between numerical datatypes,
 - To understand what types of operations are "legal".
 
-# Numerical Datatypes
+## Numerical Datatypes
 
 For this part, it is recommended to have the [datatypes cheatsheet](../../datatypes_in_csharp.html) readily available.
 Note that there are numerous references at the bottom of the cheatsheat.
 You are encouraged to open those links and have a look at the official documentation, if you have not already done so. Being able to reference the official documentation will help you in your studies. 
 
-## Literals and Variables
+### Literals and Variables
 
 _This part should first be attempted using pen and paper before using an IDE._
 
@@ -39,7 +37,7 @@ Answer the following:
 There are 5 variables.
 
 Name | Datatype | Value 
---- | --- | --- 
+ |  |  
 `a` | `int` | 21
 `b` | `int` | 4
 `f` | `float` | 2.5000000
@@ -48,12 +46,12 @@ Name | Datatype | Value
 </details>
 
 
-## Operations
+### Operations
 
 Consider the following expressions, all of which use the variables we declared above. For each of them, decide if they are legal, and if so, determine the result and its corresponding datatype.  The first two are given as examples:
 
 Operation | Legal? | Result | Datatype
---- | --- | --- | ---
+ |  |  | 
 `a + d` | Yes | $19.7$ | `double`
 `m + f` | No | N/A | N/A |
 `a / b` |   |  |  |
@@ -79,9 +77,9 @@ https://stackoverflow.com/questions/11634079/how-can-i-get-the-data-type-of-a-va
 Check the actual type!
 -->
 
-# Casting
+## Casting
 
-## Cast Operator
+### Cast Operator
 
 Create a new project, and then do the following.
 
@@ -100,7 +98,7 @@ Create a new project, and then do the following.
 
     Can you explain it?
 
-#. Your IDE is suggesting that we use a "cast" to "force" C# to store the value of the variable `floatVar` into the variable `intVar`.
+#. Your IDE is suggesting that we use a "cast" to "force" C## to store the value of the variable `floatVar` into the variable `intVar`.
 To do so, replace the statement
 
     ```
@@ -117,7 +115,7 @@ To do so, replace the statement
 Can you tell if the value stored in `floatVar` was rounded or truncated before being stored in the variable `intVar`?
 Conduct further experiments if needed to answer this question.
 
-## Implicit and Explicit Casting
+### Implicit and Explicit Casting
 
 #. Look back at the warning given by the IDE. It uses the term "implicitly convert" before introducing the cast operator.
 #. While you needed a cast to convert a `float` to an `int`, do you need one to convert an `int` to a `float`?  Try the following:

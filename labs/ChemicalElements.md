@@ -1,6 +1,4 @@
----
-title: A Class for Chemical Elements
----
+#  A Class for Chemical Elements
 
 This lab serves multiple goals:
 
@@ -8,14 +6,14 @@ This lab serves multiple goals:
 - To understand the design of a class involving static members,
 - To convert between different representations without changing the stored values in the attributes.
 
-# A Class for Chemical Elements
+## A Class for Chemical Elements
 
 In this lab, you will study and modify a class for [chemical elements](https://www.wikiwand.com/en/Chemical_element).
 Consult <https://www.wikiwand.com/en/List_of_chemical_elements#List> for a complete list of all elements.
 
-## Reading
+### Reading
 
-Download [ChemElemProject](ChemicalElements.zip) and extract the project. Open it in your IDE, compile, and execute it.
+Download [ChemElemProject](./code/projects/./code/projects/ChemicalElements.zip) and extract the project. Open it in your IDE, compile, and execute it.
 Now read the code in "ChemElem.cs" and "Program.cs".
 
 The class definition "ChemElem.cs" contains:
@@ -29,7 +27,7 @@ The class definition "ChemElem.cs" contains:
 The application program  "Program.cs" performs one simple conversion from Kelvin to Celsius.
 It uses data given by the user to create and display a ChemElem object (implicitly calling the `ToString` method).
 
-## Modifying
+### Modifying
 
 Do the following:
 
@@ -41,7 +39,7 @@ Do the following:
 #. In "Program.cs", try calling the `FromKelvinToCelsius` method with one of your objects, for instance using `hydrogen.FromKelvinToCelsius(34)`. What happens?
 #. Still in "Program.cs", try calling the `MeltingInCelsius` method with the class, for instance using `ChemElem.MeltingInCelsius();`. What happens?
 
-## Enhancing
+### Enhancing
 
 We now want to significantly improve this class, by adding:
 
@@ -62,7 +60,8 @@ You may want to comment out part or all of your "Program.cs" file before startin
 
 You should test all of those modifications in your "Program.cs" file as you implement them.
 Use relevant data, test your program, and make sure the behavior is the expected behavior.
-<!--
+
+
 <details><summary>Elements of solution</summary>
 Typically, you need to replace 
 
@@ -102,4 +101,3 @@ public decimal BoilingInFahrenheit()
 }
 ```
 </details>
--->

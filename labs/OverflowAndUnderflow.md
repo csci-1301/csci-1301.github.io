@@ -1,6 +1,4 @@
----
-title: Overflow and Underflow
----
+#  Overflow and Underflow
 
 
 This lab serves multiple goals:
@@ -10,9 +8,9 @@ This lab serves multiple goals:
 - To exemplify the care required when performing mathematical calculations with programs,
 - (Optional) To illustrate the `String.Format` method.
 
-# Overflow
+## Overflow
 
-## Warm Up
+### Warm Up
 
 For a general introduction of overflow, please [read the relevant section](https://csci-1301.github.io/book.html#overflow).
 Do execute the code shared in this section:
@@ -30,7 +28,7 @@ We will now enter a surprising world where
 - a number plus one can be _less_ than the number itself, and
 - a number multiplied by two and then divided by two is the same as the number multiplied by two.
 
-Now, [download](Overflow.zip), execute the "Overflow" solution, and answer the following questions:
+Now, [download](./code/projects/Overflow.zip), execute the "Overflow" solution, and answer the following questions:
 
 - What is the maximum value that can be stored in an `int`?
 - What _should_ be the result of adding one to the maximum value that can be stored in an `int`?
@@ -38,7 +36,7 @@ Now, [download](Overflow.zip), execute the "Overflow" solution, and answer the f
 
 Then, answer the same questions for the `float` and `double` datatypes.
 
-## C#'s Checks
+### C#'s Checks
 
 We will now study some of the safeguards against overflowing that are implemented in C#.
 **Note that some of those checks have been deactivated by the `unchecked` command at the beginning of our project. Make sure to complete the following section _outside_ of `unchecked`'s scope (i.e., after it).**
@@ -49,9 +47,9 @@ We will now study some of the safeguards against overflowing that are implemente
     int int_max_value_plus_one_bis = int.MaxValue + 1;
     ```
     
-    You should receive an error message. Reads it and try to understand what C# is warning you against. 
+    You should receive an error message. Reads it and try to understand what C## is warning you against. 
    
-#. Isn't that weird that C# let go 
+#. Isn't that weird that C## let go 
     
     ```
     int int_max_value_ter = int.MaxValue;
@@ -69,12 +67,12 @@ We will now study some of the safeguards against overflowing that are implemente
     
 #. Note that our program does not give the result of adding one to the maximum value that can get assigned to a `decimal`. Try to display on the screen the result of adding one to `decimal.MaxValue` (both inside and outside the `unchecked` environment).
 
-## Strange Mathematical Properties
+### Strange Mathematical Properties
 
 Circling back to our prompt in the warm-up section, enter in the following table the value(s) and datatype(s) for `x`, `y`, and `z`:
 
 Description | Value(s) | Datatype(s) 
----------------- | ----- | -----
+- | -- | --
 `x` is equal to `x`+1 | | 
 `y` +1 is less than `y` | |
 `z` * 2 / 2 is equal to `z` times 2 | | 
@@ -83,7 +81,7 @@ Note that `int.MinValue` can similarly be used to produce strange mathematical p
 
 As funny or interesting as that strange behavior may seem, overflow errors actually caused death and millions of dollars of losses repeatedly, as you can read for instance [in this blog post](https://medium.com/@jollyfish/integer-overflow-underflow-and-floating-point-imprecision-6ba869a99033#73a3).
 
-# Underflow
+## Underflow
 
 Most of what we wrote about overflow is also true of _under_ flow, and you can read about it [in the lecture notes](https://csci-1301.github.io/book.html#underflow).
 In a nutshell, you can witness it by executing a statement such as
@@ -92,7 +90,7 @@ In a nutshell, you can witness it by executing a statement such as
 Console.WriteLine(0.00000000000000001f * 0.00000000000000001f);
 ```
 
-Which should display `1e-34` but actually displays `9.999999E-35`. As you can see, a rounding error took place because C# did not have enough "room" to store all the information.
+Which should display `1e-34` but actually displays `9.999999E-35`. As you can see, a rounding error took place because C## did not have enough "room" to store all the information.
 Another interesting example is given by the following loop:
 
 ```
@@ -108,7 +106,7 @@ Console.WriteLine(x);
 Note that this loop should _never_ exit: no matter how large `x` is, dividing it by two repeatedly should never make it $0$!
 After how many iterations would this loop terminate?
 
-# (Optional) String Formatting
+## (Optional) String Formatting
 
 As you may have noticed, our program uses the `String.Format` method to nicely display the information.
 You can read about this method [in the official documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-7.0#the-format-method-in-brief).
