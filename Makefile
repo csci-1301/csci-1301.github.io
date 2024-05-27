@@ -235,3 +235,7 @@ clean:
 	@echo "cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
 
+deploy:
+	git checkout quartz-migration
+	npx quartz build --serve --concurrency 8
+	
