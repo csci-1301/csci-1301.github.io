@@ -267,6 +267,14 @@ $(BUILD_DIR)%.pdf: %.md
 	@pandoc $(PANDOC_PDF) $< -o $@
 
 # -------------------------------
+# odt files
+# -------------------------------
+
+$(BUILD_DIR)%.odt: %.md
+	@mkdir -p $(dir $@)
+	@pandoc $(PANDOC_ODT) $< -o $@
+
+# -------------------------------
 # image file
 # -------------------------------
 
@@ -389,7 +397,7 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 #	npx quartz build --serve --concurrency 8	
 
 
-all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) 
+all: web-order.ts $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_IMAGES_FILES) $(TARGET_VIDEOS_FILES) $(TARGET_DOC_FILES_WITHOUT_INDEX) $(TARGET_PDF_FILES_WITHOUT_INDEX) $(TARGET_ODT_FILES_WITHOUT_INDEX) $(TARGET_PROJECTS_FILES) 
 
 # Phony rule to display variables
 # Uncomment the following and replace
