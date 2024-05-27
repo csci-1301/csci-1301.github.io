@@ -210,16 +210,21 @@ MAKEFLAGS:= -j
 # tree -f -P "*.md" --prune | sed 's/.*├──//g' | sed 's/.*│//g' | sed 's/.*└──//g' | sed 's/.*index\.md//g'  | sed -r '/^\s*$/d'
 
 # The regular expression 
-# 's-([^/]*/)*((.)*)$$-\2-g'
+# 's-.*/(.*)/$$-\1-g'
 # goes from e.g.,
-# ./lectures/misc/over_under_flow.md
+# ./lectures/misc/
 # to 
-# over_under_flow
-# and from e.g.,
-# ./docs/academic_life
+# misc
+# and the regular expression
+# 
+# goes from e.g.,
+# ./lectures/intro/inputs_and_outputs.md
 # to 
-# academic_life
+# lectures/intro/inputs_and_outputs
 # Note that we keep the *second* capture group.
+
+# 's-([^/]*/)*((.)*\.md)$$-\2-g'
+
 
 # But, actually, we only need to get rid of ./ and .md
 # which is easily done with
@@ -230,7 +235,7 @@ web-order.ts: order
 	@while read -r line; do \
 	n=$$((n+1)); \
 	echo -n '\t"' >> $@;\
-	echo -n "$$line" | sed -E 's-\./--g' | sed 's-\.md--g' >> $@;\
+	echo -n "$$line" | sed -E 's-.*/(.*)/$$-\1-g' | sed -E 's-\./(.*)\.md$$-\1-g' >> $@;\
 	echo -n "\": $$n,\n"  >> $@ ;\
 	done < order
 	@echo "}" >> $@
