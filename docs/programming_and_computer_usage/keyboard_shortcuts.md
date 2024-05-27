@@ -6,7 +6,7 @@ This document contains useful keyboard shortcuts for different operating systems
 We use the following symbols:
 
 Symbol | Common Name
- | 
+--- | --- 
 <kbd>⇧</kbd> | Shift
 <kbd>⌥</kbd>| Option (or Alt)
 <kbd>⌘</kbd> | Command (or Cmd)
@@ -31,7 +31,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Build solution
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>B</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>B</kbd> |
@@ -39,7 +39,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Exit any program*
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Alt</kbd> + <kbd>F4</kbd> or <kbd>Ctrl</kbd> + <kbd>q</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>q</kbd> |
 | Windows | <kbd>Alt</kbd> + <kbd>F4</kbd> |
@@ -47,7 +47,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Redo*
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>y</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>y</kbd> |
@@ -55,7 +55,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Run/execute program
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>F5</kbd>  |
 | MacOS | <kbd>F5</kbd> -or- <kbd>⌥</kbd> + <kbd>⌘</kbd> + <kbd>↵</kbd>  |
 | Windows | <kbd>Ctrl</kbd> + <kbd>F5</kbd> |
@@ -63,7 +63,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Save*
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>s</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>s</kbd> |
@@ -71,7 +71,7 @@ More advanced shortcuts may be available to your particular IDE:
 ### Save All*
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>s</kbd> |
@@ -79,21 +79,21 @@ More advanced shortcuts may be available to your particular IDE:
 ### Undo*
 
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>z</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>z</kbd> |
  
 ### Comment Code Selection
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>c</kbd> |
 
 ### Uncomment Code Selection
 | OS | Keys |
-| : | : |
+| --- | --- |
 | Linux | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
 | MacOS | <kbd>⌘</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |
 | Windows | <kbd>Ctrl</kbd> + <kbd>k</kbd> + <kbd>u</kbd> |

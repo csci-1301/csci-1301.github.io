@@ -72,7 +72,7 @@ Possible improvements:
 [WARNING] Duplicate identifier 'install-win' at ./docs/programming_and_computer_usage/installing_software.md line 56 column 1
 [WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
 [WARNING] Missing character: There is no  (U+FE0F) (U+FE0F) in font [templates/fonts/urw_gothic/U
-```
+``` 
 
 
 Notes:
