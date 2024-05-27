@@ -8,8 +8,11 @@ import { nameOrderMap } from "./web-order"
 export const sortFn: Options["sortFn"] = (a, b) => {
   let orderA = 0
   let orderB = 0
+  console.log("hello from before the page loads!")
   
   if (a.file && a.file.slug) {
+    console.log(a.file.slug)
+    
     orderA = nameOrderMap[a.file.slug] || 0
   } else if (a.name) {
     orderA = nameOrderMap[a.name] || 0
