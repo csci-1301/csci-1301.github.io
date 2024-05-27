@@ -1,4 +1,4 @@
-#  Introduction to Classes -- Rectangle Class
+#  Rectangle Class
 
 This lab serves multiple goals:
 

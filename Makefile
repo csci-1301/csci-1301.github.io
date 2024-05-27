@@ -1,9 +1,35 @@
+###################################################### 
+# Welcome, source code reader!                       #
+# In general, refer to                               #
+# https://princomp.github.io/docs/about/user_guide   #
+# for a complete documentation on how this resource  #
+# is built and maintained.                           #
+######################################################
+
+# ===============================
+# Useful Makefile commands: 
+# ===============================
+
+# Display help message.
 help:
 	@echo "all - build everything"
 	@echo "book - build books only (in all formats)"
 	@echo "labs - build labs only"
 	@echo "web - build html only, useful for testing web rendering"
 	@echo "clean - remove generated build artifacts"
+
+# Phony rule to display variables
+.PHONY: test
+# This rule is actually defined at the very end of this
+# file, once all the variables have been declared 
+# (it seems to make a difference, weirdly).
+# Please, scroll to the end of this file to tweak it.
+
+# Rule to clean 
+.PHONY: clean
+clean:
+	@echo "cleaning build artifacts..."
+	@rm -rf $(BUILD_DIR)
 
 # ===============================
 # Useful Makefile doc. 
@@ -223,18 +249,18 @@ $(PROJECT_DIR)%.zip: $(PROJECT_DIR)%/*/Program.cs | $(PROJECT_DIR)/%/*/*.cs
 	
 
 	
-	
-# Phony rule to display variables
-.PHONY: test1
-$(info $$var is [${PROJECT_DIR}])
 
-all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(PROJECTS_TARGETS)
-
-.PHONY: clean
-clean:
-	@echo "cleaning build artifacts..."
-	@rm -rf $(BUILD_DIR)
 
 #deploy:
 #	git checkout quartz-migration
 #	npx quartz build --serve --concurrency 8	
+
+
+all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(PROJECTS_TARGETS)
+
+# Phony rule to display variables
+# Uncomment the following and replace
+# PROJECT_DIR
+# with the variable you want listed.
+#test:
+#	$(info $$PROJECT_DIR is [${PROJECT_DIR}])

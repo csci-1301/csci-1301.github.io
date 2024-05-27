@@ -1,4 +1,4 @@
-#  A Class for Chemical Elements
+# Chemical Elements Class
 
 This lab serves multiple goals:
 

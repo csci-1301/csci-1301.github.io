@@ -1,4 +1,4 @@
-#  Introduction -- Welcome to CSCI 1301!
+#  Introduction
 
 For this first lab, we would like to discuss three important topics for you to succeed in this class.
 

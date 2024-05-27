@@ -1,4 +1,4 @@
-#  Char and Int Conversion, Ordering of Characters
+#  Char Conversion and Ordering
 
 This lab serves multiple goals:
 
