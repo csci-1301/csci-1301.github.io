@@ -23,11 +23,13 @@ Additionally, the [School of Computer & Cyber Sciences](https://www.augusta.edu/
 
 ## Supports
 
-The authors were supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and by a Continuous Improvement Grant (M260).
+The first source of supports is the constant stream of feedback we receive from students and users: thank _you_.
 
-[![](img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
+This project has been monetarily supported by an [Affordable Learning Georgia](https://www.affordablelearninggeorgia.org/) [Transformation Grants](https://www.affordablelearninggeorgia.org/grants/overview/) ([Proposal 571](https://www.affordablelearninggeorgia.org/assets/documents/571-proposal.docx)) and a Continuous Improvement Grant (M260).
 
-This project could not have been without the support of the [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and of the [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
+[![](./img/ALG_Logo_hires.png)](https://www.affordablelearninggeorgia.org/)
+
+This project also received the support of [Augusta University](https://www.augusta.edu/)'s [School of Computer and Cyber Sciences](https://www.augusta.edu/ccs/) and [Center for Instructional Innovation](https://www.augusta.edu/innovation/).
 
 ## Tools
 
@@ -37,7 +39,7 @@ We strive to prioritize open-source software when possible, and occasionally con
 
 This website uses different technologies.
 
-- The markdown source code is converted to `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
+- The markdown source code is converted to (a slightly different) `md` `pdf`, `odt` and `docx` thanks to [pandoc](https://pandoc.org/) and [pandoc-include](https://github.com/DCsunset/pandoc-include).
 - The `pdf` format is compiled using [XeLaTeX](https://tug.org/xetex/).
 - The source code is highlighted thanks to [Pygments](https://pygments.org/).
 - The website is powered by [quartz](https://quartz.jzhao.xyz/).

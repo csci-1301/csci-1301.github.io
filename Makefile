@@ -84,19 +84,20 @@ DOC_TEMPLATES = $(TEMPLATES)docx/
 # Path to the lua filters to use with pandoc
 FIL_TEMPLATES = $(TEMPLATES)filters/
 
+
 # -------------------------------
 # Files
 # -------------------------------
 
 ## md files
-# We have essentially two sources,
-# one containing the index.md files,
-# and one that doesn't.
+# We have two sources, one containing the index.md files,
+# (including at root level), and one that doesn't.
 SOURCE_MD_FILES := $(shell find $(MD_DIRS) -name '*.md')
+SOURCE_MD_FILES += index.md
 # md files without the index.md files in a folder.
 # Those files only contain the title of the folder.
 # cf. https://quartz.jzhao.xyz/authoring-content
-SOURCE_MD_FILES_WITHOUT_INDEX = $(filter-out %/index.md,$(SOURCE_MD_FILES))
+SOURCE_MD_FILES_WITHOUT_INDEX = $(filter-out index.md %/index.md,$(SOURCE_MD_FILES))
 # We construct two targets accordingly by prepending
 # the BUILD_DIR folder.
 TARGET_MD_FILES := $(addprefix $(BUILD_DIR), $(SOURCE_MD_FILES))
@@ -138,7 +139,14 @@ METADATA_FILE = $(TEMPLATES)meta.yaml
 # Pandoc options
 # -------------------------------
 
-# Options for all output formats
+# The flags are explained at https://pandoc.org/MANUAL.html
+# The only "custom" parts are:
+# - the lua filter and the -M option that follows, that allows to have all code displayed as C# by default,
+# - the -M date parameter, that sets date metadata to the last time the file was edited according to git.
+# To use the current date / time instead, use:
+# -M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
+
+## Options for all output formats
 PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
 --strip-comments --email-obfuscation=references \
 -M default-code-class=csharp \
@@ -147,19 +155,27 @@ PANDOC_OPTIONS = --filter pandoc-include -f markdown+emoji \
 # Potentially, to have some kind of alternate callouts:
 # --lua-filter templates/filters/callouts.lua
 
-# We use the for the date the last time the file was edited according to git.
-# To use the current date / time instead, use:
-#-M date="$$(LANG=en_us_88591 TZ='America/New_York' date '+%B  %e, %Y (%r)')" \
-
-
-# MD build options
+## MD build options
 PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-code-class-block.lua \
 --shift-heading-level-by=-1 --to gfm+pipe_tables
 # -s/--standalone is required to save the metadata block.
 
+## Alternative formats options.
 
-# Remember to add
-# --toc --lua-filter templates/filters/default-code-class-block-inline.lua
+# Options common to all alternative format.
+PANDOC_OPTIONS_ALT = --toc --lua-filter $(FIL_TEMPLATES)default-code-class-block-inline.lua
+
+# PDF build options
+PANDOC_PDF:= $(PANDOC_OPTIONS_ALT)  -V links-as-notes --default-image-extension=pdf --pdf-engine=xelatex --include-in-header=$(PDFPATH)header.tex
+
+# ODT build options
+PANDOC_ODT:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg --reference-doc=$(ODTPATH)custom-reference.odt
+
+# DOCX build options
+PANDOC_DOCX:= $(PANDOC_OPTIONS_ALT) --default-image-extension=svg 
+# --reference-doc=$(DOCXPATH)custom-reference.docx
+
+# Remember to add ?
 # --metadata-file=$(METADATA_FILE)
 # documentclass: scrartcl  # templating
 # numbersections: true     # templating
@@ -170,6 +186,17 @@ PANDOC_MD = $(PANDOC_OPTIONS) --standalone --lua-filter $(FIL_TEMPLATES)default-
 # ===============================
 # Rules
 # ===============================
+
+# -------------------------------
+# Performance & Global Options
+# -------------------------------
+
+# Maximize parallel execution whenever possible
+.PHONY:MAKEFLAGS
+MAKEFLAGS:= -j
+
+# By default, we construct all the files.
+.DEFAULT_GOAL:= all
 
 # -------------------------------
 # Order file
@@ -204,34 +231,55 @@ web-order.ts: order
 	done < order
 	@echo "}" >> $@
 
-
-
 # -------------------------------
-# Files
+# md file
 # -------------------------------
-
-
-
-
-
-# flags to apply
-
-
-
 
 $(BUILD_DIR)%.md: %.md
 	@mkdir -p $(dir $@)
-	pandoc $(PANDOC_MD) $< -o $@
+	@pandoc $(PANDOC_MD) $< -o $@
 
+# -------------------------------
+# image file
+# -------------------------------
+
+# Individual images:
+$(BUILD_DIR)$(IMG_DIR)%: $(IMG_DIR)%
+	rsync -av $<  $@
+
+# Every images:
+$(BUILD_DIR)$(IMG_DIR): $(SOURCE_IMAGES_FILES)
+	mkdir -p $@
+	make $(TARGET_IMAGES_FILES)
+
+# Individual videos:
+$(BUILD_DIR)$(VID_DIR)%: $(VID_DIR)%
+	rsync -av $< $@
+
+# Every videos:
+$(BUILD_DIR)vid: $(SOURCE_VIDEOS_FILES)
+	mkdir -p $(BUILD_DIR)$(VID_DIR)
+	make $(TARGET_VIDEOS_FILES)
+
+$(BUILD_DIR) $(BUILD_DIR)$(LABS_DIR): | $(BUILD_DIR)$(IMG_DIR) $(BUILD_DIR)$(VID_DIR)
+	@echo "starting build..."
+	mkdir -p $(BUILD_DIR)$(LABS_DIR)
+	rsync -av $(IMG_DIR)favicon/* $(BUILD_DIR)
+	make $(BUILD_DIR)style.css
+	make $(BUILD_DIR)fonts/
+# -------------------------------
+# font files
+# -------------------------------
+	
 # Individual woff font files:
 $(BUILD_DIR)fonts/%.woff : templates/fonts/%.woff
-	mkdir -p $(dir $@)
-	rsync -av $< $@
+	@mkdir -p $(dir $@)
+	@rsync -av $< $@
 	
 # Individual woff2 font files:
 $(BUILD_DIR)fonts/%.woff2 : templates/fonts/%.woff2
-	mkdir -p $(dir $@)
-	rsync -av $< $@
+	@mkdir -p $(dir $@)
+	@rsync -av $< $@
 
 
 
@@ -330,3 +378,6 @@ all: $(TARGET_MD_FILES) $(TARGET_WOFF_FONT_FILES) $(TARGET_PROJECTS_FILES)
 # with the variable you want listed.
 #test:
 #	$(info $$PROJECT_DIR is [${PROJECT_DIR}])
+test:	
+	$(info $$TARGET_MD_FILES is [${SOURCE_MD_FILES_WITHOUT_INDEX}])
+
