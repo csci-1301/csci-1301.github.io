@@ -1,5 +1,5 @@
 import { Options } from "./quartz/components/ExplorerNode"
-import { nameOrderMap } from "./web-order"
+import { nameOrderMap } from "./content/web-order"
 
 // This function lets us sort the entries in the explorer (=the menu)
 // with a custom order (that is, not alphabetically).
