@@ -54,3 +54,11 @@ jobs:
         folder: content
         clean: true
         single-commit: true
+    - name: Create package 🎁
+      uses: crowbarmaster/GH-Automatic-Releases@latest
+      with:
+        automatic_release_tag: "latest"
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        prerelease: true
+        draft: false
+        files: content/release.zip
