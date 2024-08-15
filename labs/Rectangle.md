@@ -15,7 +15,7 @@ This lab serves multiple goals:
 #. Download [the Rectangle project](./code/projects/Rectangle.zip), extract it, and open it with your IDE.
 #. Note that in the "Solution Explorer", there are two `.cs` files listed: `Program.cs` and `Rectangle.cs`:
 
-    ![](./../../img/solution_explorer_rectangle.png)
+    ![](./img/solution_explorer_rectangle.png)
 
 #. In the Solution Explorer, double-click on `Rectangle.cs` and note how close it is to what is presented during in [the lecture notes](https://csci-1301.github.io/book.html#writing-our-first-class).
 #. In the Solution Explorer, double-click on `Program.cs` and observe it.

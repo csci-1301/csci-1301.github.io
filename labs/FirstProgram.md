@@ -137,30 +137,30 @@ You may see multiple options for a framework (.Net Framework or .NET Core), and 
 
 You should see something like:
     
-![](./../../img/create_project.png)
+![](./img/create_project.png)
     
 Pick the _first_ item, which is for C\#.
 When selecting the framework, make sure you are using .NET 5.0 or lower. 
 
-![](./../../img/select_net.png)
+![](./img/select_net.png)
 
 ###### For Visual Studio on macOS
 
 On macOS, follow this method:
 
-![](./../../img/create_project_on_mac_1.png)
-![](./../../img/create_project_on_mac_2.png)
+![](./img/create_project_on_mac_1.png)
+![](./img/create_project_on_mac_2.png)
 It is important that you _do not_ use top-level statements (so, this following box should be _checked_): 
-![](./../../img/create_project_on_mac_3.png)
+![](./img/create_project_on_mac_3.png)
 Finally, make sure you enter the location, project name and solution name correctly:
-![](./../../img/create_project_on_mac_4.png)
+![](./img/create_project_on_mac_4.png)
 
 
 ###### For Monodevelop
 
 After clicking on `File > New Solution`, you will be prompted with a screen similar to this one:
 
-![](./../../img/create_project_monodevelop.png)
+![](./img/create_project_monodevelop.png)
 
 Under ".NET Core", pick the "App" category, and then click on "Console Application" under "General". 
 Make sure you pick the C## programming language.
