@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>List of Topics</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='index.html'>CSCI 1301</a>
+        <a href='index.html#book'>Book</a>
+        <a href='labs/'>Labs</a>
+        <a href='slides.html'>Slides</a>
+        <a href='index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">List of Topics</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:36 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#general-concepts" id="toc-general-concepts">General
+Concepts</a></li>
+<li><a href="#writing-and-compiling-programs"
+id="toc-writing-and-compiling-programs">Writing and Compiling
+Programs</a></li>
+<li><a href="#computer-usage" id="toc-computer-usage">Computer
+Usage</a></li>
+<li><a href="#the-structure-of-a-program"
+id="toc-the-structure-of-a-program">The Structure of a Program</a>
+<ul>
+<li><a href="#first-program---hello-world"
+id="toc-first-program---hello-world">First Program - Hello
+World</a></li>
+<li><a href="#rules-and-conventions"
+id="toc-rules-and-conventions">Rules and Conventions</a></li>
+</ul></li>
+<li><a href="#datatypes-and-operators"
+id="toc-datatypes-and-operators">Datatypes and Operators</a>
+<ul>
+<li><a href="#variable" id="toc-variable">Variable</a></li>
+<li><a href="#numerical-values" id="toc-numerical-values">Numerical
+Values</a></li>
+<li><a href="#booleans" id="toc-booleans">Booleans</a></li>
+<li><a href="#operators" id="toc-operators">Operators</a></li>
+<li><a href="#strings" id="toc-strings">Strings</a>
+<ul>
+<li><a href="#displaying-strings-on-the-screen"
+id="toc-displaying-strings-on-the-screen">Displaying Strings on the
+Screen</a></li>
+</ul></li>
+<li><a href="#characters" id="toc-characters">Characters</a></li>
+</ul></li>
+<li><a href="#lists" id="toc-lists">Lists ❓</a></li>
+<li><a href="#basic-control-structures"
+id="toc-basic-control-structures">Basic Control Structures</a>
+<ul>
+<li><a href="#selection-statements"
+id="toc-selection-statements">Selection Statements</a></li>
+<li><a href="#repetition-statements"
+id="toc-repetition-statements">Repetition Statements</a></li>
+</ul></li>
+<li><a href="#object-oriented-programming"
+id="toc-object-oriented-programming">Object-oriented programming</a>
+<ul>
+<li><a href="#class-conception" id="toc-class-conception">Class
+Conception</a></li>
+<li><a href="#class-implementation" id="toc-class-implementation">Class
+Implementation</a></li>
+<li><a href="#class-usage" id="toc-class-usage">Class Usage</a></li>
+<li><a href="#additional-considerations"
+id="toc-additional-considerations">Additional Considerations</a></li>
+</ul></li>
+<li><a href="#random-class" id="toc-random-class">Random Class</a></li>
+<li><a href="#testing-and-debugging"
+id="toc-testing-and-debugging">Testing and Debugging</a></li>
+<li><a href="#interacting-with-users"
+id="toc-interacting-with-users">Interacting with Users</a></li>
+<li><a href="#data-structures" id="toc-data-structures">Data
+structures</a>
+<ul>
+<li><a href="#constant" id="toc-constant">Constant</a></li>
+<li><a href="#enumerated-datatype"
+id="toc-enumerated-datatype">Enumerated Datatype ❓</a></li>
+<li><a href="#arrays" id="toc-arrays">Arrays</a></li>
+</ul></li>
+<li><a href="#exceptions" id="toc-exceptions">Exceptions 🔜</a></li>
+<li><a href="#file-io" id="toc-file-io">File I/O 🔜</a></li>
+</ul>
+</nav>
+<!-- remainder is directly from initial-matrix/list.md -->
+<p><em>For an explanation of the shortcodes labelling, please refer <a
+href="user_guide#labelling-with-shortcodes-1">to our user
+guide</a>.</em></p>
+<section id="general-concepts" class="level2">
+<h2>General Concepts</h2>
+<p><em>Students should understand the meaning and importance of the
+following notions. This statement should be read as “understand the
+first sentence or paragraph on a wikipedia article”, taking <a
+href="https://www.wikiwand.com/en/High-level_programming_language">high-level
+programming language</a> as an example.</em></p>
+<ul>
+<li>Programming languages types and paradigms
+<ul>
+<li>Machine language instructions</li>
+<li>Assembly instructions</li>
+<li>High-Level Programming Languages</li>
+<li>Object-oriented paradigm and data hiding</li>
+</ul></li>
+<li>The difference between roles (user, tester, programmer)</li>
+<li>How complex piece of software <em>reuse</em> previous pieces.</li>
+<li>The importance of security 🛡
+<ul>
+<li>Types of attack (malware, phishing, social engineering,
+zero-day)</li>
+<li>Types of loss (loss of integrity / availability /
+confidentiality)</li>
+</ul></li>
+</ul>
+</section>
+<section id="writing-and-compiling-programs" class="level2">
+<h2>Writing and Compiling Programs</h2>
+<ul>
+<li>Understand what the “flow of development” is:
+<ul>
+<li>Having a goal</li>
+<li>Writing down specifications</li>
+<li>Creating the source code</li>
+<li>Running the compiler</li>
+<li>Reading the compiler’s output, warning and error messages</li>
+<li>Looking for documentation and help on-line and off-line</li>
+<li>Testing</li>
+<li>Making sure the program is secure 🛡</li>
+<li>Editing</li>
+<li>Reusing</li>
+</ul></li>
+<li>Using an IDE to
+<ul>
+<li>Create a project,</li>
+<li>Perform some of the steps of the “flow of development”,</li>
+<li>Correctly save and re-open projects,</li>
+<li>Understand basic features of break points and debugging. ❓</li>
+</ul></li>
+</ul>
+<p><em>The IDE used can be <a
+href="https://www.monodevelop.com/">MonoDevelop</a> or <a
+href="https://visualstudio.microsoft.com/">Visual Studio</a>, the
+student can pick other IDEs if they wish but they will not be
+supported.</em></p>
+</section>
+<section id="computer-usage" class="level2">
+<h2>Computer Usage</h2>
+<ul>
+<li>How to download and install an IDE in a secure way 🛡</li>
+<li>How to share and zip a project</li>
+<li>How to use shortcuts ❓</li>
+<li>How to look for on-line documentation</li>
+</ul>
+</section>
+<section id="the-structure-of-a-program" class="level2">
+<h2>The Structure of a Program</h2>
+<section id="first-program---hello-world" class="level3">
+<h3>First Program - Hello World</h3>
+<p><em>The students should understand all the components of a simple
+“Hello World” program:</em></p>
+<ul>
+<li>Comments (in line and block)</li>
+<li><code class="sourceCode cs"><span class="kw">using</span></code>
+statements and namespace / API concepts</li>
+<li>blank lines and spacing</li>
+<li>indentation</li>
+<li>intro to classes and methods’ structures (body / header)</li>
+<li>status of <code class="sourceCode cs">Main</code> method</li>
+<li>intro to Console’s <code class="sourceCode cs">Write</code> and
+<code class="sourceCode cs">WriteLine</code></li>
+<li>string literal</li>
+</ul>
+</section>
+<section id="rules-and-conventions" class="level3">
+<h3>Rules and Conventions</h3>
+<ul>
+<li>The difference between a “rule” (e.g. case-sensitivity) and a
+“convention” (commenting your code).</li>
+<li>Reserved words</li>
+<li>Identifiers and naming conventions</li>
+<li>That the distinction can vary with the programming language</li>
+<li>Importance and role of <code
+class="sourceCode cs"><span class="op">{</span></code> and <code
+class="sourceCode cs"><span class="op">}</span></code></li>
+</ul>
+</section>
+</section>
+<section id="datatypes-and-operators" class="level1">
+<h1>Datatypes and Operators</h1>
+<section id="variable" class="level2">
+<h2>Variable</h2>
+<ul>
+<li>Datatype (numerical, boolean, string, character) – including a
+mention of reference datatypes</li>
+<li>Declaration, assignment, initialization</li>
+<li>Naming variables correctly</li>
+<li>The absence of default value after declaration (un-assigned
+variables)</li>
+</ul>
+</section>
+<section id="numerical-values" class="level2">
+<h2>Numerical Values</h2>
+<ul>
+<li>Integers (<code
+class="sourceCode cs"><span class="dt">int</span></code>, <code
+class="sourceCode cs"><span class="dt">long</span></code>) – range and
+size, signature (<code
+class="sourceCode cs"><span class="dt">uint</span></code>)</li>
+<li>Floating Point (<code
+class="sourceCode cs"><span class="dt">float</span></code>, <code
+class="sourceCode cs"><span class="dt">double</span></code>, and <code
+class="sourceCode cs"><span class="dt">decimal</span></code>) – range,
+size and precision,</li>
+<li>Type casting (e.g. from <code
+class="sourceCode cs"><span class="dt">int</span></code> to <code
+class="sourceCode cs"><span class="dt">double</span></code>, and legal
+operations between different datatypes) and casting operator (e.g. <code
+class="sourceCode cs"><span class="op">(</span><span class="dt">int</span><span class="op">)</span></code>).</li>
+<li>Overflow and underflow 🛡</li>
+</ul>
+</section>
+<section id="booleans" class="level2">
+<h2>Booleans</h2>
+<ul>
+<li>Possible values (<code
+class="sourceCode cs"><span class="kw">true</span></code>, <code
+class="sourceCode cs"><span class="kw">false</span></code>)</li>
+<li>Usage</li>
+<li>That boolean variables are called “switches”</li>
+</ul>
+</section>
+<section id="operators" class="level2">
+<h2>Operators</h2>
+<ul>
+<li>Binary arithmetic operators: <code
+class="sourceCode cs"><span class="op">*</span></code>, <code
+class="sourceCode cs"><span class="op">/</span></code>, <code
+class="sourceCode cs"><span class="op">%</span></code>, <code
+class="sourceCode cs"><span class="op">+</span></code>, <code
+class="sourceCode cs"><span class="op">-</span></code></li>
+<li>Unary arithmetic operators: <code
+class="sourceCode cs"><span class="op">++</span></code>, <code
+class="sourceCode cs"><span class="op">--</span></code></li>
+<li>The difference between postfix and infix notation for unary
+operators ❓</li>
+<li>Comparison operators: <code
+class="sourceCode cs"><span class="op">!=</span></code>, <code
+class="sourceCode cs"><span class="op">==</span></code>, <code
+class="sourceCode cs"><span class="op">&gt;</span></code>, <code
+class="sourceCode cs"><span class="op">&gt;=</span></code>, <code
+class="sourceCode cs"><span class="op">&lt;</span></code>, <code
+class="sourceCode cs"><span class="op">&lt;=</span></code></li>
+<li>Boolean logical operators: <code
+class="sourceCode cs"><span class="op">&amp;&amp;</span></code>, <code
+class="sourceCode cs"><span class="op">||</span></code>, <code
+class="sourceCode cs"><span class="op">!</span></code></li>
+<li>Precedence and “validity” of some expressions (typically, <code
+class="sourceCode cs"><span class="op">!</span> <span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">3</span></code>
+is not a valid expression)</li>
+<li>Combined assignment operators: <code
+class="sourceCode cs"><span class="op">+=</span></code>, <code
+class="sourceCode cs"><span class="op">*=</span></code>, <code
+class="sourceCode cs"><span class="op">-=</span></code>, <code
+class="sourceCode cs"><span class="op">/=</span></code>, <code
+class="sourceCode cs"><span class="op">%=</span></code></li>
+</ul>
+</section>
+<section id="strings" class="level2">
+<h2>Strings</h2>
+<ul>
+<li><code class="sourceCode cs">ReadLine</code> method</li>
+<li>Concatenation (<code
+class="sourceCode cs"><span class="op">+</span></code>)</li>
+<li>Interpolation</li>
+<li>Additional methods: <code class="sourceCode cs">ToLower</code>,
+<code class="sourceCode cs">ToUpper</code>, <code
+class="sourceCode cs">Contains</code>, <code
+class="sourceCode cs">StartsWith</code>, <code
+class="sourceCode cs">EndsWith</code> ❓</li>
+</ul>
+<section id="displaying-strings-on-the-screen" class="level3">
+<h3>Displaying Strings on the Screen</h3>
+<ul>
+<li><a
+href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings">Format
+specifiers</a> for numbers: – Currency (<code
+class="sourceCode cs">C</code>),
+<ul>
+<li>Fixed-point (<code class="sourceCode cs">F</code>) or Number (<code
+class="sourceCode cs">N</code>)</li>
+<li>Percent (<code class="sourceCode cs">P</code>) ❓</li>
+<li>Exponential (<code class="sourceCode cs">E</code>) ❓</li>
+</ul></li>
+<li>The <code
+class="sourceCode cs">String<span class="op">.</span><span class="fu">Format</span></code>
+method ❓</li>
+</ul>
+</section>
+</section>
+<section id="characters" class="level2">
+<h2>Characters</h2>
+<ul>
+<li>Possible values and the existence of binary, oct, dec and hex
+representation (cf. for instance <a
+href="https://www.wikiwand.com/en/ASCII#Printable_characters">wikipedia</a>)</li>
+<li>Escape character and sequences: <code
+class="sourceCode cs">\n</code>, <code class="sourceCode cs">\t</code>,
+<code class="sourceCode cs">\\</code></li>
+<li>Conversion between glyph and decimal value.</li>
+<li>Various methods: <code class="sourceCode cs">ToLower</code>, <code
+class="sourceCode cs">ToUpper</code> ❓</li>
+</ul>
+</section>
+</section>
+<section id="lists" class="level1">
+<h1>Lists ❓</h1>
+<ul>
+<li>Creating a list of numbers or strings</li>
+<li>Adding items using the <code class="sourceCode cs">Add</code>
+method</li>
+<li>Accessing items using <code
+class="sourceCode cs"><span class="op">[]</span></code></li>
+<li>Removing and Inserting (<code class="sourceCode cs">Remove</code>,
+<code class="sourceCode cs">RemoveAt</code>, <code
+class="sourceCode cs">Insert</code>)</li>
+<li><code class="sourceCode cs">Count</code> property</li>
+</ul>
+</section>
+<section id="basic-control-structures" class="level1">
+<h1>Basic Control Structures</h1>
+<section id="selection-statements" class="level2">
+<h2>Selection Statements</h2>
+<p>For each of the following structure:</p>
+<ul>
+<li><code class="sourceCode cs"><span class="kw">if</span></code></li>
+<li><code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code></li>
+<li><code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span> <span class="kw">if</span></code></li>
+<li>nested <code
+class="sourceCode cs"><span class="kw">if</span></code>s</li>
+<li><code
+class="sourceCode cs"><span class="kw">switch</span></code></li>
+</ul>
+<p>The student should understand</p>
+<ul>
+<li>Their importance,</li>
+<li>Their usage,</li>
+<li>Their syntax,</li>
+<li>Their flow,</li>
+<li>When to use one or the other,</li>
+<li>The common pitfalls (e.g., writing a condition in a <code
+class="sourceCode cs"><span class="kw">switch</span></code>).</li>
+</ul>
+</section>
+<section id="repetition-statements" class="level2">
+<h2>Repetition Statements</h2>
+<p>For each of the following structure:</p>
+<ul>
+<li><code
+class="sourceCode cs"><span class="kw">foreach</span></code></li>
+<li><code
+class="sourceCode cs"><span class="kw">while</span></code></li>
+<li><code class="sourceCode cs"><span class="kw">for</span></code></li>
+<li><code
+class="sourceCode cs"><span class="kw">do</span><span class="op">{</span>…<span class="op">}</span><span class="kw">while</span><span class="op">(</span>…<span class="op">)</span></code>
+❓</li>
+</ul>
+<p>The student should understand:</p>
+<ul>
+<li>Their importance,</li>
+<li>Their usage,</li>
+<li>Their syntax,</li>
+<li>Their flow,</li>
+<li>When to use one or the other,</li>
+<li>The common pitfalls (e.g. <code
+class="sourceCode cs"><span class="op">=</span></code> instead of <code
+class="sourceCode cs"><span class="op">==</span></code>, <code
+class="sourceCode cs"><span class="op">&lt;=</span> n</code> vs <code
+class="sourceCode cs"><span class="op">&lt;</span> n</code>)</li>
+</ul>
+<p>As well as being capable of identifying the difference between</p>
+<ul>
+<li>Counter-controlled,</li>
+<li>Sentinel-controlled,</li>
+<li>User-controlled</li>
+</ul>
+<p>and defining the term “accumulator”</p>
+</section>
+</section>
+<section id="object-oriented-programming" class="level1">
+<h1>Object-oriented programming</h1>
+<section id="class-conception" class="level2">
+<h2>Class Conception</h2>
+<ul>
+<li>Need and interest of specification 🛡</li>
+<li>UML Class diagram: interest, usage, and simple case (single class
+with attributes, methods and constructor).</li>
+<li>Access modifier (private, public)</li>
+<li>Principle of least privilege (private variables and methods where
+possible) 🛡</li>
+</ul>
+</section>
+<section id="class-implementation" class="level2">
+<h2>Class Implementation</h2>
+<ul>
+<li>Attributes (and their default value, as well as how to change
+them)</li>
+<li>Get and Set methods</li>
+<li>Properties ❓</li>
+<li>Method signature</li>
+<li>Overloading</li>
+<li><a href="https://www.wikiwand.com/en/Variable_shadowing">Variable
+shadowing</a> ❓</li>
+<li>Constructors: default constructor and “custom” constructor</li>
+</ul>
+</section>
+<section id="class-usage" class="level2">
+<h2>Class Usage</h2>
+<ul>
+<li>The <code class="sourceCode cs"><span class="kw">new</span></code>
+keyword</li>
+<li>Object creation using default and custom constructors</li>
+<li>Object manipulation: calling a method, setting an attribute, calling
+the <code class="sourceCode cs">ToString</code> method implicitly.</li>
+</ul>
+</section>
+<section id="additional-considerations" class="level2">
+<h2>Additional Considerations</h2>
+<ul>
+<li><code class="sourceCode cs">ToString</code> method</li>
+<li>static class and methods</li>
+<li><a
+href="https://learn.microsoft.com/en-us/dotnet/api/system.math"><code
+class="sourceCode cs">Math</code> Class</a> (<code
+class="sourceCode cs">Abs</code>, <code
+class="sourceCode cs">Sqrt</code>, <code
+class="sourceCode cs">Pow</code>) ❓</li>
+</ul>
+</section>
+</section>
+<section id="random-class" class="level1">
+<h1>Random Class</h1>
+<ul>
+<li>Creating a generator with <code
+class="sourceCode cs"><span class="kw">new</span> <span class="fu">Random</span><span class="op">()</span></code></li>
+<li>Generating non-negative integers,</li>
+<li>Generating integers between ranges,</li>
+<li>Generating double,</li>
+<li>Generating a random word ❓</li>
+<li>Potential problems with deterministic generators 🛡</li>
+</ul>
+</section>
+<section id="testing-and-debugging" class="level1">
+<h1>Testing and Debugging</h1>
+<ul>
+<li>How to test intelligently</li>
+<li>How to test every instruction</li>
+<li>How to test boundary conditions</li>
+</ul>
+</section>
+<section id="interacting-with-users" class="level1">
+<h1>Interacting with Users</h1>
+<ul>
+<li>Input validation 🛡</li>
+<li><code class="sourceCode cs">TryParse</code> in the <code
+class="sourceCode cs"><span class="dt">int</span></code> and <code
+class="sourceCode cs"><span class="dt">decimal</span></code>
+classes.</li>
+<li>Reading a single character from the user ❓</li>
+</ul>
+</section>
+<section id="data-structures" class="level1">
+<h1>Data structures</h1>
+<section id="constant" class="level2">
+<h2>Constant</h2>
+<ul>
+<li>The <code class="sourceCode cs"><span class="dt">const</span></code>
+keyword</li>
+<li>Example usages (Avogadro constant, miles-to-kilometer ratio, speed
+of light) and use case.</li>
+<li><code
+class="sourceCode cs">Math<span class="op">.</span><span class="fu">PI</span></code>
+❓</li>
+<li>Static constant ❓</li>
+</ul>
+</section>
+<section id="enumerated-datatype" class="level2">
+<h2>Enumerated Datatype ❓</h2>
+<ul>
+<li>Define enumerated datatypes using <code
+class="sourceCode cs"><span class="kw">enum</span></code></li>
+<li>Enum values (i.e. numerical values assigned to enumerated values by
+default) ❓</li>
+<li>Use enumerated datatypes (variable declaration, assignment,
+displaying).</li>
+</ul>
+</section>
+<section id="arrays" class="level2">
+<h2>Arrays</h2>
+<p>Only one-dimensional arrays should be discussed.</p>
+<ul>
+<li>Vocabulary: index (starting at 0), bounds.</li>
+<li><code class="sourceCode cs">Length</code> property</li>
+<li><code class="sourceCode cs">Resize</code> method ❓</li>
+<li>Different syntaxes for initializing and declaring arrays ❓</li>
+<li>Buffer overflow 🛡</li>
+</ul>
+</section>
+</section>
+<section id="exceptions" class="level1">
+<h1>Exceptions 🔜</h1>
+<ul>
+<li><code class="sourceCode cs">try…catch</code> blocks</li>
+<li>Types of exceptions</li>
+<li><code
+class="sourceCode cs"><span class="kw">finally</span></code></li>
+<li>Defining your own exception</li>
+</ul>
+</section>
+<section id="file-io" class="level1">
+<h1>File I/O 🔜</h1>
+<ul>
+<li><code class="sourceCode cs">StreamWriter</code> and <code
+class="sourceCode cs">StreamReader</code> classes</li>
+<li>Manipulating binary and text files</li>
+<li><code class="sourceCode cs">File</code> class ❓</li>
+</ul>
+<!--     
+    File I/O
+    Struct
+    Enum
+    Inheritance
+Exception Handling -->
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="topics_list.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="topics_list.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="topics_list.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/docs/topics_list.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

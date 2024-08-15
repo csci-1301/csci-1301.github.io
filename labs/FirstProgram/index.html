@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../../">
+  <meta property="og:image" content="../../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Your First Program</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../../index.html'>CSCI 1301</a>
+        <a href='../../index.html#book'>Book</a>
+        <a href='../../labs/'>Labs</a>
+        <a href='../../slides.html'>Slides</a>
+        <a href='../../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Your First Program</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:57 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#your-first-program" id="toc-your-first-program">Your First
+Program</a>
+<ul>
+<li><a href="#editing-existing-program"
+id="toc-editing-existing-program">Editing Existing Program</a>
+<ul>
+<li><a href="#reusing-and-editing" id="toc-reusing-and-editing">Reusing
+and Editing</a></li>
+<li><a href="#renaming" id="toc-renaming">Renaming</a></li>
+<li><a href="#editing" id="toc-editing">Editing</a></li>
+</ul></li>
+<li><a href="#creating-your-first-new-project"
+id="toc-creating-your-first-new-project">Creating Your First New
+Project</a>
+<ul>
+<li><a href="#starting-from-a-template"
+id="toc-starting-from-a-template">Starting from a Template</a></li>
+<li><a href="#editing-the-template"
+id="toc-editing-the-template">Editing the Template</a></li>
+</ul></li>
+<li><a href="#exploring-the-documentation"
+id="toc-exploring-the-documentation">Exploring the
+Documentation</a></li>
+<li><a href="#more-about-displaying-characters-on-the-screen"
+id="toc-more-about-displaying-characters-on-the-screen">More About
+Displaying Characters on the Screen</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>This lab serves multiple goals:</p>
+<ul>
+<li>To teach you how to edit an existing program,</li>
+<li>To show you how to create a new program “from scratch”,</li>
+<li>To understand how to display characters, strings, and escape
+sequences on the screen,</li>
+<li>To read and understand error messages from your IDE,</li>
+<li>To understand how the renaming of projects and solution works,</li>
+<li>To explain how to explore C# documentation,</li>
+<li>To explore new useful IDE features.</li>
+</ul>
+<section id="your-first-program" class="level1">
+<h1>Your First Program</h1>
+<section id="editing-existing-program" class="level2">
+<h2>Editing Existing Program</h2>
+<section id="reusing-and-editing" class="level3">
+<h3>Reusing and Editing</h3>
+<ol>
+<li><p>Download <a href="InitialSolution.zip">InitialSolution.zip</a>
+and save it onto your computer.</p></li>
+<li><p>Unzip the program file. You can refer to <a
+href="/zip_guide.html">our small guide on manipulating archives</a>.
+<em>Be careful</em> as some file explorers will simply <em>preview</em>
+the (zip) archive if you simply double-click on it, but most IDEs will
+not accept a file if it has not been actually extracted /
+unzipped!</p></li>
+</ol>
+</section>
+<section id="renaming" class="level3">
+<h3>Renaming</h3>
+<p>Open the <code class="sourceCode cs">InitialSolution</code> file that
+you just extracted in your IDE.</p>
+<section id="renaming-the-solution" class="level4">
+<h4>Renaming the Solution</h4>
+<p>Use your IDE to rename this <em>solution</em>:</p>
+<ol>
+<li>Right-click on <code class="sourceCode cs">InitialSolution</code>
+(in “Solution Explorer”, “Explorer”, or even “Solution”).</li>
+<li>Select “Rename” (it can be under “Edit”), and then rename the
+solution to <code class="sourceCode cs">EditedSolution</code>.</li>
+<li>What change(s) do you notice in your IDE?</li>
+<li>Can you still build and debug your program?</li>
+<li>Look in your file system where you unzipped the solution earlier.
+Did the name of the project directory change? Did the name of the <code
+class="sourceCode cs"><span class="op">.</span><span class="fu">sln</span></code>
+file change?</li>
+</ol>
+<p><strong><em>Do not</em> rename a solution outside your IDE; always
+use an IDE to rename.</strong></p>
+<p>Renaming C# project files requires more than simply changing a file
+name. By using an IDE to perform the renaming, all references to the
+name will be updated.</p>
+</section>
+<section id="renaming-the-project" class="level4">
+<h4>Renaming the Project</h4>
+<p>Next use your IDE to rename the <em>project</em>:</p>
+<ol>
+<li>Right-click on <code
+class="sourceCode cs">InitialProject</code>.</li>
+<li>Select “Rename” , and then rename the solution to <code
+class="sourceCode cs">EditedProject</code>.</li>
+<li>What change(s) do you notice in your IDE?</li>
+<li>Can you still build and debug your program?</li>
+<li>Look in your file system where you unzipped the solution earlier.
+Did the name of the project directory change? Did the name of the <code
+class="sourceCode cs"><span class="op">.</span><span class="fu">csproj</span></code>
+file change?</li>
+</ol>
+</section>
+</section>
+<section id="editing" class="level3">
+<h3>Editing</h3>
+<p>We will now change (edit) our <code
+class="sourceCode cs">EditedSolution</code> solution.</p>
+<ol>
+<li><p>In <code
+class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>:</p>
+<ul>
+<li>replace <code
+class="sourceCode cs"><span class="st">&quot;Welcome to the lab portion of CSCI 1301!&quot;</span></code></li>
+<li>with <code
+class="sourceCode cs"><span class="st">&quot;This is my first program.&quot;</span></code>.</li>
+</ul></li>
+<li><p>Build and run the program. Do you notice any change(s)?</p></li>
+<li><p>Insert a new line after the existing <code
+class="sourceCode cs">Console<span class="op">.</span><span class="fu">WriteLine</span></code>
+but before the first close brace (i.e. <code
+class="sourceCode cs"><span class="op">}</span></code>) and paste the
+following:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;This is my second message.&quot;</span><span class="op">);</span> </span></code></pre></div></li>
+<li><p>Build and execute the program. Do you notice any
+change(s)?</p></li>
+<li><p>Insert another new line after the one you just created, and paste
+the following:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;This is my third message.&quot;</span><span class="op">);</span> </span></code></pre></div></li>
+<li><p>Build and execute the program. Do you understand the difference
+between <code class="sourceCode cs">WriteLine</code> and <code
+class="sourceCode cs">Write</code>?</p></li>
+<li><p>Insert another new line after the one you just created, and paste
+the following:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st"> This is my fourth message.&quot;</span><span class="op">);</span> </span></code></pre></div></li>
+<li><p>Build and execute the program. Do you understand what <code
+class="sourceCode cs">\t</code> is doing?</p></li>
+<li><p>Insert another new line after the one you just created and paste
+the following:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">Write</span><span class="op">(</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st"> This </span><span class="sc">\n</span><span class="st"> is </span><span class="sc">\n</span><span class="st"> my fifth message.</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span></code></pre></div></li>
+<li><p>Build and execute the program. You should see something like
+this:</p>
+<pre class="text"><code>This is my first program.
+This is my second message.This is my third message.    This is my fourth message.
+ This
+ is
+ my fifth message.</code></pre>
+<p>Do you understand what <code class="sourceCode cs">\n</code> is
+doing?</p></li>
+<li><p>Have a look at <a href="/book.html#escape-sequences">escape
+sequences</a>, and edit your program by adding a statement that displays
+the <code class="sourceCode cs">\</code> and the <code
+class="sourceCode cs"><span class="st">&quot;</span></code>
+characters.</p></li>
+<li><p>Add a comment (using <code
+class="sourceCode cs"><span class="co">//</span></code> or <code
+class="sourceCode cs"><span class="co">/*</span></code> and <code
+class="sourceCode cs"><span class="op">*/</span></code>) in your
+program.</p></li>
+</ol>
+<p>Make a back up of what you just did. Upload <code
+class="sourceCode cs">EditedSolution</code> to your remote backup, or
+copy it onto your thumb drive. After saving the backup, close your IDE
+and make sure you can still open the solution. Redownloading and
+reopening solutions is a good way of making sure that your backup is
+correct.</p>
+</section>
+</section>
+<section id="creating-your-first-new-project" class="level2">
+<h2>Creating Your First New Project</h2>
+<p>This time you will not be given a project to load or to copy. You
+will start from scratch. If your IDE is currently open, exit your IDE
+application. Next, create a new folder for this lab in your file
+explorer or backup directory.</p>
+<section id="starting-from-a-template" class="level3">
+<h3>Starting from a Template</h3>
+<p>We will first create a new C# project using the template for a
+“Console App” (we give first a general guidance, and then some details
+that are specific to particular IDE / operating systems
+combinations):</p>
+<ol>
+<li><p>Launch your IDE</p></li>
+<li><p>After the IDE launches, look for an option to create a new
+project. The exact wording varies between different IDEs, but look for
+one of the following:</p>
+<ul>
+<li><code
+class="sourceCode cs">Create a <span class="kw">new</span> project</code>
+or <code class="sourceCode cs">New</code> or <code
+class="sourceCode cs">New Solution</code> in the launch screen<br />
+</li>
+<li><code
+class="sourceCode cs">File <span class="op">&gt;</span> New <span class="op">&gt;</span> Project</code>
+in the IDE menu</li>
+<li><code
+class="sourceCode cs">File <span class="op">&gt;</span> New Solution</code>
+in the IDE menu</li>
+</ul></li>
+<li><p>Look for the “Console Application” option, and check that the
+associated language is C# (cf. below).</p></li>
+<li><p>If multiple frameworks are offered, make sure you pick the right
+one (cf. below).</p></li>
+<li><p>Enter <code class="sourceCode cs">MyFirstProject</code> as the
+name of the project.</p></li>
+<li><p>Enter <code class="sourceCode cs">MyFirstSolution</code> as the
+name of the solution.</p></li>
+<li><p>For the location or solution directory, choose a good place to
+save your solution. The best place would be the folder you created for
+this lab.</p></li>
+<li><p>Click <code
+class="sourceCode cs">Create<span class="op">.</span></code></p></li>
+</ol>
+<p>Make sure you review the information in the following section that
+are relevant for you, and then answer the question in <a
+href="#questions">the last section</a>.</p>
+<section id="picking-the-right-framework-and-other-specificities"
+class="level4">
+<h4>Picking the Right Framework and Other Specificities</h4>
+<p>Interfaces change, and writing a “universal guide” is not an easy
+task, so we include some additional indications for specific IDE /
+operating system below:.</p>
+<section id="for-visual-studio-on-windows" class="level5">
+<h5>For Visual Studio on Windows</h5>
+<p>You may see multiple options for a framework (.Net Framework or .NET
+Core), and you can choose either as it does not make a difference for
+this class. <strong>However</strong>, you should make sure that you pick
+a .NET version strictly less than 6 (ex. NET 5.0) if possible.</p>
+<p>You should see something like:</p>
+<p><img src="././../../img/create_project.png" /></p>
+<p>Pick the <em>first</em> item, which is for C#. When selecting the
+framework, make sure you are using .NET 5.0 or lower.</p>
+<p><img src="././../../img/select_net.png" /></p>
+</section>
+<section id="for-visual-studio-on-macos" class="level5">
+<h5>For Visual Studio on macOS</h5>
+<p>On macOS, follow this method:</p>
+<p><img src="././../../img/create_project_on_mac_1.png" /> <img
+src="././../../img/create_project_on_mac_2.png" /> It is important that
+you <em>do not</em> use top-level statements (so, this following box
+should be <em>checked</em>): <img
+src="././../../img/create_project_on_mac_3.png" /> Finally, make sure
+you enter the location, project name and solution name correctly: <img
+src="././../../img/create_project_on_mac_4.png" /></p>
+</section>
+<section id="for-monodevelop" class="level5">
+<h5>For Monodevelop</h5>
+<p>After clicking on <code
+class="sourceCode cs">File <span class="op">&gt;</span> New Solution</code>,
+you will be prompted with a screen similar to this one:</p>
+<p><img src="././../../img/create_project_monodevelop.png" /></p>
+<p>Under “.NET Core”, pick the “App” category, and then click on
+“Console Application” under “General”. Make sure you pick the C#
+programming language.</p>
+</section>
+</section>
+<section id="questions" class="level4">
+<h4>Questions</h4>
+<p>Once your project was created, answer the following:</p>
+<ol>
+<li><p>A source code file appeared in the main window of your IDE.
+Compare this code with the code you studied previously. How are they
+different? How are they the same?</p></li>
+<li><p>In your file system, navigate to the directory where you stored
+your project. Open the project directory and compare <code
+class="sourceCode cs">MyFirstSolution</code> to the <code
+class="sourceCode cs">EditedSolution</code> project you worked on
+earlier. How are they different? How are they the same?</p></li>
+<li><p>Try to compile <code
+class="sourceCode cs">MyFirstSolution</code>. Did the compilation
+succeed?</p></li>
+<li><p>Execute <code class="sourceCode cs">MyFirstSolution</code>. What
+happened? Compare what happened to what happened when you executed the
+<code class="sourceCode cs">EditedSolution</code> project.</p></li>
+</ol>
+</section>
+</section>
+<section id="editing-the-template" class="level3">
+<h3>Editing the Template</h3>
+<p>Now you will start writing your own code. We’ll start by writing a
+very familiar instruction to display a message on the screen.</p>
+<ol>
+<li><p>Before editing your code, make sure you can actually compile it
+first!<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p></li>
+<li><p>Place the cursor inside the <code
+class="sourceCode cs">Main</code> method, after <code
+class="sourceCode cs"><span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></code>
+and the open brace (i.e.<code
+class="sourceCode cs"><span class="op">{</span></code>).</p></li>
+<li><p>Create a new line.</p></li>
+<li><p>Type <code class="sourceCode cs">Console</code>, and then
+pause.</p></li>
+<li><p>After a short moment, an auto-completion feature that displays
+suggestions and messages should display. This is a common IDE feature to
+help the programmer. You’ll probably end up using it a lot, but let’s
+not worry about it for now.</p></li>
+<li><p>Type in <code
+class="sourceCode cs"><span class="op">.</span><span class="fu">Wri</span></code>
+after <code class="sourceCode cs">Console</code> (do not forget the
+period!) and notice the good suggestions. You actually want to write
+<code class="sourceCode cs">WriteLine</code>! Either finish writing
+<code class="sourceCode cs">WriteLine</code> or select it from the menu
+that appears.</p></li>
+<li><p>Now, type an open parenthesis (i.e. <code
+class="sourceCode cs"><span class="op">(</span></code>), and notice that
+a close parenthesis (i.e. <code
+class="sourceCode cs"><span class="op">)</span></code>) is added
+automatically.</p></li>
+<li><p>Type a <code
+class="sourceCode cs"><span class="dt">string</span></code> of your
+choice between those two parentheses. You can type something like <code
+class="sourceCode cs"><span class="st">&quot;This is my first message&quot;</span></code>,
+but do not forget the quotes.</p>
+<p>At this point, your <code class="sourceCode cs">Main</code> method
+should look like this:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">static</span> <span class="dt">void</span> <span class="fu">Main</span><span class="op">(</span><span class="dt">string</span><span class="op">[]</span> args<span class="op">)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;This is my first message!&quot;</span><span class="op">)</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div></li>
+<li><p>Compile (build) your program.</p></li>
+<li><p>Oh no, something went wrong! Can you fix this problem?</p></li>
+<li><p>Once you can compile your program without errors, execute
+it.</p></li>
+<li><p>Make a backup of your project.</p></li>
+</ol>
+</section>
+</section>
+<section id="exploring-the-documentation" class="level2">
+<h2>Exploring the Documentation</h2>
+<p>The documentation for C# is packed with useful information, and
+efforts are made to make it accessible to beginners. The goal of this
+exercise is to help you realize that it contains answers to questions
+that you may have asked yourself like “what is a solution?” or “what
+does the <code
+class="sourceCode cs"><span class="kw">namespace</span></code> keyword
+do?”</p>
+<p>The documentation for C# is at <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/"
+class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/</a>. To get
+started, have a look at “Introduction” at <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/"
+class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/introduction/</a>,
+and answer the following:</p>
+<ol>
+<li>What C# language feature is responsible for reclaiming unused
+memory?</li>
+<li>What file extension is used by C# source code files?</li>
+<li>Can you list 3 different C# data types?</li>
+</ol>
+<p>C# programs often use namespaces as a way of organizing large code
+projects, and your IDE may create a <code
+class="sourceCode cs"><span class="kw">namespace</span></code> when you
+create a new program. Read the page at <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/"
+class="uri">https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/</a>.
+Do you know an example of a namespace that we have used?</p>
+</section>
+<section id="more-about-displaying-characters-on-the-screen"
+class="level2">
+<h2>More About Displaying Characters on the Screen</h2>
+<ol>
+<li>Create a new project.</li>
+<li>Edit the <code class="sourceCode cs">Main</code> method so that when
+compiled and executed, your program displays the following on the
+screen:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>   <span class="op">!</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">!!!</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">!!!!!!!</span></span></code></pre></div>
+<!-- hotkeys for this vary by IDE and OS -->
+<ol>
+<li><p>We will now use the “Find and Replace” feature of your IDE. Look
+for it in the top menu of your IDE, typically <code
+class="sourceCode cs">Edit <span class="op">&gt;</span> Find and Replace <span class="op">&gt;</span> Find <span class="kw">in</span> Files</code>
+or <code
+class="sourceCode cs">Edit <span class="op">&gt;</span> Find <span class="op">&gt;</span> Replace</code>.</p></li>
+<li><p>In the panel that appears, enter the following:</p>
+<ul>
+<li>(Find what) <code
+class="sourceCode cs"><span class="op">!</span></code></li>
+<li>(Replace with) <code
+class="sourceCode cs"><span class="op">*</span></code></li>
+</ul></li>
+<li><p>Hit “Replace All”, and note the modifications in your
+program.</p></li>
+<li><p>As you can see, this is a really useful feature of your IDE, but
+it is also a really dangerous one. If you were to replace all the <code
+class="sourceCode cs"><span class="op">*</span></code> characters with
+<code class="sourceCode cs"><span class="op">!</span></code> in all the
+programs we have written so far, what could possibly go wrong?</p></li>
+</ol>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>If you are using Monodevelop and are prompted with the
+message</p>
+<pre class="text"><code>Your project does not reference &quot;.NETFramework,Version=v4.7&quot; in the &quot;TargetFrameworks&quot; property of your project file and then re-run NuGet restore.</code></pre>
+<p>Then, do the following: in the project in monodevelop, right click on
+the project, go to options, go to general, and change the target
+framework to the appropriate framework version described in the error.
+Clean the solution, and then go to the project’s folder. Delete both the
+bin and obj folders. Build solution and run it.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/labs/FirstProgram/readme.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="../../about.html" title="Learn more about this website.">About</a>
+        <a href="../../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+---
+date: 2024-05-26
+default-code-class: csharp
+title: Practicing if and switch
+---
+
+This lab serves multiple goals:
+
+- To reinforce your understanding of `if` statements,
+- To help you practice `switch` statements,
+- To help you understand the instances in which `switch` or `if` should
+  be used,
+- (Optional) to help you understand the conditional operator, and
+- (Optional) to introduce you to the `ToUpper` method.
+
+# Mastering the `switch` statement
+
+Consider the following code:
+
+``` csharp
+// We ask the user to enter the day of the week:
+Console.WriteLine("Please enter the day of the week.");
+// Note that anything that is not spelled exactly as 
+// in the switch statement will be treated as the 
+// default case.
+
+// We read from the user:
+string string_day = Console.ReadLine();
+
+// Variable where the result of our computation will be stored:
+int num_day;
+
+// Switch statement to map textual description of the day 
+// (e.g., "Monday", "Tuesday", etc.) to a number 
+// relative to chronological order (e.g., 1, 2, etc.)
+switch (string_day)
+{
+    case ("Monday"):
+        num_day = 1;
+        break;
+    case ("Tuesday"):
+        num_day = 2;
+        break;
+    case ("Wednesday"):
+        num_day = 3;
+        break;
+    case ("Thursday"):
+        num_day = 4;
+        break;
+    case ("Friday"):
+        num_day = 5;
+        break;
+    case ("Saturday"):
+        num_day = 6;
+        break;
+    case ("Sunday"):
+        num_day = 7;
+        break;
+    default:
+        num_day = -1; // This is an error code.
+        break;
+}
+
+// We display the number corresponding to the day entered:
+Console.WriteLine("The number corresponding to " + string_day + " is " + num_day + ".");
+```
+
+You can download it [as a solution](./code/projects/day_of_the_week.zip)
+(that also contains the solution to the problems asked below. Make sure
+you open `day_of_the_week` and not `day_of_the_week_solution` first).
+
+Now, do the following:
+
+1.  Test the program with various values and make sure it behaves as
+    expected.
+2.  Comment out the `default:` case along with the two lines below it
+    and compile your program. Why is the compiler complaining?
+3.  Restore the code to its original state.
+4.  Change the code so that “monday” would make the value 1 get assigned
+    to `num_day`.
+5.  Change the code so that [the days of the week start on
+    Sunday](https://www.wikiwand.com/en/Names_of_the_days_of_the_week#Days_numbered_from_Sunday)
+    (i.e., “Sunday” causes the value 1 to get assigned to `num_day`,
+    “Monday” causes the value 2 to be assigned to `num_day`, etc.)
+6.  Finally, change the last message to tell the user if the code
+    encountered an error; use an `if` statement to display a different
+    message if the user input did not match one of the literals in your
+    `switch` statement.
+
+Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟, and
+hitting “enter” is represented by ↵:
+
+``` text
+Please enter the day of the week.
+t͟u͟e͟s͟d͟a͟y͟↵
+The number corresponding to tuesday is 3.
+```
+
+Here is a second example:
+
+``` text
+Please enter the day of the week.
+M͟O͟N͟D͟A͟Y͟↵
+I am sorry, but MONDAY does not seem to be a valid day.
+```
+
+You can find an example solution in [this
+solution](./code/projects/day_of_the_week_solution.zip) or in the
+archive that you downloaded previously.
+
+# Practicing `if` and `switch`
+
+This exercise will ask you to write a rather abstract program that
+performs simple manipulations on a few variables. The main goal is to
+have you practice “transforming” `if` statements into `switch`
+statements and `switch` statements into `if` statements. This will help
+you memorize their syntax and help you choose the more convenient one to
+perform certain tasks.
+
+Create a new project and do the following in `Main`.
+
+1.  Declare and initialize the following variables:
+    - a `string` variable named `day`
+    - an `int` variable named `myVar`
+    - a `char` variable named `initial`, and
+    - a `bool` variable named `flag`
+2.  Set and change the value of these variables to make good tests as
+    you progress through this problem.
+3.  You can also display them on the screen to make sure that your
+    statements behave as expected.
+
+## From `switch` to `if-else`
+
+1.  Write a `switch` statement that sets `flag` to `true` if the value
+    of `day` is `"Mon"`, `"Tue"`, `"Wed"`, `"Thu"` or `"Fri"`, and to
+    `false` otherwise.
+2.  Rewrite the previous statement as an `if-else` statement.
+
+## From `if-else` to `switch`
+
+1.  Write an `if-else` statement that doubles the value of `myVar` if
+    `myVar` is: `3`, `5`, or `7`.
+2.  Can you rewrite the previous statement as a `switch` statement? If
+    so, do it. If not, explain why not.
+
+## Deciding Between Condition Types
+
+1.  Write a statement that doubles the value of `myVar` and sets
+    `initial` to `'M'` if `day` is equal to `"Sat"`. What is the
+    appropriate kind of statement to do this?
+2.  Write a statement that displays “Hello” on the screen if the value
+    of `initial` is `'E'` or `'e'`, “Bonjour” if the value of `initial`
+    is `'F'` or `'f'`, and “Guten Tag” if the value of `initial` is
+    `'D'` or `'d'`. What is the appropriate kind of statement to do
+    this?
+
+Note that you can solve those problems with either an `if` statement or
+a `switch` statement.
+
+## Complex Conditions
+
+1.  Write a statement that doubles the value of `myVar` if `day` is
+    `"Sun"`, triples the value of `myVar` if `day` is not `"Sun"` but
+    `initial` is `'a'`, or sets `myVar` to `0` if neither of the other
+    conditions is satisfied.
+2.  Write a statement that sets `myVar` to `0` if `initial` is an
+    upper-case letter or to `1` otherwise. You will need to understand
+    how to use the `IsUpper` method, and the
+    [documentation](https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0)
+    can help you with that.
+
+Note that you can only solve those problems with `if` statements.
+
+# Pushing Further (Optional)
+
+## Conditional Operator
+
+A *conditional operator* can be used to replace `if-else` statements in
+particular cases (i.e., assignment, call, increment, decrement, and new
+object expressions). Its structure is:
+
+`condition ? first_expression : second_expression;`
+
+You can read more about it [in the
+documentation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator).
+
+Practice using the conditional operator by adding these statements to
+the program you developed previously:
+
+1.  Write a statement that sets `myVar` to `0` if `initial` is an
+    upper-case letter, and to `1` otherwise. You already wrote an `if`
+    statement that accomplishes this in the previous exercise, so you
+    just need to rewrite it using the conditional operator.
+2.  Write a statement that sets `initial` to `'B'` if `myVar` is greater
+    than 500 and to `'S'` if `myVar` is less than or equal to 500.
+3.  Write a statement that doubles the value of `myVar` if `day` is
+    `"Sat"` or `"Sun"` and adds 1 to the value of `myVar` otherwise.
+
+## `ToUpper()` Method
+
+C## contains a method called `ToUpper()` in the `string` class. You can
+read [its
+documentation](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0),
+but the simplest way to understand is probably to see an example first.
+The statement
+
+``` csharp
+Console.WriteLine("Hello, world!".ToUpper());
+```
+
+will display
+
+``` text
+HELLO, WORLD!
+```
+
+Can you use this method to make your `switch` statement [from the first
+part](#mastering-the-switch-statement) accommodate any combination of
+uppercase and lowercase letters for the days of the week? If done
+properly, your program should then correctly identify that “MoNdAy”,
+“MONDAY”, “monday” and “Monday” all match the same value.

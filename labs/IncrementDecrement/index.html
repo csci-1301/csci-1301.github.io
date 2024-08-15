@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../../">
+  <meta property="og:image" content="../../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Increment and Decrement Operators, First Loops</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../../index.html'>CSCI 1301</a>
+        <a href='../../index.html#book'>Book</a>
+        <a href='../../labs/'>Labs</a>
+        <a href='../../slides.html'>Slides</a>
+        <a href='../../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Increment and Decrement Operators, First Loops</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:59 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#increment-and-decrement-operators"
+id="toc-increment-and-decrement-operators">Increment and Decrement
+Operators</a>
+<ul>
+<li><a href="#preamble" id="toc-preamble">Preamble</a></li>
+<li><a href="#observe-and-confirm" id="toc-observe-and-confirm">Observe
+and Confirm</a></li>
+<li><a href="#exercise" id="toc-exercise">Exercise</a></li>
+</ul></li>
+<li><a href="#first-while-loops" id="toc-first-while-loops">First While
+Loops</a></li>
+<li><a href="#pushing-further-optional"
+id="toc-pushing-further-optional">Pushing Further (Optional)</a></li>
+</ul>
+</nav>
+<p>This lab serves multiple goals:</p>
+<ul>
+<li>To introduce increment and decrement operators,</li>
+<li>To understand the difference between prefix and postfix
+operators,</li>
+<li>To help you implement your first <code
+class="sourceCode cs"><span class="kw">while</span></code> loops,
+and</li>
+<li>(Optional) to write your first complex loops.</li>
+</ul>
+<section id="increment-and-decrement-operators" class="level1">
+<h1>Increment and Decrement Operators</h1>
+<section id="preamble" class="level2">
+<h2>Preamble</h2>
+<p>Start by answering the following, assuming an <code
+class="sourceCode cs"><span class="dt">int</span></code> variable <code
+class="sourceCode cs">i</code> has been initialized and that its current
+value is 5.</p>
+<ol>
+<li>What does <code
+class="sourceCode cs">i<span class="op">++</span></code> do to <code
+class="sourceCode cs">i</code>?</li>
+<li>What does <code
+class="sourceCode cs">i<span class="op">--</span></code> do to <code
+class="sourceCode cs">i</code>?</li>
+<li>In your own words, can you explain the difference between <code
+class="sourceCode cs"><span class="op">++</span>i</code> and <code
+class="sourceCode cs">i<span class="op">++</span></code>?</li>
+</ol>
+<details>
+<summary>
+Solution:
+</summary>
+<ol>
+<li><code class="sourceCode cs">i<span class="op">++</span></code>
+increments the value of <code class="sourceCode cs">i</code> by 1; if
+the value of <code class="sourceCode cs">i</code> was 5, it would become
+6.</li>
+<li><code class="sourceCode cs">i<span class="op">--</span></code>
+decrements the value of <code class="sourceCode cs">i</code> by 1; if
+the value of <code class="sourceCode cs">i</code> was 5, it would become
+4.</li>
+<li>An explanation can be found <a
+href="https://stackoverflow.com/q/24853">in this post</a>. In short,
+<code class="sourceCode cs"><span class="op">++</span>i</code> “gives
+back” the value of <code class="sourceCode cs">i</code> <em>after</em>
+it had been incremented by 1, while <code
+class="sourceCode cs">i<span class="op">++</span></code> “gives back”
+the value of <code class="sourceCode cs">i</code> <em>before</em> it has
+been incremented. This makes a difference if <code
+class="sourceCode cs">i<span class="op">++</span></code> or <code
+class="sourceCode cs"><span class="op">++</span>i</code> is part of a
+larger statement. The next exercises will illustrate this
+principle.</li>
+</ol>
+</details>
+</section>
+<section id="observe-and-confirm" class="level2">
+<h2>Observe and Confirm</h2>
+<p>Download, extract, open in your IDE, and read <a
+href="IncrementExample.zip">the following code</a>. Then, compile and
+execute it. Study the output carefully to make sure you understand the
+mechanism of the increment and decrement operators.</p>
+<p>Compare your answers from the previous section to what you observe in
+the output. Do your answers correspond to what you observe in the
+output?</p>
+</section>
+<section id="exercise" class="level2">
+<h2>Exercise</h2>
+<p>For each of the following, determine the final value of <code
+class="sourceCode cs">n</code> and <code
+class="sourceCode cs">x</code>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x<span class="op">++;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> x <span class="op">+</span> x<span class="op">++;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="op">++</span>x <span class="op">+</span> <span class="op">++</span>x<span class="op">;</span></span></code></pre></div>
+<details>
+<summary>
+Solution:
+</summary>
+<p>You can download, extract, open in your IDE, and execute <a
+href="IncrementSolution.zip">the following code</a> to check that the
+answers are:</p>
+<pre class="text"><code>n is now 5.
+x is now 6.
+n is now 6.
+x is now 6.
+n is now 10.
+x is now 6.
+n is now 13.
+x is now 7.</code></pre>
+<p>If you read the source code, you can see that the order of evaluation
+is quite difficult to follow. Actually, the way the sum operator <code
+class="sourceCode cs"><span class="op">+</span></code> and the increment
+operator <code class="sourceCode cs"><span class="op">++</span></code>
+interact is sometimes <em>undefined</em>, meaning that the result may
+vary from one programming language to another (or worst, from one
+<em>version</em> to another): you can read more about this <a
+href="https://stackoverflow.com/a/3458842">here</a> of <a
+href="https://stackoverflow.com/a/4176333">there</a> (Disclaimer: those
+are <em>very</em> technical discussions, much more advanced than <a
+href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#increment-operator-">the
+official documentation</a> could lead to think).</p>
+In short: software developers generally avoid this type of “nested”
+operations altogether, and use increment or decrement operators more
+scarsely!
+</details>
+</section>
+</section>
+<section id="first-while-loops" class="level1">
+<h1>First While Loops</h1>
+<p>The following asks you to write a series of <code
+class="sourceCode cs"><span class="kw">while</span></code> loops
+performing simple tasks. The solution to the first question is <a
+href="FirstLoop.zip">in this archive</a>, but it is recommended to try
+it on your own first.</p>
+<ol>
+<li>Write a <code
+class="sourceCode cs"><span class="kw">while</span></code> loop that
+displays the integers between <span class="math inline">1</span> and
+<span class="math inline">100</span> on the screen with a space between
+each number.</li>
+<li>Write a <code
+class="sourceCode cs"><span class="kw">while</span></code> loop that
+displays the integers between <span class="math inline">100</span> and
+<span class="math inline">−100</span> on the screen, in decreasing
+order, with a space between each number.</li>
+<li>Write a <code
+class="sourceCode cs"><span class="kw">while</span></code> loop that
+displays the <code
+class="sourceCode cs"><span class="op">*</span></code> (asterisk symbol)
+character 100 times on the screen.</li>
+<li>Modify your previous loop, so that a new line character is displayed
+on the screen every time 10 asterisk symbols have been displayed on the
+screen.</li>
+</ol>
+<p>To clarify, your program should display the following on the screen
+(this example has a space after each asterisk symbol for display
+purposes):</p>
+<pre class="text"><code> * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *
+ * * * * * * * * * *</code></pre>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<p>Here are additional pattern problems, similar to the last one from
+the previous section. You are asked to generate these patterns using a
+<code class="sourceCode cs"><span class="kw">while</span></code> loop
+for each.</p>
+<ol>
+<li>Triangle:</li>
+</ol>
+<pre class="text"><code> * 
+ * *
+ * * *
+ * * * * 
+ * * * * *
+ * * * * * *
+ * * * * * * * 
+ * * * * * * * * 
+ * * * * * * * * * 
+ * * * * * * * * * *</code></pre>
+<ol>
+<li>Triangle of numbers</li>
+</ol>
+<pre class="text"><code>1
+222
+33333
+4444444
+555555555</code></pre>
+<ol>
+<li>Upside-down binary triangle</li>
+</ol>
+<pre class="text"><code>1010101
+10101 
+101  
+1</code></pre>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/labs/IncrementDecrement/readme.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="../../about.html" title="Learn more about this website.">About</a>
+        <a href="../../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

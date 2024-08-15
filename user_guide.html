@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>User Guide</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='index.html'>CSCI 1301</a>
+        <a href='index.html#book'>Book</a>
+        <a href='labs/'>Labs</a>
+        <a href='slides.html'>Slides</a>
+        <a href='index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">User Guide</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:37 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#resources-organization"
+id="toc-resources-organization">Resources Organization</a>
+<ul>
+<li><a href="#locating-course-resources"
+id="toc-locating-course-resources">Locating course resources</a></li>
+</ul></li>
+<li><a href="#editing-resources" id="toc-editing-resources">Editing
+Resources</a>
+<ul>
+<li><a href="#best-practices-for-all-forms-of-content"
+id="toc-best-practices-for-all-forms-of-content">Best practices for all
+forms of content</a>
+<ul>
+<li><a href="#inclusivity" id="toc-inclusivity">Inclusivity</a></li>
+<li><a href="#structure-for-accessibility"
+id="toc-structure-for-accessibility">Structure for
+accessibility</a></li>
+<li><a href="#markdown" id="toc-markdown">Markdown</a></li>
+<li><a href="#images" id="toc-images">Images</a></li>
+<li><a href="#source-code" id="toc-source-code">Source code</a></li>
+</ul></li>
+<li><a href="#creating-new-lectures"
+id="toc-creating-new-lectures">Creating new lectures</a></li>
+<li><a href="#creating-new-labs" id="toc-creating-new-labs">Creating new
+labs</a></li>
+</ul></li>
+<li><a href="#content-labelling" id="toc-content-labelling">Content
+Labelling</a>
+<ul>
+<li><a href="#labelling-with-shortcodes"
+id="toc-labelling-with-shortcodes">Labelling with shortcodes</a></li>
+<li><a href="#labelling-using-text-labels"
+id="toc-labelling-using-text-labels">Labelling using text
+labels</a></li>
+</ul></li>
+<li><a href="#styling-and-templating"
+id="toc-styling-and-templating">Styling and Templating</a>
+<ul>
+<li><a href="#updating-docx-template"
+id="toc-updating-docx-template">Updating docx template</a></li>
+<li><a href="#updating-odt-template"
+id="toc-updating-odt-template">Updating odt template</a></li>
+</ul></li>
+<li><a href="#repository-maintenance"
+id="toc-repository-maintenance">Repository Maintenance</a>
+<ul>
+<li><a href="#how-build-outputs-are-generated"
+id="toc-how-build-outputs-are-generated">How build outputs are
+generated</a></li>
+<li><a href="#using-github-actions-with-pandoc"
+id="toc-using-github-actions-with-pandoc">Using Github actions with
+pandoc</a></li>
+<li><a href="#how-to-create-releases"
+id="toc-how-to-create-releases">How to create releases</a></li>
+<li><a href="#building-the-resource-locally"
+id="toc-building-the-resource-locally">Building the resource locally</a>
+<ul>
+<li><a href="#installing-required-dependencies"
+id="toc-installing-required-dependencies">Installing required
+dependencies</a></li>
+<li><a href="#running-the-build" id="toc-running-the-build">Running the
+build</a></li>
+</ul></li>
+<li><a href="#maintaining-repository-feedback"
+id="toc-maintaining-repository-feedback">Maintaining repository
+feedback</a>
+<ul>
+<li><a href="#migrating-feedback-repository"
+id="toc-migrating-feedback-repository">Migrating feedback
+repository</a></li>
+</ul></li>
+<li><a href="#maintaining-instructors-guca-rights"
+id="toc-maintaining-instructors-guca-rights">Maintaining Instructors /
+G/UCA rights</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>This guide explains how this resource is organized, how it is built,
+and how to maintain this resource.</p>
+<section id="resources-organization" class="level1">
+<h1>Resources Organization</h1>
+<p>The source code repository is organized as follows</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">path</th>
+<th style="text-align: left;">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code
+class="sourceCode cs"><span class="op">.</span><span class="fu">github</span></code></td>
+<td style="text-align: left;">github templates and configuration for
+github actions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code
+class="sourceCode cs">code</code></td>
+<td style="text-align: left;">code examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code
+class="sourceCode cs">docs</code></td>
+<td style="text-align: left;">additional helpful documents</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code
+class="sourceCode cs">img</code></td>
+<td style="text-align: left;">all images</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code
+class="sourceCode cs">labs</code></td>
+<td style="text-align: left;">lab exercises</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code
+class="sourceCode cs">lectures</code></td>
+<td style="text-align: left;">lecture notes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code
+class="sourceCode cs">templates</code></td>
+<td style="text-align: left;">templates and meta data files used for
+building this resource</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code
+class="sourceCode cs">index<span class="op">.</span><span class="fu">md</span></code></td>
+<td style="text-align: left;">website index page</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code
+class="sourceCode cs"><span class="fl">404.m</span>d</code></td>
+<td style="text-align: left;">website 404 page</td>
+</tr>
+</tbody>
+</table>
+<p>Additional configuration files are at the root of the source code
+repository.</p>
+<section id="locating-course-resources" class="level2">
+<h2>Locating course resources</h2>
+<p>How to obtain the latest version of this resource:</p>
+<ol>
+<li>visit the accompanying website <a
+href="https://csci-1301.github.io">csci-1301.github.io</a>. This website
+includes the latest version of the course textbook in all supported
+formats, links to labs, and all other available student resources.</li>
+<li>AU-hosted mirror of the website is located at <a
+href="https://spots.augusta.edu/caubert/teaching/csci-1301"
+class="uri">https://spots.augusta.edu/caubert/teaching/csci-1301</a></li>
+<li>latest version of built resource is available as a .zip file under
+<a
+href="https://github.com/csci-1301/csci-1301.github.io/releases">releases</a>
+on Github.</li>
+</ol>
+<p>A mirrored version of this website is hosted on <a
+href="https://spots.augusta.edu/caubert/teaching/csci-1301/">spots</a>
+and updated regularly. Additional copies of this resource can be made
+available through box or D2L. Because manual effort is required to share
+the resource through these channels, these may be slightly behind the
+latest version.</p>
+<p>How to obtain much earlier versions of this resource:</p>
+<ol>
+<li>Complete release history is accessible under <a
+href="https://github.com/csci-1301/csci-1301.github.io/releases">releases</a>
+on Github</li>
+<li>Earlier versions of this resource will be periodically archived on
+Galileo.</li>
+</ol>
+</section>
+</section>
+<section id="editing-resources" class="level1">
+<h1>Editing Resources</h1>
+<p>If you are new to this project, first read through <a
+href="/contributing">Contributing Guidelines</a> to learn how you can
+contribute to the improvement of this resource, and if applicable, how
+to join a contributing team.</p>
+<section id="best-practices-for-all-forms-of-content" class="level2">
+<h2>Best practices for all forms of content</h2>
+<section id="inclusivity" class="level3">
+<h3>Inclusivity</h3>
+<p>Follow the <a
+href="https://itconnect.uw.edu/guides-by-topic/identity-diversity-inclusion/inclusive-language-guide/">IT
+Inclusive Language Guide</a> from the University of Washington:</p>
+<blockquote>
+<p>use gender-neutral terms; avoid ableist language; focus on people not
+disabilities or circumstances; avoid generalizations about people,
+regions, cultures and countries; and avoid slang, idioms, metaphors and
+other words with layers of meaning and a negative history.</p>
+</blockquote>
+</section>
+<section id="structure-for-accessibility" class="level3">
+<h3>Structure for accessibility</h3>
+<ul>
+<li>All resources are titled
+<ul>
+<li>title each markdown document: either in head meta or in markdown
+syntax, depending on resource type</li>
+<li>use subtitles when appropriate</li>
+<li>title all images with a descriptive title and add an alt-tag</li>
+<li>title all code blocks in labs and lecture notes<br />
+</li>
+</ul></li>
+<li>All resources are labelled when applicable
+<ul>
+<li>at minimum list prerequisites and security-related aspects</li>
+<li>see <a href="#content-labelling">Content Labelling</a> for more
+details</li>
+</ul></li>
+</ul>
+<p>Resources to assess accessibility:</p>
+<ul>
+<li><a
+href="https://alg.manifoldapp.org/projects/oer-accessibility-series-and-rubric">Affordable
+Learning Georgia’s guide</a></li>
+<li><a
+href="https://www.qualitymatters.org/sites/default/files/PDFs/StandardsfromtheQMHigherEducationRubric.pdf">Specific
+Review Standards from the QM Higher Education Rubric</a></li>
+<li><a
+href="https://docs.google.com/document/d/16Ri1XgaXiGx28ooO-zRvYPraV3Aq3F5ZNJYbVDGVnEA/edit?ts=57b4c82d#">UWG
+Accessibility Services’s guide</a></li>
+<li><a href="https://accessibility.psu.edu/images/">Penn State’s
+recommendations for alternative text and complex images.</a><br />
+</li>
+<li><a href="https://webaim.org/resources/contrastchecker/">WebAim Color
+Contrast Checker</a></li>
+<li><a href="https://webaim.org/">WebAIM (Web Accessibility In
+Mind)</a></li>
+</ul>
+</section>
+<section id="markdown" class="level3">
+<h3>Markdown</h3>
+<ul>
+<li>text documents are written in readme files using standard markdown
+syntax</li>
+<li>we will use a convention of always naming such files <code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+(lowercase)</li>
+</ul>
+</section>
+<section id="images" class="level3">
+<h3>Images</h3>
+<ul>
+<li>Explain the image in written form.</li>
+<li>Title each image, this will create a URL for the image and enables
+linking to it.</li>
+<li>Always include a descriptive alt tag for accessibility.</li>
+<li><a href="https://www.wikiwand.com/en/Color_blindness">Do not rely on
+everyone seeing colors the same way</a>.</li>
+<li>Prefer scalable vector images.</li>
+<li>Store images in the repository in <code
+class="sourceCode cs">img</code> directory
+<ul>
+<li>When referring to images in markdown, use path from root, see
+example below</li>
+<li>the image may appear broken locally, but pandoc will resolve the
+path at build time</li>
+</ul></li>
+</ul>
+<p><strong>Syntax example.</strong> The quoted text is the alt tag and
+in parentheses is path to file</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">![</span><span class="st">&quot;image of visual studio IDE&quot;</span><span class="op">](./</span>img<span class="op">/</span>vs_ide<span class="op">.</span><span class="fu">jpg</span><span class="op">){</span> width<span class="op">=</span><span class="dv">80</span><span class="op">%</span> <span class="op">}</span></span></code></pre></div>
+<p>The <code
+class="sourceCode cs"><span class="op">{</span> width<span class="op">=</span><span class="dv">80</span><span class="op">%</span> <span class="op">}</span></code>
+attribute is optional.</p>
+</section>
+<section id="source-code" class="level3">
+<h3>Source code</h3>
+<ul>
+<li><p>source code programs belong <em>primarily</em> in <code
+class="sourceCode cs">code</code> directory</p>
+<ul>
+<li>the code included in this directory should be a complete
+program</li>
+<li>the program should compile and terminate</li>
+<li>source code that is faulty, partial, or does not terminate can be
+included in markdown as inline code block</li>
+<li>we can automatically check these code snippets for syntactical
+correctness if these guidelines are followed</li>
+</ul></li>
+<li><p>code snippet can be included in markdown documents using
+pandoc-include filter:</p>
+<pre>
+  ```
+  !include code/sample.cs
+  ```
+  </pre></li>
+<li><p>Title each source code block included in markdown, this will
+create a URL for the code block and enables linking to it.</p></li>
+<li><p>code blocks are by default annotated as <code
+class="sourceCode cs">csharp</code></p>
+<ul>
+<li>syntax highlighting is applied automatically at build time based on
+the code block language</li>
+<li>to use a language other than C#, specify the language locally in the
+specific code block:</li>
+</ul>
+<pre>
+  ```text
+  This will be treated as plain text without highlighting
+  ```
+  </pre></li>
+<li><p>only include code in text form such that it can be copy-pasted
+for reuse</p></li>
+<li><p>make sure to include blank lines before and after code blocks,
+since the absence of these can cause the code block to display
+incorrectly.</p></li>
+</ul>
+</section>
+</section>
+<section id="creating-new-lectures" class="level2">
+<h2>Creating new lectures</h2>
+<p>All lecture notes are under <code
+class="sourceCode cs">lectures</code> directory. This directory also
+contains an index indicating the related labs and prerequisites for each
+lecture.</p>
+<p>To create a new lecture, e.g. <code
+class="sourceCode cs">lecture xyz</code>:</p>
+<ol>
+<li><p>Create a directory called <code
+class="sourceCode cs">NNN_lecture_xyz</code> under <code
+class="sourceCode cs">lectures</code> directory</p>
+<ul>
+<li>Follow the existing pattern for naming convention which is lowercase
+and separation by underscores.</li>
+<li>The numbers <code class="sourceCode cs">NNN</code> tell pandoc how
+to order book content. Use leading zero and increments of 10.</li>
+<li>Choose this number based on where in the book the new lecture should
+appear.</li>
+</ul></li>
+<li><p>under the new directory, create a file <code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+(lowercase). Write lecture notes in this file using markdown.</p>
+<ul>
+<li>We use filename <code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+because the build script looks for files matching this pattern.</li>
+</ul></li>
+</ol>
+<p>Following these steps will automatically include the new lecture in
+the book.</p>
+<p>If the lecture does not appear, here are the steps for
+troubleshooting the issue:</p>
+<ol>
+<li>Check that after committing changes, the automated build has
+completed successfully</li>
+<li>The newly created lecture is immediately under <code
+class="sourceCode cs">lectures<span class="op">/</span></code>
+directory</li>
+<li>The <code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+exists</li>
+<li>In <code
+class="sourceCode cs">gh<span class="op">-</span>pages</code> branch,
+ensure the book is generated</li>
+<li>Hard refresh the browser page if viewing the resources website</li>
+</ol>
+<p>Do not include meta section in individual lecture files because these
+lectures will be concatenated by pandoc into a single larger document.
+Any meta data in individual files would appear somewhere in the middle
+of the larger document, and as such will not be treated as front
+matter.</p>
+<p><strong>Known issues</strong>: When concatenating files pandoc may or
+may not include empty spaces between individual files. This may cause
+the subsequent lecture title to not appear in the generated book. For
+this reason, each lecture file should end with a newline.</p>
+</section>
+<section id="creating-new-labs" class="level2">
+<h2>Creating new labs</h2>
+<p>All lab resources are located under <code
+class="sourceCode cs">labs</code> directory. At build time these labs
+are compiled into instructions in various document formats with an
+optional, accompanying source code solution.</p>
+<ol>
+<li><p>Choose a short and unique name that describes the lab then create
+a directory matching that name</p>
+<ul>
+<li>follow the existing convention for naming</li>
+<li>do not number labs or make assumptions about numbering because
+another instructor may not follow the exact same lab order</li>
+</ul></li>
+<li><p>Under the lab directory create:</p>
+<ol>
+<li><code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+(case sensitive)
+<ul>
+<li>write lab instructions in this file. You should include meta data,
+at minimum a title</li>
+<li>make the lab standalone to support alternative ordering (avoid
+assumptions about what was done “last time”)</li>
+<li>do not make assumptions about student using specific OS, include
+instructions for all supported options (Windows, MacOS, Linux)</li>
+<li>do not make assumptions about student using Visual Studio, refer to
+IDE instead</li>
+</ul></li>
+<li>(optional) if you want to include starter code with the lab,
+<ul>
+<li>create a subdirectory called <code
+class="sourceCode cs">src</code></li>
+<li>create a subdirectory with the name of the solution you would like
+to use,</li>
+<li>create a subdirectory with the name of the project you would like to
+use,</li>
+<li>create a file called <code
+class="sourceCode cs">Program<span class="op">.</span><span class="fu">cs</span></code>
+in <code
+class="sourceCode cs">src<span class="op">/&lt;</span>solution<span class="op">&gt;/&lt;</span>project<span class="op">&gt;/</span>Program<span class="op">.</span><span class="fu">cs</span></code></li>
+<li>if you want to add additional classes, add them in <code
+class="sourceCode cs">src<span class="op">/&lt;</span>solution<span class="op">&gt;/&lt;</span>project<span class="op">&gt;/&lt;</span>Class<span class="op">&gt;.</span><span class="fu">cs</span></code>
+files.</li>
+</ul></li>
+</ol>
+<p>Do <strong>not</strong> add solution (<code
+class="sourceCode cs">sln</code>) or project (<code
+class="sourceCode cs">csproj</code>) files: they will be created
+automatically using the project and solution’s name you specified, if
+multiple classes are present they will all be linked, and the resulting
+archive will be hosted in the lab’s folder as <code
+class="sourceCode cs"><span class="op">&lt;</span>solution<span class="op">&gt;.</span><span class="fu">zip</span></code>.</p>
+<p>Note / known issue: when including multiple solutions, the basename
+should be different, for example: <code
+class="sourceCode cs">SomeLab</code> and <code
+class="sourceCode cs">Solution_SomeLab</code> (instead of <code
+class="sourceCode cs">SomeLabSolution</code>); to ensure solutions are
+packaged separately from one another.</p>
+<ol>
+<li>Create an entry for the new lab in the table at <code
+class="sourceCode cs">labs<span class="op">/</span>readme<span class="op">.</span><span class="fu">md</span></code>.
+List all prerequisite labs and related lectures.</li>
+</ol></li>
+</ol>
+<p>If you follow these instructions the lab will be automatically built
+into a distributable format when you commit changes. It works as
+follows:</p>
+<ol>
+<li><code
+class="sourceCode cs">readme<span class="op">.</span><span class="fu">md</span></code>
+will be converted to lab instructions file called <code
+class="sourceCode cs">index</code> (html, pdf, odt)</li>
+<li>contents of <code class="sourceCode cs">src</code> will be converted
+to a standalone C# solution as a zip file.</li>
+</ol>
+<p>Using this established build system generates labs that are
+cross-platform (Windows, MacOS, Linux) and work on different IDEs. Do
+not attempt to create labs locally as that approach does not have the
+same cross-platform guarantee.</p>
+</section>
+</section>
+<section id="content-labelling" class="level1">
+<h1>Content Labelling</h1>
+<p>Course resources are labelled with emoji shortcodes or text
+labels.</p>
+<p>Each resource should, at minimum, list its prerequisites and
+security-related content.</p>
+<section id="labelling-with-shortcodes" class="level2">
+<h2>Labelling with shortcodes</h2>
+<p>Use emoji shortcodes to label following course resources</p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Description</th>
+<th>Shortcode</th>
+<th>Icon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Security related aspects will be labelled
+as “security”</td>
+<td><code
+class="sourceCode cs"><span class="op">:</span>shield<span class="op">:</span></code></td>
+<td>🛡</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Optional parts will be labelled as
+“optional”</td>
+<td><code
+class="sourceCode cs"><span class="op">:</span>question<span class="op">:</span></code></td>
+<td>❓</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Elements to be incorporated in the future
+as “soon”</td>
+<td><code
+class="sourceCode cs"><span class="op">:</span>soon<span class="op">:</span></code></td>
+<td>🔜</td>
+</tr>
+</tbody>
+</table>
+<!--
+| Examples of common pitfalls | `:warning:` | ⚠️ |
+-->
+</section>
+<section id="labelling-using-text-labels" class="level2">
+<h2>Labelling using text labels</h2>
+<ol>
+<li><p>Each resource will be labelled with prerequisites.</p>
+<p>This is a list of zero or more values. For zero prerequisites write
+<code class="sourceCode cs">None</code>. These requirements are
+expressed in the associated index of lectures/labs/problems (cf. <a
+href="https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures">lectures</a>).</p></li>
+<li><p>Lecture notes and slides will be labelled by related labs, and
+vice versa</p>
+<p>These requirements are expressed in the associated index of lectures
+and labs (cf. <a
+href="https://github.com/csci-1301/csci-1301.github.io/tree/main/lectures">lectures</a>).</p></li>
+</ol>
+</section>
+</section>
+<section id="styling-and-templating" class="level1">
+<h1>Styling and Templating</h1>
+<p>Templating files are under <code
+class="sourceCode cs">templates</code> directory.</p>
+<p>Templates directory specifies layout files and stylesheets used in
+the website. These layouts are applied by pandoc when resources are
+built.</p>
+<p>For maintainability reasons it is preferable to apply templates
+during build time. This strategy makes it easy to edit templates later
+and apply those changes across all resources. Avoid applying templating
+to individual resource files whenever possible.</p>
+<p>Currently templates directory contains the following:</p>
+<ul>
+<li><code
+class="sourceCode cs"><span class="kw">default</span><span class="op">-</span>code<span class="op">-</span><span class="kw">class</span><span class="op">.</span><span class="fu">lua</span></code>
+- pandoc filter for annotating code blocks, configured to default to C#,
+which then allows applying syntax highlighting to all code block.</li>
+<li><code
+class="sourceCode cs">templates<span class="op">/</span>labs</code> -
+templates used for generating lab resources and associated pages</li>
+<li><code
+class="sourceCode cs">templates<span class="op">/</span>web</code> -
+templates for website and HTML format resources.</li>
+</ul>
+<section id="updating-docx-template" class="level2">
+<h2>Updating docx template</h2>
+<p>First, output the default template file:</p>
+<p><code
+class="sourceCode cs"><span class="op">{</span>bash<span class="op">}</span> pandoc <span class="op">-</span>o custom<span class="op">-</span>reference<span class="op">.</span><span class="fu">docx</span> <span class="op">--</span>print<span class="op">-</span><span class="kw">default</span><span class="op">-</span>data<span class="op">-</span>file reference<span class="op">.</span><span class="fu">docx</span></code></p>
+<p>Then, open <code
+class="sourceCode cs">reference<span class="op">.</span><span class="fu">docx</span></code>,
+and, following loosely <a
+href="https://support.microsoft.com/en-us/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563?ui=en-us&amp;rs=en-us&amp;ad=us">this
+tutorial</a>, do:</p>
+<ul>
+<li>Click pretty much anywhere, and right-click on the highlighted style
+(displayed if you are under “Home”, you may need to scroll down the
+styles),</li>
+<li>Change the font for everything but the source code,</li>
+<li>Click on the “Block code”, then right-click on the highlighted
+style, and select the font for the source code,</li>
+<li>The font for “Verbatim Char” was also changed, but I am not sure if
+this has an impact,</li>
+<li><a
+href="https://support.microsoft.com/en-us/office/benefits-of-embedding-custom-fonts-cb3982aa-ea76-4323-b008-86670f222dbc">Make
+sure the fonts are embedded</a>,</li>
+<li>Save and close the document.</li>
+</ul>
+<p>This was inspired by <a
+href="https://stackoverflow.com/a/70513063">this post</a> but does not
+seem to work properly :-/</p>
+</section>
+<section id="updating-odt-template" class="level2">
+<h2>Updating odt template</h2>
+<p>First, output the default template file:</p>
+<p><code
+class="sourceCode cs"><span class="op">{</span>bash<span class="op">}</span> pandoc <span class="op">-</span>o custom<span class="op">-</span>reference<span class="op">.</span><span class="fu">odt</span> <span class="op">--</span>print<span class="op">-</span><span class="kw">default</span><span class="op">-</span>data<span class="op">-</span>file reference<span class="op">.</span><span class="fu">odt</span></code></p>
+<p>Then, open <code
+class="sourceCode cs">reference<span class="op">.</span><span class="fu">odt</span></code>,
+and, following loosely <a
+href="https://github.com/jgm/pandoc/wiki/Defining-custom-DOCX-styles-in-LibreOffice-(and-Word)#libreoffice">this
+tutorial</a>, do:</p>
+<ul>
+<li>View -&gt; Styles</li>
+<li>Right-click on “Preformatted Text”, click on “Modify…”, and then
+select the desired font family for source code.</li>
+<li>In the dialog or sidebar which opens make sure the button in the top
+panel marked with ¶ is highlighted (it is very subtle).</li>
+<li>In the menu at the bottom of the dialog/sidebar choose Applied
+Styles. Only “Default Paragraph Style” and “Footer” should appear.</li>
+<li>Right-click on “Default Paragraph Style”, click on “Modify…”, and
+then select the desired font family for the rest of the text.</li>
+<li>Then, highlight the A next to ¶.</li>
+<li>Right-click on “Source_Text”, click on “Modify…”, and then select
+the desired font family for source code.</li>
+<li>File -&gt; Properties -&gt; Font tab, click on “Embed fonts in the
+document”.</li>
+<li>Save and close the document.</li>
+</ul>
+</section>
+</section>
+<section id="repository-maintenance" class="level1">
+<h1>Repository Maintenance</h1>
+<p>This repository uses following tools and technologies:</p>
+<ul>
+<li>git - version control</li>
+<li>Github - to make source code available on the web</li>
+<li>markdown, LaTeX - for writing the resources</li>
+<li>pandoc - for converting documents to various output formats</li>
+<li>make - for specifying how to build this resource</li>
+<li>github actions - to automatically build the resource</li>
+<li>github pages - to serve the accompanying website</li>
+<li>additional packages for specific tasks: texlive, Pygments, pandoc
+filters, <a href="https://github.com/jgm/pandoc/issues/2104">lua
+filter</a>, etc.</li>
+<li><a href="https://www.bryanbraun.com/anchorjs/">Anchor.js</a> - for
+automatic links.</li>
+<li>fonts-symbola - to produce the emoji and other symbols in the pdf
+document.</li>
+<li><a href="https://utteranc.es/">utteranc.es</a> - for feedback
+through website</li>
+<li><a href="https://github.com/belav/csharpier">csharpier</a> - to tidy
+the C# source code</li>
+</ul>
+<section id="how-build-outputs-are-generated" class="level2">
+<h2>How build outputs are generated</h2>
+<p>The resource material is organized into specific directories (cf. <a
+href="#resources-organization">resource organization</a>). These
+resources are then compiled into templated documents in various formats
+using <a href="https://pandoc.org/MANUAL.html">pandoc</a>. Different
+directories undergo different build steps as defined in the project <a
+href="https://github.com/csci-1301/csci-1301.github.io/blob/main/Makefile">Makefile</a>
+and generate various outputs. For example, lecture notes are compiled
+into a textbook and labs are packaged into individual labs. The makefile
+explains the exact steps applied to each type of resource.</p>
+</section>
+<section id="using-github-actions-with-pandoc" class="level2">
+<h2>Using Github actions with pandoc</h2>
+<p>This resource is built automatically every time changes are committed
+to the main branch of the repository. This is configured to run on <a
+href="https://github.com/features/actions">Github actions</a>. There are
+currently two configured <a
+href="https://github.com/csci-1301/csci-1301.github.io/actions">workflows</a>:
+one to build the resource and to deploy it, and a second one to check
+that any opened pull requests can be built successfully.</p>
+<p>The build configuration uses texlive to keep the dependency
+installation time low. Similarly, the choice of Python packages is
+preferable for pandoc filters, because they are usually straightforward
+and fast to install. We want to avoid choosing packages that
+significantly increase build time.</p>
+<p>Currently Github actions offers unlimited free build minutes for
+public repositories (and 2000 min/mo. for <em>private</em> repositories,
+should we ever need them), which hopefully continues in perpetuity (if
+it does not there are other alternative services). Going with one
+specific CI service over another is simply a matter of preference.</p>
+<p>Following a successful build, the build script will automatically
+deploy the generated resources to an accompanying website hosted on <a
+href="https://pages.github.com/">github pages</a>. In the repository a
+special branch <code
+class="sourceCode cs">gh<span class="op">-</span>pages</code> represents
+the contents of the deployed website. It also allows maintainers to
+observe the generated build outputs.</p>
+</section>
+<section id="how-to-create-releases" class="level2">
+<h2>How to create releases</h2>
+<p>Currently a github action is setup to do the following: whenever a
+new commit is made to the main branch, the action will build the
+resource and add the generated books as a pre-release under releases and
+tag them as “latest”. If a subsequent commit occurs it will overwrite
+the previous latest files and become the new latest version. This cycle
+continues until maintainers are ready to make a versioned release (or
+“package”).</p>
+<p>Making a versioned release is done as follows:</p>
+<ol>
+<li>Go to <a
+href="https://github.com/csci-1301/csci-1301.github.io/releases">repository
+releases</a></li>
+<li>Choose latest, which contains the files of the latest build</li>
+<li>Edit this release, giving it a semantic name and a version, such as
+v1.0.0. Name and version can be the same. (cf. <a
+href="https://semver.org/">semantic versioning</a>)</li>
+<li>Enter release notes to explain what changed since last release</li>
+<li>Uncheck “This is a pre-release”</li>
+<li>Check “Set as the latest release”</li>
+<li>Update release</li>
+</ol>
+<p>Following these steps will generate a new, versioned release. The
+versioned releases will be manually uploaded to and archived on
+galileo.</p>
+<p>Once this is done, remember to create the next pre-release:</p>
+<ol>
+<li>Go to <a
+href="https://github.com/csci-1301/csci-1301.github.io/releases">the
+repository releases</a>.</li>
+<li>Click on “Draft a new release”.</li>
+<li>Pick the tag “Latest”.</li>
+<li>Click on “Generate release notes”</li>
+<li>Check “This is a pre-release”</li>
+<li>Click on “Publish release”</li>
+</ol>
+</section>
+<section id="building-the-resource-locally" class="level2">
+<h2>Building the resource locally</h2>
+<p>It is generally not necessary to build this resource locally unless
+the intent is to preview templating changes or to make changes to build
+scripts. For the purposes of editing content, it is sufficient to make
+edits to markdown files and commit those changes.</p>
+<section id="installing-required-dependencies" class="level3">
+<h3>Installing required dependencies</h3>
+<p>To find the current list of dependencies needed to build this
+resource, refer to the <a
+href="https://github.com/csci-1301/csci-1301.github.io/blob/main/.github/workflows/build.yaml#L33-L40">build
+script install section</a>, which lists all required packages needed to
+build the resource. The exact installation steps vary depending on your
+local operating system.</p>
+<p>In general the following dependencies are needed:</p>
+<ul>
+<li><a href="https://pandoc.org/installing.html">pandoc</a></li>
+<li><a href="https://www.tug.org/texlive/">texlive</a></li>
+<li>make</li>
+<li>python 3.+</li>
+<li>packages and filters: <a
+href="https://pygments.org/download/">Pygments</a>, <a
+href="https://github.com/DCsunset/pandoc-include#installation">pandoc-include</a>,
+<a href="https://tug.org/xetex/">texlive-xetex</a>, texlive-latex-extra,
+lmodern, <a href="https://askubuntu.com/a/31446">librsvg2-bin</a></li>
+<li>symbola font</li>
+</ul>
+<p>For this later, note that starting <a
+href="http://web.archive.org/web/20181228102842/http://users.teilar.gr/%7Eg1951d/Symbola.pdf">with
+version 11</a>, the licence is too restrictive for non-personal use. As
+a consequence, users are asked to make sure they do not use a version
+greater than v.10.24, which is “free for any use” and <a
+href="http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/Symbola.zip">archived
+on-line</a> (curious users can also refer to <a
+href="http://web.archive.org/web/20180307012615/http://users.teilar.gr/~g1951d/">the
+related webpage</a>). Note that installing this dependency using a
+unix-like package manager will result in installing a version of the
+font that <a
+href="https://metadata.ftp-master.debian.org/changelogs//main/t/ttf-ancient-fonts/ttf-ancient-fonts_2.60-1.1_copyright">is
+free to use in any context</a>.</p>
+<p>You can make sure you are currently using the latest version of
+panflute by running</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install <span class="op">-</span>U panflute</span></code></pre></div>
+<p>This is needed if running a recent version of pandoc (as of pandoc
+3.1.6.1 at least).</p>
+</section>
+<section id="running-the-build" class="level3">
+<h3>Running the build</h3>
+<p>After installing all dependencies, from the repository root, run:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
+<p>To see a list of other alternative build options run</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> help</span></code></pre></div>
+</section>
+</section>
+<section id="maintaining-repository-feedback" class="level2">
+<h2>Maintaining repository feedback</h2>
+<p>Resource users can submit feedback about the resource through various
+means, one of which is leaving comments on the website. This feature is
+enabled by <a href="https://utteranc.es/">utteranc.es</a>.</p>
+<p>To manage user feedback over time, a semester-specific repository is
+created for issues only. This must be a public repository and located
+under the same organization as the resources repository. utteranc.es
+widget is configured to point to this repository. After a semester is
+over, this feedback repository will be archived, and a new one created
+for the next semester. This will simultaneously archive all older issues
+and reset the feedback across website pages.</p>
+<section id="migrating-feedback-repository" class="level3">
+<h3>Migrating feedback repository</h3>
+<p>The steps for migrating feedback target repository are as
+follows:</p>
+<ol>
+<li><p>Create a new <strong>public</strong> repository under <code
+class="sourceCode cs">csci<span class="dv">-1301</span></code> github
+organization. Follow the established naming convention, and leave all
+the options except for visibility (which needs to be set to public) by
+default.</p></li>
+<li><p>Go to repository Issues (make sure issues is enabled in
+repository settings)</p></li>
+<li><p>Create a new label whose <em>label name</em> is <code
+class="sourceCode cs">comment</code> (to match <a
+href="https://github.com/csci-1301/csci-1301.github.io/blob/main/templates/web/template.html#L87-L94">widget
+configuration</a>)</p></li>
+<li><p>Go to <a
+href="https://github.com/organizations/csci-1301/settings/installations"><code
+class="sourceCode cs">Organization Settings <span class="op">&gt;</span> Installed GitHub Apps</code></a></p></li>
+<li><p>Choose “utterances” &gt; “configure”</p></li>
+<li><p>Under “Repository access” &gt; “Only select repositories”</p>
+<ul>
+<li>select the repository created in step 1.</li>
+<li>remove the previous semester feedback repository</li>
+</ul></li>
+<li><p>Save</p></li>
+<li><p>In <code
+class="sourceCode cs">csci<span class="fl">-1301.</span>github<span class="op">.</span><span class="fu">io</span></code>
+repository open <code
+class="sourceCode cs"><span class="op">/</span>templates<span class="op">/</span>web<span class="op">/</span>template<span class="op">.</span><span class="fu">html</span></code></p></li>
+<li><p>Update utteranc.es widget code to point to the new feedback
+repository created in step 1.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>script data<span class="op">-</span>external<span class="op">=</span><span class="st">&quot;1&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        src<span class="op">=</span><span class="st">&quot;https://utteranc.es/client.js&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        repo<span class="op">=</span><span class="st">&quot;csci-1301/{REPOSITORY_NAME}&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">&quot;comment&quot;</span> …<span class="op">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div></li>
+<li><p>Commit change to template.html</p></li>
+<li><p>Make sure the feedback works after migration. If it does not,
+retrace your steps.</p></li>
+<li><p>Archive the earlier feedback repository in its settings.</p></li>
+</ol>
+</section>
+</section>
+<section id="maintaining-instructors-guca-rights" class="level2">
+<h2>Maintaining Instructors / G/UCA rights</h2>
+<p>Every semester,</p>
+<ul>
+<li><a href="https://github.com/orgs/csci-1301/teams/ucas">The members
+of the “UCAs” team</a> should be updated,</li>
+<li>A “uca-resources-<semester>-YYYY” repository should be created, by
+<a href="https://github.com/csci-1301/uca-resources-template">forking
+the template</a> (private repository),</li>
+<li>The new repository should be added to the <a
+href="https://github.com/orgs/csci-1301/teams/ucas/repositories">list of
+repositories of the team</a> (as maintainer),</li>
+<li>The old repository should be deleted from that same list, and then
+archived.</li>
+<li>GRAs should be added / removed from the <a
+href="https://github.com/orgs/csci-1301/teams/instructors">instructors
+list</a>, and previous instructors should be removed from that same
+list,</li>
+<li>GRAs should be <a
+href="https://github.com/orgs/csci-1301/teams/ucas/members">added to the
+“UCAs” teams</a> and given “maintainer” rights (<em>inside that
+team</em>, and not for the whole organization).</li>
+</ul>
+</section>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="user_guide.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="user_guide.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="user_guide.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/docs/user_guide.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="about.html" title="Learn more about this website.">About</a>
+        <a href="about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>

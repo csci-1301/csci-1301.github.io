@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow, noarchive">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#002f55">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <meta name="msapplication-TileColor" content="#002f55">
+  <meta name="msapplication-config" content="../../browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="../../">
+  <meta property="og:image" content="../../android-chrome-512x512.png">
+  <meta name="author" content="https://csci-1301.github.io/about#authors">
+  <meta name="keywords" content="Computer Science, Problem solving
+methods, Augusta University, Bachelor of Science, C# Programming
+language">
+  <title>Practicing if and switch</title>
+  <style>
+    html {
+      font-size: 10pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../style.css">
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.3.1 - 2021-04-17
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2021 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function d(A){A.icon=Object.prototype.hasOwnProperty.call(A,"icon")?A.icon:"",A.visible=Object.prototype.hasOwnProperty.call(A,"visible")?A.visible:"hover",A.placement=Object.prototype.hasOwnProperty.call(A,"placement")?A.placement:"right",A.ariaLabel=Object.prototype.hasOwnProperty.call(A,"ariaLabel")?A.ariaLabel:"Anchor",A.class=Object.prototype.hasOwnProperty.call(A,"class")?A.class:"",A.base=Object.prototype.hasOwnProperty.call(A,"base")?A.base:"",A.truncate=Object.prototype.hasOwnProperty.call(A,"truncate")?Math.floor(A.truncate):64,A.titleText=Object.prototype.hasOwnProperty.call(A,"titleText")?A.titleText:""}function w(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new TypeError("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],d(this.options),this.isTouchDevice=function(){return Boolean("ontouchstart"in window||window.TouchEvent||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,o,i,n,s,a,c,r,l,h,u,p=[];if(d(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=w(A=A||"h2, h3, h4, h5, h6")).length)return this;for(null===document.head.querySelector("style.anchorjs")&&((u=document.createElement("style")).className="anchorjs",u.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(u):document.head.insertBefore(u,A),u.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",u.sheet.cssRules.length),u.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",u.sheet.cssRules.length),u.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",u.sheet.cssRules.length),u.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',u.sheet.cssRules.length)),u=document.querySelectorAll("[id]"),t=[].map.call(u,function(A){return A.id}),i=0;i<e.length;i++)if(this.hasAnchorJSLink(e[i]))p.push(i);else{if(e[i].hasAttribute("id"))o=e[i].getAttribute("id");else if(e[i].hasAttribute("data-anchor-id"))o=e[i].getAttribute("data-anchor-id");else{for(c=a=this.urlify(e[i].textContent),s=0;n=t.indexOf(c=void 0!==n?a+"-"+s:c),s+=1,-1!==n;);n=void 0,t.push(c),e[i].setAttribute("id",c),o=c}(r=document.createElement("a")).className="anchorjs-link "+this.options.class,r.setAttribute("aria-label",this.options.ariaLabel),r.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(r.title=this.options.titleText),h=document.querySelector("base")?window.location.pathname+window.location.search:"",h=this.options.base||h,r.href=h+"#"+o,"always"===l&&(r.style.opacity="1"),""===this.options.icon&&(r.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(r.style.lineHeight="inherit")),"left"===this.options.placement?(r.style.position="absolute",r.style.marginLeft="-1em",r.style.paddingRight=".5em",e[i].insertBefore(r,e[i].firstChild)):(r.style.paddingLeft=".375em",e[i].appendChild(r))}for(i=0;i<p.length;i++)e.splice(p[i]-i,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,o=w(A),i=0;i<o.length;i++)(t=o[i].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(o[i]))&&this.elements.splice(e,1),o[i].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){var e=document.createElement("textarea");return e.innerHTML=A,A=e.value,this.options.truncate||d(this.options),A.trim().replace(/'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]./()*\\\n\t\b\v\u00A0]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),A=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||A||!1}}});
+// @license-end
+</script>
+</head>
+<body>
+<main>
+<header class="page-header">
+    <div>
+        <a class="home" href='../../index.html'>CSCI 1301</a>
+        <a href='../../index.html#book'>Book</a>
+        <a href='../../labs/'>Labs</a>
+        <a href='../../slides.html'>Slides</a>
+        <a href='../../index.html#exercises'>Exercises</a>
+    </div>
+</header>
+<header id="title-block-header">
+<h1 class="title">Practicing if and switch</h1>
+<p class="author"><a href="https://csci-1301.github.io/about#authors"
+class="uri">https://csci-1301.github.io/about#authors</a></p>
+<p class="date">May 22, 2024 (01:30:58 PM)</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#mastering-the-switch-statement"
+id="toc-mastering-the-switch-statement">Mastering the <code
+class="sourceCode cs"><span class="kw">switch</span></code>
+statement</a></li>
+<li><a href="#practicing-if-and-switch"
+id="toc-practicing-if-and-switch">Practicing <code
+class="sourceCode cs"><span class="kw">if</span></code> and <code
+class="sourceCode cs"><span class="kw">switch</span></code></a>
+<ul>
+<li><a href="#from-switch-to-if-else"
+id="toc-from-switch-to-if-else">From <code
+class="sourceCode cs"><span class="kw">switch</span></code> to <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code></a></li>
+<li><a href="#from-if-else-to-switch"
+id="toc-from-if-else-to-switch">From <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>
+to <code
+class="sourceCode cs"><span class="kw">switch</span></code></a></li>
+<li><a href="#deciding-between-condition-types"
+id="toc-deciding-between-condition-types">Deciding Between Condition
+Types</a></li>
+<li><a href="#complex-conditions" id="toc-complex-conditions">Complex
+Conditions</a></li>
+</ul></li>
+<li><a href="#pushing-further-optional"
+id="toc-pushing-further-optional">Pushing Further (Optional)</a>
+<ul>
+<li><a href="#conditional-operator"
+id="toc-conditional-operator">Conditional Operator</a></li>
+<li><a href="#toupper-method" id="toc-toupper-method"><code
+class="sourceCode cs"><span class="fu">ToUpper</span><span class="op">()</span></code>
+Method</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>This lab serves multiple goals:</p>
+<ul>
+<li>To reinforce your understanding of <code
+class="sourceCode cs"><span class="kw">if</span></code> statements,</li>
+<li>To help you practice <code
+class="sourceCode cs"><span class="kw">switch</span></code>
+statements,</li>
+<li>To help you understand the instances in which <code
+class="sourceCode cs"><span class="kw">switch</span></code> or <code
+class="sourceCode cs"><span class="kw">if</span></code> should be
+used,</li>
+<li>(Optional) to help you understand the conditional operator, and</li>
+<li>(Optional) to introduce you to the <code
+class="sourceCode cs">ToUpper</code> method.</li>
+</ul>
+<section id="mastering-the-switch-statement" class="level1">
+<h1>Mastering the <code
+class="sourceCode cs"><span class="kw">switch</span></code>
+statement</h1>
+<p>Consider the following code:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// We ask the user to enter the day of the week:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Please enter the day of the week.&quot;</span><span class="op">);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Note that anything that is not spelled exactly as </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">// in the switch statement will be treated as the </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// default case.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">// We read from the user:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">string</span> string_day <span class="op">=</span> Console<span class="op">.</span><span class="fu">ReadLine</span><span class="op">();</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Variable where the result of our computation will be stored:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> num_day<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">// Switch statement to map textual description of the day </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">// (e.g., &quot;Monday&quot;, &quot;Tuesday&quot;, etc.) to a number </span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">// relative to chronological order (e.g., 1, 2, etc.)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">switch</span> <span class="op">(</span>string_day<span class="op">)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Monday&quot;</span><span class="op">):</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Tuesday&quot;</span><span class="op">):</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Wednesday&quot;</span><span class="op">):</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Thursday&quot;</span><span class="op">):</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Friday&quot;</span><span class="op">):</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Saturday&quot;</span><span class="op">):</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">case</span> <span class="op">(</span><span class="st">&quot;Sunday&quot;</span><span class="op">):</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="dv">7</span><span class="op">;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">default</span><span class="op">:</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        num_day <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span> <span class="co">// This is an error code.</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">// We display the number corresponding to the day entered:</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;The number corresponding to &quot;</span> <span class="op">+</span> string_day <span class="op">+</span> <span class="st">&quot; is &quot;</span> <span class="op">+</span> num_day <span class="op">+</span> <span class="st">&quot;.&quot;</span><span class="op">);</span></span></code></pre></div>
+<p>You can download it <a href="day_of_the_week.zip">as a solution</a>
+(that also contains the solution to the problems asked below. Make sure
+you open <code class="sourceCode cs">day_of_the_week</code> and not
+<code class="sourceCode cs">day_of_the_week_solution</code> first).</p>
+<p>Now, do the following:</p>
+<ol>
+<li>Test the program with various values and make sure it behaves as
+expected.</li>
+<li>Comment out the <code
+class="sourceCode cs"><span class="kw">default</span><span class="op">:</span></code>
+case along with the two lines below it and compile your program. Why is
+the compiler complaining?</li>
+<li>Restore the code to its original state.</li>
+<li>Change the code so that “monday” would make the value 1 get assigned
+to <code class="sourceCode cs">num_day</code>.</li>
+<li>Change the code so that <a
+href="https://www.wikiwand.com/en/Names_of_the_days_of_the_week#Days_numbered_from_Sunday">the
+days of the week start on Sunday</a> (i.e., “Sunday” causes the value 1
+to get assigned to <code class="sourceCode cs">num_day</code>, “Monday”
+causes the value 2 to be assigned to <code
+class="sourceCode cs">num_day</code>, etc.)</li>
+<li>Finally, change the last message to tell the user if the code
+encountered an error; use an <code
+class="sourceCode cs"><span class="kw">if</span></code> statement to
+display a different message if the user input did not match one of the
+literals in your <code
+class="sourceCode cs"><span class="kw">switch</span></code>
+statement.</li>
+</ol>
+<p>Here is an example of execution, where the user input is u͟n͟d͟e͟r͟l͟i͟n͟e͟d͟,
+and hitting “enter” is represented by ↵:</p>
+<pre class="text"><code>Please enter the day of the week.
+t͟u͟e͟s͟d͟a͟y͟↵
+The number corresponding to tuesday is 3.</code></pre>
+<p>Here is a second example:</p>
+<pre class="text"><code>Please enter the day of the week.
+M͟O͟N͟D͟A͟Y͟↵
+I am sorry, but MONDAY does not seem to be a valid day.</code></pre>
+<p>You can find an example solution in <a
+href="day_of_the_week_solution.zip">this solution</a> or in the archive
+that you downloaded previously.</p>
+</section>
+<section id="practicing-if-and-switch" class="level1">
+<h1>Practicing <code
+class="sourceCode cs"><span class="kw">if</span></code> and <code
+class="sourceCode cs"><span class="kw">switch</span></code></h1>
+<p>This exercise will ask you to write a rather abstract program that
+performs simple manipulations on a few variables. The main goal is to
+have you practice “transforming” <code
+class="sourceCode cs"><span class="kw">if</span></code> statements into
+<code class="sourceCode cs"><span class="kw">switch</span></code>
+statements and <code
+class="sourceCode cs"><span class="kw">switch</span></code> statements
+into <code class="sourceCode cs"><span class="kw">if</span></code>
+statements. This will help you memorize their syntax and help you choose
+the more convenient one to perform certain tasks.</p>
+<p>Create a new project and do the following in <code
+class="sourceCode cs">Main</code>.</p>
+<ol>
+<li>Declare and initialize the following variables:
+<ul>
+<li>a <code class="sourceCode cs"><span class="dt">string</span></code>
+variable named <code class="sourceCode cs">day</code></li>
+<li>an <code class="sourceCode cs"><span class="dt">int</span></code>
+variable named <code class="sourceCode cs">myVar</code></li>
+<li>a <code class="sourceCode cs"><span class="dt">char</span></code>
+variable named <code class="sourceCode cs">initial</code>, and</li>
+<li>a <code class="sourceCode cs"><span class="dt">bool</span></code>
+variable named <code class="sourceCode cs">flag</code></li>
+</ul></li>
+<li>Set and change the value of these variables to make good tests as
+you progress through this problem.</li>
+<li>You can also display them on the screen to make sure that your
+statements behave as expected.</li>
+</ol>
+<section id="from-switch-to-if-else" class="level2">
+<h2>From <code
+class="sourceCode cs"><span class="kw">switch</span></code> to <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code></h2>
+<ol>
+<li>Write a <code
+class="sourceCode cs"><span class="kw">switch</span></code> statement
+that sets <code class="sourceCode cs">flag</code> to <code
+class="sourceCode cs"><span class="kw">true</span></code> if the value
+of <code class="sourceCode cs">day</code> is <code
+class="sourceCode cs"><span class="st">&quot;Mon&quot;</span></code>,
+<code
+class="sourceCode cs"><span class="st">&quot;Tue&quot;</span></code>,
+<code
+class="sourceCode cs"><span class="st">&quot;Wed&quot;</span></code>,
+<code
+class="sourceCode cs"><span class="st">&quot;Thu&quot;</span></code> or
+<code
+class="sourceCode cs"><span class="st">&quot;Fri&quot;</span></code>,
+and to <code class="sourceCode cs"><span class="kw">false</span></code>
+otherwise.</li>
+<li>Rewrite the previous statement as an <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>
+statement.</li>
+</ol>
+</section>
+<section id="from-if-else-to-switch" class="level2">
+<h2>From <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>
+to <code
+class="sourceCode cs"><span class="kw">switch</span></code></h2>
+<ol>
+<li>Write an <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>
+statement that doubles the value of <code
+class="sourceCode cs">myVar</code> if <code
+class="sourceCode cs">myVar</code> is: <code
+class="sourceCode cs"><span class="dv">3</span></code>, <code
+class="sourceCode cs"><span class="dv">5</span></code>, or <code
+class="sourceCode cs"><span class="dv">7</span></code>.</li>
+<li>Can you rewrite the previous statement as a <code
+class="sourceCode cs"><span class="kw">switch</span></code> statement?
+If so, do it. If not, explain why not.</li>
+</ol>
+</section>
+<section id="deciding-between-condition-types" class="level2">
+<h2>Deciding Between Condition Types</h2>
+<ol>
+<li>Write a statement that doubles the value of <code
+class="sourceCode cs">myVar</code> and sets <code
+class="sourceCode cs">initial</code> to <code
+class="sourceCode cs"><span class="ch">&#39;M&#39;</span></code> if
+<code class="sourceCode cs">day</code> is equal to <code
+class="sourceCode cs"><span class="st">&quot;Sat&quot;</span></code>.
+What is the appropriate kind of statement to do this?</li>
+<li>Write a statement that displays “Hello” on the screen if the value
+of <code class="sourceCode cs">initial</code> is <code
+class="sourceCode cs"><span class="ch">&#39;E&#39;</span></code> or
+<code class="sourceCode cs"><span class="ch">&#39;e&#39;</span></code>,
+“Bonjour” if the value of <code class="sourceCode cs">initial</code> is
+<code class="sourceCode cs"><span class="ch">&#39;F&#39;</span></code>
+or <code
+class="sourceCode cs"><span class="ch">&#39;f&#39;</span></code>, and
+“Guten Tag” if the value of <code class="sourceCode cs">initial</code>
+is <code
+class="sourceCode cs"><span class="ch">&#39;D&#39;</span></code> or
+<code class="sourceCode cs"><span class="ch">&#39;d&#39;</span></code>.
+What is the appropriate kind of statement to do this?</li>
+</ol>
+<p>Note that you can solve those problems with either an <code
+class="sourceCode cs"><span class="kw">if</span></code> statement or a
+<code class="sourceCode cs"><span class="kw">switch</span></code>
+statement.</p>
+</section>
+<section id="complex-conditions" class="level2">
+<h2>Complex Conditions</h2>
+<ol>
+<li>Write a statement that doubles the value of <code
+class="sourceCode cs">myVar</code> if <code
+class="sourceCode cs">day</code> is <code
+class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code>,
+triples the value of <code class="sourceCode cs">myVar</code> if <code
+class="sourceCode cs">day</code> is not <code
+class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code> but
+<code class="sourceCode cs">initial</code> is <code
+class="sourceCode cs"><span class="ch">&#39;a&#39;</span></code>, or
+sets <code class="sourceCode cs">myVar</code> to <code
+class="sourceCode cs"><span class="dv">0</span></code> if neither of the
+other conditions is satisfied.</li>
+<li>Write a statement that sets <code class="sourceCode cs">myVar</code>
+to <code class="sourceCode cs"><span class="dv">0</span></code> if <code
+class="sourceCode cs">initial</code> is an upper-case letter or to <code
+class="sourceCode cs"><span class="dv">1</span></code> otherwise. You
+will need to understand how to use the <code
+class="sourceCode cs">IsUpper</code> method, and the <a
+href="https://docs.microsoft.com/en-us/dotnet/api/system.char.isupper?view=net-5.0">documentation</a>
+can help you with that.</li>
+</ol>
+<p>Note that you can only solve those problems with <code
+class="sourceCode cs"><span class="kw">if</span></code> statements.</p>
+</section>
+</section>
+<section id="pushing-further-optional" class="level1">
+<h1>Pushing Further (Optional)</h1>
+<section id="conditional-operator" class="level2">
+<h2>Conditional Operator</h2>
+<p>A <em>conditional operator</em> can be used to replace <code
+class="sourceCode cs"><span class="kw">if</span><span class="op">-</span><span class="kw">else</span></code>
+statements in particular cases (i.e., assignment, call, increment,
+decrement, and new object expressions). Its structure is:</p>
+<p><code
+class="sourceCode cs">condition <span class="op">?</span> first_expression <span class="op">:</span> second_expression<span class="op">;</span></code></p>
+<p>You can read more about it <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator">in
+the documentation</a>.</p>
+<p>Practice using the conditional operator by adding these statements to
+the program you developed previously:</p>
+<ol>
+<li>Write a statement that sets <code class="sourceCode cs">myVar</code>
+to <code class="sourceCode cs"><span class="dv">0</span></code> if <code
+class="sourceCode cs">initial</code> is an upper-case letter, and to
+<code class="sourceCode cs"><span class="dv">1</span></code> otherwise.
+You already wrote an <code
+class="sourceCode cs"><span class="kw">if</span></code> statement that
+accomplishes this in the previous exercise, so you just need to rewrite
+it using the conditional operator.</li>
+<li>Write a statement that sets <code
+class="sourceCode cs">initial</code> to <code
+class="sourceCode cs"><span class="ch">&#39;B&#39;</span></code> if
+<code class="sourceCode cs">myVar</code> is greater than 500 and to
+<code class="sourceCode cs"><span class="ch">&#39;S&#39;</span></code>
+if <code class="sourceCode cs">myVar</code> is less than or equal to
+500.</li>
+<li>Write a statement that doubles the value of <code
+class="sourceCode cs">myVar</code> if <code
+class="sourceCode cs">day</code> is <code
+class="sourceCode cs"><span class="st">&quot;Sat&quot;</span></code> or
+<code
+class="sourceCode cs"><span class="st">&quot;Sun&quot;</span></code> and
+adds 1 to the value of <code class="sourceCode cs">myVar</code>
+otherwise.</li>
+</ol>
+</section>
+<section id="toupper-method" class="level2">
+<h2><code
+class="sourceCode cs"><span class="fu">ToUpper</span><span class="op">()</span></code>
+Method</h2>
+<p>C# contains a method called <code
+class="sourceCode cs"><span class="fu">ToUpper</span><span class="op">()</span></code>
+in the <code class="sourceCode cs"><span class="dt">string</span></code>
+class. You can read <a
+href="https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0">its
+documentation</a>, but the simplest way to understand is probably to see
+an example first. The statement</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Console<span class="op">.</span><span class="fu">WriteLine</span><span class="op">(</span><span class="st">&quot;Hello, world!&quot;</span><span class="op">.</span><span class="fu">ToUpper</span><span class="op">());</span></span></code></pre></div>
+<p>will display</p>
+<pre class="text"><code>HELLO, WORLD!</code></pre>
+<p>Can you use this method to make your <code
+class="sourceCode cs"><span class="kw">switch</span></code> statement <a
+href="#mastering-the-switch-statement">from the first part</a>
+accommodate any combination of uppercase and lowercase letters for the
+days of the week? If done properly, your program should then correctly
+identify that “MoNdAy”, “MONDAY”, “monday” and “Monday” all match the
+same value.</p>
+</section>
+</section>
+</main>
+<footer id="footer">
+    <h2>How Is This Page?</h2>
+    <p>Did you notice mistakes, get stuck somewhere or did you run into other issues? Was there something you really enjoyed? Enter comments below, using your <a href="../../labs/Introduction/#how-to-get-help">github account</a>.</p>
+    <script data-external="1"
+            src="https://utteranc.es/client.js"
+            repo="csci-1301/feedback-spring-2024"
+            issue-term="pathname"
+            label="comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <div class="links">
+                    <a href="index.pdf" title="Download this ressoucre in pdf">↓ pdf</a>
+            <a href="index.odt" title="Download this ressource in odt.">↓ odt</a>
+            <a href="index.docx" title="Download this ressource in docx.">↓ docx</a>
+                            <a href="https://github.com/csci-1301/csci-1301.github.io/blob/main/labs/IfAndSwitch/readme.md" title="Access the source code of this ressource.">Source code</a>
+                <a href="../../about.html" title="Learn more about this website.">About</a>
+        <a href="../../about.html#licence" title="Licence">CC BY 4.0</a>
+        </div> 
+</footer>
+<script>
+anchors.options = {
+    icon: '§',
+    class: 'anchor'
+};
+anchors.add('h1, h2, h3, h4, h5, h6');
+</script>
+</body>
+</html>
